@@ -1,0 +1,93 @@
+code.language-markup {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+pre.language-markup {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+pre code {
+  background-color: transparent;
+}
+pre {
+  background-color: transparent;
+  margin: 0;
+  display: block;
+  font: normal 16px/23px Monaco, Monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  color: black;
+  /* background-color: #2f2f2f; */
+  background-image: -webkit-repeating-linear-gradient(
+    top,
+    #f4f8fb 0px,
+    #f4f8fb 24px,
+    #fdfdfd 24px,
+    #fdfdfd 48px
+  );
+  // background-image: -moz-repeating-linear-gradient(
+  //   top,
+  //   #f5fafe 0px,
+  //   #f5fafe 22px,
+  //   #fdfdfd 22px,
+  //   #fdfdfd 44px
+  // );
+  // background-image: -ms-repeating-linear-gradient(
+  //   top,
+  //   #f5fafe 0px,
+  //   #f5fafe 22px,
+  //   #fdfdfd 22px,
+  //   #fdfdfd 44px
+  // );
+  // background-image: -o-repeating-linear-gradient(
+  //   top,
+  //   #f5fafe 0px,
+  //   #f5fafe 22px,
+  //   #fdfdfd 22px,
+  //   #fdfdfd 44px
+  // );
+  // background-image: repeating-linear-gradient(
+  //   top,
+  //   #f5fafe 0px,
+  //   #f5fafe 22px,
+  //   #fdfdfd 22px,
+  //   #fdfdfd 44px
+  // );
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  .token {
+    &.tag,
+    &.keyword {
+      color: #2196f3 !important;
+    }
+
+    &.attr-name,
+    &.attr-string {
+      color: #2196f3 !important;
+    }
+
+    &.attr-value {
+      color: #4caf50 !important;
+    }
+
+    &.punctuation {
+      color: #495057;
+    }
+
+    &.operator,
+    &.string {
+      background: transparent;
+    }
+  }
+}
+pre[class*="language-"] {
+  /* margin: 0.5rem 0; */
+}
+pre[class*="language-"] > code {
+  border-left: 0px !important;
+}
+.code-container {
+  border-bottom: 1px solid #edf2f6;
+  width: 100%;
+  overflow: scroll;
+}
