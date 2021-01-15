@@ -1,62 +1,115 @@
 <template>
-  <div>
-    <Nuxt />
+  <div id="app">
+    <app-header @toggle-drawer="toggleDrawer()" />
+    <div
+      class="sidemenu__backdrop"
+      v-if="showDrawer"
+      @click="toggleDrawer()"
+    ></div>
+    <side-menu :show-drawer="showDrawer" @toggle-drawer="toggleDrawer()" />
+    <div class="child">
+      <nuxt-child />
+    </div>
+    <app-footer />
+    <!-- <Nuxt /> -->
   </div>
 </template>
 
+<script>
+// import "../../../plugui.scss";
+import "light-icons/dist/light-icon.css";
+
+import AppHeader from "@/components/AppHeader.vue";
+import AppFooter from "@/components/AppFooter.vue";
+import SideMenu from "@/components/SideMenu.vue";
+
+export default {
+  components: {
+    AppHeader,
+    SideMenu,
+    AppFooter
+  },
+  data() {
+    return {
+      showDrawer: false,
+    };
+  },
+  methods: {
+    toggleDrawer() {
+      this.showDrawer = !this.showDrawer;
+    },
+  },
+};
+</script>
+
 <style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
+@import "./overwrite.scss";
+@import "./examples.scss";
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+body,
+#app {
+  background-color: #f5f8fa;
+  color: #566d79;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+// Media Queries
+@media only screen and (max-width: 600px) {
+  #app {
+    padding: 20px;
+  }
+  .bg-gray 
+    div {
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+  
+}
+.child {
+  position: absolute;
+  left: 250px;
+  top: 55px;
+  padding: 30px;
+  z-index: -10000;
+  width: calc(100% - 250px);
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.feature-intro p {
+  opacity: 0.8;
+  line-height: 20px;
+  margin: 8px 0px;
+}
+.sidemenu__backdrop {
+  z-index: 998;
+  background-color: rgba(28, 39, 45, 0.55);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+@media (max-width: 769px) {
+  .child {
+    left: 0px;
+    width: 100%;
+  }
+  .sidemenu__backdrop {
+    opacity: 1;
+    display: initial;
+  }
 }
 </style>

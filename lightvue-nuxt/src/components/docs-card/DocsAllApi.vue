@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import DocsApiTableProps from "@/collections/docs-card/DocsApiTableProps.vue";
-import DocsApiTableSlots from "@/collections/docs-card/DocsApiTableSlots.vue";
-import DocsApiTableEvents from "@/collections/docs-card/DocsApiTableEvents.vue";
+import DocsApiTableProps from "../docs-card/DocsApiTableProps";
+import DocsApiTableSlots from "../docs-card/DocsApiTableSlots";
+import DocsApiTableEvents from "../docs-card/DocsApiTableEvents.vue";
 
 
 export default {
