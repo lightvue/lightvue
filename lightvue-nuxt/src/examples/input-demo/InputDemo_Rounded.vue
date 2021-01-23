@@ -5,6 +5,7 @@
             v-model="value1"
             label="First Name"
             placeholder="Enter your first name"
+            rounded
         />
         <br/>
         <lv-input
@@ -13,6 +14,7 @@
             label="Email"
             help-text="Help text can also be given !!"
             placeholder="Enter your email"
+            rounded
         />
         <br/>
         <lv-input
@@ -20,6 +22,7 @@
             v-model="value1"
             label="First Name"
             placeholder="Enter your first name"
+            rounded
         />
         <br/>
         <lv-input
@@ -29,6 +32,7 @@
             label="Material Effect"
             placeholder="Enter username here..."
             bottom-bar
+            rounded
         />
         <br/>
         <lv-input
@@ -38,6 +42,7 @@
             label="Floating Label"
             placeholder="Enter username here..."
             floating-label
+            rounded
         />
         <br/>
         <lv-input
@@ -46,9 +51,10 @@
             icon-left="pi pi-search"
             icon-right="pi pi-spin pi-spinner"
             label="Left Right Icons"
+            rounded
         />
         <br/>
-        <lv-input type="text" v-model="value1" placeholder="Search" label="Prepend Append">
+        <lv-input type="text" v-model="value1" placeholder="Search" label="Prepend Append" rounded>
             <template slot="prepend">
                 <Button icon="pi pi-check" class="p-button-secondary" />
             </template>
@@ -60,13 +66,18 @@
 </template>
 
 <script>
+import LvInput from "@/collections/input/Input.vue"
 export default {
     data(){
         return{
             value1: ""
         }
-    }
+    }, 
+components: {
+    LvInput
 }
+
+    }
 </script>
 
 <style>

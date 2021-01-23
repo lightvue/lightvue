@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <app-header @toggle-drawer="toggleDrawer()" />
+    <!-- <app-header @toggle-drawer="toggleDrawer()" />
     <div
       class="sidemenu__backdrop"
       v-if="showDrawer"
@@ -10,24 +10,23 @@
     <div class="child">
       <nuxt-child />
     </div>
-    <app-footer />
-    <!-- <Nuxt /> -->
+    <app-footer /> -->
+    <Nuxt />
   </div>
 </template>
 
 <script>
-// import "../../../plugui.scss";
 import "light-icons/dist/light-icon.css";
 
-import AppHeader from "@/components/AppHeader.vue";
-import AppFooter from "@/components/AppFooter.vue";
-import SideMenu from "@/components/SideMenu.vue";
+// import AppHeader from "@/components/AppHeader.vue";
+// import AppFooter from "@/components/AppFooter.vue";
+// import SideMenu from "@/components/SideMenu.vue";
 
 export default {
   components: {
-    AppHeader,
-    SideMenu,
-    AppFooter
+    // AppHeader,
+    // SideMenu,
+    // AppFooter
   },
   data() {
     return {
@@ -63,10 +62,10 @@ body,
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Media Queries
+ /* Media Queries */
 @media only screen and (max-width: 600px) {
   #app {
-    padding: 20px;
+    /* padding: 20px; */
   }
   .bg-gray 
     div {

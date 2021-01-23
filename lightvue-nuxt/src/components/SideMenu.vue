@@ -18,8 +18,11 @@
         <div class="nav-label">Support</div>
       </div> -->
 
-      <nuxt-link to="/InputDocs" class="nav-item">
+      <nuxt-link to="/input-docs" class="nav-item">
         <div class="nav-label">InputDemo</div>
+      </nuxt-link>
+      <nuxt-link to="/button-docs" class="nav-item">
+        <div class="nav-label">Buttons</div>
       </nuxt-link>
     </div>
   </div>
