@@ -3,37 +3,40 @@
     <div class="docs-card__header">
       <h5 class="docs-card__title">{{ title }}</h5>
       <div class="docs-card__actions">
-        <div class="docs-card__action" v-if="responsive" @click="toggleDevice">
+        <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
           <i
             class="docs-card__action-icon light-icon-devices"
             title="Responsive preview"
           ></i>
         </div>
         <div
-          class="docs-card__action"
           v-if="sourceLink"
+          class="docs-card__action"
           @click="openURL(sourceLink)"
         >
           <i class="docs-card__action-icon light-icon-brand-github"></i>
         </div>
-        <div class="docs-card__action" v-if="$slots['code']">
+        <div v-if="$slots['code']" class="docs-card__action">
           <i
             class="docs-card__action-icon light-icon-code"
-            @click="showCode = !showCode"
             title="View code example"
+            @click="showCode = !showCode"
           ></i>
         </div>
       </div>
     </div>
-    <div class="docs-card__code-wrap" v-if="showCode">
+    <div v-if="showCode" class="docs-card__code-wrap">
       <div class="docs-card__code-tab">
         <div class="docs-card__code-tab-text">Template</div>
       </div>
-      <code-highlight><slot name="code"></slot></code-highlight>
+      <CodeHighlight><slot name="code"></slot></CodeHighlight>
     </div>
-    <responsive-demo :deviceWidth="deviceWidth" v-if="responsive" :overflow="overflow"
+    <ResponsiveDemo
+      v-if="responsive"
+      :device-width="deviceWidth"
+      :overflow="overflow"
       ><slot></slot
-    ></responsive-demo>
+    ></ResponsiveDemo>
     <slot v-else></slot>
   </div>
 </template>
@@ -43,6 +46,10 @@ import CodeHighlight from "./CodeHighlight.vue";
 import ResponsiveDemo from "./ResponsiveDemo.vue";
 
 export default {
+  components: {
+    CodeHighlight,
+    ResponsiveDemo,
+  },
   props: {
     title: String,
     sourceLink: String,
@@ -51,13 +58,9 @@ export default {
       type: Boolean,
     },
     overflow: {
-        default: false,
-        type: Boolean
-    }
-  },
-  components: {
-    CodeHighlight,
-    ResponsiveDemo,
+      default: false,
+      type: Boolean,
+    },
   },
   data() {
     return {

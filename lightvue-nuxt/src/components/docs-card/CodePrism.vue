@@ -1,5 +1,5 @@
 <template>
-  <pre :class="languageClass" ref="code"><code><slot></slot></code></pre>
+  <pre ref="code" :class="languageClass"><code><slot></slot></code></pre>
 </template>
 
 <script>

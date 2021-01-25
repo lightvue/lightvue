@@ -6,18 +6,19 @@
         <div class="api-table__cell">Parameters</div>
         <div class="api-table__cell">Description</div>
       </div>
-      <div
-        class="api-table__row"
-        v-for="event in eventsList"
-        :key="event.name"
-      >
+      <div v-for="event in eventsList" :key="event.name" class="api-table__row">
         <div class="api-table__cell --name">{{ event.name }}</div>
         <div class="api-table__cell --params">
-            <span class="--param-item" v-for="(param,i) in event.params" :key="param.name" :title="param.description">
-                {{param.name}}:&nbsp;
-                <span class="--param-type">{{param.type}}</span>
-                <span v-if="i !== event.params.length -1">,&nbsp;</span>
-            </span>
+          <span
+            v-for="(param, i) in event.params"
+            :key="param.name"
+            class="--param-item"
+            :title="param.description"
+          >
+            {{ param.name }}:&nbsp;
+            <span class="--param-type">{{ param.type }}</span>
+            <span v-if="i !== event.params.length - 1">,&nbsp;</span>
+          </span>
         </div>
         <div class="api-table__cell --description">
           {{ event.description }}
@@ -32,4 +33,3 @@ export default {
   props: ["eventsList"],
 };
 </script>
-

@@ -1,9 +1,18 @@
 <template>
-    <div>
-        <docs-api-table-props :propsList="apiData.props" v-if="apiData.props && apiData.props.length"/>
-        <docs-api-table-events :eventsList="apiData.events" v-if="apiData.events && apiData.events.length"/>
-        <docs-api-table-slots :slotsList="apiData.slots" v-if="apiData.slots && apiData.slots.length"/>
-    </div>
+  <div>
+    <DocsApiTableProps
+      v-if="apiData.props && apiData.props.length"
+      :props-list="apiData.props"
+    />
+    <DocsApiTableEvents
+      v-if="apiData.events && apiData.events.length"
+      :events-list="apiData.events"
+    />
+    <DocsApiTableSlots
+      v-if="apiData.slots && apiData.slots.length"
+      :slots-list="apiData.slots"
+    />
+  </div>
 </template>
 
 <script>
@@ -11,19 +20,18 @@ import DocsApiTableProps from "../docs-card/DocsApiTableProps";
 import DocsApiTableSlots from "../docs-card/DocsApiTableSlots";
 import DocsApiTableEvents from "../docs-card/DocsApiTableEvents.vue";
 
-
 export default {
-    props: {
-        apiData:{
-            required: true
-        }
+  components: {
+    DocsApiTableProps,
+    DocsApiTableSlots,
+    DocsApiTableEvents,
+  },
+  props: {
+    apiData: {
+      required: true,
     },
-    components:{
-        DocsApiTableProps,
-        DocsApiTableSlots,
-        DocsApiTableEvents
-    }
-}
+  },
+};
 </script>
 
 <style lang="scss">
@@ -60,10 +68,10 @@ export default {
   display: table-cell;
   border-right: 1px solid #e1e4e7;
   padding: 10px 12px;
-  &.--name{
-      background-color: rgba(56,178,171,.05);
-      width: 150px;
-      font-weight: 600;
+  &.--name {
+    background-color: rgba(56, 178, 171, 0.05);
+    width: 150px;
+    font-weight: 600;
   }
   &.--type {
     color: #1c587a;
@@ -72,40 +80,40 @@ export default {
     white-space: nowrap;
     width: 120px;
   }
-  &.--default{
-      width: 120px;
+  &.--default {
+    width: 120px;
   }
-  &.--params{
-      width: 240px;
-      .--param-item{
-        white-space: nowrap;
-      }
-      .--param-type{
-        color: #5f7a88;
-        font-weight: 600;
-        font-family: monospace;
-      }
+  &.--params {
+    width: 240px;
+    .--param-item {
+      white-space: nowrap;
+    }
+    .--param-type {
+      color: #5f7a88;
+      font-weight: 600;
+      font-family: monospace;
+    }
   }
 }
-.api-table{
-    &.--events{
-        .api-table__row .--name::before{
-            content: '@';
-            opacity: 0.7;
-        }
+.api-table {
+  &.--events {
+    .api-table__row .--name::before {
+      content: "@";
+      opacity: 0.7;
     }
-    &.--slots{
-        .api-table__row .--name::before{
-            content: '#';
-            opacity: 0.7;
-        }
+  }
+  &.--slots {
+    .api-table__row .--name::before {
+      content: "#";
+      opacity: 0.7;
     }
-    &.--props{
-        .api-table__row .--name::before{
-            content: ':';
-            opacity: 0.7;
-        }
+  }
+  &.--props {
+    .api-table__row .--name::before {
+      content: ":";
+      opacity: 0.7;
     }
+  }
 }
 .api-table__copy-btn {
   display: inline-block;

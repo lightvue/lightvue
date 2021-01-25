@@ -5,11 +5,7 @@
         <div class="api-table__cell --name">Slots</div>
         <div class="api-table__cell">Description</div>
       </div>
-      <div
-        class="api-table__row"
-        v-for="slot in slotsList"
-        :key="slot.name"
-      >
+      <div v-for="slot in slotsList" :key="slot.name" class="api-table__row">
         <div class="api-table__cell --name">{{ slot.name }}</div>
         <div class="api-table__cell --description">
           {{ slot.description }}

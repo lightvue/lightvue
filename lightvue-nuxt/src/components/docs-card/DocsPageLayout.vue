@@ -9,7 +9,10 @@
       </div>
     </div>
 
-    <div class="content-section implementation" style="min-height: calc(100vh - 260px)">
+    <div
+      class="content-section implementation"
+      style="min-height: calc(100vh - 260px)"
+    >
       <div class="content-header">
         <div
           class="demo-tab"
@@ -37,7 +40,6 @@
 </template>
 
 <script>
-
 export default {
   props: ["title", "description"],
   data() {

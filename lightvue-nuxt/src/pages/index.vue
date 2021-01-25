@@ -20,9 +20,8 @@
           rel="noopener noreferrer"
           class="button--grey"
         >
-          GitHub
-        </a>
-      </div>
+       GitHub
+        </a>    </div>
     </div>
   </div>
 </template>

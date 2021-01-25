@@ -7,7 +7,7 @@
       enter-active-class="animated fadeIn"
       leave-active-class="animated fadeOut"
     >
-      <div class="copy-btn-tag" v-show="copied">
+      <div v-show="copied" class="copy-btn-tag">
         <i class="light-icon-circle-check" /> Copied to clipboard
       </div>
     </transition>

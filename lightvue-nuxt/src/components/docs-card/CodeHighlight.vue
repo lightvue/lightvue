@@ -1,9 +1,9 @@
 <template>
   <div class="code-wrap">
-    <code-prism :lang="lang">
+    <CodePrism :lang="lang">
       <slot></slot>
-    </code-prism>
-    <copy-button :text="getMarkup"></copy-button>
+    </CodePrism>
+    <CopyButton :text="getMarkup"></CopyButton>
   </div>
 </template>
 <script>

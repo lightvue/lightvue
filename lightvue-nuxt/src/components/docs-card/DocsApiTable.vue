@@ -7,9 +7,9 @@
         <div class="api-table__cell">properties</div>
       </div>
       <div
-        class="api-table__row"
         v-for="property in properties"
         :key="property.class"
+        class="api-table__row"
       >
         <div class="api-table__cell --class-name">
           {{ property.class }}
@@ -37,58 +37,57 @@ export default {
   data() {
     return {
       properties: [
-  {
-    "class": ".pl-btn",
-    "description": "",
-    "properties": ""
-  },
-  {
-    "class": ".pl-btn--1",
-    "description": "",
-    "properties": ""
-  },
-  {
-    "class": ".pl-btn--2",
-    "description": "",
-    "properties": ""
-  },
-  {
-    "class": ".pl-btn--3",
-    "description": "",
-    "properties": ""
-  },
-  {
-    "class": ".pl-btn--4",
-    "description": "",
-    "properties": ""
-  },
-  {
-    "class": ".pl-btn--5",
-    "description": "",
-    "properties": ""
-  },
-  {
-    "class": ".pl-btn--6",
-    "description": "",
-    "properties": ""
-  },
-  {
-    "class": ".pl-btn--7",
-    "description": "",
-    "properties": ""
-  },
-  {
-    "class": ".pl-btn--8",
-    "description": "",
-    "properties": ""
-  },
-  {
-    "class": ".pl-btn--rounded-1",
-    "description": "",
-    "properties": ""
-  }
-]
-
+        {
+          class: ".pl-btn",
+          description: "",
+          properties: "",
+        },
+        {
+          class: ".pl-btn--1",
+          description: "",
+          properties: "",
+        },
+        {
+          class: ".pl-btn--2",
+          description: "",
+          properties: "",
+        },
+        {
+          class: ".pl-btn--3",
+          description: "",
+          properties: "",
+        },
+        {
+          class: ".pl-btn--4",
+          description: "",
+          properties: "",
+        },
+        {
+          class: ".pl-btn--5",
+          description: "",
+          properties: "",
+        },
+        {
+          class: ".pl-btn--6",
+          description: "",
+          properties: "",
+        },
+        {
+          class: ".pl-btn--7",
+          description: "",
+          properties: "",
+        },
+        {
+          class: ".pl-btn--8",
+          description: "",
+          properties: "",
+        },
+        {
+          class: ".pl-btn--rounded-1",
+          description: "",
+          properties: "",
+        },
+      ],
     };
   },
   created() {

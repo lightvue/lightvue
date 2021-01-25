@@ -8,9 +8,9 @@
         <div class="api-table__cell">Description</div>
       </div>
       <div
-        class="api-table__row"
         v-for="property in propsList"
         :key="property.name"
+        class="api-table__row"
       >
         <div class="api-table__cell --name">{{ property.name }}</div>
         <div class="api-table__cell --type">{{ property.type }}</div>
@@ -28,8 +28,7 @@ import { copyToClipboard } from "../../utils";
 export default {
   props: ["propsList"],
   data() {
-    return {
-    };
+    return {};
   },
   created() {
     if (this.apiPath) {

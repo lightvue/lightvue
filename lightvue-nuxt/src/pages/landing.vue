@@ -1,18 +1,17 @@
 <template>
   <div>
-      <app-hero />
+    <hero />
   </div>
 </template>
 
 <script>
-import AppHero from "@/components/AppHero.vue";
+import Hero from "@/components/Hero.vue";
 export default {
-components: {
-    AppHero
-}
-}
+  layout: "landing",
+  components: {
+    Hero,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -1,27 +1,32 @@
 <template>
   <div>
-    <splitpanes
+    <Splitpanes
       @resize="setPane($event[0].size)"
       @pane-maximize="setPane(100 - $event.size)"
     >
-      <pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{'--allow-overflow': overflow}">
+      <Pane
+        :size="paneSize"
+        :min-size="minSize"
+        class="responsive-area"
+        :class="{ '--allow-overflow': overflow }"
+      >
         <slot>
-          <loader />
+          <Loader />
         </slot>
-      </pane>
-      <pane :size="100 - paneSize" class="extra-area">
+      </Pane>
+      <Pane :size="100 - paneSize" class="extra-area">
         <div class="resize-icon">
           <i class="light-icon-grip-vertical"></i>
         </div>
         <div
-          class="responsive-dimensions"
           v-if="paneSize <= 90"
+          class="responsive-dimensions"
           @dblclick="toggleDevice"
         >
           {{ paneSizePixel }}px
         </div>
-      </pane>
-    </splitpanes>
+      </Pane>
+    </Splitpanes>
   </div>
 </template>
 
@@ -31,6 +36,11 @@ import "splitpanes/dist/splitpanes.css";
 import Loader from "./Loader.vue";
 
 export default {
+  components: {
+    Splitpanes,
+    Pane,
+    Loader,
+  },
   props: {
     minWidth: {
       type: Number,
@@ -41,14 +51,9 @@ export default {
       default: 720,
     },
     overflow: {
-        default: false,
-        type: Boolean
-    }
-  },
-  components: {
-    Splitpanes,
-    Pane,
-    Loader,
+      default: false,
+      type: Boolean,
+    },
   },
   data: () => ({
     minSize: 20,
@@ -56,6 +61,11 @@ export default {
     paneSizePixel: "",
     direction: "left",
   }),
+  watch: {
+    minWidth(newWidth) {
+      this.setMinWidth(newWidth);
+    },
+  },
 
   created() {
     this.$parent.$on("toggleDevice", this.toggleDevice);
@@ -63,11 +73,6 @@ export default {
   mounted() {
     this.setMinWidth(this.minWidth);
     this.paneSizePixel = this.$el.clientWidth;
-  },
-  watch: {
-    minWidth(newWidth) {
-      this.setMinWidth(newWidth);
-    },
   },
   methods: {
     setMinWidth(widthInPx) {
@@ -121,7 +126,7 @@ export default {
   /* box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.15); */
   overflow-y: auto;
   &.--allow-overflow {
-      overflow: initial !important;
+    overflow: initial !important;
   }
 }
 .extra-area {

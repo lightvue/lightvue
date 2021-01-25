@@ -11,7 +11,6 @@
         <input
           class="icons__search-input"
           placeholder="Search Icons"
-          v-model="query"
           type="text"
         />
         <i class="light-icon-search search-icon"></i>
@@ -54,6 +53,7 @@ export default {};
 .header-items {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header-items i {

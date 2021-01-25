@@ -49,12 +49,6 @@ const ButtonAPI = {
             description: 'Adds a ripple affect to the button',
         },
         {
-            name: 'ripple',
-            type: 'Boolean',
-            default: 'false',
-            description: 'Adds a ripple affect to the button',
-        },
-        {
             name: 'outline',
             type: 'Boolean | Object',
             default: 'false',

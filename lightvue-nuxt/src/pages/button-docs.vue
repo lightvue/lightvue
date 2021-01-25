@@ -15,12 +15,12 @@
 </template>
 
 <script>
+
 import DocsPageLayout from "@/components/docs-card/DocsPageLayout";
 import DocsCardVue from "@/components/docs-card/DocsCardVue";
 import DocsCard from "@/components/docs-card/DocsCard";
 import GettingStarted from "@/components/docs-card/GettingStarted";
 import DocsAllApi from "@/components/docs-card/DocsAllApi";
-import InputAPI from "@/collections/input/InputAPI";
 import ButtonAPI from "@/collections/buttons/ButtonAPI";
 
 export default {
@@ -29,7 +29,7 @@ export default {
     DocsCard,
     GettingStarted,
     DocsPageLayout,
-    DocsAllApi
+    DocsAllApi,
   },
   title: "Button",
   description: `Button is an extension to standard button element with an option to add icons and your custom theming.`,

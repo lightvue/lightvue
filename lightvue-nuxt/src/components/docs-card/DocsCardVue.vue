@@ -1,19 +1,19 @@
 <template>
-  <docs-card v-bind="$attrs">
+  <DocsCard v-bind="$attrs">
     <template #code>{{ parts.template }}</template>
     <component :is="component" v-if="component" />
-  </docs-card>
+  </DocsCard>
 </template>
 
 <script>
 import DocsCard from "./DocsCard.vue";
 export default {
+  components: {
+    DocsCard,
+  },
   inheritAttrs: false,
   props: {
     file: String,
-  },
-  components: {
-    DocsCard,
   },
   data() {
     return {
@@ -61,5 +61,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
