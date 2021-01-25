@@ -1,22 +1,24 @@
 <template>
   <div class="app-header">
     <div class="header-items">
-      <i class="light-icon-menu-2 menu-icon" @click="$emit('toggle-drawer')"></i>
+      <i
+        class="light-icon-menu-2 menu-icon"
+        @click="$emit('toggle-drawer')"
+      ></i>
       <div class="logo" @click="$router.push('/')">
         <img src="@/assets/logo.png" class="header-logo" />
         <h3>&nbsp; LightVue</h3>
       </div>
       <div class="icons__search-row">
-      <div class="icons__search-bar">
-        <input
-          class="icons__search-input"
-          placeholder="Search Icons"
-          type="text"
-        />
-        <i class="light-icon-search search-icon"></i>
+        <div class="icons__search-bar">
+          <input
+            class="icons__search-input"
+            placeholder="Search Icons"
+            type="text"
+          />
+          <i class="light-icon-search search-icon"></i>
+        </div>
       </div>
-    </div>
-      
     </div>
   </div>
 </template>
@@ -63,7 +65,7 @@ export default {};
   padding: 10px;
   border-radius: 50%;
   transition: 0.3s ease-in-out all;
-  &:hover{
+  &:hover {
     background: #e0e0e0;
   }
 }
@@ -75,6 +77,8 @@ export default {};
 }
 .icons__search-row {
   position: sticky;
+  display: flex;
+
   top: 0px;
   margin: auto;
   padding: 40px 0;
@@ -97,7 +101,7 @@ export default {};
   border: 0px;
   border-radius: 20px;
   transition: all 0.25s ease;
-    background: #F5F8FA;
+  background: #f5f8fa;
   &:focus {
     outline: none;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
@@ -113,7 +117,7 @@ export default {};
 
 @media (max-width: 768px) {
   .app-header {
-    padding-left:10px ;
+    padding-left: 10px;
   }
   .menu-icon {
     display: inline-block;

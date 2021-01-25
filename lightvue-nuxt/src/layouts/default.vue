@@ -25,7 +25,7 @@ export default {
   components: {
     AppHeader,
     SideMenu,
-    AppFooter
+    AppFooter,
   },
   data() {
     return {
@@ -61,22 +61,20 @@ body,
   -moz-osx-font-smoothing: grayscale;
 }
 
- /* Media Queries */
+/* Media Queries */
 @media only screen and (max-width: 600px) {
-  .bg-gray 
-    div {
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-    }
-  
+  .bg-gray div {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
 }
 .child {
-  position: absolute ;
+  position: absolute;
   right: 0px;
   top: 55px;
   padding: 30px;
   z-index: -10000;
-  width: calc(100% - 250px);
+  width: calc(100% - 250px) !important;
 }
 
 .feature-intro p {
