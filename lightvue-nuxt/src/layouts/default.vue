@@ -11,7 +11,6 @@
       <nuxt-child />
     </div>
     <app-footer />
-    <Nuxt />
   </div>
 </template>
 
@@ -71,7 +70,7 @@ body,
 .child {
   position: absolute;
   right: 0px;
-  top: 55px;
+  top: 76px;
   padding: 30px;
   z-index: -10000;
   width: calc(100% - 250px) !important;
