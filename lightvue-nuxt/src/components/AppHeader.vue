@@ -1,22 +1,33 @@
 <template>
   <div class="app-header">
     <div class="header-items">
-      <i
-        class="light-icon-menu-2 menu-icon"
-        @click="$emit('toggle-drawer')"
-      ></i>
-      <div class="logo" @click="$router.push('/')">
-        <img src="@/assets/logo.png" class="header-logo" />
-        <h3>&nbsp; LightVue</h3>
+      <div class="header__logo-row">
+        <i
+          class="light-icon-menu-2 menu-icon"
+          @click="$emit('toggle-drawer')"
+        ></i>
+        <div class="logo" @click="$router.push('/')">
+          <img src="@/assets/logo.png" class="header-logo" />
+          <h3 class="logo-text">&nbsp; LightVue</h3>
+        </div>
       </div>
-      <div class="icons__search-row">
-        <div class="icons__search-bar">
-          <input
-            class="icons__search-input"
-            placeholder="Search Icons"
-            type="text"
-          />
+      <div class="search-row">
+        <div class="search-bar">
+          <input class="search-input" placeholder="Search Icons" type="text" />
           <i class="light-icon-search search-icon"></i>
+        </div>
+      </div>
+      <div class="social__row">
+        <div class="header-social-icons__container">
+          <a href="" class="social-links">
+            <i class="header-social light-icon-brand-github"></i>
+          </a>
+          <a href="" class="social-links">
+            <i class="header-social light-icon-brand-twitter"></i>
+          </a>
+          <a href="" class="social-links">
+            <i class="header-social light-icon-brand-facebook"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -53,12 +64,13 @@ export default {};
   align-items: center;
 }
 .header-items {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-items: space-between;
 }
 
-.header-items i {
+.header-items .menu-icon {
   color: #333333;
   font-size: 30px;
   font-weight: bolder;
@@ -69,22 +81,21 @@ export default {};
     background: #e0e0e0;
   }
 }
+.header__logo-row {
+  display: flex;
+}
 .menu-icon {
   display: none;
 }
 .header-logo {
   width: 50px;
 }
-.icons__search-row {
-  position: sticky;
+.search-row {
   display: flex;
-
-  top: 0px;
   margin: auto;
   padding: 40px 0;
-  // background: #F5F8FA;
 }
-.icons__search-bar {
+.search-bar {
   position: relative;
   margin: 0 auto;
   width: 360px;
@@ -93,7 +104,7 @@ export default {};
   justify-content: center;
   z-index: 100;
 }
-.icons__search-input {
+.search-input {
   outline: none;
   width: 100%;
   padding: 15px 40px 15px 20px;
@@ -114,6 +125,26 @@ export default {};
   transition: all 0.25s ease;
   opacity: 0.5;
 }
+.social-links {
+  color: inherit;
+  text-decoration: none;
+}
+.social__row {
+  .header-social-icons__container {
+    .header-social {
+      font-size: 24px;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: black;
+        padding: 10px;
+        background: #dfdfdf;
+      }
+    }
+  }
+}
 
 @media (max-width: 768px) {
   .app-header {
@@ -124,8 +155,17 @@ export default {};
     margin-right: 12px;
     cursor: pointer;
   }
-  /* .header-logo {
-    width: 35px;
-  } */
+  .header-social-icons__container,
+  .logo-text {
+    display: none;
+  }
+  .search-bar {
+    width: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .search-bar {
+    width: 180px;
+  }
 }
 </style>
