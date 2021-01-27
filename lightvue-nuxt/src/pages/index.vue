@@ -2,9 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        lightvue-nuxt
-      </h1>
+      <h1 class="title">lightvue-nuxt</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -20,14 +18,40 @@
           rel="noopener noreferrer"
           class="button--grey"
         >
-       GitHub
-        </a>    </div>
+          GitHub
+        </a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  head: {
+    title: "LightVue | The Ultimate UI Component Library for Vue",
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { property: "og:title", content: "LightVue" },
+      { property: "og:image", content: "https://lightvue.com/icon.png" },
+      {
+        property: "og:site_name",
+        content: "LightVue | The Ultimate Vue Component Library",
+      },
+      {
+        property: "og:description",
+        content: "The Ultimate Component Library for Vue 2 & Vue 3",
+      },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Light Vue is the Ultimate Component Library for Vue 2 & Vue 3",
+      },
+    ],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+  },
+};
 </script>
 
 <style>
@@ -41,16 +65,8 @@ export default {}
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
