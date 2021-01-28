@@ -20,6 +20,10 @@
       title="Miscellaneous Usage"
       file="examples/buttons/ButtonDemo_Misc"
     />
+    <docs-card-vue
+      title="Miscellaneous Usage"
+      file="examples/buttons/ButtonDemo_Shadow"
+    />
     <template #api>
       <getting-started
         :package-name="$options.packageName"

@@ -1,209 +1,212 @@
-.lv--primary{
-    --theme-color: #38b2ac;
-    --theme-color-light: #8ed8d6;
-    --theme-color-dark: #319795;
-    --theme-color-inverse: #ffffff;
+.lv--primary {
+  --theme-color: #38b2ac;
+  --theme-color-light: #8ed8d6;
+  --theme-color-dark: #319795;
+  --theme-color-inverse: #ffffff;
 }
-.lv--secondary{
-    --theme-color: #607d8b;
-    --theme-color-light: #beccd2;
-    --theme-color-dark: #56717d;
-    --theme-color-inverse: #ffffff;
+.lv--secondary {
+  --theme-color: #607d8b;
+  --theme-color-light: #beccd2;
+  --theme-color-dark: #56717d;
+  --theme-color-inverse: #ffffff;
 }
-.lv--success{
-    --theme-color: #008c7f;
-    --theme-color-light: #95e8df;
-    --theme-color-dark: #03655b;
-    --theme-color-inverse: #ffffff;
+.lv--success {
+  --theme-color: #008c7f;
+  --theme-color-light: #95e8df;
+  --theme-color-dark: #03655b;
+  --theme-color-inverse: #ffffff;
 }
-.lv--info{
-    --theme-color: #0288d1;
-    --theme-color-light: #89d4fe;
-    --theme-color-dark: #027abc;
-    --theme-color-inverse: #ffffff;
+.lv--info {
+  --theme-color: #0288d1;
+  --theme-color-light: #89d4fe;
+  --theme-color-dark: #027abc;
+  --theme-color-inverse: #ffffff;
 }
-.lv--warning{
-    --theme-color: #ffb300;
-    --theme-color-light: #ffd36d;
-    --theme-color-dark: #df9c00;
-    --theme-color-inverse: #ffffff;
+.lv--warning {
+  --theme-color: #ffb300;
+  --theme-color-light: #ffd36d;
+  --theme-color-dark: #df9c00;
+  --theme-color-inverse: #ffffff;
 }
-.lv--help{
-    --theme-color: #795548;
-    --theme-color-light: #baafac;
-    --theme-color-dark: #795548;
-    --theme-color-inverse: #ffffff;
+.lv--help {
+  --theme-color: #795548;
+  --theme-color-light: #baafac;
+  --theme-color-dark: #795548;
+  --theme-color-inverse: #ffffff;
 }
-.lv--danger{
-    --theme-color: #bb2727;
-    --theme-color-light: #e9a5a5;
-    --theme-color-dark: #9b2222;
-    --theme-color-inverse: #ffffff;
+.lv--danger {
+  --theme-color: #bb2727;
+  --theme-color-light: #e9a5a5;
+  --theme-color-dark: #9b2222;
+  --theme-color-inverse: #ffffff;
 }
-.lv--plain{
-    --theme-color: #3f51b5;
-    --theme-color-light: #acb7f7;
-    --theme-color-dark: #2e3fa2;
-    --theme-color-inverse: #ffffff;
+.lv--plain {
+  --theme-color: #3f51b5;
+  --theme-color-light: #acb7f7;
+  --theme-color-dark: #2e3fa2;
+  --theme-color-inverse: #ffffff;
 }
 .lv-button {
-    // color: #ffffff;
-    // background: var(--primary-color);
-    color: var(--theme-color-inverse);
-    background-color: var(--theme-color);
-    // border: 1px solid var(--primary-color);
-    border: none;
-    padding: 0.5rem 1rem;
+  // color: #ffffff;
+  // background: var(--primary-color);
+  color: var(--theme-color-inverse);
+  background-color: var(--theme-color);
+  // border: 1px solid var(--primary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s, border-radius 0.3s;
+  border-radius: 4px;
+  &:enabled {
+    &:hover {
+      // background: #319795;
+      background-color: var(--theme-color-dark);
+      color: #ffffff;
+      // border-color: #319795;
+    }
+    &:active {
+      // background: var(--primary-color);
+      background-color: var(--theme-color);
+      color: #ffffff;
+      // border-color: var(--primary-color);
+    }
+  }
+  &:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem var(--theme-color-light);
+  }
+  &.--size-sm {
+    font-size: 0.875rem;
+    padding: 0.4375rem 0.875rem;
+    .lv-button__icon i {
+      font-size: 0.875rem;
+    }
+  }
+  &.--size-md {
     font-size: 1rem;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, border-radius 0.3s;
-    border-radius: 4px;
-	&:enabled {
-		&:hover {
-            // background: #319795;
-            background-color: var(--theme-color-dark);
-			color: #ffffff;
-			// border-color: #319795;
-		}
-		&:active {
-            // background: var(--primary-color);
-            background-color: var(--theme-color);
-			color: #ffffff;
-			// border-color: var(--primary-color);
-		}
-	}
-	&:focus {
-		outline: 0 none;
-		outline-offset: 0;
-		box-shadow: 0 0 0 0.2rem var(--theme-color-light);
+    padding: 0.5rem 1rem;
+    .lv-button__icon i {
+      font-size: 1rem;
     }
-    &.--size-sm {
-        font-size: 0.875rem;
-        padding: 0.4375rem 0.875rem;
-        .lv-button__icon i{
-            font-size: 0.875rem;
-        }
+  }
+  &.--size-lg {
+    font-size: 1.25rem;
+    padding: 0.625rem 1.25rem;
+    .lv-button__icon i {
+      font-size: 1.25rem;
     }
-    &.--size-md {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        .lv-button__icon i{
-            font-size: 1rem;
-        }
+  }
+  &.--size-xl {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    .lv-button__icon i {
+      font-size: 1.5rem;
     }
-    &.--size-lg {
-        font-size: 1.25rem;
-        padding: 0.625rem 1.25rem;
-        .lv-button__icon i{
-            font-size: 1.25rem;
-        }
-    }
-    &.--size-xl {
-        font-size: 1.5rem;
-        padding: 0.75rem 1.5rem;
-        .lv-button__icon i{
-            font-size: 1.5rem;
-        }
-    }
-    /* Raised Buttons */
-    &.--raised {
-        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    }
-    // Buttons Hover Shadow 
-    &.--deep-shadow-hover:hover {
-        box-shadow: 0 6px 16px -1px var(--theme-color);
-    }
-    // Deep Shodow
-    &.--deep-shadow {
-        box-shadow: 0 6px 16px -1px var(--theme-color);
-    }
-    // Raised buttons
-    &.--raised.--deep-shadow-hover:hover {
-        background-color:var(--theme-color) !important;
-        color: #ffffff !important;
-        box-shadow: 0px 7px 10px var(--theme-color);
-        transform: translateY(-3px);
-    }
+  }
+  /* Raised Buttons */
+  &.--raised {
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  // Buttons Hover Shadow
+  &.--deep-shadow-hover:hover {
+    box-shadow: 0 6px 16px -1px var(--theme-color);
+  }
+  // Deep Shodow
+  &.--deep-shadow {
+    box-shadow: 0 6px 16px -1px var(--theme-color);
+  }
+  // Raised buttons
+  &.--raised.--deep-shadow-hover:hover {
+    background-color: var(--theme-color) !important;
+    color: #ffffff !important;
+    box-shadow: 0px 7px 10px var(--theme-color);
+    transform: translateY(-3px);
+  }
 
-    &.--icon-only {
-        width: 2.357rem;
-        // padding: 0.5rem 0;
-        &.--rounded {
-            height: 2.357rem;
-        }
+  &.--icon-only {
+    width: 2.357rem;
+    // padding: 0.5rem 0;
+    &.--rounded {
+      height: 2.357rem;
     }
-    &.--outlined {
-        background-color: transparent;
-        color: var(--theme-color);
-        border: 1px solid;
-        &:enabled {
-            &:hover {
-                background-color: var(--theme-color);
-                border: 1px solid var(--theme-color);
-            }
-            &:active {
-                background-color: var(--theme-color);
-                border: 1px solid var(--theme-color);
-            }
-        }
+  }
+  &.--outlined {
+    background-color: transparent;
+    color: var(--theme-color);
+    border: 1px solid;
+    &:enabled {
+      &:hover {
+        background-color: var(--theme-color);
+        border: 1px solid var(--theme-color);
+      }
+      &:active {
+        background-color: var(--theme-color);
+        border: 1px solid var(--theme-color);
+      }
     }
-    &.--text-button {
-        background-color: transparent;
+  }
+  &.--text-button {
+    background-color: transparent;
+    color: var(--theme-color);
+    border-color: transparent;
+    &:enabled {
+      &:hover {
+        background: rgba(33, 150, 243, 0.04);
         color: var(--theme-color);
         border-color: transparent;
-        &:enabled {
-            &:hover {
-                background: rgba(33, 150, 243, 0.04);
-                color: var(--theme-color);
-                border-color: transparent;
-            }
-            &:active {
-                background: rgba(33, 150, 243, 0.04);
-                color: var(--theme-color);
-                border-color: var(--theme-color);
-            }
-        }
-    }
-    &.--link-button {
+      }
+      &:active {
+        background: rgba(33, 150, 243, 0.04);
         color: var(--theme-color);
-        background: transparent;
-        border: transparent;
-        text-decoration: none;
-        font-weight: 500;
-        &:enabled {
-            &:hover {
-                background: rgba(0, 0, 0, 0.05);
-                color: var(--theme-color);
-                border-color: transparent;
-                // .lv-button__label {
-                // 	text-decoration: underline;
-                // }
-            }
-            &:focus {
-                background: rgba(0, 0, 0, 0.05);
-                box-shadow: none;
-                // box-shadow: 0 0 0 0.2rem #a6d5fa;
-                border-color: transparent;
-            }
-            &:active {
-                background: transparent;
-                color: var(--theme-color);
-                border-color: transparent;
-            }
-        }
+        border-color: var(--theme-color);
+      }
     }
+  }
+  &.--link-button {
+    color: var(--theme-color);
+    background: transparent;
+    border: transparent;
+    text-decoration: none;
+    font-weight: 500;
+    &:enabled {
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: var(--theme-color);
+        border-color: transparent;
+        // .lv-button__label {
+        // 	text-decoration: underline;
+        // }
+      }
+      &:focus {
+        background: rgba(0, 0, 0, 0.05);
+        box-shadow: none;
+        // box-shadow: 0 0 0 0.2rem #a6d5fa;
+        border-color: transparent;
+      }
+      &:active {
+        background: transparent;
+        color: var(--theme-color);
+        border-color: transparent;
+      }
+    }
+  }
 }
 
-.lv-fluid { /* can be provided in parent, to give 100% width */
-	.lv-button {
-		width: 100%;
-	}
-	.--icon-only {
-		width: 2.357rem;
-	}
-	.lv-buttonset {
-		display: flex;
-		.lv-button {
-			flex: 1;
-		}
-	}
+.lv-fluid {
+  /* can be provided in parent, to give 100% width */
+  .lv-button {
+    width: 100%;
+  }
+  .--icon-only {
+    width: 2.357rem;
+  }
+  .lv-buttonset {
+    display: flex;
+    .lv-button {
+      flex: 1;
+    }
+  }
 }
