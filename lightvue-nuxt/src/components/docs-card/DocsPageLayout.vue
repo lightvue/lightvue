@@ -36,11 +36,20 @@
         <slot name="api"></slot>
       </div>
     </div>
+    <div class="content-section introduction">
+      <div class="feature-intro">
+        <app-footer />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import AppFooter from "@/components/AppFooter.vue";
 export default {
+  components: {
+    AppFooter,
+  },
   props: ["title", "description"],
   data() {
     return {

@@ -7,24 +7,21 @@
       @click="toggleDrawer()"
     ></div>
     <side-menu :show-drawer="showDrawer" @toggle-drawer="toggleDrawer()" />
-    <div class="child">
+    <div class="side-menu__child">
       <nuxt-child />
     </div>
-    <app-footer />
   </div>
 </template>
 
 <script>
 import "light-icons/dist/light-icon.css";
 import AppHeader from "@/components/AppHeader.vue";
-import AppFooter from "@/components/AppFooter.vue";
 import SideMenu from "@/components/SideMenu.vue";
 
 export default {
   components: {
     AppHeader,
     SideMenu,
-    AppFooter,
   },
   data() {
     return {
@@ -67,13 +64,13 @@ body,
     border-radius: 4px;
   }
 }
-.child {
+.side-menu__child {
   position: absolute;
   right: 0px;
   top: 76px;
   padding: 30px;
   z-index: -10000;
-  width: calc(100% - 250px) !important;
+  width: calc(100% - 250px);
 }
 
 .feature-intro p {
@@ -95,7 +92,7 @@ body,
 }
 
 @media (max-width: 769px) {
-  .child {
+  .side-menu__child {
     left: 0px;
     width: 100%;
   }
