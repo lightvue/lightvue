@@ -1,7 +1,12 @@
 <template>
-  <div class="docs-card">
+  <div class="docs-card" :id="computedId">
     <div class="docs-card__header">
-      <h5 class="docs-card__title">{{ title }}</h5>
+      <h5
+        class="docs-card__title"
+        @click="$router.push({ hash: `#${computedId}` })"
+      >
+        {{ title }}
+      </h5>
       <div class="docs-card__actions">
         <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
           <i
@@ -51,6 +56,7 @@ export default {
     ResponsiveDemo,
   },
   props: {
+    id: String,
     title: String,
     sourceLink: String,
     responsive: {
@@ -76,6 +82,13 @@ export default {
     },
     openURL(link) {
       window.open(link, "_blank");
+    },
+  },
+  computed: {
+    computedId() {
+      return this.$props.id
+        ? this.$props.id
+        : this.title.split(" ").join("-").toLowerCase();
     },
   },
 };
