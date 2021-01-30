@@ -1,5 +1,5 @@
 <template>
-  <div class="copy-btn-wrap">
+  <div class="copy-btn__wrap">
     <div class="copy-btn" @click="copy">
       <i class="light-icon-copy"></i>
     </div>
@@ -7,7 +7,7 @@
       enter-active-class="animated fadeIn"
       leave-active-class="animated fadeOut"
     >
-      <div v-show="copied" class="copy-btn-tag">
+      <div v-show="copied" class="copy-btn__tag">
         <i class="light-icon-circle-check" /> Copied to clipboard
       </div>
     </transition>
@@ -43,7 +43,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.copy-btn-wrap {
+.copy-btn__wrap {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -63,7 +63,7 @@ export default {
 .copy-btn:hover i {
   opacity: 0.8;
 }
-.copy-btn-tag {
+.copy-btn__tag {
   position: absolute;
   top: 0px;
   right: 52px;

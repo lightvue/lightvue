@@ -1,7 +1,7 @@
 <template>
   <DocsCard title="Getting Started" :responsive="false">
     <div class="getting-started">
-      <div class="docs-step">
+      <div class="getting-started__docs">
         <CodeHighlight lang="javascript">
           <pre>
 // import lightvue component
@@ -10,7 +10,7 @@ import {{ componentName }} from 'lightvue/{{ packageName }}';
           >
         </CodeHighlight>
       </div>
-      <div class="docs-step">
+      <div class="getting-started__docs">
         <CodeHighlight lang="javascript">
           <pre>
 // register the component globally
@@ -19,7 +19,7 @@ Vue.component('{{ componentName }}', {{ componentName }});
           >
         </CodeHighlight>
       </div>
-      <div class="docs-step">
+      <div class="getting-started__docs">
         <CodeHighlight lang="javascript">
           <pre>
 // register the component locally
@@ -59,17 +59,17 @@ export default {
 </script>
 
 <style scoped>
-.docs-step {
+.getting-started__docs {
   /* border-left: 4px solid #dee7ea;
     border-top: 1px solid #f5f8f9;
     background-color: #f5f8f9;
     margin-top: 16px; */
   border-top: 2px dashed #dee7ea;
 }
-/* .docs-step:hover{
+/* .getting-started__docs:hover{
     background-color: #f5f8f9;
 } */
-/* .docs-step__heading{
+/* .getting-started__docs__heading{
     font-size: 16px;
     font-weight: 600;
     padding: 8px 16px 0px;

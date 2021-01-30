@@ -14,8 +14,8 @@
           <Loader />
         </slot>
       </Pane>
-      <Pane :size="100 - paneSize" class="extra-area">
-        <div class="resize-icon">
+      <Pane :size="100 - paneSize" class="responsive-area__extra">
+        <div class="extra--resize-icon">
           <i class="light-icon-grip-vertical"></i>
         </div>
         <div
@@ -129,7 +129,7 @@ export default {
     overflow: initial !important;
   }
 }
-.extra-area {
+.responsive-area__extra {
   background-color: #607d8b !important;
   height: unset !important;
   position: relative;
@@ -137,7 +137,7 @@ export default {
   width: 0px; /* Initial default width */
   box-shadow: inset 0px 0px 20px 2px rgba(0, 0, 0, 0.25);
 }
-.resize-icon {
+.extra--resize-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

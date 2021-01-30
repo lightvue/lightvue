@@ -8,112 +8,112 @@
         <img src="@/assets/logo.png" class="header-logo" />
         <h3>&nbsp; LightVue</h3>
       </div>
-      <h5 class="nav-head">About lightVue</h5>
-      <nuxt-link to="/" class="nav-item">
-        <div class="nav-label">Home Page</div>
+      <h5 class="nav-list__head">About lightVue</h5>
+      <nuxt-link to="/" class="nav-list__item">
+        <div class="nav-list__label">Home Page</div>
       </nuxt-link>
-      <nuxt-link to="/" class="nav-item">
-        <div class="nav-label">Get Started</div>
+      <nuxt-link to="/" class="nav-list__item">
+        <div class="nav-list__label">Get Started</div>
       </nuxt-link>
-      <nuxt-link to="/" class="nav-item">
-        <div class="nav-label">Sponser Us</div>
+      <nuxt-link to="/" class="nav-list__item">
+        <div class="nav-list__label">Sponser Us</div>
       </nuxt-link>
-      <!-- <div class="nav-item">
-        <div class="nav-label">Source Code</div>
+      <!-- <div class="nav-list__item">
+        <div class="nav-list__label">Source Code</div>
       </div>
-      <div class="nav-item">
-        <div class="nav-label">Support</div>
+      <div class="nav-list__item">
+        <div class="nav-list__label">Support</div>
       </div> -->
-      <h5 class="nav-head">Form Items</h5>
-      <nuxt-link to="/input-docs" class="nav-item">
-        <div class="nav-label">InputDemo</div>
+      <h5 class="nav-list__head">Form Items</h5>
+      <nuxt-link to="/input-docs" class="nav-list__item">
+        <div class="nav-list__label">InputDemo</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-item">
-        <div class="nav-label">Buttons</div>
+      <nuxt-link to="/button-docs" class="nav-list__item">
+        <div class="nav-list__label">Buttons</div>
       </nuxt-link>
     </div>
   </div>
@@ -151,7 +151,7 @@ export default {
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-.nav-item {
+.nav-list__item {
   color: #566d79;
   display: block;
   padding: 12px 16px;
@@ -161,13 +161,13 @@ export default {
   margin: 5px 0;
   border-radius: 5px;
 }
-.nav-item.active,
-.nav-item:hover {
+.nav-list__item.active,
+.nav-list__item:hover {
   background-color: #f1f5f8;
 }
 .nav-list {
   padding: 20px 0px;
-  .nav-head {
+  .nav-list__head {
     padding: 5px 0;
     margin: 25px 16px 10px 16px;
     border-bottom: 1px solid #566d79;
@@ -177,7 +177,7 @@ export default {
     border-radius: 5px;
   }
 }
-.nav-label {
+.nav-list__label {
   margin-left: 12px;
 }
 .sidebar__logo {
