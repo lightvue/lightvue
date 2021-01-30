@@ -19,6 +19,7 @@ import AppHeader from "@/components/AppHeader.vue";
 import SideMenu from "@/components/SideMenu.vue";
 
 export default {
+  scrollToTop: true,
   components: {
     AppHeader,
     SideMenu,
