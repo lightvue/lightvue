@@ -45,6 +45,19 @@ export default {
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
   ],
+  router: {
+    scrollBehavior(to) {
+      if (to.hash) {
+        const el = document.getElementById(to.hash.substring(1));
+        if (el) { // a valid id on page.
+          setTimeout(() => {
+            return window.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+          }, 1000) // wait 2 seconds before scrolling
+        }
+      }
+      return window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},

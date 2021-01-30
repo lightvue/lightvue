@@ -15,6 +15,7 @@
     <docs-card-vue
       title="Push Buttons"
       file="examples/buttons/ButtonDemo_Raised"
+      id="push"
     />
     <docs-card-vue
       title="Miscellaneous Usage"
