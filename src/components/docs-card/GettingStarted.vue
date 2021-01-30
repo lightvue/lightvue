@@ -1,5 +1,5 @@
 <template>
-  <DocsCard title="Getting Started" :responsive="false">
+  <DocsCard title="Getting Started" :responsive="false" id="docs-installation">
     <div class="getting-started">
       <div class="getting-started__docs">
         <CodeHighlight lang="javascript">

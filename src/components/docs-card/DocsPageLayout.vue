@@ -16,23 +16,23 @@
       <div class="content-header">
         <div
           class="demo-tab"
-          :class="{ active: currentTab === 'collection' }"
-          @click="demoTab = 'collection'"
+          :class="{ active: selectedTab === 'collection' }"
+          @click="selectedTab = 'collection'"
         >
           Collection
         </div>
         <div
           class="demo-tab"
-          :class="{ active: currentTab === 'api' }"
-          @click="demoTab = 'api'"
+          :class="{ active: selectedTab === 'api' }"
+          @click="selectedTab = 'api'"
         >
           Documentation
         </div>
       </div>
-      <div v-show="demoTab === 'collection'">
+      <div v-show="selectedTab === 'collection'">
         <slot></slot>
       </div>
-      <div v-show="demoTab === 'api'">
+      <div v-show="selectedTab === 'api'">
         <slot name="api"></slot>
       </div>
     </div>
@@ -54,18 +54,15 @@ export default {
   props: ["title", "description"],
   data() {
     return {
-      demoTab: "collection", //'api'
+      selectedTab: "collection", //'api'
     };
   },
-  computed: {
-    currentTab() {
-      return this.demoTab;
-      // if (this.$route.path.includes("api")) {
-      //   return "api";
-      // } else {
-      //   return "collection";
-      // }
-    },
+  created() {
+    if (this.$route.hash?.includes("docs-")) {
+      this.selectedTab = "api";
+    } else {
+      this.selectedTab = "collection";
+    }
   },
 };
 </script>
