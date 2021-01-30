@@ -7,7 +7,7 @@
       <div class="hero-container">
         <div class="hero-container__row">
           <div class="hero-container__content">
-            <h1 class="hero-container__heading">LightVue</h1>
+            <!-- <h1 class="hero-container__heading">LightVue</h1> -->
 
             <p class="hero-container__subtext">
               The Ultimate UI Component Library
@@ -65,6 +65,10 @@ $text-color-secondary: #eeecec;
   .hero-logo {
     display: flex;
     justify-content: center;
+    img {
+      width: 200px;
+      margin-bottom: 30px;
+    }
   }
   .hero-container {
     display: flow-root;

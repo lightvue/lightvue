@@ -5,116 +5,87 @@
   >
     <div class="nav-list">
       <div class="sidebar__logo" @click="$router.push('/')">
-        <img src="@/assets/logo.png" class="header-logo" />
-        <h3>&nbsp; LightVue</h3>
+        <img src="@/assets/logo_rect.png" class="header-logo" />
+        <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
-      <h5 class="nav-list__head">About lightVue</h5>
-      <nuxt-link to="/" class="nav-list__item">
-        <div class="nav-list__label">Home Page</div>
-      </nuxt-link>
-      <nuxt-link to="/" class="nav-list__item">
-        <div class="nav-list__label">Get Started</div>
-      </nuxt-link>
-      <nuxt-link to="/" class="nav-list__item">
-        <div class="nav-list__label">Sponser Us</div>
-      </nuxt-link>
+      <div class="nav-list__nest">
+        <h5 class="nav-list__head"><i class="light-icon-bulb"></i> About</h5>
+        <div class="nav-list__container">
+          <nuxt-link to="/" class="nav-list__item">
+            <div class="nav-list__label">Home Page</div>
+          </nuxt-link>
+          <nuxt-link to="/" class="nav-list__item">
+            <div class="nav-list__label">Get Started</div>
+          </nuxt-link>
+          <nuxt-link to="/" class="nav-list__item">
+            <div class="nav-list__label">Sponser Us</div>
+          </nuxt-link>
+        </div>
+      </div>
       <!-- <div class="nav-list__item">
         <div class="nav-list__label">Source Code</div>
       </div>
       <div class="nav-list__item">
         <div class="nav-list__label">Support</div>
       </div> -->
-      <h5 class="nav-list__head">Form Items</h5>
-      <nuxt-link to="/input-docs" class="nav-list__item">
-        <div class="nav-list__label">InputDemo</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
-      <nuxt-link to="/button-docs" class="nav-list__item">
-        <div class="nav-list__label">Buttons</div>
-      </nuxt-link>
+      <div class="nav-list__nest">
+        <h5 class="nav-list__head">
+          <i class="light-icon-clipboard"></i>Form Items
+        </h5>
+        <nuxt-link to="/input-docs" class="nav-list__item">
+          <div class="nav-list__label">InputDemo</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+      </div>
+      <div class="nav-list__nest">
+        <h5 class="nav-list__head">
+          <i class="light-icon-brand-github"></i>Form Items
+        </h5>
+        <nuxt-link to="/input-docs" class="nav-list__item">
+          <div class="nav-list__label">InputDemo</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+        <nuxt-link to="/button-docs" class="nav-list__item">
+          <div class="nav-list__label">Buttons</div>
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -150,11 +121,18 @@ export default {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
-
+.nav-list__nest {
+  border-radius: 3px;
+  background: #ececec;
+  margin-bottom: 10px;
+}
+.nav-list__container {
+  // padding: 10px;
+  padding-bottom: 5px;
+}
 .nav-list__item {
-  color: #566d79;
+  color: #a0a0a0;
   display: block;
-  padding: 12px 16px;
   // border-radius: 3px;
   cursor: pointer;
   font-size: 14px;
@@ -163,30 +141,39 @@ export default {
 }
 .nav-list__item.active,
 .nav-list__item:hover {
-  background-color: #f1f5f8;
+  // background-color: #f1f5f8;
+  color: #6b7377;
 }
 .nav-list {
   padding: 20px 0px;
   .nav-list__head {
-    padding: 5px 0;
-    margin: 25px 16px 10px 16px;
-    border-bottom: 1px solid #566d79;
+    font-size: 16px;
+    padding: 20px 20px 0 20px;
+    // margin: 25px 16px 10px 16px;
+    // border-bottom: 1px solid #566d79;
+    i {
+      margin-right: 5px;
+    }
   }
   .nuxt-link-exact-active {
-    background-color: #e0e7ec;
-    border-radius: 5px;
+    // background-color: #e0e7ec;
+    // border-radius: 5px;
+    color: #697074;
+    text-decoration: underline;
   }
 }
 .nav-list__label {
-  margin-left: 12px;
+  font-size: 13px;
+  margin-left: 30px;
+  padding: 5px 18px;
 }
 .sidebar__logo {
   display: none;
   align-items: center;
   cursor: pointer;
-  margin: 0px 0px 20px 20px;
+  margin: 0px 0px 20px;
   .header-logo {
-    width: 80px;
+    width: 100%;
   }
 }
 @media (max-width: 768px) {

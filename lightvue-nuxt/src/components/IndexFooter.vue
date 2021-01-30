@@ -5,7 +5,7 @@
         <a href="#">
           <img src="../assets/logo.png" alt="" />
         </a>
-        <h2>Light-Vue</h2>
+        <!-- <h2>Light-Vue</h2> -->
       </div>
       <div class="footer__links">
         <h6>Links</h6>
