@@ -31,21 +31,21 @@
 
 <style lang="scss" scoped>
 .layout-footer {
-  margin-top: 40px;
-  padding: 30px 10px;
+  padding: 0px 10px;
   color: #566d79;
   width: 100%;
   .layout-footer__div {
     border-top: 1px dotted #81a8bb;
     text-align: center;
     h5 {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     i {
       color: #81a8bb;
       font-size: 24px;
       padding: 10px;
       margin: 10px;
+      margin-bottom: 0;
       border-radius: 50%;
       transition: 0.4s all ease-in-out;
       &:hover {
@@ -56,7 +56,7 @@
   }
   .layout-footer__row {
     // text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     a {
       text-decoration: none;
       color: #3fc5be;
@@ -66,9 +66,10 @@
     }
   }
   .layout-footer__legal {
-    margin: 30px 100px;
+    margin: 5px 100px;
+    margin-bottom: 0;
     text-align: center;
-    padding: 20px 5px;
+    padding: 5px 5px;
     border-top: 1px dotted #81a8bb;
   }
 }
