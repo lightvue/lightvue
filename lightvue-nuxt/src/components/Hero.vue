@@ -17,8 +17,13 @@
         </div>
         <div class="hero-container__row">
           <div class="hero-container__buttons">
-            <button class="hero-button">Get Started</button>
-            <button class="hero-button">Documentation</button>
+            <nuxt-link to="/button-docs">
+              <LvButton label="Get Started" class="hero-button" />
+            </nuxt-link>
+            <nuxt-link to="/button-docs">
+              <LvButton label="Documentation" class="hero-button" />
+            </nuxt-link>
+            <!-- <button class="hero-button">Documentation</button> -->
           </div>
         </div>
         <div class="hero-container__row">
@@ -110,7 +115,7 @@ $text-color-secondary: #eeecec;
 
       .hero-button {
         box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-        background-color: #212326;
+        background-color: #143a56;
         color: #ffffff;
         display: inline-block;
         padding: 1em 1.8125em;
@@ -124,7 +129,7 @@ $text-color-secondary: #eeecec;
         margin-bottom: 0;
         cursor: pointer;
         &:hover {
-          background: black;
+          background: #0b283d;
         }
       }
     }
