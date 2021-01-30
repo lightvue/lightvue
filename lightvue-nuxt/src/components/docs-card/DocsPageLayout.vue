@@ -16,14 +16,14 @@
       <div class="content-header">
         <div
           class="demo-tab"
-          :class="{ active: demoTab === 'collection' }"
+          :class="{ active: currentTab === 'collection' }"
           @click="demoTab = 'collection'"
         >
           Collection
         </div>
         <div
           class="demo-tab"
-          :class="{ active: demoTab === 'api' }"
+          :class="{ active: currentTab === 'api' }"
           @click="demoTab = 'api'"
         >
           Documentation
@@ -36,6 +36,7 @@
         <slot name="api"></slot>
       </div>
     </div>
+    <nuxt />
     <div class="content-section introduction">
       <div class="feature-intro">
         <app-footer />
@@ -55,6 +56,16 @@ export default {
     return {
       demoTab: "collection", //'api'
     };
+  },
+  computed: {
+    currentTab() {
+      return this.demoTab;
+      // if (this.$route.path.includes("api")) {
+      //   return "api";
+      // } else {
+      //   return "collection";
+      // }
+    },
   },
 };
 </script>
