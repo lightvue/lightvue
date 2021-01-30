@@ -5,7 +5,7 @@
         class="docs-card__title"
         @click="$router.push({ hash: `#${computedId}` })"
       >
-        {{ title }}
+        # {{ title }}
       </h5>
       <div class="docs-card__actions">
         <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
@@ -136,6 +136,7 @@ export default {
     background: #dfe7eb;
     color: #607b89;
     position: relative;
+    cursor: pointer;
     border-radius: 6px 20px 20px 0;
     box-shadow: 1px 2px 4px -1px rgba(0, 0, 0, 0.4);
   }

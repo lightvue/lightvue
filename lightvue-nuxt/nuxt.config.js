@@ -47,12 +47,14 @@ export default {
   ],
   router: {
     scrollBehavior(to) {
+      console.log(to);
       if (to.hash) {
         const el = document.getElementById(to.hash.substring(1));
         if (el) { // a valid id on page.
           setTimeout(() => {
             return window.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
-          }, 1000) // wait 2 seconds before scrolling
+          }, 500) // wait before scrolling, for initial loading delay
+          return;
         }
       }
       return window.scrollTo({ top: 0, behavior: 'smooth' });
