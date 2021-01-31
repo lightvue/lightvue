@@ -17,14 +17,14 @@
         <div
           class="demo-tab"
           :class="{ active: selectedTab === 'collection' }"
-          @click="selectedTab = 'collection'"
+          @click="selectTab('collection')"
         >
           Collection
         </div>
         <div
           class="demo-tab"
           :class="{ active: selectedTab === 'api' }"
-          @click="selectedTab = 'api'"
+          @click="selectTab('api')"
         >
           Documentation
         </div>
@@ -63,6 +63,12 @@ export default {
     } else {
       this.selectedTab = "collection";
     }
+  },
+  methods: {
+    selectTab(newTab) {
+      this.selectedTab = newTab;
+      this.$router.push({ hash: newTab === "api" ? "docs" : "" });
+    },
   },
 };
 </script>
