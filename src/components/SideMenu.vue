@@ -32,10 +32,10 @@
         <h5 class="nav-list__head">
           <i class="light-icon-clipboard"></i>Form Items
         </h5>
-        <nuxt-link to="/input-docs" class="nav-list__item">
+        <nuxt-link to="/vue-components/input" class="nav-list__item">
           <div class="nav-list__label">InputDemo</div>
         </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
+        <nuxt-link to="/vue-components/button" class="nav-list__item">
           <div class="nav-list__label">Buttons</div>
         </nuxt-link>
         <nuxt-link to="/button-docs" class="nav-list__item">

@@ -17,10 +17,10 @@
         </div>
         <div class="hero-container__row">
           <div class="hero-container__buttons">
-            <nuxt-link to="/button-docs">
+            <nuxt-link to="/vue-components/button">
               <LvButton label="Get Started" class="hero-button" />
             </nuxt-link>
-            <nuxt-link to="/button-docs">
+            <nuxt-link to="/vue-components/button-docs">
               <LvButton label="Documentation" class="hero-button" />
             </nuxt-link>
             <!-- <button class="hero-button">Documentation</button> -->

@@ -58,7 +58,7 @@ export default {
     };
   },
   created() {
-    if (this.$route.hash?.includes("docs-")) {
+    if (this.$route.hash?.includes("docs")) {
       this.selectedTab = "api";
     } else {
       this.selectedTab = "collection";
