@@ -1,0 +1,17 @@
+.#{$light-checkbox--class-name}.--radio {
+  .state label {
+    &:before,
+    &:after {
+      border-radius: 100%;
+    }
+  }
+
+  &.--with-icon .state .icon {
+    border-radius: 100%;
+    overflow: hidden;
+
+    &:before {
+      transform: scale(0.8);
+    }
+  }
+}

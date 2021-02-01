@@ -1,0 +1,53 @@
+.#{$light-checkbox--class-name} {
+  @each $name, $color in $light-checkbox--colors {
+    input:checked ~ .state.p-#{$name},
+    &.--toggle .state.p-#{$name} {
+      label:after {
+        background-color: $color !important;
+      }
+
+      .icon,
+      .svg {
+        color: #fff;
+        stroke: #fff;
+      }
+    }
+
+    input:checked ~ .state.p-#{$name}-o,
+    &.--toggle .state.p-#{$name}-o {
+      label:before {
+        border-color: $color;
+      }
+
+      label:after {
+        background-color: transparent;
+      }
+
+      .icon,
+      .svg,
+      svg {
+        color: $color;
+        stroke: $color;
+      }
+    }
+
+    &.--default:not(.--filled) input:checked ~ .state.p-#{$name}-o label {
+      &:after {
+        background-color: $color !important;
+      }
+    }
+
+    // &.p-switch input:checked ~ .state.p-#{$name}:before {
+    //   border-color: $color;
+    // }
+
+    // &.p-switch.--filled input:checked ~ .state.p-#{$name}:before {
+    //   background-color: $color !important;
+    // }
+
+    // &.p-switch.p-slim input:checked ~ .state.p-#{$name}:before {
+    //   border-color: darken($color, 20%);
+    //   background-color: darken($color, 20%) !important;
+    // }
+  }
+}
