@@ -1,0 +1,61 @@
+/**
+ * Copyright (c) 2016 Connor Atherton
+ *
+ * All animations must live in their own file
+ * in the animations directory and be included
+ * here.
+ *
+ */
+
+/**
+ * Styles shared by multiple animations
+ */
+// @import 'scss/variables';
+// @import 'scss/mixins';
+
+/**
+ * Dots
+ */
+ // BALL SCALE MULTIPLE?
+ // LINE SCALE PARTY?
+// @import 'scss/animations/ball-pulse';
+// @import 'scss/animations/ball-pulse-sync';
+// @import 'scss/animations/ball-scale';
+// @import 'scss/animations/ball-scale-random';
+// @import 'scss/animations/ball-rotate';
+// @import 'scss/animations/ball-clip-rotate';
+// @import 'scss/animations/ball-clip-rotate-pulse';
+@import 'scss/animations/ball-clip-rotate-multiple';
+// @import 'scss/animations/ball-scale-ripple';
+// @import 'scss/animations/ball-scale-ripple-multiple';
+// @import 'scss/animations/ball-beat';
+// @import 'scss/animations/ball-scale-multiple';
+// @import 'scss/animations/ball-triangle-path';
+// @import 'scss/animations/ball-pulse-rise';
+// @import 'scss/animations/ball-grid-beat';
+// @import 'scss/animations/ball-grid-pulse';
+// @import 'scss/animations/ball-spin-fade-loader';
+@import 'scss/animations/ball-spin-loader';
+// @import 'scss/animations/ball-zig-zag';
+// @import 'scss/animations/ball-zig-zag-deflect';
+
+/**
+ * Lines
+ */
+// @import 'scss/animations/line-scale';
+@import 'scss/animations/line-scale-random';
+// @import 'scss/animations/line-scale-pulse-out';
+// @import 'scss/animations/line-scale-pulse-out-rapid';
+// @import 'scss/animations/line-spin-fade-loader';
+
+/**
+ * Misc
+ */
+// @import 'scss/animations/triangle-skew-spin';
+// @import 'scss/animations/square-spin';
+// @import 'scss/animations/pacman';
+// @import 'scss/animations/cube-transition';
+// @import 'scss/animations/semi-circle-spin';
+// .loader-inner{
+//     display: inline-block;
+// }
