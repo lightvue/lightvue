@@ -72,11 +72,11 @@
         <nuxt-link to="/vue-components/buttons" class="nav-list__item">
           <div class="nav-list__label">Buttons</div>
         </nuxt-link>
-        <nuxt-link to="/vue-components/" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
+        <nuxt-link to="/vue-components/shimmers" class="nav-list__item">
+          <div class="nav-list__label">Shimmers</div>
         </nuxt-link>
-        <nuxt-link to="/vue-components/" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
+        <nuxt-link to="/vue-components/glass-card" class="nav-list__item">
+          <div class="nav-list__label">Glass Card</div>
         </nuxt-link>
       </div>
     </div>

@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.2",
-    "axios": "^0.21.1",
     "algoliasearch": "^4.8.4",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "instantsearch.css": "^7.4.5",
     "light-icons": "^1.0.2",

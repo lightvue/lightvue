@@ -1,15 +1,7 @@
 <template>
   <div>
-    <Splitpanes
-      @resize="setPane($event[0].size)"
-      @pane-maximize="setPane(100 - $event.size)"
-    >
-      <Pane
-        :size="paneSize"
-        :min-size="minSize"
-        class="responsive-area"
-        :class="{ '--allow-overflow': overflow }"
-      >
+    <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
+      <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
           <Loader />
         </slot>
@@ -18,22 +10,16 @@
         <div class="extra--resize-icon">
           <i class="light-icon-grip-vertical"></i>
         </div>
-        <div
-          v-if="paneSize <= 90"
-          class="responsive-dimensions"
-          @dblclick="toggleDevice"
-        >
-          {{ paneSizePixel }}px
-        </div>
+        <div v-if="paneSize <= 90" class="responsive-dimensions" @dblclick="toggleDevice">{{ paneSizePixel }}px</div>
       </Pane>
     </Splitpanes>
   </div>
 </template>
 
 <script>
-import { Splitpanes, Pane } from "splitpanes";
-import "splitpanes/dist/splitpanes.css";
-import Loader from "./Loader.vue";
+import { Splitpanes, Pane } from 'splitpanes';
+import 'splitpanes/dist/splitpanes.css';
+import Loader from './Loader.vue';
 
 export default {
   components: {
@@ -58,8 +44,8 @@ export default {
   data: () => ({
     minSize: 20,
     paneSize: 100,
-    paneSizePixel: "",
-    direction: "left",
+    paneSizePixel: '',
+    direction: 'left',
   }),
   watch: {
     minWidth(newWidth) {
@@ -68,7 +54,7 @@ export default {
   },
 
   created() {
-    this.$parent.$on("toggleDevice", this.toggleDevice);
+    this.$parent.$on('toggleDevice', this.toggleDevice);
   },
   mounted() {
     this.setMinWidth(this.minWidth);
@@ -83,30 +69,28 @@ export default {
       this.setPanelSizePixel(widthPercent);
     },
     setPanelSizePixel(widthPercent) {
-      this.paneSizePixel = Math.round(
-        (widthPercent * this.$el.clientWidth) / 100
-      );
+      this.paneSizePixel = Math.round((widthPercent * this.$el.clientWidth) / 100);
     },
     toggleDevice() {
       switch (this.direction) {
-        case "right":
+        case 'right':
           if (this.paneSizePixel < this.tabletWidth) {
             // set ot tablet mode
             this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
           } else {
             // set to desktop mode
             this.setPane(100);
-            this.direction = "left";
+            this.direction = 'left';
           }
           break;
-        case "left":
+        case 'left':
           if (this.paneSizePixel > this.tabletWidth) {
             // set to tablet mode
             this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
           } else {
             // set to mobile modde
             this.setPane((this.minWidth / this.$el.clientWidth) * 100);
-            this.direction = "right";
+            this.direction = 'right';
           }
           break;
       }
@@ -119,7 +103,7 @@ export default {
 .responsive-area {
   flex-grow: 1;
   background-color: #ffffff !important;
-  padding: 20px;
+  padding: 20px !important;
   border-radius: 0px 0px 0px 4px;
   width: 100%; /* Initial default width */
   min-height: 100px;
