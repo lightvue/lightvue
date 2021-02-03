@@ -92,7 +92,7 @@ export default {
 
 <style scoped lang="scss">
 .sidebar {
-  padding: 10px 10px 0 10px;
+  padding: 10px 0px;
   position: fixed;
   left: 0;
   top: 55px;
