@@ -1,50 +1,54 @@
 .lv-overlaypanel {
+  position: absolute;
+  margin-top: 10px;
+  &:after,
+  &:before {
+    /* Pointing Arrow */
     position: absolute;
-    margin-top: 10px;
-    &:after, &:before { /* Pointing Arrow */
-        position: absolute;
-        left: var(--overlay-arrow-pos);
-        bottom: 100%;
-        content: " ";
-        height: 0;
-        width: 0;
-        pointer-events: none;
+    left: var(--overlay-arrow-pos);
+    bottom: 100%;
+    content: ' ';
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+  &.--flipped {
+    margin-top: 0;
+    margin-bottom: 10px;
+    &:after,
+    &:before {
+      bottom: auto;
+      top: 100%;
+      border-bottom-color: transparent;
     }
-    &.--flipped{
-        margin-top: 0;
-        margin-bottom: 10px;
-        &:after, &:before {
-            bottom: auto;
-            top: 100%;
-            border-bottom-color: transparent;
-        }
-    }
-    .lv-overlaypanel__close-btn {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        transform: translate(50%, -50%);
-    }
-    .lv-overlaypanel__close-btn--alignRight {
-        transform: translate(-50%, -50%);
-        left: 0px;
-    }
+  }
+  .lv-overlaypanel__close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%, -50%);
+  }
+  .lv-overlaypanel__close-btn--alignRight {
+    transform: translate(-50%, -50%);
+    left: 0px;
+  }
 }
 
 /* Animation */
 .lv-overlaypanel__transition-enter-from {
-    opacity: 0;
-    transform: scaleY(0.8);
+  opacity: 0;
+  transform: scaleY(0.8);
 }
 
 .lv-overlaypanel__transition-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 
 .lv-overlaypanel__transition-enter-active {
-    transition: transform .12s cubic-bezier(0, 0, 0.2, 1), opacity .12s cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), opacity 0.12s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .lv-overlaypanel__transition-leave-active {
-    transition: opacity .1s linear;
+  transition: opacity 0.1s linear;
 }
+// Datatable

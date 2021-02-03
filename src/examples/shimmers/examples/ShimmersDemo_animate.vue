@@ -1,25 +1,29 @@
 <template>
-    <div>
-      <div class='shimmer-demo-wrapper'>
+  <div>
+    <div class="shimmer-demo-wrapper">
       <h5>PROP: animate (default: true)</h5>
-        <lv-skeleton :width='300' :height='10' primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-        <lv-skeleton :width='300' :height='10' primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-        <lv-skeleton :width='300' :height='10' primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-      </div>
-      <div class='shimmer-demo-wrapper'>
-      <h5>animate = false</h5>
-        <lv-skeleton :animate="false" :width='300' :height='10' primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-        <lv-skeleton :animate="false" :width='300' :height='10' primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-        <lv-skeleton :animate="false" :width='300' :height='10' primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-      </div>
+      <lv-skeleton :width="300" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+      <lv-skeleton :width="300" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+      <lv-skeleton :width="300" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
     </div>
+    <div class="shimmer-demo-wrapper">
+      <h5>animate = false</h5>
+      <lv-skeleton :animate="false" :width="300" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+      <lv-skeleton :animate="false" :width="300" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+      <lv-skeleton :animate="false" :width="300" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+    </div>
+  </div>
 </template>
 
 <script>
+import LvSkeleton from '@/collections/skeleton/Skeleton.vue';
 export default {
- data() {
-   return {}
- }
+  components: {
+    LvSkeleton,
+  },
+  data() {
+    return {};
+  },
 };
 </script>
 

@@ -1,24 +1,27 @@
 <template>
-    <div>
-        <h3>Adjusting height</h3>
-        <lv-skeleton :width='200' :height='10'  primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-        <lv-skeleton :width='200' :height='20'  primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-        <lv-skeleton :width='200' :height='30'  primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-        <br />
-        <h3>Adjusting width</h3>
-        <lv-skeleton :width='200' :height='10'  primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-        <lv-skeleton :width='300' :height='10'  primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-        <lv-skeleton :width='400' :height='10'  primaryColor="#607c8a" secondaryColor="#8aa6b5"/> <br />
-    </div>
+  <div>
+    <h3>Adjusting height</h3>
+    <lv-skeleton :width="200" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+    <lv-skeleton :width="200" :height="20" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+    <lv-skeleton :width="200" :height="30" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+    <br />
+    <h3>Adjusting width</h3>
+    <lv-skeleton :width="200" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+    <lv-skeleton :width="300" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+    <lv-skeleton :width="400" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
+  </div>
 </template>
 
 <script>
+import LvSkeleton from '@/collections/skeleton/Skeleton.vue';
 export default {
- data() {
-   return {}
- }
+  components: {
+    LvSkeleton,
+  },
+  data() {
+    return {};
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
