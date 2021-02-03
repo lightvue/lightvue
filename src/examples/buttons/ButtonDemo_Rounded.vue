@@ -30,8 +30,8 @@
     <h5>Rounded Button Set</h5>
     <span class="lv-buttonset">
       <LvButton rounded label="Save" icon="light-icon-circle-check" class="lv--primary" />
-      <LvButton rounded label="Delete" icon="pi pi-trash" class="lv--danger" />
-      <LvButton rounded label="Cancel" icon="light-icon-trash" class="lv--secondary" />
+      <LvButton rounded label="Delete" icon="light-icon-trash" class="lv--danger" />
+      <LvButton rounded label="Cancel" icon="light-icon-x" class="lv--secondary" />
     </span>
   </div>
 </template>

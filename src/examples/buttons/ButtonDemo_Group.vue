@@ -4,19 +4,19 @@
     <span class="lv-buttonset">
       <LvButton label="Save" icon="light-icon-circle-check" class="lv--primary" />
       <LvButton label="Delete" icon="light-icon-trash" class="lv--danger" />
-      <LvButton label="Cancel" icon="light-icon-clock" class="lv--secondary" />
+      <LvButton label="Cancel" icon="light-icon-x" class="lv--secondary" />
     </span>
 
     <span class="lv-buttonset">
       <LvButton label="Save" size="lg" icon="light-icon-circle-check" class="lv--primary" />
       <LvButton label="Delete" size="lg" icon="light-icon-trash" class="lv--danger" />
-      <LvButton label="Cancel" size="lg" icon="light-icon-clock" class="lv--secondary" />
+      <LvButton label="Cancel" size="lg" icon="light-icon-x" class="lv--secondary" />
     </span>
 
     <span class="lv-buttonset">
       <LvButton label="Save" size="xl" icon="light-icon-circle-check" class="lv--primary" />
       <LvButton label="Delete" size="xl" icon="light-icon-trash" class="lv--danger" />
-      <LvButton label="Cancel" size="xl" icon="light-icon-clock" class="lv--secondary" />
+      <LvButton label="Cancel" size="xl" icon="light-icon-x" class="lv--secondary" />
     </span>
 
     <br />
@@ -24,19 +24,19 @@
     <span class="lv-buttonset">
       <LvButton label="Save" icon="light-icon-circle-check" rounded class="lv--primary" />
       <LvButton label="Delete" icon="light-icon-trash" class="lv--danger" rounded />
-      <LvButton label="Cancel" icon="light-icon-clock" class="lv--secondary" rounded />
+      <LvButton label="Cancel" icon="light-icon-x" class="lv--secondary" rounded />
     </span>
 
     <span class="lv-buttonset">
       <LvButton label="Save" size="lg" icon="light-icon-circle-check" rounded class="lv--primary" />
       <LvButton label="Delete" size="lg" icon="light-icon-trash" class="lv--danger" rounded />
-      <LvButton label="Cancel" size="lg" icon="light-icon-clock" class="lv--secondary" rounded />
+      <LvButton label="Cancel" size="lg" icon="light-icon-x" class="lv--secondary" rounded />
     </span>
 
     <span class="lv-buttonset">
       <LvButton label="Save" size="xl" icon="light-icon-circle-check" rounded class="lv--primary" />
       <LvButton label="Delete" size="xl" icon="light-icon-trash" class="lv--danger" rounded />
-      <LvButton label="Cancel" size="xl" icon="light-icon-clock" class="lv--secondary" rounded />
+      <LvButton label="Cancel" size="xl" icon="light-icon-x" class="lv--secondary" rounded />
     </span>
 
     <h5>2D Icon Grids</h5>
@@ -46,7 +46,7 @@
       <LvButton size="xl" icon="light-icon-trash" class="lv--danger" style="border-radius: 0px" />
       <br />
       <LvButton size="xl" icon="light-icon-search" class="lv--warning" style="border-radius: 0px" />
-      <LvButton size="xl" icon="light-icon-clock" class="lv--secondary" style="border-radius: 0px" />
+      <LvButton size="xl" icon="light-icon-x" class="lv--secondary" style="border-radius: 0px" />
     </span>
 
     <span class="lv-buttonset">
@@ -55,7 +55,7 @@
       <LvButton size="xl" icon="light-icon-heart" class="lv--warning" style="border-radius: 0px" />
       <br />
       <LvButton size="xl" icon="light-icon-search" class="lv--help lv--primary" style="border-radius: 0px" />
-      <LvButton size="xl" icon="light-icon-clock" class="lv--secondary" style="border-radius: 0px" />
+      <LvButton size="xl" icon="light-icon-x" class="lv--secondary" style="border-radius: 0px" />
       <LvButton size="xl" icon="light-icon-user" class="lv--info" style="border-radius: 0px" />
     </span>
 
@@ -64,7 +64,7 @@
       <LvButton size="xl" icon="light-icon-trash" class="lv--danger" />
       <br />
       <LvButton size="xl" icon="light-icon-search" class="lv--warning" />
-      <LvButton size="xl" icon="light-icon-clock" class="lv--secondary" />
+      <LvButton size="xl" icon="light-icon-x" class="lv--secondary" />
       <br />
       <LvButton size="xl" icon="light-icon-heart" class="lv--help" />
       <LvButton size="xl" icon="light-icon-user" class="lv--info" />
