@@ -6,18 +6,33 @@
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="contentShow"><i class="light-icon-bulb" @click="contentShow = !contentShow"></i> About</h5>
+        <h5 class="nav-list__head" v-if="contentShow" @click="contentShow = !contentShow"><i class="light-icon-bulb"></i> About</h5>
         <div v-else class="nav-list__container">
-          <h5 class="nav-list__head"><i class="light-icon-bulb"></i> About</h5>
-          <nuxt-link to="/" class="nav-list__item">
-            <div class="nav-list__label">Home Page</div>
-          </nuxt-link>
-          <nuxt-link to="/" class="nav-list__item">
-            <div class="nav-list__label">Get Started</div>
-          </nuxt-link>
-          <nuxt-link to="/" class="nav-list__item">
-            <div class="nav-list__label">Sponser Us</div>
-          </nuxt-link>
+          <h5 class="nav-list__label" @click="contentShow = !contentShow"><i class="light-icon-bulb"></i> About</h5>
+          <div class="dropdown__content">
+            <!-- <div class="left___line"></div> -->
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/" class="nav-list__item">
+                <div class="nav-list__label"><p>Home Page</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/" class="nav-list__item">
+                <div class="nav-list__label"><p>Get Started</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/" class="nav-list__item">
+                <div class="nav-list__label"><p>Sponsor Us</p></div>
+              </nuxt-link>
+            </div>
+          </div>
         </div>
       </div>
       <!-- <div class="nav-list__item">
@@ -29,7 +44,7 @@
       <div class="nav-list__nest">
         <h5 class="nav-list__head"><i class="light-icon-clipboard"></i>FORM</h5>
         <div class="nav-list__container">
-          <h5 class="nav-list__head"><i class="light-icon-clipboard"></i>FORM</h5>
+          <h5 class="nav-list__label"><i class="light-icon-clipboard"></i> FORM</h5>
           <nuxt-link to="/vue-components/button" class="nav-list__item">
             <div class="nav-list__label">Button</div>
           </nuxt-link>
@@ -59,7 +74,7 @@
       <div class="nav-list__nest">
         <h5 class="nav-list__head"><i class="light-icon-brand-github"></i>LOADERS</h5>
         <div class="nav-list__container">
-          <h5 class="nav-list__head"><i class="light-icon-brand-github"></i>LOADERS</h5>
+          <h5 class="nav-list__label"><i class="light-icon-brand-github"></i> LOADERS</h5>
           <nuxt-link to="/vue-components/progress-bar" class="nav-list__item">
             <div class="nav-list__label">Progress Bar</div>
           </nuxt-link>
@@ -149,6 +164,9 @@ export default {
     color: #fff;
     // background: #ffffff33;
   }
+  p {
+    text-indent: 10px;
+  }
 }
 .nav-list {
   padding: 20px 0px;
@@ -174,7 +192,11 @@ export default {
 }
 .nav-list__label {
   display: block;
-  color: #ffffff;
+  color: #fff;
+  p {
+    color: #bdc4c8;
+    margin: 0px;
+  }
 }
 .sidebar__logo {
   display: none;
@@ -185,6 +207,30 @@ export default {
     width: 100%;
   }
 }
+
+.dropdown__content {
+  border-left: 1px solid #57687a;
+  margin-left: 8px;
+}
+
+.sub-menu__link--wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sub-menu__line {
+  width: 30px;
+  border: 1px solid#57687A;
+}
+
+.sub-menu__bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #57687a;
+}
+
 @media (max-width: 768px) {
   .sidebar {
     height: 100%;
