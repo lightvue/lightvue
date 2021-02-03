@@ -6,8 +6,9 @@
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head"><i class="light-icon-bulb"></i> About</h5>
-        <div class="nav-list__container">
+        <h5 class="nav-list__head" v-if="contentShow"><i class="light-icon-bulb" @click="contentShow = !contentShow"></i> About</h5>
+        <div v-else class="nav-list__container">
+          <h5 class="nav-list__head"><i class="light-icon-bulb"></i> About</h5>
           <nuxt-link to="/" class="nav-list__item">
             <div class="nav-list__label">Home Page</div>
           </nuxt-link>
@@ -27,57 +28,63 @@
       </div> -->
       <div class="nav-list__nest">
         <h5 class="nav-list__head"><i class="light-icon-clipboard"></i>FORM</h5>
-        <nuxt-link to="/vue-components/button" class="nav-list__item">
-          <div class="nav-list__label">Button</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/checkbox" class="nav-list__item">
-          <div class="nav-list__label">Checkbox</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/colorpicker" class="nav-list__item">
-          <div class="nav-list__label">Color Picker</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/dropdown" class="nav-list__item">
-          <div class="nav-list__label">Dropdown</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/input" class="nav-list__item">
-          <div class="nav-list__label">Input</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/rating" class="nav-list__item">
-          <div class="nav-list__label">Rating</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/slider" class="nav-list__item">
-          <div class="nav-list__label">Slider</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/toggle-switch" class="nav-list__item">
-          <div class="nav-list__label">Toggle Switch</div>
-        </nuxt-link>
+        <div class="nav-list__container">
+          <h5 class="nav-list__head"><i class="light-icon-clipboard"></i>FORM</h5>
+          <nuxt-link to="/vue-components/button" class="nav-list__item">
+            <div class="nav-list__label">Button</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/checkbox" class="nav-list__item">
+            <div class="nav-list__label">Checkbox</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/colorpicker" class="nav-list__item">
+            <div class="nav-list__label">Color Picker</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/dropdown" class="nav-list__item">
+            <div class="nav-list__label">Dropdown</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/input" class="nav-list__item">
+            <div class="nav-list__label">Input</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/rating" class="nav-list__item">
+            <div class="nav-list__label">Rating</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/slider" class="nav-list__item">
+            <div class="nav-list__label">Slider</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/toggle-switch" class="nav-list__item">
+            <div class="nav-list__label">Toggle Switch</div>
+          </nuxt-link>
+        </div>
       </div>
       <div class="nav-list__nest">
         <h5 class="nav-list__head"><i class="light-icon-brand-github"></i>LOADERS</h5>
-        <nuxt-link to="/vue-components/progress-bar" class="nav-list__item">
-          <div class="nav-list__label">Progress Bar</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/progress-loader" class="nav-list__item">
-          <div class="nav-list__label">Progress Loaders</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/progress-spinner" class="nav-list__item">
-          <div class="nav-list__label">Progress Spinners</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/shimmer" class="nav-list__item">
-          <div class="nav-list__label">Shimmers</div>
-        </nuxt-link>
-      </div>
-      <div class="nav-list__nest">
-        <h5 class="nav-list__head"><i class="light-icon-brand-github"></i>MISC</h5>
-        <nuxt-link to="/vue-components/card" class="nav-list__item">
-          <div class="nav-list__label">Card</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/glassmorphic-card" class="nav-list__item">
-          <div class="nav-list__label">Glassmorphic Card</div>
-        </nuxt-link>
-        <nuxt-link to="/vue-components/overlay-panel" class="nav-list__item">
-          <div class="nav-list__label">Overlay Panel</div>
-        </nuxt-link>
+        <div class="nav-list__container">
+          <h5 class="nav-list__head"><i class="light-icon-brand-github"></i>LOADERS</h5>
+          <nuxt-link to="/vue-components/progress-bar" class="nav-list__item">
+            <div class="nav-list__label">Progress Bar</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/progress-loader" class="nav-list__item">
+            <div class="nav-list__label">Progress Loaders</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/progress-spinner" class="nav-list__item">
+            <div class="nav-list__label">Progress Spinners</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/shimmer" class="nav-list__item">
+            <div class="nav-list__label">Shimmers</div>
+          </nuxt-link>
+        </div>
+        <div class="nav-list__nest">
+          <h5 class="nav-list__head"><i class="light-icon-brand-github"></i>MISC</h5>
+          <nuxt-link to="/vue-components/card" class="nav-list__item">
+            <div class="nav-list__label">Card</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/glassmorphic-card" class="nav-list__item">
+            <div class="nav-list__label">Glassmorphic Card</div>
+          </nuxt-link>
+          <nuxt-link to="/vue-components/overlay-panel" class="nav-list__item">
+            <div class="nav-list__label">Overlay Panel</div>
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
@@ -87,6 +94,11 @@
 export default {
   props: ['showDrawer'],
   methods: {},
+  data() {
+    return {
+      contentShow: false,
+    };
+  },
 };
 </script>
 
@@ -147,7 +159,6 @@ export default {
     // border-bottom: 1px solid #566d79;
     i {
       margin-right: 5px;
-      display: none;
     }
     border-bottom: 1px solid #314254;
     border-top: 1px solid #516274;
