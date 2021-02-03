@@ -117,12 +117,16 @@ export default {
 .nav-list__nest {
   // border-radius: 3px;
   // background: #ececec;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   box-shadow: inset 7px 7px 100px #364453, inset -7px -7px 100px #485c71;
 }
 .nav-list__container {
-  // padding: 10px;
-  padding-bottom: 5px;
+  padding: 20px;
+  // padding-bottom: 5px;
+  border-radius: 0px;
+  background: #3f5062;
+  box-shadow: inset -2px 2px 8px #212a33, inset 2px -2px 7px #212a33;
+  border-left: 5px solid #3edb9c;
 }
 .nav-list__item {
   text-indent: 20px;
@@ -140,9 +144,7 @@ export default {
     color: #f4fbfd;
     font-size: 14px;
     padding: 21px;
-    h5 {
-      margin: 0rem 0 0rem 0;
-    }
+    margin: 0px;
     // margin: 25px 16px 10px 16px;
     // border-bottom: 1px solid #566d79;
     i {
