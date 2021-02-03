@@ -1,8 +1,5 @@
 <template>
-  <div
-    :class="`sidebar ${showDrawer ? 'show-drawer' : ''}`"
-    @click="$emit('toggle-drawer')"
-  >
+  <div :class="`sidebar ${showDrawer ? 'show-drawer' : ''}`" @click="$emit('toggle-drawer')">
     <div class="nav-list">
       <div class="sidebar__logo" @click="$router.push('/')">
         <img src="@/assets/logo_rect.png" class="header-logo" />
@@ -29,60 +26,56 @@
         <div class="nav-list__label">Support</div>
       </div> -->
       <div class="nav-list__nest">
-        <h5 class="nav-list__head">
-          <i class="light-icon-clipboard"></i>Form Items
-        </h5>
+        <h5 class="nav-list__head"><i class="light-icon-clipboard"></i>Form Items</h5>
         <nuxt-link to="/vue-components/input" class="nav-list__item">
           <div class="nav-list__label">InputDemo</div>
         </nuxt-link>
         <nuxt-link to="/vue-components/button" class="nav-list__item">
           <div class="nav-list__label">Buttons</div>
         </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
+        <nuxt-link to="/vue-components/card" class="nav-list__item">
+          <div class="nav-list__label">Card</div>
         </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
+        <nuxt-link to="/vue-components/checkbox" class="nav-list__item">
+          <div class="nav-list__label">CheckBox</div>
         </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
+        <nuxt-link to="/vue-components/ColorPicker" class="nav-list__item">
+          <div class="nav-list__label">Color Picker</div>
         </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
+        <nuxt-link to="/vue-components/dropdown" class="nav-list__item">
+          <div class="nav-list__label">Dropdown</div>
         </nuxt-link>
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head">
-          <i class="light-icon-brand-github"></i>Form Items
-        </h5>
-        <nuxt-link to="/input-docs" class="nav-list__item">
-          <div class="nav-list__label">InputDemo</div>
+        <h5 class="nav-list__head"><i class="light-icon-brand-github"></i>Form Items</h5>
+        <nuxt-link to="/vue-components/loaders" class="nav-list__item">
+          <div class="nav-list__label">Loaders</div>
         </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
+        <nuxt-link to="/vue-components/overlay-panel" class="nav-list__item">
+          <div class="nav-list__label">Overlay Panel</div>
+        </nuxt-link>
+        <nuxt-link to="/vue-components/progress-bar" class="nav-list__item">
+          <div class="nav-list__label">Peogress Bar</div>
+        </nuxt-link>
+        <nuxt-link to="/vue-components/progress-loader" class="nav-list__item">
+          <div class="nav-list__label">Progress Loader</div>
+        </nuxt-link>
+        <nuxt-link to="/vue-components/progress-spinner" class="nav-list__item">
+          <div class="nav-list__label">Progress Spinner</div>
+        </nuxt-link>
+        <nuxt-link to="/vue-components/rating" class="nav-list__item">
+          <div class="nav-list__label">Rating</div>
+        </nuxt-link>
+        <nuxt-link to="/vue-components/toggle-switch" class="nav-list__item">
+          <div class="nav-list__label">Toggle Switch</div>
+        </nuxt-link>
+        <nuxt-link to="/vue-components/buttons" class="nav-list__item">
           <div class="nav-list__label">Buttons</div>
         </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
+        <nuxt-link to="/vue-components/" class="nav-list__item">
           <div class="nav-list__label">Buttons</div>
         </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
-        </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
-        </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
-        </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
-        </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
-        </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
-          <div class="nav-list__label">Buttons</div>
-        </nuxt-link>
-        <nuxt-link to="/button-docs" class="nav-list__item">
+        <nuxt-link to="/vue-components/" class="nav-list__item">
           <div class="nav-list__label">Buttons</div>
         </nuxt-link>
       </div>
@@ -92,7 +85,7 @@
 
 <script>
 export default {
-  props: ["showDrawer"],
+  props: ['showDrawer'],
   methods: {},
 };
 </script>
@@ -115,11 +108,9 @@ export default {
   -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
   transition: -webkit-transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
   transition: transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
-  transition: transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99),
-    -webkit-transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
+  transition: transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99), -webkit-transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
 
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .nav-list__nest {
   border-radius: 3px;
