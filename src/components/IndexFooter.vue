@@ -43,6 +43,7 @@ export default {};
 .footer__wrapper {
   background: #143a56;
   padding: 0 160px 0;
+ 
 }
 footer {
   margin: auto;
@@ -53,6 +54,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 60px;
+  padding-bottom: 60px;
   p {
     line-height: 180%;
     color: #eeecec;

@@ -7,7 +7,7 @@
       <div class="features-div-container">
         <div class="features-div">
           <div class="features-icon-div">
-            <i class="light-icon-aperture"></i>
+            <i class="light-icon-bolt"></i>
           </div>
           <div class="features-content">
             <h3 class="features-content__heading">Light Weight</h3>
@@ -23,7 +23,7 @@
             <i class="light-icon-layers-difference"></i>
           </div>
           <div class="features-content">
-            <h3 class="features-content__heading">Costumizable</h3>
+            <h3 class="features-content__heading">Customizable</h3>
             <p class="features-content__subtext">
               Light Vue is very easy to costumize and allows user to build the
               theme according to their likings.
@@ -77,12 +77,29 @@ export default {};
     flex-basis: 33%;
     justify-content: space-between;
     .features-div {
+      width: 33.33vw;
+      padding: 30px;
       margin: 10px;
+      border: 1px solid;
+      border-color: rgba(0,0,0,0);
+      border-radius: 12px;
+      transition: all 0.3s;
+      &:hover {
+        transform: scale(1.15);
+        border-color: rgba(0,0,0,0.5);
+        i {
+          color: #607c8a;
+        }
+        .features-content__heading {
+          color: #607c8a;
+        }
+      }
       .features-icon-div {
         display: flex;
         justify-content: center;
         i {
           font-size: 60px;
+          transition: all 0.3s;
           font-weight: bolder;
         }
       }
@@ -90,6 +107,7 @@ export default {};
         .features-content__heading {
           text-align: center;
           font-size: 26px;
+          transition: all 0.3s;
           font-weight: 900;
           line-height: 1.1;
           margin-top: 22px;
@@ -109,6 +127,12 @@ export default {};
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+  }
+  .features-div {
+    width: 100vw !important;
+    &:hover {
+      border-color: rgba(0,0,0,0) !important;
+    }
   }
 }
 </style>

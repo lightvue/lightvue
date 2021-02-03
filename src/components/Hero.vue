@@ -115,10 +115,13 @@ $text-color-secondary: #eeecec;
 
       .hero-button {
         box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+        width: 15vw;
+        min-width: max-content;
         background-color: #143a56;
         color: #ffffff;
         display: inline-block;
         padding: 1em 1.8125em;
+        padding: 20px 20px;
         border-radius: 4px;
         font-weight: 700;
         font-size: 1em;
@@ -130,6 +133,7 @@ $text-color-secondary: #eeecec;
         cursor: pointer;
         &:hover {
           background: #0b283d;
+          color: #ffffff80;
         }
       }
     }
@@ -137,10 +141,13 @@ $text-color-secondary: #eeecec;
   .hero-container__image {
     display: flex;
     justify-content: center;
+    // width: 100vw;
     // padding: -40px;
     // margin: 40px;
     .hero-image {
-      width: 100%;
+      width: 50vw;
+      min-width: 500px;
+      // width: 100%; //restore img
       // height: 500px;
     }
   }
@@ -150,5 +157,12 @@ $text-color-secondary: #eeecec;
     padding: 0.6rem 1.2rem !important;
     margin: 0 10px !important;
   }
+}
+
+@media only screen and (max-width: 500px) {
+.hero-image {
+      width: 98vw!important;
+      min-width: 10px !important;
+    }
 }
 </style>

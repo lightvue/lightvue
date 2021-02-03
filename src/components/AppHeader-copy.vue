@@ -13,7 +13,8 @@
       </div>
       <div class="search-row">
         <div class="search-bar">
-            <AppSearch />
+          <input class="search-input" placeholder="Search Icons" type="text" />
+          <i class="light-icon-search search-icon"></i>
         </div>
       </div>
       <div class="social__row">
@@ -34,12 +35,7 @@
 </template>
 
 <script>
-import AppSearch from '@/components/AppSearch';
-export default {
-  components: {
-    AppSearch
-  }
-};
+export default {};
 </script>
 
 <style scoped lang="scss">
@@ -104,13 +100,10 @@ export default {
   margin: 0 auto;
   width: 360px;
   display: flex;
-  position: absolute;
-  left: calc(50% - 180px);
+  align-items: center;
   justify-content: center;
   z-index: 100;
-  transition: all 0.5s;
 }
-
 .search-input {
   outline: none;
   width: 100%;
@@ -172,8 +165,7 @@ export default {
 }
 @media (max-width: 768px) {
   .search-bar {
-    width: calc(60% - 10px);
-    left: 40%; 
+    width: 180px;
   }
 }
 </style>
