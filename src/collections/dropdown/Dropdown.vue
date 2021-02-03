@@ -11,16 +11,16 @@
         </slot>
       </span>
       <template slot="append">
-        <i v-if="clearable && modelValue != null" class="lv-dropdown__clear-icon pi pi-times" @click="onClearClick($event)"></i>
+        <i v-if="clearable && modelValue != null" class="lv-dropdown__clear-icon light-icon-x" @click="onClearClick($event)"></i>
         <div class="lv-dropdown__trigger" role="button" aria-haspopup="listbox" :aria-expanded="overlayVisible">
-          <span :class="iconRight || 'pi pi-chevron-down'"></span>
+          <span :class="iconRight || 'light-icon-chevron-down'"></span>
         </div>
       </template>
     </lv-input>
     <transition name="lv-transition__overlay" @enter="onOverlayEnter" @leave="onOverlayLeave">
       <div ref="overlayRef" class="lv-dropdown__panel lv-component" v-if="overlayVisible">
         <div class="lv-dropdown__panel-header" v-if="filter">
-          <lv-input type="text" ref="filterInput" autofocus v-model="filterValue" autoComplete="off" icon-right="pi pi-search" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown" @input-native="onFilterChange"></lv-input>
+          <lv-input type="text" ref="filterInput" autofocus v-model="filterValue" autoComplete="off" icon-right="light-icon-search" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown" @input-native="onFilterChange"></lv-input>
           <!-- <div  class="lv-dropdown__filter-wrap">
                         <input type="text" ref="filterInput" v-model="filterValue" autoComplete="off" class="lv-dropdown__filter-input p-inputtext lv-component" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown"  @input="onFilterChange"/>
                         <span class="lv-dropdown__filter-icon pi pi-search"></span>

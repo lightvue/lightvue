@@ -6,35 +6,17 @@
     <LvButton label="Link" class="--link-button lv--primary" />
 
     <h5>Icons</h5>
-    <LvButton icon="pi pi-check" class="lv--primary" />
-    <LvButton label="Submit" icon="pi pi-check" class="lv--primary" />
-    <LvButton label="Submit" icon-right="pi pi-check" class="lv--primary" />
+    <LvButton icon="light-icon-alert-circle" class="lv--primary" />
+    <LvButton label="Submit" icon="light-icon-arrow-down-circle" class="lv--primary" />
+    <LvButton label="Submit" icon-right="light-icon-arrow-down-circle" class="lv--primary" />
     <br />
-    <LvButton icon="pi pi-check" disabled="disabled" class="lv--primary" />
-    <LvButton
-      label="Submit"
-      icon="pi pi-check"
-      disabled="disabled"
-      class="lv--primary"
-    />
-    <LvButton
-      label="Submit"
-      icon-right="pi pi-check"
-      disabled="disabled"
-      class="lv--primary"
-    />
+    <LvButton icon="light-icon-alert-circle" disabled="disabled" class="lv--primary" />
+    <LvButton label="Submit" icon="light-icon-arrow-down-circle" disabled="disabled" class="lv--primary" />
+    <LvButton label="Submit" icon-right="light-icon-arrow-down-circle" disabled="disabled" class="lv--primary" />
     <br />
-    <LvButton icon="pi pi-check" class="--link-button lv--primary" />
-    <LvButton
-      label="Submit"
-      icon="pi pi-check"
-      class="--link-button lv--primary"
-    />
-    <LvButton
-      label="Submit"
-      icon-right="pi pi-check"
-      class="--link-button lv--primary"
-    />
+    <LvButton icon="light-icon-arrow-down-circle" class="--link-button lv--primary" />
+    <LvButton label="Submit" icon="light-icon-arrow-down-circle" class="--link-button lv--primary" />
+    <LvButton label="Submit" icon-right="light-icon-arrow-down-circle" class="--link-button lv--primary" />
 
     <h5>Severities</h5>
     <LvButton label="Primary" class="lv--primary" />
@@ -45,13 +27,13 @@
     <LvButton label="Help" class="lv--help" />
     <LvButton label="Danger" class="lv--danger" />
     <br />
-    <LvButton icon="pi pi-check" class="lv--primary" />
-    <LvButton icon="pi pi-check" class="lv--secondary" />
-    <LvButton icon="pi pi-check" class="lv--success" />
-    <LvButton icon="pi pi-check" class="lv--info" />
-    <LvButton icon="pi pi-check" class="lv--warning" />
-    <LvButton icon="pi pi-check" class="lv--help" />
-    <LvButton icon="pi pi-check" class="lv--danger" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--primary" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--secondary" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--success" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--info" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--warning" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--help" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--danger" />
 
     <h5>Raised Buttons</h5>
     <LvButton label="Primary" raised class="lv--primary" />
@@ -62,13 +44,13 @@
     <LvButton label="Help" class="lv--help" raised />
     <LvButton label="Danger" class="lv--danger" raised />
     <br />
-    <LvButton icon="pi pi-check" raised class="lv--primary" />
-    <LvButton icon="pi pi-check" class="lv--secondary" raised />
-    <LvButton icon="pi pi-check" class="lv--success" raised />
-    <LvButton icon="pi pi-check" class="lv--info" raised />
-    <LvButton icon="pi pi-check" class="lv--warning" raised />
-    <LvButton icon="pi pi-check" class="lv--help" raised />
-    <LvButton icon="pi pi-check" class="lv--danger" raised />
+    <LvButton icon="light-icon-arrow-down-circle" raised class="lv--primary" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--secondary" raised />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--success" raised />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--info" raised />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--warning" raised />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--help" raised />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--danger" raised />
 
     <h5>Text Buttons</h5>
     <LvButton label="Primary" class="--text-button lv--primary" />
@@ -80,13 +62,13 @@
     <LvButton label="Danger" class="lv--danger --text-button" />
     <LvButton label="Plain" class="--text-button lv--plain" />
     <br />
-    <LvButton icon="pi pi-check" class="--text-button lv--primary" />
-    <LvButton icon="pi pi-check" class="lv--secondary --text-button" />
-    <LvButton icon="pi pi-check" class="lv--success --text-button" />
-    <LvButton icon="pi pi-check" class="lv--info --text-button" />
-    <LvButton icon="pi pi-check" class="lv--warning --text-button" />
-    <LvButton icon="pi pi-check" class="lv--help --text-button" />
-    <LvButton icon="pi pi-check" class="lv--danger --text-button" />
+    <LvButton icon="light-icon-arrow-down-circle" class="--text-button lv--primary" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--secondary --text-button" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--success --text-button" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--info --text-button" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--warning --text-button" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--help --text-button" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--danger --text-button" />
 
     <h5>Outlined Buttons</h5>
     <LvButton label="Primary" outlined class="lv--primary" />
@@ -97,13 +79,13 @@
     <LvButton label="Help" outlined class="lv--help" />
     <LvButton label="Danger" outlined class="lv--danger" />
     <br />
-    <LvButton icon="pi pi-check" outlined class="lv--primary" />
-    <LvButton icon="pi pi-check" class="lv--secondary" outlined />
-    <LvButton icon="pi pi-check" class="lv--success" outlined />
-    <LvButton icon="pi pi-check" class="lv--info" outlined />
-    <LvButton icon="pi pi-check" class="lv--warning" outlined />
-    <LvButton icon="pi pi-check" class="lv--help" outlined />
-    <LvButton icon="pi pi-check" class="lv--danger" outlined />
+    <LvButton icon="light-icon-arrow-down-circle" outlined class="lv--primary" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--secondary" outlined />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--success" outlined />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--info" outlined />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--warning" outlined />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--help" outlined />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--danger" outlined />
 
     <!-- <h5>Append / Prepend [slots]</h5>
         <LvButton type="button" label="Emails" badge="8" />
@@ -111,35 +93,15 @@
 
     <h5>Sizes</h5>
     <div class="sizes">
-      <LvButton
-        label="Small"
-        size="sm"
-        icon="pi pi-check"
-        class="lv--primary"
-      />
-      <LvButton
-        label="Normal"
-        size="md"
-        icon="pi pi-check"
-        class="lv--primary"
-      />
-      <LvButton
-        label="Large"
-        size="lg"
-        icon="pi pi-check"
-        class="lv--primary"
-      />
-      <LvButton
-        label="Extra Large"
-        size="xl"
-        icon="pi pi-check"
-        class="lv--primary"
-      />
+      <LvButton label="Small" size="sm" icon="light-icon-arrow-down-circle" class="lv--primary" />
+      <LvButton label="Normal" size="md" icon="light-icon-arrow-down-circle" class="lv--primary" />
+      <LvButton label="Large" size="lg" icon="light-icon-arrow-down-circle" class="lv--primary" />
+      <LvButton label="Extra Large" size="xl" icon="light-icon-arrow-down-circle" class="lv--primary" />
       <br />
-      <LvButton icon="pi pi-check" size="sm" class="lv--primary" />
-      <LvButton icon="pi pi-check" size="md" class="lv--primary" />
-      <LvButton icon="pi pi-check" size="lg" class="lv--primary" />
-      <LvButton icon="pi pi-check" size="xl" class="lv--primary" />
+      <LvButton icon="light-icon-arrow-down-circle" size="sm" class="lv--primary" />
+      <LvButton icon="light-icon-arrow-down-circle" size="md" class="lv--primary" />
+      <LvButton icon="light-icon-arrow-down-circle" size="lg" class="lv--primary" />
+      <LvButton icon="light-icon-arrow-down-circle" size="xl" class="lv--primary" />
     </div>
   </div>
 </template>

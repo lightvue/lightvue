@@ -10,33 +10,28 @@
     <LvButton label="Danger" rounded class="lv--danger" />
 
     <h5>Rounded Icon Buttons</h5>
-    <LvButton icon="pi pi-bookmark" rounded class="lv--secondary" />
-    <LvButton icon="pi pi-search" rounded class="lv--success" />
-    <LvButton icon="pi pi-user" rounded class="lv--info" />
-    <LvButton icon="pi pi-bell" rounded class="lv--warning" />
-    <LvButton icon="pi pi-heart" rounded class="lv--help" />
-    <LvButton icon="pi pi-times" rounded class="lv--danger" />
-    <LvButton icon="pi pi-check" rounded class="lv--primary" />
+    <LvButton icon="light-icon-bookmark" rounded class="lv--secondary" />
+    <LvButton icon="light-icon-search" rounded class="lv--success" />
+    <LvButton icon="light-icon-user" rounded class="lv--info" />
+    <LvButton icon="light-icon-bell" rounded class="lv--warning" />
+    <LvButton icon="light-icon-heart" rounded class="lv--help" />
+    <LvButton icon="light-icon-trash" rounded class="lv--danger" />
+    <LvButton icon="light-icon-circle-check" rounded class="lv--primary" />
 
     <h5>Rounded and Outlined Icon Buttons</h5>
-    <LvButton icon="pi pi-check" rounded outlined class="lv--primary" />
-    <LvButton icon="pi pi-bookmark" rounded outlined class="lv--secondary" />
-    <LvButton icon="pi pi-search" rounded outlined class="lv--success" />
-    <LvButton icon="pi pi-user" rounded outlined class="lv--info" />
-    <LvButton icon="pi pi-bell" rounded outlined class="lv--warning" />
-    <LvButton icon="pi pi-heart" rounded outlined class="lv--help" />
-    <LvButton icon="pi pi-times" rounded outlined class="lv--danger" />
+    <LvButton icon="light-icon-circle-check" rounded outlined class="lv--primary" />
+    <LvButton icon="light-icon-bookmark" rounded outlined class="lv--secondary" />
+    <LvButton icon="light-icon-search" rounded outlined class="lv--success" />
+    <LvButton icon="light-icon-user" rounded outlined class="lv--info" />
+    <LvButton icon="light-icon-bell" rounded outlined class="lv--warning" />
+    <LvButton icon="light-icon-heart" rounded outlined class="lv--help" />
+    <LvButton icon="light-icon-trash" rounded outlined class="lv--danger" />
 
     <h5>Rounded Button Set</h5>
     <span class="lv-buttonset">
-      <LvButton rounded label="Save" icon="pi pi-check" class="lv--primary" />
+      <LvButton rounded label="Save" icon="light-icon-circle-check" class="lv--primary" />
       <LvButton rounded label="Delete" icon="pi pi-trash" class="lv--danger" />
-      <LvButton
-        rounded
-        label="Cancel"
-        icon="pi pi-times"
-        class="lv--secondary"
-      />
+      <LvButton rounded label="Cancel" icon="light-icon-trash" class="lv--secondary" />
     </span>
   </div>
 </template>

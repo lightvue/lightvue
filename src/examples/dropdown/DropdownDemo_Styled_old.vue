@@ -12,9 +12,9 @@
     <h5>Editable + Floating Label</h5>
     <lv-dropdown v-model="selectedCity3" :options="cities" optionLabel="name" label="Select City Name" :editable="true" bottom-bar floating-label placeholder="Select the City" clearable />
     <h5>Editable + Left Icon</h5>
-    <lv-dropdown v-model="selectedCity4" :options="cities" optionLabel="name" label="Select City Name" :editable="true" bottom-bar placeholder="Select the City" rounded icon-left="pi pi-search"> </lv-dropdown>
+    <lv-dropdown v-model="selectedCity4" :options="cities" optionLabel="name" label="Select City Name" :editable="true" bottom-bar placeholder="Select the City" rounded icon-left="light-icon-search"> </lv-dropdown>
     <h5>Editable + Right Icon</h5>
-    <lv-dropdown v-model="selectedCity5" :options="cities" optionLabel="name" label="Select City Name" :editable="true" bottom-bar placeholder="Select the City" clearable icon-right="pi pi-search"> </lv-dropdown>
+    <lv-dropdown v-model="selectedCity5" :options="cities" optionLabel="name" label="Select City Name" :editable="true" bottom-bar placeholder="Select the City" clearable icon-right="light-icon-search"> </lv-dropdown>
     <!-- <h5>Editable + Prepend</h5>
         <lv-dropdown
             v-model="selectedCity6"

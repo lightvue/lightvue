@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LvButton type="button" icon="pi pi-search" :label="selectedProduct ? selectedProduct.name : 'Select a Product'" @click="toggle" aria:haspopup="true" aria-controls="overlay_panel" />
+    <LvButton type="button" icon="light-icon-search" :label="selectedProduct ? selectedProduct.name : 'Select a Product'" @click="toggle" aria:haspopup="true" aria-controls="overlay_panel" />
 
     <LvOverlayPanel ref="op" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 450px">
       <DataTable :value="products" :selection.sync="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect">
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import LvButton from '@/collections/buttons/Button.vue';
 import ProductService from '@/service/ProductService';
 import LvOverlayPanel from '@/collections/overlay-panel/OverlayPanel.vue';
 
@@ -62,6 +63,7 @@ export default {
   },
   components: {
     LvOverlayPanel,
+    LvButton,
   },
 };
 </script>

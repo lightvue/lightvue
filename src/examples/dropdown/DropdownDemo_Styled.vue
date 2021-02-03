@@ -16,11 +16,11 @@
     <lv-dropdown bottom-bar rounded v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" clearable />
 
     <h5>Changing icon</h5>
-    <lv-dropdown iconLeft="pi pi-heart" iconRight="pi pi-chevron-down " v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Icon on both sides" rounded bottom-bar clearable />
+    <lv-dropdown iconLeft="light-icon-heart" iconRight="light-icon-arrow-down-circle " v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Icon on both sides" rounded bottom-bar clearable />
     <br />
-    <lv-dropdown iconRight="pi pi-heart" iconLeft=" " v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Icon on right only" rounded bottom-bar clearable />
+    <lv-dropdown iconRight="light-icon-heart" iconLeft=" " v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Icon on right only" rounded bottom-bar clearable />
     <br />
-    <lv-dropdown iconLeft="pi pi-heart" iconRight=" " v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Icon on left only" rounded bottom-bar clearable />
+    <lv-dropdown iconLeft="light-icon-heart" iconRight=" " v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Icon on left only" rounded bottom-bar clearable />
   </div>
 </template>
 

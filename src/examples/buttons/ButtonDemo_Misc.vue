@@ -7,25 +7,19 @@
 
     <h5>Button Set with mixed shape</h5>
     <span class="lv-buttonset">
-      <LvButton
-        label="Save"
-        size="xl"
-        icon="pi pi-check"
-        rounded
-        class="lv--primary"
-      />
+      <LvButton label="Save" size="xl" icon="light-icon-check" rounded class="lv--primary" />
       <LvButton size="xl" icon="light-icon-copy" class="lv--success" />
     </span>
     <span class="lv-buttonset">
-      <LvButton label="Save" size="lg" icon="pi pi-check" class="lv--primary" />
+      <LvButton label="Save" size="lg" icon="light-icon-check" class="lv--primary" />
       <LvButton size="lg" icon="light-icon-copy" class="lv--success" rounded />
     </span>
     <span class="lv-buttonset">
-      <LvButton label="Save" size="xl" icon="pi pi-check" class="lv--primary" />
+      <LvButton label="Save" size="xl" icon="light-icon-check" class="lv--primary" />
       <LvButton size="xl" icon="light-icon-copy" class="lv--success" rounded />
     </span>
     <span class="lv-buttonset">
-      <LvButton label="Save" icon="pi pi-check" class="lv--primary" />
+      <LvButton label="Save" icon="light-icon-check" class="lv--primary" />
       <LvButton icon="light-icon-copy" class="lv--success" rounded />
     </span>
   </div>
