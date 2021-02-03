@@ -35,7 +35,7 @@
     <lv-dropdown scrollHeight="100px" v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Scroll height: 100px" clearable />
 
     <h5>Changing default icon (default: 'light-icon-arrow-down')</h5>
-    <lv-dropdown iconRight="light-icon-arrow-down" v-model="selectedCity1" :options="cities" optionLabel="name" clearable />
+    <lv-dropdown iconRight="light-icon-arrow-down" v-model="selectedCity1" :options="cities" placeholder="Default dropdown icon" optionLabel="name" clearable />
   </div>
 </template>
 
