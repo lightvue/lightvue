@@ -112,6 +112,7 @@ export default {
 
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   background: #405364;
+  border: 1px solid #1f2a35;
 }
 .nav-list__nest {
   // border-radius: 3px;
@@ -138,13 +139,18 @@ export default {
   .nav-list__head {
     color: #f4fbfd;
     font-size: 14px;
-    padding: 20px 20px 0 20px;
+    padding: 21px;
+    h5 {
+      margin: 0rem 0 0rem 0;
+    }
     // margin: 25px 16px 10px 16px;
     // border-bottom: 1px solid #566d79;
     i {
       margin-right: 5px;
       display: none;
     }
+    border-bottom: 1px solid #314254;
+    border-top: 1px solid #516274;
   }
   .nuxt-link-exact-active {
     // // background-color: #e0e7ec;
