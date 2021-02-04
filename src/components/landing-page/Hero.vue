@@ -97,10 +97,12 @@ $text-color-secondary: #eeecec;
       .hero-container__buttons {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
 
         .hero-button {
           width: 180px;
           margin: 16px;
+          white-space: nowrap;
         }
       }
     }
