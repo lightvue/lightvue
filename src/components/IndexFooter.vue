@@ -3,7 +3,7 @@
     <footer>
       <div class="contact">
         <a href="#">
-          <img src="../assets/logo.png" alt="" />
+          <img src="../assets/logo_RECT.png" alt="" />
         </a>
         <!-- <h2>Light-Vue</h2> -->
       </div>
@@ -43,7 +43,6 @@ export default {};
 .footer__wrapper {
   background: #143a56;
   padding: 0 160px 0;
- 
 }
 footer {
   margin: auto;
@@ -88,7 +87,7 @@ footer .contact {
     letter-spacing: 0.2rem;
   }
   img {
-    height: 150px;
+    // height: 150px;
     width: 150px;
   }
 }
@@ -150,6 +149,11 @@ footer .footer__form a {
     transition: all 0.2s ease-in-out;
   }
 
+  @media (max-width: 1100px) {
+    .footer__wrapper {
+      padding: 0px 20px 0px;
+    }
+  }
   @media (max-width: 767px) {
     .footer__wrapper {
       padding: 15px 30px !important;
