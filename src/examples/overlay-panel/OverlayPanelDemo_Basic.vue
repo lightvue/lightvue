@@ -3,7 +3,7 @@
     <LvButton class="lv--primary" type="button" icon="light-icon-search" :label="selectedProduct ? selectedProduct.name : 'Select a Product'" @click="toggle" aria:haspopup="true" aria-controls="overlay_panel" />
 
     <LvOverlayPanel ref="op" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 450px">
-      <img src="@/assets/images/demo/bamboo-watch.jpg" class="product-image --large" />
+      <img src="@/assets/images/demo/bamboo-watch.jpg" class="product-image --auto" />
       <!-- <DataTable :value="products" :selection.sync="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect">
         <Column field="name" header="Name" sortable></Column>
         <Column header="Image">
@@ -30,7 +30,7 @@
 
 <script>
 import LvButton from '@/collections/buttons/Button.vue';
-import ProductService from '@/service/ProductService';
+// import ProductService from '@/service/ProductService';
 import LvOverlayPanel from '@/collections/overlay-panel/OverlayPanel.vue';
 
 export default {
@@ -40,13 +40,13 @@ export default {
       selectedProduct: null,
     };
   },
-  productService: null,
-  created() {
-    this.productService = new ProductService();
-  },
-  mounted() {
-    this.productService.getProductsSmall().then(data => (this.products = data));
-  },
+  // productService: null,
+  // created() {
+  //   this.productService = new ProductService();
+  // },
+  // mounted() {
+  //   this.productService.getProductsSmall().then(data => (this.products = data));
+  // },
   methods: {
     toggle(event) {
       this.$refs.op.toggle(event);
@@ -54,13 +54,13 @@ export default {
     toggleImageOverlay(event) {
       this.$refs.imageOverlay.toggle(event);
     },
-    formatCurrency(value) {
-      return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-    },
-    onProductSelect(event) {
-      this.$refs.op.hide();
-      this.$toast.add({ severity: 'info', summary: 'Product Selected', detail: event.data.name, life: 3000 });
-    },
+    // formatCurrency(value) {
+    //   return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    // },
+    // onProductSelect(event) {
+    //   this.$refs.op.hide();
+    //   this.$toast.add({ severity: 'info', summary: 'Product Selected', detail: event.data.name, life: 3000 });
+    // },
   },
   components: {
     LvOverlayPanel,
@@ -79,6 +79,9 @@ button {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   &.--large {
     width: 300px;
+  }
+  &.--auto {
+    width: 100%;
   }
 }
 </style>
