@@ -15,7 +15,7 @@
 .app-footer {
   padding: 0px 30px;
   .app-footer__text {
-    padding: 8px;
+    padding: 12px;
     font-size: 13px;
     opacity: 0.6;
     text-align: center;
