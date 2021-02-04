@@ -3,7 +3,7 @@
     <footer>
       <div class="contact">
         <a href="#">
-          <img src="../assets/logo_RECT.png" alt="" />
+          <img src="../assets/logo_rect.png" alt="" />
         </a>
         <!-- <h2>Light-Vue</h2> -->
       </div>
