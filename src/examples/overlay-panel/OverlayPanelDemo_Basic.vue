@@ -1,9 +1,10 @@
 <template>
   <div>
-    <LvButton type="button" icon="light-icon-search" :label="selectedProduct ? selectedProduct.name : 'Select a Product'" @click="toggle" aria:haspopup="true" aria-controls="overlay_panel" />
+    <LvButton class="lv--primary" type="button" icon="light-icon-search" :label="selectedProduct ? selectedProduct.name : 'Select a Product'" @click="toggle" aria:haspopup="true" aria-controls="overlay_panel" />
 
     <LvOverlayPanel ref="op" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 450px">
-      <DataTable :value="products" :selection.sync="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect">
+      <img src="@/assets/images/demo/bamboo-watch.jpg" class="product-image --large" />
+      <!-- <DataTable :value="products" :selection.sync="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect">
         <Column field="name" header="Name" sortable></Column>
         <Column header="Image">
           <template #body="slotProps">
@@ -15,14 +16,14 @@
             {{ formatCurrency(slotProps.data.price) }}
           </template>
         </Column>
-      </DataTable>
+      </DataTable> -->
     </LvOverlayPanel>
     <h5>Auto Width and right-aligned overlay-panel</h5>
     <LvButton type="button" label="Image Overlay" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" />
 
     <LvOverlayPanel ref="imageOverlay" append-to="body" :show-close-icon="true" id="image_overlay_panel" alignRight>
       <h3>Right-aligned overlay panel [PROP: alignRight]</h3>
-      <img :src="'demo/images/product/bamboo-watch.jpg'" class="product-image --large" />
+      <img src="@/assets/images/demo/bamboo-watch.jpg" class="product-image --large" />
     </LvOverlayPanel>
   </div>
 </template>

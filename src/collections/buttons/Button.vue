@@ -1,11 +1,5 @@
 <template>
-  <button
-    class="lv-button"
-    :class="buttonClass"
-    v-bind="$attrs"
-    :type="type"
-    v-on="listeners"
-  >
+  <button class="lv-button lv--primary" :class="buttonClass" v-bind="$attrs" :type="type" v-on="listeners">
     <div v-if="$slots['prepend'] || icon" class="lv-button__prepend">
       <slot name="prepend">
         <div v-if="icon" class="lv-button__icon">
@@ -15,7 +9,7 @@
     </div>
     <div class="lv-button__label">
       <slot>
-        {{ label || "&nbsp;" }}
+        {{ label || '&nbsp;' }}
       </slot>
     </div>
     <div v-if="$slots['append'] || iconRight" class="lv-button__append">
@@ -30,8 +24,8 @@
 
 <script>
 // import Ripple from '@/components/ripple/Ripple';
-import "./Button.scss";
-import "./ButtonTheme.scss";
+import './Button.scss';
+import './ButtonTheme.scss';
 export default {
   props: {
     icon: {
@@ -78,28 +72,28 @@ export default {
     // },
     size: {
       type: String,
-      default: "md",
+      default: 'md',
       // validation: [TODO] for only possible values
     },
     type: {
       type: String,
-      default: "button",
+      default: 'button',
     },
   },
   computed: {
     buttonClass() {
       return {
-        "--icon-only": this.icon && !this.label,
-        "--rounded": this.rounded,
-        "--size-sm": this.size === "sm",
-        "--size-md": this.size === "md",
-        "--size-lg": this.size === "lg",
-        "--size-xl": this.size === "xl",
-        "--raised": this.raised,
-        "--deep-shadow-hover": this.deepShadowHover,
-        "--deep-shadow": this.deepShadow,
-        "--push": this.raised || this.outlined || this.push,
-        "--outlined": this.outlined,
+        '--icon-only': this.icon && !this.label,
+        '--rounded': this.rounded,
+        '--size-sm': this.size === 'sm',
+        '--size-md': this.size === 'md',
+        '--size-lg': this.size === 'lg',
+        '--size-xl': this.size === 'xl',
+        '--raised': this.raised,
+        '--deep-shadow-hover': this.deepShadowHover,
+        '--deep-shadow': this.deepShadow,
+        '--push': this.raised || this.outlined || this.push,
+        '--outlined': this.outlined,
       };
     },
     listeners() {
