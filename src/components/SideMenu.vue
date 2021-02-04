@@ -6,9 +6,9 @@
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="hideAbout" @click="showAboutFn"><i class="light-icon-info-circle"></i>About<i class="nav-container--close light-icon-chevron-down"></i></h5>
+        <h5 class="nav-list__head" v-if="hideAbout" @click.stop="showAboutFn"><i class="light-icon-info-circle"></i>About<i class="nav-container--close light-icon-chevron-down"></i></h5>
         <div v-else class="nav-list__container">
-          <h5 class="nav-list__label nav-list__label--head" @click="hideAbout = !hideAbout"><i class="light-icon-info-circle"></i> About <i class="nav-container--close light-icon-chevron-up"></i></h5>
+          <h5 class="nav-list__label nav-list__label--head" @click.stop="hideAbout = !hideAbout"><i class="light-icon-info-circle"></i> About <i class="nav-container--close light-icon-chevron-up"></i></h5>
           <div class="dropdown__content">
             <!-- <div class="left___line"></div> -->
             <div class="sub-menu__link--wrapper">
@@ -42,9 +42,9 @@
         <div class="nav-list__label">Support</div>
       </div> -->
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="hideForm" @click="showFormFn"><i class="light-icon-clipboard"></i>Form <i class="nav-container--close light-icon-chevron-down"></i></h5>
+        <h5 class="nav-list__head" v-if="hideForm" @click.stop="showFormFn"><i class="light-icon-clipboard"></i>Form <i class="nav-container--close light-icon-chevron-down"></i></h5>
         <div class="nav-list__container" v-else>
-          <h5 class="nav-list__label nav-list__label--head" @click="hideForm = !hideForm"><i class="light-icon-clipboard nav-container"></i> Form <i class="nav-container--close light-icon-chevron-up"></i></h5>
+          <h5 class="nav-list__label nav-list__label--head" @click.stop="hideForm = !hideForm"><i class="light-icon-clipboard nav-container"></i> Form <i class="nav-container--close light-icon-chevron-up"></i></h5>
           <div class="dropdown__content">
             <div class="sub-menu__link--wrapper">
               <div class="sub-menu__line"></div>
@@ -106,9 +106,9 @@
         </div>
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="hideLoader" @click="showLoaderFn"><i class="light-icon-rotate-clockwise"></i>Loaders <i class="nav-container--close light-icon-chevron-down"></i></h5>
+        <h5 class="nav-list__head" v-if="hideLoader" @click.stop="showLoaderFn"><i class="light-icon-rotate-clockwise"></i>Loaders <i class="nav-container--close light-icon-chevron-down"></i></h5>
         <div class="nav-list__container" v-else>
-          <h5 class="nav-list__label nav-list__label--head" @click="hideLoader = !hideLoader"><i class="light-icon-rotate-clockwise"></i> Loaders <i class="nav-container--close light-icon-chevron-up"></i></h5>
+          <h5 class="nav-list__label nav-list__label--head" @click.stop="hideLoader = !hideLoader"><i class="light-icon-rotate-clockwise"></i> Loaders <i class="nav-container--close light-icon-chevron-up"></i></h5>
           <div class="dropdown__content">
             <div class="sub-menu__link--wrapper">
               <div class="sub-menu__line"></div>
@@ -141,9 +141,9 @@
           </div>
         </div>
         <div class="nav-list__nest">
-          <h5 class="nav-list__head" v-if="hideMisc" @click="showMiscFn"><i class="light-icon-square-plus"></i>Misc. <i class="nav-container--close light-icon-chevron-down"></i></h5>
+          <h5 class="nav-list__head" v-if="hideMisc" @click.stop="showMiscFn"><i class="light-icon-square-plus"></i>Misc. <i class="nav-container--close light-icon-chevron-down"></i></h5>
           <div class="nav-list__container" v-else>
-            <h5 class="nav-list__label nav-list__label--head" @click="hideMisc = !hideMisc"><i class="light-icon-square-plus"></i> Misc. <i class="nav-container--close light-icon-chevron-up"></i></h5>
+            <h5 class="nav-list__label nav-list__label--head" @click.stop="hideMisc = !hideMisc"><i class="light-icon-square-plus"></i> Misc. <i class="nav-container--close light-icon-chevron-up"></i></h5>
             <div class="dropdown__content">
               <div class="sub-menu__link--wrapper">
                 <div class="sub-menu__line"></div>
