@@ -2,10 +2,9 @@
   <div class="footer__wrapper">
     <footer>
       <div class="contact">
-        <a href="#">
-          <img src="../assets/logo_rect.png" alt="" />
-        </a>
-        <!-- <h2>Light-Vue</h2> -->
+        <nuxt-link :to="{ hash: '' }">
+          <img src="/logo_v2.png" alt="" width="220px" />
+        </nuxt-link>
       </div>
       <div class="footer__links">
         <h6>Links</h6>
@@ -63,7 +62,6 @@ footer {
     margin-bottom: 20px;
   }
   h6 {
-    margin-top: 25px;
     font-weight: 600;
     margin-bottom: 10px;
     font-size: 18px;

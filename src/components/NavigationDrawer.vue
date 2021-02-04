@@ -2,7 +2,7 @@
   <div :class="`sidebar ${showDrawer ? 'show-drawer' : ''}`" @click="$emit('toggle-drawer')">
     <div class="nav-list">
       <div class="sidebar__logo" @click="$router.push('/')">
-        <img src="@/assets/logo_rect.png" class="header-logo" />
+        <img src="/logo_v2.png" class="header-logo" />
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
       <div class="nav-list__category-wrap" v-for="category in $options.categories" :key="category.category_name" :class="{ '--active': activeCategory === category.category_name }">
@@ -208,7 +208,6 @@ export default {
   font-size: 18px;
 }
 .nav-list {
-  padding: 16px 0px;
   .nav-list__category-items {
     padding: 0px 16px 8px;
     margin-left: 8px;
@@ -253,10 +252,8 @@ export default {
 }
 
 .sidebar__logo {
-  // display: none;
-  align-items: center;
+  padding: 12px;
   cursor: pointer;
-  // margin: 0px 0px 20px;
   .header-logo {
     width: 100%;
   }

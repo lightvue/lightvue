@@ -1,5 +1,5 @@
 <template>
-  <div class="features-wrapper">
+  <div class="features-wrapper" id="features">
     <div class="features-container">
       <div class="features-row">
         <h2 class="features-heading">Why Light-Vue?</h2>
@@ -43,7 +43,7 @@ export default {};
 
 <style scoped lang="scss">
 .features-wrapper {
-  padding: 200px 0px;
+  padding-bottom: 120px;
   .features-container {
     max-width: 1600px;
     margin-right: auto;
@@ -69,13 +69,13 @@ export default {};
       width: 33.33vw;
       padding: 30px;
       margin: 10px;
-      border: 1px solid;
-      border-color: rgba(0, 0, 0, 0);
+      // border: 1px solid;
+      // border-color: rgba(0, 0, 0, 0);
       border-radius: 12px;
       transition: all 0.3s;
       &:hover {
-        transform: scale(1.15);
-        border-color: rgba(0, 0, 0, 0.5);
+        transform: scale(1.02);
+        // border-color: rgba(0, 0, 0, 0.5);
         i {
           color: #607c8a;
         }
