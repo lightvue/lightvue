@@ -1,12 +1,5 @@
 <template>
-  <div
-    :class="[
-      'lv-input__group',
-      { '--with-floating-label': floatingLabel },
-      { '--not-empty': filled },
-      { '--with-bottom-bar': floatingLabel || bottomBar },
-    ]"
-  >
+  <div :class="['lv-input__group', { '--with-floating-label': floatingLabel }, { '--not-empty': filled }, { '--with-bottom-bar': floatingLabel || bottomBar }]">
     <label :for="name">
       <div class="lv-input__label" v-if="label" :for="name">
         {{ label }}
@@ -20,26 +13,11 @@
           </div>
         </slot>
       </div>
-      <input
-        class="lv-input__element"
-        :value="modelValue"
-        v-bind="$attrs"
-        v-on="listeners"
-        @input="this.updateValue"
-        :name="name"
-        :id="name"
-        v-if="editable"
-      />
+      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @input="this.updateValue" :name="name" :id="name" v-if="editable" />
       <div v-else class="lv-input__default">
         <slot>{{ modelValue || $attrs.placeholder }}</slot>
         <div class="lv-hidden-accessible">
-          <input
-            type="text"
-            readonly
-            :value="modelValue"
-            v-bind="$attrs"
-            v-on="listeners"
-          />
+          <input type="text" readonly :value="modelValue" v-bind="$attrs" v-on="listeners" />
         </div>
       </div>
       <div class="lv-input__append" v-if="$slots['append'] || iconRight">
@@ -58,11 +36,11 @@
 
 <script>
 export default {
-  name: "Input",
+  name: 'Input',
   inheritAttrs: false,
   props: {
     value: {
-      type: String,
+      type: String | Number,
       default: null,
     },
     // modelValue: {
@@ -79,7 +57,7 @@ export default {
     },
     helpText: {
       type: String,
-      default: "",
+      default: '',
     },
     editable: {
       type: Boolean,
@@ -103,11 +81,11 @@ export default {
     },
     iconLeft: {
       type: String,
-      default: "",
+      default: '',
     },
     iconRight: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   computed: {
@@ -119,7 +97,7 @@ export default {
         ? {
             // Depreciated in Vue 3
             ...this.$listeners,
-            input: (event) => this.updateValue(event),
+            input: event => this.updateValue(event),
           }
         : {};
     },
@@ -129,14 +107,14 @@ export default {
   },
   methods: {
     updateValue(event) {
-      this.$emit("input-native", event);
-      this.$emit("input", event.target.value); // Only for Vue 2
-      this.$emit("update:modelValue", event.target.value); // Only for Vue 3
+      this.$emit('input-native', event);
+      this.$emit('input', event.target.value); // Only for Vue 2
+      this.$emit('update:modelValue', event.target.value); // Only for Vue 3
     },
   },
 };
 </script>
 <style lang="scss">
-@import "./Input.scss";
-@import "./InputTheme.scss";
+@import './Input.scss';
+@import './InputTheme.scss';
 </style>
