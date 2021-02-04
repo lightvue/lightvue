@@ -4,7 +4,7 @@
       <LvCard> <div v-html="dummyContent('default (false)')"></div> </LvCard>
     </div>
     <div class="card-demo">
-      <LvCard showBorder="true"> <div v-html="dummyContent('showBorder = true')"></div> </LvCard>
+      <LvCard :showBorder="true"> <div v-html="dummyContent('showBorder = true')"></div> </LvCard>
     </div>
   </div>
 </template>

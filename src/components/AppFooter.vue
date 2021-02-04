@@ -2,29 +2,13 @@
   <div class="layout-footer">
     <div class="layout-footer__row">
       Want to make some changes?
-      <a href="#"
-        >You can suggest changes on GitHub
+      <a href="#">
+        You can suggest changes on GitHub
         <i class="light-icon-brand-github"></i>
       </a>
     </div>
-    <div class="layout-footer__div">
-      <div class="layout-footer__row">
-        <span>LightVue</span>, a product of
-        <a href="https://www.digiklabs.com">DIGI-K LABS</a>
-      </div>
-
-      <!-- <div class="layout-footer__row">
-        <h5 class="footer-bold">Follow For More Updates</h5>
-        <a href="https://github.com/lightvue">
-          <i class="light-icon-brand-github"></i>
-        </a>
-        <a href="https://twitter.com/lightvue">
-          <i class="light-icon-brand-twitter"></i>
-        </a>
-      </div> -->
-    </div>
     <div class="layout-footer__legal">
-      <p class>Copyright © 2021 DIGI-K-LABS. All rights reserved.</p>
+      <p class>Copyright 2021 © DIGI-K-LABS. All rights reserved.</p>
     </div>
   </div>
 </template>

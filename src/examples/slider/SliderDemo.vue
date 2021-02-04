@@ -5,7 +5,7 @@
       <LvSlider v-model="value1" />
 
       <h5>Input: {{ value2 }}</h5>
-      <InputText v-model.number="value2" />
+      <LvInput type="number" v-model="value2" />
       <LvSlider v-model="value2" />
 
       <h5>Step: {{ value3 }}</h5>

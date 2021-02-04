@@ -232,7 +232,7 @@ export default {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   background: #405364;
   border: 1px solid #1f2a35;
-  z-index: 10000;
+  z-index: 1000;
 }
 .nav-list__nest {
   box-shadow: inset 7px 7px 100px #364453, inset -7px -7px 100px #485c71;
@@ -278,10 +278,10 @@ export default {
     border-bottom: 1px solid #314254;
     border-top: 1px solid #516274;
   }
-  .nuxt-link-exact-active {
+  .nuxt-link-active {
     // // background-color: #e0e7ec;
     // // border-radius: 5px;
-    color: #3edb9c;
+    color: #38b2ac;
     font-weight: bolder;
   }
 }
