@@ -2,10 +2,7 @@
   <div class="app-header">
     <div class="header-items">
       <div class="header__logo-row">
-        <i
-          class="light-icon-menu-2 menu-icon"
-          @click="$emit('toggle-drawer')"
-        ></i>
+        <i class="light-icon-menu-2 menu-icon" @click="$emit('toggle-drawer')"></i>
         <div class="logo" @click="$router.push('/')">
           <img src="@/assets/logo.png" class="header-logo" />
           <h3 class="logo-text">&nbsp; LightVue</h3>
@@ -13,7 +10,7 @@
       </div>
       <div class="search-row">
         <div class="search-bar">
-            <AppSearch />
+          <AppSearch />
         </div>
       </div>
       <div class="social__row">
@@ -37,8 +34,8 @@
 import AppSearch from '@/components/AppSearch';
 export default {
   components: {
-    AppSearch
-  }
+    AppSearch,
+  },
 };
 </script>
 
@@ -51,7 +48,7 @@ export default {
 .app-header {
   background-color: #ffffff;
   padding: 0 24px;
-  height: 80px;
+  height: 60px;
   position: fixed;
   top: 0;
   left: 0;
@@ -173,7 +170,7 @@ export default {
 @media (max-width: 768px) {
   .search-bar {
     width: calc(60% - 10px);
-    left: 40%; 
+    left: 40%;
   }
 }
 </style>
