@@ -2,9 +2,9 @@
 <div class='app-searchui-wrapper'>
   <ais-instant-search index-name="lightvueDemo" :search-client="searchClient" >
       <div class='app-searchui__bar-wrapper'>
-        <ais-search-box placeholder="Start typing..." class="searchbox" />
+        <ais-search-box placeholder="Start typing..." class="searchbox" v-model="queryString"/>
       </div>
-      <div v-show="resultsOpen == true" id="app-searchui__results-wrapper" @click="clearSearchbox">
+      <div v-show="queryString !== ''" id="app-searchui__results-wrapper" @click="clearSearchbox">
         <ais-hits>
             <template slot="item" slot-scope="{ item }">
               <nuxt-link :to="`/vue-components/${item.docslink}`">
@@ -37,52 +37,13 @@ export default {
   data() {
     return {
       resultsOpen: false,
+      queryString: "",
       searchClient: algoliasearch(
         'CYDWBEXKQT',
         '96b5c074edda2e65f8548e6d61fb922d'
       ),
     }
   },
-   beforeMount() {
-     setTimeout(
-       () => {
-         document.getElementsByClassName('ais-SearchBox-input')[0].addEventListener('focus' , (event) => {
-           this.resultsOpen = true;
-         })
-         document.getElementsByClassName('ais-SearchBox-input')[0].addEventListener('blur' , (event) => {
-           setTimeout( () => {
-             this.resultsOpen = false;
-          }, 300)
-         })
-       }, 1000
-     )
-
-     setTimeout(
-       () => {
-         document.getElementsByClassName('ais-SearchBox-input')[0].addEventListener('focus' , (event) => {
-           this.resultsOpen = true;
-         })
-         document.getElementsByClassName('ais-SearchBox-input')[0].addEventListener('blur' , (event) => {
-           setTimeout( () => {
-             this.resultsOpen = false;
-          }, 300)
-         })
-       }, 6000
-     )
-
-     setTimeout(
-       () => {
-         document.getElementsByClassName('ais-SearchBox-input')[0].addEventListener('focus' , (event) => {
-           this.resultsOpen = true;
-         })
-         document.getElementsByClassName('ais-SearchBox-input')[0].addEventListener('blur' , (event) => {
-           setTimeout( () => {
-             this.resultsOpen = false;
-          }, 300)
-         })
-       }, 10000
-     )
-    },
     methods: {
       clearSearchbox: function () {
         document.getElementsByClassName('ais-SearchBox-reset')[0].click(); 
