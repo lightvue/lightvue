@@ -35,7 +35,20 @@ export default {
       activeCategory: 'Form',
     };
   },
+  created() {
+    this.getActiveCategory();
+  },
   methods: {
+    getActiveCategory() {
+      for (let category of this.$options.categories) {
+        for (let page of category.pages) {
+          if (this.$route.path.includes(page.page_path)) {
+            this.activeCategory = category.category_name;
+            return;
+          }
+        }
+      }
+    },
     setActiveCategory(newCategory) {
       this.activeCategory = this.activeCategory === newCategory ? '' : newCategory;
     },
@@ -186,6 +199,8 @@ export default {
   i {
     font-size: 20px;
     margin-right: 4px;
+    min-width: 20px;
+    height: 20px;
   }
 
   color: #fafbff;
