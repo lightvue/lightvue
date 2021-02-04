@@ -216,7 +216,7 @@ export default {
 
   .nav-list__item-line {
     width: 20px;
-    border-bottom: 1px solid #566779;
+    border-bottom: 1px dotted #566779;
   }
 
   .nav-list__item-bullet {
@@ -228,7 +228,7 @@ export default {
   .nav-list__category-item {
     display: flex;
     align-items: center;
-    border-left: 1px dashed #57687a;
+    border-left: 1px dotted #57687a;
     padding: 8px 0px;
     text-indent: 10px;
     &.--link {
@@ -240,8 +240,9 @@ export default {
       }
       &.nuxt-link-active {
         color: #38b2ac;
+        // border-left: 1px dotted #38b2ac;
         .nav-list__item-line {
-          border-bottom: 1px solid #38b2ac;
+          border-bottom: 1px dotted #38b2ac;
         }
         .nav-list__item-bullet {
           background-color: #38b2ac;

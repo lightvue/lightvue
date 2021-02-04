@@ -3,8 +3,11 @@
     <app-header @toggle-drawer="toggleDrawer()" />
     <div class="sidemenu__backdrop" v-if="showDrawer" @click="toggleDrawer()"></div>
     <navigation-drawer :show-drawer="showDrawer" @toggle-drawer="toggleDrawer()" />
-    <div class="side-menu__child">
-      <nuxt-child />
+    <div class="page-wrap">
+      <div class="page-content">
+        <nuxt-child />
+      </div>
+      <app-footer />
     </div>
   </div>
 </template>
@@ -14,6 +17,7 @@ import 'light-icons/dist/light-icon.css';
 import AppHeader from '@/components/AppHeader.vue';
 // import SideMenu from "@/components/SideMenu.vue";
 import NavigationDrawer from '@/components/NavigationDrawer.vue';
+import AppFooter from '@/components/AppFooter.vue';
 
 export default {
   scrollToTop: true,
@@ -21,6 +25,7 @@ export default {
     AppHeader,
     // SideMenu,
     NavigationDrawer,
+    AppFooter,
   },
   data() {
     return {
@@ -35,7 +40,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import './overwrite.scss';
 @import './examples.scss';
 * {
@@ -63,13 +68,14 @@ body,
     border-radius: 4px;
   }
 }
-.side-menu__child {
+.page-wrap {
   position: absolute;
   right: 0px;
-  top: 76px;
-  padding: 30px;
-  z-index: -10000;
+  top: 64px;
   width: calc(100% - 250px);
+  .page-content {
+    padding: 30px 30px 0px;
+  }
 }
 
 .feature-intro p {
@@ -91,7 +97,7 @@ body,
 }
 
 @media (max-width: 769px) {
-  .side-menu__child {
+  .page-wrap {
     left: 0px;
     width: 100%;
   }

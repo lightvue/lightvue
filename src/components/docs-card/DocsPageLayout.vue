@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div class="content-section implementation" style="min-height: calc(100vh - 260px)">
+    <div class="content-section implementation" style="min-height: calc(100vh - 220px)">
       <div class="content-header">
         <div class="demo-tab" :class="{ active: selectedTab === 'collection' }" @click="selectTab('collection')">Collection</div>
         <div class="demo-tab" :class="{ active: selectedTab === 'api' }" @click="selectTab('api')">Documentation</div>
@@ -21,21 +21,11 @@
         <slot name="api"></slot>
       </div>
     </div>
-    <nuxt />
-    <div class="content-section introduction">
-      <div class="feature-intro">
-        <app-footer />
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter.vue';
 export default {
-  components: {
-    AppFooter,
-  },
   props: ['title', 'description'],
   data() {
     return {
