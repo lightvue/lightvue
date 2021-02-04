@@ -1,34 +1,28 @@
 <template>
-<div class='app-searchui-wrapper'>
-  <ais-instant-search index-name="lightvueDemo" :search-client="searchClient" >
-      <div class='app-searchui__bar-wrapper'>
-        <ais-search-box placeholder="Start typing..." class="searchbox" v-model="queryString"/>
+  <div class="app-searchui-wrapper">
+    <ais-instant-search index-name="lightvueDemo" :search-client="searchClient">
+      <div class="app-searchui__bar-wrapper">
+        <ais-search-box placeholder="Type to Start searching..." class="searchbox" v-model="queryString" />
       </div>
       <div v-show="queryString !== ''" id="app-searchui__results-wrapper" @click="clearSearchbox">
         <ais-hits>
-            <template slot="item" slot-scope="{ item }">
-              <nuxt-link :to="`/vue-components/${item.docslink}`">
-                  <ais-highlight class="app-searchui__results__title" :hit="item" attribute="name" /> 
-                  <i class="app-searchui__results__icon light-icon-arrow-right-circle"></i> 
-                  <br />
-                  <ais-highlight class="app-searchui__results__category" :hit="item" attribute="category" /> <br />
-                  <ais-highlight class="app-searchui__results__desc" :hit="item" attribute="description" />
-              </nuxt-link>
-            </template>
+          <template slot="item" slot-scope="{ item }">
+            <nuxt-link :to="`/vue-components/${item.docslink}`">
+              <ais-highlight class="app-searchui__results__title" :hit="item" attribute="name" />
+              <i class="app-searchui__results__icon light-icon-arrow-right-circle"></i>
+              <br />
+              <ais-highlight class="app-searchui__results__category" :hit="item" attribute="category" /> <br />
+              <ais-highlight class="app-searchui__results__desc" :hit="item" attribute="description" />
+            </nuxt-link>
+          </template>
         </ais-hits>
       </div>
-  </ais-instant-search>
-</div>
+    </ais-instant-search>
+  </div>
 </template>
 
 <script>
-import {
-  AisInstantSearch,
-  AisHits,
-  AisHighlight,
-  AisSearchBox,
-  createServerRootMixin,
-} from 'vue-instantsearch';
+import { AisInstantSearch, AisHits, AisHighlight, AisSearchBox, createServerRootMixin } from 'vue-instantsearch';
 import algoliasearch from 'algoliasearch/lite';
 // import 'instantsearch.css/themes/algolia-min.css';
 import 'instantsearch.css/themes/algolia.css';
@@ -37,27 +31,29 @@ export default {
   data() {
     return {
       resultsOpen: false,
-      queryString: "",
-      searchClient: algoliasearch(
-        'CYDWBEXKQT',
-        '96b5c074edda2e65f8548e6d61fb922d'
-      ),
-    }
+      queryString: '',
+      searchClient: algoliasearch('CYDWBEXKQT', '96b5c074edda2e65f8548e6d61fb922d'),
+    };
   },
-    methods: {
-      clearSearchbox: function () {
-        document.getElementsByClassName('ais-SearchBox-reset')[0].click(); 
-       document.getElementsByClassName('ais-SearchBox-input')[0].value = ''; 
-      }
+  methods: {
+    clearSearchbox: function () {
+      document.getElementsByClassName('ais-SearchBox-reset')[0].click();
+      document.getElementsByClassName('ais-SearchBox-input')[0].value = '';
     },
+  },
   components: {
-    algoliasearch, AisInstantSearch, AisSearchBox, AisHits, AisHighlight,createServerRootMixin
-  }
+    algoliasearch,
+    AisInstantSearch,
+    AisSearchBox,
+    AisHits,
+    AisHighlight,
+    createServerRootMixin,
+  },
 };
 </script>
-<style >
+<style>
 @keyframes fadein {
-  0%  {
+  0% {
     opacity: 0;
     margin-top: -5px;
   }
@@ -80,7 +76,7 @@ export default {
   padding-left: 30px;
   height: 40px;
   transition: all 0.3s;
-} 
+}
 
 .ais-SearchBox-input:focus {
   border-color: #607c8a;
@@ -93,7 +89,7 @@ export default {
   overflow: hidden;
   padding-top: 15px;
   border-radius: 0px 0px 10px 10px;
-  box-shadow: 1px 10px 10px -4px rgba(0,0,0,0.1),-1px 0px 10px -1px rgba(0,0,0,0.1);
+  box-shadow: 1px 10px 10px -4px rgba(0, 0, 0, 0.1), -1px 0px 10px -1px rgba(0, 0, 0, 0.1);
 }
 
 .ais-Hits-item {
@@ -117,16 +113,16 @@ export default {
 .ais-Highlight {
   display: inline-block;
 }
- .app-searchui__results__title {
-   color: rgba(0,0,0,0.8);
-   width: calc(100% - 80px);
-   font-weight: bold;
-   font-size: 1.25em;
- }
+.app-searchui__results__title {
+  color: rgba(0, 0, 0, 0.8);
+  width: calc(100% - 80px);
+  font-weight: bold;
+  font-size: 1.25em;
+}
 
- .app-searchui__results__category {
+.app-searchui__results__category {
   color: gray;
-  font-size:0.8em;
+  font-size: 0.8em;
   width: max-content;
   padding: 2px 8px;
   border: solid 1px grey;
@@ -134,49 +130,49 @@ export default {
   position: relative;
   top: 8px;
   border-radius: 4px;
- }
+}
 
- .app-searchui__results__desc {
+.app-searchui__results__desc {
   color: gray;
   font-size: 1em;
   display: block;
   width: calc(100% - 30px);
- }
+}
 
- .ais-Highlight-highlighted {
-   background-color: transparent;
-   color: #607c8a;
-   font-size: inherit;
- }
+.ais-Highlight-highlighted {
+  background-color: transparent;
+  color: #607c8a;
+  font-size: inherit;
+}
 
- .app-searchui__results__icon {
-   position: relative;
-   font-size: 1.25em;
-   color: grey;
-   height: max-content;
-   transform: scale(1.7);
-   float: right;
-   text-align: right;
-   opacity: 0.8;
-   left: 0px;
-   top: 4px;
-   padding-top: 0px;
- }
+.app-searchui__results__icon {
+  position: relative;
+  font-size: 1.25em;
+  color: grey;
+  height: max-content;
+  transform: scale(1.7);
+  float: right;
+  text-align: right;
+  opacity: 0.8;
+  left: 0px;
+  top: 4px;
+  padding-top: 0px;
+}
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .app-searchui__results__title {
     font-size: 18px;
     width: calc(100% - 40px);
-    }
+  }
 
-    .app-searchui__results__desc {
+  .app-searchui__results__desc {
     font-size: 14px;
     width: calc(100% - 40px);
-    }
+  }
 
-    .app-searchui__results__icon {
-      font-size: 20px;
-      top: 0px;
-    }
- }
+  .app-searchui__results__icon {
+    font-size: 20px;
+    top: 0px;
+  }
+}
 </style>

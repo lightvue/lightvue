@@ -169,8 +169,8 @@ export default {
 }
 @media (max-width: 768px) {
   .search-bar {
-    width: calc(60% - 10px);
-    left: 40%;
+    width: calc(100% - 90px);
+    left: 80px;
   }
 }
 </style>
