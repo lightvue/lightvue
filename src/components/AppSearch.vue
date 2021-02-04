@@ -2,9 +2,14 @@
   <div class="app-searchui-wrapper">
     <ais-instant-search index-name="lightvueDemo" :search-client="searchClient">
       <div class="app-searchui__bar-wrapper">
-        <ais-search-box placeholder="Type to Start searching..." class="searchbox" v-model="queryString" />
+        <ais-search-box placeholder="Type to Start searching..." class="searchbox">
+          <div slot-scope="{ currentRefinement, isSearchStalled, refine }">
+            <lv-input icon-left="light-icon-search" type="search" :value="queryString" @input="handleOnType($event, refine)" placeholder="Type to Start searching..." />
+            <span :hidden="!isSearchStalled"></span>
+          </div>
+        </ais-search-box>
       </div>
-      <div v-show="queryString !== ''" id="app-searchui__results-wrapper" @click="clearSearchbox">
+      <div v-show="queryString" id="app-searchui__results-wrapper" @click="clearSearchbox">
         <ais-hits>
           <template slot="item" slot-scope="{ item }">
             <nuxt-link :to="`/vue-components/${item.docslink}`">
@@ -25,7 +30,7 @@
 import { AisInstantSearch, AisHits, AisHighlight, AisSearchBox, createServerRootMixin } from 'vue-instantsearch';
 import algoliasearch from 'algoliasearch/lite';
 // import 'instantsearch.css/themes/algolia-min.css';
-import 'instantsearch.css/themes/algolia.css';
+// import 'instantsearch.css/themes/algolia.css';
 export default {
   name: 'AppSearch',
   data() {
@@ -36,9 +41,16 @@ export default {
     };
   },
   methods: {
-    clearSearchbox: function () {
-      document.getElementsByClassName('ais-SearchBox-reset')[0].click();
-      document.getElementsByClassName('ais-SearchBox-input')[0].value = '';
+    // clearSearchbox: function () {
+    // document.getElementsByClassName('ais-SearchBox-reset')[0].click();
+    // document.getElementsByClassName('ais-SearchBox-input')[0].value = '';
+    // },
+    clearSearchbox() {
+      this.queryString = '';
+    },
+    handleOnType(value, refine) {
+      refine(value);
+      this.queryString = value;
     },
   },
   components: {
@@ -140,8 +152,8 @@ export default {
 }
 
 .ais-Highlight-highlighted {
-  background-color: transparent;
-  color: #607c8a;
+  background-color: rgba(153, 230, 255, 0.45);
+  /* color: #607c8a; */
   font-size: inherit;
 }
 
