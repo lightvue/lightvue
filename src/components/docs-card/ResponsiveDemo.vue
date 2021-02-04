@@ -3,7 +3,10 @@
     <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
       <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
-          <Loader />
+          <!-- <div class="lv--all-center">
+            <ball-scale-multiple :scale="2" />
+          </div> -->
+          <loader />
         </slot>
       </Pane>
       <Pane :size="100 - paneSize" class="responsive-area__extra">
@@ -20,12 +23,14 @@
 import { Splitpanes, Pane } from 'splitpanes';
 import 'splitpanes/dist/splitpanes.css';
 import Loader from './Loader.vue';
+import BallScaleMultiple from '@/collections/loaders/BallComponents/BallScaleMultiple.vue';
 
 export default {
   components: {
     Splitpanes,
     Pane,
     Loader,
+    BallScaleMultiple,
   },
   props: {
     minWidth: {
