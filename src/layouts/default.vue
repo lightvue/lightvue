@@ -1,12 +1,8 @@
 <template>
   <div id="app">
     <app-header @toggle-drawer="toggleDrawer()" />
-    <div
-      class="sidemenu__backdrop"
-      v-if="showDrawer"
-      @click="toggleDrawer()"
-    ></div>
-    <side-menu :show-drawer="showDrawer" @toggle-drawer="toggleDrawer()" />
+    <div class="sidemenu__backdrop" v-if="showDrawer" @click="toggleDrawer()"></div>
+    <navigation-drawer :show-drawer="showDrawer" @toggle-drawer="toggleDrawer()" />
     <div class="side-menu__child">
       <nuxt-child />
     </div>
@@ -14,15 +10,17 @@
 </template>
 
 <script>
-import "light-icons/dist/light-icon.css";
-import AppHeader from "@/components/AppHeader.vue";
-import SideMenu from "@/components/SideMenu.vue";
+import 'light-icons/dist/light-icon.css';
+import AppHeader from '@/components/AppHeader.vue';
+// import SideMenu from "@/components/SideMenu.vue";
+import NavigationDrawer from '@/components/NavigationDrawer.vue';
 
 export default {
   scrollToTop: true,
   components: {
     AppHeader,
-    SideMenu,
+    // SideMenu,
+    NavigationDrawer,
   },
   data() {
     return {
@@ -38,8 +36,8 @@ export default {
 </script>
 
 <style>
-@import "./overwrite.scss";
-@import "./examples.scss";
+@import './overwrite.scss';
+@import './examples.scss';
 * {
   padding: 0px;
   margin: 0px;
