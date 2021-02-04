@@ -6,9 +6,9 @@
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="contentShow" @click="contentShow = !contentShow"><i class="light-icon-bulb"></i> About</h5>
+        <h5 class="nav-list__head" v-if="showAbout"><i class="light-icon-bulb"></i>ABOUT<i class="nav-container--close light-icon-chevron-down" @click="showAbout = !showAbout"></i></h5>
         <div v-else class="nav-list__container">
-          <h5 class="nav-list__label" @click="contentShow = !contentShow"><i class="light-icon-bulb"></i> About</h5>
+          <h5 class="nav-list__label"><i class="light-icon-bulb"></i> ABOUT <i class="nav-container--close light-icon-chevron-up" @click="showAbout = !showAbout"></i></h5>
           <div class="dropdown__content">
             <!-- <div class="left___line"></div> -->
             <div class="sub-menu__link--wrapper">
@@ -42,63 +42,132 @@
         <div class="nav-list__label">Support</div>
       </div> -->
       <div class="nav-list__nest">
-        <h5 class="nav-list__head"><i class="light-icon-clipboard"></i>FORM</h5>
-        <div class="nav-list__container">
-          <h5 class="nav-list__label"><i class="light-icon-clipboard"></i> FORM</h5>
-          <nuxt-link to="/vue-components/button" class="nav-list__item">
-            <div class="nav-list__label">Button</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/checkbox" class="nav-list__item">
-            <div class="nav-list__label">Checkbox</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/colorpicker" class="nav-list__item">
-            <div class="nav-list__label">Color Picker</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/dropdown" class="nav-list__item">
-            <div class="nav-list__label">Dropdown</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/input" class="nav-list__item">
-            <div class="nav-list__label">Input</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/rating" class="nav-list__item">
-            <div class="nav-list__label">Rating</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/slider" class="nav-list__item">
-            <div class="nav-list__label">Slider</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/toggle-switch" class="nav-list__item">
-            <div class="nav-list__label">Toggle Switch</div>
-          </nuxt-link>
+        <h5 class="nav-list__head" v-if="showForm"><i class="light-icon-clipboard"></i>FORM <i class="nav-container--close light-icon-chevron-down" @click="showForm = !showForm"></i></h5>
+        <div class="nav-list__container" v-else>
+          <h5 class="nav-list__label"><i class="light-icon-clipboard nav-container"></i> FORM <i class="nav-container--close light-icon-chevron-up" @click="showForm = !showForm"></i></h5>
+          <div class="dropdown__content">
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/button" class="nav-list__item">
+                <div class="nav-list__label"><p>Button</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/checkbox" class="nav-list__item">
+                <div class="nav-list__label"><p>CheckBox</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/colorpicker" class="nav-list__item">
+                <div class="nav-list__label"><p>Color Picker</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/dropdown" class="nav-list__item">
+                <div class="nav-list__label"><p>Dropdown</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/input" class="nav-list__item">
+                <div class="nav-list__label"><p>Input</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/rating" class="nav-list__item">
+                <div class="nav-list__label"><p>Rating</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/slider" class="nav-list__item">
+                <div class="nav-list__label"><p>Slider</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/toggle-switch" class="nav-list__item">
+                <div class="nav-list__label"><p>Toggle Switch</p></div>
+              </nuxt-link>
+            </div>
+          </div>
         </div>
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head"><i class="light-icon-brand-github"></i>LOADERS</h5>
-        <div class="nav-list__container">
-          <h5 class="nav-list__label"><i class="light-icon-brand-github"></i> LOADERS</h5>
-          <nuxt-link to="/vue-components/progress-bar" class="nav-list__item">
-            <div class="nav-list__label">Progress Bar</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/progress-loader" class="nav-list__item">
-            <div class="nav-list__label">Progress Loaders</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/progress-spinner" class="nav-list__item">
-            <div class="nav-list__label">Progress Spinners</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/shimmer" class="nav-list__item">
-            <div class="nav-list__label">Shimmers</div>
-          </nuxt-link>
+        <h5 class="nav-list__head" v-if="showLoader"><i class="light-icon-brand-github"></i>LOADERS <i class="nav-container--close light-icon-chevron-down" @click="showLoader = !showLoader"></i></h5>
+        <div class="nav-list__container" v-else>
+          <h5 class="nav-list__label"><i class="light-icon-brand-github"></i> LOADERS <i class="nav-container--close light-icon-chevron-up" @click="showLoader = !showLoader"></i></h5>
+          <div class="dropdown__content">
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/progress-bar" class="nav-list__item">
+                <div class="nav-list__label"><p>Progress Bar</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/progress-loader" class="nav-list__item">
+                <div class="nav-list__label"><p>Progress Loaders</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/progress-spinner" class="nav-list__item">
+                <div class="nav-list__label"><p>Progress Spinners</p></div>
+              </nuxt-link>
+            </div>
+            <div class="sub-menu__link--wrapper">
+              <div class="sub-menu__line"></div>
+              <div class="sub-menu__bullet"></div>
+              <nuxt-link to="/vue-components/shimmer" class="nav-list__item">
+                <div class="nav-list__label"><p>Shimmers</p></div>
+              </nuxt-link>
+            </div>
+          </div>
         </div>
         <div class="nav-list__nest">
-          <h5 class="nav-list__head"><i class="light-icon-brand-github"></i>MISC</h5>
-          <nuxt-link to="/vue-components/card" class="nav-list__item">
-            <div class="nav-list__label">Card</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/glassmorphic-card" class="nav-list__item">
-            <div class="nav-list__label">Glassmorphic Card</div>
-          </nuxt-link>
-          <nuxt-link to="/vue-components/overlay-panel" class="nav-list__item">
-            <div class="nav-list__label">Overlay Panel</div>
-          </nuxt-link>
+          <h5 class="nav-list__head" v-if="showMisc"><i class="light-icon-brand-github"></i>MISC <i class="nav-container--close light-icon-chevron-down" @click="showMisc = !showMisc"></i></h5>
+          <div class="nav-list__container" v-else>
+            <h5 class="nav-list__label"><i class="light-icon-brand-github"></i> MISC <i class="nav-container--close light-icon-chevron-up" @click="showMisc = !showMisc"></i></h5>
+            <div class="dropdown__content">
+              <div class="sub-menu__link--wrapper">
+                <div class="sub-menu__line"></div>
+                <div class="sub-menu__bullet"></div>
+                <nuxt-link to="/vue-components/card" class="nav-list__item">
+                  <div class="nav-list__label"><p>Cards</p></div>
+                </nuxt-link>
+              </div>
+              <div class="sub-menu__link--wrapper">
+                <div class="sub-menu__line"></div>
+                <div class="sub-menu__bullet"></div>
+                <nuxt-link to="/vue-components/glassmorphic-card" class="nav-list__item">
+                  <div class="nav-list__label"><p>Glassmorphic Card</p></div>
+                </nuxt-link>
+              </div>
+              <div class="sub-menu__link--wrapper">
+                <div class="sub-menu__line"></div>
+                <div class="sub-menu__bullet"></div>
+                <nuxt-link to="/vue-components/overlay-panel" class="nav-list__item">
+                  <div class="nav-list__label"><p>Overlay Panel</p></div>
+                </nuxt-link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -111,7 +180,10 @@ export default {
   methods: {},
   data() {
     return {
-      contentShow: false,
+      showAbout: false,
+      showForm: false,
+      showLoader: false,
+      showMisc: false,
     };
   },
 };
@@ -142,14 +214,10 @@ export default {
   border: 1px solid #1f2a35;
 }
 .nav-list__nest {
-  // border-radius: 3px;
-  // background: #ececec;
-  // margin-bottom: 10px;
   box-shadow: inset 7px 7px 100px #364453, inset -7px -7px 100px #485c71;
 }
 .nav-list__container {
   padding: 20px;
-  // padding-bottom: 5px;
   border-radius: 0px;
   background: #3f5062;
   box-shadow: inset -2px 2px 8px #212a33, inset 2px -2px 7px #212a33;
@@ -159,9 +227,10 @@ export default {
   text-indent: 20px;
   line-height: 40px;
   cursor: pointer;
+  color: #bdc4c8;
   &:hover,
   &:focus {
-    color: #fff;
+    // color: #fff;
     // background: #ffffff33;
   }
   p {
@@ -171,12 +240,11 @@ export default {
 .nav-list {
   padding: 20px 0px;
   .nav-list__head {
+    cursor: pointer;
     color: #f4fbfd;
     font-size: 14px;
     padding: 21px;
     margin: 0px;
-    // margin: 25px 16px 10px 16px;
-    // border-bottom: 1px solid #566d79;
     i {
       margin-right: 5px;
     }
@@ -186,15 +254,23 @@ export default {
   .nuxt-link-exact-active {
     // // background-color: #e0e7ec;
     // // border-radius: 5px;
-    // color: #697074;
-    // text-decoration: underline;
+    color: #3edb9c;
+    font-weight: bolder;
   }
+}
+.nav-container--close {
+  position: absolute;
+  cursor: pointer;
+  font-size: 24px;
+  right: 20px;
 }
 .nav-list__label {
   display: block;
-  color: #fff;
+  &:hover,
+  &:focus {
+    color: #3edb9c;
+  }
   p {
-    color: #bdc4c8;
     margin: 0px;
   }
 }
