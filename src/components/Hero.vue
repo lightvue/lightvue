@@ -28,7 +28,7 @@
         </div>
         <div class="hero-container__row">
           <div class="hero-container__image">
-            <img class="hero-image" src="@/assets/hero-bg-2.png" alt="" />
+            <img class="hero-image" src="/hero-bg.svg" alt="" />
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ $text-color-secondary: #eeecec;
   position: relative;
   padding-top: 32px;
   padding: 4em 0;
-  background-image: url("../assets/wave.png");
+  background-image: url('../assets/wave.png');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -160,9 +160,9 @@ $text-color-secondary: #eeecec;
 }
 
 @media only screen and (max-width: 500px) {
-.hero-image {
-      width: 98vw!important;
-      min-width: 10px !important;
-    }
+  .hero-image {
+    width: 98vw !important;
+    min-width: 10px !important;
+  }
 }
 </style>
