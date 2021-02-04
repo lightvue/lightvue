@@ -6,9 +6,9 @@
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="showAbout"><i class="light-icon-bulb"></i>ABOUT<i class="nav-container--close light-icon-chevron-down" @click="showAbout = !showAbout"></i></h5>
+        <h5 class="nav-list__head" v-if="showAbout"><i class="light-icon-info-circle"></i>About<i class="nav-container--close light-icon-chevron-down" @click="showAbout = !showAbout"></i></h5>
         <div v-else class="nav-list__container">
-          <h5 class="nav-list__label"><i class="light-icon-bulb"></i> ABOUT <i class="nav-container--close light-icon-chevron-up" @click="showAbout = !showAbout"></i></h5>
+          <h5 class="nav-list__label nav-list__label--head"><i class="light-icon-info-circle"></i> About <i class="nav-container--close light-icon-chevron-up" @click="showAbout = !showAbout"></i></h5>
           <div class="dropdown__content">
             <!-- <div class="left___line"></div> -->
             <div class="sub-menu__link--wrapper">
@@ -42,9 +42,9 @@
         <div class="nav-list__label">Support</div>
       </div> -->
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="showForm"><i class="light-icon-clipboard"></i>FORM <i class="nav-container--close light-icon-chevron-down" @click="showForm = !showForm"></i></h5>
+        <h5 class="nav-list__head" v-if="showForm"><i class="light-icon-clipboard"></i>Form <i class="nav-container--close light-icon-chevron-down" @click="showForm = !showForm"></i></h5>
         <div class="nav-list__container" v-else>
-          <h5 class="nav-list__label"><i class="light-icon-clipboard nav-container"></i> FORM <i class="nav-container--close light-icon-chevron-up" @click="showForm = !showForm"></i></h5>
+          <h5 class="nav-list__label nav-list__label--head"><i class="light-icon-clipboard nav-container"></i> Form <i class="nav-container--close light-icon-chevron-up" @click="showForm = !showForm"></i></h5>
           <div class="dropdown__content">
             <div class="sub-menu__link--wrapper">
               <div class="sub-menu__line"></div>
@@ -106,9 +106,9 @@
         </div>
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="showLoader"><i class="light-icon-brand-github"></i>LOADERS <i class="nav-container--close light-icon-chevron-down" @click="showLoader = !showLoader"></i></h5>
+        <h5 class="nav-list__head" v-if="showLoader"><i class="light-icon-rotate-clockwise"></i>Loaders <i class="nav-container--close light-icon-chevron-down" @click="showLoader = !showLoader"></i></h5>
         <div class="nav-list__container" v-else>
-          <h5 class="nav-list__label"><i class="light-icon-brand-github"></i> LOADERS <i class="nav-container--close light-icon-chevron-up" @click="showLoader = !showLoader"></i></h5>
+          <h5 class="nav-list__label nav-list__label--head"><i class="light-icon-rotate-clockwise"></i> Loaders <i class="nav-container--close light-icon-chevron-up" @click="showLoader = !showLoader"></i></h5>
           <div class="dropdown__content">
             <div class="sub-menu__link--wrapper">
               <div class="sub-menu__line"></div>
@@ -141,9 +141,9 @@
           </div>
         </div>
         <div class="nav-list__nest">
-          <h5 class="nav-list__head" v-if="showMisc"><i class="light-icon-brand-github"></i>MISC <i class="nav-container--close light-icon-chevron-down" @click="showMisc = !showMisc"></i></h5>
+          <h5 class="nav-list__head" v-if="showMisc"><i class="light-icon-square-plus"></i>Misc. <i class="nav-container--close light-icon-chevron-down" @click="showMisc = !showMisc"></i></h5>
           <div class="nav-list__container" v-else>
-            <h5 class="nav-list__label"><i class="light-icon-brand-github"></i> MISC <i class="nav-container--close light-icon-chevron-up" @click="showMisc = !showMisc"></i></h5>
+            <h5 class="nav-list__label nav-list__label--head"><i class="light-icon-square-plus"></i> Misc. <i class="nav-container--close light-icon-chevron-up" @click="showMisc = !showMisc"></i></h5>
             <div class="dropdown__content">
               <div class="sub-menu__link--wrapper">
                 <div class="sub-menu__line"></div>
@@ -191,7 +191,7 @@ export default {
 
 <style scoped lang="scss">
 .sidebar {
-  padding: 10px 0px;
+  // padding: 10px 0px;
   position: fixed;
   left: 0;
   top: 55px;
@@ -220,7 +220,7 @@ export default {
   padding: 20px;
   border-radius: 0px;
   background: #3f5062;
-  box-shadow: inset -2px 2px 8px #212a33, inset 2px -2px 7px #212a33;
+  box-shadow: inset 0px 0px 1px #212a33, inset 0px 0px 2px #212a33;
   border-left: 5px solid #3edb9c;
 }
 .nav-list__item {
@@ -237,16 +237,21 @@ export default {
     text-indent: 10px;
   }
 }
+
+.nav-list__label--head {
+  color: #fafbff;
+}
 .nav-list {
   padding: 20px 0px;
   .nav-list__head {
     cursor: pointer;
     color: #f4fbfd;
-    font-size: 14px;
+    font-size: 18px;
     padding: 21px;
     margin: 0px;
     i {
       margin-right: 5px;
+      font-size: 18px;
     }
     border-bottom: 1px solid #314254;
     border-top: 1px solid #516274;
@@ -266,6 +271,7 @@ export default {
 }
 .nav-list__label {
   display: block;
+  // color: #bdc4c8;
   &:hover,
   &:focus {
     color: #3edb9c;
@@ -296,15 +302,15 @@ export default {
 }
 
 .sub-menu__line {
-  width: 30px;
-  border: 1px solid#57687A;
+  width: 20px;
+  border-bottom: 1px solid #566779;
 }
 
 .sub-menu__bullet {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: #57687a;
+  background: #566779;
 }
 
 @media (max-width: 768px) {
