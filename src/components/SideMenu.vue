@@ -6,9 +6,9 @@
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="showAbout"><i class="light-icon-info-circle"></i>About<i class="nav-container--close light-icon-chevron-down" @click="showAbout = !showAbout"></i></h5>
+        <h5 class="nav-list__head" v-if="hideAbout" @click="showAboutFn"><i class="light-icon-info-circle"></i>About<i class="nav-container--close light-icon-chevron-down"></i></h5>
         <div v-else class="nav-list__container">
-          <h5 class="nav-list__label nav-list__label--head"><i class="light-icon-info-circle"></i> About <i class="nav-container--close light-icon-chevron-up" @click="showAbout = !showAbout"></i></h5>
+          <h5 class="nav-list__label nav-list__label--head" @click="hideAbout = !hideAbout"><i class="light-icon-info-circle"></i> About <i class="nav-container--close light-icon-chevron-up"></i></h5>
           <div class="dropdown__content">
             <!-- <div class="left___line"></div> -->
             <div class="sub-menu__link--wrapper">
@@ -42,9 +42,9 @@
         <div class="nav-list__label">Support</div>
       </div> -->
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="showForm"><i class="light-icon-clipboard"></i>Form <i class="nav-container--close light-icon-chevron-down" @click="showForm = !showForm"></i></h5>
+        <h5 class="nav-list__head" v-if="hideForm" @click="showFormFn"><i class="light-icon-clipboard"></i>Form <i class="nav-container--close light-icon-chevron-down"></i></h5>
         <div class="nav-list__container" v-else>
-          <h5 class="nav-list__label nav-list__label--head"><i class="light-icon-clipboard nav-container"></i> Form <i class="nav-container--close light-icon-chevron-up" @click="showForm = !showForm"></i></h5>
+          <h5 class="nav-list__label nav-list__label--head" @click="hideForm = !hideForm"><i class="light-icon-clipboard nav-container"></i> Form <i class="nav-container--close light-icon-chevron-up"></i></h5>
           <div class="dropdown__content">
             <div class="sub-menu__link--wrapper">
               <div class="sub-menu__line"></div>
@@ -106,9 +106,9 @@
         </div>
       </div>
       <div class="nav-list__nest">
-        <h5 class="nav-list__head" v-if="showLoader"><i class="light-icon-rotate-clockwise"></i>Loaders <i class="nav-container--close light-icon-chevron-down" @click="showLoader = !showLoader"></i></h5>
+        <h5 class="nav-list__head" v-if="hideLoader" @click="showLoaderFn"><i class="light-icon-rotate-clockwise"></i>Loaders <i class="nav-container--close light-icon-chevron-down"></i></h5>
         <div class="nav-list__container" v-else>
-          <h5 class="nav-list__label nav-list__label--head"><i class="light-icon-rotate-clockwise"></i> Loaders <i class="nav-container--close light-icon-chevron-up" @click="showLoader = !showLoader"></i></h5>
+          <h5 class="nav-list__label nav-list__label--head" @click="hideLoader = !hideLoader"><i class="light-icon-rotate-clockwise"></i> Loaders <i class="nav-container--close light-icon-chevron-up"></i></h5>
           <div class="dropdown__content">
             <div class="sub-menu__link--wrapper">
               <div class="sub-menu__line"></div>
@@ -141,9 +141,9 @@
           </div>
         </div>
         <div class="nav-list__nest">
-          <h5 class="nav-list__head" v-if="showMisc"><i class="light-icon-square-plus"></i>Misc. <i class="nav-container--close light-icon-chevron-down" @click="showMisc = !showMisc"></i></h5>
+          <h5 class="nav-list__head" v-if="hideMisc" @click="showMiscFn"><i class="light-icon-square-plus"></i>Misc. <i class="nav-container--close light-icon-chevron-down"></i></h5>
           <div class="nav-list__container" v-else>
-            <h5 class="nav-list__label nav-list__label--head"><i class="light-icon-square-plus"></i> Misc. <i class="nav-container--close light-icon-chevron-up" @click="showMisc = !showMisc"></i></h5>
+            <h5 class="nav-list__label nav-list__label--head" @click="hideMisc = !hideMisc"><i class="light-icon-square-plus"></i> Misc. <i class="nav-container--close light-icon-chevron-up"></i></h5>
             <div class="dropdown__content">
               <div class="sub-menu__link--wrapper">
                 <div class="sub-menu__line"></div>
@@ -177,13 +177,38 @@
 <script>
 export default {
   props: ['showDrawer'],
-  methods: {},
+  methods: {
+    showAboutFn() {
+      this.hideAbout = false;
+      this.hideForm = true;
+      this.hideLoader = true;
+      this.hideMisc = true;
+    },
+    showFormFn() {
+      this.hideAbout = true;
+      this.hideForm = false;
+      this.hideLoader = true;
+      this.hideMisc = true;
+    },
+    showLoaderFn() {
+      this.hideAbout = true;
+      this.hideForm = true;
+      this.hideLoader = false;
+      this.hideMisc = true;
+    },
+    showMiscFn() {
+      this.hideAbout = true;
+      this.hideForm = true;
+      this.hideLoader = true;
+      this.hideMisc = false;
+    },
+  },
   data() {
     return {
-      showAbout: false,
-      showForm: false,
-      showLoader: false,
-      showMisc: false,
+      hideAbout: true,
+      hideForm: false,
+      hideLoader: true,
+      hideMisc: true,
     };
   },
 };
@@ -191,15 +216,11 @@ export default {
 
 <style scoped lang="scss">
 .sidebar {
-  // padding: 10px 0px;
   position: fixed;
   left: 0;
-  top: 55px;
-  height: calc(100% - 55px);
-  // background-color: #ffffff;
+  height: 100%;
   overflow: auto;
   width: 250px;
-  // border-right: 1px solid #dee2e6;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -208,10 +229,10 @@ export default {
   transition: -webkit-transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
   transition: transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
   transition: transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99), -webkit-transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
-
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   background: #405364;
   border: 1px solid #1f2a35;
+  z-index: 10000;
 }
 .nav-list__nest {
   box-shadow: inset 7px 7px 100px #364453, inset -7px -7px 100px #485c71;
@@ -240,6 +261,7 @@ export default {
 
 .nav-list__label--head {
   color: #fafbff;
+  cursor: pointer;
 }
 .nav-list {
   padding: 20px 0px;
@@ -281,10 +303,10 @@ export default {
   }
 }
 .sidebar__logo {
-  display: none;
+  // display: none;
   align-items: center;
   cursor: pointer;
-  margin: 0px 0px 20px;
+  // margin: 0px 0px 20px;
   .header-logo {
     width: 100%;
   }

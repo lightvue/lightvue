@@ -2,20 +2,17 @@
 <div class='app-searchui-wrapper'>
   <ais-instant-search index-name="lightvueDemo" :search-client="searchClient" >
       <div class='app-searchui__bar-wrapper'>
-        <ais-search-box placeholder="Start typing..." class="searchbox" />
+        <ais-search-box placeholder="Start typing..." class="searchbox" v-model="queryString"/>
       </div>
-      <div v-show="resultsOpen == true" id="app-searchui__results-wrapper" @click="clearSearchbox">
+      <div v-show="queryString !== ''" id="app-searchui__results-wrapper" @click="clearSearchbox">
         <ais-hits>
             <template slot="item" slot-scope="{ item }">
               <nuxt-link :to="`/vue-components/${item.docslink}`">
-                <!-- <div class="app-searchui__results__card"> -->
-                  <!-- <i class="app-searchui__results__icon light-icon-arrow-right"></i> -->
                   <ais-highlight class="app-searchui__results__title" :hit="item" attribute="name" /> 
                   <i class="app-searchui__results__icon light-icon-arrow-right-circle"></i> 
                   <br />
                   <ais-highlight class="app-searchui__results__category" :hit="item" attribute="category" /> <br />
                   <ais-highlight class="app-searchui__results__desc" :hit="item" attribute="description" />
-                <!-- </div> -->
               </nuxt-link>
             </template>
         </ais-hits>
@@ -32,35 +29,21 @@ import {
   AisSearchBox,
   createServerRootMixin,
 } from 'vue-instantsearch';
-import algoliasearch from 'algoliasearch/lite';// import 'instantsearch.css/themes/algolia-min.css';
+import algoliasearch from 'algoliasearch/lite';
+// import 'instantsearch.css/themes/algolia-min.css';
 import 'instantsearch.css/themes/algolia.css';
 export default {
   name: 'AppSearch',
   data() {
     return {
       resultsOpen: false,
+      queryString: "",
       searchClient: algoliasearch(
         'CYDWBEXKQT',
         '96b5c074edda2e65f8548e6d61fb922d'
       ),
     }
   },
-   beforeMount() {
-     setTimeout(
-       () => {
-         document.getElementsByClassName('ais-SearchBox-input')[0].addEventListener('focus' , (event) => {
-           this.resultsOpen = event.target.value.length > 0;
-           this.resultsOpen = true;
-          //  alert(this.resultsOpen)
-         })
-         document.getElementsByClassName('ais-SearchBox-input')[0].addEventListener('blur' , (event) => {
-           setTimeout( () => {
-             this.resultsOpen = false;
-          }, 300)
-         })
-       }, 1000
-     )
-    },
     methods: {
       clearSearchbox: function () {
         document.getElementsByClassName('ais-SearchBox-reset')[0].click(); 
