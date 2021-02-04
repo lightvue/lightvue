@@ -1,10 +1,11 @@
 export default function (to, from, savedPosition) {
   if (to.hash) {
     const el = document.getElementById(to.hash.substring(1));
-    if (el) { // a valid id on page.
+    if (el) {
+      // a valid id on page.
       setTimeout(() => {
-        return window.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
-      }, 500) // wait before scrolling, for initial loading delay
+        return window.scrollTo({ top: el.offsetTop - 20, behavior: 'smooth' });
+      }, 500); // wait before scrolling, for initial loading delay
       return;
     }
   }

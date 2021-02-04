@@ -155,7 +155,7 @@ export default {
 .sidebar {
   position: fixed;
   left: 0;
-  height: 100%;
+  height: 100vh;
   overflow: auto;
   width: 250px;
   -webkit-user-select: none;

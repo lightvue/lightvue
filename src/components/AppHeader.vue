@@ -2,11 +2,11 @@
   <div class="app-header">
     <div class="header-items">
       <div class="header__logo-row">
-        <i class="light-icon-menu-2 menu-icon" @click="$emit('toggle-drawer')"></i>
-        <div class="logo" @click="$router.push('/')">
+        <i class="light-icon-align-left menu-icon" @click="$emit('toggle-drawer')"></i>
+        <!-- <div class="logo" @click="$router.push('/')">
           <img src="@/assets/logo.png" class="header-logo" />
           <h3 class="logo-text">&nbsp; LightVue</h3>
-        </div>
+        </div> -->
       </div>
       <div class="search-row">
         <div class="search-bar">
@@ -72,9 +72,9 @@ export default {
 }
 
 .header-items .menu-icon {
-  color: #333333;
+  // color: #333333;
   font-size: 30px;
-  font-weight: bolder;
+  // font-weight: bolder;
   padding: 10px;
   border-radius: 50%;
   transition: 0.3s ease-in-out all;

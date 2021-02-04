@@ -2,7 +2,7 @@
   <div id="app">
     <app-header @toggle-drawer="toggleDrawer()" />
     <div class="sidemenu__backdrop" v-if="showDrawer" @click="toggleDrawer()"></div>
-    <navigation-drawer :show-drawer="showDrawer" @toggle-drawer="toggleDrawer()" />
+    <app-navigation-drawer :show-drawer="showDrawer" @toggle-drawer="toggleDrawer()" />
     <div class="page-wrap">
       <div class="page-content">
         <nuxt-child />
@@ -16,7 +16,7 @@
 import 'light-icons/dist/light-icon.css';
 import AppHeader from '@/components/AppHeader.vue';
 // import SideMenu from "@/components/SideMenu.vue";
-import NavigationDrawer from '@/components/NavigationDrawer.vue';
+import AppNavigationDrawer from '@/components/AppNavigationDrawer.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
 export default {
@@ -24,7 +24,7 @@ export default {
   components: {
     AppHeader,
     // SideMenu,
-    NavigationDrawer,
+    AppNavigationDrawer,
     AppFooter,
   },
   data() {
@@ -47,6 +47,7 @@ export default {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 a {
   text-decoration: none;
@@ -71,7 +72,7 @@ body,
 .page-wrap {
   position: absolute;
   right: 0px;
-  top: 64px;
+  top: 60px;
   width: calc(100% - 250px);
   .page-content {
     padding: 30px 30px 0px;
