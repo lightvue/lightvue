@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import DocsCard from "./DocsCard.vue";
+import DocsCard from './DocsCard.vue';
 export default {
   components: {
     DocsCard,
@@ -17,45 +17,42 @@ export default {
   },
   data() {
     return {
-      loading: true,
+      // loading: true,
       component: null,
       tabs: [],
-      currentTab: "template",
-      expanded: false,
       parts: {},
     };
   },
-  mounted() {
+  created() {
+    this.component = () => import('@/' + this.file + '.vue');
     Promise.all([
-      import("@/" + this.file + ".vue").then((comp) => {
-        this.component = comp.default;
-      }),
-      import("!raw-loader!@/" + this.file + ".vue").then((comp) => {
+      // import('@/' + this.file + '.vue').then(comp => {
+      //   this.component = comp.default;
+      // }),
+      import('!raw-loader!@/' + this.file + '.vue').then(comp => {
         this.parseComponent(comp.default);
       }),
     ]).then(() => {
-      this.loading = false;
+      // this.loading = false;
     });
   },
   methods: {
     parseComponent(comp) {
-      const template = this.parseTemplate("template", comp),
-        script = this.parseTemplate("script", comp),
-        style = this.parseTemplate("style", comp);
+      const template = this.parseTemplate('template', comp),
+        script = this.parseTemplate('script', comp),
+        style = this.parseTemplate('style', comp);
       this.parts = {
         template,
         script,
         style,
       };
-      this.tabs = ["template", "script", "style"].filter(
-        (type) => this.parts[type]
-      );
+      this.tabs = ['template', 'script', 'style'].filter(type => this.parts[type]);
     },
     parseTemplate(target, template) {
       const string = `(<${target}(.*)?>[\\w\\W]*<\\/${target}>)`,
-        regex = new RegExp(string, "g"),
+        regex = new RegExp(string, 'g'),
         parsed = regex.exec(template) || [];
-      return parsed[1] || "";
+      return parsed[1] || '';
     },
   },
 };
