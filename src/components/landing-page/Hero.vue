@@ -121,10 +121,28 @@ $text-color-secondary: #eeecec;
     display: none !important;
   }
 }
+//--
+@media (min-width: 950px) {
+  .hero-image {
+    position: relative;
+    top: 25px;
+    transform: scale(0.85);
+  }
+}
+//--
 @media only screen and (max-width: 600px) {
   .hero-button {
     padding: 0.6rem 1.2rem !important;
     margin: 0 10px !important;
   }
 }
+//--
+@media only screen and (max-width: 600px) {
+  .hero-button {
+    padding: 0.6rem 1.2rem !important;
+    margin: 6px 5px !important;
+    width: 100vw !important;
+  }
+}
+//--
 </style>

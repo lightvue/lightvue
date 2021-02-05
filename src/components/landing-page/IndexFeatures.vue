@@ -11,7 +11,7 @@
           </div>
           <div class="features-content">
             <h3 class="features-content__heading">Light Weight</h3>
-            <p class="features-content__subtext">Light Vue is only xyz kb in size and if the user want, they can import the desired components instead of importing the whole UI library.</p>
+            <p class="features-content__subtext">Light Vue is only xyz kb in size and if the users want, they can import the desired components instead of importing the whole UI library.</p>
           </div>
         </div>
         <div class="features-div">
@@ -20,7 +20,7 @@
           </div>
           <div class="features-content">
             <h3 class="features-content__heading">Customizable</h3>
-            <p class="features-content__subtext">Light Vue is very easy to costumize and allows user to build the theme according to their likings.</p>
+            <p class="features-content__subtext">Light Vue is very easy to customize and allows users to build the theme according to their likings.</p>
           </div>
         </div>
         <div class="features-div">
