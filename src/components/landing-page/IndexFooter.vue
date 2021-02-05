@@ -146,23 +146,17 @@ footer .footer__form a {
     transform: scale(1.5);
     transition: all 0.2s ease-in-out;
   }
-
-  @media (max-width: 1100px) {
-    .footer__wrapper {
-      padding: 0px 20px 0px;
-    }
+}
+@media (max-width: 767px) {
+  .footer__wrapper {
+    padding: 0 30px;
+    // display: none;
   }
-  @media (max-width: 767px) {
-    .footer__wrapper {
-      padding: 15px 30px !important;
-      // justify-content: initial;
-    }
-    footer .footer__links {
-      width: 120px;
-    }
-    footer .footer__products {
-      width: 120px;
-    }
+  footer .footer__links {
+    width: 120px;
+  }
+  footer .footer__products {
+    width: 120px;
   }
 }
 </style>

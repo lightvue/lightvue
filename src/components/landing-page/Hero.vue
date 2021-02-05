@@ -118,20 +118,13 @@ $text-color-secondary: #eeecec;
 
 @media (max-width: 768px) {
   .hero-image {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (max-width: 600px) {
   .hero-button {
     padding: 0.6rem 1.2rem !important;
     margin: 0 10px !important;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .hero-image {
-    width: 98vw !important;
-    min-width: 10px !important;
   }
 }
 </style>
