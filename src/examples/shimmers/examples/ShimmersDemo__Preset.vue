@@ -40,4 +40,22 @@ export default {
   margin-bottom: 0px;
   display: inline-block;
 }
+
+@media (max-width: 500px) {
+.shimmer-demo-wrapper > div:nth-child(2) {
+  width: 250px;
+  transform: scaleX(0.7);
+  margin: 10px;
+}
+.shimmer-demo-wrapper > div:nth-child(3) {
+  width: 250px;
+  transform: scaleX(0.7);
+  margin: 10px;
+}
+.shimmer-demo-wrapper > div:nth-child(4) {
+  width: 250px;
+  transform: scaleX(0.7);
+  margin: 10px;
+}
+}
 </style>

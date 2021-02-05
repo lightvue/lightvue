@@ -61,4 +61,11 @@ export default {
   width: 350px;
   display: inline-block;
 }
+
+/* @media (max-width: 450px) {
+  .shimmer-demo-wrapper {
+    max-width: 80vw;
+    overflow: hidden;
+  }
+} */
 </style>
