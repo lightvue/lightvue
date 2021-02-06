@@ -32,6 +32,33 @@
             <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
           </div>
         </div>
+        <div class="features-div">
+          <div class="features-icon-div">
+            <i class="light-icon-brand-github"></i>
+          </div>
+          <div class="features-content">
+            <h3 class="features-content__heading">Open Source</h3>
+            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+          </div>
+        </div>
+        <div class="features-div">
+          <div class="features-icon-div">
+            <i class="light-icon-brand-github"></i>
+          </div>
+          <div class="features-content">
+            <h3 class="features-content__heading">Open Source</h3>
+            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+          </div>
+        </div>
+        <div class="features-div">
+          <div class="features-icon-div">
+            <i class="light-icon-brand-github"></i>
+          </div>
+          <div class="features-content">
+            <h3 class="features-content__heading">Open Source</h3>
+            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -63,50 +90,50 @@ export default {};
   }
   .features-div-container {
     display: flex;
-    flex-basis: 33%;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: space-around;
     .features-div {
-      width: 33.33vw;
+      width: 350px;
+      margin: 25px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
       padding: 30px;
-      margin: 10px;
-      // border: 1px solid;
-      // border-color: rgba(0, 0, 0, 0);
-      border-radius: 12px;
-      transition: all 0.3s;
-      &:hover {
-        transform: scale(1.02);
-        // border-color: rgba(0, 0, 0, 0.5);
-        i {
-          color: #607c8a;
-        }
-        .features-content__heading {
-          color: #607c8a;
-        }
+      border-color: #e2e8f0;
+      i {
+        color: #607c8a;
       }
-      .features-icon-div {
-        display: flex;
-        justify-content: center;
-        i {
-          font-size: 60px;
-          transition: all 0.3s;
-          font-weight: bolder;
-        }
+      .features-content__heading {
+        color: #607c8a;
       }
-      .features-content {
-        .features-content__heading {
-          text-align: center;
-          font-size: 26px;
-          transition: all 0.3s;
-          font-weight: 900;
-          line-height: 1.1;
-          margin-top: 22px;
-          margin-bottom: 11px;
-        }
-        .features-content__subtext {
-          text-align: center;
-          font-size: 17px;
-          line-height: 1.6rem;
-        }
+    }
+    .features-icon-div {
+      display: flex;
+      justify-content: center;
+      i {
+        padding: 10px;
+        background: #319795;
+        color: #e0e0e0;
+        border-radius: 50%;
+        font-size: 24px;
+        transition: all 0.3s;
+        font-weight: bolder;
+      }
+    }
+    .features-content {
+      .features-content__heading {
+        color: #354152;
+        text-align: center;
+        font-size: 26px;
+        line-height: 1.2;
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
+      .features-content__subtext {
+        color: #354052;
+        // text-align: center;
+        font-size: 16px;
+        line-height: 1.6rem;
       }
     }
   }
