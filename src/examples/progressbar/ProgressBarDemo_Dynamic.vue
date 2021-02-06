@@ -1,8 +1,8 @@
 <template>
   <div>
-    <LvProgressBar :value="value" color="#38b2ac" />
+    <LvProgressBar :value="value" />
     <br />
-    <LvProgressBar :value="value" :showValue="false" />
+    <LvProgressBar :value="value" :showValue="false" color="#38b2ac" />
   </div>
 </template>
 
