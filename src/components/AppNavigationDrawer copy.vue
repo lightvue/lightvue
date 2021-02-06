@@ -13,10 +13,7 @@
           </div>
           <i :class="activeCategory === category.category_name ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
         </div>
-        <!-- <div :class="['nav-list__category-items', (activeCategory === category.category_name) && 'nav-list__category-items--active']" v-show="activeCategory === category.category_name" > -->
-        <div class="nav-list__category-items" 
-        :style="{height: ( (activeCategory === category.category_name) * (category.pages.length*32 + 10)) + 'px', opacity: (activeCategory === category.category_name) * 1}"
-        >
+        <div class="nav-list__category-items" v-show="activeCategory === category.category_name">
           <nuxt-link :to="page.page_path" class="nav-list__category-item --link" v-for="page in category.pages" :key="page.page_name">
             <div class="nav-list__item-line"></div>
             <div class="nav-list__item-bullet"></div>
@@ -216,11 +213,6 @@ export default {
     padding: 0px 16px 8px;
     margin-left: 8px;
     margin-top: -8px;
-    
-    height: 0px;
-    opacity: 0;
-    transition: all 0.3s;
-    overflow: hidden;
   }
 
   .nav-list__item-line {
