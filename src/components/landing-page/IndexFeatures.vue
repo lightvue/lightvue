@@ -100,6 +100,11 @@ export default {};
       box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
       padding: 30px;
       border-color: #e2e8f0;
+      transition: all 0.5s;
+      &:hover {
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+        transform: translateY(-3px);
+      }
       i {
         color: #607c8a;
       }
