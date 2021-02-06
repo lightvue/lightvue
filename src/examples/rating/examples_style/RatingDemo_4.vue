@@ -10,13 +10,13 @@
         border-radius: 4px;
       "
     >
-      <lv-rating :star-size="70" :glow="10" glow-color="#ffd055" active-color="#ffd055"></lv-rating>
+      <lv-rating :star-size="40" :glow="10" glow-color="#ffd055" active-color="#ffd055"></lv-rating>
       <br/>
-      <lv-rating :star-size="70" :glow="10" glow-color="#d4d4d4" active-color="#d4d4d4"></lv-rating>
+      <lv-rating :star-size="40" :glow="10" glow-color="#d4d4d4" active-color="#d4d4d4"></lv-rating>
       <br/>
-      <lv-rating :star-size="70" :glow="10" glow-color="#38b2ac"></lv-rating>
+      <lv-rating :star-size="40" :glow="10" glow-color="#38b2ac"></lv-rating>
       <br/>
-      <lv-rating :star-size="70" :glow="10" glow-color="#ff5c5c" active-color="#ff3030"></lv-rating>
+      <lv-rating :star-size="40" :glow="10" glow-color="#ff5c5c" active-color="#ff3030"></lv-rating>
     </div>
   </div>
 </template>

@@ -2,8 +2,8 @@
   <div>
     <h3>Modifying size [PROP: star-size]</h3>
     <lv-rating :star-size="30"></lv-rating>
+    <lv-rating :star-size="40"></lv-rating>
     <lv-rating :star-size="50"></lv-rating>
-    <lv-rating :star-size="70"></lv-rating>
   </div>
 </template>
 

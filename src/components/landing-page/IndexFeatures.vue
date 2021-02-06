@@ -139,4 +139,10 @@ export default {};
     }
   }
 }
+
+@media only screen and (min-width: 1900px) {
+  .features-heading {
+    padding-top: 175px;
+  }
+}
 </style>

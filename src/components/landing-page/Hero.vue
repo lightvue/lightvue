@@ -129,6 +129,14 @@ $text-color-secondary: #eeecec;
     transform: scale(0.85);
   }
 }
+
+@media only screen and (min-width: 1900px) {
+    .hero-image {
+    position: relative;
+    top: 175px;
+    transform: scale(0.85);
+  }
+}
 //--
 @media only screen and (max-width: 600px) {
   .hero-button {

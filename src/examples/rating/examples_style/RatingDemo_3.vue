@@ -2,11 +2,11 @@
   <div>
     <h3>Modifying border width [PROP: border-width]</h3>
     <lv-rating :border-width="0"></lv-rating>
-    <lv-rating :border-width="2"></lv-rating>
-    <lv-rating :border-width="5"></lv-rating>
+    <lv-rating :border-width="1"></lv-rating>
+    <lv-rating :border-width="4"></lv-rating>
 
     <h3>Rounded Corners [PROP: rounded-corners]</h3>
-    <lv-rating :rounded-corners="true" :border-width="6"></lv-rating>
+    <lv-rating :rounded-corners="true" :border-width="4"></lv-rating>
   </div>
 </template>
 
