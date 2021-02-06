@@ -145,6 +145,10 @@ export default {
           page_name: 'Overlay Panel',
           page_path: '/vue-components/overlay-panel',
         },
+        {
+          page_name: 'Light Icons',
+          page_path: '/light-icons/light-icons',
+        },
       ],
     },
   ],
