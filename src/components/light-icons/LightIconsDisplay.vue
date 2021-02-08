@@ -73,7 +73,7 @@ export default {
 <style scoped lang="scss">
 .icons__search-row {
   position: sticky;
-  top: 0px;
+  top: 60px;
   margin: auto;
   padding: 40px 0;
   background: #f5f8fa;

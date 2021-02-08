@@ -43,6 +43,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/google-analytics'
   ],
   // router: {
   //   scrollBehavior(to) {
@@ -64,4 +65,9 @@ export default {
   build: {
     transpile: ['vue-instantsearch', 'instantsearch.js/es']
   },
+
+  // Google Analytics Configration 
+  googleAnalytics: {
+    id: 'G-NSCV9YG71N'
+  }
 };
