@@ -279,6 +279,7 @@ $primary-color: #38b2ac;
 .sidebar__logo {
   padding: 6px 32px;
   cursor: pointer;
+  height: 60px;
   .header-logo {
     width: 100%;
   }
