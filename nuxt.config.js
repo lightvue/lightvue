@@ -65,4 +65,9 @@ export default {
   build: {
     transpile: ['vue-instantsearch', 'instantsearch.js/es']
   },
+
+  // Google Analytics Configration 
+  googleAnalytics: {
+    id: 'G-NSCV9YG71N'
+  }
 };
