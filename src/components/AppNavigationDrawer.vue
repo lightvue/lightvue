@@ -1,5 +1,5 @@
 <template>
-  <div :class="`sidebar ${showDrawer ? 'show-drawer' : ''}`" @click="$emit('toggle-drawer')">
+  <div :class="`sidebar --theme-${theme} ${showDrawer ? 'show-drawer' : ''}`" @click="$emit('toggle-drawer')">
     <div class="nav-list">
       <div class="sidebar__logo" @click="$router.push('/')">
         <img src="/logo_v2.png" class="header-logo" />
@@ -14,9 +14,7 @@
           <i :class="activeCategory === category.category_name ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
         </div>
         <!-- <div :class="['nav-list__category-items', (activeCategory === category.category_name) && 'nav-list__category-items--active']" v-show="activeCategory === category.category_name" > -->
-        <div class="nav-list__category-items" 
-        :style="{height: ( (activeCategory === category.category_name) * (category.pages.length*32 + 10)) + 'px', opacity: (activeCategory === category.category_name) * 1}"
-        >
+        <div class="nav-list__category-items" :style="{ height: (activeCategory === category.category_name) * (category.pages.length * 32 + 10) + 'px', opacity: (activeCategory === category.category_name) * 1 }">
           <nuxt-link :to="page.page_path" class="nav-list__category-item --link" v-for="page in category.pages" :key="page.page_name">
             <div class="nav-list__item-line"></div>
             <div class="nav-list__item-bullet"></div>
@@ -32,7 +30,16 @@
 
 <script>
 export default {
-  props: ['showDrawer'],
+  props: {
+    showDrawer: {
+      type: Boolean,
+      default: false,
+    },
+    theme: {
+      type: String,
+      default: 'light', // 'dark'
+    },
+  },
   data() {
     return {
       activeCategory: 'Form',
@@ -159,6 +166,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$bg-color: #133a56;
+$primary-color: #38b2ac;
+
 .sidebar {
   position: fixed;
   left: 0;
@@ -175,7 +185,7 @@ export default {
   transition: transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99), -webkit-transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   // background: #405364;
-  background-color: #133a56;
+  background-color: $bg-color;
   // border: 1px solid #1f2a35;
   z-index: 1000;
 }
@@ -190,7 +200,7 @@ export default {
   &.--active {
     box-shadow: inset 0px 0px 1px #212a33, inset 0px 0px 2px #212a33;
     background-color: rgba(255, 255, 255, 0.04);
-    border-left: 5px solid #38b2ac;
+    border-left: 5px solid $primary-color;
   }
 }
 
@@ -220,7 +230,7 @@ export default {
     padding: 0px 16px 8px;
     margin-left: 8px;
     margin-top: -8px;
-    
+
     height: 0px;
     opacity: 0;
     transition: all 0.3s;
@@ -250,15 +260,16 @@ export default {
       &:hover,
       &:focus {
         color: #ffffff;
+        font-weight: 500;
       }
       &.nuxt-link-active {
-        color: #38b2ac;
+        color: $primary-color;
         // border-left: 1px dotted #38b2ac;
         .nav-list__item-line {
-          border-bottom: 1px dotted #38b2ac;
+          border-bottom: 1px dotted $primary-color;
         }
         .nav-list__item-bullet {
-          background-color: #38b2ac;
+          background-color: $primary-color;
         }
       }
     }
@@ -266,10 +277,37 @@ export default {
 }
 
 .sidebar__logo {
-  padding: 12px;
+  padding: 6px 32px;
   cursor: pointer;
   .header-logo {
     width: 100%;
+  }
+}
+
+.sidebar.--theme-light {
+  background-color: #ffffff;
+  .nav-list__category-wrap {
+    border-top: 1px solid rgb(238, 243, 246);
+    &.--active {
+      background-color: rgba(55, 179, 171, 0.04);
+      box-shadow: none;
+    }
+  }
+  .nav-list__category {
+    color: inherit;
+  }
+  .nav-list__category-item.--link {
+    color: #9badb7;
+    &:hover,
+    &:focus {
+      color: #79909c;
+    }
+    &.nuxt-link-active {
+      color: $primary-color;
+    }
+  }
+  .nav-list__item-bullet {
+    background-color: #9aacb7;
   }
 }
 
