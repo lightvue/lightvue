@@ -2,7 +2,8 @@
   <div class="progress-spinner-demo-wrapper">
     <LvProgressSpinner />
     <LvProgressSpinner size="105px"/>
-    <LvProgressSpinner size="135px"/>
+    <br />
+    <LvProgressSpinner size="135px" class="progress-spinner-demo__last-spinner"/>
   </div>
 </template>
 
@@ -48,5 +49,11 @@ export default {
   display: flex;
   flex-flow: row wrap;
   height: 150px;
+}
+
+@media (max-width: 450px) {
+  .progress-spinner-demo-wrapper {
+    height: max-content;
+  }
 }
 </style>

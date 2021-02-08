@@ -1,5 +1,5 @@
 <template>
-  <div class="shimmer-demo-wrapper">
+  <div class="shimmer-demo-wrapper shimmer-demo-wrapper--preset">
     <h5>CardList</h5>
     <div><lv-card-list :width="355" /></div>
     <div><lv-card-list :width="355" primaryColor="#607c8a" secondaryColor="#8aa6b5" /></div>
@@ -35,9 +35,47 @@ export default {
 <style>
 .shimmer-demo-wrapper > div {
   width: 350px;
+  width: min-content;
   margin: 30px;
   margin-top: 0px;
   margin-bottom: 0px;
   display: inline-block;
+}
+
+@media (max-width: 500px) {
+.shimmer-demo-wrapper > div:nth-child(2) {
+  width: 250px;
+  margin-left: 0;
+  margin-right: 0;
+  transform: scaleX(0.7);
+}
+.shimmer-demo-wrapper > div:nth-child(3) {
+  width: 250px;
+  margin-left: 0;
+  margin-right: 0;
+  transform: scaleX(0.7);
+}
+.shimmer-demo-wrapper > div:nth-child(4) {
+  width: 250px;
+  margin-left: 0;
+  margin-right: 0;
+  transform: scaleX(0.7);
+}
+}
+
+@media (max-width: 500px) {
+  .shimmer-demo-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .shimmer-demo-wrapper > div {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .shimmer-demo-wrapper--preset {
+    margin-left: 0 !important;
+  }
 }
 </style>

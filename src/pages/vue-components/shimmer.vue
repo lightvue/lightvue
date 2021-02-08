@@ -1,11 +1,11 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Adjusting height and width" file="examples/shimmers/examples/ShimmersDemo_dimension" />
+    <docs-card-vue title="Adjusting height & width" file="examples/shimmers/examples/ShimmersDemo_dimension" />
     <docs-card-vue title="Adjusting color" file="examples/shimmers/examples/ShimmersDemo_color" />
     <docs-card-vue title="Adjusting opacity" file="examples/shimmers/examples/ShimmersDemo_opacity" />
-    <docs-card-vue title="Adjusting animation speed" file="examples/shimmers/examples/ShimmersDemo_speed" />
+    <docs-card-vue title="Adjusting speed" file="examples/shimmers/examples/ShimmersDemo_speed" />
     <docs-card-vue title="Disabling animation" file="examples/shimmers/examples/ShimmersDemo_animate" />
-    <docs-card-vue title="Presets for common use-cases" file="examples/shimmers/examples/ShimmersDemo__Preset" />
+    <docs-card-vue title="Presets" file="examples/shimmers/examples/ShimmersDemo__Preset" />
     <!-- <docs-card-vue title="Default" file="pages/shimmers/examples/ShimmersDemo__Basic" /> -->
     <!-- <docs-card-vue title="Code Loader" file="pages/shimmers/examples/ShimmersDemo__CodeLoader" /> -->
     <!-- <docs-card-vue title="List Loader" file="pages/shimmers/examples/ShimmersDemo__ListLoader" /> -->

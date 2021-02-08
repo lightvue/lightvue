@@ -2,9 +2,9 @@
   <div class="app-searchui-wrapper">
     <ais-instant-search index-name="lightvueDemo" :search-client="searchClient">
       <div class="app-searchui__bar-wrapper">
-        <ais-search-box placeholder="Type to Start searching..." class="searchbox">
+        <ais-search-box placeholder="Type to start searching..." class="searchbox">
           <div slot-scope="{ currentRefinement, isSearchStalled, refine }">
-            <lv-input icon-left="light-icon-search" type="search" :value="queryString" @input="handleOnType($event, refine)" placeholder="Type to Start searching..." />
+            <lv-input icon-left="light-icon-search" type="search" :value="queryString" @input="handleOnType($event, refine)" placeholder="Type to start searching..." />
             <span :hidden="!isSearchStalled"></span>
           </div>
         </ais-search-box>

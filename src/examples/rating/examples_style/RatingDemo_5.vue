@@ -17,7 +17,7 @@
     </div>
     <h3>Combining props to create custom style</h3>
     <lv-rating
-      :star-size="50" :rounded-corners="true" :border-width="4"
+      :star-size="40" :rounded-corners="true" :border-width="4"
       :star-points="[
         23,
         2,
@@ -42,7 +42,7 @@
       ]"
     ></lv-rating>
     <h3>Right To Left layout [PROP: rtl]</h3>
-    <lv-rating :rtl="true" :increment="0.01"></lv-rating>
+    <lv-rating :rtl="true" :increment="0.01" ></lv-rating>
   </div>
 </template>
 

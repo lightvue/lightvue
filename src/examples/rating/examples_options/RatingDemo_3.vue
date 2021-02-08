@@ -3,9 +3,9 @@
     <h3>Default (5 stars)</h3>
     <lv-rating></lv-rating>
     <h5>Using max-rating prop</h5>
+    <lv-rating :max-rating="2"></lv-rating>
     <lv-rating :max-rating="3"></lv-rating>
-    <lv-rating :max-rating="7"></lv-rating>
-    <lv-rating :max-rating="10"></lv-rating>
+    <lv-rating :max-rating="4"></lv-rating>
   </div>
 </template>
 
