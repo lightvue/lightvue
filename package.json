@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.0.2",
     "algoliasearch": "^4.8.4",
     "axios": "^0.21.1",

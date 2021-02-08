@@ -43,6 +43,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/google-analytics'
   ],
   // router: {
   //   scrollBehavior(to) {
