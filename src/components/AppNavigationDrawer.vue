@@ -159,6 +159,14 @@ export default {
           page_name: 'Light Icons',
           page_path: '/light-icons/light-icons',
         },
+        {
+          page_name: 'Tooltip',
+          page_path: '/vue-components/tooltip',
+        },
+        {
+          page_name: 'Ripple effect',
+          page_path: '/vue-components/ripple',
+        },
       ],
     },
   ],

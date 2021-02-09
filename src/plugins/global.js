@@ -4,3 +4,4 @@ import LvButton from '@/collections/buttons/Button.vue';
 
 Vue.component('LvInput', LvInput);
 Vue.component('LvButton', LvButton);
+Vue.prototype.$lightvue = {ripple: true};
