@@ -10,7 +10,7 @@ function unbindEvents(el) {
 
 function create(el) {
   let ink = document.createElement('span');
-  ink.className = 'p-ink';
+  ink.className = 'lv-ink';
   el.appendChild(ink);
 
   ink.addEventListener('animationend', onAnimationEnd);

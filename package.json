@@ -9,7 +9,6 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.0.2",
     "algoliasearch": "^4.8.4",
     "axios": "^0.21.1",
@@ -24,6 +23,7 @@
     "vue-instantsearch": "^3.4.3"
   },
   "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.4.0",
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
     "pug": "^3.0.0",

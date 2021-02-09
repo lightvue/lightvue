@@ -1,9 +1,9 @@
 <template>
   <div :class="containerClass" @click="onBarClick" ref="container">
-    <span class="p-slider-range" :style="rangeStyle"></span>
-    <span v-if="!range" class="p-slider-handle" :style="handleStyle" @mousedown="onHandleMouseDown($event)" @keydown="onHandleKeyDown($event)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
-    <span v-if="range" class="p-slider-handle" :style="rangeStartHandleStyle" @mousedown="onHandleMouseDown($event, 0)" @keydown="onHandleKeyDown($event, 0)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value ? value[0] : null" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
-    <span v-if="range" class="p-slider-handle" :style="rangeEndHandleStyle" @mousedown="onHandleMouseDown($event, 1)" @keydown="onHandleKeyDown($event, 1)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value = value[1] : null" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
+    <span class="lv-slider-range" :style="rangeStyle"></span>
+    <span v-if="!range" class="lv-slider-handle" :style="handleStyle" @mousedown="onHandleMouseDown($event)" @keydown="onHandleKeyDown($event)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
+    <span v-if="range" class="lv-slider-handle" :style="rangeStartHandleStyle" @mousedown="onHandleMouseDown($event, 0)" @keydown="onHandleKeyDown($event, 0)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value ? value[0] : null" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
+    <span v-if="range" class="lv-slider-handle" :style="rangeEndHandleStyle" @mousedown="onHandleMouseDown($event, 1)" @keydown="onHandleKeyDown($event, 1)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value = value[1] : null" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
   </div>
 </template>
 
@@ -115,7 +115,7 @@ export default {
         return;
       }
 
-      if (!DomHandler.hasClass(event.target, 'p-slider-handle')) {
+      if (!DomHandler.hasClass(event.target, 'lv-slider-handle')) {
         this.updateDomData();
         this.onSlide(event);
       }
@@ -125,7 +125,7 @@ export default {
         return;
       }
 
-      DomHandler.addClass(this.$el, 'p-slider-sliding');
+      DomHandler.addClass(this.$el, 'lv-slider-sliding');
 
       this.dragging = true;
       this.updateDomData();
@@ -218,7 +218,7 @@ export default {
         this.mouseupListener = event => {
           if (this.dragging) {
             this.dragging = false;
-            DomHandler.removeClass(this.$el, 'p-slider-sliding');
+            DomHandler.removeClass(this.$el, 'lv-slider-sliding');
             this.$emit('slideend', { originalEvent: event, values: this.value });
           }
         };
@@ -241,11 +241,11 @@ export default {
   computed: {
     containerClass() {
       return [
-        'p-slider p-component',
+        'lv-slider lv-component',
         {
-          'p-disabled': this.disabled,
-          'p-slider-horizontal': this.orientation === 'horizontal',
-          'p-slider-vertical': this.orientation === 'vertical',
+          'lv-disabled': this.disabled,
+          'lv-slider-horizontal': this.orientation === 'horizontal',
+          'lv-slider-vertical': this.orientation === 'vertical',
         },
       ];
     },
@@ -295,41 +295,41 @@ export default {
 </script>
 
 <style>
-.p-slider {
+.lv-slider {
   position: relative;
 }
 
-.p-slider .p-slider-handle {
+.lv-slider .lv-slider-handle {
   position: absolute;
   cursor: grab;
   touch-action: none;
   display: block;
 }
 
-.p-slider-range {
+.lv-slider-range {
   position: absolute;
   display: block;
 }
 
-.p-slider-horizontal .p-slider-range {
+.lv-slider-horizontal .lv-slider-range {
   top: 0;
   left: 0;
   height: 100%;
 }
 
-.p-slider-horizontal .p-slider-handle {
+.lv-slider-horizontal .lv-slider-handle {
   top: 50%;
 }
 
-.p-slider-vertical {
+.lv-slider-vertical {
   height: 100px;
 }
 
-.p-slider-vertical .p-slider-handle {
+.lv-slider-vertical .lv-slider-handle {
   left: 50%;
 }
 
-.p-slider-vertical .p-slider-range {
+.lv-slider-vertical .lv-slider-range {
   bottom: 0;
   left: 0;
   width: 100%;

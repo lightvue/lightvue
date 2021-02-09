@@ -46,12 +46,12 @@ export default {
 </script>
 
 <style scoped>
-.p-slider-horizontal,
-.p-inputtext {
+.lv-slider-horizontal,
+.lv-inputtext {
   width: 14rem;
 }
 
-.p-slider-vertical {
+.lv-slider-vertical {
   height: 14rem;
 }
 

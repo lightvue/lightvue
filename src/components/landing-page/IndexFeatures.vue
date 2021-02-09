@@ -11,7 +11,7 @@
           </div>
           <div class="features-content">
             <h3 class="features-content__heading">Light Weight</h3>
-            <p class="features-content__subtext">Light Vue is only xyz kb in size and if the users want, they can import the desired components instead of importing the whole UI library.</p>
+            <p class="features-content__subtext">As the name suggest, lightVue is Lorem ipsum dolor sit amet.</p>
           </div>
         </div>
         <div class="features-div">
@@ -37,7 +37,7 @@
             <i class="light-icon-brand-github"></i>
           </div>
           <div class="features-content">
-            <h3 class="features-content__heading">Open Source</h3>
+            <h3 class="features-content__heading">No External Dependencies</h3>
             <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
           </div>
         </div>
@@ -46,7 +46,7 @@
             <i class="light-icon-brand-github"></i>
           </div>
           <div class="features-content">
-            <h3 class="features-content__heading">Open Source</h3>
+            <h3 class="features-content__heading">Professional Looking</h3>
             <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default {};
 .features-wrapper {
   padding-bottom: 120px;
   .features-container {
-    max-width: 1600px;
+    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
@@ -89,12 +89,13 @@ export default {};
     }
   }
   .features-div-container {
+    padding: 0 50px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
     .features-div {
-      width: 350px;
-      margin: 25px;
+      width: 300px;
+      margin: 20px;
       background: #ffffff;
       border-radius: 8px;
       box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
