@@ -1,0 +1,24 @@
+
+.lv-tooltip .lv-tooltip-text {
+    background: #495057;
+    color: #ffffff;
+    padding: 0.5rem 0.5rem;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+}
+
+.lv-tooltip.lv-tooltip-right .lv-tooltip-arrow {
+    border-right-color: #495057;
+}
+
+.lv-tooltip.lv-tooltip-left .lv-tooltip-arrow {
+    border-left-color: #495057;
+}
+
+.lv-tooltip.lv-tooltip-top .lv-tooltip-arrow {
+    border-top-color: #495057;
+}
+
+.lv-tooltip.lv-tooltip-bottom .lv-tooltip-arrow {
+    border-bottom-color: #495057;
+}

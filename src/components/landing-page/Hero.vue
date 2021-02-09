@@ -130,7 +130,15 @@ $text-color-secondary: #eeecec;
   }
 }
 
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 1800px) {
+    .hero-image {
+    position: relative;
+    top: 60px;
+    transform: scale(0.85);
+  }
+}
+
+@media only screen and (min-width: 2000px) {
     .hero-image {
     position: relative;
     top: 175px;

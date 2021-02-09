@@ -172,7 +172,7 @@ export default {};
   }
 }
 
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 2000px) {
   .features-heading {
     padding-top: 175px;
   }
