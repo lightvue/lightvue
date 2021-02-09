@@ -5,7 +5,7 @@
         {{ label }}
       </div>
     </label>
-    <div :class="['lv-input__field', { '--rounded': rounded }]">
+    <div :class="['lv-input__field', { '--rounded': rounded }]" :style="`--placeholder-color: ${placeholderColor}`">
       <div class="lv-input__prepend" v-if="$slots['prepend'] || iconLeft">
         <slot name="prepend">
           <div class="lv-input__icon" v-if="iconLeft">
@@ -67,6 +67,10 @@ export default {
     //     type: String,
     //     default: null,
     // },
+    placeholderColor: {
+      type: String,
+      default: 'rgba(0, 0, 0, 0.3)',
+    },
     floatingLabel: {
       type: Boolean,
       default: false,
