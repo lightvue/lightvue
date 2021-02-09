@@ -310,6 +310,17 @@ $primary-color: #38b2ac;
   .nav-list__item-bullet {
     background-color: #9aacb7;
   }
+  .sidebar__logo {
+    &::after {
+      content: '';
+      height: 60px;
+      top: 0;
+      width: 8px;
+      background-color: white;
+      position: fixed;
+      left: 250px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
