@@ -4,35 +4,41 @@
       <h2>Installation</h2>
       <div class="container__methods">
         <h3>Using npm</h3>
-        <code-highlight lang="javascript"> //v1.x npm install light-icons --save</code-highlight>
-        <code-highlight lang="javascript">// import in CSS files @import "~light-icons/dist/light-icon.css";</code-highlight>
-        <p>OR</p>
-        <code-highlight lang="javascript">// import directly in JS files import "light-icons/dist/light-icon.css";</code-highlight>
+        <code-highlight lang="javascript">// v1.x
+npm install light-icons --save</code-highlight>
+        <br/>
+        <h3>Import CSS file</h3>
+        <code-highlight lang="css"
+          >/* import in CSS files [with CSS Loader] */
+@import "~light-icons/dist/light-icon.css";</code-highlight>
+        <!-- <>OR</p> -->
+        <code-highlight lang="javascript"
+          >// import directly in JS files
+import "light-icons/dist/light-icon.css";</code-highlight>
       </div>
       <div>
+        <br/>
         <h3>How to use</h3>
-        <p>Add <code>light-icon-*</code> class, either in <code>i</code> or <code>span</code> HTML Tag</p>
-        <code-highlight>&lt;i class="light-icon-facebook"&gt;&lt;/i&gt;</code-highlight>
+        <div class="instructions">
+          Add <code>light-icon-*</code> class, either in <code>i</code> or <code>span</code> HTML Tag
+        </div>
+        <code-highlight
+          >&lt;i class="light-icon-facebook"&gt;&lt;/i&gt;</code-highlight
+        >
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CodeHighlight from '@/components/docs-card/CodeHighlight';
+import CodeHighlight from '@/components/docs-card/CodeHighlight.vue'
 
 export default {
   components: { CodeHighlight },
-};
+}
 </script>
 
-<style scoped>
-.wrapper {
-  padding: 50px;
-  max-width: 1220px;
-  margin: 0 auto;
-}
-
+<style scoped lang="scss">
 h2 {
   font-size: 30px;
   padding-bottom: 9px;
@@ -56,14 +62,16 @@ pre {
   border-radius: 6px;
   background: #ffffff;
 }
-p {
-  margin: 30px 0;
+.instructions {
+  color: #566d79;
+  margin: 8px 0px;
+  code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: #d3ecff;
+    border-radius: 6px;
+  }
 }
-code {
-  padding: 0.2em 0.4em;
-  margin: 0;
-  font-size: 85%;
-  background-color: #ffffff;
-  border-radius: 6px;
-}
+
 </style>
