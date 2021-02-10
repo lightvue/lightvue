@@ -84,12 +84,24 @@ export default {
       category_icon: 'light-icon-clipboard',
       pages: [
         {
+          page_name: 'Input',
+          page_path: '/vue-components/input',
+        },
+        {
           page_name: 'Button',
           page_path: '/vue-components/button',
         },
         {
           page_name: 'Checkbox',
           page_path: '/vue-components/checkbox',
+        },
+        {
+          page_name: 'Toggle Switch',
+          page_path: '/vue-components/toggle-switch',
+        },
+        {
+          page_name: 'Slider',
+          page_path: '/vue-components/slider',
         },
         {
           page_name: 'Color Picker',
@@ -100,20 +112,8 @@ export default {
           page_path: '/vue-components/dropdown',
         },
         {
-          page_name: 'Input',
-          page_path: '/vue-components/input',
-        },
-        {
           page_name: 'Rating',
           page_path: '/vue-components/rating',
-        },
-        {
-          page_name: 'Slider',
-          page_path: '/vue-components/slider',
-        },
-        {
-          page_name: 'Toggle Switch',
-          page_path: '/vue-components/toggle-switch',
         },
       ],
     },
@@ -140,6 +140,20 @@ export default {
       ],
     },
     {
+      category_name: 'Directives',
+      category_icon: 'light-icon-directions',
+      pages: [
+        {
+          page_name: 'Tooltip',
+          page_path: '/vue-components/tooltip',
+        },
+        {
+          page_name: 'Ripple effect',
+          page_path: '/vue-components/ripple',
+        },
+      ],
+    },
+    {
       category_name: 'Misc.',
       category_icon: 'light-icon-square-plus',
       pages: [
@@ -158,14 +172,6 @@ export default {
         {
           page_name: 'Light Icons',
           page_path: '/icons/light-icons',
-        },
-        {
-          page_name: 'Tooltip',
-          page_path: '/vue-components/tooltip',
-        },
-        {
-          page_name: 'Ripple effect',
-          page_path: '/vue-components/ripple',
         },
       ],
     },
