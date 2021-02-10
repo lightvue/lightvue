@@ -20,6 +20,7 @@
     "split.js": "^1.6.2",
     "splitpanes": "2.2.2",
     "tinycolor2": "^1.4.2",
+    "vue-gtag": "^1.11.0",
     "vue-instantsearch": "^3.4.3"
   },
   "devDependencies": {
