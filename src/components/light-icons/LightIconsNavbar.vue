@@ -25,6 +25,7 @@ export default {};
     cursor: pointer;
     user-select: none;
     text-decoration: none;
+    color: #607c8a;
 
     background-color: #ffffff;
     transition: all 0.2s ease-in-out;
