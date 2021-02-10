@@ -1,14 +1,14 @@
 <template>
   <div class="lv-colorpicker-wrapper">
-    <LvInput label="Choose color" v-model="colorpickerValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
+    <LvInput label="Choose color" ref="colorPickerInput" v-model="colorpickerValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template slot="append">
-        <div class="lv-colorpicker__colorblock-wrapper">
+        <div class="lv-colorpicker__colorblock-wrapper" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: colorpickerValue }"></div>
         </div>
       </template>
     </LvInput>
 
-    <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel">
+    <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
       <ColorpickerCore :value="colorpickerValue" :updateOverlayValue="updateOverlayValue" style="width: 195px; transform: scale(1.05)" />
     </LvOverlayPanel>
   </div>
@@ -42,7 +42,8 @@ export default {
       this.$refs.op.toggle(event);
     },
     toggleColorpickerOverlay(event) {
-      this.$refs.ColorpickerOverlay.toggle(event);
+      // this.$el.
+      this.$refs.ColorpickerOverlay.toggle(null, this.$refs.colorPickerInput.$el);
     },
     getColorString(color, mode) {
       if (mode == 0) {
@@ -77,6 +78,7 @@ export default {
   background-position-y: -2px;
   background-position-x: -1px;
   transform: scale(0.9);
+  cursor: pointer;
 }
 .lv-colorpicker__colorblock {
   border-radius: 4px !important;

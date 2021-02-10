@@ -27,10 +27,10 @@
     top: 0px;
     right: 0px;
     transform: translate(50%, -50%);
-  }
-  .lv-overlaypanel__close-btn--alignRight {
-    transform: translate(-50%, -50%);
-    left: 0px;
+    &.--right-align {
+      transform: translate(-50%, -50%);
+      left: 0px;
+    }
   }
 }
 

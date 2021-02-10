@@ -4,7 +4,7 @@
       <div class="lv-overlaypanel__content" @click="onContentClick">
         <slot></slot>
       </div>
-      <LvButton :class="{ 'lv-overlaypanel__close-btn': true, 'lv-overlaypanel__close-btn--alignRight': alignRight }" icon="light-icon-x" rounded @click="hide" v-if="showCloseIcon" :aria-label="ariaCloseLabel" type="button" />
+      <LvButton :class="{ 'lv-overlaypanel__close-btn': true, '--right-align': alignRight }" icon="light-icon-x" rounded @click="hide" v-if="showCloseIcon" :aria-label="ariaCloseLabel" type="button" />
     </div>
   </transition>
 </template>
@@ -65,13 +65,15 @@ export default {
     this.onBeforeUnmount();
   },
   methods: {
-    toggle(event) {
+    toggle(event, target) {
+      let domTarget = event ? event.currentTarget : target;
+      console.log(domTarget);
       if (this.visible) this.hide();
-      else this.show(event);
+      else this.show(domTarget);
     },
-    show(event) {
+    show(target) {
       this.visible = true;
-      this.target = event.currentTarget;
+      this.target = target;
     },
     hide() {
       this.visible = false;
