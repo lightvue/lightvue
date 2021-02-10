@@ -46,6 +46,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeOnResize: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -87,10 +91,10 @@ export default {
       if (this.dismissable) {
         this.bindOutsideClickListener();
       }
-
-      this.bindScrollListener();
-      this.bindResizeListener();
-
+      if (this.closeOnResize) {
+        this.bindScrollListener();
+        this.bindResizeListener();
+      }
       if (this.autoZIndex) {
         this.$refs.overlayRef.style.zIndex = String(this.baseZIndex + DomHandler.generateZIndex());
       }
