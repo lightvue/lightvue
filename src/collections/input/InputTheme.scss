@@ -114,52 +114,52 @@
         border-radius: 0px 30px 30px 0px;
       }
     }
+    .lv-input__help {
+      padding-left: 12px;
+    }
+
+    .lv-input-field:hover {
+      /* border-color: #2196F3; */
+    }
+
+    .lv-input-field:focus-within {
+    }
+
+    .lv-input-field.lv-error,
+    .lv-input-field.lv-invalid {
+      border-color: #f44336;
+    }
+
+    .lv-input-field.lv-input-field-sm {
+      font-size: 0.875rem;
+      padding: 0.4375rem 0.4375rem;
+    }
+
+    .lv-input-field.lv-input-field-lg {
+      font-size: 1.25rem;
+      padding: 0.625rem 0.625rem;
+    }
+
+    .p-input-filled .lv-input-field {
+      background-color: #edf2f7;
+    }
+
+    .p-input-filled .lv-input-field:enabled:hover {
+      /* background-color: #f8f9fa; */
+    }
+
+    .p-input-filled .lv-input-field:enabled:focus {
+      background-color: #ffffff;
+    }
+
+    .lv-input-field-sm .lv-input-field {
+      font-size: 0.875rem;
+      padding: 0.4375rem 0.4375rem;
+    }
+
+    .lv-input-field-lg .lv-input-field {
+      font-size: 1.25rem;
+      padding: 0.625rem 0.625rem;
+    }
   }
-  .lv-input__help {
-    padding-left: 12px;
-  }
-}
-
-.lv-input-field:hover {
-  /* border-color: #2196F3; */
-}
-
-.lv-input-field:focus-within {
-}
-
-.lv-input-field.lv-error,
-.lv-input-field.lv-invalid {
-  border-color: #f44336;
-}
-
-.lv-input-field.lv-input-field-sm {
-  font-size: 0.875rem;
-  padding: 0.4375rem 0.4375rem;
-}
-
-.lv-input-field.lv-input-field-lg {
-  font-size: 1.25rem;
-  padding: 0.625rem 0.625rem;
-}
-
-.p-input-filled .lv-input-field {
-  background-color: #edf2f7;
-}
-
-.p-input-filled .lv-input-field:enabled:hover {
-  /* background-color: #f8f9fa; */
-}
-
-.p-input-filled .lv-input-field:enabled:focus {
-  background-color: #ffffff;
-}
-
-.lv-input-field-sm .lv-input-field {
-  font-size: 0.875rem;
-  padding: 0.4375rem 0.4375rem;
-}
-
-.lv-input-field-lg .lv-input-field {
-  font-size: 1.25rem;
-  padding: 0.625rem 0.625rem;
 }

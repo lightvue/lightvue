@@ -1,7 +1,7 @@
 <template>
   <div :class="containerClass">
-    <span class="p-rating-icon p-rating-cancel pi pi-ban" :tabindex="focusIndex" v-if="cancel" @click="onCancelClick"></span>
-    <span :key="i" v-for="i in stars" @click="onStarClick($event, i)" :tabindex="focusIndex" @keydown.enter.prevent="onStarClick($event, i)" :class="['p-rating-icon', { 'pi pi-star-o': i > value, 'pi pi-star': i <= value }]"></span>
+    <span class="lv-rating-icon lv-rating-cancel pi pi-ban" :tabindex="focusIndex" v-if="cancel" @click="onCancelClick"></span>
+    <span :key="i" v-for="i in stars" @click="onStarClick($event, i)" :tabindex="focusIndex" @keydown.enter.prevent="onStarClick($event, i)" :class="['lv-rating-icon', { 'pi pi-star-o': i > value, 'pi pi-star': i <= value }]"></span>
   </div>
 </template>
 
@@ -51,10 +51,10 @@ export default {
   computed: {
     containerClass() {
       return [
-        'p-rating',
+        'lv-rating',
         {
-          'p-readonly': this.readonly,
-          'p-disabled': this.disabled,
+          'lv-readonly': this.readonly,
+          'lv-disabled': this.disabled,
         },
       ];
     },
@@ -66,11 +66,11 @@ export default {
 </script>
 
 <style>
-.p-rating-icon {
+.lv-rating-icon {
   cursor: pointer;
 }
 
-.p-rating.p-rating-readonly .p-rating-icon {
+.lv-rating.lv-rating-readonly .lv-rating-icon {
   cursor: default;
 }
 </style>

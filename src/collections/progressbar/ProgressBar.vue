@@ -32,7 +32,7 @@ export default {
   computed: {
     containerClass() {
       return [
-        'p-progressbar p-component', //Change the prefix from p- to lv-
+        'lv-progressbar lv-component',
         {
           'lv-progressbar--determinate': this.determinate,
           'lv-progressbar--indeterminate': this.indeterminate,
@@ -62,27 +62,27 @@ export default {
 </script>
 
 <style>
-.p-progressbar {
+.lv-progressbar {
   position: relative;
   overflow: hidden;
 }
-.p-progressbar {
+.lv-progressbar {
   height: 0.25rem;
 }
-.p-progressbar {
+.lv-progressbar {
   border: 0 none;
   height: 1.5rem;
   background: #dee2e6;
   border-radius: 3px;
 }
 
-.p-progressbar .p-progressbar-value {
+.lv-progressbar .lv-progressbar-value {
   border: 0 none;
   margin: 0;
   background: var(--primary-color);
 }
 
-.p-progressbar .p-progressbar-label {
+.lv-progressbar .lv-progressbar-label {
   color: #495057;
   line-height: 1.5rem;
 }

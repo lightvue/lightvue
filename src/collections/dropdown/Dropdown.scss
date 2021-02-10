@@ -154,7 +154,7 @@
   }
 }
 
-.p-input-filled .lv-dropdown {
+.lv-input-filled .lv-dropdown {
   background: #edf2f7;
   &:not(.--disabled):hover {
     background-color: #f8f9fa;
@@ -168,7 +168,7 @@ input.lv-dropdown__label {
   cursor: default;
 }
 
-.p-fluid .lv-dropdown {
+.lv-fluid .lv-dropdown {
   display: flex;
   // .lv-dropdown__label {
   //     width: 1%;
