@@ -4,6 +4,7 @@
       <template slot="append">
         <div class="lv-colorpicker__colorblock-wrapper" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: colorpickerValue }"></div>
+          <checkboard grey="#607c8a" />
         </div>
       </template>
     </LvInput>
@@ -16,6 +17,7 @@
 
 <script>
 import ColorpickerCore from './core/ColorpickerCore';
+import Checkboard from './core/Checkboard';
 import LvOverlayPanel from '@/collections/overlay-panel/OverlayPanel';
 import LvInput from '@/collections/input/Input';
 export default {
@@ -32,6 +34,7 @@ export default {
     LvOverlayPanel: LvOverlayPanel,
     ColorpickerCore: ColorpickerCore,
     LvInput: LvInput,
+    Checkboard,
   },
   methods: {
     updateOverlayValue(color, mode) {
@@ -63,8 +66,8 @@ export default {
 <style scoped>
 .lv-colorpicker-wrapper {
   /* width: max-content; */
-  width: 250px;
-  max-width: 100%;
+  /* width: 250px; */
+  /* max-width: 100%; */
 }
 .lv-colorpicker__colorblock-wrapper {
   position: relative;
@@ -72,17 +75,16 @@ export default {
   height: 30px;
   top: calc(50% - 16px);
   right: 2px;
-  border-radius: 4px !important;
-  background-image: url(./images/checkBg.jpg);
-  background-size: 32px;
-  background-position-y: -2px;
-  background-position-x: -1px;
+  border-radius: 5px !important;
   transform: scale(0.9);
   cursor: pointer;
+  overflow: hidden;
 }
 .lv-colorpicker__colorblock {
-  border-radius: 4px !important;
+  /* border-radius: 4px !important; */
+  position: relative;
   height: 100%;
   width: 100%;
+  z-index: 1;
 }
 </style>
