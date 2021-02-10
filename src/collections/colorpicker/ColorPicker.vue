@@ -1,14 +1,15 @@
 <template>
   <div class="lv-colorpicker-wrapper">
-    <LvInput label="Choose color" v-model="colorpickerValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
+    <LvInput label="Choose color" ref="colorPickerInput" v-model="colorpickerValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template slot="append">
-        <div class="lv-colorpicker__colorblock-wrapper">
+        <div class="lv-colorpicker__colorblock-wrapper" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: colorpickerValue }"></div>
+          <checkboard grey="#607c8a" />
         </div>
       </template>
     </LvInput>
 
-    <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel">
+    <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
       <ColorpickerCore :value="colorpickerValue" :updateOverlayValue="updateOverlayValue" style="width: 195px; transform: scale(1.05)" />
     </LvOverlayPanel>
   </div>
@@ -16,6 +17,7 @@
 
 <script>
 import ColorpickerCore from './core/ColorpickerCore';
+import Checkboard from './core/Checkboard';
 import LvOverlayPanel from '@/collections/overlay-panel/OverlayPanel';
 import LvInput from '@/collections/input/Input';
 export default {
@@ -32,6 +34,7 @@ export default {
     LvOverlayPanel: LvOverlayPanel,
     ColorpickerCore: ColorpickerCore,
     LvInput: LvInput,
+    Checkboard,
   },
   methods: {
     updateOverlayValue(color, mode) {
@@ -42,7 +45,8 @@ export default {
       this.$refs.op.toggle(event);
     },
     toggleColorpickerOverlay(event) {
-      this.$refs.ColorpickerOverlay.toggle(event);
+      // this.$el.
+      this.$refs.ColorpickerOverlay.toggle(null, this.$refs.colorPickerInput.$el);
     },
     getColorString(color, mode) {
       if (mode == 0) {
@@ -62,8 +66,8 @@ export default {
 <style scoped>
 .lv-colorpicker-wrapper {
   /* width: max-content; */
-  width: 250px;
-  max-width: 100%;
+  /* width: 250px; */
+  /* max-width: 100%; */
 }
 .lv-colorpicker__colorblock-wrapper {
   position: relative;
@@ -71,16 +75,16 @@ export default {
   height: 30px;
   top: calc(50% - 16px);
   right: 2px;
-  border-radius: 4px !important;
-  background-image: url(./images/checkBg.jpg);
-  background-size: 32px;
-  background-position-y: -2px;
-  background-position-x: -1px;
+  border-radius: 5px !important;
   transform: scale(0.9);
+  cursor: pointer;
+  overflow: hidden;
 }
 .lv-colorpicker__colorblock {
-  border-radius: 4px !important;
+  /* border-radius: 4px !important; */
+  position: relative;
   height: 100%;
   width: 100%;
+  z-index: 1;
 }
 </style>

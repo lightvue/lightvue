@@ -21,7 +21,7 @@
     <h5>Auto Width and right-aligned overlay-panel</h5>
     <LvButton type="button" label="Image Overlay" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" />
 
-    <LvOverlayPanel ref="imageOverlay" append-to="body" :show-close-icon="true" id="image_overlay_panel" alignRight>
+    <LvOverlayPanel ref="imageOverlay" append-to="body" :show-close-icon="true" id="image_overlay_panel" align-right>
       <h3>Right-aligned overlay panel [PROP: alignRight]</h3>
       <img src="@/assets/images/demo/bamboo-watch.jpg" class="product-image --large" />
     </LvOverlayPanel>

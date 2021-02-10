@@ -3,10 +3,6 @@
     <div class="header-items">
       <div class="header__logo-row">
         <i class="light-icon-align-left menu-icon" @click="$emit('toggle-drawer')"></i>
-        <!-- <div class="logo" @click="$router.push('/')">
-          <img src="@/assets/logo.png" class="header-logo" />
-          <h3 class="logo-text">&nbsp; LightVue</h3>
-        </div> -->
       </div>
       <div class="search-row">
         <div class="search-bar">

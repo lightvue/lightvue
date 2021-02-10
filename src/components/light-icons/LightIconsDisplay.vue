@@ -1,8 +1,17 @@
 <template>
-  <div class="icons__wrap">
-    <div class="icons__search-row">
+  <div class="icons__wrap" style="min-height: 90vh">
+    <br /><br />
+    <div class="icons__search-row" ref="searchRow">
       <div class="icons__search-bar">
-        <input class="icons__search-input" placeholder="Search Icons" v-model="query" type="text" />
+        <input class="icons__search-input" placeholder="Search Icon" v-model="query" type="text" />
+        <i class="light-icon-search search-icon"></i>
+      </div>
+    </div>
+
+    <br /><br />
+    <div class="icons__search-row --sticky" v-if="stickySearchBar">
+      <div class="icons__search-bar">
+        <input class="icons__search-input" placeholder="Search Icon" v-model="query" type="text" />
         <i class="light-icon-search search-icon"></i>
       </div>
     </div>
@@ -11,9 +20,6 @@
         <i :class="`light-icon-${iconName}`"></i>
         <p class="icons__list-item-name">{{ iconName }}</p>
       </li>
-      <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <div class="copy-btn-tag" v-show="copied"><i class="light-icon-circle-check" /> Copied to clipboard</div>
-      </transition>
     </ul>
   </div>
 </template>
@@ -27,6 +33,7 @@ export default {
       query: '',
       allIcons: [],
       copiedIcon: '',
+      stickySearchBar: false,
     };
   },
   computed: {
@@ -35,6 +42,12 @@ export default {
         return val.indexOf(this.query) !== -1;
       });
     },
+  },
+  mounted() {
+    document.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    document.removeEventListener('scroll', this.handleScroll);
   },
   created() {
     if (this.apiPath) {
@@ -66,23 +79,34 @@ export default {
         })
         .catch(() => {});
     },
+    handleScroll(event) {
+      this.stickySearchBar = window.top.scrollY > this.$refs.searchRow.offsetTop ? true : false;
+    },
   },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .icons__search-row {
-  position: sticky;
-  top: 60px;
-  margin: auto;
-  padding: 40px 0;
+  position: relative;
+  top: 0px;
+  // margin: px -30px;
+  padding: 16px 0;
   background: #f5f8fa;
   z-index: 10;
+  &.--sticky {
+    box-shadow: -4px 4px 25px -4px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    width: 100%;
+    z-index: 101;
+  }
 }
 .icons__search-bar {
   position: relative;
   margin: 0 auto;
-  width: 360px;
+  max-width: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,23 +149,27 @@ export default {
 }
 .icons__list .icons__list-item {
   vertical-align: top;
-  width: 150px;
+
+  width: 144px;
+  max-width: 120px;
+  min-width: 100px;
   box-sizing: border-box;
   text-align: center;
   background-color: #fff;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 12px;
-  padding: 10px 0 10px 0;
+  padding: 8px;
   margin: 8px;
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
+  flex: 1 1 0;
   &:hover {
     background-color: #607c8a;
     color: #fff;
   }
   i {
-    font-size: 50px;
+    font-size: 36px;
   }
   &.--copied::after {
     position: absolute;
@@ -158,14 +186,14 @@ export default {
     border-radius: 12px;
   }
 }
-
-.icons__list-item-name {
-  margin: 0 0 10px 0 !important;
-}
-
 @media only screen and (max-width: 400px) {
-  .icons__search-row {
-    width: 250px;
+  .icons__list-item {
+  }
+}
+@media (min-width: 769px) {
+  /** Same as main sidebar **/
+  .icons__search-row.--sticky {
+    width: calc(100% - 250px);
   }
 }
 </style>
