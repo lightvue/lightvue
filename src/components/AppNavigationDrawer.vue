@@ -157,7 +157,7 @@ export default {
         },
         {
           page_name: 'Light Icons',
-          page_path: '/light-icons/light-icons',
+          page_path: '/icons/light-icons',
         },
         {
           page_name: 'Tooltip',
