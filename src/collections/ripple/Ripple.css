@@ -1,5 +1,4 @@
 .lv-ripple {
-<<<<<<< HEAD
   overflow: hidden;
   position: relative;
 }
@@ -26,44 +25,3 @@
     transform: scale(2.5);
   }
 }
-=======
-    overflow: hidden;
-    position: relative;
-}
-
-.lv-ink {
-    display: block;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 100%;
-    opacity: 0.4;
-    transform: scale(0);
-}
-  
-.lv-ink-active {
-    animation: ripple 0.8s linear;
-}
-
-.lv-ripple-disabled .lv-ink {
-    display: none !important;
-}
-  
-@keyframes ripple {  
-    40% {
-        opacity: 0.25;
-        transform: scale(2.5);
-    }
-    70%{
-        opacity: 0.15;
-        transform: scale(2.5);
-    }
-    80%{
-        opacity: 0.15;
-        transform: scale(2.5);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(2.5);
-    }
-}
->>>>>>> d029fc874a303c06ca165e7c50eba87188686e91

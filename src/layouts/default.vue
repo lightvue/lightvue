@@ -49,11 +49,32 @@ export default {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
+//ScrollBar
+
+template::-webkit-scrollbar {
+  background-color: #fff;
+  width: 16px;
+}
+
+template::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+template::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 4px solid #fff;
+}
+
+template::-webkit-scrollbar-button {
+  display: none;
+}
+//Scrollbar ends
+
 a {
   text-decoration: none;
 }
 
-body,
+template,
 #app {
   background-color: #f5f8fa;
   color: #566d79;
