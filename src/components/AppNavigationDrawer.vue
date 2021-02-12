@@ -1,5 +1,5 @@
 <template>
-  <div :class="`sidebar --theme-${theme} ${showDrawer ? 'show-drawer' : ''}`" @click="$emit('toggle-drawer')">
+  <div class="light-scrollbar" :class="`sidebar --theme-${theme} ${showDrawer ? 'show-drawer' : ''}`" @click="$emit('toggle-drawer')">
     <div class="nav-list">
       <div class="sidebar__logo" @click="$router.push('/')">
         <img src="/logo_v2.png" class="header-logo" />

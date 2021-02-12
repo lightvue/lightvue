@@ -8,9 +8,16 @@
             <!-- <h1 class="hero-container__heading">LightVue</h1> -->
 
             <p class="hero-container__subtext">
-              The Ultimate UI Component Library
-              <span class="subtext-highlight">for Vue</span>
+              The Ultimate UI Component Library for
+              <span class="subtext-highlight">Vue 2</span> &amp; <span class="subtext-highlight">Vue 3</span>
             </p>
+          </div>
+        </div>
+        <div class="hero-container__row">
+          <div class="hero-container__pre">
+            <pre>
+           <code><span class="not-selectable">$ </span>npm install lightvue</code>
+          </pre>
           </div>
         </div>
         <div class="hero-container__row">
@@ -28,7 +35,9 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path fill="#143a56" fill-opacity="1" d="M0,224L48,197.3C96,171,192,117,288,101.3C384,85,480,107,576,138.7C672,171,768,213,864,208C960,203,1056,149,1152,128C1248,107,1344,117,1392,122.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
     </svg>
-    <img class="hero-image" src="/hero-bg.svg" alt="" />
+    <div class="hero-image">
+      <img src="/hero-bg.svg" alt="" />
+    </div>
   </section>
 </template>
 
@@ -105,14 +114,38 @@ $text-color-secondary: #eeecec;
           white-space: nowrap;
         }
       }
+      .hero-container__pre {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pre {
+          border-radius: 4px;
+          display: inline-flex;
+          font-size: 24px;
+          color: #ffffff;
+          background: #135483;
+          margin-bottom: 2rem;
+          overflow-x: auto;
+          padding: 20px 24px;
+          white-space: pre;
+          .not-selectable {
+            user-select: none;
+          }
+        }
+      }
     }
   }
   .hero-image {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 720px;
+    height: 720px;
+    width: 720px;
     margin-top: -40%;
+    img {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 
@@ -131,7 +164,7 @@ $text-color-secondary: #eeecec;
 }
 
 @media only screen and (min-width: 1800px) {
-    .hero-image {
+  .hero-image {
     position: relative;
     top: 60px;
     transform: scale(0.85);
@@ -139,7 +172,7 @@ $text-color-secondary: #eeecec;
 }
 
 @media only screen and (min-width: 2000px) {
-    .hero-image {
+  .hero-image {
     position: relative;
     top: 175px;
     transform: scale(0.85);

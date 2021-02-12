@@ -5,7 +5,7 @@
         <h2 class="features-heading">Why Light-Vue?</h2>
       </div>
       <div class="features-div-container">
-        <div class="features-div">
+        <!-- <div class="features-div">
           <div class="features-icon-div">
             <i class="light-icon-bolt"></i>
           </div>
@@ -49,16 +49,73 @@
             <h3 class="features-content__heading">Professional Looking</h3>
             <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
           </div>
-        </div>
-        <div class="features-div">
+        </div> -->
+        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+          <!-- <div class="features-div"> -->
           <div class="features-icon-div">
             <i class="light-icon-brand-github"></i>
           </div>
           <div class="features-content">
-            <h3 class="features-content__heading">Open Source</h3>
+            <h3 class="features-content__heading">Professional Looking</h3>
             <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
           </div>
-        </div>
+          <!-- </div> -->
+        </LvCard>
+        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+          <!-- <div class="features-div"> -->
+          <div class="features-icon-div">
+            <i class="light-icon-brand-github"></i>
+          </div>
+          <div class="features-content">
+            <h3 class="features-content__heading">Professional Looking</h3>
+            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+          </div>
+          <!-- </div> -->
+        </LvCard>
+        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+          <!-- <div class="features-div"> -->
+          <div class="features-icon-div">
+            <i class="light-icon-brand-github"></i>
+          </div>
+          <div class="features-content">
+            <h3 class="features-content__heading">Professional Looking</h3>
+            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+          </div>
+          <!-- </div> -->
+        </LvCard>
+        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+          <!-- <div class="features-div"> -->
+          <div class="features-icon-div">
+            <i class="light-icon-brand-github"></i>
+          </div>
+          <div class="features-content">
+            <h3 class="features-content__heading">Professional Looking</h3>
+            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+          </div>
+          <!-- </div> -->
+        </LvCard>
+        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+          <!-- <div class="features-div"> -->
+          <div class="features-icon-div">
+            <i class="light-icon-brand-github"></i>
+          </div>
+          <div class="features-content">
+            <h3 class="features-content__heading">Professional Looking</h3>
+            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+          </div>
+          <!-- </div> -->
+        </LvCard>
+        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+          <!-- <div class="features-div"> -->
+          <div class="features-icon-div">
+            <i class="light-icon-brand-github"></i>
+          </div>
+          <div class="features-content">
+            <h3 class="features-content__heading">Professional Looking</h3>
+            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+          </div>
+          <!-- </div> -->
+        </LvCard>
       </div>
     </div>
   </div>
@@ -72,7 +129,7 @@ export default {};
 .features-wrapper {
   padding-bottom: 120px;
   .features-container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
@@ -94,12 +151,13 @@ export default {};
     flex-flow: row wrap;
     justify-content: center;
     .features-div {
-      width: 300px;
+      width: 350px;
+      height: 300px;
       margin: 20px;
       background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
-      padding: 30px;
+      // border-radius: 8px;
+      // box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px 0 #0000000f;
+      // padding: 30px;
       border-color: #e2e8f0;
       transition: all 0.5s;
       &:hover {
