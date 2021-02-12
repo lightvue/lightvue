@@ -67,10 +67,12 @@ $text-color-secondary: #eeecec;
     background-color: #133a56;
     .hero-logo {
       margin: auto;
-      display: block;
-      height: 200px;
+      display: flex;
+      height: 150px;
       width: 300px;
       margin-bottom: 50px;
+      justify-content: center;
+      align-items: center;
       img {
         width: 100%;
       }
