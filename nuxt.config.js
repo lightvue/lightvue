@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 
 export default {
   srcDir: 'src/',
@@ -25,6 +25,10 @@ export default {
         name: 'description',
         content: 'Light Vue is the Ultimate Component Library for Vue 2 & Vue 3',
       },
+      {
+        name: 'google-site-verification',
+        content: 'QMiXd8kXdh7FF6dlfvLlF-PO4OJKHmtmINPfpwuigpU',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -46,7 +50,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
   ],
   // router: {
   //   scrollBehavior(to) {
@@ -66,12 +70,12 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    transpile: ['vue-instantsearch', 'instantsearch.js/es']
+    transpile: ['vue-instantsearch', 'instantsearch.js/es'],
   },
 
-  // Google Analytics Configration 
+  // Google Analytics Configration
   googleAnalytics: {
-    id: 'G-NSCV9YG71N'
+    id: 'G-NSCV9YG71N',
   },
 
   //environment variables
