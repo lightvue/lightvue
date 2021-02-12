@@ -115,7 +115,7 @@ $text-color-secondary: #eeecec;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-
+        z-index: 2;
         .hero-button {
           width: 180px;
           margin: 16px;
