@@ -53,11 +53,22 @@
         <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
-            <i class="light-icon-brand-github"></i>
+            <i class="light-icon-mist"></i>
           </div>
           <div class="features-content">
-            <h3 class="features-content__heading">Professional Looking</h3>
-            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+            <h3 class="features-content__heading">Light Weight</h3>
+            <p class="features-content__subtext">As the name suggest, lightVue is one of the lightest UI component library in the market.</p>
+          </div>
+          <!-- </div> -->
+        </LvCard>
+        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+          <!-- <div class="features-div"> -->
+          <div class="features-icon-div">
+            <i class="light-icon-palette"></i>
+          </div>
+          <div class="features-content">
+            <h3 class="features-content__heading">Customizable</h3>
+            <p class="features-content__subtext">Light Vue is very easy to customize and allows users to build the theme according to their likings.</p>
           </div>
           <!-- </div> -->
         </LvCard>
@@ -67,52 +78,41 @@
             <i class="light-icon-brand-github"></i>
           </div>
           <div class="features-content">
-            <h3 class="features-content__heading">Professional Looking</h3>
-            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+            <h3 class="features-content__heading">Open Source</h3>
+            <p class="features-content__subtext">Light Vue is open source and Devs can give their suggestions and changes on our github repository.</p>
           </div>
           <!-- </div> -->
         </LvCard>
         <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
-            <i class="light-icon-brand-github"></i>
+            <i class="light-icon-id"></i>
           </div>
           <div class="features-content">
             <h3 class="features-content__heading">Professional Looking</h3>
-            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+            <p class="features-content__subtext">LightVue makes your web app or website look professional and elegant.</p>
           </div>
           <!-- </div> -->
         </LvCard>
         <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
-            <i class="light-icon-brand-github"></i>
+            <i class="light-icon-social"></i>
           </div>
           <div class="features-content">
-            <h3 class="features-content__heading">Professional Looking</h3>
-            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+            <h3 class="features-content__heading">No Dependency</h3>
+            <p class="features-content__subtext">LightVue has 0 external dependency that makes it very reliable and fast.</p>
           </div>
           <!-- </div> -->
         </LvCard>
         <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
-            <i class="light-icon-brand-github"></i>
+            <i class="light-icon-devices"></i>
           </div>
           <div class="features-content">
-            <h3 class="features-content__heading">Professional Looking</h3>
-            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
-          </div>
-          <!-- </div> -->
-        </LvCard>
-        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
-          <!-- <div class="features-div"> -->
-          <div class="features-icon-div">
-            <i class="light-icon-brand-github"></i>
-          </div>
-          <div class="features-content">
-            <h3 class="features-content__heading">Professional Looking</h3>
-            <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
+            <h3 class="features-content__heading">Responsive</h3>
+            <p class="features-content__subtext">With lightVue the user can build web applications which are ready to use on any device.</p>
           </div>
           <!-- </div> -->
         </LvCard>
@@ -152,7 +152,7 @@ export default {};
     justify-content: center;
     .features-div {
       width: 350px;
-      height: 300px;
+      height: 250px;
       margin: 20px;
       background: #ffffff;
       // border-radius: 8px;
@@ -176,12 +176,12 @@ export default {};
       justify-content: center;
       i {
         padding: 10px;
-        background: #319795;
-        color: #e0e0e0;
+        background: #44bebc;
+        color: #ffffff;
         border-radius: 50%;
-        font-size: 24px;
+        font-size: 28px;
         transition: all 0.3s;
-        font-weight: bolder;
+        // font-weight: bolder;
       }
     }
     .features-content {
@@ -194,10 +194,10 @@ export default {};
         margin-bottom: 8px;
       }
       .features-content__subtext {
-        color: #354052;
+        color: #535a66;
         // text-align: center;
-        font-size: 16px;
-        line-height: 1.6rem;
+        font-size: 18px;
+        line-height: 2rem;
       }
     }
   }

@@ -69,7 +69,7 @@ $text-color-secondary: #eeecec;
       margin: auto;
       display: flex;
       height: 150px;
-      width: 300px;
+      width: 500px;
       margin-bottom: 50px;
       justify-content: center;
       align-items: center;
