@@ -37,7 +37,6 @@ export default {
     return {
       resultsOpen: false,
       queryString: '',
-      searchClient: algoliasearch('CYDWBEXKQT', '96b5c074edda2e65f8548e6d61fb922d'),
     };
   },
   methods: {
@@ -61,6 +60,11 @@ export default {
     AisHighlight,
     createServerRootMixin,
   },
+  computed: {
+    searchClient() {
+      return algoliasearch(process.env.ALGOLIAPROJECTID, process.env.ALGOLIAAPIKEY)
+    } 
+  }
 };
 </script>
 <style>

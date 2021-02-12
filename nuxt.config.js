@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   srcDir: 'src/',
   // Target (https://go.nuxtjs.dev/config-target)
@@ -43,6 +45,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics'
   ],
   // router: {
@@ -69,5 +72,15 @@ export default {
   // Google Analytics Configration 
   googleAnalytics: {
     id: 'G-NSCV9YG71N'
-  }
+  },
+
+  //environment variables
+  // publicRuntimeConfig: {
+  //   ISHAAN: process.env.ISHAAN,
+  // },
+  // privateRuntimeConfig: {
+  //   ALGOLIA_APIKEY: process.env.ALGOLIA_APIKEY,
+  //   ALGOLIA_PROJECTID: process.env.ALGOLIA_PROJECTID,
+  //   // apiSecret: process.env.API_SECRET
+  // }
 };
