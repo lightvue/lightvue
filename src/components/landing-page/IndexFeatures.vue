@@ -205,11 +205,13 @@ export default {};
 @media (max-width: 768px) {
   .features-wrapper {
     padding: 80px 0px;
-  }
-  .features-div-container {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+
+    .features-div-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
   }
   .features-div {
     width: 100vw !important;
@@ -225,6 +227,17 @@ export default {};
       .features-row {
         .features-heading {
           font-size: 38px;
+        }
+      }
+      .features-content {
+        .features-content__heading {
+          font-size: 22px;
+          margin-top: 13px;
+          margin-bottom: 6px;
+        }
+        .features-content__subtext {
+          font-size: 16px;
+          line-height: 1.8rem;
         }
       }
     }
