@@ -1,7 +1,9 @@
 <template>
   <section class="hero-section">
     <div class="hero-wrapper">
-      <img class="hero-logo" src="/logo_v2.png" alt="" />
+      <div class="hero-logo">
+        <img src="/logo_v2.png" alt="" />
+      </div>
       <div class="hero-container">
         <div class="hero-container__row">
           <div class="hero-container__content">
@@ -66,8 +68,12 @@ $text-color-secondary: #eeecec;
     .hero-logo {
       margin: auto;
       display: block;
+      height: 200px;
       width: 300px;
       margin-bottom: 50px;
+      img {
+        width: 100%;
+      }
     }
     .hero-container {
       display: flow-root;
