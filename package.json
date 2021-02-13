@@ -11,6 +11,7 @@
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.2",
+    "@nuxtjs/sitemap": "^2.4.0",
     "algoliasearch": "^4.8.4",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",

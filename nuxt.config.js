@@ -51,7 +51,12 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics',
+    '@nuxtjs/sitemap',
   ],
+  sitemap: {
+    path: '/sitemapindex.xml',
+    hostname: 'https://lightvue.org',
+  },
   // router: {
   //   scrollBehavior(to) {
   //     console.log(to);
