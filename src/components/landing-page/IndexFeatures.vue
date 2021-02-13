@@ -50,7 +50,7 @@
             <p class="features-content__subtext">Light Vue is open source and Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dolorem consequuntur. Fugit illo provident expedita.</p>
           </div>
         </div> -->
-        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+        <LvCard class="features-div" borderRadius="8px" padding="30px" :shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
             <i class="light-icon-mist"></i>
@@ -61,7 +61,7 @@
           </div>
           <!-- </div> -->
         </LvCard>
-        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+        <LvCard class="features-div" borderRadius="8px" padding="30px" :shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
             <i class="light-icon-palette"></i>
@@ -72,7 +72,7 @@
           </div>
           <!-- </div> -->
         </LvCard>
-        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+        <LvCard class="features-div" borderRadius="8px" padding="30px" :shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
             <i class="light-icon-brand-github"></i>
@@ -83,7 +83,7 @@
           </div>
           <!-- </div> -->
         </LvCard>
-        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+        <LvCard class="features-div" borderRadius="8px" padding="30px" :shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
             <i class="light-icon-id"></i>
@@ -94,7 +94,7 @@
           </div>
           <!-- </div> -->
         </LvCard>
-        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+        <LvCard class="features-div" borderRadius="8px" padding="30px" :shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
             <i class="light-icon-social"></i>
@@ -105,7 +105,7 @@
           </div>
           <!-- </div> -->
         </LvCard>
-        <LvCard class="features-div" borderRadius="8px" padding="30px" shadowStyle="6">
+        <LvCard class="features-div" borderRadius="8px" padding="30px" :shadowStyle="6">
           <!-- <div class="features-div"> -->
           <div class="features-icon-div">
             <i class="light-icon-devices"></i>
