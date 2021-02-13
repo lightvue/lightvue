@@ -54,7 +54,7 @@ export default {
     '@nuxtjs/sitemap',
   ],
   sitemap: {
-    path: '/sitemapindex.xml',
+    path: '/sitemap.xml',
     hostname: 'https://lightvue.org',
     gzip: true,
   },
