@@ -2,7 +2,7 @@
   <section class="hero-section">
     <div class="hero-wrapper">
       <div class="hero-logo">
-        <img src="/logo_v2.png" alt="" />
+        <img src="/logo_v2.svg" alt="" />
       </div>
       <div class="hero-container">
         <div class="hero-container__row">

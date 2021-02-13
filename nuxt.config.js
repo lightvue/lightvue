@@ -56,6 +56,7 @@ export default {
   sitemap: {
     path: '/sitemapindex.xml',
     hostname: 'https://lightvue.org',
+    gzip: true,
   },
   // router: {
   //   scrollBehavior(to) {

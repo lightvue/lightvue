@@ -3,7 +3,7 @@
     <footer>
       <div class="contact">
         <nuxt-link :to="{ hash: '' }">
-          <img src="/logo_v2.png" alt="" width="220px" />
+          <img src="/logo_v2.svg" alt="" width="220px" />
         </nuxt-link>
       </div>
       <div class="footer__links">
