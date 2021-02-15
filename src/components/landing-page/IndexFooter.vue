@@ -24,7 +24,7 @@
         <h6>Subscribe for more Updates</h6>
         <input type="email" name="email" placeholder="user@example.com" />
         <button>Subscribe</button>
-        <p>Follow for more</p>
+        <!-- <p>Follow for more</p> -->
         <!-- <a target="_blank" href="#"><i class="light-icon-brand-facebook"></i></a>
         <a target="_blank" href="#"><i class="light-icon-brand-twitter"></i></a>
         <a target="_blank" href="#"><i class="light-icon-brand-instagram"></i></a>
