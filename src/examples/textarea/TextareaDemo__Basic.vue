@@ -4,7 +4,7 @@
     <lv-textarea rows="3" placeholder="" label="Label Test" floating-label show-limit />
     <lv-textarea rows="3" placeholder="" label="Label Test" rounded floating-label />
     <lv-textarea rows="3" placeholder="" label="Label Test" icon-left="light-icon-phone" />
-    <lv-textarea v-model="text" :maxlength="10" rows="3" label="Label Test" />
+    <lv-textarea :max-length="10" rows="3" label="Label Test" />
     <lv-textarea rows="3" placeholder="auto-size" label="Auto-resize" :autoResize="true" />
   </div>
 </template>

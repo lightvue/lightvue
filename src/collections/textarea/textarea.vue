@@ -1,8 +1,7 @@
 <template>
   <div>
     <lv-input type="text" :editable="false" ref="mainInput" v-bind="$attrs">
-      <textarea :class="`p-inputtextarea-resizable : ${autoResize}`" :maxlength="maxlength" class="lv-textarea" @keyup="remaincharCount()" v-bind="$attrs" @input="this.updateValue" :value="modelValue" ref="textarea" />
-      <!-- <textarea v-bind="$attrs" class="lv-textarea" :class=" {'p-inputtextarea-resizable ': autoResize}" @input="this.updateValue" ref="textarea"></textarea> -->
+      <textarea :maxlength="maxLength" class="lv-textarea" v-bind="$attrs" @input="this.updateValue" :value="modelValue" ref="textarea" />
     </lv-input>
     <div class="lv-textarea__limits" v-if="showLimit && maxLength">{{ modelValue ? modelValue.length : 0 }} / {{ maxLength }}</div>
   </div>
@@ -32,8 +31,13 @@ export default {
     },
     maxLength: {
       type: Number,
+      // default: 524288,
     },
     showLimit: {
+      type: Boolean,
+      default: false,
+    },
+    autoResize: {
       type: Boolean,
       default: false,
     },
@@ -76,17 +80,6 @@ export default {
       this.$emit('input', event.target.value); // Only for Vue 2
       this.$emit('update:modelValue', event.target.value); // Only for Vue 3
     },
-    //  remaincharCount: function(){
-
-    //     if(this.message.length > this.maxcharacter){
-    //         this.remaincharactersText = "Exceeded "+this.maxcharacter+" characters limit.";
-    //     }
-    //     else{
-    //     //    var remainCharacters = this.maxcharacter - this.message.length;
-    //        var remainCharacters = this.message.length;
-    //        this.remaincharactersText = "" + remainCharacters + "/" + this.maxcharacter;
-    //     }
-    // }
   },
   computed: {
     listeners() {
@@ -125,4 +118,3 @@ export default {
   margin-top: 5px;
 }
 </style>
->
