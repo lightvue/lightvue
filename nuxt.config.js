@@ -57,6 +57,12 @@ export default {
     path: '/sitemap.xml',
     hostname: 'https://lightvue.org',
     gzip: true,
+    filter ({ routes }) {
+      return routes.map(route => {
+        route.url = `${route.url}/`
+        return route
+      })
+    }
   },
   // router: {
   //   scrollBehavior(to) {
