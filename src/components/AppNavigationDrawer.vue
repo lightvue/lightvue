@@ -88,6 +88,10 @@ export default {
           page_path: '/vue-components/input',
         },
         {
+          page_name: 'Text Area',
+          page_path: '/vue-components/textarea',
+        },
+        {
           page_name: 'Button',
           page_path: '/vue-components/button',
         },
