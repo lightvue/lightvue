@@ -101,7 +101,7 @@
           </div>
           <div class="features-content">
             <h3 class="features-content__heading">No Dependency</h3>
-            <p class="features-content__subtext">LightVue has 0 external dependency that makes it very reliable and fast.</p>
+            <p class="features-content__subtext">LightVue has zero external dependency that makes it very reliable and fast.</p>
           </div>
           <!-- </div> -->
         </LvCard>
@@ -112,7 +112,7 @@
           </div>
           <div class="features-content">
             <h3 class="features-content__heading">Responsive</h3>
-            <p class="features-content__subtext">With lightVue the user can build web applications which are ready to use on any device.</p>
+            <p class="features-content__subtext">With lightVue, build web applications which are ready to use on any device.</p>
           </div>
           <!-- </div> -->
         </LvCard>
@@ -195,7 +195,7 @@ export default {};
       }
       .features-content__subtext {
         color: #535a66;
-        // text-align: center;
+        text-align: center;
         font-size: 18px;
         line-height: 2rem;
       }

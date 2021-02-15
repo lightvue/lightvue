@@ -9,15 +9,15 @@
       <div class="footer__links">
         <h6>Links</h6>
         <p><a href="#">Home</a></p>
-        <p><nuxt-link to="/button-docs">Documentation</nuxt-link></p>
-        <p><a target="_blank" href="https://github.com/">Github</a></p>
+        <p><nuxt-link to="/getting-started/installation">Documentation</nuxt-link></p>
+        <!-- <p><a target="_blank" href="https://github.com/">Github</a></p> -->
         <p><a target="_blank" href="https://digiklabs.com/">Reach Us</a></p>
-        <p><a target="_blank" href="#">Become Sponser</a></p>
+        <!-- <p><a target="_blank" href="#">Become Sponsor</a></p> -->
       </div>
       <div class="footer__products">
         <h6>Products</h6>
         <!-- <p><a href="#">Form Studio</a></p> -->
-        <p><a target="_blank" href="https://lighticon.netlify.app/">Light Icons</a></p>
+        <p><nuxt-link to="/icons/light-icons">Light Icons</nuxt-link></p>
         <p><a target="_blank" href="https://plugui.com/">Plug UI</a></p>
       </div>
       <div class="footer__form">
@@ -25,10 +25,10 @@
         <input type="email" name="email" placeholder="user@example.com" />
         <button>Subscribe</button>
         <p>Follow for more</p>
-        <a target="_blank" href="#"><i class="light-icon-brand-facebook"></i></a>
+        <!-- <a target="_blank" href="#"><i class="light-icon-brand-facebook"></i></a>
         <a target="_blank" href="#"><i class="light-icon-brand-twitter"></i></a>
         <a target="_blank" href="#"><i class="light-icon-brand-instagram"></i></a>
-        <a target="_blank" href="#"><i class="light-icon-brand-github"></i></a>
+        <a target="_blank" href="#"><i class="light-icon-brand-github"></i></a> -->
       </div>
     </footer>
   </div>
