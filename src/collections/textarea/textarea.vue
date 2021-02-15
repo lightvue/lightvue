@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lv-input type="text" :editable="false" ref="mainInput" v-bind="$attrs">
+    <lv-input type="text" :editable="false" ref="mainInput" v-bind="$attrs" :class="{ '--not-empty': filled }">
       <textarea :maxlength="maxLength" class="lv-textarea" v-bind="$attrs" @input="this.updateValue" :value="modelValue" ref="textarea" />
     </lv-input>
     <div class="lv-textarea__limits" v-if="showLimit && maxLength">{{ modelValue ? modelValue.length : 0 }} / {{ maxLength }}</div>
@@ -95,7 +95,7 @@ export default {
       };
     },
     filled() {
-      return this.value != null && this.value.toString().length > 0;
+      return this.modelValue != null && this.modelValue.toString().length > 0;
     },
     modelValue() {
       return this.$attrs.modelValue ? this.$attrs.modelValue : this.value ? this.value : this.localValue;
