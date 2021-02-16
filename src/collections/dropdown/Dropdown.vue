@@ -290,15 +290,18 @@ export default {
         else this.show();
 
         this.$refs.focusInput.focus();
-        this.$refs.mainInput.$el.querySelector('input').focus();
+        if (this.$refs.mainInput) {
+          this.$refs.mainInput.$el.querySelector('input').focus();
+        }
       }
     },
     onOptionSelect(event, option) {
       let value = this.getOptionValue(option);
       this.updateModel(event, value);
       this.$refs.focusInput.focus();
-      this.$refs.mainInput.$el.querySelector('input').focus();
-
+      if (this.$refs.mainInput) {
+        this.$refs.mainInput.$el.querySelector('input').focus();
+      }
       setTimeout(() => {
         this.hide();
       }, 200);
