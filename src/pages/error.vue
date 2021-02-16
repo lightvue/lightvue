@@ -24,6 +24,7 @@ export default {};
   transition: all 0.6s;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   text-align: center;
   padding: 0 20px;
@@ -33,7 +34,7 @@ export default {};
   z-index: 1000;
 }
 .error-img__container {
-  max-width: 600px;
+  max-width: 500px;
 }
 .error-img__container img {
   width: 100%;
