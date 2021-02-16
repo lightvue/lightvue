@@ -57,12 +57,12 @@ export default {
     path: '/sitemap.xml',
     hostname: 'https://lightvue.org',
     gzip: true,
-    filter ({ routes }) {
+    filter({ routes }) {
       return routes.map(route => {
-        route.url = `${route.url}/`
-        return route
-      })
-    }
+        route.url = `${route.url}/`;
+        return route;
+      });
+    },
   },
   // router: {
   //   scrollBehavior(to) {
@@ -90,12 +90,12 @@ export default {
     id: 'G-NSCV9YG71N',
   },
 
-  // environment variables
-  publicRuntimeConfig: {
-  },
-  privateRuntimeConfig: {
+  //environment variables
+  // publicRuntimeConfig: {
+  //   ISHAAN: process.env.ISHAAN,
+  // },
+  env: {
     ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
     ALGOLIA_PROJECT_ID: process.env.ALGOLIA_PROJECT_ID,
-    // apiSecret: process.env.API_SECRET
-  }
+  },
 };
