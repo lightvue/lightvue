@@ -37,6 +37,7 @@ export default {
     return {
       resultsOpen: false,
       queryString: '',
+      // searchClient: algoliasearch(process.env.ALGOLIA_PROJECT_ID, process.env.ALGOLIA_API_KEY),
     };
   },
   methods: {
@@ -62,9 +63,9 @@ export default {
   },
   computed: {
     searchClient() {
-      return algoliasearch(process.env.ALGOLIAPROJECTID, process.env.ALGOLIAAPIKEY)
-    } 
-  }
+      return algoliasearch(process.env.ALGOLIA_PROJECT_ID, process.env.ALGOLIA_API_KEY);
+    },
+  },
 };
 </script>
 <style>
