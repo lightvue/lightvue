@@ -177,6 +177,10 @@ export default {
           page_name: 'Light Icons',
           page_path: '/icons/light-icons',
         },
+        {
+          page_name: 'Dialog',
+          page_path: '/vue-components/dialog',
+        },
       ],
     },
   ],
