@@ -12,7 +12,7 @@
 <script>
 import LvInput from '@/collections/input/Input.vue';
 export default {
-  name: 'LvInputNumber',
+  name: 'LvNumber',
   components: {
     LvInput,
   },

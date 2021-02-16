@@ -1,8 +1,8 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Basic" file="examples/input-number/InputNumber_BasicDemo" overflow />
-    <docs-card-vue title="Rounded" file="examples/input-number/InputNumber_RoundedDemo" overflow />
-    <docs-card-vue title="Customise Icons" file="examples/input-number/InputNumber_IconDemo" overflow />
+    <docs-card-vue title="Basic" file="examples/number/Number_BasicDemo" overflow />
+    <docs-card-vue title="Rounded" file="examples/number/Number_RoundedDemo" overflow />
+    <docs-card-vue title="Customise Icons" file="examples/number/Number_IconDemo" overflow />
 
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -27,10 +27,10 @@ export default {
     DocsPageLayout,
     DocsAllApi,
   },
-  title: 'Input Number',
+  title: 'Number',
   description: `Input Number component allows user to Take Number as a input.`,
-  packageName: 'input-number',
-  componentName: 'LVInputNumber',
+  packageName: 'number',
+  componentName: 'LvNumber',
   apiData: DropdownAPI,
 };
 </script>
