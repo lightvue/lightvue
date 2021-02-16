@@ -1,6 +1,9 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Textarea" file="examples/textarea/TextareaDemo__Basic" overflow />
+    <docs-card-vue title="Basic" file="examples/input-number/InputNumber_BasicDemo" overflow />
+    <docs-card-vue title="Rounded" file="examples/input-number/InputNumber_RoundedDemo" overflow />
+    <docs-card-vue title="Customise Icons" file="examples/input-number/InputNumber_IconDemo" overflow />
+
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -24,10 +27,10 @@ export default {
     DocsPageLayout,
     DocsAllApi,
   },
-  title: 'Teaxtarea',
-  description: `Textarea component allows user to write long text/ paragraphs.`,
-  packageName: 'textarea',
-  componentName: 'LVTextarea',
+  title: 'Input Number',
+  description: `Input Number component allows user to Take Number as a input.`,
+  packageName: 'input-number',
+  componentName: 'LVInputNumber',
   apiData: DropdownAPI,
 };
 </script>
