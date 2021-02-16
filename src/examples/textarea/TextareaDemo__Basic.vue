@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import LvTextarea from '@/collections/textarea/textarea';
+import LvTextarea from '@/collections/textarea/Textarea';
 export default {
   components: {
     LvTextarea,
