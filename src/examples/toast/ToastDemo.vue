@@ -1,12 +1,5 @@
 <template>
   <div>
-    <div class="content-section introduction">
-      <div class="feature-intro">
-        <h1>Toast</h1>
-        <p>Toast is used to display messages in an overlay.</p>
-      </div>
-    </div>
-
     <div class="content-section implementation">
       <div class="card">
         <h5>Severities</h5>
