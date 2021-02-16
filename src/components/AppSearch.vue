@@ -41,10 +41,6 @@ export default {
     };
   },
   methods: {
-    // clearSearchbox: function () {
-    // document.getElementsByClassName('ais-SearchBox-reset')[0].click();
-    // document.getElementsByClassName('ais-SearchBox-input')[0].value = '';
-    // },
     clearSearchbox() {
       this.queryString = '';
     },
