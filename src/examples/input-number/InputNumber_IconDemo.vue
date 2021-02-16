@@ -1,12 +1,12 @@
 <template>
   <div>
-    <lv-input-number placeholder="Enter Number" label="Up Down Icon" LeftIcon="light-icon-arrow-up" RightIcon="light-icon-arrow-down" />
+    <lv-input-number placeholder="Enter Number" label="Up Down Icon" icon-left="light-icon-arrow-up" icon-right="light-icon-arrow-down" />
     <br />
-    <lv-input-number placeholder="Enter Number" label="Icon Button Color" ButtonColor="lv--info" />
+    <lv-input-number placeholder="Enter Number" label="Icon Button Color" button-color="lv--info" />
     <br />
-    <lv-input-number placeholder="Enter Number" label="Icon with diffrent Color" LeftIcon="light-icon-arrow-up" RightIcon="light-icon-arrow-down" ButtonColor="lv--primary" />
+    <lv-input-number placeholder="Enter Number" label="Icon with diffrent Color" icon-left="light-icon-arrow-up" icon-right="light-icon-arrow-down" button-color="lv--primary" />
     <br />
-    <lv-input-number placeholder="Enter Number" label="Rounded with custom Icon" LeftIcon="light-icon-circle-minus" RightIcon="light-icon-circle-plus" ButtonColor="lv--help" rounded />
+    <lv-input-number placeholder="Enter Number" label="Rounded with custom Icon" icon-left="light-icon-circle-minus" icon-right="light-icon-circle-plus" button-color="lv--help" rounded />
     <br />
   </div>
 </template>
@@ -16,11 +16,6 @@ import LvInputNumber from '@/collections/input-number/InputNumber';
 export default {
   components: {
     LvInputNumber,
-  },
-  data() {
-    return {
-      value1: '11',
-    };
   },
 };
 </script>

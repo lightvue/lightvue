@@ -1,10 +1,10 @@
 <template>
   <lv-input type="number" :editable="true" ref="mainInput" @input="updateValue" :value="modelValue" v-bind="$attrs">
     <template slot="prepend">
-      <LvButton :icon="LeftIcon" :class="ButtonColor" @click="LocalDecrement($event)" v-if="DisipayUpdateButtons" />
+      <LvButton :icon="iconLeft" :class="buttonColor" @click="LocalDecrement($event)" v-if="controls" />
     </template>
     <template slot="append">
-      <LvButton :icon="RightIcon" :class="ButtonColor" @click="LocalIncrement($event)" v-if="DisipayUpdateButtons" />
+      <LvButton :icon="iconRight" :class="buttonColor" @click="LocalIncrement($event)" v-if="controls" />
     </template>
   </lv-input>
 </template>
@@ -26,23 +26,23 @@ export default {
       type: String,
       default: '',
     },
-    DisipayUpdateButtons: {
+    controls: {
       type: Boolean,
       default: true,
     },
-    RightIcon: {
+    iconRight: {
       type: String,
       default: 'light-icon-plus',
     },
-    LeftIcon: {
+    iconLeft: {
       type: String,
       default: 'light-icon-minus',
     },
-    ButtonColor: {
+    buttonColor: {
       type: String,
       default: 'lv--secondary',
     },
-    MaxNumber: {
+    max: {
       type: Number,
       // default: 100,
     },
@@ -50,7 +50,7 @@ export default {
       type: Number,
       default: 1,
     },
-    MinNumber: {
+    min: {
       type: Number,
       default: 0,
     },
@@ -58,7 +58,7 @@ export default {
   methods: {
     updateValue(eventValue) {
       let floatValue = parseFloat(eventValue);
-      if (floatValue >= this.MinNumber && (this.MaxNumber ? floatValue <= this.MaxNumber : true)) {
+      if (floatValue >= this.min && (this.max ? floatValue <= this.max : true)) {
         this.localValue = floatValue;
         this.$emit('input', floatValue); // Only for Vue 2
         this.$emit('update:modelValue', floatValue); // Only for Vue
@@ -66,11 +66,9 @@ export default {
     },
     LocalIncrement(event) {
       this.updateValue(this.modelValue + this.step);
-      // this.localValue=this.localValue+1;
     },
     LocalDecrement(event) {
       this.updateValue(this.modelValue - this.step);
-      // this.localValue=this.localValue-1;
     },
   },
   computed: {
@@ -80,9 +78,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.DisipayPrepend {
-  display: none;
-}
-</style>
