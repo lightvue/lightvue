@@ -1,4 +1,4 @@
-// const TooltipAPI = {
+// const ColorpickerAPI = {
 //     props:[
 //         {
 //             name: 'value',
@@ -129,4 +129,4 @@
 //         },
 //     ],
 // }
-// export default TooltipAPI;
+// export default TextareaAPI;
