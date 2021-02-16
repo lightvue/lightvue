@@ -45,11 +45,11 @@ export default {
   cachedScrollHeight: null,
   mounted() {
     if (this.$refs.textarea.offsetParent && this.autoResize) {
-      this.resize();
+      this.resizeTextarea();
     }
   },
   methods: {
-    resize() {
+    resizeTextarea() {
       if (!this.cachedScrollHeight) {
         this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
         this.$refs.textarea.style.overflow = 'hidden';
@@ -71,7 +71,7 @@ export default {
     },
     updateValue(event) {
       if (this.autoResize) {
-        this.resize();
+        this.resizeTextarea();
       }
       this.localValue = event.target.value;
       this.$emit('input-native', event);
@@ -84,11 +84,7 @@ export default {
       return {
         ...this.$listeners,
         input: event => {
-          if (this.autoResize) {
-            this.resize();
-          }
-
-          this.$emit('input', event.target.value);
+          this.updateValue(event);
         },
       };
     },
