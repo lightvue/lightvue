@@ -90,13 +90,12 @@ export default {
     id: 'G-NSCV9YG71N',
   },
 
-  //environment variables
-  // publicRuntimeConfig: {
-  //   ISHAAN: process.env.ISHAAN,
-  // },
-  // privateRuntimeConfig: {
-  //   ALGOLIA_APIKEY: process.env.ALGOLIA_APIKEY,
-  //   ALGOLIA_PROJECTID: process.env.ALGOLIA_PROJECTID,
-  //   // apiSecret: process.env.API_SECRET
-  // }
+  // environment variables
+  publicRuntimeConfig: {
+  },
+  privateRuntimeConfig: {
+    ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
+    ALGOLIA_PROJECT_ID: process.env.ALGOLIA_PROJECT_ID,
+    // apiSecret: process.env.API_SECRET
+  }
 };

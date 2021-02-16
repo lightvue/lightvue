@@ -37,13 +37,10 @@ export default {
     return {
       resultsOpen: false,
       queryString: '',
+      searchClient: algoliasearch(process.env.ALGOLIA_PROJECT_ID, process.env.ALGOLIA_API_KEY)
     };
   },
   methods: {
-    // clearSearchbox: function () {
-    // document.getElementsByClassName('ais-SearchBox-reset')[0].click();
-    // document.getElementsByClassName('ais-SearchBox-input')[0].value = '';
-    // },
     clearSearchbox() {
       this.queryString = '';
     },
@@ -59,11 +56,6 @@ export default {
     AisHits,
     AisHighlight,
     createServerRootMixin,
-  },
-  computed: {
-    searchClient() {
-      return algoliasearch(process.env.ALGOLIAPROJECTID, process.env.ALGOLIAAPIKEY)
-    } 
   }
 };
 </script>
