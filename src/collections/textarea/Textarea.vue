@@ -1,7 +1,7 @@
 <template>
   <div>
     <lv-input type="text" :editable="false" ref="mainInput" v-bind="$attrs" :class="{ '--not-empty': filled }">
-      <textarea :maxlength="maxLength" class="lv-textarea" v-bind="$attrs" @input="updateValue" :value="modelValue" ref="textarea" />
+      <textarea :maxlength="maxLength" class="lv-textarea" v-bind="$attrs" @input="updateValue" :value="modelValue" ref="textarea" :class="{ '--resize-vertical': resize === 'vertical' }" />
     </lv-input>
     <div class="lv-textarea__limits" v-if="showLimit && maxLength">{{ modelValue ? modelValue.length : 0 }} / {{ maxLength }}</div>
   </div>
@@ -25,10 +25,6 @@ export default {
       type: String,
       default: '',
     },
-    remaincharactersText: {
-      type: String,
-      default: '0/20',
-    },
     maxLength: {
       type: Number,
       // default: 524288,
@@ -41,14 +37,13 @@ export default {
       type: Boolean,
       default: false,
     },
+    resize: {
+      type: String,
+      default: 'none',
+    },
   },
   cachedScrollHeight: null,
   mounted() {
-    if (this.$refs.textarea.offsetParent && this.autoResize) {
-      this.resize();
-    }
-  },
-  updated() {
     if (this.$refs.textarea.offsetParent && this.autoResize) {
       this.resize();
     }
@@ -75,6 +70,9 @@ export default {
       }
     },
     updateValue(event) {
+      if (this.autoResize) {
+        this.resize();
+      }
       this.localValue = event.target.value;
       this.$emit('input-native', event);
       this.$emit('input', event.target.value); // Only for Vue 2
@@ -110,7 +108,10 @@ export default {
   width: 100%;
   background: transparent;
   outline: none;
-  resize: vertical;
+  resize: none;
+  &.--resize-vertical {
+    resize: vertical;
+  }
 }
 .lv-textarea__limits {
   display: flex;
