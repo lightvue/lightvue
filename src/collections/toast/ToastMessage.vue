@@ -54,12 +54,12 @@ export default {
     },
     iconClass() {
       return [
-        'p-toast-message-icon pi',
+        'p-toast-message-icon',
         {
-          'pi-info-circle': this.message.severity === 'info',
-          'pi-exclamation-triangle': this.message.severity === 'warn',
-          'pi-times': this.message.severity === 'error',
-          'pi-check': this.message.severity === 'success',
+          'light-icon-info-circle': this.message.severity === 'info',
+          'light-icon-alert-triangle': this.message.severity === 'warn',
+          'light-icon-circle-x': this.message.severity === 'error',
+          'light-icon-circle-check': this.message.severity === 'success',
         },
       ];
     },

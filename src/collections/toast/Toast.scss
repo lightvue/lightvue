@@ -21,9 +21,10 @@
 }
 
 .p-toast .p-toast-message .p-toast-message-content .p-toast-message-icon {
-  font-size: 2rem;
+  font-size: 2.4rem;
+  font-weight: bold;
   color: inherit;
-  padding: 6px;
+  padding: 0px 6px;
   border-radius: 50%;
   /* background: white !important; */
 }
@@ -38,10 +39,10 @@
 
 .p-toast .p-toast-message .p-toast-icon-close {
   font-weight: 900;
-
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+  border-color: transparent;
   background-color: hsla(0, 0%, 4%, 0.2);
   transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
@@ -70,7 +71,7 @@
 
 .p-toast .p-toast-message.p-toast-message-success {
   background: #48c774;
-  /* border: solid #439446; */
+  border: solid #439446;
   border-width: 0 0 0 0px;
   color: #224a23;
 }
