@@ -1,28 +1,23 @@
 <template>
-  <div id="textapp">
-    <lv-textarea rows="3" v-model="value1" placeholder="" label="Label Test" show-limit :max-length="20" />
-    <br />
-    <lv-textarea rows="3" placeholder="" label="Label Test" floating-label resize="vertical" />
-    <br />
-    <lv-textarea rows="3" placeholder="" label="Label Test" rounded floating-label />
-    <br />
-    <lv-textarea rows="3" placeholder="" label="Label Test" icon-left="light-icon-phone" />
-    <br />
-    <lv-textarea :max-length="10" rows="3" label="Label Test" show-limit />
-    <br />
-    <lv-textarea rows="3" placeholder="auto-size" label="Auto-resize" :autoResize="true" />
+  <div>
+    <lv-textarea label="Textarea" placeholder="Enter your text here ..." rows="3" /> <br />
+    <lv-textarea label="Character Count" placeholder="count no of words.." rows="3" show-limit :max-length="100" />
+    <lv-textarea placeholder="" rows="3" label="Auto Resize" :autoResize="true" /> <br />
+    <lv-textarea label="Verticle Resize" rows="3" resize="vertical" />
   </div>
 </template>
 
 <script>
 import LvTextarea from '@/collections/textarea/Textarea';
+import LvButton from '@/collections/buttons/Button';
 export default {
   components: {
     LvTextarea,
+    LvButton,
   },
   data() {
     return {
-      value1: '11',
+      value1: '',
     };
   },
 };
