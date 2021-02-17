@@ -4,11 +4,11 @@
       <div class="error-div"></div>
       <h1>Error {{ error.statusCode }}</h1>
       <div class="error-img__container">
-        <img src="@/assets/images/error.png" alt="" />
+        <img src="@/assets/images/error.svg" alt="" />
       </div>
       <div class="button">
         <nuxt-link to="/">
-          <LvButton label="Back Home" deep-shadow push size="lg" />
+          <!-- <LvButton label="Back Home" deep-shadow push size="lg" /> -->
         </nuxt-link>
       </div>
     </div>
@@ -24,26 +24,29 @@ export default {
 
 <style>
 .error_wrapper {
-  transition: all 0.6s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   text-align: center;
   padding: 0 20px;
 }
-.button {
+/* .button {
   margin: -20px 0 20px 0;
   z-index: 1000;
-}
+} */
 .error-img__container {
-  max-width: 500px;
+  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .error-img__container img {
   width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0px auto;
 }
 .error__container h1 {
   font-size: 50px;
+  text-align: center;
   display: inline-block;
   padding-right: 12px;
   animation: type 0.5s alternate infinite;
