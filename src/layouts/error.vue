@@ -2,12 +2,12 @@
   <div class="error_wrapper">
     <div class="error__container">
       <div class="error-div"></div>
-      <h1>Error 404</h1>
+      <h1>Error {{ error.statusCode }}</h1>
       <div class="error-img__container">
         <img src="@/assets/images/error.png" alt="" />
       </div>
       <div class="button">
-        <nuxt-link to="/index">
+        <nuxt-link to="/">
           <LvButton label="Back Home" deep-shadow push size="lg" />
         </nuxt-link>
       </div>
@@ -18,6 +18,7 @@
 <script>
 export default {
   props: ['error'],
+  layout: 'error-layout',
 };
 </script>
 
