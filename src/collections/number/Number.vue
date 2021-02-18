@@ -11,10 +11,12 @@
 
 <script>
 import LvInput from '@/collections/input/Input.vue';
+import LvButton from '@/collections/buttons/Button.vue';
 export default {
   name: 'LvNumber',
   components: {
     LvInput,
+    LvButton,
   },
   data() {
     return {
