@@ -1,6 +1,6 @@
 <template>
   <div ref="container" :class="containerClass">
-    <transition-group name="p-toast-message" tag="div">
+    <transition-group name="lv-toast-message" tag="div">
       <ToastMessage v-for="msg of messages" :key="msg.id" :message="msg" @close="remove($event)" />
     </transition-group>
   </div>
@@ -88,67 +88,67 @@ export default {
   },
   computed: {
     containerClass() {
-      return 'p-toast p-component p-toast-' + this.position;
+      return 'lv-toast lv-component lv-toast-' + this.position;
     },
   },
 };
 </script>
 
 <style>
-.p-toast {
+.lv-toast {
   position: fixed;
   width: 25rem;
 }
 
-.p-toast-message-content {
+.lv-toast-message-content {
   display: flex;
   align-items: flex-start;
 }
 
-.p-toast-message-text {
+.lv-toast-message-text {
   flex: 1 1 auto;
 }
 
-.p-toast-top-right {
+.lv-toast-top-right {
   top: 20px;
   right: 20px;
 }
 
-.p-toast-top-left {
+.lv-toast-top-left {
   top: 20px;
   left: 20px;
 }
 
-.p-toast-bottom-left {
+.lv-toast-bottom-left {
   bottom: 20px;
   left: 20px;
 }
 
-.p-toast-bottom-right {
+.lv-toast-bottom-right {
   bottom: 20px;
   right: 20px;
 }
 
-.p-toast-top-center {
+.lv-toast-top-center {
   top: 20px;
   left: 50%;
   margin-left: -10em;
 }
 
-.p-toast-bottom-center {
+.lv-toast-bottom-center {
   bottom: 20px;
   left: 50%;
   margin-left: -10em;
 }
 
-.p-toast-center {
+.lv-toast-center {
   left: 50%;
   top: 50%;
   min-width: 20vw;
   transform: translate(-50%, -50%);
 }
 
-.p-toast-icon-close {
+.lv-toast-icon-close {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,35 +156,35 @@ export default {
   position: relative;
 }
 
-.p-toast-icon-close.p-link {
+.lv-toast-icon-close.lv-link {
   cursor: pointer;
 }
 
 /* Animations */
-.p-toast-message-enter {
+.lv-toast-message-enter {
   opacity: 0;
   -webkit-transform: translateY(50%);
   -ms-transform: translateY(50%);
   transform: translateY(50%);
 }
 
-.p-toast-message-leave {
+.lv-toast-message-leave {
   max-height: 1000px;
 }
 
-.p-toast .p-toast-message.p-toast-message-leave-to {
+.lv-toast .lv-toast-message.lv-toast-message-leave-to {
   max-height: 0;
   opacity: 0;
   margin-bottom: 0;
   overflow: hidden;
 }
 
-.p-toast-message-enter-active {
+.lv-toast-message-enter-active {
   -webkit-transition: transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s;
 }
 
-.p-toast-message-leave-active {
+.lv-toast-message-leave-active {
   -webkit-transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), opacity 0.3s, margin-bottom 0.3s;
   transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), opacity 0.3s, margin-bottom 0.3s;
 }

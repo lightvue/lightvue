@@ -6,7 +6,7 @@
         <span class="lv-notification-summary">{{ message.summary }}</span>
         <div class="lv-notification-detail">{{ message.detail }}</div>
       </div>
-      <!-- <button class="lv-notification-icon-close p-link" @click="onCloseClick" v-if="message.closable !== false" type="button" v-ripple> -->
+      <!-- <button class="lv-notification-icon-close lv-link" @click="onCloseClick" v-if="message.closable !== false" type="button" v-ripple> -->
       <!-- <span class="lv-notification-icon-close-icon light-icon-x"></span> -->
       <!-- </button> -->
     </div>

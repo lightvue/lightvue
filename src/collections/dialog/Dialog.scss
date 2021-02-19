@@ -1,10 +1,10 @@
-.p-dialog {
+.lv-dialog {
   border-radius: 3px;
   box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
   border: 0 none;
 }
 
-.p-dialog .p-dialog-header {
+.lv-dialog .lv-dialog-header {
   border-bottom: 0 none;
   background: #ffffff;
   color: #495057;
@@ -13,12 +13,12 @@
   border-top-left-radius: 3px;
 }
 
-.p-dialog .p-dialog-header .p-dialog-title {
+.lv-dialog .lv-dialog-header .lv-dialog-title {
   font-weight: 600;
   font-size: 1.25rem;
 }
 
-.p-dialog .p-dialog-header .p-dialog-header-icon {
+.lv-dialog .lv-dialog-header .lv-dialog-header-icon {
   width: 2rem;
   height: 2rem;
   color: #6c757d;
@@ -29,29 +29,29 @@
   margin-right: 0.5rem;
 }
 
-.p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
+.lv-dialog .lv-dialog-header .lv-dialog-header-icon:enabled:hover {
   color: #495057;
   border-color: transparent;
   background: #e9ecef;
 }
 
-.p-dialog .p-dialog-header .p-dialog-header-icon:focus {
+.lv-dialog .lv-dialog-header .lv-dialog-header-icon:focus {
   outline: 0 none;
   outline-offset: 0;
   box-shadow: 0 0 0 0.2rem #a6d5fa;
 }
 
-.p-dialog .p-dialog-header .p-dialog-header-icon:last-child {
+.lv-dialog .lv-dialog-header .lv-dialog-header-icon:last-child {
   margin-right: 0;
 }
 
-.p-dialog .p-dialog-content {
+.lv-dialog .lv-dialog-content {
   background: #ffffff;
   color: #495057;
   padding: 0 1.5rem 2rem 1.5rem;
 }
 
-.p-dialog .p-dialog-footer {
+.lv-dialog .lv-dialog-footer {
   border-top: 0 none;
   background: #ffffff;
   color: #495057;
@@ -61,26 +61,26 @@
   border-bottom-left-radius: 3px;
 }
 
-.p-dialog .p-dialog-footer button {
+.lv-dialog .lv-dialog-footer button {
   margin: 0 0.5rem 0 0;
   width: auto;
 }
 
-.p-dialog-mask.p-component-overlay {
+.lv-dialog-mask.lv-component-overlay {
   background-color: rgba(0, 0, 0, 0.4);
 }
-.p-link {
+.lv-link {
   font-size: 1rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   border-radius: 3px;
 }
 
-.p-link:focus {
+.lv-link:focus {
   outline: 0 none;
   outline-offset: 0;
   /* box-shadow: 0 0 0 0.2rem #a6d5fa; */
 }
-.p-component-overlay {
+.lv-component-overlay {
   background-color: rgba(0, 0, 0, 0.4);
   transition-duration: 0.2s;
 }

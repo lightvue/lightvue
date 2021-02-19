@@ -1,24 +1,24 @@
 <template>
   <div ref="mask" :class="maskClass" v-if="maskVisible">
-    <transition name="p-dialog" @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave" @after-leave="onAfterLeave" @appear="onAppear">
+    <transition name="lv-dialog" @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave" @after-leave="onAfterLeave" @appear="onAppear">
       <div ref="dialog" :class="dialogClass" :style="dialogStyle" v-if="visible" v-bind="$attrs" v-on="listeners" role="dialog" :aria-labelledby="ariaLabelledById" :aria-modal="modal">
-        <div class="p-dialog-header" v-if="showHeader">
+        <div class="lv-dialog-header" v-if="showHeader">
           <slot name="header">
-            <span :id="ariaLabelledById" class="p-dialog-title" v-if="header">{{ header }}</span>
+            <span :id="ariaLabelledById" class="lv-dialog-title" v-if="header">{{ header }}</span>
           </slot>
-          <div class="p-dialog-header-icons">
-            <LvButton class="p-dialog-header-icon p-dialog-header-maximize p-link" @click="maximize" v-if="maximizable" type="button" tabindex="-1" v-ripple>
+          <div class="lv-dialog-header-icons">
+            <LvButton class="lv-dialog-header-icon lv-dialog-header-maximize lv-link" @click="maximize" v-if="maximizable" type="button" tabindex="-1" v-ripple>
               <span :class="maximizeIconClass"></span>
             </LvButton>
-            <LvButton class="p-dialog-header-icon p-dialog-header-close p-link" @click="close" v-if="closable" :aria-label="ariaCloseLabel" type="button" tabindex="-1" v-ripple>
-              <span class="p-dialog-header-close-icon light-icon-x"></span>
+            <LvButton class="lv-dialog-header-icon lv-dialog-header-close lv-link" @click="close" v-if="closable" :aria-label="ariaCloseLabel" type="button" tabindex="-1" v-ripple>
+              <span class="lv-dialog-header-close-icon light-icon-x"></span>
             </LvButton>
           </div>
         </div>
-        <div class="p-dialog-content" :style="contentStyle">
+        <div class="lv-dialog-content" :style="contentStyle">
           <slot></slot>
         </div>
-        <div class="p-dialog-footer" v-if="footer || $slots.footer">
+        <div class="lv-dialog-footer" v-if="footer || $slots.footer">
           <slot name="footer">{{ footer }}</slot>
         </div>
       </div>
@@ -82,8 +82,8 @@ export default {
       this.maskVisible = true;
     }
 
-    if (this.modal && this.$refs.mask && !DomHandler.hasClass(this.$refs.mask, 'p-component-overlay')) {
-      DomHandler.addClass(this.$refs.mask, 'p-component-overlay');
+    if (this.modal && this.$refs.mask && !DomHandler.hasClass(this.$refs.mask, 'lv-component-overlay')) {
+      DomHandler.addClass(this.$refs.mask, 'lv-component-overlay');
     }
   },
   mounted() {
@@ -109,7 +109,7 @@ export default {
       this.enableDocumentSettings();
     },
     onBeforeLeave() {
-      DomHandler.addClass(this.$refs.mask, 'p-dialog-mask-leave');
+      DomHandler.addClass(this.$refs.mask, 'lv-dialog-mask-leave');
     },
     onLeave() {
       this.$emit('hide');
@@ -133,24 +133,24 @@ export default {
       this.maximized = !this.maximized;
 
       if (!this.modal) {
-        if (this.maximized) DomHandler.addClass(document.body, 'p-overflow-hidden');
-        else DomHandler.removeClass(document.body, 'p-overflow-hidden');
+        if (this.maximized) DomHandler.addClass(document.body, 'lv-overflow-hidden');
+        else DomHandler.removeClass(document.body, 'lv-overflow-hidden');
       }
     },
     enableDocumentSettings() {
       if (this.modal) {
-        DomHandler.addClass(document.body, 'p-overflow-hidden');
+        DomHandler.addClass(document.body, 'lv-overflow-hidden');
         this.bindDocumentKeydownListener();
       } else if (this.maximizable && this.maximized) {
-        DomHandler.addClass(document.body, 'p-overflow-hidden');
+        DomHandler.addClass(document.body, 'lv-overflow-hidden');
       }
     },
     disableDocumentSettings() {
       if (this.modal) {
-        DomHandler.removeClass(document.body, 'p-overflow-hidden');
+        DomHandler.removeClass(document.body, 'lv-overflow-hidden');
         this.unbindDocumentKeydownListener();
       } else if (this.maximizable && this.maximized) {
-        DomHandler.removeClass(document.body, 'p-overflow-hidden');
+        DomHandler.removeClass(document.body, 'lv-overflow-hidden');
       }
     },
     onKeyDown(event) {
@@ -189,7 +189,7 @@ export default {
       const positions = ['left', 'right', 'top', 'topleft', 'topright', 'bottom', 'bottomleft', 'bottomright'];
       const pos = positions.find(item => item === this.position);
 
-      return pos ? `p-dialog-${pos}` : '';
+      return pos ? `lv-dialog-${pos}` : '';
     },
     removeStylesFromMask() {
       if (this.$refs.mask) {
@@ -202,7 +202,7 @@ export default {
 
         this.dialogClasses = this.$vnode.data.class || this.$vnode.data.staticClass;
         if (this.dialogClasses) {
-          this.$refs.mask.classList = 'p-dialog-mask' + (this.modal && ' p-component-overlay ') + this.getPositionClass();
+          this.$refs.mask.classList = 'lv-dialog-mask' + (this.modal && ' lv-component-overlay ') + this.getPositionClass();
         }
       }
     },
@@ -214,21 +214,21 @@ export default {
       };
     },
     maskClass() {
-      return ['p-dialog-mask', this.getPositionClass()];
+      return ['lv-dialog-mask', this.getPositionClass()];
     },
     dialogClass() {
       return [
-        'p-dialog p-component',
+        'lv-dialog lv-component',
         {
-          'p-dialog-rtl': this.rtl,
-          'p-dialog-maximized': this.maximizable && this.maximized,
+          'lv-dialog-rtl': this.rtl,
+          'lv-dialog-maximized': this.maximizable && this.maximized,
         },
         this.dialogClasses,
       ];
     },
     maximizeIconClass() {
       return [
-        'p-dialog-header-maximize-icon',
+        'lv-dialog-header-maximize-icon',
         {
           'light-icon-arrows-maximize': !this.maximized,
           'light-icon-arrows-minimize': this.maximized,
@@ -251,7 +251,7 @@ export default {
 };
 </script>
 <style>
-.p-dialog-mask {
+.lv-dialog-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -265,11 +265,11 @@ export default {
   transition-property: background-color;
 }
 
-.p-dialog-mask.p-component-overlay {
+.lv-dialog-mask.lv-component-overlay {
   pointer-events: auto;
 }
 
-.p-dialog {
+.lv-dialog {
   display: flex;
   flex-direction: column;
   pointer-events: auto;
@@ -277,26 +277,26 @@ export default {
   transform: scale(1);
 }
 
-.p-dialog-content {
+.lv-dialog-content {
   overflow-y: auto;
 }
 
-.p-dialog-header {
+.lv-dialog-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.p-dialog-title {
+.lv-dialog-title {
   list-style: 1;
 }
 
-.p-dialog .p-dialog-header-icons {
+.lv-dialog .lv-dialog-header-icons {
   display: flex;
   align-items: center;
 }
 
-.p-dialog .p-dialog-header-icon {
+.lv-dialog .lv-dialog-header-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,85 +305,85 @@ export default {
 }
 
 /* Fluid */
-.p-fluid .p-dialog-footer .p-button {
+.lv-fluid .lv-dialog-footer .lv-button {
   width: auto;
 }
 
 /* Animation */
 /* Center */
-.p-dialog-enter-active {
+.lv-dialog-enter-active {
   transition: all 150ms cubic-bezier(0, 0, 0.2, 1);
 }
-.p-dialog-leave-active {
+.lv-dialog-leave-active {
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.p-dialog-enter,
-.p-dialog-leave-to {
+.lv-dialog-enter,
+.lv-dialog-leave-to {
   opacity: 0;
   transform: scale(0.7);
 }
 
-.p-dialog-mask.p-dialog-mask-leave {
+.lv-dialog-mask.lv-dialog-mask-leave {
   background-color: transparent;
 }
 
 /* Top, Bottom, Left, Right, Top* and Bottom* */
-.p-dialog-top .p-dialog,
-.p-dialog-bottom .p-dialog,
-.p-dialog-left .p-dialog,
-.p-dialog-right .p-dialog,
-.p-dialog-topleft .p-dialog,
-.p-dialog-topright .p-dialog,
-.p-dialog-bottomleft .p-dialog,
-.p-dialog-bottomright .p-dialog {
+.lv-dialog-top .lv-dialog,
+.lv-dialog-bottom .lv-dialog,
+.lv-dialog-left .lv-dialog,
+.lv-dialog-right .lv-dialog,
+.lv-dialog-topleft .lv-dialog,
+.lv-dialog-topright .lv-dialog,
+.lv-dialog-bottomleft .lv-dialog,
+.lv-dialog-bottomright .lv-dialog {
   margin: 0.75rem;
   transform: translate3d(0px, 0px, 0px);
 }
-.p-dialog-top .p-dialog-enter-active,
-.p-dialog-top .p-dialog-leave-active,
-.p-dialog-bottom .p-dialog-enter-active,
-.p-dialog-bottom .p-dialog-leave-active,
-.p-dialog-left .p-dialog-enter-active,
-.p-dialog-left .p-dialog-leave-active,
-.p-dialog-right .p-dialog-enter-active,
-.p-dialog-right .p-dialog-leave-active,
-.p-dialog-topleft .p-dialog-enter-active,
-.p-dialog-topleft .p-dialog-leave-active,
-.p-dialog-topright .p-dialog-enter-active,
-.p-dialog-topright .p-dialog-leave-active,
-.p-dialog-bottomleft .p-dialog-enter-active,
-.p-dialog-bottomleft .p-dialog-leave-active,
-.p-dialog-bottomright .p-dialog-enter-active,
-.p-dialog-bottomright .p-dialog-leave-active {
+.lv-dialog-top .lv-dialog-enter-active,
+.lv-dialog-top .lv-dialog-leave-active,
+.lv-dialog-bottom .lv-dialog-enter-active,
+.lv-dialog-bottom .lv-dialog-leave-active,
+.lv-dialog-left .lv-dialog-enter-active,
+.lv-dialog-left .lv-dialog-leave-active,
+.lv-dialog-right .lv-dialog-enter-active,
+.lv-dialog-right .lv-dialog-leave-active,
+.lv-dialog-topleft .lv-dialog-enter-active,
+.lv-dialog-topleft .lv-dialog-leave-active,
+.lv-dialog-topright .lv-dialog-enter-active,
+.lv-dialog-topright .lv-dialog-leave-active,
+.lv-dialog-bottomleft .lv-dialog-enter-active,
+.lv-dialog-bottomleft .lv-dialog-leave-active,
+.lv-dialog-bottomright .lv-dialog-enter-active,
+.lv-dialog-bottomright .lv-dialog-leave-active {
   transition: all 0.3s ease-out;
 }
-.p-dialog-top .p-dialog-enter,
-.p-dialog-top .p-dialog-leave-to {
+.lv-dialog-top .lv-dialog-enter,
+.lv-dialog-top .lv-dialog-leave-to {
   transform: translate3d(0px, -100%, 0px);
 }
-.p-dialog-bottom .p-dialog-enter,
-.p-dialog-bottom .p-dialog-leave-to {
+.lv-dialog-bottom .lv-dialog-enter,
+.lv-dialog-bottom .lv-dialog-leave-to {
   transform: translate3d(0px, 100%, 0px);
 }
-.p-dialog-left .p-dialog-enter,
-.p-dialog-left .p-dialog-leave-to,
-.p-dialog-topleft .p-dialog-enter,
-.p-dialog-topleft .p-dialog-leave-to,
-.p-dialog-bottomleft .p-dialog-enter,
-.p-dialog-bottomleft .p-dialog-leave-to {
+.lv-dialog-left .lv-dialog-enter,
+.lv-dialog-left .lv-dialog-leave-to,
+.lv-dialog-topleft .lv-dialog-enter,
+.lv-dialog-topleft .lv-dialog-leave-to,
+.lv-dialog-bottomleft .lv-dialog-enter,
+.lv-dialog-bottomleft .lv-dialog-leave-to {
   transform: translate3d(-100%, 0px, 0px);
 }
-.p-dialog-right .p-dialog-enter,
-.p-dialog-right .p-dialog-leave-to,
-.p-dialog-topright .p-dialog-enter,
-.p-dialog-topright .p-dialog-leave-to,
-.p-dialog-bottomright .p-dialog-enter,
-.p-dialog-bottomright .p-dialog-leave-to {
+.lv-dialog-right .lv-dialog-enter,
+.lv-dialog-right .lv-dialog-leave-to,
+.lv-dialog-topright .lv-dialog-enter,
+.lv-dialog-topright .lv-dialog-leave-to,
+.lv-dialog-bottomright .lv-dialog-enter,
+.lv-dialog-bottomright .lv-dialog-leave-to {
   transform: translate3d(100%, 0px, 0px);
 }
 
 /* Maximize */
-.p-dialog-maximized {
+.lv-dialog-maximized {
   -webkit-transition: none;
   transition: none;
   transform: none;
@@ -391,36 +391,36 @@ export default {
   max-height: 100%;
   height: 100%;
 }
-.p-dialog-maximized .p-dialog-content {
+.lv-dialog-maximized .lv-dialog-content {
   flex-grow: 1;
 }
 
 /* Position */
-.p-dialog-left {
+.lv-dialog-left {
   justify-content: flex-start;
 }
-.p-dialog-right {
+.lv-dialog-right {
   justify-content: flex-end;
 }
-.p-dialog-top {
+.lv-dialog-top {
   align-items: flex-start;
 }
-.p-dialog-topleft {
+.lv-dialog-topleft {
   justify-content: flex-start;
   align-items: flex-start;
 }
-.p-dialog-topright {
+.lv-dialog-topright {
   justify-content: flex-end;
   align-items: flex-start;
 }
-.p-dialog-bottom {
+.lv-dialog-bottom {
   align-items: flex-end;
 }
-.p-dialog-bottomleft {
+.lv-dialog-bottomleft {
   justify-content: flex-start;
   align-items: flex-end;
 }
-.p-dialog-bottomright {
+.lv-dialog-bottomright {
   justify-content: flex-end;
   align-items: flex-end;
 }

@@ -88,7 +88,7 @@ export default {
   },
   computed: {
     containerClass() {
-      return 'lv-notification p-component lv-notification-' + this.position;
+      return 'lv-notification lv-component lv-notification-' + this.position;
     },
   },
 };
@@ -156,7 +156,7 @@ export default {
   position: relative;
 }
 
-.lv-notification-icon-close.p-link {
+.lv-notification-icon-close.lv-link {
   cursor: pointer;
 }
 
