@@ -1,0 +1,80 @@
+<template>
+  <lv-input type="number" :editable="true" ref="mainInput" @input="updateValue" :value="modelValue" v-bind="$attrs">
+    <template slot="prepend">
+      <LvButton :icon="iconLeft" :class="buttonColor" @click="LocalDecrement($event)" v-if="controls" />
+    </template>
+    <template slot="append">
+      <LvButton :icon="iconRight" :class="buttonColor" @click="LocalIncrement($event)" v-if="controls" />
+    </template>
+  </lv-input>
+</template>
+
+<script>
+import LvInput from '@/collections/input/Input.vue';
+export default {
+  name: 'LvNumber',
+  components: {
+    LvInput,
+  },
+  data() {
+    return {
+      localValue: '',
+    };
+  },
+  props: {
+    value: {
+      type: String,
+      default: '',
+    },
+    controls: {
+      type: Boolean,
+      default: true,
+    },
+    iconRight: {
+      type: String,
+      default: 'light-icon-plus',
+    },
+    iconLeft: {
+      type: String,
+      default: 'light-icon-minus',
+    },
+    buttonColor: {
+      type: String,
+      default: 'lv--secondary',
+    },
+    max: {
+      type: Number,
+      // default: 100,
+    },
+    step: {
+      type: Number,
+      default: 1,
+    },
+    min: {
+      type: Number,
+      default: 0,
+    },
+  },
+  methods: {
+    updateValue(eventValue) {
+      let floatValue = parseFloat(eventValue);
+      if (floatValue >= this.min && (this.max ? floatValue <= this.max : true)) {
+        this.localValue = floatValue;
+        this.$emit('input', floatValue); // Only for Vue 2
+        this.$emit('update:modelValue', floatValue); // Only for Vue
+      }
+    },
+    LocalIncrement(event) {
+      this.updateValue(this.modelValue + this.step);
+    },
+    LocalDecrement(event) {
+      this.updateValue(this.modelValue - this.step);
+    },
+  },
+  computed: {
+    modelValue() {
+      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value ? this.value : this.localValue;
+    },
+  },
+};
+</script>

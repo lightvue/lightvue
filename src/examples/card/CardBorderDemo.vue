@@ -1,16 +1,17 @@
 <template>
   <div class="card-demo-wrapper">
     <div class="card-demo">
-      <LvCard> <div v-html="dummyContent('default (false)')"></div> </LvCard>
+      <lv-card> <div v-html="dummyContent('default (false)')"></div> </lv-card>
     </div>
     <div class="card-demo">
-      <LvCard :showBorder="true"> <div v-html="dummyContent('showBorder = true')"></div> </LvCard>
+      <lv-card :showBorder="true"> <div v-html="dummyContent('showBorder = true')"></div> </lv-card>
     </div>
   </div>
 </template>
 
 <script>
-import LvCard from '@/collections/card/Card';
+import LvCard from '@lightvue/card';
+import '@lightvue/card/index.css';
 
 export default {
   data() {
@@ -27,7 +28,8 @@ export default {
     },
   },
   components: {
-    LvCard,
+    // LvCard: () => import('@lightvue/card'),
+    LvCard: LvCard,
   },
 };
 </script>

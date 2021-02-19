@@ -1,0 +1,12 @@
+.#{$light-checkbox--class-name}.--no-outline {
+  input:checked ~ .state label,
+  &.--toggle .state label {
+    &:before {
+      content: none;
+    }
+  }
+
+  &.--no-outline .icon {
+    transform: scale(1.1);
+  }
+}

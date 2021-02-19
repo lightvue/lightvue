@@ -1,0 +1,32 @@
+.#{$light-checkbox--class-name}.--toggle {
+  .state {
+    &.lv-on {
+      opacity: 0;
+      display: none;
+    }
+
+    &.lv-off,
+    .icon,
+    .svg,
+    img {
+      opacity: 1;
+      display: inherit;
+    }
+
+    &.lv-off .icon {
+      color: $light-checkbox--color-default;
+    }
+  }
+
+  input:checked ~ .state {
+    &.lv-on {
+      opacity: 1;
+      display: inherit;
+    }
+
+    &.lv-off {
+      opacity: 0;
+      display: none;
+    }
+  }
+}

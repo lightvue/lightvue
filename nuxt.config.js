@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 require('dotenv').config();
 
 export default {
@@ -97,5 +98,8 @@ export default {
   env: {
     ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
     ALGOLIA_PROJECT_ID: process.env.ALGOLIA_PROJECT_ID,
+  },
+  alias: {
+    '@lightvue': resolve(__dirname, './dist-lib'),
   },
 };
