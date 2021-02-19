@@ -71,11 +71,11 @@ export default {
       pages: [
         {
           page_name: 'Installation',
-          page_path: '/getting-started/installation',
+          page_path: '/installation',
         },
         {
           page_name: 'Customization',
-          page_path: '/vue-components/customize',
+          page_path: '/customize',
         },
       ],
     },
