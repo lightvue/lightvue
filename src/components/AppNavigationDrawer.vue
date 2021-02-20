@@ -104,6 +104,10 @@ export default {
           page_path: '/vue-components/checkbox',
         },
         {
+          page_name: 'Checkbox Group',
+          page_path: '/vue-components/checkbox-group',
+        },
+        {
           page_name: 'Toggle Switch',
           page_path: '/vue-components/toggle-switch',
         },
@@ -180,6 +184,10 @@ export default {
         {
           page_name: 'Light Icons',
           page_path: '/icons/light-icons',
+        },
+        {
+          page_name: 'Dialog',
+          page_path: '/vue-components/dialog',
         },
       ],
     },
