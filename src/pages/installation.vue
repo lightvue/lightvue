@@ -95,9 +95,9 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.install__wrapper {
-  padding: 2rem 8rem;
-}
+// .install__wrapper {
+//   padding: 2rem 8rem;
+// }
 .install__container {
   h1 {
     text-align: center;
