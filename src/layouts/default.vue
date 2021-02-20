@@ -9,6 +9,14 @@
       </div>
       <app-footer />
     </div>
+    <LvToast />
+    <LvToast position="top-left" group="tl" />
+    <LvToast position="bottom-left" group="bl" />
+    <LvToast position="bottom-right" group="br" />
+    <LvNotification />
+    <LvNotification position="top-left" group="tl" />
+    <LvNotification position="bottom-left" group="bl" />
+    <LvNotification position="bottom-right" group="br" />
   </div>
 </template>
 
