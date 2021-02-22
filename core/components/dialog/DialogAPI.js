@@ -1,52 +1,52 @@
-const SliderAPI = {
+const ToggleSwitchAPI = {
   props: [
     {
       name: 'value',
-      type: 'Number, Array',
-      default: '',
-      description: 'Configures the value of slider.',
-    },
-    {
-      name: 'min',
-      type: 'Number',
-      default: '0',
-      description: 'Configures the min value of slider',
-    },
-    {
-      name: 'max',
-      type: 'Number',
-      default: '100',
-      description: 'Configures the max value of slider',
-    },
-    {
-      name: 'step',
-      type: 'Number',
-      default: 'null',
-      description: 'Configures the value to step and down while sliding.',
-    },
-    {
-      name: 'range',
       type: 'Boolean',
       default: 'false',
-      description: 'Configures the range of the slider.',
+      description: 'Input element with rounded corners',
+    },
+    {
+      name: 'inputId',
+      type: 'String',
+      default: '',
+      description: 'Input element with rounded corners',
+    },
+    {
+      name: 'name',
+      type: 'String',
+      default: '',
+      description: 'Input element with rounded corners',
     },
     {
       name: 'disabled',
       type: 'Boolean',
       default: 'false',
-      description: 'Configures if the slider is disabled or not.',
+      description: 'Input element with rounded corners',
     },
     {
-      name: 'ariaLabelledBy',
+      name: 'dense',
+      type: 'Boolean',
+      default: 'false',
+      description: 'Input element with rounded corners',
+    },
+    {
+      name: 'label',
       type: 'String',
       default: '',
-      description: 'Configures the aria to be labelled on the slider.',
+      description: 'Input element with rounded corners',
     },
     {
-      name: 'sliderColor',
+      name: 'icon',
       type: 'String',
-      default: '#38b2ac',
-      description: 'Configures the slider color.',
+      default: '',
+      description: 'Input element with rounded corners',
+    },
+    {
+      name: 'checked-icon',
+      type: 'String',
+      default: '',
+      description: 'Input element with rounded corners',
     },
   ],
   events: [
@@ -129,4 +129,4 @@ const SliderAPI = {
     },
   ],
 };
-export default SliderAPI;
+export default ToggleSwitchAPI;

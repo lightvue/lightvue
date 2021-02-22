@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import './card.scss';
 export default {
   name: 'LvCard',
   props: {
@@ -44,3 +43,6 @@ export default {
   },
 };
 </script>
+<style lang="sass">
+@import './card.scss'
+</style>

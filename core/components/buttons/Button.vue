@@ -24,8 +24,7 @@
 
 <script>
 // import Ripple from '@/components/ripple/Ripple';
-import './Button.scss';
-import './ButtonTheme.scss';
+
 export default {
   props: {
     icon: {
@@ -110,3 +109,7 @@ export default {
   // }
 };
 </script>
+<style lang="scss">
+@import './Button.scss';
+@import './ButtonTheme.scss';
+</style>
