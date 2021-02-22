@@ -1,0 +1,165 @@
+.lv-input__group {
+  position: relative;
+  &.--with-floating-label {
+    .lv-input__label {
+      position: absolute;
+      top: 8px;
+      font-weight: 300;
+      // color: ;
+      z-index: 1;
+      left: 12px;
+      transition: all 0.2s ease;
+      will-change: font-size, top, color;
+    }
+    .lv-input__element {
+      &::-webkit-input-placeholder {
+        color: transparent !important;
+      }
+
+      &:-moz-placeholder {
+        /* Firefox 18- */
+        color: transparent !important;
+      }
+
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: transparent !important;
+      }
+
+      &:-ms-input-placeholder {
+        color: transparent !important;
+      }
+    }
+    &:focus-within,
+    &.--not-empty {
+      .lv-input__label {
+        top: -18px;
+        font-size: 10px;
+        color: #38b2ab;
+        font-weight: 600;
+      }
+    }
+    .lv-input__field {
+      margin-top: 20px;
+    }
+  }
+  &.--with-bottom-bar {
+    .lv-input__field {
+      overflow: hidden; // For the bottom bar; border-radius
+      &::after {
+        bottom: 0px;
+        content: '';
+        height: 2px;
+        left: 50%;
+        background-color: #38b2ab;
+        position: absolute;
+        transition: all 0.2s ease;
+        width: 0;
+        will-change: width, left;
+      }
+      &:focus-within {
+        box-shadow: none;
+        &::after {
+          left: 0%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .lv-input__field {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-size: 1rem;
+    color: #495057;
+    background: #edf2f7;
+    // border: 2px solid transparent;
+    padding: 0px 12px;
+    border: none;
+    // border-bottom: 2px solid transparent;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, border-radius 0.3s;
+    appearance: none;
+    border-radius: 5px;
+    &:focus-within {
+      outline: 0 none;
+      outline-offset: 0;
+      box-shadow: 0 0 0 3px rgba(218, 225, 231, 0.8);
+      // box-shadow: 0 0 0 0.2rem #e1e7ec;
+      /* border: 2px solid #e1e7ec; */
+    }
+    .lv-input__element {
+      padding: 10px 0px;
+      &::placeholder {
+        // color: rgba(0, 0, 0, 0.3);
+        color: var(--placeholder-color);
+      }
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px #edf2f7 inset;
+      }
+    }
+    .lv-input__default {
+      padding: 10px 0px;
+    }
+    .lv-input__prepend > * {
+      border-radius: 5px 0px 0px 5px;
+    }
+    .lv-input__append > * {
+      border-radius: 0px 5px 5px 0px;
+    }
+    &.--rounded {
+      border-radius: 30px;
+      .lv-input__prepend > * {
+        border-radius: 30px 0px 0px 30px;
+      }
+      .lv-input__append > * {
+        border-radius: 0px 30px 30px 0px;
+      }
+    }
+    .lv-input__help {
+      padding-left: 12px;
+    }
+
+    .lv-input-field:hover {
+      /* border-color: #2196F3; */
+    }
+
+    .lv-input-field:focus-within {
+    }
+
+    .lv-input-field.lv-error,
+    .lv-input-field.lv-invalid {
+      border-color: #f44336;
+    }
+
+    .lv-input-field.lv-input-field-sm {
+      font-size: 0.875rem;
+      padding: 0.4375rem 0.4375rem;
+    }
+
+    .lv-input-field.lv-input-field-lg {
+      font-size: 1.25rem;
+      padding: 0.625rem 0.625rem;
+    }
+
+    .p-input-filled .lv-input-field {
+      background-color: #edf2f7;
+    }
+
+    .p-input-filled .lv-input-field:enabled:hover {
+      /* background-color: #f8f9fa; */
+    }
+
+    .p-input-filled .lv-input-field:enabled:focus {
+      background-color: #ffffff;
+    }
+
+    .lv-input-field-sm .lv-input-field {
+      font-size: 0.875rem;
+      padding: 0.4375rem 0.4375rem;
+    }
+
+    .lv-input-field-lg .lv-input-field {
+      font-size: 1.25rem;
+      padding: 0.625rem 0.625rem;
+    }
+  }
+}

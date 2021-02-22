@@ -1,0 +1,39 @@
+$light-checkbox--class-name: lv-checkbox !default;
+
+// colors
+$light-checkbox--color-default: #bdc3c7 !default;
+$light-checkbox--color-primary: #428bca !default;
+$light-checkbox--color-info: #5bc0de !default;
+$light-checkbox--color-success: #4dc0b5 !default;
+$light-checkbox--color-warning: #f0ad4e !default;
+$light-checkbox--color-danger: #d9534f !default;
+$light-checkbox--color-dark: #5a656b !default;
+
+// z-index
+$light-checkbox--z-index-back: 0 !default;
+$light-checkbox--z-index-between: 1 !default;
+$light-checkbox--z-index-front: 2 !default;
+
+// box
+$light-checkbox--rounded-radius: 20% !default;
+$light-checkbox--box-size: calc(1em + 2px) !default;
+
+// text
+$light-checkbox--label-text-offset: 1.5em !default;
+$light-checkbox--label-text-offset-switch: 2.5em !default;
+
+// scale [for --bigger]
+$light-checkbox--2x: 1.2em !default;
+
+// color set
+$light-checkbox--colors: (primary, $light-checkbox--color-primary), (info, $light-checkbox--color-info), (success, $light-checkbox--color-success), (warning, $light-checkbox--color-warning), (danger, $light-checkbox--color-danger) !default;
+
+// position
+$light-checkbox-top: 8;
+$light-checkbox-top-switch: ($light-checkbox-top * 2) * 1%;
+$light-checkbox-top-offset: calc((0% - (100% - 1em)) - #{$light-checkbox-top * 1%});
+$light-checkbox-top-offset-switch: calc((0% - (100% - 1em)) - #{$light-checkbox-top-switch});
+
+// dev
+$light-checkbox--debug: false !default;
+$light-checkbox--err-message: 'Error: Invalid input type!' !default;
