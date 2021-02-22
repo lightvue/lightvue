@@ -1,6 +1,6 @@
 //FOCUS event not working
 
-import { UniqueComponentId } from 'lightvue/utils';
+import { uniqueComponentId } from 'lightvue/utils';
 import DomHandler from 'lightvue/utils/DomHandler';
 import './Tooltip.css';
 import './tooltipTheme.css';
@@ -76,7 +76,7 @@ function getTooltipElement(el) {
 }
 
 function create(el) {
-  const id = UniqueComponentId() + '_tooltip';
+  const id = uniqueComponentId() + '_tooltip';
   el.$_lvtooltipId = id;
 
   let container = document.createElement('div');
