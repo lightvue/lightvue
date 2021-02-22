@@ -2,16 +2,16 @@
 <div>
     <div class="tooltip-example-wrapper">
         <div>
-            <LvSlider v-model="value1" v-tooltip.top="`Tooltip message (value: ${value1})`" />
-        </div>
-        <div>
-            <LvSlider v-model="value2" v-tooltip.bottom="`Tooltip message (value: ${value2})`" />
-        </div>
-        <div>
             <LvInput type="text" placeholder="Hover over me!" v-tooltip.right="'Tooltip message'" />
         </div>
         <div>
             <LvInput type="text" placeholder="Hover over me!" v-tooltip.left="'Tooltip message'" />
+        </div>
+        <div>
+            <LvRangeSlider style="width: 100%" v-model="value1" v-tooltip.top="`Tooltip message (value: ${value1})`" />
+        </div>
+        <div>
+            <LvRangeSlider style="width: 100%" v-model="value2" v-tooltip.bottom="`Tooltip message (value: ${value2})`" />
         </div>
     </div>
     <div class="tooltip-example-wrapper">
@@ -36,7 +36,7 @@
 <script>
 import LvCard from '@/collections/card/Card';
 import LvButton from '@/collections/buttons/Button';
-import LvSlider from '@/collections/slider/Slider';
+import LvRangeSlider from '@/collections/rangeslider/RangeSlider';
 import Tooltip from '@/collections/tooltip/Tooltip';
 
 export default {
@@ -46,7 +46,7 @@ export default {
             value2: 10,
         }
     },
-    components: { LvCard, LvButton, LvSlider },
+    components: { LvCard, LvButton, LvRangeSlider },
     directives: {
         'tooltip': Tooltip
     }

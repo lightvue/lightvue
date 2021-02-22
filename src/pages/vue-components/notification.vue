@@ -1,10 +1,11 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Modifying behaviour" file="examples/dropdown/DropdownDemo_Basic" overflow />
-    <docs-card-vue title="Modifying styling" file="examples/dropdown/DropdownDemo_Styled" overflow />
+    <docs-card-vue title="Basic" file="examples/notification/NotificationDemo" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <docs-all-api :api-data="$options.apiData" />
+      <docs-card title="APIs" :responsive="false">
+        <docs-all-api :api-data="$options.apiData" />
+      </docs-card>
     </template>
   </docs-page-layout>
 </template>
@@ -15,7 +16,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import DropdownAPI from '@/collections/dropdown/DropdownAPI';
+import NotificationAPI from '@/collections/notification/NotificationAPI';
 
 export default {
   components: {
@@ -25,10 +26,10 @@ export default {
     DocsPageLayout,
     DocsAllApi,
   },
-  title: 'Dropdown',
-  description: `Dropdown component allows user to choose an option from the provided options.`,
-  packageName: 'dropdown',
-  componentName: 'LvDropdown',
-  apiData: DropdownAPI,
+  title: 'Overlay Panel',
+  description: `OverlayPanel is a container component positioned as connected to its target.`,
+  packageName: 'overlay-panel',
+  componentName: 'LvOverlayPanel',
+  apiData: NotificationAPI,
 };
 </script>
