@@ -29,7 +29,7 @@ export default {
       // import('@/' + this.file + '.vue').then(comp => {
       //   this.component = comp.default;
       // }),
-      import('!raw-loader!' + this.file + '.vue').then(comp => {
+      import('!raw-loader!@@@/' + this.file + '.vue').then(comp => {
         this.parseComponent(comp.default);
       }),
     ]).then(() => {

@@ -102,8 +102,8 @@ export default {
   alias: {
     'lightvue/tooltip': resolve(__dirname, './core/directives/tooltip'),
     'lightvue/ripple': resolve(__dirname, './core/directives/ripple'),
-    '@@@': resolve(__dirname, ''),
-    // example: resolve(__dirname, './examples'),
+    'lightvue/utils': resolve(__dirname, './core/utils'),
     lightvue: resolve(__dirname, './core/components'),
+    '@@@': resolve(__dirname, ''),
   },
 };

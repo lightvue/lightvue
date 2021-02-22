@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import ConnectedOverlayScrollHandler from '@/utils/ConnectedOverlayScrollHandler';
-import DomHandler from '@/utils/DomHandler';
+import ConnectedOverlayScrollHandler from 'lightvue/utils/ConnectedOverlayScrollHandler';
+import DomHandler from 'lightvue/utils/DomHandler';
 import './OverlayPanel.scss';
 import './OverlayPanelTheme.scss';
 

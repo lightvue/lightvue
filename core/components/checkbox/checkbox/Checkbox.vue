@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ObjectUtils from '@/utils/ObjectUtils';
+import ObjectUtils from 'lightvue/utils/ObjectUtils';
 
 export default {
   inheritAttrs: false,

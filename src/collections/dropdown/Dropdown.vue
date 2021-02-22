@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import ConnectedOverlayScrollHandler from '@/utils/ConnectedOverlayScrollHandler';
-import ObjectUtils from '@/utils/ObjectUtils';
-import DomHandler from '@/utils/DomHandler';
+import ConnectedOverlayScrollHandler from 'lightvue/utils/ConnectedOverlayScrollHandler';
+import ObjectUtils from 'lightvue/utils/ObjectUtils';
+import DomHandler from 'lightvue/utils/DomHandler';
 import Ripple from 'lightvue/ripple/Ripple';
 import LvInput from 'lightvue/input/Input.vue';
 

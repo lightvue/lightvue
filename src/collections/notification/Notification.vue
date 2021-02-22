@@ -10,7 +10,7 @@
 import './Notification.scss';
 import NotificationEventBus from './NotificationEventBus';
 import NotificationMessage from './NotificationMessage';
-import DomHandler from '@/utils/DomHandler';
+import DomHandler from 'lightvue/utils/DomHandler';
 
 var messageIdx = 0;
 

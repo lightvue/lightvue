@@ -1,4 +1,4 @@
-import DomHandler from '@/utils/DomHandler';
+import DomHandler from 'lightvue/utils/DomHandler';
 import './Ripple.css';
 
 function bindEvents(el) {

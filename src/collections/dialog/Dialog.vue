@@ -26,8 +26,8 @@
   </div>
 </template>
 <script>
-import UniqueComponentId from '@/utils/UniqueComponentId';
-import DomHandler from '@/utils/DomHandler';
+import UniqueComponentId from 'lightvue/utils/UniqueComponentId';
+import DomHandler from 'lightvue/utils/DomHandler';
 import Ripple from 'lightvue/ripple/Ripple';
 import './Dialog.scss';
 
