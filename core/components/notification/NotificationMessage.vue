@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Ripple from '@/collections/ripple/Ripple';
+import Ripple from 'lightvue/ripple/Ripple';
 
 export default {
   props: {

@@ -45,8 +45,8 @@
 import ConnectedOverlayScrollHandler from '@/utils/ConnectedOverlayScrollHandler';
 import ObjectUtils from '@/utils/ObjectUtils';
 import DomHandler from '@/utils/DomHandler';
-import Ripple from '@/collections/ripple/Ripple';
-import LvInput from '@/collections/input/Input.vue';
+import Ripple from 'lightvue/ripple/Ripple';
+import LvInput from 'lightvue/input/Input.vue';
 
 import './Dropdown.scss';
 

@@ -16,7 +16,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
-import InputAPI from '@/collections/input/InputAPI';
+import InputAPI from 'lightvue/input/InputAPI';
 
 export default {
   head: {

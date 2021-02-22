@@ -100,6 +100,10 @@ export default {
     ALGOLIA_PROJECT_ID: process.env.ALGOLIA_PROJECT_ID,
   },
   alias: {
+    'lightvue/tooltip': resolve(__dirname, './core/directives/tooltip'),
+    'lightvue/ripple': resolve(__dirname, './core/directives/ripple'),
+    '@@@': resolve(__dirname, ''),
+    // example: resolve(__dirname, './examples'),
     lightvue: resolve(__dirname, './core/components'),
   },
 };

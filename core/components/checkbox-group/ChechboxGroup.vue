@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import LvCheckBox from '@/collections/checkbox/Checkbox';
+import LvCheckBox from 'lightvue/checkbox/Checkbox';
 export default {
   components: {
     LvCheckBox,

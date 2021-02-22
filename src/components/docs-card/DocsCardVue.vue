@@ -24,18 +24,30 @@ export default {
     };
   },
   created() {
-    this.component = () => import('@/' + this.file + '.vue');
+    this.component = () => import('@@@/' + this.file + '.vue');
     Promise.all([
       // import('@/' + this.file + '.vue').then(comp => {
       //   this.component = comp.default;
       // }),
-      import('!raw-loader!@/' + this.file + '.vue').then(comp => {
-        this.parseComponent(comp.default);
-      }),
+      // import('!raw-loader!' + this.file + '.vue').then(comp => {
+      //   this.parseComponent(comp.default);
+      // }),
     ]).then(() => {
       // this.loading = false;
     });
   },
+  // watch: {
+  //   file: function (newValue) {
+  //     import(`${newValue}.vue`).then(loadedComponent => {
+  //       this.component = loadedComponent;
+  //     });
+  //   },
+  // },
+  // mounted: function () {
+  //   import(`${this.file}.vue`).then(loadedComponent => {
+  //     this.component = loadedComponent;
+  //   });
+  // },
   methods: {
     parseComponent(comp) {
       const template = this.parseTemplate('template', comp),

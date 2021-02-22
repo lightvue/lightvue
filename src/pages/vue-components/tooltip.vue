@@ -15,7 +15,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import TooltipAPI from '@/collections/tooltip/TooltipAPI';
+import TooltipAPI from 'lightvue/tooltip/TooltipAPI';
 
 export default {
   components: {

@@ -19,7 +19,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
-import ButtonAPI from '@/collections/buttons/ButtonAPI';
+import ButtonAPI from 'lightvue/button/ButtonAPI';
 
 export default {
   head: {

@@ -1,21 +1,21 @@
 <template>
-      <div class="demo__wrapper">
-        <div class="demo__item"><lv-loader type="ball-zig-zag-deflect"/></div>
-        <div class="demo__item"><lv-loader type="ball-zig-zag-deflect" color="#38b2ac"/></div>
-        <div class="demo__item"><lv-loader type="ball-zig-zag-deflect" :scale="2"/></div>
-      </div>
+  <div class="demo__wrapper">
+    <div class="demo__item"><lv-loader type="ball-zig-zag-deflect" /></div>
+    <div class="demo__item"><lv-loader type="ball-zig-zag-deflect" color="#38b2ac" /></div>
+    <div class="demo__item"><lv-loader type="ball-zig-zag-deflect" :scale="2" /></div>
+  </div>
 </template>
 
 <script>
-import LvLoader from "@/collections/loaders/Loader.vue";
+import LvLoader from 'lightvue/loaders/Loader.vue';
 
 export default {
   data() {
     return {};
   },
   components: {
-    LvLoader
-  }
+    LvLoader,
+  },
 };
 </script>
 

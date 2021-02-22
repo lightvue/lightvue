@@ -1,12 +1,12 @@
 import Vue from 'vue';
-import LvInput from '@/collections/input/Input.vue';
-import LvButton from '@/collections/buttons/Button.vue';
-import LvCard from '@/collections/card/Card.vue';
+import LvInput from 'lightvue/input/Input.vue';
+import LvButton from 'lightvue/button/Button.vue';
+import LvCard from 'lightvue/card/Card.vue';
 import VueGtag from 'vue-gtag';
-import ToastService from '@/collections/toast/ToastService';
-import NotificationService from '@/collections/notification/NotificationService';
-import LvToast from '@/collections/toast/Toast.vue';
-import LvNotification from '@/collections/notification/Notification.vue';
+import ToastService from 'lightvue/toast/ToastService';
+import NotificationService from 'lightvue/notification/NotificationService';
+import LvToast from 'lightvue/toast/Toast.vue';
+import LvNotification from 'lightvue/notification/Notification.vue';
 
 Vue.use(VueGtag, {
   config: { id: 'G-NSCV9YG71N' },

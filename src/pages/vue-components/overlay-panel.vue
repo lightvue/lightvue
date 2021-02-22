@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import OverlayPanelAPI from '@/collections/overlay-panel/OverlayPanelAPI';
+import OverlayPanelAPI from 'lightvue/overlay-panel/OverlayPanelAPI';
 
 export default {
   components: {

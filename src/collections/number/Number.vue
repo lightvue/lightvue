@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import LvInput from '@/collections/input/Input.vue';
-import LvButton from '@/collections/buttons/Button.vue';
+import LvInput from 'lightvue/input/Input.vue';
+import LvButton from 'lightvue/button/Button.vue';
 export default {
   name: 'LvNumber',
   components: {

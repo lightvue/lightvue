@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import LvInput from '@/collections/input/Input.vue';
+import LvInput from 'lightvue/input/Input.vue';
 
 export default {
   name: 'LvTextarea',

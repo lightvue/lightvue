@@ -18,8 +18,8 @@
 <script>
 import ColorpickerCore from './core/ColorpickerCore.vue';
 import Checkboard from './core/Checkboard.vue';
-import LvOverlayPanel from '@/collections/overlay-panel/OverlayPanel';
-import LvInput from '@/collections/input/Input';
+import LvOverlayPanel from 'lightvue/overlay-panel/OverlayPanel';
+import LvInput from 'lightvue/input/Input';
 export default {
   name: 'LvColorpicker',
   data() {

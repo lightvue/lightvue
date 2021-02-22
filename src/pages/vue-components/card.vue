@@ -17,7 +17,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import CardAPI from '@/collections/card/CardAPI';
+import CardAPI from 'lightvue/card/CardAPI';
 
 export default {
   components: {

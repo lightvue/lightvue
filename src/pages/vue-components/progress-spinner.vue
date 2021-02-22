@@ -17,7 +17,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import ProgressSpinnerAPI from '@/collections/progressspinner/ProgressSpinnerAPI';
+import ProgressSpinnerAPI from 'lightvue/progressspinner/ProgressSpinnerAPI';
 
 export default {
   components: {
