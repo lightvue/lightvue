@@ -10,8 +10,8 @@
             <!-- <h1 class="hero-container__heading">LightVue</h1> -->
 
             <p class="hero-container__subtext">
-              The lightweight and substantial UI Component Library for
-              <span class="subtext-highlight">Vue 2.x</span> &amp; <span class="subtext-highlight">Vue 3.x</span>
+              Emerging Collection of well Crafted UI Components <br />
+              for <span class="subtext-highlight">Vue 2.x</span> &amp; <span class="subtext-highlight">Vue 3.x</span>
             </p>
           </div>
         </div>

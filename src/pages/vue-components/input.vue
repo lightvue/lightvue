@@ -25,7 +25,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
       {
         property: 'og:site_name',
         content: 'LightVue | Input Docs',
