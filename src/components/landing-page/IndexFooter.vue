@@ -11,7 +11,7 @@
         <p><a href="#">Home</a></p>
         <p><nuxt-link to="/getting-started/installation">Documentation</nuxt-link></p>
         <!-- <p><a target="_blank" href="https://github.com/">Github</a></p> -->
-        <p><a target="_blank" href="https://digiklabs.com/">Reach Us</a></p>
+        <!-- <p><a target="_blank" href="#">Reach Us</a></p> -->
         <!-- <p><a target="_blank" href="#">Become Sponsor</a></p> -->
       </div>
       <div class="footer__products">

@@ -71,11 +71,11 @@ export default {
       pages: [
         {
           page_name: 'Installation',
-          page_path: '/getting-started/installation',
+          page_path: '/installation',
         },
         {
           page_name: 'Customization',
-          page_path: '/vue-components/customize',
+          page_path: '/customize',
         },
       ],
     },
@@ -102,6 +102,10 @@ export default {
         {
           page_name: 'Checkbox',
           page_path: '/vue-components/checkbox',
+        },
+        {
+          page_name: 'Checkbox Group',
+          page_path: '/vue-components/checkbox-group',
         },
         {
           page_name: 'Toggle Switch',
@@ -180,6 +184,10 @@ export default {
         {
           page_name: 'Light Icons',
           page_path: '/icons/light-icons',
+        },
+        {
+          page_name: 'Dialog',
+          page_path: '/vue-components/dialog',
         },
       ],
     },

@@ -7,7 +7,10 @@
         <i class="light-icon-brand-github"></i>
       </a>
     </div> -->
-    <div class="app-footer__text">Copyright 2021 © DIGI-K-LABS. All rights reserved.</div>
+    <div class="app-footer__text">
+      This page is open source. Noticed a typo? Or something unclear? <br /><br />
+      <b>Improve this page on <i class="light-icon-brand-github"></i> GitHub</b> <br />
+    </div>
   </div>
 </template>
 
@@ -15,11 +18,15 @@
 .app-footer {
   padding: 0px 30px;
   .app-footer__text {
-    padding: 12px;
+    padding: 12px 0px;
     font-size: 13px;
     opacity: 0.6;
     text-align: center;
     border-top: 1px dotted #81a8bb;
+    i {
+      font-size: 12px;
+      font-weight: bold;
+    }
   }
 
   // .app-footer__div {

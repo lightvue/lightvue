@@ -1,9 +1,10 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Textarea" file="examples/textarea/TextareaDemo__Basic" overflow />
+    <docs-card-vue title="Basic" file="examples/textarea/TextareaDemo__Basic" overflow />
+    <docs-card-vue title="Customised" file="examples/textarea/TextareaDemo__Customised" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <!-- <docs-all-api :api-data="$options.apiData" /> -->
+      <docs-all-api :api-data="$options.apiData" />
     </template>
   </docs-page-layout>
 </template>

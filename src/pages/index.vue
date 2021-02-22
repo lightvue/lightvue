@@ -12,7 +12,7 @@ import IndexFeatures from '../components/landing-page/IndexFeatures.vue';
 import IndexFooter from '../components/landing-page/IndexFooter.vue';
 export default {
   head: {
-    title: 'LightVue | The Ultimate UI Component Library for Vue',
+    title: 'LightVue | Emerging Collection of well Crafted UI Components',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

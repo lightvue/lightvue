@@ -11,11 +11,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      { property: 'og:title', content: 'LightVue | Emerging Collection of well Crafted UI Components' },
+      { property: 'og:image', content: 'https://lightvue.org/icon.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | The Ultimate Vue Component Library',
+        content: 'LightVue | Emerging Collection of well Crafted UI Components',
       },
       {
         property: 'og:description',
