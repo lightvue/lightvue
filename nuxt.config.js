@@ -100,6 +100,6 @@ export default {
     ALGOLIA_PROJECT_ID: process.env.ALGOLIA_PROJECT_ID,
   },
   alias: {
-    '@lightvue': resolve(__dirname, './dist-lib'),
+    lightvue: resolve(__dirname, './core/components'),
   },
 };

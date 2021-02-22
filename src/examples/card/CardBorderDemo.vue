@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import LvCard from '@lightvue/card';
-import '@lightvue/card/index.css';
+import LvCard from 'lightvue/card';
+// import '@lightvue/card/index.css';
 
 export default {
   data() {

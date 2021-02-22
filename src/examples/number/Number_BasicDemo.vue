@@ -19,6 +19,8 @@
 
 <script>
 import LvNumber from '@/collections/number/Number.vue';
+
+// import LvNumber from 'lightvue/number';
 export default {
   components: {
     LvNumber,

@@ -141,15 +141,15 @@ function addSFC() {
   //         }
   //     });
   // });
-  addEntry('components/buttons', 'Button.vue', 'button', 'button');
-  // addEntry('components/card', 'Card.vue', 'card', 'index');
+  addEntry('components/buttons', 'Button.vue', 'button', 'index');
+  addEntry('components/card', 'Card.vue', 'card', 'index');
   // addEntry('components/card', 'GlassCard.vue', 'glass-card', 'glass-card');
   // addEntry('components/checkbox', 'Checkbox.vue', 'checkbox', 'checkbox');
   // addEntry('components/colorpicker', 'ColorPicker.vue', 'color-picker', 'color-picker');
   // addEntry('components/dropdown', 'Dropdown.vue', 'dropdown', 'dropdown');
-  addEntry('components/input', 'Input.vue', 'input', 'input');
+  addEntry('components/input', 'Input.vue', 'input', 'index');
   // addEntry('components/input-toggle', 'ToggleSwitch.vue', 'toggle-switch', 'toggle-switch');
-  addEntry('components/number', 'Number.vue', 'number', 'number');
+  addEntry('components/number', 'Number.vue', 'number', 'index');
   // addEntry('components/overlay-panel', 'OverlayPanel.vue', 'overlay-panel', 'overlay-panel');
   // addEntry('components/progressbar', 'ProgressBar.vue', 'progress-bar', 'progress-bar');
   // addEntry('components/progressspinner', 'ProgressSpinner.vue', 'progress-spinner', 'progress-spinner');
