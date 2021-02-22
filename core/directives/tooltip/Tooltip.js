@@ -1,6 +1,6 @@
 //FOCUS event not working
 
-import UniqueComponentId from 'lightvue/utils/UniqueComponentId';
+import { UniqueComponentId } from 'lightvue/utils';
 import DomHandler from 'lightvue/utils/DomHandler';
 import './Tooltip.css';
 import './tooltipTheme.css';

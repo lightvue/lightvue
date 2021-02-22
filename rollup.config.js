@@ -12,7 +12,7 @@ const path = require('path');
 let entries = [];
 
 // ask rollup to not bundle Vue in the library #warning-treating-module-as-external-dependency
-let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/ripple', 'lightvue/utils', 'lightvue/overlay-panel'];
+let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/ripple', 'lightvue/utils', 'lightvue/utils/DomHandler', 'lightvue/utils/ConnectedOverlayScrollHandler', 'lightvue/utils/ObjectUtils', 'lightvue/overlay-panel'];
 
 let globalDependencies = {
   vue: 'Vue',
@@ -21,6 +21,9 @@ let globalDependencies = {
   'lightvue/button': 'lightvue.button',
   'lightvue/input': 'lightvue.input',
   'lightvue/overlay-panel': 'lightvue.overlay-panel',
+  'lightvue/utils/DomHandler': 'lightvue.utils-DomHandler',
+  'lightvue/utils/ConnectedOverlayScrollHandler': 'lightvue.utils-ConnectedOverlayScrollHandler',
+  'lightvue/utils/ObjectUtils': 'lightvue.utils-ObjectUtils',
   // 'lightvue/dialog': 'lightvue.dialog',
   // 'lightvue/paginator': 'lightvue.paginator',
   // 'lightvue/confirmationeventbus': 'lightvue.confirmationeventbus',
@@ -144,24 +147,24 @@ function addSFC() {
   // });
   addEntry('components/button', 'Button.vue', 'button', 'index');
   addEntry('components/card', 'Card.vue', 'card', 'index');
-  addEntry('components/card', 'GlassCard.vue', 'glass-card', 'glass-card');
-  addEntry('components/checkbox', 'Checkbox.vue', 'checkbox', 'checkbox');
-  addEntry('components/colorpicker', 'ColorPicker.vue', 'color-picker', 'color-picker');
-  addEntry('components/dropdown', 'Dropdown.vue', 'dropdown', 'dropdown');
+  addEntry('components/card', 'GlassCard.vue', 'glass-card', 'index');
+  addEntry('components/checkbox', 'Checkbox.vue', 'checkbox', 'index');
+  addEntry('components/colorpicker', 'ColorPicker.vue', 'color-picker', 'index');
+  addEntry('components/dropdown', 'Dropdown.vue', 'dropdown', 'index');
   addEntry('components/input', 'Input.vue', 'input', 'index');
-  addEntry('components/input-toggle', 'ToggleSwitch.vue', 'toggle-switch', 'toggle-switch');
+  addEntry('components/input-toggle', 'ToggleSwitch.vue', 'toggle-switch', 'index');
   addEntry('components/number', 'Number.vue', 'number', 'index');
-  // addEntry('components/overlay-panel', 'OverlayPanel.vue', 'overlay-panel', 'overlay-panel');
-  // addEntry('components/progressbar', 'ProgressBar.vue', 'progress-bar', 'progress-bar');
-  // addEntry('components/progressspinner', 'ProgressSpinner.vue', 'progress-spinner', 'progress-spinner');
-  // addEntry('components/rating', 'Rating.vue', 'rating', 'rating');
-  // addEntry('components/skeleton', 'Skeleton.vue', 'skeleton', 'skeleton');
-  // addEntry('components/slider', 'Slider.vue', 'slider', 'slider');
-  // addEntry('components/textarea', 'Textarea.vue', 'textarea', 'textarea');
+  addEntry('components/overlay-panel', 'OverlayPanel.vue', 'overlay-panel', 'index');
+  addEntry('components/progressbar', 'ProgressBar.vue', 'progress-bar', 'index');
+  addEntry('components/progressspinner', 'ProgressSpinner.vue', 'progress-spinner', 'index');
+  addEntry('components/rating', 'Rating.vue', 'rating', 'index');
+  addEntry('components/skeleton', 'Skeleton.vue', 'skeleton', 'index');
+  addEntry('components/slider', 'Slider.vue', 'slider', 'index');
+  addEntry('components/textarea', 'Textarea.vue', 'textarea', 'index');
 
   // directives
-  // addEntry('directives/tooltip', 'Tooltip.js', 'tooltip', 'tooltip');
-  // addEntry('directives/ripple', 'Ripple.js', 'ripple', 'ripple');
+  addEntry('directives/tooltip', 'Tooltip.js', 'tooltip', 'index');
+  addEntry('directives/ripple', 'Ripple.js', 'ripple', 'index');
 }
 
 // function addDirectives() {

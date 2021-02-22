@@ -1,0 +1,76 @@
+.lv-overlaypanel {
+  position: absolute;
+  margin-top: 10px; }
+  .lv-overlaypanel:after, .lv-overlaypanel:before {
+    /* Pointing Arrow */
+    position: absolute;
+    left: var(--overlay-arrow-pos);
+    bottom: 100%;
+    content: ' ';
+    height: 0;
+    width: 0;
+    pointer-events: none; }
+  .lv-overlaypanel.--flipped {
+    margin-top: 0;
+    margin-bottom: 10px; }
+    .lv-overlaypanel.--flipped:after, .lv-overlaypanel.--flipped:before {
+      bottom: auto;
+      top: 100%;
+      border-bottom-color: transparent; }
+  .lv-overlaypanel .lv-overlaypanel__close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%, -50%); }
+    .lv-overlaypanel .lv-overlaypanel__close-btn.--right-align {
+      transform: translate(-50%, -50%);
+      left: 0px; }
+
+/* Animation */
+.lv-overlaypanel__transition-enter-from {
+  opacity: 0;
+  transform: scaleY(0.8); }
+
+.lv-overlaypanel__transition-leave-to {
+  opacity: 0; }
+
+.lv-overlaypanel__transition-enter-active {
+  transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), opacity 0.12s cubic-bezier(0, 0, 0.2, 1); }
+
+.lv-overlaypanel__transition-leave-active {
+  transition: opacity 0.1s linear; }
+
+.lv-overlaypanel {
+  background: #ffffff;
+  border: 0 none;
+  border-radius: 4px;
+  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); }
+  .lv-overlaypanel:after, .lv-overlaypanel:before {
+    border: 10px solid transparent;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff; }
+  .lv-overlaypanel.--flipped:after, .lv-overlaypanel.--flipped:before {
+    border-top-color: #ffffff; }
+  .lv-overlaypanel .lv-overlaypanel__content {
+    padding: 1rem; }
+
+.lv-rating {
+  display: flex;
+  align-items: center; }
+  .lv-rating.--inline {
+    display: inline-flex; }
+  .lv-rating.--rtl {
+    direction: rtl; }
+    .lv-rating.--rtl .lv-rating__value {
+      margin-right: 10px;
+      direction: rtl; }
+  .lv-rating .lv-rating__star {
+    display: inline-block;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer; }
+    .lv-rating .lv-rating__star.--read-only {
+      cursor: initial; }
+  .lv-rating .lv-rating__value {
+    margin-top: 7px;
+    margin-left: 7px; }
