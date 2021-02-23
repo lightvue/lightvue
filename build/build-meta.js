@@ -13,6 +13,6 @@ const path = require('path');
 // fs.copySync(path.resolve(__dirname, './README.md'), 'dist/README.md');
 // fs.copySync(path.resolve(__dirname, './LICENSE.md'), 'dist/LICENSE.md');
 
-fs.readdirSync('dist-lib/').forEach(folder => {
-  fs.copySync(path.resolve(__dirname, './package-build.json'), 'dist-lib/' + folder + '/package.json');
+fs.readdirSync('dist/').forEach(folder => {
+  fs.copySync(path.resolve(__dirname, './package-build.json'), 'dist/' + folder + '/package.json');
 });

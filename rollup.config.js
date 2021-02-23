@@ -6,8 +6,8 @@ import filesize from 'rollup-plugin-filesize';
 
 import { terser } from 'rollup-plugin-terser';
 
-const fs = require('fs-extra');
-const path = require('path');
+// const fs = require('fs-extra');
+// const path = require('path');
 
 let entries = [];
 
@@ -65,7 +65,7 @@ const baseConfig = {
 
 function addEntry(inFolder, inFile, outFolder, outFile) {
   const inputFile = 'core/' + inFolder + '/' + inFile;
-  const outputFile = 'dist-lib/' + outFolder + '/' + outFile;
+  const outputFile = 'dist/' + outFolder + '/' + outFile;
   entries.push({
     external: externals,
     input: inputFile,
@@ -161,17 +161,13 @@ function addSFC() {
   addEntry('components/skeleton', 'Skeleton.vue', 'skeleton', 'index');
   addEntry('components/slider', 'Slider.vue', 'slider', 'index');
   addEntry('components/textarea', 'Textarea.vue', 'textarea', 'index');
+}
 
+function addDirectives() {
   // directives
   addEntry('directives/tooltip', 'Tooltip.js', 'tooltip', 'index');
   addEntry('directives/ripple', 'Ripple.js', 'ripple', 'index');
 }
-
-// function addDirectives() {
-//     addEntry('badgedirective', 'BadgeDirective.js', 'badgedirective');
-//     addEntry('ripple', 'Ripple.js', 'ripple');
-//     addEntry('tooltip', 'Tooltip.js', 'tooltip');
-// }
 
 // function addConfig() {
 //     addEntry('config', 'lightVue.js', 'config');
@@ -196,7 +192,7 @@ function addSFC() {
 // }
 
 addSFC();
-// addDirectives();
+addDirectives();
 // addConfig();
 // addUtils();
 // addApi();
