@@ -12,8 +12,6 @@
 <script>
 import ConnectedOverlayScrollHandler from 'lightvue/utils/ConnectedOverlayScrollHandler';
 import DomHandler from 'lightvue/utils/DomHandler';
-import './OverlayPanel.scss';
-import './OverlayPanelTheme.scss';
 
 export default {
   name: 'LvOverlaypanel',
@@ -213,3 +211,7 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import './OverlayPanel.scss';
+@import './OverlayPanelTheme.scss';
+</style>

@@ -48,7 +48,7 @@ import DomHandler from 'lightvue/utils/DomHandler';
 import Ripple from 'lightvue/ripple';
 import LvInput from 'lightvue/input';
 
-import './Dropdown.scss';
+// import './Dropdown.scss';
 
 export default {
   name: 'LvDropdown',
@@ -524,3 +524,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import './Dropdown.scss';
+</style>
