@@ -10,7 +10,6 @@
   "homepage": "https://lightvue.org/",
   "scripts": {
     "dev": "cd docs && npm run dev",
-    "build-docs": "cd docs && npm i && npm run build && npm run generate",
     "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js && node build/build-meta.js",
     "release": "release-it --no-git.requireCleanWorkingDir"
   },
