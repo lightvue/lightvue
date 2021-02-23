@@ -94,13 +94,13 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: ['vue-instantsearch', 'instantsearch.js/es'],
+    publicPath: '/_assets/',
   },
 
   // Google Analytics Configration
   googleAnalytics: {
     id: 'G-NSCV9YG71N',
   },
-
   //environment variables
   // publicRuntimeConfig: {
   //   ISHAAN: process.env.ISHAAN,
