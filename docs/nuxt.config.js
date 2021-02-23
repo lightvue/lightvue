@@ -1,5 +1,14 @@
-import { resolve } from 'path';
+const path = require('path');
+
 require('dotenv').config();
+
+// console.log(resolve(__dirname));
+// console.log(resolve(__dirname, '/../core/components'));
+// console.log(resolve(__dirname, './../core/components'));
+// console.log(join(__dirname));
+// console.log(path.join(__dirname, '/../core/components'));
+// console.log(path.join(__dirname, './../core/components'));
+// console.log(path.join(__dirname, '/..'));
 
 export default {
   srcDir: 'src/',
@@ -100,10 +109,10 @@ export default {
     ALGOLIA_PROJECT_ID: process.env.ALGOLIA_PROJECT_ID,
   },
   alias: {
-    'lightvue/tooltip': resolve(__dirname, '../core/directives/tooltip'),
-    'lightvue/ripple': resolve(__dirname, '../core/directives/ripple'),
-    'lightvue/utils': resolve(__dirname, '../core/utils'),
-    lightvue: resolve(__dirname, '../core/components'),
-    '@@@': resolve(__dirname, '../'),
+    'lightvue/tooltip': path.join(__dirname, '/../core/directives/tooltip'),
+    'lightvue/ripple': path.join(__dirname, '/../core/directives/ripple'),
+    'lightvue/utils': path.join(__dirname, '/../core/utils'),
+    lightvue: path.join(__dirname, '/../core/components'),
+    '@@@': path.join(__dirname, '/..'),
   },
 };

@@ -17,7 +17,7 @@
     "core-js": "^3.6.5",
     "instantsearch.css": "^7.4.5",
     "light-icons": "^1.0.2",
-    "nuxt": "^2.14.6",
+    "nuxt": "^2.15.2",
     "prismjs": "^1.23.0",
     "split.js": "^1.6.2",
     "splitpanes": "2.2.2",
@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@vue/compiler-sfc": "^3.0.5",
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
     "raw-loader": "^4.0.2",

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Hero from '@/components/landing-page/Hero.vue';
+import Hero from '../components/landing-page/Hero.vue';
 import IndexFeatures from '../components/landing-page/IndexFeatures.vue';
 import IndexFooter from '../components/landing-page/IndexFooter.vue';
 export default {
