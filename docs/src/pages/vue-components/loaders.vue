@@ -1,35 +1,35 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="TYPE: ball-scale" file="examples/loaders/BallTypeDemos/BallScaleDemo" />
-    <docs-card-vue title="TYPE: ball-scale-multiple" file="examples/loaders/BallTypeDemos/BallScaleMultipleDemo" />
-    <docs-card-vue title="TYPE: ball-scale-random" file="examples/loaders/BallTypeDemos/BallScaleRandomDemo" />
-    <docs-card-vue title="TYPE: ball-scale-ripple" file="examples/loaders/BallTypeDemos/BallScaleRippleDemo" />
-    <docs-card-vue title="TYPE: ball-scale-ripple-multiple" file="examples/loaders/BallTypeDemos/BallScaleRippleMultipleDemo" />
-    <docs-card-vue title="TYPE: ball-beat" file="examples/loaders/BallTypeDemos/BallBeatDemo" />
-    <docs-card-vue title="TYPE: ball-pulse" file="examples/loaders/BallTypeDemos/BallPulseDemo" />
-    <docs-card-vue title="TYPE: ball-pulse-sync" file="examples/loaders/BallTypeDemos/BallPulseSyncDemo" />
-    <docs-card-vue title="TYPE: ball-pulse-rise" file="examples/loaders/BallTypeDemos/BallPulseRiseDemo" />
-    <docs-card-vue title="TYPE: ball-rotate" file="examples/loaders/BallTypeDemos/BallRotateDemo" />
-    <docs-card-vue title="TYPE: ball-grid-beat" file="examples/loaders/BallTypeDemos/BallGridBeatDemo" />
-    <docs-card-vue title="TYPE: ball-grid-pulse" file="examples/loaders/BallTypeDemos/BallGridPulseDemo" />
-    <docs-card-vue title="TYPE: ball-spin-fade-loader" file="examples/loaders/BallTypeDemos/BallSpinFadeLoaderDemo" />
-    <docs-card-vue title="TYPE: ball-zig-zag" file="examples/loaders/BallTypeDemos/BallZigZagDemo" />
-    <docs-card-vue title="TYPE: ball-zig-zag-deflect" file="examples/loaders/BallTypeDemos/BallZigZagDeflectDemo" />
-    <docs-card-vue title="TYPE: ball-triangle-path" file="examples/loaders/BallTypeDemos/BallTrianglePathDemo" />
-    <docs-card-vue title="TYPE: ball-clip-rotate" file="examples/loaders/BallTypeDemos/BallClipRotateDemo" />
-    <docs-card-vue title="TYPE: ball-clip-rotate-multiple" file="examples/loaders/BallTypeDemos/BallClipRotateMultipleDemo" />
-    <docs-card-vue title="TYPE: line-scale" file="examples/loaders/LineTypeDemos/LineScaleDemo" />
-    <docs-card-vue title="TYPE: line-scale-party" file="examples/loaders/LineTypeDemos/LineScalePartyDemo" />
-    <docs-card-vue title="TYPE: line-scale-pulse-out" file="examples/loaders/LineTypeDemos/LineScalePulseOutDemo" />
-    <docs-card-vue title="TYPE: line-scale-pusle-out-rapid" file="examples/loaders/LineTypeDemos/LineScalePulseOutRapidDemo" />
-    <docs-card-vue title="TYPE: line-spin-fade-loader" file="examples/loaders/LineTypeDemos/LineSpinFadeLoaderDemo" />
-    <docs-card-vue title="TYPE: square-spin" file="examples/loaders/MiscTypeDemos/SquareSpinDemo" />
-    <docs-card-vue title="TYPE: cube-transition" file="examples/loaders/MiscTypeDemos/CubeTransitionDemo" />
-    <docs-card-vue title="TYPE: semi-circle-spin" file="examples/loaders/MiscTypeDemos/SemiCircleSpinDemo" />
+    <docs-card-vue title="TYPE: ball-scale" file="loaders/BallTypeDemos/BallScaleDemo" />
+    <docs-card-vue title="TYPE: ball-scale-multiple" file="loaders/BallTypeDemos/BallScaleMultipleDemo" />
+    <docs-card-vue title="TYPE: ball-scale-random" file="loaders/BallTypeDemos/BallScaleRandomDemo" />
+    <docs-card-vue title="TYPE: ball-scale-ripple" file="loaders/BallTypeDemos/BallScaleRippleDemo" />
+    <docs-card-vue title="TYPE: ball-scale-ripple-multiple" file="loaders/BallTypeDemos/BallScaleRippleMultipleDemo" />
+    <docs-card-vue title="TYPE: ball-beat" file="loaders/BallTypeDemos/BallBeatDemo" />
+    <docs-card-vue title="TYPE: ball-pulse" file="loaders/BallTypeDemos/BallPulseDemo" />
+    <docs-card-vue title="TYPE: ball-pulse-sync" file="loaders/BallTypeDemos/BallPulseSyncDemo" />
+    <docs-card-vue title="TYPE: ball-pulse-rise" file="loaders/BallTypeDemos/BallPulseRiseDemo" />
+    <docs-card-vue title="TYPE: ball-rotate" file="loaders/BallTypeDemos/BallRotateDemo" />
+    <docs-card-vue title="TYPE: ball-grid-beat" file="loaders/BallTypeDemos/BallGridBeatDemo" />
+    <docs-card-vue title="TYPE: ball-grid-pulse" file="loaders/BallTypeDemos/BallGridPulseDemo" />
+    <docs-card-vue title="TYPE: ball-spin-fade-loader" file="loaders/BallTypeDemos/BallSpinFadeLoaderDemo" />
+    <docs-card-vue title="TYPE: ball-zig-zag" file="loaders/BallTypeDemos/BallZigZagDemo" />
+    <docs-card-vue title="TYPE: ball-zig-zag-deflect" file="loaders/BallTypeDemos/BallZigZagDeflectDemo" />
+    <docs-card-vue title="TYPE: ball-triangle-path" file="loaders/BallTypeDemos/BallTrianglePathDemo" />
+    <docs-card-vue title="TYPE: ball-clip-rotate" file="loaders/BallTypeDemos/BallClipRotateDemo" />
+    <docs-card-vue title="TYPE: ball-clip-rotate-multiple" file="loaders/BallTypeDemos/BallClipRotateMultipleDemo" />
+    <docs-card-vue title="TYPE: line-scale" file="loaders/LineTypeDemos/LineScaleDemo" />
+    <docs-card-vue title="TYPE: line-scale-party" file="loaders/LineTypeDemos/LineScalePartyDemo" />
+    <docs-card-vue title="TYPE: line-scale-pulse-out" file="loaders/LineTypeDemos/LineScalePulseOutDemo" />
+    <docs-card-vue title="TYPE: line-scale-pusle-out-rapid" file="loaders/LineTypeDemos/LineScalePulseOutRapidDemo" />
+    <docs-card-vue title="TYPE: line-spin-fade-loader" file="loaders/LineTypeDemos/LineSpinFadeLoaderDemo" />
+    <docs-card-vue title="TYPE: square-spin" file="loaders/MiscTypeDemos/SquareSpinDemo" />
+    <docs-card-vue title="TYPE: cube-transition" file="loaders/MiscTypeDemos/CubeTransitionDemo" />
+    <docs-card-vue title="TYPE: semi-circle-spin" file="loaders/MiscTypeDemos/SemiCircleSpinDemo" />
     <!-- Needs color fix -->
-    <docs-card-vue title="TYPE: pacman" file="examples/loaders/MiscTypeDemos/PacmanDemo" />
+    <docs-card-vue title="TYPE: pacman" file="loaders/MiscTypeDemos/PacmanDemo" />
     <!-- Needs color fix -->
-    <docs-card-vue title="TYPE: triangle-skew-spin" file="examples/loaders/MiscTypeDemos/TriangleSkewSpinDemo" />
+    <docs-card-vue title="TYPE: triangle-skew-spin" file="loaders/MiscTypeDemos/TriangleSkewSpinDemo" />
     <!-- Needs color fix -->
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />

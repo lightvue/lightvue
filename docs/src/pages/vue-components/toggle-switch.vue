@@ -1,6 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Demo" file="examples/input-toggle-switch/ToggleSwitchDemo_Basic" />
+    <docs-card-vue title="Demo" file="input-toggle-switch/ToggleSwitchDemo_Basic" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

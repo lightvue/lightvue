@@ -1,11 +1,11 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Basic Usage" file="examples/buttons/ButtonDemo_Basic" />
-    <docs-card-vue title="Rounded Buttons" file="examples/buttons/ButtonDemo_Rounded" />
-    <docs-card-vue title="Button Groups" file="examples/buttons/ButtonDemo_Group" />
-    <docs-card-vue title="Push Buttons" file="examples/buttons/ButtonDemo_Raised" id="push" />
-    <docs-card-vue title="Miscellaneous Usage" file="examples/buttons/ButtonDemo_Misc" />
-    <docs-card-vue title="Miscellaneous Usage" file="examples/buttons/ButtonDemo_Shadow" />
+    <docs-card-vue title="Basic Usage" file="buttons/ButtonDemo_Basic" />
+    <docs-card-vue title="Rounded Buttons" file="buttons/ButtonDemo_Rounded" />
+    <docs-card-vue title="Button Groups" file="buttons/ButtonDemo_Group" />
+    <docs-card-vue title="Push Buttons" file="buttons/ButtonDemo_Raised" id="push" />
+    <docs-card-vue title="Miscellaneous Usage" file="buttons/ButtonDemo_Misc" />
+    <docs-card-vue title="Miscellaneous Usage" file="buttons/ButtonDemo_Shadow" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

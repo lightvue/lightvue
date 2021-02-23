@@ -1,9 +1,9 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Shadow styles" file="examples/card/CardShadowDemo" />
-    <docs-card-vue title="Border radius" file="examples/card/CardRadiusDemo" />
-    <docs-card-vue title="Background color and Padding" file="examples/card/CardPaddingAndBGcolorDemo" />
-    <docs-card-vue title="Enabling border" file="examples/card/CardBorderDemo" />
+    <docs-card-vue title="Shadow styles" file="card/CardShadowDemo" />
+    <docs-card-vue title="Border radius" file="card/CardRadiusDemo" />
+    <docs-card-vue title="Background color and Padding" file="card/CardPaddingAndBGcolorDemo" />
+    <docs-card-vue title="Enabling border" file="card/CardBorderDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

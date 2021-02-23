@@ -1,9 +1,9 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Dynamic" file="examples/progressbar/ProgressBarDemo_Dynamic" />
-    <docs-card-vue title="Static" file="examples/progressbar/ProgressBarDemo_Static" />
-    <docs-card-vue title="Indeterminate" file="examples/progressbar/ProgressBarDemo_Indeterminate" />
-    <docs-card-vue title="Colored" file="examples/progressbar/ProgressBarDemo_Colored" />
+    <docs-card-vue title="Dynamic" file="progressbar/ProgressBarDemo_Dynamic" />
+    <docs-card-vue title="Static" file="progressbar/ProgressBarDemo_Static" />
+    <docs-card-vue title="Indeterminate" file="progressbar/ProgressBarDemo_Indeterminate" />
+    <docs-card-vue title="Colored" file="progressbar/ProgressBarDemo_Colored" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

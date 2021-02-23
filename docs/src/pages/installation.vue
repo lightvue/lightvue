@@ -91,7 +91,10 @@
 </template>
 
 <script>
-export default {};
+import CodeHighlight from '@/components/docs-card/CodeHighlight.vue';
+export default {
+  components: { CodeHighlight },
+};
 </script>
 
 <style lang="scss" scoped>

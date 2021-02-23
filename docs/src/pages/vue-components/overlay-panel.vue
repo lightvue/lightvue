@@ -1,6 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Basic" file="examples/overlay-panel/OverlayPanelDemo_Basic" overflow />
+    <docs-card-vue title="Basic" file="overlay-panel/OverlayPanelDemo_Basic" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

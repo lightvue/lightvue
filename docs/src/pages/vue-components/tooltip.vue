@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="With Hover event" file="examples/tooltip/TooltipHoverDemo" />
-    <docs-card-vue title="With Focus event" file="examples/tooltip/TooltipFocusDemo" />
+    <docs-card-vue title="With Hover event" file="tooltip/TooltipHoverDemo" />
+    <docs-card-vue title="With Focus event" file="tooltip/TooltipFocusDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <!-- <docs-all-api :api-data="$options.apiData"/> -->

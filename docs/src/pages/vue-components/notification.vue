@@ -1,6 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Basic" file="examples/notification/NotificationDemo" overflow />
+    <docs-card-vue title="Basic" file="notification/NotificationDemo" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-card title="APIs" :responsive="false">

@@ -114,6 +114,6 @@ export default {
     'lightvue/utils': path.join(__dirname, '/../core/utils'),
     'lightvue/example': path.join(__dirname, '/../examples'),
     lightvue: path.join(__dirname, '/../core/components'),
-    // '@@@': path.join(__dirname, '/..'),
+    // '@@@': path.join(__dirname, '/..'), // this must never be used, resulting infinite loop.
   },
 };

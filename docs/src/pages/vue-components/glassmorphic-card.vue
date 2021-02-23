@@ -1,9 +1,9 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Background blur" file="examples/glasscard/GlassBlurDemo" />
-    <docs-card-vue title="Background opacity" file="examples/glasscard/GlassOpacityDemo" />
-    <docs-card-vue title="Background color and padding" file="examples/glasscard/GlassBGandPaddingDemo" />
-    <docs-card-vue title="Border and border-radius" file="examples/glasscard/GlassBorderDemo" />
+    <docs-card-vue title="Background blur" file="glasscard/GlassBlurDemo" />
+    <docs-card-vue title="Background opacity" file="glasscard/GlassOpacityDemo" />
+    <docs-card-vue title="Background color and padding" file="glasscard/GlassBGandPaddingDemo" />
+    <docs-card-vue title="Border and border-radius" file="glasscard/GlassBorderDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -17,7 +17,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import GlassCardAPI from '@/examples/glasscard/GlassCardAPI';
+import GlassCardAPI from 'lightvue/example/glasscard/GlassCardAPI';
 
 export default {
   components: {

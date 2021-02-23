@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Modifying behaviour" file="examples/dropdown/DropdownDemo_Basic" overflow />
-    <docs-card-vue title="Modifying styling" file="examples/dropdown/DropdownDemo_Styled" overflow />
+    <docs-card-vue title="Modifying behaviour" file="dropdown/DropdownDemo_Basic" overflow />
+    <docs-card-vue title="Modifying styling" file="dropdown/DropdownDemo_Styled" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

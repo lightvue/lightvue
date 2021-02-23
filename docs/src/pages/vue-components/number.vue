@@ -1,8 +1,8 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Basic" file="examples/number/Number_BasicDemo" overflow />
-    <docs-card-vue title="Rounded" file="examples/number/Number_RoundedDemo" overflow />
-    <docs-card-vue title="Customise Icons" file="examples/number/Number_IconDemo" overflow />
+    <docs-card-vue title="Basic" file="number/Number_BasicDemo" overflow />
+    <docs-card-vue title="Rounded" file="number/Number_RoundedDemo" overflow />
+    <docs-card-vue title="Customise Icons" file="number/Number_IconDemo" overflow />
 
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />

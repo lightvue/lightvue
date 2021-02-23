@@ -1,9 +1,9 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Size" file="examples/progressspinner/ProgressSpinnerSizeDemo" />
-    <docs-card-vue title="Color" file="examples/progressspinner/ProgressSpinnerColorDemo" />
-    <docs-card-vue title="Stroke-width" file="examples/progressspinner/ProgressSpinnerStrokeDemo" />
-    <docs-card-vue title="Animation-duration" file="examples/progressspinner/ProgressSpinnerDurationDemo" />
+    <docs-card-vue title="Size" file="progressspinner/ProgressSpinnerSizeDemo" />
+    <docs-card-vue title="Color" file="progressspinner/ProgressSpinnerColorDemo" />
+    <docs-card-vue title="Stroke-width" file="progressspinner/ProgressSpinnerStrokeDemo" />
+    <docs-card-vue title="Animation-duration" file="progressspinner/ProgressSpinnerDurationDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

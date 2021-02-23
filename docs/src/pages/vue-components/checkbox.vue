@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Basic" file="examples/checkbox/CheckboxDemo_Basic" />
-    <!-- <docs-card-vue title="Basic" file="examples/checkbox/CheckboxDemo" /> -->
+    <docs-card-vue title="Basic" file="checkbox/CheckboxDemo_Basic" />
+    <!-- <docs-card-vue title="Basic" file="checkbox/CheckboxDemo" /> -->
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

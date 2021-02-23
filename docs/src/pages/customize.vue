@@ -7,88 +7,28 @@
       <div class="custom__process">
         <CodeHighlight lang="css">
           <!-- <pre> -->
-          .lv--primary {
-          --theme-color: #38b2ac;
-          --theme-color-light: #8ed8d6;
-          --theme-color-dark: #319795;
-          --theme-color-inverse: #ffffff;
-          }
-          .lv--secondary {
-            --theme-color: #607d8b;
-            --theme-color-light: #beccd2;
-            --theme-color-dark: #56717d;
-            --theme-color-inverse: #ffffff;
-          }
-          .lv--success {
-            --theme-color: #008c7f;
-            --theme-color-light: #95e8df;
-            --theme-color-dark: #03655b;
-            --theme-color-inverse: #ffffff;
-          }
-          .lv--info {
-            --theme-color: #0288d1;
-            --theme-color-light: #89d4fe;
-            --theme-color-dark: #027abc;
-            --theme-color-inverse: #ffffff;
-          }
-          .lv--warning {
-            --theme-color: #ffb300;
-            --theme-color-light: #ffd36d;
-            --theme-color-dark: #df9c00;
-            --theme-color-inverse: #ffffff;
-          }
-          .lv--help {
-            --theme-color: #795548;
-            --theme-color-light: #baafac;
-            --theme-color-dark: #795548;
-            --theme-color-inverse: #ffffff;
-          }
-          .lv--danger {
-            --theme-color: #bb2727;
-            --theme-color-light: #e9a5a5;
-            --theme-color-dark: #9b2222;
-            --theme-color-inverse: #ffffff;
-          }
-          .lv--plain {
-            --theme-color: #3f51b5;
-            --theme-color-light: #acb7f7;
-            --theme-color-dark: #2e3fa2;
-            --theme-color-inverse: #ffffff;
-          }
+          .lv--primary { --theme-color: #38b2ac; --theme-color-light: #8ed8d6; --theme-color-dark: #319795; --theme-color-inverse: #ffffff; } .lv--secondary { --theme-color: #607d8b; --theme-color-light: #beccd2; --theme-color-dark: #56717d; --theme-color-inverse: #ffffff; } .lv--success { --theme-color: #008c7f; --theme-color-light: #95e8df; --theme-color-dark: #03655b; --theme-color-inverse: #ffffff; } .lv--info { --theme-color: #0288d1; --theme-color-light: #89d4fe; --theme-color-dark: #027abc; --theme-color-inverse: #ffffff; } .lv--warning { --theme-color: #ffb300; --theme-color-light: #ffd36d; --theme-color-dark: #df9c00; --theme-color-inverse: #ffffff; } .lv--help { --theme-color: #795548; --theme-color-light: #baafac; --theme-color-dark: #795548; --theme-color-inverse: #ffffff; }
+          .lv--danger { --theme-color: #bb2727; --theme-color-light: #e9a5a5; --theme-color-dark: #9b2222; --theme-color-inverse: #ffffff; } .lv--plain { --theme-color: #3f51b5; --theme-color-light: #acb7f7; --theme-color-dark: #2e3fa2; --theme-color-inverse: #ffffff; }
           <!-- </pre> -->
         </CodeHighlight>
-        </div>
-        <p>This can be easily configured via passing the theme property</p>
-<div class="custom__process">
- <CodeHighlight lang="css">
+      </div>
+      <p>This can be easily configured via passing the theme property</p>
+      <div class="custom__process">
+        <CodeHighlight lang="css">
           <!-- <pre> -->
-          // src/plugins/lightVue.js
-
-          import Vue from 'vue'
-          import LightVue from 'LightVue/lib'
-
-          const LightVue = new LightVue({
-            theme: {
-              themes: {
-                light: {
-                  primary: '#3f51b5',
-                  secondary: '#b0bec5',
-                  accent: '#8c9eff',
-                  error: '#b71c1c',
-                },
-              },
-            },
-          })
+          // src/plugins/lightVue.js import Vue from 'vue' import LightVue from 'LightVue/lib' const LightVue = new LightVue({ theme: { themes: { light: { primary: '#3f51b5', secondary: '#b0bec5', accent: '#8c9eff', error: '#b71c1c', }, }, }, })
           <!-- </pre> -->
         </CodeHighlight>
-</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import CodeHighlight from '@/components/docs-card/CodeHighlight.vue';
+export default {
+  components: { CodeHighlight },
+};
 </script>
 
 <style lang="scss" scoped>

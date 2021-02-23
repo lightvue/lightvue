@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Basic usage" file="examples/ripple/RippleBasicDemo" />
-    <docs-card-vue title="Modifying color" file="examples/ripple/RippleColorDemo" />
+    <docs-card-vue title="Basic usage" file="ripple/RippleBasicDemo" />
+    <docs-card-vue title="Modifying color" file="ripple/RippleColorDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <!-- <docs-all-api :api-data="$options.apiData" /> -->
