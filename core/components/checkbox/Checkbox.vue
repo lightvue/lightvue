@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import './Checkbox.scss';
+// import './Checkbox.scss';
 
 export default {
   name: 'LvCheckbox',
@@ -231,3 +231,6 @@ export default {
   },
 };
 </script>
+<style lang="sass">
+@import './Checkbox.scss'
+</style>
