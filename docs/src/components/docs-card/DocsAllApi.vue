@@ -1,28 +1,16 @@
 <template>
   <docs-card title="APIs" :responsive="false" id="docs-api">
-    <DocsApiTableProps
-      v-if="apiData.props && apiData.props.length"
-      :props-list="apiData.props"
-      id="docs-props"
-    />
-    <DocsApiTableEvents
-      v-if="apiData.events && apiData.events.length"
-      :events-list="apiData.events"
-      id="docs-events"
-    />
-    <DocsApiTableSlots
-      v-if="apiData.slots && apiData.slots.length"
-      :slots-list="apiData.slots"
-      id="docs-slots"
-    />
+    <DocsApiTableProps v-if="apiData.props && apiData.props.length" :props-list="apiData.props" id="docs-props" />
+    <DocsApiTableEvents v-if="apiData.events && apiData.events.length" :events-list="apiData.events" id="docs-events" />
+    <DocsApiTableSlots v-if="apiData.slots && apiData.slots.length" :slots-list="apiData.slots" id="docs-slots" />
   </docs-card>
 </template>
 
 <script>
-import DocsCard from "./DocsCard";
-import DocsApiTableProps from "../docs-card/DocsApiTableProps";
-import DocsApiTableSlots from "../docs-card/DocsApiTableSlots";
-import DocsApiTableEvents from "../docs-card/DocsApiTableEvents.vue";
+import DocsCard from './DocsCard';
+import DocsApiTableProps from './DocsApiTableProps';
+import DocsApiTableSlots from './DocsApiTableSlots';
+import DocsApiTableEvents from './DocsApiTableEvents.vue';
 
 export default {
   components: {
@@ -49,8 +37,7 @@ export default {
   border: 1px solid #e7e7e7;
   background-color: #ffffff;
   border-radius: 4px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 .api-table__header,
 .api-table__row {
@@ -103,19 +90,19 @@ export default {
 .api-table {
   &.--events {
     .api-table__row .--name::before {
-      content: "@";
+      content: '@';
       opacity: 0.7;
     }
   }
   &.--slots {
     .api-table__row .--name::before {
-      content: "#";
+      content: '#';
       opacity: 0.7;
     }
   }
   &.--props {
     .api-table__row .--name::before {
-      content: ":";
+      content: ':';
       opacity: 0.7;
     }
   }

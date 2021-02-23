@@ -23,14 +23,14 @@
 import { Splitpanes, Pane } from 'splitpanes';
 import 'splitpanes/dist/splitpanes.css';
 import Loader from './Loader.vue';
-import BallScaleMultiple from 'lightvue/loaders/BallComponents/BallScaleMultiple.vue';
+// import BallScaleMultiple from 'lightvue/loaders/BallComponents/BallScaleMultiple.vue';
 
 export default {
   components: {
     Splitpanes,
     Pane,
     Loader,
-    BallScaleMultiple,
+    // BallScaleMultiple,
   },
   props: {
     minWidth: {
