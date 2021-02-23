@@ -1,32 +1,16 @@
 <template>
   <div class="docs-card" :id="computedId">
     <div class="docs-card__header">
-      <h5
-        class="docs-card__title"
-        @click="$router.push({ hash: `#${computedId}` })"
-      >
-        # {{ title }}
-      </h5>
+      <h5 class="docs-card__title" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
       <div class="docs-card__actions">
         <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
-          <i
-            class="docs-card__action-icon light-icon-devices"
-            title="Responsive preview"
-          ></i>
+          <i class="docs-card__action-icon light-icon-devices" title="Responsive preview"></i>
         </div>
-        <div
-          v-if="sourceLink"
-          class="docs-card__action"
-          @click="openURL(sourceLink)"
-        >
+        <div v-if="sourceLink" class="docs-card__action" @click="openURL(sourceLink)">
           <i class="docs-card__action-icon light-icon-brand-github"></i>
         </div>
         <div v-if="$slots['code']" class="docs-card__action">
-          <i
-            class="docs-card__action-icon light-icon-code"
-            title="View code example"
-            @click="showCode = !showCode"
-          ></i>
+          <i class="docs-card__action-icon light-icon-code" title="View code example" @click="showCode = !showCode"></i>
         </div>
       </div>
     </div>
@@ -36,19 +20,14 @@
       </div>
       <CodeHighlight><slot name="code"></slot></CodeHighlight>
     </div>
-    <ResponsiveDemo
-      v-if="responsive"
-      :device-width="deviceWidth"
-      :overflow="overflow"
-      ><slot></slot
-    ></ResponsiveDemo>
+    <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow"><slot></slot></ResponsiveDemo>
     <slot v-else></slot>
   </div>
 </template>
 
 <script>
-import CodeHighlight from "./CodeHighlight.vue";
-import ResponsiveDemo from "./ResponsiveDemo.vue";
+import CodeHighlight from './CodeHighlight.vue';
+import ResponsiveDemo from './ResponsiveDemo.vue';
 
 export default {
   components: {
@@ -57,7 +36,10 @@ export default {
   },
   props: {
     id: String,
-    title: String,
+    title: {
+      default: '',
+      type: String,
+    },
     sourceLink: String,
     responsive: {
       default: true,
@@ -77,18 +59,16 @@ export default {
 
   methods: {
     toggleDevice() {
-      this.$emit("toggleDevice");
+      this.$emit('toggleDevice');
       this.deviceWidth = 300;
     },
     openURL(link) {
-      window.open(link, "_blank");
+      window.open(link, '_blank');
     },
   },
   computed: {
     computedId() {
-      return this.$props.id
-        ? this.$props.id
-        : this.title.split(" ").join("-").toLowerCase();
+      return this.id ? this.id : this.title.split(' ').join('-').toLowerCase();
     },
   },
 };
@@ -98,8 +78,7 @@ export default {
 .docs-card {
   padding: 0px;
   width: 100%;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   //   overflow: hidden;
   margin-bottom: 30px;
@@ -141,7 +120,7 @@ export default {
     box-shadow: 1px 2px 4px -1px rgba(0, 0, 0, 0.4);
   }
   h5::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 100%;
     left: 0;

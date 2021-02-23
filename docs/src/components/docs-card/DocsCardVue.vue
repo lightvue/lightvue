@@ -1,6 +1,6 @@
 <template>
-  <DocsCard v-bind="$attrs">
-    <template #code>{{ parts.template }}</template>
+  <DocsCard v-bind="$attrs" v-if="file && component">
+    <template #code v-if="parts.template">{{ parts.template }}</template>
     <component :is="component" v-if="component" />
   </DocsCard>
 </template>
@@ -24,17 +24,19 @@ export default {
     };
   },
   created() {
-    this.component = () => import('@@@/' + this.file + '.vue');
-    Promise.all([
-      // import('@/' + this.file + '.vue').then(comp => {
-      //   this.component = comp.default;
-      // }),
-      import('!raw-loader!@@@/' + this.file + '.vue').then(comp => {
-        this.parseComponent(comp.default);
-      }),
-    ]).then(() => {
-      // this.loading = false;
-    });
+    if (this.file) {
+      this.component = () => import('lightvue/example/' + this.file + '.vue');
+      Promise.all([
+        // import('@/' + this.file + '.vue').then(comp => {
+        //   this.component = comp.default;
+        // }),
+        import('!raw-loader!lightvue/example/' + this.file + '.vue').then(comp => {
+          this.parseComponent(comp.default);
+        }),
+      ]).then(() => {
+        // this.loading = false;
+      });
+    }
   },
   // watch: {
   //   file: function (newValue) {

@@ -112,7 +112,8 @@ export default {
     'lightvue/tooltip': path.join(__dirname, '/../core/directives/tooltip'),
     'lightvue/ripple': path.join(__dirname, '/../core/directives/ripple'),
     'lightvue/utils': path.join(__dirname, '/../core/utils'),
+    'lightvue/example': path.join(__dirname, '/../examples'),
     lightvue: path.join(__dirname, '/../core/components'),
-    '@@@': path.join(__dirname, '/..'),
+    // '@@@': path.join(__dirname, '/..'),
   },
 };
