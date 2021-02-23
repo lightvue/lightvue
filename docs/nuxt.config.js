@@ -1,6 +1,7 @@
 const path = require('path');
-
 require('dotenv').config();
+
+const pkg = require('../package.json');
 
 // console.log(resolve(__dirname));
 // console.log(resolve(__dirname, '/../core/components'));
@@ -16,24 +17,24 @@ export default {
   target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'LightVue | The Ultimate UI Component Library for Vue',
+    title: pkg.title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue | Emerging Collection of well Crafted UI Components' },
-      { property: 'og:image', content: 'https://lightvue.org/icon.png' },
+      { property: 'og:title', content: pkg.title },
+      { property: 'og:image', content: 'https://lightvue.org/og-img.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | Emerging Collection of well Crafted UI Components',
+        content: pkg.title,
       },
       {
         property: 'og:description',
-        content: 'The Ultimate Component Library for Vue 2 & Vue 3',
+        content: pkg.description,
       },
       {
         hid: 'description',
         name: 'description',
-        content: 'Light Vue is the Ultimate Component Library for Vue 2 & Vue 3',
+        content: pkg.description,
       },
       {
         name: 'google-site-verification',

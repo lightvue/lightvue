@@ -10,8 +10,9 @@
             <!-- <h1 class="hero-container__heading">LightVue</h1> -->
 
             <p class="hero-container__subtext">
-              Emerging Collection of well Crafted UI Components <br />
-              for <span class="subtext-highlight">Vue 2.x</span> &amp; <span class="subtext-highlight">Vue 3.x</span>
+              The Emerging UI Component library<br />
+              <!-- Emerging Collection of well Crafted UI Components <br /> -->
+              for <span class="subtext-highlight">Vue 3.x</span> &amp; <span class="subtext-highlight">Vue 2.x</span>
             </p>
           </div>
         </div>
@@ -48,7 +49,7 @@ export default {};
 </script>
 
 <style scoped lang="scss">
-$primary-color: #009387;
+$primary-color: #39b3ab;
 $seconday-color: #143a56;
 $text-color-primary: #143a56;
 $text-color-secondary: #eeecec;

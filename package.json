@@ -1,7 +1,8 @@
 {
   "name": "lightvue",
   "version": "0.4.1",
-  "description": "Handpicked collection of premium & lightwighted icons as font",
+  "title": "LightVue | The Emerging UI Component library for Vue",
+  "description": "The Emerging UI Component library for Vue 2.x & Vue 3.x",
   "author": "Pulkit <pulkit.cloud@gmail.com>",
   "repository": {
     "type": "git",
