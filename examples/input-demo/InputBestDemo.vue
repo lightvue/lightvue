@@ -2,30 +2,27 @@
   <div>
     <docs-card-best title="Input Playground" componentName="LvInput">
       <!-- <lv-input :label="options.label" :floating-label="options.floating" :bottom-bar="options.bottom_bar" :rounded="options.rounded" :placeholder="options.placeholder" :help-text="options['help-text']" :placeholder-color="options.placeholderColor" :icon-left="options.iconLeft" :icon-right="options.iconRight" style="width: 80%" /> -->
-      <lv-input v-bind="options" style="width: 80%" />
+      <lv-input v-bind="options" class="demo__positioning " />
       <template #props>
-        <lv-toggle-switch v-model="options['floating-label']" label="Floating Label" /> <br />
+        <lv-toggle-switch v-model="options['floating-label']" label="Floating Label" v-if="!options['icon-left'] && !options['Placeholder']"/> <br />
         <lv-toggle-switch v-model="options['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="options.rounded" label="Rounded" /> <br />
         <br />
         <lv-input v-model="options.label" label="Label" /> <br />
-        <lv-input v-model="options.placeholder" label="Placeholder" /> <br />
+        <lv-input v-model="options.placeholder" label="Placeholder"  /> <br />
         <lv-input v-model="options['help-text']" label="Help Text" /> <br />
-        <lv-input v-model="options['icon-left']" label="Left Icons" /> <br />
+        <lv-input v-model="options['icon-left']" label="Left Icons"  /> <br />
         <lv-input v-model="options['icon-right']" label="Right Icons" /> <br />
         <Lv-colorpicker v-model="options['placeholder-color']" />
       </template>
       <template #code>
         <div class="code__wrapper">
-          <CodeHighlight>
-            <pre>
-&lt;lv-inputs
-<pre v-for="(option, name) in options" :key="option">
- <pre v-if="option">:{{ name }}="{{ option }}"</pre>
-</pre>
-&nbsp; /&gt;
-            </pre>
-          </CodeHighlight>
+            <CopyButton :text="getMarkup" />
+            &nbsp;&lt;lv-input
+            <span class="attribute__row" v-for="(option, name) in options" :key="name">
+              <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span class="pros__passed">{{ name }}=<span>"{{ option }}"</span></pre>
+            </span>
+            &nbsp;/&gt;
         </div>
       </template>
     </docs-card-best>
@@ -38,6 +35,7 @@ import LvInput from 'lightvue/input/Input';
 import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
 import LvToggleSwitch from 'lightvue/input-toggle/ToggleSwitch';
 import CodeHighlight from '@/components/docs-card/CodeHighlight';
+import CopyButton from '@/components/docs-card/CopyButton';
 export default {
   data() {
     return {
@@ -52,6 +50,7 @@ export default {
         'icon-left': 'light-icon-search',
         'icon-right': 'light-icon-arrow-up-right-circle',
       },
+      stringProps: ['label', 'placeholder-color', 'icon-left', 'icon-right', 'help-text', 'placeholder'],
     };
   },
   components: {
@@ -60,13 +59,22 @@ export default {
     LvToggleSwitch,
     LvColorpicker,
     CodeHighlight,
+    CopyButton,
+  },
+  methods: {
+    getMarkup() {
+      let abc = this.$el.querySelector('.code__wrapper').innerText;
+      console.log(abc);
+      return abc;
+    },
+
   },
 };
 </script>
 
-<style>
-.code__wrapper {
-  display: flex;
-  flex-direction: column;
+<style lang="scss">
+.demo__positioning{
+  margin: auto;
+  width: 80%;
 }
 </style>
