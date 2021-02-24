@@ -13,8 +13,8 @@
         </div>
       </div>
       <div class="props__wrapper">
-        <h5 class="props__header">{{ componentName }} Props</h5>
-        <div class="props__Api"><slot name="props"></slot></div>
+        <div class="props__header">{{ componentName }} Props</div>
+        <div class="props__Api light-scrollbar"><slot name="props"></slot></div>
       </div>
     </div>
   </div>
@@ -56,22 +56,27 @@ export default {
 }
 
 .rendered__component {
-  border-right: 1px solid #edf2f6;
+  width: 100%;
   padding: 20px;
   /* color: #ffffff; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   background: #ffffff;
-  height: 350px;
+  // height: 350px;
 }
 
 .componets_wrapper {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-height: 80vh;
+  align-items: stretch;
 }
 
 .props__wrapper {
   width: 300px;
+  max-height: 80vh;
   /* padding: 20px; */
   border-left: 2px solid #edf2f6;
 }
@@ -109,14 +114,24 @@ export default {
     border-top-color: #bdc7cf;
     border-width: 10px 0 0 12px;
     z-index: -1;
+    margin: 0px;
   }
 }
 
+.component__render {
+  flex-grow: 1;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .demo__code {
-  padding: 20px;
+  // padding: 20px;
   //   height: 100px;
   position: relative;
-  background: #fafafa;
+  background: #ffffff;
+  border-top: 1px solid #bdbdbd;
   overflow: hidden;
   span.token.attr-value::after {
     content: '\A';
@@ -127,12 +142,36 @@ export default {
   padding: 20px;
   border-bottom: 1px solid #cccccc;
   font-weight: 600;
+  font-size: 1em;
   color: #008080;
 }
 
 .props__Api {
   padding: 20px;
   overflow-y: scroll;
+  height: calc(80vh - 80px);
   //   height: 350px;
+}
+.code__wrapper {
+  display: flex;
+  flex-direction: column;
+  color: #c92c2c;
+  line-height: 1.5;
+  padding: 5px;
+  pre {
+    color: #2f9c0a;
+    span {
+      color: #1990b8;
+    }
+  }
+  .attribute__row {
+    // padding-left: 16px;
+    &:nth-child(even) {
+      background-color: #f6f9fc;
+    }
+  }
+}
+.dynamic__code {
+  padding: 20px;
 }
 </style>
