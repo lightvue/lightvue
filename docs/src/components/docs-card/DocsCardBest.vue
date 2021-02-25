@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="props__wrapper">
-        <div class="props__header">{{ componentName }} Props</div>
+        <div class="props__header">{{ componentName }}</div>
         <div class="props__Api light-scrollbar"><slot name="props"></slot></div>
       </div>
     </div>
