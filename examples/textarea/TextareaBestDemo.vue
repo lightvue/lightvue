@@ -1,20 +1,22 @@
 <template>
   <div>
     <docs-card-best title="Playground" componentName="Options">
-      <lv-number v-bind="options" class="demo__positioning " />
+      <!-- <lv-input :label="options.label" :floating-label="options.floating" :bottom-bar="options.bottom_bar" :rounded="options.rounded" :placeholder="options.placeholder" :help-text="options['help-text']" :placeholder-color="options.placeholderColor" :icon-left="options.iconLeft" :icon-right="options.iconRight" style="width: 80%" /> -->
+      <lv-textarea v-bind="options" class="demo__positioning " />
       <template #props>
+        <lv-toggle-switch v-model="options['floating-label']" label="Floating Label" v-if="!options['icon-left'] && !options['placeholder']"/> <br />
         <lv-toggle-switch v-model="options['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="options.rounded" label="Rounded" /> <br />
-        <lv-toggle-switch v-model="options.controls" label="Show Controls" /> <br />
+        <lv-toggle-switch v-model="options.showLimit" label="Show Limit" /> <br />
+        <lv-toggle-switch v-model="options.autoResize" label="Auto Resize" /> <br />
         <br />
-        <lv-number v-model="options.max" label="Max Value" /> <br />
-        <lv-number v-model="options.min" label=" Value" /> <br />
-        <lv-number v-model="options.step" label="Increment Value" /> <br />
+        <lv-number v-model="options.maxLength" label="Max Length" /> <br />
         <lv-input v-model="options.label" label="Label" /> <br />
         <lv-input v-model="options.placeholder" label="Placeholder"  /> <br />
         <lv-input v-model="options['help-text']" label="Help Text" /> <br />
-        <lv-input v-model="options.iconLeft" label="Left Icons"  /> <br />
-        <lv-input v-model="options.iconRight" label="Right Icons" /> <br />
+        <lv-input v-model="options['icon-left']" label="Left Icons"  /> <br />
+        <lv-input v-model="options['icon-right']" label="Right Icons" /> <br />
+        <lv-input v-model="options.resize" label="Resize" /> <br />
         <Lv-colorpicker v-model="options['placeholder-color']" label="Placeholder Color" />
       </template>
       <template #code>
@@ -33,6 +35,7 @@
 
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
+import LvTextarea from 'lightvue/textarea/Textarea'
 import LvInput from 'lightvue/input/Input';
 import LvNumber from 'lightvue/number/Number';
 import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
@@ -43,19 +46,19 @@ export default {
   data() {
     return {
       options: {
-        // 'floating-label': false,
+        'floating-label': false,
         'bottom-bar': false,
         rounded: false,
-        controls: true, //Back
-        max: 100, //Back
-        min: 0, //Back
-        step: 1, //Back
+        showLimit: true,
+        autoResize: true,
+        maxLength: 100,
         placeholder: 'default color rgba(0, 0, 0, 0.3)',
         'help-text': 'You can create your Component',
         label: 'This is the best demo',
         'placeholder-color': 'rgba(0, 0, 0, 0.3)',
-        iconLeft: 'light-icon-minus',
-        iconRight: 'light-icon-plus',
+        'icon-left': '',
+        'icon-right': '',
+        resize: null,
       },
       stringProps: ['label', 'placeholder-color', 'icon-left', 'icon-right', 'help-text', 'placeholder'],
     };
@@ -63,11 +66,12 @@ export default {
   components: {
     DocsCardBest,
     LvInput,
-    LvNumber,
     LvToggleSwitch,
     LvColorpicker,
     CodeHighlight,
     CopyButton,
+    LvTextarea,
+   LvNumber
   },
   methods: {
     getMarkup() {

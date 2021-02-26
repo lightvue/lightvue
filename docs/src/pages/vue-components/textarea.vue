@@ -1,5 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
+    <TextareaBestDemo />
     <docs-card-vue title="Basic" file="textarea/TextareaDemo__Basic" overflow />
     <docs-card-vue title="Customised" file="textarea/TextareaDemo__Customised" overflow />
     <template #api>
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+import TextareaBestDemo from 'lightvue/example/textarea/TextareaBestDemo';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
@@ -24,6 +26,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    TextareaBestDemo,
   },
   title: 'Teaxtarea',
   description: `Textarea component allows user to write long text/ paragraphs.`,

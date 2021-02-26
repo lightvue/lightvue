@@ -13,7 +13,7 @@
         <lv-input v-model="options['help-text']" label="Help Text" /> <br />
         <lv-input v-model="options['icon-left']" label="Left Icons"  /> <br />
         <lv-input v-model="options['icon-right']" label="Right Icons" /> <br />
-        <Lv-colorpicker v-model="options['placeholder-color']" />
+        <Lv-colorpicker v-model="options['placeholder-color']" label="Placeholder Color" />
       </template>
       <template #code>
         <div class="code__wrapper">

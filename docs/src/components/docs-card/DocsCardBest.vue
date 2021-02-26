@@ -5,7 +5,7 @@
     </div>
     <div class="playground_wrapper">
       <div class="componets_wrapper">
-        <div class="component__render">
+        <div class="component__render light-scrollbar">
           <div class="rendered__component"><slot></slot></div>
         </div>
         <div class="best__demo__code light-scrollbar">
@@ -122,6 +122,7 @@ export default {
   flex-grow: 1;
   min-height: 300px;
   display: flex;
+  overflow-y: auto;
   justify-content: center;
   align-items: center;
 }
