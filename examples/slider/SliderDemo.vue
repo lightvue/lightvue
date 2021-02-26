@@ -7,7 +7,8 @@
     <LvInput v-model="value" style="width: 196px" />
     <LvRangeSlider class="slider" v-model="value" :showValue="false" />
 
-    <h5>Setting custom range using max and min prop (default 0-100):</h5>
+    <h5>Setting custom range</h5>
+    PROP: max, min (default 0,100):<br /><br />
     0-10: <br />
     <LvRangeSlider :min="0" :max="10" v-model="valueRange1" />
     <br />
