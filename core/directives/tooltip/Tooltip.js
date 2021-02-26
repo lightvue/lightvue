@@ -7,7 +7,7 @@ import './tooltipTheme.css';
 function bindEvents(el) {
   const modifiers = el.$_lvtooltipModifiers;
   if (modifiers.focus) {
-    alert('focus...');
+    // alert('focus...');
     el.addEventListener('focus', onFocus);
     el.addEventListener('blur', onBlur);
   } else {
@@ -38,12 +38,12 @@ function onMouseLeave(event) {
 }
 
 function onFocus(event) {
-  alert('focus');
+  // alert('focus');
   show(event.currentTarget);
 }
 
 function onBlur(event) {
-  alert('blur');
+  // alert('blur');
   hide(event.currentTarget);
 }
 

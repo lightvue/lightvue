@@ -61,4 +61,13 @@ export default {
   margin-left: 100px;
   margin-bottom: 60px;
 }
+
+@media (max-width: 650px) {
+  .tooltip-example-wrapper > div {
+    margin-left: 0px;
+    width: 100%;
+    min-width: 0;
+
+  }
+}
 </style>

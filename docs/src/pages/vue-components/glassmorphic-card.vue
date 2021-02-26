@@ -2,7 +2,7 @@
   <docs-page-layout :title="$options.title" :description="$options.description">
     <docs-card-vue title="Background blur" file="glasscard/GlassBlurDemo" />
     <docs-card-vue title="Background opacity" file="glasscard/GlassOpacityDemo" />
-    <docs-card-vue title="Background color and padding" file="glasscard/GlassBGandPaddingDemo" />
+    <docs-card-vue title="BG color and padding" file="glasscard/GlassBGandPaddingDemo" />
     <docs-card-vue title="Border and border-radius" file="glasscard/GlassBorderDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />

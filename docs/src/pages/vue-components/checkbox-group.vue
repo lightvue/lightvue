@@ -25,9 +25,9 @@ export default {
     DocsPageLayout,
     DocsAllApi,
   },
-  title: 'Checkbox',
-  description: `LvCheckbox component can be used in projects where a way is required for user to select or deselect an option.`,
-  packageName: 'CheckBox',
+  title: 'Checkbox Group',
+  description: `LvCheckbox group component can be used when user needs to select or deselect options from a given array of options.`,
+  packageName: 'CheckBoxGroup',
   componentName: 'LvCheckboxGroup',
   apiData: CheckboxAPI,
 };

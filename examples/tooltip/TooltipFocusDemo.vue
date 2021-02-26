@@ -48,4 +48,13 @@ export default {
   outline: none;
   border: solid 3px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 650px) {
+  .tooltip-example-wrapper > div {
+    margin-left: 0px;
+    width: 100%;
+    min-width: 0;
+
+  }
+}
 </style>
