@@ -1,6 +1,6 @@
 <template>
   <div class="lv-colorpicker-wrapper">
-    <LvInput label="Choose color" ref="colorPickerInput" v-model="colorpickerValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
+    <LvInput :label="label" ref="colorPickerInput" v-model="colorpickerValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template slot="append">
         <div class="lv-colorpicker__colorblock-wrapper" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: colorpickerValue }"></div>
@@ -22,6 +22,12 @@ import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvInput from 'lightvue/input';
 export default {
   name: 'LvColorpicker',
+  props: {
+    label: {
+      type: String,
+      default: 'Choose Color',
+    },
+  },
   data() {
     return {
       colorpickerValue: null,

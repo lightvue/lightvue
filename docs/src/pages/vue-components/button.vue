@@ -1,5 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
+    <button-best-demo />
     <docs-card-vue title="Basic Usage" file="buttons/ButtonDemo_Basic" />
     <docs-card-vue title="Rounded Buttons" file="buttons/ButtonDemo_Rounded" />
     <docs-card-vue title="Button Groups" file="buttons/ButtonDemo_Group" />
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import ButtonBestDemo from 'lightvue/example/buttons/ButtonBestDemo.vue';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout';
 import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';
@@ -46,6 +48,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    ButtonBestDemo,
   },
   title: 'Button',
   description: `Button is an extension to standard button element with an option to add icons and your custom theming.`,

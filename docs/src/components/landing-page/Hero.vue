@@ -25,7 +25,7 @@
         </div>
         <div class="hero-container__row">
           <div class="hero-container__buttons">
-            <nuxt-link to="/vue-components/button" class="hero-button lv-fluid">
+            <nuxt-link to="/installation" class="hero-button lv-fluid">
               <LvButton label="Get Started" deep-shadow push size="lg" />
             </nuxt-link>
             <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
