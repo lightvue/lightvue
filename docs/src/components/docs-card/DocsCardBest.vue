@@ -8,7 +8,7 @@
         <div class="component__render">
           <div class="rendered__component"><slot></slot></div>
         </div>
-        <div class="best__demo__code">
+        <div class="best__demo__code light-scrollbar">
           <div class="demo__code"><slot name="code"></slot></div>
         </div>
       </div>
@@ -124,6 +124,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.best__demo__code {
+  overflow-y: auto;
 }
 
 .demo__code {

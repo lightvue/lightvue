@@ -1,5 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
+    <number-best-demo />
     <docs-card-vue title="Basic" file="number/Number_BasicDemo" overflow />
     <docs-card-vue title="Rounded" file="number/Number_RoundedDemo" overflow />
     <docs-card-vue title="Customise Icons" file="number/Number_IconDemo" overflow />
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import NumberBestDemo from 'lightvue/example/number/NumberBestDemo';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
@@ -26,6 +28,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    NumberBestDemo,
   },
   title: 'Number',
   description: `Input Number component allows user to Take Number as a input.`,
