@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
+  <div class="responsive-area">
+    <slot><loader /></slot>
+    <!-- <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
       <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
-          <!-- <div class="lv--all-center">
-            <ball-scale-multiple :scale="2" />
-          </div> -->
           <loader />
         </slot>
       </Pane>
@@ -15,20 +13,20 @@
         </div>
         <div v-if="paneSize <= 90" class="responsive-dimensions" @dblclick="toggleDevice">{{ paneSizePixel }}px</div>
       </Pane>
-    </Splitpanes>
+    </Splitpanes> -->
   </div>
 </template>
 
 <script>
-import { Splitpanes, Pane } from 'splitpanes';
-import 'splitpanes/dist/splitpanes.css';
+// import { Splitpanes, Pane } from 'splitpanes';
+// import 'splitpanes/dist/splitpanes.css';
 import Loader from './Loader.vue';
 // import BallScaleMultiple from 'lightvue/loaders/BallComponents/BallScaleMultiple.vue';
 
 export default {
   components: {
-    Splitpanes,
-    Pane,
+    // Splitpanes,
+    // Pane,
     Loader,
     // BallScaleMultiple,
   },
@@ -59,7 +57,7 @@ export default {
   },
 
   created() {
-    this.$parent.$on('toggleDevice', this.toggleDevice);
+    // this.$parent.$on('toggleDevice', this.toggleDevice);
   },
   mounted() {
     this.setMinWidth(this.minWidth);

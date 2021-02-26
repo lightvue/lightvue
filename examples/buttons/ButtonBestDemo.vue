@@ -3,7 +3,7 @@
     <docs-card-best title="Playground" componentName="Options">
       <!-- <lv-input :label="options.label" :floating-label="options.floating" :bottom-bar="options.bottom_bar" :rounded="options.rounded" :placeholder="options.placeholder" :help-text="options['help-text']" :placeholder-color="options.placeholderColor" :icon-left="options.iconLeft" :icon-right="options.iconRight" style="width: 80%" /> -->
       <div class="button__demo__wrapper">
-      <lv-button v-bind="options" class="demo__positioning--button " />
+        <lv-button v-bind="options" class="demo__positioning--button" />
       </div>
       <template #props>
         <lv-toggle-switch v-model="options.outlined" label="outlined" /> <br />
@@ -15,17 +15,18 @@
 
         <br />
         <lv-input v-model="options.label" label="Label" /> <br />
-        <lv-input v-model="options.type" label="Type"  /> <br />        <lv-input v-model="options['icon-right']" label="Right Icon" /> <br />
-        <lv-input v-model="options.size" label="Size"  /> <br />
+        <lv-input v-model="options.type" label="Type" /> <br />
+        <lv-input v-model="options['icon-right']" label="Right Icon" /> <br />
+        <lv-input v-model="options.size" label="Size" /> <br />
       </template>
       <template #code>
         <div class="code__wrapper">
-            <CopyButton :text="getMarkup" />
-            &nbsp;&lt;lv-input
-            <span class="attribute__row" v-for="(option, name) in options" :key="name">
-              <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span class="pros__passed">{{ name }}=<span>"{{ option }}"</span></pre>
-            </span>
-            &nbsp;/&gt;
+          <CopyButton :text="getMarkup" />
+          &nbsp;&lt;lv-input
+          <span class="attribute__row" v-for="(option, name) in options" :key="name">
+            <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
+          </span>
+          &nbsp;/&gt;
         </div>
       </template>
     </docs-card-best>
@@ -43,12 +44,12 @@ export default {
   data() {
     return {
       options: {
-        outlined:  false,
-        push:  false,
+        outlined: false,
+        push: false,
         raised: false,
-        'deep-shadow':  false,
+        'deep-shadow': false,
         'deep-shadow-hover': false,
-        rounded:  false,
+        rounded: false,
         label: 'This is a Button',
         type: 'button',
         icon: '',
@@ -72,16 +73,15 @@ export default {
       console.log(abc);
       return abc;
     },
-
   },
 };
 </script>
 
 <style lang="scss">
-.demo__positioning--button{
+.demo__positioning--button {
   width: 80%;
 }
-.button__demo__wrapper{
+.button__demo__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;

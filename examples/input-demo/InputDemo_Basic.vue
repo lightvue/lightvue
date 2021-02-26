@@ -24,7 +24,7 @@
 </template>
 
 <script>
-// import LvInput from "lightvue/input/Input.vue"
+import LvInput from 'lightvue/input/Input.vue';
 export default {
   data() {
     return {
@@ -32,7 +32,7 @@ export default {
     };
   },
   components: {
-    // LvInput
+    LvInput,
   },
 };
 </script>

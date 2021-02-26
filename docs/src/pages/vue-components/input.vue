@@ -3,7 +3,7 @@
     <input-best-demo />
     <docs-card-vue title="Basic" file="input-demo/InputDemo_Basic" />
     <docs-card-vue title="Rounded" file="input-demo/InputDemo_Rounded" />
-    <!-- <docs-card-vue title="Basic + Rounded side by side" file="views/input-demo/examples/InputDemo_Old" /> -->
+    <docs-card-vue title="Basic + Rounded side by side" file="views/input-demo/examples/InputDemo_Old" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
