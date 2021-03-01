@@ -2,6 +2,7 @@
   <div class="best__demo__wrapper" :id="computedId">
     <div class="wrapper__header">
       <h5 class="component__header" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
+      <i class="light-icon-adjustments-horizontal"></i>
     </div>
     <div class="playground_wrapper">
       <div class="componets_wrapper">
@@ -46,6 +47,8 @@ export default {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
   background: #ffffff;
   margin-bottom: 30px;
+  width: 100%;
+  position: relative;
 }
 .playground_wrapper {
   display: flex;
@@ -85,6 +88,8 @@ export default {
   display: flex;
   width: 100%;
   padding: 10px;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #edf2f6;
   .component__header {
     padding: 20px;
@@ -178,5 +183,15 @@ export default {
 }
 .dynamic__code {
   padding: 20px;
+}
+
+@media (max-width: 975px) {
+  .props__wrapper {
+    position: absolute;
+    z-index: 2000;
+    right: 0;
+    top: 0;
+    display: none;
+  }
 }
 </style>
