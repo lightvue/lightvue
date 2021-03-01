@@ -15,6 +15,98 @@ const routes = [
         path: 'input',
         component: () => import('@/pages/vue-components/input.vue'),
       },
+      {
+        path: 'button',
+        component: () => import('@/pages/vue-components/button.vue'),
+      },
+      {
+        path: 'checkbox',
+        component: () => import('@/pages/vue-components/checkbox.vue'),
+      },
+      {
+        path: 'card',
+        component: () => import('@/pages/vue-components/card.vue'),
+      },
+      {
+        path: 'checkbox-group',
+        component: () => import('@/pages/vue-components/checkbox-group.vue'),
+      },
+      {
+        path: 'color-picker',
+        component: () => import('@/pages/vue-components/color-picker.vue'),
+      },
+      {
+        path: 'dialog',
+        component: () => import('@/pages/vue-components/dialog.vue'),
+      },
+      {
+        path: 'dropdown',
+        component: () => import('@/pages/vue-components/dropdown.vue'),
+      },
+      {
+        path: 'glassmorphic-card',
+        component: () => import('@/pages/vue-components/glassmorphic-card.vue'),
+      },
+      {
+        path: 'loaders',
+        component: () => import('@/pages/vue-components/loaders.vue'),
+      },
+      {
+        path: 'notification',
+        component: () => import('@/pages/vue-components/notification.vue'),
+      },
+      {
+        path: 'number',
+        component: () => import('@/pages/vue-components/number.vue'),
+      },
+      {
+        path: 'overlay-panel',
+        component: () => import('@/pages/vue-components/overlay-panel.vue'),
+      },
+      {
+        path: 'page-loader',
+        component: () => import('@/pages/vue-components/page-loader.vue'),
+      },
+      {
+        path: 'progress-bar',
+        component: () => import('@/pages/vue-components/progress-bar.vue'),
+      },
+      {
+        path: 'progress-spinner',
+        component: () => import('@/pages/vue-components/progress-spinner.vue'),
+      },
+      {
+        path: 'rating',
+        component: () => import('@/pages/vue-components/rating.vue'),
+      },
+      {
+        path: 'ripple',
+        component: () => import('@/pages/vue-components/ripple.vue'),
+      },
+      {
+        path: 'shimmer',
+        component: () => import('@/pages/vue-components/shimmer.vue'),
+      },
+      {
+        path: 'slider',
+        component: () => import('@/pages/vue-components/slider.vue'),
+      },
+      {
+        path: 'textarea',
+        component: () => import('@/pages/vue-components/textarea.vue'),
+      },
+      {
+        path: 'toast',
+        component: () => import('@/pages/vue-components/toast.vue'),
+      },
+      {
+        path: 'toggle-switch',
+        component: () => import('@/pages/vue-components/toggle-switch.vue'),
+      },
+      {
+        path: 'tooltip',
+        component: () => import('@/pages/vue-components/tooltip.vue'),
+      },
     ],
   },
 ];
