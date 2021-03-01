@@ -121,4 +121,5 @@ export default {
 <style lang="scss">
 @import './Input.scss';
 @import './InputTheme.scss';
+@import './InputAccesibility.scss';
 </style>

@@ -12,5 +12,6 @@ app.component('NuxtLink', RouterLink);
 app.component('LvButton', LvButton);
 
 // app.component(nuxt-link: )
+app.$lightvue = { ripple: true };
 
 app.mount('#app');

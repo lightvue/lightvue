@@ -23,6 +23,7 @@
 
 <script>
 import 'light-icons/dist/light-icon.css';
+import '@/assets/styles/lightvue.scss';
 // import AppHeader from '../src/components/Layout/AppHeader.vue';
 // import AppNavigationDrawer from '../src/components/Layout/AppNavigationDrawer.vue';
 // import AppFooter from '../src/components/Layout/AppFooter.vue';

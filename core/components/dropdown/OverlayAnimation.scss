@@ -1,0 +1,35 @@
+/* Non vue overlay animations */
+.lv-transition__overlay {
+  opacity: 0;
+  transform: scaleY(0.8);
+  transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), opacity 0.12s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.lv-transition__overlay-visible {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.lv-transition__overlay-hidden {
+  opacity: 0;
+  transform: scaleY(1);
+  transition: opacity 0.1s linear;
+}
+
+/* Vue based overlay animations */
+.lv-transition__overlay-enter {
+  opacity: 0;
+  transform: scaleY(0.8);
+}
+
+.lv-transition__overlay-leave-to {
+  opacity: 0;
+}
+
+.lv-transition__overlay-enter-active {
+  transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), opacity 0.12s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.lv-transition__overlay-leave-active {
+  transition: opacity 0.1s linear;
+}

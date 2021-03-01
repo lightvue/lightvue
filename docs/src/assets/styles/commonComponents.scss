@@ -8,25 +8,6 @@
   font-weight: normal;
 }
 
-.lv-hidden {
-  display: none;
-}
-
-.lv-hidden-accessible {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  input,
-  select {
-    transform: scale(0);
-  }
-}
-
 .lv-reset {
   margin: 0;
   padding: 0;
@@ -66,23 +47,6 @@
   top: -9999px;
 }
 
-@-webkit-keyframes p-fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes p-fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 input[type='button'],
 input[type='submit'],
 input[type='reset'],
@@ -101,72 +65,36 @@ button {
   user-select: none;
 }
 
-/* Non vue overlay animations */
-.lv-transition__overlay {
-  opacity: 0;
-  transform: scaleY(0.8);
-  transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), opacity 0.12s cubic-bezier(0, 0, 0.2, 1);
-}
-
-.lv-transition__overlay-visible {
-  opacity: 1;
-  transform: scaleY(1);
-}
-
-.lv-transition__overlay-hidden {
-  opacity: 0;
-  transform: scaleY(1);
-  transition: opacity 0.1s linear;
-}
-
-/* Vue based overlay animations */
-.lv-transition__overlay-enter {
-  opacity: 0;
-  transform: scaleY(0.8);
-}
-
-.lv-transition__overlay-leave-to {
-  opacity: 0;
-}
-
-.lv-transition__overlay-enter-active {
-  transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), opacity 0.12s cubic-bezier(0, 0, 0.2, 1);
-}
-
-.lv-transition__overlay-leave-active {
-  transition: opacity 0.1s linear;
-}
-
 /* Toggleable Content */
-.lv-toggleable-content-enter,
-.lv-toggleable-content-leave-to {
-  max-height: 0;
-}
+// .lv-toggleable-content-enter,
+// .lv-toggleable-content-leave-to {
+//   max-height: 0;
+// }
 
-.lv-toggleable-content-enter-to,
-.lv-toggleable-content-leave {
-  max-height: 1000px;
-}
+// .lv-toggleable-content-enter-to,
+// .lv-toggleable-content-leave {
+//   max-height: 1000px;
+// }
 
-.lv-toggleable-content-leave-active {
-  overflow: hidden;
-  transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
-}
+// .lv-toggleable-content-leave-active {
+//   overflow: hidden;
+//   transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
+// }
 
-.lv-toggleable-content-enter-active {
-  overflow: hidden;
-  transition: max-height 1s ease-in-out;
-}
+// .lv-toggleable-content-enter-active {
+//   overflow: hidden;
+//   transition: max-height 1s ease-in-out;
+// }
 
-.lv-sr-only {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  word-wrap: normal !important;
-}
+// .lv-sr-only {
+//   border: 0;
+//   clip: rect(1px, 1px, 1px, 1px);
+//   clip-path: inset(50%);
+//   height: 1px;
+//   margin: -1px;
+//   overflow: hidden;
+//   padding: 0;
+//   position: absolute;
+//   width: 1px;
+//   word-wrap: normal !important;
+// }
