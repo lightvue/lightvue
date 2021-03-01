@@ -70,12 +70,12 @@ export default {
       category_icon: 'light-icon-info-circle',
       pages: [
         {
-          page_name: 'Installation',
-          page_path: '/installation',
+          page_name: 'installation',
+          page_path: '/getting-started/installation',
         },
         {
-          page_name: 'Customization',
-          page_path: '/customize',
+          page_name: 'customization',
+          page_path: '/getting-started/customization',
         },
       ],
     },

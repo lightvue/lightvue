@@ -12,14 +12,6 @@ const routes = [
     component: () => import('../components/Layout/DocsLayout.vue'),
     children: [
       {
-        path: 'installation',
-        component: () => import('@/pages/getting-started/installation.vue'),
-      },
-      {
-        path: 'customize',
-        component: () => import('@/pages/getting-started/customize.vue'),
-      },
-      {
         path: 'input',
         component: () => import('@/pages/vue-components/input.vue'),
       },
@@ -114,6 +106,20 @@ const routes = [
       {
         path: 'tooltip',
         component: () => import('@/pages/vue-components/tooltip.vue'),
+      },
+    ],
+  },
+  {
+    path: '/getting-started',
+    component: () => import('../components/Layout/DocsLayout.vue'),
+    children: [
+      {
+        path: 'installation',
+        component: () => import('@/pages/getting-started/installation.vue'),
+      },
+      {
+        path: 'customization',
+        component: () => import('@/pages/getting-started/customization.vue'),
       },
     ],
   },
