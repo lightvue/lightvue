@@ -60,45 +60,45 @@ export default {
     // this.$parent.$on('toggleDevice', this.toggleDevice);
   },
   mounted() {
-    this.setMinWidth(this.minWidth);
-    this.paneSizePixel = this.$el.clientWidth;
+    // this.setMinWidth(this.minWidth);
+    // this.paneSizePixel = this.$el.clientWidth;
   },
-  methods: {
-    setMinWidth(widthInPx) {
-      this.minSize = (widthInPx / this.$el.clientWidth) * 100;
-    },
-    setPane(widthPercent) {
-      this.paneSize = widthPercent;
-      this.setPanelSizePixel(widthPercent);
-    },
-    setPanelSizePixel(widthPercent) {
-      this.paneSizePixel = Math.round((widthPercent * this.$el.clientWidth) / 100);
-    },
-    toggleDevice() {
-      switch (this.direction) {
-        case 'right':
-          if (this.paneSizePixel < this.tabletWidth) {
-            // set ot tablet mode
-            this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
-          } else {
-            // set to desktop mode
-            this.setPane(100);
-            this.direction = 'left';
-          }
-          break;
-        case 'left':
-          if (this.paneSizePixel > this.tabletWidth) {
-            // set to tablet mode
-            this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
-          } else {
-            // set to mobile modde
-            this.setPane((this.minWidth / this.$el.clientWidth) * 100);
-            this.direction = 'right';
-          }
-          break;
-      }
-    },
-  },
+  // methods: {
+  //   setMinWidth(widthInPx) {
+  //     this.minSize = (widthInPx / this.$el.clientWidth) * 100;
+  //   },
+  //   setPane(widthPercent) {
+  //     this.paneSize = widthPercent;
+  //     this.setPanelSizePixel(widthPercent);
+  //   },
+  //   setPanelSizePixel(widthPercent) {
+  //     this.paneSizePixel = Math.round((widthPercent * this.$el.clientWidth) / 100);
+  //   },
+  //   toggleDevice() {
+  //     switch (this.direction) {
+  //       case 'right':
+  //         if (this.paneSizePixel < this.tabletWidth) {
+  //           // set ot tablet mode
+  //           this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
+  //         } else {
+  //           // set to desktop mode
+  //           this.setPane(100);
+  //           this.direction = 'left';
+  //         }
+  //         break;
+  //       case 'left':
+  //         if (this.paneSizePixel > this.tabletWidth) {
+  //           // set to tablet mode
+  //           this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
+  //         } else {
+  //           // set to mobile modde
+  //           this.setPane((this.minWidth / this.$el.clientWidth) * 100);
+  //           this.direction = 'right';
+  //         }
+  //         break;
+  //     }
+  //   },
+  // },
 };
 </script>
 
