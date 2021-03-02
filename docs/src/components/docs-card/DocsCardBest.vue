@@ -2,6 +2,7 @@
   <div class="best__demo__wrapper" :id="computedId">
     <div class="wrapper__header">
       <h5 class="component__header" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
+      <i class="light-icon-adjustments-horizontal porps__drawer" @click="showOptions()"></i>
     </div>
     <div class="playground_wrapper">
       <div class="componets_wrapper">
@@ -12,7 +13,7 @@
           <div class="demo__code"><slot name="code"></slot></div>
         </div>
       </div>
-      <div class="props__wrapper">
+      <div class="props__wrapper" :class="`${showPorpsOptions ? 'show__Porps__Options' : ''}`">
         <div class="props__header">{{ componentName }}</div>
         <div class="props__Api light-scrollbar"><slot name="props"></slot></div>
       </div>
@@ -24,7 +25,7 @@
 export default {
   data() {
     return {
-      //   component: null,
+      showPorpsOptions: false,
     };
   },
   props: {
@@ -38,6 +39,11 @@ export default {
       return this.$props.id ? this.$props.id : this.title.split(' ').join('-').toLowerCase();
     },
   },
+  methods: {
+    showOptions() {
+      this.showPorpsOptions = !this.showPorpsOptions;
+    },
+  },
 };
 </script>
 
@@ -46,10 +52,13 @@ export default {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
   background: #ffffff;
   margin-bottom: 30px;
+  width: 100%;
+  position: relative;
 }
 .playground_wrapper {
   display: flex;
   justify-content: space-between;
+  position: relative;
   /* margin-bottom: ; */
   /* border: 1px solid #cccccc; */
   /* justify-content: space-between; */
@@ -72,12 +81,15 @@ export default {
   flex-grow: 1;
   max-height: 80vh;
   align-items: stretch;
+  overflow: hidden;
 }
 
 .props__wrapper {
   width: 300px;
   max-height: 80vh;
+  background: #ffffff;
   /* padding: 20px; */
+  transition: all 0.2s ease-in-out;
   border-left: 2px solid #edf2f6;
 }
 
@@ -85,6 +97,8 @@ export default {
   display: flex;
   width: 100%;
   padding: 10px;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #edf2f6;
   .component__header {
     padding: 20px;
@@ -144,8 +158,8 @@ export default {
 }
 
 .props__header {
-  padding: 20px;
-  border-bottom: 1px solid #cccccc;
+  padding: 22px;
+  border-bottom: 1px solid #edf2f6;
   font-weight: 600;
   font-size: 1em;
   color: #008080;
@@ -154,14 +168,21 @@ export default {
 .props__Api {
   padding: 20px;
   overflow-y: scroll;
-  height: calc(80vh - 80px);
+  height: calc(100% - 62px);
+  background: #ffffff;
   //   height: 350px;
 }
+
+.porps__drawer {
+  display: none;
+}
+
 .code__wrapper {
   display: flex;
   flex-direction: column;
   color: #c92c2c;
   line-height: 1.5;
+  overflow: auto;
   padding: 5px;
   pre {
     color: #2f9c0a;
@@ -178,5 +199,26 @@ export default {
 }
 .dynamic__code {
   padding: 20px;
+}
+
+@media (max-width: 975px) {
+  .props__wrapper {
+    display: none;
+  }
+
+  .show__Porps__Options {
+    position: absolute;
+    z-index: 900;
+    display: block;
+    height: 100%;
+  }
+
+  .rendered__component {
+    padding: 0px;
+  }
+
+  .porps__drawer {
+    display: block;
+  }
 }
 </style>

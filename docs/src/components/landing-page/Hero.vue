@@ -9,11 +9,11 @@
           <div class="hero-container__content">
             <!-- <h1 class="hero-container__heading">LightVue</h1> -->
 
-            <p class="hero-container__subtext">
+            <div class="hero-container__subtext">
               The Emerging UI Component library<br />
               <!-- Emerging Collection of well Crafted UI Components <br /> -->
-              for <span class="subtext-highlight">Vue 3.x</span> &amp; <span class="subtext-highlight">Vue 2.x</span>
-            </p>
+              for Vue 3.x & Vue 2.x</span>
+            </div>
           </div>
         </div>
         <div class="hero-container__row">
@@ -25,7 +25,7 @@
         </div>
         <div class="hero-container__row">
           <div class="hero-container__buttons">
-            <nuxt-link to="/installation" class="hero-button lv-fluid">
+            <nuxt-link to="/getting-started/installation" class="hero-button lv-fluid">
               <LvButton label="Get Started" deep-shadow push size="lg" />
             </nuxt-link>
             <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
@@ -93,10 +93,10 @@ $text-color-secondary: #eeecec;
       float: left;
       .hero-container__content {
         text-align: center;
+        margin-bottom: 2.3em;
         .hero-container__heading {
           font-weight: 700;
           font-size: 3.75rem;
-          margin-bottom: 0.25rem;
           letter-spacing: -0.2rem;
           color: $text-color-primary;
         }

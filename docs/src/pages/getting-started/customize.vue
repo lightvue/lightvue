@@ -2,8 +2,8 @@
   <div class="custom__wrapper">
     <div class="custom__container">
       <h1>Customizing LightVue</h1>
-      <p>LightVue Can be easily customized in order to make the custom theme which can fulfill the needs of user's project</p>
-      <p>By default, this is the theme that is applied to all the components</p>
+      <div class="discription__para">LightVue Can be easily customized in order to make the custom theme which can fulfill the needs of user's project</div>
+      <div class="discription__para">By default, this is the theme that is applied to all the components</div>
       <div class="custom__process">
         <CodeHighlight lang="css">
           <pre>
@@ -67,7 +67,7 @@
           </pre>
         </CodeHighlight>
       </div>
-      <p>This can be easily configured via passing the theme property</p>
+      <div class="discription__para">This can be easily configured via passing the theme property</div>
       <div class="custom__process">
         <CodeHighlight lang="css">
           <pre>
@@ -116,7 +116,7 @@ export default {
     margin: 50px 0;
     color: #585858;
   }
-  p {
+  .discription__para {
     margin-top: 1rem;
     line-height: 1.625;
     font-size: 16px;
@@ -129,7 +129,7 @@ export default {
       font-size: 2rem;
       margin: 0px 0px;
     }
-    p {
+    .discription__para {
       font-size: 14px;
     }
   }
