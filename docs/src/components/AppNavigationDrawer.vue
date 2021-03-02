@@ -71,11 +71,11 @@ export default {
       pages: [
         {
           page_name: 'Installation',
-          page_path: '/installation',
+          page_path: '/getting-started/installation',
         },
         {
           page_name: 'Customization',
-          page_path: '/customize',
+          page_path: '/getting-started/customize',
         },
       ],
     },
