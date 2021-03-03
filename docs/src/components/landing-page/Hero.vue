@@ -12,7 +12,7 @@
             <div class="hero-container__subtext">
               The Emerging UI Component library<br />
               <!-- Emerging Collection of well Crafted UI Components <br /> -->
-              for Vue 3.x & Vue 2.x
+              for Vue 3.x &amp; Vue 2.x
             </div>
           </div>
         </div>

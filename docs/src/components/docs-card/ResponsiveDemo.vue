@@ -3,9 +3,6 @@
     <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
       <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
-          <!-- <div class="lv--all-center">
-            <ball-scale-multiple :scale="2" />
-          </div> -->
           <loader />
         </slot>
       </Pane>
@@ -45,6 +42,9 @@ export default {
       default: false,
       type: Boolean,
     },
+    toggleDeviceClicked: {
+      type: Number,
+    },
   },
   data: () => ({
     minSize: 20,
@@ -56,10 +56,19 @@ export default {
     minWidth(newWidth) {
       this.setMinWidth(newWidth);
     },
+    toggleDeviceClicked() {
+      this.toggleDevice();
+    },
   },
 
   created() {
-    // this.$parent.$on('toggleDevice', this.toggleDevice);
+    // if (this.$parent && this.$parent.$on) {
+    //   this.$parent.$on('toggleDevice', this.toggleDevice);
+    // }
+    // this.bus.$on('loadMore', args => {
+    //   // do something with args.data
+    //   this.toggleDevice;
+    // });
   },
   mounted() {
     this.setMinWidth(this.minWidth);
@@ -81,7 +90,7 @@ export default {
         case 'right':
           if (this.paneSizePixel < this.tabletWidth) {
             // set ot tablet mode
-            this.setPane((this.tabletWidth / this.input.clientWidth) * 100);
+            this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
           } else {
             // set to desktop mode
             this.setPane(100);

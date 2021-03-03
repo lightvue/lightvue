@@ -20,7 +20,7 @@
       </div>
       <CodeHighlight><slot name="code"></slot></CodeHighlight>
     </div>
-    <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow"><slot></slot></ResponsiveDemo>
+    <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"><slot></slot></ResponsiveDemo>
     <slot v-else></slot>
   </div>
 </template>
@@ -54,12 +54,16 @@ export default {
     return {
       showCode: false,
       deviceWidth: 0,
+      toggleDeviceClicked: 0,
     };
   },
 
   methods: {
     toggleDevice() {
-      this.$emit('toggleDevice');
+      // this.$emit('toggleDevice');
+      // this.bus.$emit('toggleDevice');
+      this.toggleDeviceClicked++;
+
       this.deviceWidth = 300;
     },
     openURL(link) {

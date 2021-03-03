@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "dev": "npm run serve",
     "build": "vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "light-icons": "^1.0.2",
-    "splitpanes": "^3.0.4",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
