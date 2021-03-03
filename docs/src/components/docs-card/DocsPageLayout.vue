@@ -42,7 +42,7 @@ export default {
   methods: {
     selectTab(newTab) {
       this.selectedTab = newTab;
-      this.$router.push({ hash: newTab === 'api' ? '#docs' : '' });
+      this.$router.push({ hash: newTab === 'api' ? 'docs' : '' });
     },
   },
 };

@@ -1,9 +1,11 @@
 <template>
-  <div class="responsive-area">
-    <slot><loader /></slot>
-    <!-- <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
+  <div>
+    <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
       <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
+          <!-- <div class="lv--all-center">
+            <ball-scale-multiple :scale="2" />
+          </div> -->
           <loader />
         </slot>
       </Pane>
@@ -13,20 +15,20 @@
         </div>
         <div v-if="paneSize <= 90" class="responsive-dimensions" @dblclick="toggleDevice">{{ paneSizePixel }}px</div>
       </Pane>
-    </Splitpanes> -->
+    </Splitpanes>
   </div>
 </template>
 
 <script>
-// import { Splitpanes, Pane } from 'splitpanes';
-// import 'splitpanes/dist/splitpanes.css';
+import { Splitpanes, Pane } from 'splitpanes';
+import 'splitpanes/dist/splitpanes.css';
 import Loader from './Loader.vue';
 // import BallScaleMultiple from 'lightvue/loaders/BallComponents/BallScaleMultiple.vue';
 
 export default {
   components: {
-    // Splitpanes,
-    // Pane,
+    Splitpanes,
+    Pane,
     Loader,
     // BallScaleMultiple,
   },
@@ -60,45 +62,45 @@ export default {
     // this.$parent.$on('toggleDevice', this.toggleDevice);
   },
   mounted() {
-    // this.setMinWidth(this.minWidth);
-    // this.paneSizePixel = this.$el.clientWidth;
+    this.setMinWidth(this.minWidth);
+    this.paneSizePixel = this.$el.clientWidth;
   },
-  // methods: {
-  //   setMinWidth(widthInPx) {
-  //     this.minSize = (widthInPx / this.$el.clientWidth) * 100;
-  //   },
-  //   setPane(widthPercent) {
-  //     this.paneSize = widthPercent;
-  //     this.setPanelSizePixel(widthPercent);
-  //   },
-  //   setPanelSizePixel(widthPercent) {
-  //     this.paneSizePixel = Math.round((widthPercent * this.$el.clientWidth) / 100);
-  //   },
-  //   toggleDevice() {
-  //     switch (this.direction) {
-  //       case 'right':
-  //         if (this.paneSizePixel < this.tabletWidth) {
-  //           // set ot tablet mode
-  //           this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
-  //         } else {
-  //           // set to desktop mode
-  //           this.setPane(100);
-  //           this.direction = 'left';
-  //         }
-  //         break;
-  //       case 'left':
-  //         if (this.paneSizePixel > this.tabletWidth) {
-  //           // set to tablet mode
-  //           this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
-  //         } else {
-  //           // set to mobile modde
-  //           this.setPane((this.minWidth / this.$el.clientWidth) * 100);
-  //           this.direction = 'right';
-  //         }
-  //         break;
-  //     }
-  //   },
-  // },
+  methods: {
+    setMinWidth(widthInPx) {
+      this.minSize = (widthInPx / this.$el.clientWidth) * 100;
+    },
+    setPane(widthPercent) {
+      this.paneSize = widthPercent;
+      this.setPanelSizePixel(widthPercent);
+    },
+    setPanelSizePixel(widthPercent) {
+      this.paneSizePixel = Math.round((widthPercent * this.$el.clientWidth) / 100);
+    },
+    toggleDevice() {
+      switch (this.direction) {
+        case 'right':
+          if (this.paneSizePixel < this.tabletWidth) {
+            // set ot tablet mode
+            this.setPane((this.tabletWidth / this.input.clientWidth) * 100);
+          } else {
+            // set to desktop mode
+            this.setPane(100);
+            this.direction = 'left';
+          }
+          break;
+        case 'left':
+          if (this.paneSizePixel > this.tabletWidth) {
+            // set to tablet mode
+            this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
+          } else {
+            // set to mobile modde
+            this.setPane((this.minWidth / this.$el.clientWidth) * 100);
+            this.direction = 'right';
+          }
+          break;
+      }
+    },
+  },
 };
 </script>
 

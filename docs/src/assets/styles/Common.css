@@ -1,11 +1,6 @@
-.lv-component {
-  box-sizing: border-box;
-}
+.lv-component,
 .lv-component * {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  font-size: 1rem;
-  font-weight: normal;
 }
 
 .lv-hidden {
@@ -21,10 +16,11 @@
   padding: 0;
   position: absolute;
   width: 1px;
-  input,
-  select {
-    transform: scale(0);
-  }
+}
+
+.lv-hidden-accessible input,
+.lv-hidden-accessible select {
+  transform: scale(0);
 }
 
 .lv-reset {
@@ -102,38 +98,38 @@ button {
 }
 
 /* Non vue overlay animations */
-.lv-transition__overlay {
+.lv-connected-overlay {
   opacity: 0;
   transform: scaleY(0.8);
   transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), opacity 0.12s cubic-bezier(0, 0, 0.2, 1);
 }
 
-.lv-transition__overlay-visible {
+.lv-connected-overlay-visible {
   opacity: 1;
   transform: scaleY(1);
 }
 
-.lv-transition__overlay-hidden {
+.lv-connected-overlay-hidden {
   opacity: 0;
   transform: scaleY(1);
   transition: opacity 0.1s linear;
 }
 
 /* Vue based overlay animations */
-.lv-transition__overlay-enter {
+.lv-connected-overlay-enter {
   opacity: 0;
   transform: scaleY(0.8);
 }
 
-.lv-transition__overlay-leave-to {
+.lv-connected-overlay-leave-to {
   opacity: 0;
 }
 
-.lv-transition__overlay-enter-active {
+.lv-connected-overlay-enter-active {
   transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1), opacity 0.12s cubic-bezier(0, 0, 0.2, 1);
 }
 
-.lv-transition__overlay-leave-active {
+.lv-connected-overlay-leave-active {
   transition: opacity 0.1s linear;
 }
 

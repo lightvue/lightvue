@@ -2,7 +2,7 @@
   <div class="install__wrapper">
     <div class="install__container">
       <h1>Getting Started</h1>
-      <p class="installation__description">In order to get started with light vue, you need to install LightVue and its dependency LightIcon (Only required if the icons are getting used).</p>
+      <div class="installation__description">In order to get started with light vue, you need to install LightVue and its dependency LightIcon (Only required if the icons are getting used).</div>
       <h2>1. Installing LightVue</h2>
       <div class="install__process">
         <CodeHighlight lang="javascript">
@@ -13,7 +13,7 @@
           </pre>
         </CodeHighlight>
       </div>
-      <p>OR</p>
+      <div class="discription__para">OR</div>
       <div class="install__process">
         <CodeHighlight lang="javascript">
           <pre>
@@ -24,7 +24,7 @@
         </CodeHighlight>
       </div>
       <h3>With Vue CLI Plugin</h3>
-      <p>While using Vue CLI, LighgVue can be installed using the LightVue plugin</p>
+      <div class="discription__para">While using Vue CLI, LighgVue can be installed using the LightVue plugin</div>
       <div class="install__process">
         <CodeHighlight lang="javascript">
           <pre>
@@ -115,7 +115,7 @@ export default {
     margin: 50px 0;
     color: #585858;
   }
-  p {
+  .discription__para {
     margin-top: 1rem;
     line-height: 1.625;
     font-size: 16px;
@@ -134,7 +134,7 @@ export default {
     h3 {
       font-size: 1.3rem;
     }
-    p {
+    .discription__para {
       font-size: 14px;
     }
     .installation__description {

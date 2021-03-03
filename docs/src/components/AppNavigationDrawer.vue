@@ -292,8 +292,7 @@ $primary-color: #38b2ac;
         color: #ffffff;
         font-weight: 500;
       }
-      &.nuxt-link-active,
-      &.router-link-active {
+      &.nuxt-link-active {
         color: $primary-color;
         // border-left: 1px dotted #38b2ac;
         .nav-list__item-line {
@@ -334,8 +333,7 @@ $primary-color: #38b2ac;
     &:focus {
       color: #79909c;
     }
-    &.nuxt-link-active,
-    &.router-link-active {
+    &.nuxt-link-active {
       color: $primary-color;
     }
   }

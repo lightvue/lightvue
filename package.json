@@ -14,7 +14,9 @@
     "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js && node build/build-meta.js",
     "release": "release-it --no-git.requireCleanWorkingDir"
   },
-  "dependencies": {},
+  "dependencies": {
+    "splitpanes": "^3.0.4"
+  },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.5",
     "fs-extra": "^9.1.0",
