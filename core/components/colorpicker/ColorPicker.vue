@@ -1,16 +1,16 @@
 <template>
   <div class="lv-colorpicker-wrapper">
-    <LvInput :label="label" ref="colorPickerInput" @input="updateValue" :value="modelValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
+    <LvInput :label="label" ref="colorPickerInput" v-model="localValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template #append>
         <div class="lv-colorpicker__colorblock-wrapper" @click="toggleColorpickerOverlay">
-          <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: colorpickerValue }"></div>
+          <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: localValue }"></div>
           <checkboard grey="#607c8a" />
         </div>
       </template>
     </LvInput>
 
     <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
-      <ColorpickerCore :value="modelValue" :updateOverlayValue="updateOverlayValue" style="width: 195px; transform: scale(1.05)" />
+      <ColorpickerCore v-model="localValue" style="width: 195px; transform: scale(1.05)" />
     </LvOverlayPanel>
   </div>
 </template>
@@ -20,6 +20,7 @@ import ColorpickerCore from './core/ColorpickerCore.vue';
 import Checkboard from './core/Checkboard.vue';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvInput from 'lightvue/input';
+import { trueValueMixin } from 'lightvue/mixin';
 export default {
   name: 'LvColorpicker',
   props: {
@@ -28,13 +29,18 @@ export default {
       default: 'Choose Color',
     },
   },
+  mixins: [trueValueMixin],
   data() {
     return {
-      colorpickerValue: '#607C8A',
+      localValue: '#607C8A',
     };
   },
-  beforeMount() {
-    this.colorpickerValue = this.$attrs.value || '#607C8A';
+  watch: {
+    localValue() {
+      if (this.localValue !== this.modelValue) {
+        this.updateValue(this.localValue);
+      }
+    },
   },
   components: {
     LvOverlayPanel: LvOverlayPanel,
@@ -43,42 +49,18 @@ export default {
     Checkboard,
   },
   computed: {
-    modelValue() {
-      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value ? this.value : this.colorpickerValue;
-    },
+    // modelValue() {
+    //   return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
+    // },
   },
   methods: {
-    updateOverlayValue(color, mode) {
-      this.colorpickerValue = `${this.getColorString(color, mode)}`;
-      this.$emit('input', this.colorpickerValue);
-    },
-    toggle(event) {
-      this.$refs.op.toggle(event);
-    },
     toggleColorpickerOverlay(event) {
-      // this.$el.
       this.$refs.ColorpickerOverlay.toggle(null, this.$refs.colorPickerInput.$el);
     },
-    getColorString(color, mode) {
-      if (mode == 0) {
-        if (color.hex8.slice(7, 9) === 'FF') return `${color.hex8.slice(0, 7)}`;
-        return `${color.hex8}`;
-      } else if (mode == 1) {
-        if (color.rgba.a == 1) return `rgb(${color.rgba.r}, ${color.rgba.g}, ${color.rgba.b})`;
-        return `rgba(${color.rgba.r}, ${color.rgba.g}, ${color.rgba.b}, ${color.rgba.a})`;
-      } else if (mode == 2) {
-        return `hsla(${Math.floor(color.hsl.h)}, ${Math.floor(color.hsl.s * 100)}%, ${Math.floor(color.hsl.l * 100)}%, ${color.hsl.a})`;
-      }
-    },
-    updateValue(event) {
-      if (this.autoResize) {
-        this.resizeTextarea();
-      }
-      this.localValue = event.target.value;
-      this.$emit('input-native', event);
-      this.$emit('input', event.target.value); // Only for Vue 2
-      this.$emit('update:modelValue', event.target.value); // Only for Vue 3
-    },
+    // updateValue(newValue) {
+    //   this.$emit('input', newValue); // Only for Vue 2
+    //   this.$emit('update:modelValue', newValue); // Only for Vue 3
+    // },
   },
 };
 </script>
