@@ -6,7 +6,7 @@
     <div class="vc-chrome-body">
       <div class="vc-chrome-controls">
         <div class="vc-chrome-color-wrap">
-          <div :aria-label="`current color is ${colors.hex}`" class="vc-chrome-active-color" :style="{background: activeColor}"></div>
+          <div :aria-label="`current color is ${colors.hex}`" class="vc-chrome-active-color" :style="{ background: activeColor }"></div>
           <checkboard v-if="!disableAlpha"></checkboard>
         </div>
 
@@ -61,10 +61,7 @@
         <!-- btn -->
         <div class="vc-chrome-toggle-btn" role="button" aria-label="Change another color definition" @click="toggleViews">
           <div class="vc-chrome-toggle-icon">
-            <svg style="width:24px; height:24px" viewBox="0 0 24 24"
-              @mouseover="showHighlight"
-              @mouseenter="showHighlight"
-              @mouseout="hideHighlight">
+            <svg style="width: 24px; height: 24px" viewBox="0 0 24 24" @mouseover="showHighlight" @mouseenter="showHighlight" @mouseout="hideHighlight">
               <path fill="#333" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" />
             </svg>
           </div>
@@ -77,116 +74,133 @@
 </template>
 
 <script>
-import colorMixin from './color'
-import saturation from './Saturation.vue'
-import hue from './Hue.vue'
-import alpha from './Alpha.vue'
-import checkboard from './Checkboard.vue'
-import editableInput from './EditInput.vue'
+import colorMixin from './color';
+import saturation from './Saturation.vue';
+import hue from './Hue.vue';
+import alpha from './Alpha.vue';
+import checkboard from './Checkboard.vue';
+import editableInput from './EditInput.vue';
+import { trueValueMixin } from 'lightvue/mixin';
+
 export default {
   name: 'Chrome',
-  mixins: [colorMixin],
+  mixins: [trueValueMixin, colorMixin],
   props: {
     disableAlpha: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disableFields: {
       type: Boolean,
-      default: false
+      default: false,
     },
-    updateOverlayValue: {
-      type: Function
-    }
   },
   components: {
     saturation,
     hue,
     alpha,
     'ed-in': editableInput,
-    checkboard
+    checkboard,
   },
-  data () {
+  data() {
     return {
       fieldsIndex: 0,
-      highlight: false
-    }
+      highlight: false,
+    };
   },
   computed: {
-    hsl () {
-      const { h, s, l } = this.colors.hsl
+    hsl() {
+      const { h, s, l } = this.colors.hsl;
       return {
         h: h.toFixed(),
         s: `${(s * 100).toFixed()}%`,
-        l: `${(l * 100).toFixed()}%`
-      }
+        l: `${(l * 100).toFixed()}%`,
+      };
     },
-    activeColor () {
-      const rgba = this.colors.rgba
-      return 'rgba(' + [rgba.r, rgba.g, rgba.b, rgba.a].join(',') + ')'
+    activeColor() {
+      const rgba = this.colors.rgba;
+      return 'rgba(' + [rgba.r, rgba.g, rgba.b, rgba.a].join(',') + ')';
     },
-    hasAlpha () {
-      return this.colors.a < 1
-    }
+    hasAlpha() {
+      return this.colors.a < 1;
+    },
   },
   methods: {
-    childChange (data) {
+    childChange(data) {
       this.colorChange(data);
       this.updateOverlayValue(this.colors, this.fieldsIndex);
     },
-    inputChange (data) {
+    inputChange(data) {
       if (!data) {
-        return
+        return;
       }
       if (data.hex) {
-        this.isValidHex(data.hex) && this.colorChange({
-          hex: data.hex,
-          source: 'hex',
-        })
+        this.isValidHex(data.hex) &&
+          this.colorChange({
+            hex: data.hex,
+            source: 'hex',
+          });
       } else if (data.r || data.g || data.b || data.a) {
         this.colorChange({
           r: data.r || this.colors.rgba.r,
           g: data.g || this.colors.rgba.g,
           b: data.b || this.colors.rgba.b,
           a: data.a || this.colors.rgba.a,
-          source: 'rgba'
-        })
-      }
-       else if (data.h || data.s || data.l) {
-        const s = data.s ? (data.s.replace('%', '') / 100) : this.colors.hsl.s
-        const l = data.l ? (data.l.replace('%', '') / 100) : this.colors.hsl.l
+          source: 'rgba',
+        });
+      } else if (data.h || data.s || data.l) {
+        const s = data.s ? data.s.replace('%', '') / 100 : this.colors.hsl.s;
+        const l = data.l ? data.l.replace('%', '') / 100 : this.colors.hsl.l;
         this.colorChange({
           h: data.h || this.colors.hsl.h,
           s,
           l,
-          source: 'hsl'
-        })
+          source: 'hsl',
+        });
       }
+      this.updateOverlayValue(this.colors, this.fieldsIndex);
     },
-    toggleViews () {
+    toggleViews() {
       if (this.fieldsIndex >= 2) {
-        this.fieldsIndex = 0
-        this.updateOverlayValue(this.colors, this.fieldsIndex)
-        return
+        this.fieldsIndex = 0;
+        this.updateOverlayValue(this.colors, this.fieldsIndex);
+        return;
       }
-      this.fieldsIndex ++;
-      this.updateOverlayValue(this.colors, this.fieldsIndex)
+      this.fieldsIndex++;
+      this.updateOverlayValue(this.colors, this.fieldsIndex);
     },
-    showHighlight () {
-      this.highlight = true
+    showHighlight() {
+      this.highlight = true;
     },
-    hideHighlight () {
-      this.highlight = false
-    }
-  }
-}
+    hideHighlight() {
+      this.highlight = false;
+    },
+    updateOverlayValue(color, mode) {
+      let colorValue = `${this.getColorString(color, mode)}`;
+      this.updateValue(colorValue);
+      // this.$emit('input', colorValue); // Only for Vue 2.x
+      // this.$emit('update:modelValue', colorValue); // Only for Vue 3.x
+    },
+    getColorString(color, mode) {
+      if (mode == 0) {
+        if (color.hex8.slice(7, 9) === 'FF') return `${color.hex8.slice(0, 7)}`;
+        return `${color.hex8}`;
+      } else if (mode == 1) {
+        if (color.rgba.a == 1) return `rgb(${color.rgba.r}, ${color.rgba.g}, ${color.rgba.b})`;
+        return `rgba(${color.rgba.r}, ${color.rgba.g}, ${color.rgba.b}, ${color.rgba.a})`;
+      } else if (mode == 2) {
+        return `hsla(${Math.floor(color.hsl.h)}, ${Math.floor(color.hsl.s * 100)}%, ${Math.floor(color.hsl.l * 100)}%, ${color.hsl.a})`;
+      }
+    },
+  },
+};
 </script>
 
 <style>
 .vc-chrome {
   background: #fff;
   border-radius: 2px;
-  box-shadow: 0 0 2px rgba(0,0,0,.3), 0 4px 8px rgba(0,0,0,.3);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.3);
   box-sizing: initial;
   width: 225px;
   font-family: Menlo;
@@ -265,7 +279,8 @@ export default {
 .vc-chrome-alpha-wrap .vc-alpha-gradient {
   border-radius: 2px;
 }
-.vc-chrome-hue-wrap .vc-hue-picker, .vc-chrome-alpha-wrap .vc-alpha-picker {
+.vc-chrome-hue-wrap .vc-hue-picker,
+.vc-chrome-alpha-wrap .vc-alpha-picker {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -276,7 +291,8 @@ export default {
   transform: translate(-6px, -2px) scale(1);
 }
 
-.vc-chrome-hue-wrap .vc-hue-picker:hover, .vc-chrome-alpha-wrap .vc-alpha-picker:hover {
+.vc-chrome-hue-wrap .vc-hue-picker:hover,
+.vc-chrome-alpha-wrap .vc-alpha-picker:hover {
   transform: translate(-6px, -2px) scale(1.5);
   border: solid 2px rgba(255, 255, 255, 1);
   background-color: rgba(255, 255, 255, 0.5);
