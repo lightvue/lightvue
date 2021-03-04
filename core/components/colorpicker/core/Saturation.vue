@@ -1,39 +1,37 @@
 <template>
-  <div class="vc-saturation"
-    :style="{background: bgColor}"
-    ref="container"
-    @mousedown="handleMouseDown"
-    @touchmove="handleChange"
-    @touchstart="handleChange">
+  <div class="vc-saturation" :style="{ background: bgColor }" ref="container" @mousedown="handleMouseDown" @touchmove="handleChange" @touchstart="handleChange">
     <div class="vc-saturation--white"></div>
     <div class="vc-saturation--black"></div>
-    <div class="vc-saturation-pointer" :style="{top: pointerTop, left: pointerLeft}">
+    <div class="vc-saturation-pointer" :style="{ top: pointerTop, left: pointerLeft }">
       <div class="vc-saturation-circle"></div>
     </div>
   </div>
 </template>
 
 <script>
-import clamp from './clamp'
+import clamp from './clamp';
 // import throttle from './throttle'
 export default {
   name: 'Saturation',
   props: {
-    value: Object
+    value: Object,
   },
   computed: {
-    colors () {
-      return this.value
+    modelValue() {
+      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
     },
-    bgColor () {
-      return `hsl(${this.colors.hsv.h}, 100%, 50%)`
+    colors() {
+      return this.modelValue;
     },
-    pointerTop () {
-      return (-(this.colors.hsv.v * 100) + 1) + 100 + '%'
+    bgColor() {
+      return `hsl(${this.colors.hsv.h}, 100%, 50%)`;
     },
-    pointerLeft () {
-      return this.colors.hsv.s * 100 + '%'
-    }
+    pointerTop() {
+      return -(this.colors.hsv.v * 100) + 1 + 100 + '%';
+    },
+    pointerLeft() {
+      return this.colors.hsv.s * 100 + '%';
+    },
   },
   methods: {
     // throttle: throttle((fn, data) => {
@@ -43,64 +41,64 @@ export default {
     //     'leading': true,
     //     'trailing': false
     //   }),
-    handleChange (e, skip) {
-      !skip && e.preventDefault()
-      var container = this.$refs.container
+    handleChange(e, skip) {
+      !skip && e.preventDefault();
+      var container = this.$refs.container;
       if (!container) {
         // for some edge cases, container may not exist. see #220
-        return
+        return;
       }
-      var containerWidth = container.clientWidth
-      var containerHeight = container.clientHeight
-      var xOffset = container.getBoundingClientRect().left + window.pageXOffset
-      var yOffset = container.getBoundingClientRect().top + window.pageYOffset
-      var pageX = e.pageX || (e.touches ? e.touches[0].pageX : 0)
-      var pageY = e.pageY || (e.touches ? e.touches[0].pageY : 0)
-      var left = clamp(pageX - xOffset, 0, containerWidth)
-      var top = clamp(pageY - yOffset, 0, containerHeight)
-      var saturation = left / containerWidth
-      var bright = clamp(-(top / containerHeight) + 1, 0, 1)
-      var onChangeMethod = ()=>{
+      var containerWidth = container.clientWidth;
+      var containerHeight = container.clientHeight;
+      var xOffset = container.getBoundingClientRect().left + window.pageXOffset;
+      var yOffset = container.getBoundingClientRect().top + window.pageYOffset;
+      var pageX = e.pageX || (e.touches ? e.touches[0].pageX : 0);
+      var pageY = e.pageY || (e.touches ? e.touches[0].pageY : 0);
+      var left = clamp(pageX - xOffset, 0, containerWidth);
+      var top = clamp(pageY - yOffset, 0, containerHeight);
+      var saturation = left / containerWidth;
+      var bright = clamp(-(top / containerHeight) + 1, 0, 1);
+      var onChangeMethod = () => {
         this.onChange({
-            h: this.colors.hsv.h,
-            s: saturation,
-            v: bright,
-            a: this.colors.hsv.a,
-            source: 'hsva'
-        })
-      }
-      if(window) {
-        window.requestAnimationFrame(onChangeMethod) // if adding globally, make sure to add mode:'client'
+          h: this.colors.hsv.h,
+          s: saturation,
+          v: bright,
+          a: this.colors.hsv.a,
+          source: 'hsva',
+        });
+      };
+      if (window) {
+        window.requestAnimationFrame(onChangeMethod); // if adding globally, make sure to add mode:'client'
       } else {
         onChangeMethod();
       }
-    // this.throttle(this.onChange, {
-    //     h: this.colors.hsv.h,
-    //     s: saturation,
-    //     v: bright,
-    //     a: this.colors.hsv.a,
-    //     source: 'hsva'
-    //   })
+      // this.throttle(this.onChange, {
+      //     h: this.colors.hsv.h,
+      //     s: saturation,
+      //     v: bright,
+      //     a: this.colors.hsv.a,
+      //     source: 'hsva'
+      //   })
     },
-    onChange (param) {
-      this.$emit('change', param)
+    onChange(param) {
+      this.$emit('change', param);
     },
-    handleMouseDown () {
+    handleMouseDown() {
       // this.handleChange(e, true)
-      window.addEventListener('mousemove', this.handleChange)
-      window.addEventListener('mouseup', this.handleChange)
-      window.addEventListener('mouseup', this.handleMouseUp)
+      window.addEventListener('mousemove', this.handleChange);
+      window.addEventListener('mouseup', this.handleChange);
+      window.addEventListener('mouseup', this.handleMouseUp);
     },
-    handleMouseUp () {
-      this.unbindEventListeners()
+    handleMouseUp() {
+      this.unbindEventListeners();
     },
-    unbindEventListeners () {
-      window.removeEventListener('mousemove', this.handleChange)
-      window.removeEventListener('mouseup', this.handleChange)
-      window.removeEventListener('mouseup', this.handleMouseUp)
-    }
-  }
-}
+    unbindEventListeners() {
+      window.removeEventListener('mousemove', this.handleChange);
+      window.removeEventListener('mouseup', this.handleChange);
+      window.removeEventListener('mouseup', this.handleMouseUp);
+    },
+  },
+};
 </script>
 
 <style>
@@ -115,10 +113,10 @@ export default {
   bottom: 0;
 }
 .vc-saturation--white {
-  background: linear-gradient(to right, #fff, rgba(255,255,255,0));
+  background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
 }
 .vc-saturation--black {
-  background: linear-gradient(to top, #000, rgba(0,0,0,0));
+  background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
 }
 .vc-saturation-pointer {
   cursor: pointer;
@@ -128,7 +126,7 @@ export default {
   cursor: head;
   width: 4px;
   height: 4px;
-  box-shadow: 0 0 0 1.5px #fff, inset 0 0 1px 1px rgba(0,0,0,.3), 0 0 1px 2px rgba(0,0,0,.4);
+  box-shadow: 0 0 0 1.5px #fff, inset 0 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 1px 2px rgba(0, 0, 0, 0.4);
   border-radius: 50%;
   /* transform: translate(-2px, -2px); */
   transition: all 0.3s;
@@ -137,7 +135,7 @@ export default {
 }
 
 .vc-saturation-circle:hover {
-  background-color: rgba(255,255,255,0);
+  background-color: rgba(255, 255, 255, 0);
   opacity: 0.8;
   transform: scale(1.3) translate(-2px, -2px);
 }

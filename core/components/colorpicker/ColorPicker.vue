@@ -1,6 +1,6 @@
 <template>
   <div class="lv-colorpicker-wrapper">
-    <LvInput :label="label" ref="colorPickerInput" v-model="colorpickerValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
+    <LvInput :label="label" ref="colorPickerInput" @input="updateValue" :value="modelValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template #append>
         <div class="lv-colorpicker__colorblock-wrapper" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: colorpickerValue }"></div>
@@ -10,7 +10,7 @@
     </LvInput>
 
     <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
-      <ColorpickerCore :value="colorpickerValue" :updateOverlayValue="updateOverlayValue" style="width: 195px; transform: scale(1.05)" />
+      <ColorpickerCore :value="modelValue" :updateOverlayValue="updateOverlayValue" style="width: 195px; transform: scale(1.05)" />
     </LvOverlayPanel>
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      colorpickerValue: null,
+      colorpickerValue: '#607C8A',
     };
   },
   beforeMount() {
@@ -41,6 +41,11 @@ export default {
     ColorpickerCore: ColorpickerCore,
     LvInput: LvInput,
     Checkboard,
+  },
+  computed: {
+    modelValue() {
+      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value ? this.value : this.colorpickerValue;
+    },
   },
   methods: {
     updateOverlayValue(color, mode) {
@@ -64,6 +69,15 @@ export default {
       } else if (mode == 2) {
         return `hsla(${Math.floor(color.hsl.h)}, ${Math.floor(color.hsl.s * 100)}%, ${Math.floor(color.hsl.l * 100)}%, ${color.hsl.a})`;
       }
+    },
+    updateValue(event) {
+      if (this.autoResize) {
+        this.resizeTextarea();
+      }
+      this.localValue = event.target.value;
+      this.$emit('input-native', event);
+      this.$emit('input', event.target.value); // Only for Vue 2
+      this.$emit('update:modelValue', event.target.value); // Only for Vue 3
     },
   },
 };
