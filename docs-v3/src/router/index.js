@@ -129,7 +129,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior: to => {
-    console.log(to);
+    // console.log(to);
     if (to.hash) {
       const el = document.getElementById(to.hash.substring(1));
       if (el) {
