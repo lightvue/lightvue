@@ -1,21 +1,23 @@
 <template>
   <div>
     <docs-card-best title="Playground" componentName="Options">
-      <lv-number v-bind="options" class="demo__positioning" />
+      <div class="demo__positioning">
+        <lv-number v-bind="options" />
+      </div>
       <template #props>
         <lv-toggle-switch v-model="options['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="options.rounded" label="Rounded" /> <br />
         <lv-toggle-switch v-model="options.controls" label="Show Controls" /> <br />
         <br />
         <lv-number v-model="options.max" label="Max Value" /> <br />
-        <lv-number v-model="options.min" label=" Value" /> <br />
+        <lv-number v-model="options.min" label="Min Value" /> <br />
         <lv-number v-model="options.step" label="Increment Value" /> <br />
         <lv-input v-model="options.label" label="Label" /> <br />
         <lv-input v-model="options.placeholder" label="Placeholder" /> <br />
         <lv-input v-model="options['help-text']" label="Help Text" /> <br />
         <lv-input v-model="options.iconLeft" label="Left Icons" /> <br />
         <lv-input v-model="options.iconRight" label="Right Icons" /> <br />
-        <Lv-colorpicker v-model="options['placeholder-color']" label="Placeholder Color" />
+        <!-- <Lv-colorpicker v-model="options['placeholder-color']" label="Placeholder Color" /> -->
       </template>
       <template #code>
         <div class="code__wrapper">
@@ -35,7 +37,7 @@
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input/Input';
 import LvNumber from 'lightvue/number/Number';
-import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
+// import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
 import LvToggleSwitch from 'lightvue/input-toggle/ToggleSwitch';
 import CodeHighlight from '@/components/docs-card/CodeHighlight';
 import CopyButton from '@/components/docs-card/CopyButton';
@@ -65,7 +67,7 @@ export default {
     LvInput,
     LvNumber,
     LvToggleSwitch,
-    LvColorpicker,
+    // LvColorpicker,
     CodeHighlight,
     CopyButton,
   },

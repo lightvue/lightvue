@@ -10,7 +10,7 @@
           {{ label }}
         </slot>
       </span>
-      <template slot="append">
+      <template #append>
         <i v-if="clearable && modelValue != null" class="lv-dropdown__clear-icon light-icon-x" @click="onClearClick($event)"></i>
         <div class="lv-dropdown__trigger" role="button" aria-haspopup="listbox" :aria-expanded="overlayVisible">
           <span :class="iconRight || 'light-icon-chevron-down'"></span>

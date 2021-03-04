@@ -1,9 +1,9 @@
 <template>
   <lv-input type="number" :editable="true" ref="mainInput" @input="updateValue" :value="modelValue" v-bind="$attrs">
-    <template slot="prepend">
+    <template #prepend>
       <LvButton :icon="iconLeft" :class="buttonColor" @click="LocalDecrement($event)" v-if="controls" />
     </template>
-    <template slot="append">
+    <template #append>
       <LvButton :icon="iconRight" :class="buttonColor" @click="LocalIncrement($event)" v-if="controls" />
     </template>
   </lv-input>
@@ -67,7 +67,7 @@ export default {
       }
     },
     LocalIncrement(event) {
-      this.updateValue(this.modelValue + this.step);
+      this.updateValue(+this.modelValue + +this.step);
     },
     LocalDecrement(event) {
       this.updateValue(this.modelValue - this.step);

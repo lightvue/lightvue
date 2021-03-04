@@ -2,7 +2,9 @@
   <div>
     <docs-card-best title="Playground" componentName="Options">
       <!-- <lv-input :label="options.label" :floating-label="options.floating" :bottom-bar="options.bottom_bar" :rounded="options.rounded" :placeholder="options.placeholder" :help-text="options['help-text']" :placeholder-color="options.placeholderColor" :icon-left="options.iconLeft" :icon-right="options.iconRight" style="width: 80%" /> -->
-      <lv-input v-bind="options" class="demo__positioning" />
+      <div class="demo__positioning">
+        <lv-input v-bind="options" />
+      </div>
       <template #props>
         <lv-toggle-switch v-model="options['floating-label']" label="Floating Label" v-if="!options['icon-left'] && !options['Placeholder']" /> <br />
         <lv-toggle-switch v-model="options['bottom-bar']" label="Material Design" /> <br />

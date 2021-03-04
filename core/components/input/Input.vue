@@ -40,7 +40,7 @@ export default {
   inheritAttrs: false,
   props: {
     value: {
-      type: String | Number,
+      type: [String, Number],
       default: null,
     },
     // modelValue: {
