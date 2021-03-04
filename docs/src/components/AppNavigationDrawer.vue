@@ -75,7 +75,7 @@ export default {
         },
         {
           page_name: 'Customization',
-          page_path: '/getting-started/customize',
+          page_path: '/getting-started/customization',
         },
       ],
     },

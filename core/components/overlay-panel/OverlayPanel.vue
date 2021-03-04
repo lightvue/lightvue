@@ -203,7 +203,7 @@ export default {
       }
       this.unbindResizeListener();
       this.target = null;
-      this.$refs.overlayRef = null;
+      // this.$refs.overlayRef = null;
     },
     // containerRef(el) {
     //     this.$refs.overlayRef = el;

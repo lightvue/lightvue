@@ -25,7 +25,13 @@ export default {
   },
   created() {
     if (this.file) {
-      this.component = () => import('lightvue/example/' + this.file + '.vue');
+      // this.component = () => import('lightvue/example/' + this.file + '.vue');
+      if (!this.component) {
+        import('lightvue/example/' + this.file + '.vue').then(comp => {
+          this.component = comp.default;
+        });
+      }
+
       Promise.all([
         // import('@/' + this.file + '.vue').then(comp => {
         //   this.component = comp.default;

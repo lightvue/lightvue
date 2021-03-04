@@ -2,27 +2,29 @@
   <div>
     <docs-card-best title="Playground" componentName="Options">
       <!-- <lv-input :label="options.label" :floating-label="options.floating" :bottom-bar="options.bottom_bar" :rounded="options.rounded" :placeholder="options.placeholder" :help-text="options['help-text']" :placeholder-color="options.placeholderColor" :icon-left="options.iconLeft" :icon-right="options.iconRight" style="width: 80%" /> -->
-      <lv-input v-bind="options" class="demo__positioning " />
+      <div class="demo__positioning">
+        <lv-input v-bind="options" />
+      </div>
       <template #props>
-        <lv-toggle-switch v-model="options['floating-label']" label="Floating Label" v-if="!options['icon-left'] && !options['Placeholder']"/> <br />
+        <lv-toggle-switch v-model="options['floating-label']" label="Floating Label" v-if="!options['icon-left'] && !options['Placeholder']" /> <br />
         <lv-toggle-switch v-model="options['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="options.rounded" label="Rounded" /> <br />
         <br />
         <lv-input v-model="options.label" label="Label" /> <br />
-        <lv-input v-model="options.placeholder" label="Placeholder"  /> <br />
+        <lv-input v-model="options.placeholder" label="Placeholder" /> <br />
         <lv-input v-model="options['help-text']" label="Help Text" /> <br />
-        <lv-input v-model="options['icon-left']" label="Left Icons"  /> <br />
+        <lv-input v-model="options['icon-left']" label="Left Icons" /> <br />
         <lv-input v-model="options['icon-right']" label="Right Icons" /> <br />
         <Lv-colorpicker v-model="options['placeholder-color']" label="Placeholder Color" />
       </template>
       <template #code>
         <div class="code__wrapper">
-            <CopyButton :text="getMarkup" />
-            &nbsp;&lt;lv-input
-            <span class="attribute__row" v-for="(option, name) in options" :key="name">
-              <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span class="pros__passed">{{ name }}=<span>"{{ option }}"</span></pre>
-            </span>
-            &nbsp;/&gt;
+          <CopyButton :text="getMarkup" />
+          &nbsp;&lt;lv-input
+          <span class="attribute__row" v-for="(option, name) in options" :key="name">
+            <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
+          </span>
+          &nbsp;/&gt;
         </div>
       </template>
     </docs-card-best>
@@ -72,7 +74,7 @@ export default {
 </script>
 
 <style lang="scss">
-.demo__positioning{
+.demo__positioning {
   margin: auto;
   width: 80%;
 }

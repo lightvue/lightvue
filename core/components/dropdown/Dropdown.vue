@@ -10,7 +10,7 @@
           {{ label }}
         </slot>
       </span>
-      <template slot="append">
+      <template #append>
         <i v-if="clearable && modelValue != null" class="lv-dropdown__clear-icon light-icon-x" @click="onClearClick($event)"></i>
         <div class="lv-dropdown__trigger" role="button" aria-haspopup="listbox" :aria-expanded="overlayVisible">
           <span :class="iconRight || 'light-icon-chevron-down'"></span>
@@ -45,7 +45,7 @@
 import ConnectedOverlayScrollHandler from 'lightvue/utils/ConnectedOverlayScrollHandler';
 import ObjectUtils from 'lightvue/utils/ObjectUtils';
 import DomHandler from 'lightvue/utils/DomHandler';
-import Ripple from 'lightvue/ripple';
+// import Ripple from 'lightvue/ripple';
 import LvInput from 'lightvue/input';
 
 // import './Dropdown.scss';
@@ -520,10 +520,11 @@ export default {
     },
   },
   directives: {
-    ripple: Ripple,
+    // ripple: Ripple,
   },
 };
 </script>
 <style lang="scss">
 @import './Dropdown.scss';
+@import './OverlayAnimation.scss';
 </style>

@@ -40,7 +40,7 @@ export default {
   inheritAttrs: false,
   props: {
     value: {
-      type: String | Number,
+      type: [String, Number],
       default: null,
     },
     // modelValue: {
@@ -121,4 +121,5 @@ export default {
 <style lang="scss">
 @import './Input.scss';
 @import './InputTheme.scss';
+@import './InputAccesibility.scss';
 </style>
