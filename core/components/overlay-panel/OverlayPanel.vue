@@ -61,10 +61,10 @@ export default {
   resizeListener: null,
   // container: null,
   beforeDestroy() {
-    this.onBeforeUnmount();
+    this.BeforeUnmount();
   },
   beforeUnmount() {
-    this.onBeforeUnmount();
+    this.BeforeUnmount();
   },
   methods: {
     toggle(event, target) {
