@@ -18,7 +18,7 @@
 
 <script>
 import { Splitpanes, Pane } from 'splitpanes';
-import 'splitpanes/dist/splitpanes.css';
+import './splitpanes.css';
 import Loader from './Loader.vue';
 // import BallScaleMultiple from 'lightvue/loaders/BallComponents/BallScaleMultiple.vue';
 
