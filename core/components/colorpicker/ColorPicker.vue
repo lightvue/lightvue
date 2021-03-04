@@ -1,7 +1,7 @@
 <template>
   <div class="lv-colorpicker-wrapper">
     <LvInput :label="label" ref="colorPickerInput" v-model="colorpickerValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
-      <template slot="append">
+      <template #append>
         <div class="lv-colorpicker__colorblock-wrapper" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: colorpickerValue }"></div>
           <checkboard grey="#607c8a" />
