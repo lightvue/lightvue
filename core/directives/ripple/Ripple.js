@@ -66,10 +66,10 @@ function getInk(el) {
 const Ripple = {
   inserted(el, binding, vnode) {
     //Vue2
-    if (vnode.context.$lightvue && vnode.context.$lightvue.ripple) {
-      create(el);
-      bindEvents(el);
-    }
+    // if (vnode.context.$lightvue && vnode.context.$lightvue.ripple) {
+    create(el);
+    bindEvents(el);
+    // }
   },
   unbind(el) {
     //Vue2
@@ -77,10 +77,10 @@ const Ripple = {
   },
   mounted(el, binding, vnode) {
     //Vue3
-    if (vnode.context.$lightvue && vnode.context.$lightvue.ripple) {
-      create(el);
-      bindEvents(el);
-    }
+    // if (vnode.context.$lightvue && vnode.context.$lightvue.ripple) {
+    create(el);
+    bindEvents(el);
+    // }
   },
   unmounted(el) {
     //Vue3
