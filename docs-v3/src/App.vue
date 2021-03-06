@@ -11,13 +11,12 @@
       <app-footer />
     </div> -->
     <!-- <LvToast />
-    <LvToast position="top-left" group="tl" />
-    <LvToast position="bottom-left" group="bl" />
-    <LvToast position="bottom-right" group="br" />
+    <LvToast position="top" group="top" />
+    <LvToast position="bottom" group="bottom" /> -->
     <LvNotification />
     <LvNotification position="top-left" group="tl" />
     <LvNotification position="bottom-left" group="bl" />
-    <LvNotification position="bottom-right" group="br" /> -->
+    <LvNotification position="bottom-right" group="br" />
   </div>
 </template>
 
