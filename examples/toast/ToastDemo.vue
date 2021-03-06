@@ -9,9 +9,8 @@
         <LvButton label="Error" class="lv--danger" @click="showError" />
 
         <h5>Positions</h5>
-        <LvButton label="Top Left" class="p-mr-2" @click="showTopLeft" />
-        <LvButton label="Bottom Left" class="lv--warning" @click="showBottomLeft" />
-        <LvButton label="Bottom Right" class="lv--danger" @click="showBottomRight" />
+        <LvButton label="Top" class="p-mr-2" @click="showTop" />
+        <LvButton label="Bottom" class="lv--warning" @click="showBottom" />
 
         <h5>Options</h5>
         <LvButton @click="showMultiple" label="Multiple" class="lv--warning" />
@@ -26,7 +25,6 @@
 
 <script>
 import Toast from 'lightvue/toast/Toast.vue';
-
 export default {
   data() {
     return {
@@ -46,14 +44,11 @@ export default {
     showError() {
       this.$toast.add({ severity: 'error', summary: 'Error Message', detail: 'Message Content', life: 3000 });
     },
-    showTopLeft() {
-      this.$toast.add({ severity: 'info', summary: 'Info Message', detail: 'Message Content', group: 'tl', life: 3000 });
+    showTop() {
+      this.$toast.add({ severity: 'info', summary: 'Info Message', detail: 'Message Content', group: 'top', life: 3000 });
     },
-    showBottomLeft() {
-      this.$toast.add({ severity: 'warn', summary: 'Warn Message', detail: 'Message Content', group: 'bl', life: 3000 });
-    },
-    showBottomRight() {
-      this.$toast.add({ severity: 'success', summary: 'Success Message', detail: 'Message Content', group: 'br', life: 3000 });
+    showBottom() {
+      this.$toast.add({ severity: 'warn', summary: 'Warn Message', detail: 'Message Content', group: 'bottom', life: 3000 });
     },
     showSticky() {
       this.$toast.add({ severity: 'info', summary: 'Sticky Message', detail: 'Message Content' });
@@ -68,7 +63,7 @@ export default {
     },
   },
   components: {
-    Toast: Toast,
+    Toast,
   },
 };
 </script>

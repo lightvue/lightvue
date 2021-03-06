@@ -1,4 +1,4 @@
-const ToggleSwitchAPI = {
+const ToastSwitchAPI = {
   props: [
     {
       name: 'value',
@@ -129,4 +129,4 @@ const ToggleSwitchAPI = {
     },
   ],
 };
-export default ToggleSwitchAPI;
+export default ToastSwitchAPI;

@@ -5,12 +5,11 @@
     </transition-group>
   </div>
 </template>
-
 <script>
 import './Toast.scss';
 import ToastEventBus from './ToastEventBus';
 import ToastMessage from './ToastMessage';
-import DomHandler from 'lightvue/utils/DomHandler';
+import DomHandler from '@/utils/DomHandler';
 
 var messageIdx = 0;
 
@@ -22,7 +21,7 @@ export default {
     },
     position: {
       type: String,
-      default: 'top-right',
+      default: 'top',
     },
     autoZIndex: {
       type: Boolean,
@@ -97,63 +96,24 @@ export default {
 <style>
 .lv-toast {
   position: fixed;
-  width: 25rem;
-}
-
-.lv-toast-message-content {
-  display: flex;
-  align-items: flex-start;
+  width: 15rem;
+  font-size: 18px;
 }
 
 .lv-toast-message-text {
   flex: 1 1 auto;
 }
 
-.lv-toast-top-right {
-  top: 20px;
-  right: 20px;
-}
-
-.lv-toast-top-left {
-  top: 20px;
-  left: 20px;
-}
-
-.lv-toast-bottom-left {
-  bottom: 20px;
-  left: 20px;
-}
-
-.lv-toast-bottom-right {
-  bottom: 20px;
-  right: 20px;
-}
-
-.lv-toast-top-center {
+.lv-toast-top {
   top: 20px;
   left: 50%;
-  margin-left: -10em;
+  /* margin-left: -10em; */
 }
 
-.lv-toast-bottom-center {
+.lv-toast-bottom {
   bottom: 20px;
   left: 50%;
-  margin-left: -10em;
-}
-
-.lv-toast-center {
-  left: 50%;
-  top: 50%;
-  min-width: 20vw;
-  transform: translate(-50%, -50%);
-}
-
-.lv-toast-icon-close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
+  /* margin-left: -10em;` */
 }
 
 .lv-toast-icon-close.lv-link {

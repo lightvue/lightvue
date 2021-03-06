@@ -26,10 +26,10 @@ export default {
     DocsPageLayout,
     DocsAllApi,
   },
-  title: 'Overlay Panel',
-  description: `OverlayPanel is a container component positioned as connected to its target.`,
-  packageName: 'overlay-panel',
-  componentName: 'LvOverlayPanel',
+  title: 'Notification',
+  description: `Notification component of lightVue allow the user to show notifications on the page with any required content.`,
+  packageName: 'notification',
+  componentName: 'LvNotification',
   apiData: NotificationAPI,
 };
 </script>

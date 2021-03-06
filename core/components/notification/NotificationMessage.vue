@@ -1,20 +1,20 @@
 <template>
   <div :class="containerClass" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="lv-notification-message-content">
-      <!-- <span :class="iconClass"></span> -->
+      <span :class="iconClass"></span>
       <div class="lv-notification-message-text">
         <span class="lv-notification-summary">{{ message.summary }}</span>
         <div class="lv-notification-detail">{{ message.detail }}</div>
       </div>
-      <!-- <button class="lv-notification-icon-close lv-link" @click="onCloseClick" v-if="message.closable !== false" type="button" v-ripple> -->
-      <!-- <span class="lv-notification-icon-close-icon light-icon-x"></span> -->
-      <!-- </button> -->
+      <button class="lv-notification-icon-close lv-link" @click="onCloseClick" v-if="message.closable !== false" type="button" v-ripple>
+        <span class="lv-notification-icon-close-icon light-icon-x"></span>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import Ripple from 'lightvue/ripple/Ripple';
+import Ripple from 'lightvue/ripple';
 
 export default {
   props: {
@@ -52,17 +52,17 @@ export default {
         },
       ];
     },
-    // iconClass() {
-    //   return [
-    //     'lv-notification-message-icon pi',
-    //     {
-    //       'pi-info-circle': this.message.severity === 'info',
-    //       'pi-exclamation-triangle': this.message.severity === 'warn',
-    //       'pi-times': this.message.severity === 'error',
-    //       'pi-check': this.message.severity === 'success',
-    //     },
-    //   ];
-    // },
+    iconClass() {
+      return [
+        'lv-notification-message-icon',
+        {
+          'light-icon-info-circle': this.message.severity === 'info',
+          'light-icon-alert-triangle': this.message.severity === 'warn',
+          'light-icon-circle-x': this.message.severity === 'error',
+          'light-icon-circle-check': this.message.severity === 'success',
+        },
+      ];
+    },
   },
   directives: {
     ripple: Ripple,
