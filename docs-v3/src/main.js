@@ -1,7 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-import store from './store';
 import { RouterLink } from 'vue-router';
 
 import LvButton from 'lightvue/button';
@@ -11,7 +10,7 @@ import NotificationService from 'lightvue/notification/NotificationService';
 import LvNotification from 'lightvue/notification';
 import LvInput from 'lightvue/input';
 
-const app = createApp(App).use(store).use(router);
+const app = createApp(App).use(router);
 app.config.globalProperties.$listeners = '';
 app.config.globalProperties.$lightvue = { ripple: true };
 // app.config.globalProperties.$toast = ToastService;
