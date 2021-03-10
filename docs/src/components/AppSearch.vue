@@ -3,7 +3,7 @@
     <ais-instant-search index-name="lightvueDemo" :search-client="searchClient">
       <div class="app-searchui__bar-wrapper">
         <ais-search-box placeholder="Type to start searching..." class="searchbox">
-          <div slot-scope="{ currentRefinement, isSearchStalled, refine }">
+          <div slot-scope="{ isSearchStalled, refine }">
             <lv-input icon-left="light-icon-search" type="search" :value="queryString" @input="handleOnType($event, refine)" placeholder="Type to start searching..." />
             <span :hidden="!isSearchStalled"></span>
           </div>
@@ -29,8 +29,7 @@
 <script>
 import { AisInstantSearch, AisHits, AisHighlight, AisSearchBox, createServerRootMixin } from 'vue-instantsearch';
 import algoliasearch from 'algoliasearch/lite';
-// import 'instantsearch.css/themes/algolia-min.css';
-// import 'instantsearch.css/themes/algolia.css';
+
 export default {
   name: 'AppSearch',
   data() {
@@ -57,11 +56,6 @@ export default {
     AisHighlight,
     createServerRootMixin,
   },
-  // computed: {
-  //   searchClient() {
-  //     return algoliasearch(process.env.ALGOLIA_PROJECT_ID, process.env.ALGOLIA_API_KEY);
-  //   },
-  // },
 };
 </script>
 <style>
