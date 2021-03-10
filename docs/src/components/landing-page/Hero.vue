@@ -7,20 +7,17 @@
       <div class="hero-container">
         <div class="hero-container__row">
           <div class="hero-container__content">
-            <!-- <h1 class="hero-container__heading">LightVue</h1> -->
-
             <div class="hero-container__subtext">
               The Emerging UI Component library<br />
-              <!-- Emerging Collection of well Crafted UI Components <br /> -->
-              for Vue 3.x &amp; Vue 2.x
+              for <span class="subtext-highlight">Vue 3.x</span> &amp; <span class="subtext-highlight">Vue 2.x </span>
             </div>
           </div>
         </div>
         <div class="hero-container__row">
-          <div class="hero-container__pre">
-            <pre>
-           <code><span class="not-selectable">$ </span>npm install lightvue</code>
-          </pre>
+          <div class="hero-container__pre-wrap">
+            <div class="hero-container__pre">
+              <code><span class="not-selectable">$ </span>npm install lightvue</code>
+            </div>
           </div>
         </div>
         <div class="hero-container__row">
@@ -124,11 +121,11 @@ $text-color-secondary: #eeecec;
           z-index: 999;
         }
       }
-      .hero-container__pre {
+      .hero-container__pre-wrap {
         display: flex;
         align-items: center;
         justify-content: center;
-        pre {
+        .hero-container__pre {
           border-radius: 4px;
           display: inline-flex;
           font-size: 24px;
@@ -225,11 +222,11 @@ $text-color-secondary: #eeecec;
         width: 280px;
       }
       .hero-container__row {
-        .hero-container__pre {
+        .hero-container__pre-wrap {
           display: flex;
           align-items: center;
           justify-content: center;
-          pre {
+          .hero-container__pre {
             border-radius: 4px;
             display: inline-flex;
             font-size: 18px;

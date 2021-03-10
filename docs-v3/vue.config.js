@@ -1,4 +1,6 @@
 const path = require('path');
+const pkg = require('../package.json');
+
 module.exports = {
   configureWebpack: {
     resolve: {
@@ -14,5 +16,11 @@ module.exports = {
         // '@@@': path.join(__dirname, '/..'), // this must never be used, resulting infinite loop.
       },
     },
+  },
+  chainWebpack: config => {
+    config.plugin('html').tap(args => {
+      args[0].title = pkg.title;
+      return args;
+    });
   },
 };
