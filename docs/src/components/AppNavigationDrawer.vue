@@ -189,6 +189,14 @@ export default {
           page_name: 'Dialog',
           page_path: '/vue-components/dialog',
         },
+        {
+          page_name: 'Toast',
+          page_path: '/vue-components/toast',
+        },
+        {
+          page_name: 'Notifications',
+          page_path: '/vue-components/notification',
+        },
       ],
     },
   ],

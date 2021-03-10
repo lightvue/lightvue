@@ -1,0 +1,54 @@
+.lv-toast {
+  position: fixed;
+  min-width: 15rem;
+  font-size: 18px;
+  &.--top {
+    top: 20px;
+    left: 50%;
+    /* margin-left: -10em; */
+  }
+
+  &.--bottom {
+    bottom: 20px;
+    left: 50%;
+    /* margin-left: -10em;` */
+  }
+}
+
+.lv-toast__message-text {
+  flex: 1 1 auto;
+}
+
+.lv-toast__icon-close.lv-link {
+  cursor: pointer;
+}
+
+/* Animations */
+.lv-toast__message-enter,
+.lv-toast__message-enter-from {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
+.lv-toast__message-enter-active {
+  -webkit-transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.lv-toast__message-leave,
+.lv-toast__message-leave-from {
+  max-height: 1000px;
+}
+.lv-toast__message-leave-active {
+  -webkit-transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), opacity 0.3s, margin-bottom 0.3s;
+  transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), opacity 0.3s, margin-bottom 0.3s;
+}
+
+.lv-toast__message-leave-to {
+  max-height: 0;
+  opacity: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}

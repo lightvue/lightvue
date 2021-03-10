@@ -1,97 +1,65 @@
- <template>
-    <div>
-        <div class="content-section introduction">
-            <div class="feature-intro">
-                <h1>Notification</h1>
-                <p>Toast is used to display messages in an overlay.</p>
-            </div>
-        </div>
+<template>
+  <div>
+    <h5>Variants</h5>
+    <LvButton label="Default" class="--mr-4" @click="showSuccess" />
+    <LvButton label="Info" class="lv--info --mr-4" @click="showInfo" />
+    <LvButton label="Warn" class="lv--warning --mr-4" @click="showWarn" />
+    <LvButton label="Error" class="lv--danger --mr-4" @click="showError" />
 
-        <div class="content-section implementation">
-            <div class="card">
-                <h5>Severities</h5>
-                <LvButton label="Default" @click="showSuccess" />
-                <LvButton label="Info" class="lv--info" @click="showInfo" />
-                <LvButton label="Warn" class="lv--warning" @click="showWarn" />
-                <LvButton label="Error" class="lv--danger" @click="showError" />
+    <h5>Positions</h5>
+    <LvButton label="Top Left" class="--mr-4" @click="showTopLeft" />
+    <LvButton label="Bottom Left" class="lv--warning --mr-4" @click="showBottomLeft" />
+    <LvButton label="Bottom Right" class="lv--danger --mr-4" @click="showBottomRight" />
 
-                <h5>Positions</h5>
-                <LvButton label="Top Left" class="p-mr-2" @click="showTopLeft" />
-                <LvButton label="Bottom Left" class="lv--warning" @click="showBottomLeft" />
-                <LvButton label="Bottom Right" class="lv--danger" @click="showBottomRight" />
+    <h5>Options</h5>
+    <LvButton @click="showMultiple" label="Multiple" class="lv--warning --mr-4" />
+    <LvButton @click="showSticky" label="Sticky" />
 
-                <h5>Options</h5>
-                <LvButton @click="showMultiple" label="Multiple" class="lv--warning" />
-                <LvButton @click="showSticky" label="Sticky" />
-
-                <h5>Remove All</h5>
-                <LvButton @click="clear" label="Clear" />
-            </div>
-        </div>
-
-        <!-- <ToastDoc/> -->
-    </div>
+    <h5>Remove All</h5>
+    <LvButton @click="clear" label="Clear" />
+  </div>
 </template>
 
 <script>
-// import ToastDoc from './ToastDoc';
-
 export default {
-    data() {
-        return {
-            messages: [],
-        }
+  methods: {
+    showSuccess() {
+      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 30000 });
     },
-    methods: {
-        showSuccess() {
-            this.$notification.add({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
-        },
-        showInfo() {
-            this.$notification.add({severity:'info', summary: 'Info Message', detail:'Message Content', life: 3000});
-        },
-        showWarn() {
-            this.$notification.add({severity:'warn', summary: 'Warn Message', detail:'Message Content', life: 3000});
-        },
-        showError() {
-            this.$notification.add({severity:'error', summary: 'Error Message', detail:'Message Content', life: 3000});
-        },
-        showTopLeft() {
-            this.$notification.add({severity: 'info', summary: 'Info Message', detail: 'Message Content', group: 'tl', life: 3000});
-        },
-        showBottomLeft() {
-            this.$notification.add({severity:'warn', summary: 'Warn Message', detail:'Message Content', group: 'bl', life: 3000});
-        },
-        showBottomRight() {
-            this.$notification.add({severity:'success', summary: 'Success Message', detail:'Message Content', group: 'br', life: 3000});
-        },
-        showSticky() {
-            this.$notification.add({severity: 'info', summary: 'Sticky Message', detail: 'Message Content'});
-        },
-        showMultiple() {
-            this.$notification.add({severity:'info', summary:'Message 1', detail:'Message 1 Content', life: 3000});
-            this.$notification.add({severity:'info', summary:'Message 2', detail:'Message 2 Content', life: 3000});
-            this.$notification.add({severity:'info', summary:'Message 3', detail:'Message 3 Content', life: 3000});
-        },
-        clear() {
-            this.$notification.removeAllGroups();
-        }
+    showInfo() {
+      this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
-    // components: {
-    //     'ToastDoc': ToastDoc
-    // }
-}
+    showWarn() {
+      this.$notification.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
+    },
+    showError() {
+      this.$notification.add({ type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
+    },
+    showTopLeft() {
+      this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', position: 'top-left', duration: 3000 });
+    },
+    showBottomLeft() {
+      this.$notification.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', position: 'bottom-left', duration: 3000 });
+    },
+    showBottomRight() {
+      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', position: 'bottom-right', duration: 3000 });
+    },
+    showSticky() {
+      this.$notification.add({ title: 'Sticky Message', content: 'Message Content' });
+    },
+    showMultiple() {
+      this.$notification.add({ type: 'info', title: 'Message 1', content: 'Message 1 Content', duration: 3000 });
+      this.$notification.add({ type: 'warn', title: 'Message 2', content: 'Message 2 Content', duration: 3000 });
+      this.$notification.add({ type: 'error', title: 'Message 3', content: 'Message 3 Content', duration: 3000 });
+    },
+    clear() {
+      this.$notification.removeAllGroups();
+    },
+  },
+};
 </script>
-
-<style lang="scss" scoped>
-button {
-    min-width: 10rem;
-    margin-right: .5rem;
-}
-
-@media screen and (max-width: 960px) {
-    button {
-        width: 100%;
-        margin-bottom: .5rem;
-    }
+<style lang="scss">
+.--mr-4 {
+  margin-right: 8px;
 }
 </style>

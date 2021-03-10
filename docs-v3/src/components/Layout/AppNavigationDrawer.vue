@@ -2,7 +2,7 @@
   <div class="light-scrollbar" :class="`sidebar --theme-${theme} ${showDrawer ? 'show-drawer' : ''}`" @click="$emit('toggle-drawer')">
     <div class="nav-list">
       <div class="sidebar__logo" @click="$router.push('/')">
-        <img src="../../assets/logo_v2.svg" class="header-logo" />
+        <img src="/logo_v2.svg" class="header-logo" />
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
       <div class="nav-list__category-wrap" v-for="category in $options.categories" :key="category.category_name" :class="{ '--active': activeCategory === category.category_name }">
@@ -188,6 +188,14 @@ export default {
         {
           page_name: 'Dialog',
           page_path: '/vue-components/dialog',
+        },
+        {
+          page_name: 'Toast',
+          page_path: '/vue-components/toast',
+        },
+        {
+          page_name: 'Notifications',
+          page_path: '/vue-components/notification',
         },
       ],
     },

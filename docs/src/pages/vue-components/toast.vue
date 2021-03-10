@@ -25,7 +25,7 @@ export default {
     DocsAllApi,
   },
   title: 'Toast',
-  description: `Toast allows to show toast messages and notifications with the page or after an action is performed.`,
+  description: `Toast allows to show toast messages with the page or after an action is performed.`,
   packageName: 'Toast',
   componentName: 'LvToast',
   apiData: ToastAPI,
