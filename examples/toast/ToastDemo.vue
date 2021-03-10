@@ -33,30 +33,30 @@ export default {
   },
   methods: {
     showSuccess() {
-      this.$toast.add({ severity: 'success', summary: 'Success Message', detail: 'Message Content', life: 3000 });
+      this.$toast.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 3000 });
     },
     showInfo() {
-      this.$toast.add({ severity: 'info', summary: 'Info Message', detail: 'Message Content', life: 3000 });
+      this.$toast.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
     showWarn() {
-      this.$toast.add({ severity: 'warn', summary: 'Warn Message', detail: 'Message Content', life: 3000 });
+      this.$toast.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
     },
     showError() {
-      this.$toast.add({ severity: 'error', summary: 'Error Message', detail: 'Message Content', life: 3000 });
+      this.$toast.add({ type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
     },
     showTop() {
-      this.$toast.add({ severity: 'info', summary: 'Info Message', detail: 'Message Content', group: 'top', life: 3000 });
+      this.$toast.add({ type: 'info', title: 'Info Message', content: 'Message Content', group: 'top', duration: 3000 });
     },
     showBottom() {
-      this.$toast.add({ severity: 'warn', summary: 'Warn Message', detail: 'Message Content', group: 'bottom', life: 3000 });
+      this.$toast.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', group: 'bottom', duration: 3000 });
     },
     showSticky() {
-      this.$toast.add({ severity: 'info', summary: 'Sticky Message', detail: 'Message Content' });
+      this.$toast.add({ type: 'info', title: 'Sticky Message', content: 'Message Content' });
     },
     showMultiple() {
-      this.$toast.add({ severity: 'info', summary: 'Message 1', detail: 'Message 1 Content', life: 3000 });
-      this.$toast.add({ severity: 'info', summary: 'Message 2', detail: 'Message 2 Content', life: 3000 });
-      this.$toast.add({ severity: 'info', summary: 'Message 3', detail: 'Message 3 Content', life: 3000 });
+      this.$toast.add({ type: 'info', title: 'Message 1', content: 'Message 1 Content', duration: 3000 });
+      this.$toast.add({ type: 'info', title: 'Message 2', content: 'Message 2 Content', duration: 3000 });
+      this.$toast.add({ type: 'info', title: 'Message 3', content: 'Message 3 Content', duration: 3000 });
     },
     clear() {
       this.$toast.removeAllGroups();

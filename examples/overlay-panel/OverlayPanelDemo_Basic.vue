@@ -59,7 +59,7 @@ export default {
     // },
     // onProductSelect(event) {
     //   this.$refs.op.hide();
-    //   this.$toast.add({ severity: 'info', summary: 'Product Selected', detail: event.data.name, life: 3000 });
+    //   this.$toast.add({ type: 'info', title: 'Product Selected', content: event.data.name, duration: 3000 });
     // },
   },
   components: {

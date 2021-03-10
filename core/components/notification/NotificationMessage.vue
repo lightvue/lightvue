@@ -1,13 +1,13 @@
 <template>
   <div :class="containerClass" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="lv-notification-message-content">
+    <div class="lv-notification__message-content">
       <span :class="iconClass"></span>
-      <div class="lv-notification-message-text">
-        <span class="lv-notification-summary">{{ message.summary }}</span>
-        <div class="lv-notification-detail">{{ message.detail }}</div>
+      <div class="lv-notification__message-text">
+        <span class="lv-notification__title">{{ message.title }}</span>
+        <div class="lv-notification__content">{{ message.content }}</div>
       </div>
-      <button class="lv-notification-icon-close lv-link" @click="onCloseClick" v-if="message.closable !== false" type="button" v-ripple>
-        <span class="lv-notification-icon-close-icon light-icon-x"></span>
+      <button class="lv-notification__icon-close lv-link" @click="onCloseClick" v-if="message.closable !== false" type="button" v-ripple>
+        <span class="lv-notification__icon-close-icon light-icon-x"></span>
       </button>
     </div>
   </div>
@@ -22,10 +22,10 @@ export default {
   },
   closeTimeout: null,
   mounted() {
-    if (this.message.life) {
+    if (this.message.duration) {
       this.closeTimeout = setTimeout(() => {
         this.close();
-      }, this.message.life);
+      }, this.message.duration);
     }
   },
   methods: {
@@ -43,23 +43,23 @@ export default {
   computed: {
     containerClass() {
       return [
-        'lv-notification-message',
+        'lv-notification__message',
         {
-          'lv-notification-message-info': this.message.severity === 'info',
-          'lv-notification-message-warn': this.message.severity === 'warn',
-          'lv-notification-message-error': this.message.severity === 'error',
-          'lv-notification-message-success': this.message.severity === 'success',
+          '--info': this.message.type === 'info',
+          '--warn': this.message.type === 'warn',
+          '--error': this.message.type === 'error',
+          '--success': this.message.type === 'success',
         },
       ];
     },
     iconClass() {
       return [
-        'lv-notification-message-icon',
+        'lv-notification__message-icon',
         {
-          'light-icon-info-circle': this.message.severity === 'info',
-          'light-icon-alert-triangle': this.message.severity === 'warn',
-          'light-icon-circle-x': this.message.severity === 'error',
-          'light-icon-circle-check': this.message.severity === 'success',
+          'light-icon-info-circle': this.message.type === 'info',
+          'light-icon-alert-triangle': this.message.type === 'warn',
+          'light-icon-circle-x': this.message.type === 'error',
+          'light-icon-circle-check': this.message.type === 'success',
         },
       ];
     },

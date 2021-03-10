@@ -37,33 +37,33 @@ export default {
   },
   methods: {
     showSuccess() {
-      this.$notification.add({ severity: 'success', summary: 'Success Message', detail: 'Message Content', life: 3000 });
+      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 30000 });
     },
     showInfo() {
-      this.$notification.add({ severity: 'info', summary: 'Info Message', detail: 'Message Content', life: 3000 });
+      this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
     showWarn() {
-      this.$notification.add({ severity: 'warn', summary: 'Warn Message', detail: 'Message Content', life: 3000 });
+      this.$notification.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
     },
     showError() {
-      this.$notification.add({ severity: 'error', summary: 'Error Message', detail: 'Message Content', life: 3000 });
+      this.$notification.add({ type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
     },
     showTopLeft() {
-      this.$notification.add({ severity: 'info', summary: 'Info Message', detail: 'Message Content', group: 'tl', life: 3000 });
+      this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', group: 'tl', duration: 3000 });
     },
     showBottomLeft() {
-      this.$notification.add({ severity: 'warn', summary: 'Warn Message', detail: 'Message Content', group: 'bl', life: 3000 });
+      this.$notification.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', group: 'bl', duration: 3000 });
     },
     showBottomRight() {
-      this.$notification.add({ severity: 'success', summary: 'Success Message', detail: 'Message Content', group: 'br', life: 3000 });
+      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', group: 'br', duration: 3000 });
     },
     showSticky() {
-      this.$notification.add({ severity: 'info', summary: 'Sticky Message', detail: 'Message Content' });
+      this.$notification.add({ type: 'info', title: 'Sticky Message', content: 'Message Content' });
     },
     showMultiple() {
-      this.$notification.add({ severity: 'info', summary: 'Message 1', detail: 'Message 1 Content', life: 3000 });
-      this.$notification.add({ severity: 'info', summary: 'Message 2', detail: 'Message 2 Content', life: 3000 });
-      this.$notification.add({ severity: 'info', summary: 'Message 3', detail: 'Message 3 Content', life: 3000 });
+      this.$notification.add({ type: 'info', title: 'Message 1', content: 'Message 1 Content', duration: 3000 });
+      this.$notification.add({ type: 'info', title: 'Message 2', content: 'Message 2 Content', duration: 3000 });
+      this.$notification.add({ type: 'info', title: 'Message 3', content: 'Message 3 Content', duration: 3000 });
     },
     clear() {
       this.$notification.removeAllGroups();

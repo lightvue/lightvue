@@ -1,0 +1,91 @@
+.lv-notification {
+  position: fixed;
+  width: 25rem;
+  &.--top-right {
+    top: 20px;
+    right: 20px;
+  }
+
+  &.--top-left {
+    top: 20px;
+    left: 20px;
+  }
+
+  &.--bottom-left {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  &.--bottom-right {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  &.--top-center {
+    top: 20px;
+    left: 50%;
+    margin-left: -10em;
+  }
+
+  &.--bottom-center {
+    bottom: 20px;
+    left: 50%;
+    margin-left: -10em;
+  }
+
+  &.--center {
+    left: 50%;
+    top: 50%;
+    min-width: 20vw;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.lv-notification__message-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.lv-notification__message-text {
+  flex: 1 1 auto;
+}
+
+.lv-notification__icon-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  &.lv-link {
+    cursor: pointer;
+  }
+}
+
+/* Animations */
+.lv-notification__message-enter {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
+.lv-notification__message-leave {
+  max-height: 1000px;
+}
+
+.lv-notification__message-leave-to {
+  max-height: 0;
+  opacity: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.lv-notification__message-enter-active {
+  -webkit-transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.lv-notification__message-leave-active {
+  -webkit-transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), opacity 0.3s, margin-bottom 0.3s;
+  transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), opacity 0.3s, margin-bottom 0.3s;
+}
