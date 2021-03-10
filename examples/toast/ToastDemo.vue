@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Toast from 'lightvue/toast/Toast.vue';
+// import Toast from 'lightvue/toast/Toast.vue';
 export default {
   data() {
     return {
@@ -62,9 +62,9 @@ export default {
       this.$toast.removeAllGroups();
     },
   },
-  components: {
-    Toast,
-  },
+  // components: {
+  //   Toast,
+  // },
 };
 </script>
 

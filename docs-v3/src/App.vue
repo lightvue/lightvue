@@ -10,9 +10,9 @@
       </div>
       <app-footer />
     </div> -->
-    <!-- <LvToast />
+    <LvToast />
     <LvToast position="top" group="top" />
-    <LvToast position="bottom" group="bottom" /> -->
+    <LvToast position="bottom" group="bottom" />
     <LvNotification />
     <LvNotification position="top-left" group="tl" />
     <LvNotification position="bottom-left" group="bl" />
