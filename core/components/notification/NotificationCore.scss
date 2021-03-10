@@ -62,14 +62,16 @@
 }
 
 /* Animations */
-.lv-notification__message-enter {
+.lv-notification__message-enter,
+.lv-notification__message-enter-from {
   opacity: 0;
   -webkit-transform: translateY(50%);
   -ms-transform: translateY(50%);
   transform: translateY(50%);
 }
 
-.lv-notification__message-leave {
+.lv-notification__message-leave,
+.lv-notification__message-leave-from {
   max-height: 1000px;
 }
 
