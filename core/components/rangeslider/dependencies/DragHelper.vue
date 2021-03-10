@@ -1,5 +1,7 @@
-// @flow
-
+<template>
+  <div><slot></slot></div>
+</template>
+<script>
 import DocumentEventHelper from './DocumentEventHelper';
 import { relativeMouseOffset } from './utils';
 
@@ -104,8 +106,5 @@ export default {
       this.$emit('dragend', event, f(event), this.$el);
     },
   },
-
-  render() {
-    return this.$slots.default && this.$slots.default[0];
-  },
 };
+</script>
