@@ -13,7 +13,7 @@
 
     <h5>Options</h5>
     <LvButton @click="showMultiple" label="Multiple" class="lv--warning --mr-4" />
-    <LvButton @click="showSticky" label="Sticky --mr-4" />
+    <LvButton @click="showSticky" label="Sticky" />
 
     <h5>Remove All</h5>
     <LvButton @click="clear" label="Clear" />
