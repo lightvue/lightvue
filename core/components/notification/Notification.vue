@@ -40,12 +40,18 @@ export default {
   },
   mounted() {
     NotificationEventBus.$on('add', message => {
-      if (this.group == message.group) {
+      if (!message.position) {
+        message.position = 'top-right';
+      }
+      if (this.position == message.position) {
         this.add(message);
       }
     });
-    NotificationEventBus.$on('remove-group', group => {
-      if (this.group === group) {
+    NotificationEventBus.$on('remove-group', position => {
+      if (!message.position) {
+        message.position = 'top-right';
+      }
+      if (this.position === position) {
         this.messages = [];
       }
     });

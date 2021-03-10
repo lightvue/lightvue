@@ -7,8 +7,8 @@ const lightToast = {
       add: message => {
         ToastEventBus.$emit('add', message);
       },
-      removeGroup: group => {
-        ToastEventBus.$emit('remove-group', group);
+      removeGroup: position => {
+        ToastEventBus.$emit('remove-group', position);
       },
       removeAllGroups: () => {
         ToastEventBus.$emit('remove-all-groups');

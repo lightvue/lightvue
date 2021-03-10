@@ -1,9 +1,12 @@
 <template>
   <div :class="containerClass" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="lv-toast-message-content">
-      <!-- <div class="lv-toast-message-text"> -->
-      <div class="lv-toast-content">{{ message.content }}</div>
+    <div class="lv-toast__message-content">
+      <!-- <div class="lv-toast__message-text"> -->
+      <div class="lv-toast__content">{{ message.content }}</div>
       <!-- </div> -->
+      <!-- <button class="lv-notification__icon-close lv-link" @click="onCloseClick" v-if="message.closable !== false" type="button" v-ripple>
+        <span class="lv-notification__icon-close-icon light-icon-x"></span>
+      </button> -->
     </div>
   </div>
 </template>
@@ -31,19 +34,18 @@ export default {
       if (this.closeTimeout) {
         clearTimeout(this.closeTimeout);
       }
-
       this.close();
     },
   },
   computed: {
     containerClass() {
       return [
-        'lv-toast-message',
+        'lv-toast__message',
         {
-          'lv-toast-message-info': this.message.type === 'info',
-          'lv-toast-message-warn': this.message.type === 'warn',
-          'lv-toast-message-error': this.message.type === 'error',
-          'lv-toast-message-success': this.message.type === 'success',
+          '--info': this.message.type === 'info',
+          '--warn': this.message.type === 'warn',
+          '--error': this.message.type === 'error',
+          '--success': this.message.type === 'success',
         },
       ];
     },

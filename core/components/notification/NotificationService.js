@@ -4,8 +4,8 @@ const NotificationService = {
   add: message => {
     NotificationEventBus.$emit('add', message);
   },
-  removeGroup: group => {
-    NotificationEventBus.$emit('remove-group', group);
+  removeGroup: position => {
+    NotificationEventBus.$emit('remove-group', position);
   },
   removeAllGroups: () => {
     NotificationEventBus.$emit('remove-all-groups');
