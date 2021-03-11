@@ -2,25 +2,23 @@
   <div class="best__demo__wrapper" :id="computedId">
     <div class="wrapper__header">
       <h5 class="component__header" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
-      <i class="light-icon-adjustments-horizontal porps__drawer" @click="showOptions()"></i>
+      <i class="light-icon-adjustments-horizontal dy-props__toggle-drawer" @click="showOptions()"></i>
     </div>
-    <div class="playground_wrapper">
-      <div class="componets_wrapper">
-        <div class="component__render light-scrollbar">
-          <div class="rendered__component"><slot></slot></div>
+    <div class="dy-pg__wrap">
+      <div class="dy-pg__left">
+        <div class="dy-comp__wrap light-scrollbar">
+          <slot></slot>
         </div>
-        <div class="best__demo__code light-scrollbar">
-          <div class="demo__code">
-            <div class="code__wrapper">
-              <CopyButton :text="getMarkup" />
-              <slot name="code"></slot>
-            </div>
-          </div>
+        <div class="dy-code__wrap light-scrollbar">
+          <CopyButton :text="getMarkup" />
+          <slot name="code"></slot>
         </div>
       </div>
-      <div class="props__wrapper" :class="`${showPorpsOptions ? 'show__Porps__Options' : ''}`">
-        <div class="props__header">All Props</div>
-        <div class="props__Api light-scrollbar"><slot name="props"></slot></div>
+      <div class="dy-props__wrap" :class="`${showPorpsOptions ? '--mobile-show' : ''}`">
+        <div class="dy-props__header">All Props</div>
+        <div class="dy-props__body light-scrollbar">
+          <slot name="props"></slot>
+        </div>
       </div>
     </div>
   </div>
@@ -49,7 +47,7 @@ export default {
       this.showPorpsOptions = !this.showPorpsOptions;
     },
     getMarkup() {
-      return this.$el.querySelector('.code__wrapper').innerText;
+      return this.$el.querySelector('.dy-code__wrap').innerText;
     },
   },
   components: {
@@ -66,7 +64,7 @@ export default {
   width: 100%;
   position: relative;
 }
-.playground_wrapper {
+.dy-pg__wrap {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -75,13 +73,7 @@ export default {
   /* justify-content: space-between; */
 }
 
-.rendered__component {
-  width: 100%;
-  padding: 60px 60px 20px;
-  background: #ffffff;
-}
-
-.componets_wrapper {
+.dy-pg__left {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -90,13 +82,28 @@ export default {
   overflow: hidden;
 }
 
-.props__wrapper {
+.dy-props__wrap {
   width: 300px;
   max-height: 60vh;
   background: #ffffff;
   /* padding: 20px; */
   transition: all 0.2s ease-in-out;
   border-left: 2px solid #edf2f6;
+  .dy-props__header {
+    padding: 22px;
+    border-bottom: 1px solid #edf2f6;
+    font-weight: 600;
+    font-size: 1em;
+    color: #008080;
+  }
+
+  .dy-props__body {
+    padding: 20px;
+    overflow-y: scroll;
+    height: calc(100% - 62px);
+    background: #ffffff;
+    //   height: 350px;
+  }
 }
 
 .wrapper__header {
@@ -138,49 +145,37 @@ export default {
   }
 }
 
-.component__render {
+.dy-comp__wrap {
   flex-grow: 1;
   min-height: 200px;
   display: flex;
   overflow-y: auto;
   justify-content: center;
-}
-
-.best__demo__code {
-  overflow-y: auto;
-}
-
-.demo__code {
-  position: relative;
+  width: 100%;
+  padding: 60px 60px 20px;
   background: #ffffff;
-  overflow: hidden;
 }
 
-.props__header {
-  padding: 22px;
-  border-bottom: 1px solid #edf2f6;
-  font-weight: 600;
-  font-size: 1em;
-  color: #008080;
-}
+// .best__demo__code {
+//   overflow-y: auto;
+// }
 
-.props__Api {
-  padding: 20px;
-  overflow-y: scroll;
-  height: calc(100% - 62px);
-  background: #ffffff;
-  //   height: 350px;
-}
+// .demo__code {
+//   position: relative;
+//   background: #ffffff;
+//   overflow: hidden;
+// }
 
-.porps__drawer {
+.dy-props__toggle-drawer {
   display: none;
 }
 
-.code__wrapper {
+.dy-code__wrap {
   display: flex;
   flex-direction: column;
   line-height: 1.5;
   overflow: auto;
+  position: relative;
   // padding: 5px;
   pre {
     color: #2f9c0a;
@@ -195,6 +190,7 @@ export default {
     }
     &.--empty-row {
       height: 20px;
+      min-height: 4px;
     }
     &:nth-child(even) {
       background-color: #f6f9fc;
@@ -204,27 +200,23 @@ export default {
     }
   }
 }
-.dynamic__code {
-  padding: 20px;
-}
 
 @media (max-width: 975px) {
-  .props__wrapper {
+  .dy-props__wrap {
     display: none;
+    &.--mobile-show {
+      position: absolute;
+      z-index: 900;
+      display: block;
+      height: 100%;
+    }
   }
 
-  .show__Porps__Options {
-    position: absolute;
-    z-index: 900;
-    display: block;
-    height: 100%;
-  }
-
-  .rendered__component {
+  .dy-comp__wrap {
     padding: 0px;
   }
 
-  .porps__drawer {
+  .dy-props__toggle-drawer {
     display: block;
   }
 }
