@@ -8,7 +8,7 @@
 <script>
 import ToastEventBus from './ToastEventBus';
 import ToastMessage from './ToastMessage';
-import DomHandler from '@/utils/DomHandler';
+import DomHandler from 'lightvue/utils/DomHandler';
 
 var messageIdx = 0;
 
