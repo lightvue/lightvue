@@ -1,35 +1,33 @@
 <template>
   <div>
-    <docs-card-best title="Playground" componentName="Options">
-      <!-- <lv-input :label="options.label" :floating-label="options.floating" :bottom-bar="options.bottom_bar" :rounded="options.rounded" :placeholder="options.placeholder" :help-text="options['help-text']" :placeholder-color="options.placeholderColor" :icon-left="options.iconLeft" :icon-right="options.iconRight" style="width: 80%" /> -->
+    <docs-card-best title="Playground">
       <div class="demo__positioning">
-        <lv-textarea v-bind="options" />
+        <lv-textarea v-bind="allOptions" />
       </div>
       <template #props>
-        <lv-toggle-switch v-model="options['floating-label']" label="Floating Label" v-if="!options['icon-left'] && !options['placeholder']" /> <br />
-        <lv-toggle-switch v-model="options['bottom-bar']" label="Material Design" /> <br />
-        <lv-toggle-switch v-model="options.rounded" label="Rounded" /> <br />
-        <lv-toggle-switch v-model="options.showLimit" label="Show Limit" /> <br />
-        <lv-toggle-switch v-model="options.autoResize" label="Auto Resize" /> <br />
+        <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating Label" v-if="!allOptions['icon-left'] && !allOptions['placeholder']" /> <br />
+        <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
+        <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
+        <lv-toggle-switch v-model="allOptions.showLimit" label="Show Limit" /> <br />
+        <lv-toggle-switch v-model="allOptions.autoResize" label="Auto Resize" /> <br />
         <br />
-        <lv-number v-model="options.maxLength" label="Max Length" /> <br />
-        <lv-input v-model="options.label" label="Label" /> <br />
-        <lv-input v-model="options.placeholder" label="Placeholder" /> <br />
-        <lv-input v-model="options['help-text']" label="Help Text" /> <br />
-        <lv-input v-model="options['icon-left']" label="Left Icons" /> <br />
-        <lv-input v-model="options['icon-right']" label="Right Icons" /> <br />
-        <lv-input v-model="options.resize" label="Resize" /> <br />
-        <Lv-colorpicker v-model="options['placeholder-color']" label="Placeholder Color" />
+        <!-- <lv-number v-model="allOptions.maxLength" label="Max Length" /> <br /> -->
+        <lv-input v-model="allOptions.label" label="Label" /> <br />
+        <lv-input v-model="allOptions.placeholder" label="Placeholder" /> <br />
+        <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br />
+        <lv-input v-model="allOptions['icon-left']" label="Left Icons" /> <br />
+        <lv-input v-model="allOptions['icon-right']" label="Right Icons" /> <br />
+        <lv-input v-model="allOptions.resize" label="Resize" /> <br />
+        <Lv-colorpicker v-model="allOptions['placeholder-color']" label="Placeholder Color" />
       </template>
       <template #code>
-        <div class="code__wrapper">
-          <CopyButton :text="getMarkup" />
-          &nbsp;&lt;lv-input
-          <span class="attribute__row" v-for="(option, name) in options" :key="name">
-            <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
-          </span>
-          &nbsp;/&gt;
-        </div>
+        <span class="dy-code-row --empty-row"></span>
+        <span class="dy-code-row --tag-row">&nbsp;&lt;lv-textarea</span>
+        <span class="dy-code-row --attribute-row" v-for="(option, name) in enabledOptions" :key="name">
+          <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
+        </span>
+        <span class="dy-code-row --tag-row">&nbsp;/&gt;</span>
+        <span class="dy-code-row --empty-row"></span>
       </template>
     </docs-card-best>
   </div>
@@ -42,21 +40,20 @@ import LvInput from 'lightvue/input/Input';
 import LvNumber from 'lightvue/number/Number';
 import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
 import LvToggleSwitch from 'lightvue/input-toggle/ToggleSwitch';
-import CodeHighlight from '@/components/docs-card/CodeHighlight';
-import CopyButton from '@/components/docs-card/CopyButton';
 export default {
   data() {
     return {
-      options: {
+      allOptions: {
         'floating-label': false,
-        'bottom-bar': false,
+        'bottom-bar': true,
         rounded: false,
         showLimit: true,
         autoResize: true,
         maxLength: 100,
-        placeholder: 'default color rgba(0, 0, 0, 0.3)',
-        'help-text': 'You can create your Component',
-        label: 'This is the best demo',
+        rows: 3,
+        placeholder: 'Textarea Placeholder',
+        'help-text': '',
+        label: 'Textarea Label',
         'placeholder-color': 'rgba(0, 0, 0, 0.3)',
         'icon-left': '',
         'icon-right': '',
@@ -70,16 +67,12 @@ export default {
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
-    CodeHighlight,
-    CopyButton,
     LvTextarea,
     LvNumber,
   },
-  methods: {
-    getMarkup() {
-      let abc = this.$el.querySelector('.code__wrapper').innerText;
-      console.log(abc);
-      return abc;
+  computed: {
+    enabledOptions() {
+      return Object.entries(this.allOptions).reduce((a, [k, v]) => (v ? ((a[k] = v), a) : a), {});
     },
   },
 };

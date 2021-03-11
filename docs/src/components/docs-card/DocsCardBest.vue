@@ -10,11 +10,16 @@
           <div class="rendered__component"><slot></slot></div>
         </div>
         <div class="best__demo__code light-scrollbar">
-          <div class="demo__code"><slot name="code"></slot></div>
+          <div class="demo__code">
+            <div class="code__wrapper">
+              <CopyButton :text="getMarkup" />
+              <slot name="code"></slot>
+            </div>
+          </div>
         </div>
       </div>
       <div class="props__wrapper" :class="`${showPorpsOptions ? 'show__Porps__Options' : ''}`">
-        <div class="props__header">{{ componentName }}</div>
+        <div class="props__header">All Props</div>
         <div class="props__Api light-scrollbar"><slot name="props"></slot></div>
       </div>
     </div>
@@ -22,6 +27,7 @@
 </template>
 
 <script>
+import CopyButton from '@/components/docs-card/CopyButton';
 export default {
   data() {
     return {
@@ -32,7 +38,6 @@ export default {
     title: String,
     id: String,
     file: String,
-    componentName: String,
   },
   computed: {
     computedId() {
@@ -43,6 +48,12 @@ export default {
     showOptions() {
       this.showPorpsOptions = !this.showPorpsOptions;
     },
+    getMarkup() {
+      return this.$el.querySelector('.code__wrapper').innerText;
+    },
+  },
+  components: {
+    CopyButton,
   },
 };
 </script>
@@ -66,27 +77,22 @@ export default {
 
 .rendered__component {
   width: 100%;
-  padding: 20px;
-  /* color: #ffffff; */
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  padding: 60px 60px 20px;
   background: #ffffff;
-  // height: 350px;
 }
 
 .componets_wrapper {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  max-height: 80vh;
+  max-height: 60vh;
   align-items: stretch;
   overflow: hidden;
 }
 
 .props__wrapper {
   width: 300px;
-  max-height: 80vh;
+  max-height: 60vh;
   background: #ffffff;
   /* padding: 20px; */
   transition: all 0.2s ease-in-out;
@@ -134,11 +140,10 @@ export default {
 
 .component__render {
   flex-grow: 1;
-  min-height: 300px;
+  min-height: 200px;
   display: flex;
   overflow-y: auto;
   justify-content: center;
-  align-items: center;
 }
 
 .best__demo__code {
@@ -146,15 +151,9 @@ export default {
 }
 
 .demo__code {
-  // padding: 20px;
-  //   height: 100px;
   position: relative;
   background: #ffffff;
-  border-top: 1px solid #bdbdbd;
   overflow: hidden;
-  span.token.attr-value::after {
-    content: '\A';
-  }
 }
 
 .props__header {
@@ -180,20 +179,28 @@ export default {
 .code__wrapper {
   display: flex;
   flex-direction: column;
-  color: #c92c2c;
   line-height: 1.5;
   overflow: auto;
-  padding: 5px;
+  // padding: 5px;
   pre {
     color: #2f9c0a;
     span {
       color: #1990b8;
     }
   }
-  .attribute__row {
-    // padding-left: 16px;
+  .dy-code-row {
+    &.--tag-row {
+      color: #c92c2c;
+      padding-left: 16px;
+    }
+    &.--empty-row {
+      height: 20px;
+    }
     &:nth-child(even) {
       background-color: #f6f9fc;
+    }
+    &:nth-child(odd) {
+      background-color: #ffffff;
     }
   }
 }

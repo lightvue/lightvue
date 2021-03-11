@@ -1,31 +1,29 @@
 <template>
   <div>
-    <docs-card-best title="Playground" componentName="Options">
-      <!-- <lv-input :label="options.label" :floating-label="options.floating" :bottom-bar="options.bottom_bar" :rounded="options.rounded" :placeholder="options.placeholder" :help-text="options['help-text']" :placeholder-color="options.placeholderColor" :icon-left="options.iconLeft" :icon-right="options.iconRight" style="width: 80%" /> -->
+    <docs-card-best title="Playground">
       <div class="demo__positioning">
-        <lv-input v-bind="options" />
+        <lv-input v-bind="allOptions" />
       </div>
       <template #props>
-        <lv-toggle-switch v-model="options['floating-label']" label="Floating Label" v-if="!options['icon-left'] && !options['Placeholder']" /> <br />
-        <lv-toggle-switch v-model="options['bottom-bar']" label="Material Design" /> <br />
-        <lv-toggle-switch v-model="options.rounded" label="Rounded" /> <br />
+        <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating Label" v-if="!allOptions['icon-left'] && !allOptions['Placeholder']" /> <br />
+        <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
+        <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
         <br />
-        <lv-input v-model="options.label" label="Label" /> <br />
-        <lv-input v-model="options.placeholder" label="Placeholder" /> <br />
-        <lv-input v-model="options['help-text']" label="Help Text" /> <br />
-        <lv-input v-model="options['icon-left']" label="Left Icons" /> <br />
-        <lv-input v-model="options['icon-right']" label="Right Icons" /> <br />
-        <Lv-colorpicker v-model="options['placeholder-color']" label="Placeholder Color" />
+        <lv-input v-model="allOptions.label" label="Label" /> <br />
+        <lv-input v-model="allOptions.placeholder" label="Placeholder" /> <br />
+        <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br />
+        <lv-input v-model="allOptions['icon-left']" label="Left Icons" /> <br />
+        <lv-input v-model="allOptions['icon-right']" label="Right Icons" /> <br />
+        <Lv-colorpicker v-model="allOptions['placeholder-color']" label="Placeholder Color" />
       </template>
       <template #code>
-        <div class="code__wrapper">
-          <CopyButton :text="getMarkup" />
-          &nbsp;&lt;lv-input
-          <span class="attribute__row" v-for="(option, name) in options" :key="name">
-            <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
-          </span>
-          &nbsp;/&gt;
-        </div>
+        <span class="dy-code-row --empty-row"></span>
+        <span class="dy-code-row --tag-row">&nbsp;&lt;lv-input</span>
+        <span class="dy-code-row --attribute-row" v-for="(option, name) in enabledOptions" :key="name">
+          <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
+        </span>
+        <span class="dy-code-row --tag-row">&nbsp;/&gt;</span>
+        <span class="dy-code-row --empty-row"></span>
       </template>
     </docs-card-best>
   </div>
@@ -36,12 +34,10 @@ import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input/Input';
 import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
 import LvToggleSwitch from 'lightvue/input-toggle/ToggleSwitch';
-import CodeHighlight from '@/components/docs-card/CodeHighlight';
-import CopyButton from '@/components/docs-card/CopyButton';
 export default {
   data() {
     return {
-      options: {
+      allOptions: {
         'floating-label': false,
         'bottom-bar': false,
         rounded: false,
@@ -55,20 +51,16 @@ export default {
       stringProps: ['label', 'placeholder-color', 'icon-left', 'icon-right', 'help-text', 'placeholder'],
     };
   },
+  computed: {
+    enabledOptions() {
+      return Object.entries(this.allOptions).reduce((a, [k, v]) => (v ? ((a[k] = v), a) : a), {});
+    },
+  },
   components: {
     DocsCardBest,
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
-    CodeHighlight,
-    CopyButton,
-  },
-  methods: {
-    getMarkup() {
-      let abc = this.$el.querySelector('.code__wrapper').innerText;
-      console.log(abc);
-      return abc;
-    },
   },
 };
 </script>
@@ -76,6 +68,6 @@ export default {
 <style lang="scss">
 .demo__positioning {
   margin: auto;
-  width: 80%;
+  // width: 80%;
 }
 </style>

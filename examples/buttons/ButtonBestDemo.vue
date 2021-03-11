@@ -1,33 +1,31 @@
 <template>
   <div>
-    <docs-card-best title="Playground" componentName="Options">
-      <!-- <lv-input :label="options.label" :floating-label="options.floating" :bottom-bar="options.bottom_bar" :rounded="options.rounded" :placeholder="options.placeholder" :help-text="options['help-text']" :placeholder-color="options.placeholderColor" :icon-left="options.iconLeft" :icon-right="options.iconRight" style="width: 80%" /> -->
+    <docs-card-best title="Playground">
       <div class="button__demo__wrapper">
-        <lv-button v-bind="options" class="demo__positioning--button" />
+        <lv-button v-bind="allOptions" class="demo__positioning--button" />
       </div>
       <template #props>
-        <lv-toggle-switch v-model="options.outlined" label="outlined" /> <br />
-        <lv-toggle-switch v-model="options.push" label="Push" /> <br />
-        <lv-toggle-switch v-model="options.raised" label="Raised" /> <br />
-        <lv-toggle-switch v-model="options['deep-shadow']" label="Deep Shadow" /> <br />
-        <lv-toggle-switch v-model="options['deep-shadow-hover']" label="Deep Shadow Hover" /> <br />
-        <lv-toggle-switch v-model="options.rounded" label="Rounded" /> <br />
+        <lv-toggle-switch v-model="allOptions.outlined" label="outlined" /> <br />
+        <lv-toggle-switch v-model="allOptions.push" label="Push" /> <br />
+        <lv-toggle-switch v-model="allOptions.raised" label="Raised" /> <br />
+        <lv-toggle-switch v-model="allOptions['deep-shadow']" label="Deep Shadow" /> <br />
+        <lv-toggle-switch v-model="allOptions['deep-shadow-hover']" label="Deep Shadow Hover" /> <br />
+        <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
 
         <br />
-        <lv-input v-model="options.label" label="Label" /> <br />
-        <lv-input v-model="options.type" label="Type" /> <br />
-        <lv-input v-model="options['icon-right']" label="Right Icon" /> <br />
-        <lv-input v-model="options.size" label="Size" /> <br />
+        <lv-input v-model="allOptions.label" label="Label" /> <br />
+        <lv-input v-model="allOptions.type" label="Type" /> <br />
+        <lv-input v-model="allOptions['icon-right']" label="Right Icon" /> <br />
+        <lv-input v-model="allOptions.size" label="Size" /> <br />
       </template>
       <template #code>
-        <div class="code__wrapper">
-          <CopyButton :text="getMarkup" />
-          &nbsp;&lt;lv-input
-          <span class="attribute__row" v-for="(option, name) in options" :key="name">
-            <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
-          </span>
-          &nbsp;/&gt;
-        </div>
+        <span class="dy-code-row --empty-row"></span>
+        <span class="dy-code-row --tag-row">&nbsp;&lt;lv-button</span>
+        <span class="dy-code-row --attribute-row" v-for="(option, name) in enabledOptions" :key="name">
+          <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
+        </span>
+        <span class="dy-code-row --tag-row">&nbsp;/&gt;</span>
+        <span class="dy-code-row --empty-row"></span>
       </template>
     </docs-card-best>
   </div>
@@ -38,12 +36,11 @@ import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input/Input';
 import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
 import LvToggleSwitch from 'lightvue/input-toggle/ToggleSwitch';
-import CodeHighlight from '@/components/docs-card/CodeHighlight';
-import CopyButton from '@/components/docs-card/CopyButton';
+
 export default {
   data() {
     return {
-      options: {
+      allOptions: {
         outlined: false,
         push: false,
         raised: false,
@@ -64,14 +61,10 @@ export default {
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
-    CodeHighlight,
-    CopyButton,
   },
-  methods: {
-    getMarkup() {
-      let abc = this.$el.querySelector('.code__wrapper').innerText;
-      console.log(abc);
-      return abc;
+  computed: {
+    enabledOptions() {
+      return Object.entries(this.allOptions).reduce((a, [k, v]) => (v ? ((a[k] = v), a) : a), {});
     },
   },
 };
