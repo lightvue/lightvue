@@ -17,7 +17,7 @@ $ cd ./docs
 # Install dependencies
 $ npm install
 
-# Preview docs with hot reload at localhost:3000
+# Preview docs with hot reload at your localhost
 $ npm run dev
 ```
 
@@ -29,6 +29,6 @@ $ cd ./docs-v3
 # Install dependencies
 $ npm install
 
-# Preview docs with hot reload at localhost:3000
-$ npm run dev
+# Preview docs with hot reload at your localhost
+$ npm run serve
 ```
