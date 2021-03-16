@@ -15,7 +15,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import RippleAPI from 'lightvue/ripple/rippleAPI';
+// import RippleAPI from 'lightvue/ripple/rippleAPI';
 
 export default {
   components: {
@@ -29,6 +29,7 @@ export default {
   description: `Add a material ripple effect on click, to any DOM element/Vue component.`,
   packageName: 'ripple',
   componentName: 'Ripple',
-  apiData: RippleAPI,
+  // apiData: RippleAPI,
+  apiData: {},
 };
 </script>
