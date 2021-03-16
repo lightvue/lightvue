@@ -39,7 +39,7 @@
               <CodeHighlight lang="javascript">
                 <pre>
 
-    vue add 1 car?
+    vue add lightVue
 
           </pre
                 >
@@ -51,7 +51,7 @@
                 <pre>
 
    import Vue from 'vue' <br />
-   import LightVue from '1 car?' <br />
+   import LightVue from 'lightVue' <br />
           <br />
    const components = { <br />
    //... <br />
@@ -83,7 +83,7 @@
               <CodeHighlight lang="javascript">
                 <pre>
    import Vue from 'vue' <br />
-   import LightVue from '1 car?' <br />
+   import LightVue from 'lightVue' <br />
    import LvInput from 'lightvue/vue-components/lv-input' <br />
    import lvButton from 'lightvue/vue-components/lv-button' <br />
    const settings = { <br />
@@ -181,8 +181,8 @@
                   >
                 </CodeHighlight>
               </div>
-              <div class="discription__para">This can be easily configured via passing the theme property</div>
-              <div class="custom__process">
+              <!-- <div class="discription__para">This can be easily configured via passing the theme property</div> -->
+              <!-- <div class="custom__process">
                 <CodeHighlight lang="css">
                   <pre>
 
@@ -206,7 +206,7 @@
           </pre
                   >
                 </CodeHighlight>
-              </div>
+              </div> -->
             </div>
           </div>
         </docs-card>
