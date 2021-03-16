@@ -31,9 +31,9 @@
 
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
-import LvInput from 'lightvue/input/Input';
-import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
-import LvToggleSwitch from 'lightvue/input-toggle/ToggleSwitch';
+import LvInput from 'lightvue/Input';
+import LvColorpicker from 'lightvue/ColorPicker';
+import LvToggleSwitch from 'lightvue/ToggleSwitch';
 export default {
   data() {
     return {

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Rating from 'lightvue/rating/rating-old/RatingOld.vue';
+import Rating from 'lightvue/rating-old/RatingOld.vue';
 
 export default {
   data() {

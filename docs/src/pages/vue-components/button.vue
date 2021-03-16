@@ -9,7 +9,7 @@
     <docs-card-vue title="Miscellaneous Usage" file="buttons/ButtonDemo_Shadow" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <docs-all-api :api-data="$options.apiData" />
+      <!-- <docs-all-api :api-data="$options.apiData" /> -->
     </template>
   </docs-page-layout>
 </template>

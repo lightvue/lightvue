@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import LvListLoader from 'lightvue/skeleton/preset/ListLoader';
+import LvListLoader from 'lightvue/preset/ListLoader';
 export default {
   components: {
     LvListLoader,

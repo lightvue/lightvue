@@ -6,7 +6,7 @@
     <!-- <docs-card-vue title="Basic + Rounded side by side" file="views/input-demo/examples/InputDemo_Old" /> -->
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <docs-all-api :api-data="$options.apiData" />
+      <!-- <docs-all-api :api-data="$options.apiData" /> -->
     </template>
   </docs-page-layout>
 </template>

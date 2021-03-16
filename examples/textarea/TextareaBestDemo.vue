@@ -35,11 +35,11 @@
 
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
-import LvTextarea from 'lightvue/textarea/Textarea';
-import LvInput from 'lightvue/input/Input';
-import LvNumber from 'lightvue/number/Number';
-import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
-import LvToggleSwitch from 'lightvue/input-toggle/ToggleSwitch';
+import LvTextarea from 'lightvue/Textarea';
+import LvInput from 'lightvue/Input';
+import LvNumber from 'lightvue/Number';
+import LvColorpicker from 'lightvue/ColorPicker';
+import LvToggleSwitch from 'lightvue/ToggleSwitch';
 export default {
   data() {
     return {

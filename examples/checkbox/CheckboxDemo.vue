@@ -46,7 +46,7 @@
 
 <script>
 // import CheckboxDoc from '../../../views/checkbox/CheckboxDoc';
-import Checkbox from 'lightvue/checkbox/checkbox/Checkbox.vue';
+import Checkbox from 'lightvue/Checkbox.vue';
 
 export default {
   data() {

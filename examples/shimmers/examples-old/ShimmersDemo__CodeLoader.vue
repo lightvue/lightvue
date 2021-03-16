@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import LvCodeLoader from 'lightvue/skeleton/preset/CodeLoader';
+import LvCodeLoader from 'lightvue/preset/CodeLoader';
 export default {
   components: {
     LvCodeLoader,

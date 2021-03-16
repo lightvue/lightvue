@@ -1,24 +1,24 @@
 <template>
   <div>
     <h4>Options as array of objects</h4>
-    <lv-checkbox-group  v-model="chosenCities1" name="cities" :options="cities" optionLabel="name" optionValue="code" pulse></lv-checkbox-group>
-    <h6> Chosen options (using v-model): {{ chosenCities1 }}</h6>
+    <lv-checkbox-group v-model="chosenCities1" name="cities" :options="cities" optionLabel="name" optionValue="code" pulse></lv-checkbox-group>
+    <h6>Chosen options (using v-model): {{ chosenCities1 }}</h6>
     <br />
     <h4>Options as array of strings</h4>
-    <lv-checkbox-group  v-model="chosenCities2" name="countries" :options="countries" ></lv-checkbox-group>
-    <h6> Chosen options (using v-model): {{ chosenCities2 }}</h6>
+    <lv-checkbox-group v-model="chosenCities2" name="countries" :options="countries"></lv-checkbox-group>
+    <h6>Chosen options (using v-model): {{ chosenCities2 }}</h6>
   </div>
 </template>
 
 <script>
-import LvCheckboxGroup from 'lightvue/checkbox-group/ChechboxGroup';
+import LvCheckboxGroup from 'lightvue/ChechboxGroup';
 export default {
   components: {
     LvCheckboxGroup,
   },
   data() {
     return {
-      cities:  [
+      cities: [
         { name: 'New York', code: 'NY' },
         { name: 'Rome', code: 'RM', disabled: true },
         { name: 'London', code: 'LDN' },

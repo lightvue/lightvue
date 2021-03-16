@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import LvCard from 'lightvue/card/Card';
-import LvButton from 'lightvue/button/Button';
-import LvRangeSlider from 'lightvue/rangeslider/RangeSlider';
-import Tooltip from 'lightvue/tooltip/Tooltip';
+import LvCard from 'lightvue/Card';
+import LvButton from 'lightvue/Button';
+import LvRangeSlider from 'lightvue/RangeSlider';
+import Tooltip from 'lightvue/Tooltip';
 
 export default {
   data() {
@@ -67,7 +67,6 @@ export default {
     margin-left: 0px;
     width: 100%;
     min-width: 0;
-
   }
 }
 </style>

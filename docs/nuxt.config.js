@@ -109,13 +109,13 @@ export default {
     ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
     ALGOLIA_PROJECT_ID: process.env.ALGOLIA_PROJECT_ID,
   },
-  alias: {
-    'lightvue/tooltip': path.join(__dirname, '/../core/directives/tooltip'),
-    'lightvue/ripple': path.join(__dirname, '/../core/directives/ripple'),
-    'lightvue/utils': path.join(__dirname, '/../core/utils'),
-    'lightvue/mixin': path.join(__dirname, '/../core/mixins'),
-    'lightvue/example': path.join(__dirname, '/../examples'),
-    lightvue: path.join(__dirname, '/../core/components'),
-    // '@@@': path.join(__dirname, '/..'), // this must never be used, resulting infinite loop.
-  },
+  // alias: {
+  //   'lightvue/tooltip': path.join(__dirname, '/../core/directives/tooltip'),
+  //   'lightvue/ripple': path.join(__dirname, '/../core/directives/ripple'),
+  //   'lightvue/utils': path.join(__dirname, '/../core/utils'),
+  //   'lightvue/mixin': path.join(__dirname, '/../core/mixins'),
+  'lightvue/example': path.join(__dirname, '/../examples'),
+  //   lightvue: path.join(__dirname, '/../core/components'),
+  //   // '@@@': path.join(__dirname, '/..'), // this must never be used, resulting infinite loop.
+  // },
 };

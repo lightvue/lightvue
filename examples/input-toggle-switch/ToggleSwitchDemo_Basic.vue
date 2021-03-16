@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import LvToggleSwitch from 'lightvue/input-toggle/ToggleSwitch.vue';
+import LvToggleSwitch from 'lightvue/ToggleSwitch.vue';
 
 export default {
   data() {

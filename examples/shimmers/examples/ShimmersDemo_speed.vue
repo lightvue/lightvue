@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import LvSkeleton from 'lightvue/skeleton/Skeleton.vue';
+import LvSkeleton from 'lightvue/Skeleton.vue';
 export default {
   components: {
     LvSkeleton,

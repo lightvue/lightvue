@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import LvDropdown from 'lightvue/dropdown/Dropdown.vue';
+import LvDropdown from 'lightvue/Dropdown.vue';
 
 export default {
   data() {

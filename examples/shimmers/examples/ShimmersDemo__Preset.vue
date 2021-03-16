@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import LvCardList from 'lightvue/skeleton/preset/CardList';
-import LvCodeLoader from 'lightvue/skeleton/preset/CodeLoader';
-import LvListLoader from 'lightvue/skeleton/preset/ListLoader';
+import LvCardList from 'lightvue/preset/CardList';
+import LvCodeLoader from 'lightvue/preset/CodeLoader';
+import LvListLoader from 'lightvue/preset/ListLoader';
 
 export default {
   data() {
