@@ -17,7 +17,7 @@
       <div v-else class="lv-input__default">
         <slot>{{ modelValue || $attrs.placeholder }}</slot>
         <div class="lv-hidden-accessible">
-          <input type="text" readonly :value="modelValue" v-bind="$attrs" v-on="listeners" />
+          <input type="text" readonly :value="modelValue" v-bind="$attrs" v-on="listeners" :name="name" />
         </div>
       </div>
       <div class="lv-input__append" v-if="$slots['append'] || iconRight">
