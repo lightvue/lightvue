@@ -12,7 +12,7 @@ import { terser } from 'rollup-plugin-terser';
 let entries = [];
 
 // ask rollup to not bundle Vue in the library #warning-treating-module-as-external-dependency
-let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/ripple', 'lightvue/utils', 'lightvue/utils/DomHandler', 'lightvue/utils/ConnectedOverlayScrollHandler', 'lightvue/utils/ObjectUtils', 'lightvue/overlay-panel'];
+let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/ripple', 'lightvue/utils', 'lightvue/mixins', 'lightvue/utils/DomHandler', 'lightvue/utils/ConnectedOverlayScrollHandler', 'lightvue/utils/ObjectUtils', 'lightvue/overlay-panel'];
 
 let globalDependencies = {
   vue: 'Vue',
@@ -21,9 +21,10 @@ let globalDependencies = {
   'lightvue/button': 'lightvue.button',
   'lightvue/input': 'lightvue.input',
   'lightvue/overlay-panel': 'lightvue.overlay-panel',
-  'lightvue/utils/DomHandler': 'lightvue.utils-DomHandler',
-  'lightvue/utils/ConnectedOverlayScrollHandler': 'lightvue.utils-ConnectedOverlayScrollHandler',
-  'lightvue/utils/ObjectUtils': 'lightvue.utils-ObjectUtils',
+  // 'lightvue/utils/DomHandler': 'lightvue.utils-DomHandler',
+  // 'lightvue/utils/ConnectedOverlayScrollHandler': 'lightvue.utils-ConnectedOverlayScrollHandler',
+  // 'lightvue/utils/ObjectUtils': 'lightvue.utils-ObjectUtils',
+
   // 'lightvue/dialog': 'lightvue.dialog',
   // 'lightvue/paginator': 'lightvue.paginator',
   // 'lightvue/confirmationeventbus': 'lightvue.confirmationeventbus',
@@ -145,37 +146,42 @@ function addSFC() {
   //         }
   //     });
   // });
-  addEntry('components/button', 'Button.vue', 'button', 'index');
-  addEntry('components/card', 'Card.vue', 'card', 'index');
-  addEntry('components/card', 'GlassCard.vue', 'glass-card', 'index');
+  addEntry('components/button', 'index.js', 'button', 'index');
+  addEntry('components/card', 'index.js', 'card', 'index');
+  addEntry('components/glass-card', 'index.js', 'glass-card', 'index');
   addEntry('components/checkbox', 'Checkbox.vue', 'checkbox', 'index');
-  addEntry('components/colorpicker', 'ColorPicker.vue', 'color-picker', 'index');
-  addEntry('components/dropdown', 'Dropdown.vue', 'dropdown', 'index');
-  addEntry('components/input', 'Input.vue', 'input', 'index');
-  addEntry('components/input-toggle', 'ToggleSwitch.vue', 'toggle-switch', 'index');
-  addEntry('components/number', 'Number.vue', 'number', 'index');
-  addEntry('components/overlay-panel', 'OverlayPanel.vue', 'overlay-panel', 'index');
-  addEntry('components/progressbar', 'ProgressBar.vue', 'progress-bar', 'index');
-  addEntry('components/progressspinner', 'ProgressSpinner.vue', 'progress-spinner', 'index');
-  addEntry('components/rating', 'Rating.vue', 'rating', 'index');
-  addEntry('components/skeleton', 'Skeleton.vue', 'skeleton', 'index');
-  addEntry('components/slider', 'Slider.vue', 'slider', 'index');
-  addEntry('components/textarea', 'Textarea.vue', 'textarea', 'index');
+  addEntry('components/colorpicker', 'index.js', 'color-picker', 'index');
+  // addEntry('components/dialog', 'index.js', 'dialog', 'index');
+  addEntry('components/dropdown', 'index.js', 'dropdown', 'index');
+  addEntry('components/input', 'index.js', 'input', 'index');
+  addEntry('components/input-toggle', 'index.js', 'toggle-switch', 'index');
+  addEntry('components/loaders', 'Loader.vue', 'loaders', 'index');
+  addEntry('components/number', 'index.js', 'number', 'index');
+  addEntry('components/notification', 'index.js', 'notification', 'index');
+  addEntry('components/overlay-panel', 'index.js', 'overlay-panel', 'index');
+  addEntry('components/progressbar', 'index.js', 'progress-bar', 'index');
+  addEntry('components/progressspinner', 'index.js', 'progress-spinner', 'index');
+  addEntry('components/rating', 'index.js', 'rating', 'index');
+  addEntry('components/skeleton', 'index.js', 'skeleton', 'index');
+  // addEntry('components/slider', 'index.js', 'slider', 'index');
+  addEntry('components/textarea', 'index.js', 'textarea', 'index');
+  addEntry('components/toast', 'index.js', 'toast', 'index');
 }
 
 function addDirectives() {
   // directives
-  addEntry('directives/tooltip', 'Tooltip.js', 'tooltip', 'index');
-  addEntry('directives/ripple', 'Ripple.js', 'ripple', 'index');
+  addEntry('directives/tooltip', 'index.js', 'tooltip', 'index'); // CSS isn't being injected.
+  addEntry('directives/ripple', 'index.js', 'ripple', 'index');
 }
 
 // function addConfig() {
 //     addEntry('config', 'lightVue.js', 'config');
 // }
 
-// function addUtils() {
-//     addEntry('utils', 'Utils.js', 'utils');
-// }
+function addUtils() {
+  addEntry('mixins', 'index.js', 'mixins', 'index');
+  addEntry('utils', 'index.js', 'utils', 'index');
+}
 
 // function addApi() {
 //     addEntry('api', 'Api.js', 'api');
@@ -194,7 +200,7 @@ function addDirectives() {
 addSFC();
 addDirectives();
 // addConfig();
-// addUtils();
+addUtils();
 // addApi();
 // addServices();
 
