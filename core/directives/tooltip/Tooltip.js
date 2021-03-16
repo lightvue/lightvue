@@ -1,7 +1,8 @@
 //FOCUS event not working
 
 import { uniqueComponentId } from 'lightvue/utils';
-import DomHandler from 'lightvue/utils/DomHandler';
+import { DomHandler } from 'lightvue/utils';
+
 import './Tooltip.css';
 import './tooltipTheme.css';
 function bindEvents(el) {

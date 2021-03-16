@@ -80,7 +80,7 @@ import hue from './Hue.vue';
 import alpha from './Alpha.vue';
 import checkboard from './Checkboard.vue';
 import editableInput from './EditInput.vue';
-import { trueValueMixin } from 'lightvue/mixin';
+import { trueValueMixin } from 'lightvue/mixins';
 
 export default {
   name: 'Chrome',
