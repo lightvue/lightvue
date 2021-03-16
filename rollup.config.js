@@ -17,7 +17,9 @@ let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightv
 let globalDependencies = {
   vue: 'Vue',
   'lightvue/ripple': 'lightvue.ripple',
+  'lightvue/tooltip': 'lightvue.tooltip',
   'lightvue/utils': 'lightvue.utils',
+  'lightvue/mixins': 'lightvue.mixins',
   'lightvue/button': 'lightvue.button',
   'lightvue/input': 'lightvue.input',
   'lightvue/overlay-panel': 'lightvue.overlay-panel',
@@ -40,7 +42,17 @@ let globalDependencies = {
 
 const baseConfig = {
   plugins: {
-    preVue: [scss()],
+    preVue: [
+      scss({
+        output: 'dist/lightvue.css',
+        outputStyle: 'compressed',
+      }),
+      // postcss({
+      //   extract: true,
+      //   // Or with custom file name, it will generate file relative to bundle.js in v3
+      //   // extract: 'dist/my-custom-file-name.css'
+      // }),
+    ],
     postVue: [
       terser(),
       filesize({
@@ -151,11 +163,11 @@ function addSFC() {
   addEntry('components/glass-card', 'index.js', 'glass-card', 'index');
   addEntry('components/checkbox', 'Checkbox.vue', 'checkbox', 'index');
   addEntry('components/colorpicker', 'index.js', 'color-picker', 'index');
-  // addEntry('components/dialog', 'index.js', 'dialog', 'index');
+  addEntry('components/dialog', 'index.js', 'dialog', 'index');
   addEntry('components/dropdown', 'index.js', 'dropdown', 'index');
   addEntry('components/input', 'index.js', 'input', 'index');
   addEntry('components/input-toggle', 'index.js', 'toggle-switch', 'index');
-  addEntry('components/loaders', 'Loader.vue', 'loaders', 'index');
+  addEntry('components/loaders', 'index.js', 'loaders', 'index');
   addEntry('components/number', 'index.js', 'number', 'index');
   addEntry('components/notification', 'index.js', 'notification', 'index');
   addEntry('components/overlay-panel', 'index.js', 'overlay-panel', 'index');
@@ -198,9 +210,9 @@ function addUtils() {
 // }
 
 addSFC();
-addDirectives();
 // addConfig();
 addUtils();
+addDirectives();
 // addApi();
 // addServices();
 

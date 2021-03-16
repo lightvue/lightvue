@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import DomHandler from 'lightvue/utils/DomHandler';
+import { DomHandler } from 'lightvue/utils';
 
 export default {
   props: {

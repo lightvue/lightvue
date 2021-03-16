@@ -1,18 +1,20 @@
 <template>
-    <loader-base loader-name="ball-scale-ripple-multiple" :child-count="3" v-bind="$attrs" :border-color="color"/>
+  <loader-base loader-name="ball-scale-ripple-multiple" :child-count="3" v-bind="$attrs" :border-color="color" />
 </template>
 
 <script>
 import LoaderBase from './../LoaderBase.vue';
-import '../scss/animations/ball-scale-ripple-multiple.scss';
 export default {
-    components:{
-        LoaderBase
+  components: {
+    LoaderBase,
+  },
+  props: {
+    color: {
+      type: String,
     },
-    props: {
-        color: {
-            type: String,
-        }
-    }
-}
+  },
+};
 </script>
+<style lang="scss">
+@import '../scss/animations/ball-scale-ripple-multiple.scss';
+</style>

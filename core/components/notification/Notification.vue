@@ -7,10 +7,9 @@
 </template>
 
 <script>
-// import './Notification.scss';
 import NotificationEventBus from './NotificationEventBus';
-import NotificationMessage from './NotificationMessage';
-import DomHandler from 'lightvue/utils/DomHandler';
+import NotificationMessage from './NotificationMessage.vue';
+import { DomHandler } from 'lightvue/utils';
 
 var messageIdx = 0;
 

@@ -1,0 +1,15 @@
+.vscode
+build
+core
+docs
+docs-v3
+examples
+node_modules
+.editorconfig
+.env
+.gitignore
+.prettierignore
+.prettierrc
+CONTRIBUTING.md
+package-lock.json
+rollup.config.js

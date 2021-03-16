@@ -42,13 +42,11 @@
 </template>
 
 <script>
-import ConnectedOverlayScrollHandler from 'lightvue/utils/ConnectedOverlayScrollHandler';
-import ObjectUtils from 'lightvue/utils/ObjectUtils';
-import DomHandler from 'lightvue/utils/DomHandler';
-// import Ripple from 'lightvue/ripple';
+import { ConnectedOverlayScrollHandler } from 'lightvue/utils';
+import { ObjectUtils } from 'lightvue/utils';
+import { DomHandler } from 'lightvue/utils';
+import Ripple from 'lightvue/ripple';
 import LvInput from 'lightvue/input';
-
-// import './Dropdown.scss';
 
 export default {
   name: 'LvDropdown',
@@ -520,7 +518,7 @@ export default {
     },
   },
   directives: {
-    // ripple: Ripple,
+    ripple: Ripple,
   },
 };
 </script>

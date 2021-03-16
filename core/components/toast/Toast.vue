@@ -7,8 +7,8 @@
 </template>
 <script>
 import ToastEventBus from './ToastEventBus';
-import ToastMessage from './ToastMessage';
-import DomHandler from 'lightvue/utils/DomHandler';
+import ToastMessage from './ToastMessage.vue';
+import { DomHandler } from 'lightvue/utils';
 
 var messageIdx = 0;
 
