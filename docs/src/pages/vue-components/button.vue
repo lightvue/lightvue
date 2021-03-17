@@ -21,7 +21,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
-import ButtonAPI from 'lightvue/button/ButtonAPI';
+// import ButtonAPI from 'lightvue/button/ButtonAPI';
 
 export default {
   head: {
@@ -54,6 +54,6 @@ export default {
   description: `Button is an extension to standard button element with an option to add icons and your custom theming.`,
   packageName: 'button',
   componentName: 'LvButton',
-  apiData: ButtonAPI,
+  // apiData: ButtonAPI,
 };
 </script>

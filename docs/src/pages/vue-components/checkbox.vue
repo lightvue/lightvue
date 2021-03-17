@@ -15,7 +15,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import CheckboxAPI from 'lightvue/checkbox/CheckboxAPI';
+// import CheckboxAPI from 'lightvue/checkbox/CheckboxAPI';
 
 export default {
   components: {
@@ -29,6 +29,6 @@ export default {
   description: `LvCheckbox component can be used in projects where a way is required for user to select or deselect an option.`,
   packageName: 'CheckBox',
   componentName: 'LvCheckBox',
-  apiData: CheckboxAPI,
+  // apiData: CheckboxAPI,
 };
 </script>

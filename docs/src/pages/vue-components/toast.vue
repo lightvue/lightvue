@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import ToastAPI from 'lightvue/toast/ToastAPI';
+// import ToastAPI from 'lightvue/toast/ToastAPI';
 
 export default {
   components: {
@@ -28,6 +28,6 @@ export default {
   description: `Toast allows to show toast messages with the page or after an action is performed.`,
   packageName: 'Toast',
   componentName: 'LvToast',
-  apiData: ToastAPI,
+  // apiData: ToastAPI,
 };
 </script>

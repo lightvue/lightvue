@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import SliderAPI from 'lightvue/slider/SliderAPI';
+// import SliderAPI from 'lightvue/slider/SliderAPI';
 
 export default {
   components: {
@@ -28,6 +28,6 @@ export default {
   description: `Slider is another basic component from light vue which provide user to have a slider in the web application which can be used to rate or select a range.`,
   packageName: 'slider',
   componentName: 'LvSlider',
-  apiData: SliderAPI,
+  // apiData: SliderAPI,
 };
 </script>

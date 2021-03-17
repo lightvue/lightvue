@@ -47,7 +47,7 @@
 
 <script>
 // import LvSlider from 'lightvue/slider/Slider';
-import LvRangeSlider from 'lightvue/RangeSlider';
+import LvRangeSlider from 'lightvue/rangeslider';
 
 export default {
   data() {

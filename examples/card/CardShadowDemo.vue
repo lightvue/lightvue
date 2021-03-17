@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import LvCard from 'lightvue/Card';
+import LvCard from 'lightvue/card';
 
 export default {
   data() {

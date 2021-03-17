@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import LvRating from 'lightvue/Rating.vue';
+import LvRating from 'lightvue/rating';
 export default {
   components: {
     LvRating,

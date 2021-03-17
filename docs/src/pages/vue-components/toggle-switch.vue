@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import ToggleSwitchAPI from 'lightvue/input-toggle/ToggleSwitchAPI';
+// import ToggleSwitchAPI from 'lightvue/input-toggle/ToggleSwitchAPI';
 
 export default {
   components: {
@@ -28,6 +28,6 @@ export default {
   description: `ToggleSwitch is used to select a boolean value.`,
   packageName: 'toggle-switch',
   componentName: 'LvToggleSwitch',
-  apiData: ToggleSwitchAPI,
+  // apiData: ToggleSwitchAPI,
 };
 </script>

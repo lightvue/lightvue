@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import LvGlassCard from 'lightvue/GlassCard';
+import LvGlassCard from 'lightvue/glasscard';
 
 export default {
   data() {

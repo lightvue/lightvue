@@ -23,7 +23,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import ShimmersAPI from 'lightvue/skeleton/ShimmersAPI';
+// import ShimmersAPI from 'lightvue/skeleton/ShimmersAPI';
 
 export default {
   components: {
@@ -37,6 +37,6 @@ export default {
   description: `Skeleton Loader components can be used as a loading animations or space-fillers while waiting for the actual content to load.`,
   packageName: 'LvSkeleton',
   componentName: 'LvSkeleton',
-  apiData: ShimmersAPI,
+  // apiData: ShimmersAPI,
 };
 </script>

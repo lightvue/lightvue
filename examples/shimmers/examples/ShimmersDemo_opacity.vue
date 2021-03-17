@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import LvSkeleton from 'lightvue/Skeleton.vue';
+import LvSkeleton from 'lightvue/skeleton';
 export default {
   components: {
     LvSkeleton,

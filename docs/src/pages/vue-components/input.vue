@@ -18,7 +18,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
-import InputAPI from 'lightvue/input/InputAPI';
+// import InputAPI from 'lightvue/input/InputAPI';
 
 export default {
   head: {
@@ -51,6 +51,6 @@ export default {
   description: `Light-input provides with a variety of input fields with various available customizations which helps it to fulfill the need of almost every web application/project.`,
   packageName: 'input',
   componentName: 'LvInput',
-  apiData: InputAPI,
+  // apiData: InputAPI,
 };
 </script>

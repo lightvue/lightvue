@@ -15,7 +15,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import TooltipAPI from 'lightvue/tooltip/TooltipAPI';
+// import TooltipAPI from 'lightvue/tooltip/TooltipAPI';
 
 export default {
   components: {
@@ -29,6 +29,6 @@ export default {
   description: `Tooltips can be used to show additional information about any element upon hovering over it.`,
   packageName: 'tooltip',
   componentName: 'LvTooltip',
-  apiData: TooltipAPI,
+  // apiData: TooltipAPI,
 };
 </script>

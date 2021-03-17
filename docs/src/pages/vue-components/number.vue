@@ -19,7 +19,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import NumberAPI from 'lightvue/number/NumberAPI';
+// import NumberAPI from 'lightvue/number/NumberAPI';
 
 export default {
   components: {
@@ -34,6 +34,6 @@ export default {
   description: `Input Number component allows user to Take Number as a input.`,
   packageName: 'number',
   componentName: 'LvNumber',
-  apiData: NumberAPI,
+  // apiData: NumberAPI,
 };
 </script>

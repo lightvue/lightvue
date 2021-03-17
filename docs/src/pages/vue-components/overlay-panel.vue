@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import OverlayPanelAPI from 'lightvue/overlay-panel/OverlayPanelAPI';
+// import OverlayPanelAPI from 'lightvue/overlay-panel/OverlayPanelAPI';
 
 export default {
   components: {
@@ -28,6 +28,6 @@ export default {
   description: `OverlayPanel is a container component positioned as connected to its target.`,
   packageName: 'overlay-panel',
   componentName: 'LvOverlayPanel',
-  apiData: OverlayPanelAPI,
+  // apiData: OverlayPanelAPI,
 };
 </script>

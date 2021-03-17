@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import LvCheckboxGroup from 'lightvue/ChechboxGroup';
+import LvCheckboxGroup from 'lightvue/chechboxgroup';
 export default {
   components: {
     LvCheckboxGroup,

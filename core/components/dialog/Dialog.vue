@@ -28,7 +28,7 @@
 <script>
 import UniqueComponentId from 'lightvue/utils/UniqueComponentId';
 import DomHandler from 'lightvue/utils/DomHandler';
-import Ripple from 'lightvue/Ripple';
+import Ripple from 'lightvue/ripple';
 import './Dialog.scss';
 
 export default {

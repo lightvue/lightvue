@@ -15,7 +15,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import DropdownAPI from 'lightvue/dropdown/DropdownAPI';
+// import DropdownAPI from 'lightvue/dropdown/DropdownAPI';
 
 export default {
   components: {
@@ -29,6 +29,6 @@ export default {
   description: `Dropdown component allows user to choose an option from the provided options.`,
   packageName: 'dropdown',
   componentName: 'LvDropdown',
-  apiData: DropdownAPI,
+  // apiData: DropdownAPI,
 };
 </script>

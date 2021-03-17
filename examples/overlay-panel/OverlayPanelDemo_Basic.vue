@@ -29,9 +29,9 @@
 </template>
 
 <script>
-import LvButton from 'lightvue/Button.vue';
+import LvButton from 'lightvue/button';
 // import ProductService from '@/service/ProductService';
-import LvOverlayPanel from 'lightvue/OverlayPanel.vue';
+import LvOverlayPanel from 'lightvue/overlaypanel';
 
 export default {
   data() {

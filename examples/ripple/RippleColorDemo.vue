@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import LvCard from 'lightvue/Card';
-import LvButton from 'lightvue/Button';
-import ripple from 'lightvue/Ripple';
+import LvCard from 'lightvue/card';
+import LvButton from 'lightvue/button';
+import ripple from 'lightvue/ripple';
 
 export default {
   data() {

@@ -66,11 +66,11 @@ export default {
 </script>
 
 <style scoped>
-.lv-colorpicker-wrapper {
-  /* width: max-content; */
-  /* width: 250px; */
-  /* max-width: 100%; */
-}
+/* .lv-colorpicker-wrapper { */
+/* width: max-content; */
+/* width: 250px; */
+/* max-width: 100%; */
+/* } */
 .lv-colorpicker__colorblock-wrapper {
   position: relative;
   width: 30px;

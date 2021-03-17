@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import LvInput from 'lightvue/Input.vue';
+import LvInput from 'lightvue/input';
 export default {
   data() {
     return {

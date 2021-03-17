@@ -17,7 +17,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import ProgressSpinnerAPI from 'lightvue/progressspinner/ProgressSpinnerAPI';
+// import ProgressSpinnerAPI from 'lightvue/progressspinner/ProgressSpinnerAPI';
 
 export default {
   components: {
@@ -31,6 +31,6 @@ export default {
   description: `Progress spinner components can be used as a loading animations or space-fillers while waiting for the actual content to load.`,
   packageName: 'progressSpinner',
   componentName: 'lv-progressspinner',
-  apiData: ProgressSpinnerAPI,
+  // apiData: ProgressSpinnerAPI,
 };
 </script>

@@ -25,7 +25,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import RatingAPI from 'lightvue/rating/RatingAPI';
+// import RatingAPI from 'lightvue/rating/RatingAPI';
 
 export default {
   components: {
@@ -39,6 +39,6 @@ export default {
   description: `Rating component can be used when user wants to provide an option to rate the products/services provided.`,
   packageName: 'rating',
   componentName: 'LvRating',
-  apiData: RatingAPI,
+  // apiData: RatingAPI,
 };
 </script>

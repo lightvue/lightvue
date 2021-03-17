@@ -17,7 +17,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import TextareaAPI from 'lightvue/textarea/TextareaAPI';
+// import TextareaAPI from 'lightvue/textarea/TextareaAPI';
 
 export default {
   components: {
@@ -32,6 +32,6 @@ export default {
   description: `Textarea component allows user to write long text/ paragraphs.`,
   packageName: 'textarea',
   componentName: 'LVTextarea',
-  apiData: TextareaAPI,
+  // apiData: TextareaAPI,
 };
 </script>

@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
-import DialogAPI from 'lightvue/dialog/DialogAPI';
+// import DialogAPI from 'lightvue/dialog/DialogAPI';
 
 export default {
   head: {
@@ -46,6 +46,6 @@ export default {
   description: `Lv Dialog helps the user to have modal and additional dialog box with their data.`,
   packageName: 'dialog',
   componentName: 'LvDialog',
-  apiData: DialogAPI,
+  // apiData: DialogAPI,
 };
 </script>
