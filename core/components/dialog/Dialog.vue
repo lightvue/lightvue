@@ -26,10 +26,10 @@
   </div>
 </template>
 <script>
-import UniqueComponentId from 'lightvue/utils/UniqueComponentId';
-import DomHandler from 'lightvue/utils/DomHandler';
+import { uniqueComponentId } from 'lightvue/utils';
+import { DomHandler } from 'lightvue/utils';
+
 import Ripple from 'lightvue/ripple';
-import './Dialog.scss';
 
 export default {
   inheritAttrs: false,
@@ -239,7 +239,7 @@ export default {
       return this.dialogStyles;
     },
     ariaId() {
-      return UniqueComponentId();
+      return uniqueComponentId();
     },
     ariaLabelledById() {
       return this.header != null ? this.ariaId + '_header' : null;
@@ -250,7 +250,9 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
+@import './Dialog.scss';
+
 .lv-dialog-mask {
   position: fixed;
   top: 0;

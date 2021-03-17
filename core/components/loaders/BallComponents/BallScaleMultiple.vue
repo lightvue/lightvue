@@ -4,7 +4,6 @@
 
 <script>
 import LoaderBase from './../LoaderBase.vue';
-import '../scss/animations/ball-scale-multiple.scss';
 
 export default {
   components: {
@@ -12,3 +11,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import '../scss/animations/ball-scale-multiple.scss';
+</style>

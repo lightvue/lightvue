@@ -30,5 +30,6 @@ export default {
   packageName: 'tooltip',
   componentName: 'LvTooltip',
   // apiData: TooltipAPI,
+  apiData: {},
 };
 </script>

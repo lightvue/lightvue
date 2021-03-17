@@ -20,7 +20,7 @@ import ColorpickerCore from './core/ColorpickerCore.vue';
 import Checkboard from './core/Checkboard.vue';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvInput from 'lightvue/input';
-import { trueValueMixin } from 'lightvue/mixin';
+import { trueValueMixin } from 'lightvue/mixins';
 export default {
   name: 'LvColorpicker',
   props: {

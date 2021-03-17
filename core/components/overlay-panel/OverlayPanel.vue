@@ -10,8 +10,9 @@
 </template>
 
 <script>
-import ConnectedOverlayScrollHandler from 'lightvue/utils/ConnectedOverlayScrollHandler';
-import DomHandler from 'lightvue/utils/DomHandler';
+import { ConnectedOverlayScrollHandler } from 'lightvue/utils';
+
+import { DomHandler } from 'lightvue/utils';
 
 export default {
   name: 'LvOverlaypanel',
