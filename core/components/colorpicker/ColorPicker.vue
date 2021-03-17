@@ -65,7 +65,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .lv-colorpicker-wrapper {
   /* width: max-content; */
   /* width: 250px; */
