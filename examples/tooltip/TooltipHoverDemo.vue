@@ -36,7 +36,7 @@
 <script>
 import LvCard from 'lightvue/card';
 import LvButton from 'lightvue/button';
-import LvRangeSlider from 'lightvue/rangeslider';
+import LvRangeSlider from 'lightvue/slider';
 import Tooltip from 'lightvue/tooltip';
 
 export default {

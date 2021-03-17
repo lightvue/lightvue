@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import LvProgressBar from 'lightvue/progressbar.vue';
+import LvProgressBar from 'lightvue/progress-bar';
 
 export default {
   data() {

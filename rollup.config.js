@@ -33,7 +33,7 @@ let globalDependencies = {
   // 'lightvue/toasteventbus': 'lightvue.toasteventbus',
   // 'lightvue/useconfirm': 'lightvue.useconfirm',
   // 'lightvue/usetoast': 'lightvue.usetoast',
-  // 'lightvue/progressbar': 'lightvue.progressbar',
+  // 'lightvue/progress-bar': 'lightvue.progressbar',
   // 'lightvue/message': 'lightvue.message',
   // 'lightvue/dropdown': 'lightvue.dropdown',
   // 'lightvue/menu': 'lightvue.menu',

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import LvLoader from 'lightvue/loader';
+import LvLoader from 'lightvue/loaders';
 
 export default {
   data() {

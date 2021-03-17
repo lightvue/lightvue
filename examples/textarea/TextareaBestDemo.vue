@@ -38,8 +38,8 @@ import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvTextarea from 'lightvue/textarea';
 import LvInput from 'lightvue/input';
 import LvNumber from 'lightvue/number';
-import LvColorpicker from 'lightvue/colorpicker';
-import LvToggleSwitch from 'lightvue/toggleswitch';
+import LvColorpicker from 'lightvue/color-picker';
+import LvToggleSwitch from 'lightvue/toggle-switch';
 export default {
   data() {
     return {

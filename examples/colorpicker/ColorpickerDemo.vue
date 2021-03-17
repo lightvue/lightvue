@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import LvColorpicker from 'lightvue/colorpicker';
+import LvColorpicker from 'lightvue/color-picker';
 export default {
   data() {
     return {

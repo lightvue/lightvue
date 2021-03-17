@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import LvProgressSpinner from 'lightvue/progressspinner';
+import LvProgressSpinner from 'lightvue/progress-spinner';
 
 export default {
   data() {

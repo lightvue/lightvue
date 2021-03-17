@@ -31,7 +31,7 @@
 <script>
 import LvButton from 'lightvue/button';
 // import ProductService from '@/service/ProductService';
-import LvOverlayPanel from 'lightvue/overlaypanel';
+import LvOverlayPanel from 'lightvue/overlay-panel';
 
 export default {
   data() {
