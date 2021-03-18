@@ -5,12 +5,14 @@
   &.--top {
     top: 20px;
     left: 50%;
+    transform: translateX(-50%);
     /* margin-left: -10em; */
   }
 
   &.--bottom {
     bottom: 20px;
     left: 50%;
+    transform: translateX(-50%);
     /* margin-left: -10em;` */
   }
 }

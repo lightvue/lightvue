@@ -1,5 +1,5 @@
 <template>
-  <div class="shimmer-demo-wrapper shimmer-demo-wrapper--preset">
+  <!-- <div class="shimmer-demo-wrapper shimmer-demo-wrapper--preset">
     <h5>CardList</h5>
     <div><lv-card-list :width="355" /></div>
     <div><lv-card-list :width="355" primaryColor="#607c8a" secondaryColor="#8aa6b5" /></div>
@@ -11,25 +11,26 @@
     <h5>ListLoader</h5>
     <div><lv-list-loader :width="300" :height="100" /></div>
     <div><lv-list-loader :width="300" :height="100" primaryColor="#607c8a" secondaryColor="#8aa6b5" /></div>
-    <div><lv-list-loader :width="300" :height="100" primaryColor="#38b2ac" secondaryColor="#47d9d1" /></div>
+    <div><lv-list-loader :width="300" :height="100" primaryColor="#38b2ac" secondaryColor="#47d9d1" /></div> -->
+    <!-- REFACTORING -->
   </div>
 </template>
 
 <script>
-import LvCardList from 'lightvue/skeleton/preset/CardList';
-import LvCodeLoader from 'lightvue/skeleton/preset/CodeLoader';
-import LvListLoader from 'lightvue/skeleton/preset/ListLoader';
+// import LvCardList from 'lightvue/preset/CardList';
+// import LvCodeLoader from 'lightvue/preset/CodeLoader';   
+// import LvListLoader from 'lightvue/preset/ListLoader';
 
-export default {
-  data() {
-    return {};
-  },
-  components: {
-    LvCardList,
-    LvCodeLoader,
-    LvListLoader,
-  },
-};
+// export default {
+//   data() {
+//     return {};
+//   },
+//   components: {
+//     LvCardList,
+//     LvCodeLoader,
+//     LvListLoader,
+//   },
+// };
 </script>
 
 <style>

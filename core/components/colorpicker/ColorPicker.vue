@@ -20,7 +20,7 @@ import ColorpickerCore from './core/ColorpickerCore.vue';
 import Checkboard from './core/Checkboard.vue';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvInput from 'lightvue/input';
-import { trueValueMixin } from 'lightvue/mixin';
+import { trueValueMixin } from 'lightvue/mixins';
 export default {
   name: 'LvColorpicker',
   props: {
@@ -66,11 +66,11 @@ export default {
 </script>
 
 <style scoped>
-.lv-colorpicker-wrapper {
-  /* width: max-content; */
-  /* width: 250px; */
-  /* max-width: 100%; */
-}
+/* .lv-colorpicker-wrapper { */
+/* width: max-content; */
+/* width: 250px; */
+/* max-width: 100%; */
+/* } */
 .lv-colorpicker__colorblock-wrapper {
   position: relative;
   width: 30px;

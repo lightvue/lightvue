@@ -1,5 +1,5 @@
 {
-  "name": "lightvue",
+  "name": "light-vue",
   "title": "LightVue | The Emerging UI Component library for Vue",
   "description": "The Emerging UI Component library for Vue 2.x & Vue 3.x",
   "author": "Pulkit <pulkit.cloud@gmail.com>",
@@ -21,6 +21,7 @@
     "core-js": "^3.6.5",
     "instantsearch.css": "^7.4.5",
     "light-icons": "^1.0.2",
+    "lightvue": "^0.4.5",
     "nuxt": "^2.15.2",
     "prismjs": "^1.23.0",
     "split.js": "^1.6.2",

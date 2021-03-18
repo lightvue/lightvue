@@ -30,5 +30,6 @@ export default {
   packageName: 'ripple',
   componentName: 'Ripple',
   apiData: RippleAPI,
+  apiData: {},
 };
 </script>

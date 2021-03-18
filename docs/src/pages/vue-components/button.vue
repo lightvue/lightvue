@@ -9,7 +9,7 @@
     <docs-card-vue title="Miscellaneous Usage" file="buttons/ButtonDemo_Shadow" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <docs-all-api :api-data="$options.apiData" />
+      <!-- <docs-all-api :api-data="$options.apiData" /> -->
     </template>
   </docs-page-layout>
 </template>
@@ -54,6 +54,6 @@ export default {
   description: `Button is an extension to standard button element with an option to add icons and your custom theming.`,
   packageName: 'button',
   componentName: 'LvButton',
-  apiData: ButtonAPI,
+  // apiData: ButtonAPI,
 };
 </script>

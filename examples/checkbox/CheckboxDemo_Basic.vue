@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import LvCheckbox from 'lightvue/checkbox/Checkbox.vue';
+import LvCheckbox from 'lightvue/checkbox';
 
 export default {
   data() {

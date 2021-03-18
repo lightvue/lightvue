@@ -1,56 +1,84 @@
 <template>
-    <component :is="type" :color="color" :scale="scale"/>
+  <component :is="type" :color="color" :scale="scale" />
 </template>
 
 <script>
-import './loaders.scss';
-import BallPulse from "./BallComponents/BallPulse";
-import BallBeat from "./BallComponents/BallBeat";
-import BallScale from "./BallComponents/BallScale";
-import BallPulseRise from "./BallComponents/BallPulseRise";
-import BallGridPulse from "./BallComponents/BallGridPulse";
-import BallClipRotate from "./BallComponents/BallClipRotate";
-import BallRotate from "./BallComponents/BallRotate";
-import BallClipRotatePulse from "./BallComponents/BallClipRotatePulse";
-import BallClipRotateMultiple from "./BallComponents/BallClipRotateMultiple";
-import BallZigZag from "./BallComponents/BallZigZag";
-import BallZigZagDeflect from "./BallComponents/BallZigZagDeflect";
-import BallTrianglePath from "./BallComponents/BallTrianglePath";
-import BallScaleMultiple from "./BallComponents/BallScaleMultiple";
-import BallPulseSync from "./BallComponents/BallPulseSync";
-import BallScaleRipple from "./BallComponents/BallScaleRipple";
-import BallScaleRippleMultiple from "./BallComponents/BallScaleRippleMultiple";
-import BallSpinFadeLoader from "./BallComponents/BallSpinFadeLoader";
-import BallGridBeat from "./BallComponents/BallGridBeat";
-import BallScaleRandom from "./BallComponents/BallScaleRandom";
-import LineScale from "./LineComponents/LineScale";
-import LineScaleParty from "./LineComponents/LineScaleParty";
-import LineScalePulseOut from "./LineComponents/LineScalePulseOut";
-import LineScalePulseOutRapid from "./LineComponents/LineScalePulseOutRapid";
-import LineSpinFadeLoader from "./LineComponents/LineSpinFadeLoader";
-import CubeTransition from "./MiscComponents/CubeTransition";
-import Pacman from "./MiscComponents/Pacman";
-import SemiCircleSpin from "./MiscComponents/SemiCircleSpin";
-import SquareSpin from "./MiscComponents/SquareSpin";
-import TriangleSkewSpin from "./MiscComponents/TriangleSkewSpin";
+import BallPulse from './BallComponents/BallPulse.vue';
+import BallBeat from './BallComponents/BallBeat.vue';
+import BallScale from './BallComponents/BallScale.vue';
+import BallPulseRise from './BallComponents/BallPulseRise.vue';
+import BallGridPulse from './BallComponents/BallGridPulse.vue';
+import BallClipRotate from './BallComponents/BallClipRotate.vue';
+import BallRotate from './BallComponents/BallRotate.vue';
+import BallClipRotatePulse from './BallComponents/BallClipRotatePulse.vue';
+import BallClipRotateMultiple from './BallComponents/BallClipRotateMultiple.vue';
+import BallZigZag from './BallComponents/BallZigZag.vue';
+import BallZigZagDeflect from './BallComponents/BallZigZagDeflect.vue';
+import BallTrianglePath from './BallComponents/BallTrianglePath.vue';
+import BallScaleMultiple from './BallComponents/BallScaleMultiple.vue';
+import BallPulseSync from './BallComponents/BallPulseSync.vue';
+import BallScaleRipple from './BallComponents/BallScaleRipple.vue';
+import BallScaleRippleMultiple from './BallComponents/BallScaleRippleMultiple.vue';
+import BallSpinFadeLoader from './BallComponents/BallSpinFadeLoader.vue';
+import BallGridBeat from './BallComponents/BallGridBeat.vue';
+import BallScaleRandom from './BallComponents/BallScaleRandom.vue';
+import LineScale from './LineComponents/LineScale.vue';
+import LineScaleParty from './LineComponents/LineScaleParty.vue';
+import LineScalePulseOut from './LineComponents/LineScalePulseOut.vue';
+import LineScalePulseOutRapid from './LineComponents/LineScalePulseOutRapid.vue';
+import LineSpinFadeLoader from './LineComponents/LineSpinFadeLoader.vue';
+import CubeTransition from './MiscComponents/CubeTransition.vue';
+import Pacman from './MiscComponents/Pacman.vue';
+import SemiCircleSpin from './MiscComponents/SemiCircleSpin.vue';
+import SquareSpin from './MiscComponents/SquareSpin.vue';
+import TriangleSkewSpin from './MiscComponents/TriangleSkewSpin.vue';
 export default {
-    name: 'LvLoader',
-    components: {
-        BallPulse, BallBeat, BallScale, BallPulseRise, BallGridPulse, BallClipRotate, BallClipRotatePulse, BallClipRotateMultiple, BallRotate, BallZigZag, BallZigZagDeflect,
-        BallTrianglePath, BallScaleMultiple, BallPulseSync, BallScaleRipple, BallScaleRippleMultiple, BallSpinFadeLoader, BallGridBeat, BallScaleRandom,
-        LineScale, LineScaleParty, LineScalePulseOut, LineScalePulseOutRapid, LineSpinFadeLoader, CubeTransition, Pacman, SemiCircleSpin, SquareSpin, TriangleSkewSpin
+  name: 'LvLoader',
+  components: {
+    BallPulse,
+    BallBeat,
+    BallScale,
+    BallPulseRise,
+    BallGridPulse,
+    BallClipRotate,
+    BallClipRotatePulse,
+    BallClipRotateMultiple,
+    BallRotate,
+    BallZigZag,
+    BallZigZagDeflect,
+    BallTrianglePath,
+    BallScaleMultiple,
+    BallPulseSync,
+    BallScaleRipple,
+    BallScaleRippleMultiple,
+    BallSpinFadeLoader,
+    BallGridBeat,
+    BallScaleRandom,
+    LineScale,
+    LineScaleParty,
+    LineScalePulseOut,
+    LineScalePulseOutRapid,
+    LineSpinFadeLoader,
+    CubeTransition,
+    Pacman,
+    SemiCircleSpin,
+    SquareSpin,
+    TriangleSkewSpin,
+  },
+  props: {
+    type: {
+      type: String,
+      default: 'ball-pulse',
     },
-    props:{
-        type: {
-            type: String,
-            default: 'ball-pulse'
-        },
-        color: {
-            type: String,
-        },
-        scale: {
-            type: [String, Number]
-        }
-    }
-}
+    color: {
+      type: String,
+    },
+    scale: {
+      type: [String, Number],
+    },
+  },
+};
 </script>
+<style lang="scss">
+@import './loaders.scss';
+</style>

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Rating from 'lightvue/rating/rating-old/RatingOld.vue';
+// import Rating from 'lightvue/rating-old/RatingOld.vue';  REFACTORING
 
 export default {
   data() {
@@ -27,7 +27,7 @@ export default {
     };
   },
   components: {
-    Rating,
+    // Rating,
   },
 };
 </script>

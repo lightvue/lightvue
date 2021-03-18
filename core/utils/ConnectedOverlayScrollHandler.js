@@ -1,4 +1,4 @@
-import DomHandler from './DomHandler';
+import { DomHandler } from 'lightvue/utils';
 
 export default class ConnectedOverlayScrollHandler {
   constructor(element, listener = () => {}) {

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import LvNumber from 'lightvue/number/Number.vue';
+import LvNumber from 'lightvue/number';
 export default {
   components: {
     LvNumber,

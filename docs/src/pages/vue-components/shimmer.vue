@@ -12,7 +12,7 @@
     <!-- <docs-card-vue title="Card List" file="pages/shimmers/examples/ShimmersDemo__CardList" /> -->
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <docs-all-api :api-data="$options.apiData" />
+      <!-- <docs-all-api :api-data="$options.apiData" /> -->
     </template>
   </docs-page-layout>
 </template>
