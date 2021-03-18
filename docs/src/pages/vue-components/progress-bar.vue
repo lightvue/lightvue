@@ -17,7 +17,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import ProgressBarAPI from 'lightvue/progressbar/ProgressBarAPI';
+import ProgressBarAPI from 'lightvue/example/progressbar/ProgressBarAPI';
 
 export default {
   components: {
