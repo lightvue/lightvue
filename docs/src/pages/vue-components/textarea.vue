@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import TextareaBestDemo from 'lightvue/example/textarea/TextareaBestDemo';
+import TextareaBestDemo from 'lightvueDocs/example/textarea/TextareaBestDemo';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';

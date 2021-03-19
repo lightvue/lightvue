@@ -13,12 +13,12 @@
 
 <script>
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout';
-import InputBestDemo from 'lightvue/example/input-demo/InputBestDemo.vue';
+import InputBestDemo from 'lightvueDocs/example/input-demo/InputBestDemo.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
-import InputAPI from 'lightvue/example/input-demo/InputAPI';
+import InputAPI from 'lightvueDocs/example/input-demo/InputAPI';
 
 export default {
   head: {

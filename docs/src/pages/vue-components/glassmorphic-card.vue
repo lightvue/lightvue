@@ -17,7 +17,11 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
+<<<<<<< HEAD
 import GlassCardAPI from 'lightvue/example/glasscard/GlassCardAPI';
+=======
+// import GlassCardAPI from 'lightvueDocs/example/glasscard/GlassCardAPI';
+>>>>>>> fdf0357625d38f1417bdd1ba18f5074546ec48c3
 
 export default {
   components: {

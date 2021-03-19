@@ -10,16 +10,15 @@
         </div>
       </div>
       <div class="social__row">
-        <div class="header-social-icons__container">
-          <a href="" class="social-links">
+         <!-- <a href="" class="social-links">
             <i class="header-social light-icon-brand-github"></i>
-          </a>
-          <a href="" class="social-links">
+          </a> -->
+          <a href="https://twitter.com/lightvue" class="social-links">
             <i class="header-social light-icon-brand-twitter"></i>
           </a>
-          <a href="" class="social-links">
+          <!-- <a href="" class="social-links">
             <i class="header-social light-icon-brand-facebook"></i>
-          </a>
+          </a> -->
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <div class="button__demo__wrapper">
-        <lv-button v-bind="allOptions" class="demo__positioning--button" />
+      <div class="demo__positioning">
+        <lv-button v-bind="allOptions" style="width: 100%" />
       </div>
       <template #props>
         <lv-toggle-switch v-model="allOptions.outlined" label="outlined" /> <br />
@@ -70,13 +70,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.demo__positioning--button {
-  width: 80%;
-}
-.button__demo__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
+<style lang="scss"></style>
