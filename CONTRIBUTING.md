@@ -7,7 +7,7 @@ the actual SCSS Files are in the main folder and other DOCS files are in docs fo
 
 ```bash
 # Clone the repository
-git clone: https://github.com/lightvue
+git clone: https://github.com/lightvue/lightvue.git
 cd lightvue
 # For Vue-2
 cd ./docs
