@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ButtonBestDemo from 'lightvue/example/buttons/ButtonBestDemo.vue';
+import ButtonBestDemo from 'lightvueDocs/example/buttons/ButtonBestDemo.vue';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout';
 import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import NumberBestDemo from 'lightvue/example/number/NumberBestDemo';
+import NumberBestDemo from 'lightvueDocs/example/number/NumberBestDemo';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
