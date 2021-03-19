@@ -20,10 +20,6 @@
       <div ref="overlayRef" class="lv-dropdown__panel lv-component" v-if="overlayVisible">
         <div class="lv-dropdown__panel-header" v-if="filter">
           <lv-input type="text" ref="filterInput" autofocus v-model="filterValue" autoComplete="off" icon-right="light-icon-search" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown" @input-native="onFilterChange"></lv-input>
-          <!-- <div  class="lv-dropdown__filter-wrap">
-                        <input type="text" ref="filterInput" v-model="filterValue" autoComplete="off" class="lv-dropdown__filter-input p-inputtext lv-component" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown"  @input="onFilterChange"/>
-                        <span class="lv-dropdown__filter-icon pi pi-search"></span>
-                    </div> -->
         </div>
         <div class="lv-dropdown__items-wrap" :style="{ 'max-height': scrollHeight }">
           <ul class="lv-dropdown__items" role="listbox">
@@ -341,7 +337,15 @@ export default {
         DomHandler.absolutePosition(this.$refs.overlayRef, this.$el);
         this.$refs.overlayRef.style.minWidth = DomHandler.getOuterWidth(this.$el) + 'px';
       } else {
-        DomHandler.relativePosition(this.$refs.overlayRef, this.$el);
+        let mainInputNode = this.$refs.mainInput.$el;
+        let inputFieldNode = null;
+        for (let node of mainInputNode.childNodes) {
+          if (node.className === 'lv-input__field') {
+            inputFieldNode = node;
+            break;
+          }
+        }
+        DomHandler.relativePosition(this.$refs.overlayRef, mainInputNode, inputFieldNode);
       }
     },
     updateModel(event, value) {
