@@ -25,7 +25,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import RatingAPI from 'lightvue/example/rating/RatingAPI';
+import RatingAPI from 'lightvueDocs/example/rating/RatingAPI';
 
 export default {
   components: {

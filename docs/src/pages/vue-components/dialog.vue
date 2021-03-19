@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
-import DialogAPI from 'lightvue/example/dialog/DialogAPI';
+import DialogAPI from 'lightvueDocs/example/dialog/DialogAPI';
 
 export default {
   head: {

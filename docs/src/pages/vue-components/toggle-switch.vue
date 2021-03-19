@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import ToggleSwitchAPI from 'lightvue/example/input-toggle-switch/ToggleSwitchAPI';
+import ToggleSwitchAPI from 'lightvueDocs/example/input-toggle-switch/ToggleSwitchAPI';
 
 export default {
   components: {
