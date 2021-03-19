@@ -3,11 +3,10 @@
     <div class="lv-hidden-accessible">
       <input ref="focusInput" type="text" :id="inputId" readonly :disabled="disabled" @focus="onFocus" @blur="onBlur" @keydown="onKeyDown" :tabindex="tabindex" aria-haspopup="listbox" :aria-expanded="overlayVisible" :aria-labelledby="ariaLabelledBy" />
     </div>
-
-    <lv-input type="text" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" :value="editableInputValue" @input="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" ref="mainInput" v-bind="$attrs">
+    <lv-input type="text" v-bind="$attrs" ref="mainInput" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" @input="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" :modelValue="editableInputValue" :value="editableInputValue">
       <span v-if="!editable" :class="labelClass">
         <slot name="value" :value="modelValue" :placeholder="placeholder">
-          {{ label }}
+          {{ selectedLabel }}
         </slot>
       </span>
       <template #append>
@@ -47,16 +46,18 @@ import { ObjectUtils } from 'lightvue/utils';
 import { DomHandler } from 'lightvue/utils';
 import Ripple from 'lightvue/ripple';
 import LvInput from 'lightvue/input';
+import { trueValueMixin } from 'lightvue/mixins';
 
 export default {
   name: 'LvDropdown',
   inheritAttrs: false,
-  emits: ['update:modelValue', 'input', 'before-show', 'before-hide', 'show', 'hide', 'change', 'filter'],
+  mixins: [trueValueMixin],
+  emits: ['before-show', 'before-hide', 'show', 'hide', 'change', 'filter'],
   components: {
     LvInput,
   },
   props: {
-    value: null,
+    // value: null,
     options: Array,
     optionLabel: null,
     optionValue: null,
@@ -68,7 +69,10 @@ export default {
     filter: Boolean,
     filterPlaceholder: String,
     filterLocale: String,
-    editable: Boolean,
+    editable: {
+      type: Boolean,
+      default: false,
+    },
     placeholder: String,
     disabled: Boolean,
     dataKey: null,
@@ -277,11 +281,12 @@ export default {
       this.updateModel(event, null);
     },
     onClick(event) {
+      // To focus automatically
       if (this.disabled) {
         return;
       }
 
-      if (DomHandler.hasClass(event.target, 'lv-dropdown__clear-icon') || event.target.tagName === 'INPUT') {
+      if (DomHandler.hasClass(event.target, 'lv-dropdown__clear-icon')) {
         return;
       } else if (!this.$refs.overlayRef || !this.$refs.overlayRef.contains(event.target)) {
         if (this.overlayVisible) this.hide();
@@ -305,8 +310,9 @@ export default {
       }, 200);
     },
     onEditableInput(newValue) {
-      this.$emit('input', newValue);
-      this.$emit('update:modelValue', newValue);
+      // this.$emit('input', newValue);
+      // this.$emit('update:modelValue', newValue);
+      this.updateValue(newValue); // From trueValueMixin
     },
     onOverlayEnter() {
       this.$refs.overlayRef.style.zIndex = String(DomHandler.generateZIndex());
@@ -338,8 +344,9 @@ export default {
       }
     },
     updateModel(event, value) {
-      this.$emit('input', value);
-      this.$emit('update:modelValue', value);
+      this.updateValue(value); // From TrueValueMixin
+      // this.$emit('input', value);
+      // this.$emit('update:modelValue', value);
       this.$emit('change', { originalEvent: event, value: value });
     },
     bindOutsideClickListener() {
@@ -498,12 +505,12 @@ export default {
       return [
         'lv-dropdown__label',
         {
-          '--as-placeholder': this.label === this.placeholder,
-          'lv-dropdown__label-empty': !this.$slots['value'] && (this.label === '--empty-label' || this.label.length === 0),
+          '--as-placeholder': this.selectedLabel === this.placeholder,
+          'lv-dropdown__label-empty': !this.$slots['value'] && (this.selectedLabel === '--empty-label' || this.selectedLabel.length === 0),
         },
       ];
     },
-    label() {
+    selectedLabel() {
       let selectedOption = this.getSelectedOption();
       if (selectedOption) return this.getOptionLabel(selectedOption);
       else return this.placeholder || '--empty-label';
