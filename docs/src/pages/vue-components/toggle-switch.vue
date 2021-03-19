@@ -3,7 +3,7 @@
     <docs-card-vue title="Demo" file="input-toggle-switch/ToggleSwitchDemo_Basic" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <!-- <docs-all-api :api-data="$options.apiData" /> -->
+      <docs-all-api :api-data="$options.apiData" />
     </template>
   </docs-page-layout>
 </template>

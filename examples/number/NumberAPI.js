@@ -50,27 +50,27 @@ const NumberAPI = {
     },
   ],
   events: [
-    {
-      name: 'input-native',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
+    // {
+    //   name: 'input-native',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
     {
       name: 'input',
       params: [
         {
           name: 'value',
           type: 'String',
-          description: 'Value of the input field, at any time.',
+          description: 'Value of the number field, at any time.',
         },
       ],
-      description: 'Input element with rounded corners',
+      description: 'Configures the value of number field',
     },
     {
       name: 'update:modelValue',
@@ -78,55 +78,55 @@ const NumberAPI = {
         {
           name: 'value',
           type: 'String',
-          description: 'Value of the input field, at any time.',
+          description: 'Updates the model value',
         },
       ],
-      description: 'Input element with rounded corners',
+      description: 'alternative for v-model',
     },
-    {
-      name: 'change',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'click',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'focus',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'blur',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
+    // {
+    //   name: 'change',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'click',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'focus',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'blur',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
   ],
 };
 export default NumberAPI;

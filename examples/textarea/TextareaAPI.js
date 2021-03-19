@@ -38,10 +38,10 @@ const TextareaAPI = {
         {
           name: 'value',
           type: 'String',
-          description: 'Value of the input field, at any time.',
+          description: 'Native value of the input field, at any time.',
         },
       ],
-      description: 'Input element with rounded corners',
+      description: 'Updates the native input value of the component.',
     },
     {
       name: 'input',
@@ -52,7 +52,7 @@ const TextareaAPI = {
           description: 'Value of the input field, at any time.',
         },
       ],
-      description: 'Input element with rounded corners',
+      description: 'Updates the native input value of the component.',
     },
     {
       name: 'update:modelValue',
@@ -60,55 +60,55 @@ const TextareaAPI = {
         {
           name: 'value',
           type: 'String',
-          description: 'Value of the input field, at any time.',
+          description: 'Updates the model value.',
         },
       ],
-      description: 'Input element with rounded corners',
+      description: 'Alternative for v-model.',
     },
-    {
-      name: 'change',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'click',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'focus',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'blur',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
+    // {
+    //   name: 'change',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'click',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'focus',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'blur',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
   ],
 };
 export default TextareaAPI;

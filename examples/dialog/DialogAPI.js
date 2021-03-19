@@ -1,52 +1,76 @@
 const ToggleSwitchAPI = {
   props: [
     {
-      name: 'value',
+      name: 'header',
+      type: 'String',
+      default: '',
+      description: 'Defines the header value',
+    },
+    {
+      name: 'footer',
+      type: 'String',
+      default: '',
+      description: 'Defines the footer value',
+    },
+    {
+      name: 'visible',
       type: 'Boolean',
-      default: 'false',
-      description: 'Input element with rounded corners',
+      default: 'true',
+      description: 'Controls the visibility of Dialog',
     },
     {
-      name: 'inputId',
+      name: 'contentStyle',
       type: 'String',
       default: '',
-      description: 'Input element with rounded corners',
+      description: 'Defines the content Style of the Dialog',
     },
+    // {
+    //   name: 'rtl',
+    //   type: 'Boolean',
+    //   default: 'true',
+    //   description: 'Input element with rounded corners',
+    // },
     {
-      name: 'name',
-      type: 'String',
-      default: '',
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'disabled',
+      name: 'maximizable',
       type: 'Boolean',
-      default: 'false',
-      description: 'Input element with rounded corners',
+      default: 'true',
+      description: 'Configures if the dialog will be maximizable or not',
     },
     {
-      name: 'dense',
+      name: 'closable',
       type: 'Boolean',
-      default: 'false',
-      description: 'Input element with rounded corners',
+      default: 'true',
+      description: 'Configures if the dialog will be closable or not',
     },
     {
-      name: 'label',
-      type: 'String',
-      default: '',
-      description: 'Input element with rounded corners',
+      name: 'showHeader',
+      type: 'Boolean',
+      default: 'true',
+      description: 'Configures if the dialog will be showing header or not',
     },
     {
-      name: 'icon',
-      type: 'String',
-      default: '',
-      description: 'Input element with rounded corners',
+      name: 'baseZIndex',
+      type: 'Number',
+      default: '0',
+      description: 'Configures the base Z index of the Dialog',
     },
     {
-      name: 'checked-icon',
+      name: 'autoZIndex',
+      type: 'Boolean',
+      default: 'true',
+      description: 'Configures z index automatically if passed.',
+    },
+    {
+      name: 'position',
       type: 'String',
-      default: '',
-      description: 'Input element with rounded corners',
+      default: 'center',
+      description: 'Configures position of dialog box',
+    },
+    {
+      name: 'ariaCloseLabel',
+      type: 'String',
+      default: 'close',
+      description: 'Configures close label of Dialog',
     },
   ],
   events: [
@@ -61,72 +85,72 @@ const ToggleSwitchAPI = {
       ],
       description: 'Input element with rounded corners',
     },
-    {
-      name: 'input',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'update:modelValue',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'change',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'click',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'focus',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'blur',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
+    // {
+    //   name: 'input',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'update:modelValue',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'change',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'click',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //     name: 'focus',
+    //     params: [
+    //       {
+    //         name: 'value',
+    //         type: 'String',
+    //         description: 'Value of the input field, at any time.',
+    //       },
+    //     ],
+    //     description: 'Input element with rounded corners',
+    //   },
+    //   {
+    //     name: 'blur',
+    //     params: [
+    //       {
+    //         name: 'value',
+    //         type: 'String',
+    //         description: 'Value of the input field, at any time.',
+    //       },
+    //     ],
+    //     description: 'Input element with rounded corners',
+    //   },
   ],
 };
 export default ToggleSwitchAPI;

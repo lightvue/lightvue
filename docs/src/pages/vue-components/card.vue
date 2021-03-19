@@ -6,7 +6,7 @@
     <docs-card-vue title="Enabling border" file="card/CardBorderDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <!-- <docs-all-api :api-data="$options.apiData" /> -->
+      <docs-all-api :api-data="$options.apiData" />
     </template>
   </docs-page-layout>
 </template>

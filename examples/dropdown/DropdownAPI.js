@@ -63,81 +63,81 @@ const DropdownAPI = {
   ],
   events: [
     {
-      name: 'input-native',
+      name: 'before-show',
       params: [
         {
-          name: 'value',
+          name: 'before-show',
           type: 'String',
-          description: 'Value of the input field, at any time.',
+          description: 'Configures what happens before dropdown is shown.',
         },
       ],
-      description: 'Input element with rounded corners',
+      description: 'Changes the events happening before the dropdown is shown.',
     },
     {
-      name: 'input',
+      name: 'before-hide',
       params: [
         {
           name: 'value',
           type: 'String',
-          description: 'Value of the input field, at any time.',
+          description: 'Configures what happens before dropdown is hidden.',
         },
       ],
-      description: 'Input element with rounded corners',
+      description: 'Changes the events happening before the dropdown is shown.',
     },
+    // {
+    //   name: 'update:modelValue',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'change',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'click',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
+    // {
+    //   name: 'focus',
+    //   params: [
+    //     {
+    //       name: 'value',
+    //       type: 'String',
+    //       description: 'Value of the input field, at any time.',
+    //     },
+    //   ],
+    //   description: 'Input element with rounded corners',
+    // },
     {
-      name: 'update:modelValue',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'change',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'click',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'focus',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'blur',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
+      // name: 'blur',
+      // params: [
+      // {
+      // name: 'value',
+      // type: 'String',
+      // description: 'Value of the input field, at any time.',
+      // },
+      // ],
+      // description: 'Input element with rounded corners',
     },
   ],
 };
