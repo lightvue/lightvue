@@ -16,7 +16,8 @@
         <div class="hero-container__row">
           <div class="hero-container__pre-wrap">
             <div class="hero-container__pre">
-              <code><span class="not-selectable">$ </span>npm install lightvue</code>
+              <!-- <CopyButton :text="getNpmCode" /> -->
+              <code><span class="not-selectable">$ </span> <span class="selectable">npm install lightvue</span></code>
             </div>
           </div>
         </div>
@@ -42,7 +43,18 @@
 </template>
 
 <script>
-export default {};
+import CopyButton from '@/components/docs-card/CopyButton';
+
+export default {
+  components: {
+    CopyButton,
+  },
+  methods: {
+    getNpmCode() {
+      return this.$el.querySelector('.selectable').innerText;
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -126,6 +138,7 @@ $text-color-secondary: #eeecec;
         align-items: center;
         justify-content: center;
         .hero-container__pre {
+          position: relative;
           border-radius: 4px;
           display: inline-flex;
           font-size: 24px;

@@ -45,7 +45,7 @@
                 >
               </CodeHighlight>
             </div>
-            <h2>2. Configuring your Vue Project</h2>
+            <!-- <h2>2. Configuring your Vue Project</h2>
             <div class="install__process">
               <CodeHighlight lang="javascript">
                 <pre>
@@ -77,7 +77,7 @@
 
           </pre>
               </CodeHighlight>
-            </div>
+            </div> -->
             <h3>Injecting the required components</h3>
             <div class="install__process">
               <CodeHighlight lang="javascript">

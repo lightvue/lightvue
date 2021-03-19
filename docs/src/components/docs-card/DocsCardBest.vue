@@ -158,6 +158,7 @@ export default {
 
 .dy-props__toggle-drawer {
   display: none;
+  cursor: pointer;
 }
 
 .demo__positioning {
@@ -207,6 +208,7 @@ export default {
       z-index: 900;
       display: block;
       height: 100%;
+      width: 100%;
     }
   }
 
