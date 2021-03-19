@@ -152,22 +152,20 @@ export default {
   overflow-y: auto;
   justify-content: center;
   width: 100%;
-  padding: 60px 60px 20px;
+  padding: 20px;
   background: #ffffff;
 }
 
-// .best__demo__code {
-//   overflow-y: auto;
-// }
-
-// .demo__code {
-//   position: relative;
-//   background: #ffffff;
-//   overflow: hidden;
-// }
-
 .dy-props__toggle-drawer {
   display: none;
+}
+
+.demo__positioning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
 }
 
 .dy-code__wrap {

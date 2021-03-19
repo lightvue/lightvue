@@ -2,7 +2,7 @@
   <div>
     <docs-card-best title="Playground">
       <div class="demo__positioning">
-        <lv-textarea v-bind="allOptions" />
+        <lv-textarea v-bind="allOptions" style="width: 100%" />
       </div>
       <template #props>
         <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating Label" v-if="!allOptions['icon-left'] && !allOptions['placeholder']" /> <br />
@@ -78,9 +78,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.demo__positioning {
-  margin: auto;
-  width: 80%;
-}
-</style>
+<style lang="scss"></style>

@@ -2,7 +2,7 @@
   <div>
     <docs-card-best title="Playground">
       <div class="demo__positioning">
-        <lv-input v-bind="allOptions" />
+        <lv-input v-bind="allOptions" style="width: 100%" />
       </div>
       <template #props>
         <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating Label" v-if="!allOptions['icon-left'] && !allOptions['Placeholder']" /> <br />
@@ -65,9 +65,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.demo__positioning {
-  margin: auto;
-  // width: 80%;
-}
-</style>
+<style lang="scss"></style>

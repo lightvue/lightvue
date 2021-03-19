@@ -2,7 +2,7 @@
   <div>
     <docs-card-best title="Playground">
       <div class="demo__positioning">
-        <lv-number v-bind="allOptions" />
+        <lv-number v-bind="allOptions" style="width: 100%" />
       </div>
       <template #props>
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
@@ -73,9 +73,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.demo__positioning {
-  margin: auto;
-  width: 80%;
-}
-</style>
+<style lang="scss"></style>
