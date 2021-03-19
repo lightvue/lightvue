@@ -12,7 +12,7 @@ import { terser } from 'rollup-plugin-terser';
 let entries = [];
 
 // ask rollup to not bundle Vue in the library #warning-treating-module-as-external-dependency
-let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/ripple', 'lightvue/utils', 'lightvue/mixins', 'lightvue/utils/DomHandler', 'lightvue/utils/ConnectedOverlayScrollHandler', 'lightvue/utils/ObjectUtils', 'lightvue/overlay-panel'];
+let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/ripple', 'lightvue/utils', 'lightvue/overlay-panel'];
 
 let globalDependencies = {
   vue: 'Vue',
