@@ -3,7 +3,7 @@
     <div class="lv-hidden-accessible">
       <input ref="focusInput" type="text" :id="inputId" readonly :disabled="disabled" @focus="onFocus" @blur="onBlur" @keydown="onKeyDown" :tabindex="tabindex" aria-haspopup="listbox" :aria-expanded="overlayVisible" :aria-labelledby="ariaLabelledBy" />
     </div>
-    <lv-input type="text" v-bind="$attrs" ref="mainInput" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" @input="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" :modelValue="editableInputValue" :value="editableInputValue">
+    <lv-input type="text" v-bind="$attrs" ref="mainInput" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" @update:modelValue="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" :modelValue="editableInputValue" :value="editableInputValue">
       <span v-if="!editable" :class="labelClass">
         <slot name="value" :value="modelValue" :placeholder="placeholder">
           {{ selectedLabel }}
@@ -100,10 +100,10 @@ export default {
   outsideClickListener: null,
   scrollHandler: null,
   resizeListener: null,
-  searchTimeout: null,
-  currentSearchChar: null,
-  previousSearchChar: null,
-  searchValue: null,
+  // searchTimeout: null,
+  // currentSearchChar: null,
+  // previousSearchChar: null,
+  // searchValue: null,
   // overlay: null,
   beforeDestroy() {
     this.onBeforeUnmount();
@@ -204,7 +204,7 @@ export default {
           break;
 
         default:
-          this.search(event);
+          // this.search(event);
           break;
       }
     },
@@ -310,6 +310,7 @@ export default {
       }, 200);
     },
     onEditableInput(newValue) {
+      this.filterValue = newValue || '';
       // this.$emit('input', newValue);
       // this.$emit('update:modelValue', newValue);
       this.updateValue(newValue); // From trueValueMixin
@@ -397,57 +398,58 @@ export default {
         this.resizeListener = null;
       }
     },
-    search(event) {
-      if (!this.visibleOptions) {
-        return;
-      }
+    // search(event) {
+    //   if (!this.visibleOptions) {
+    //     return;
+    //   }
 
-      if (this.searchTimeout) {
-        clearTimeout(this.searchTimeout);
-      }
+    //   if (this.searchTimeout) {
+    //     clearTimeout(this.searchTimeout);
+    //   }
 
-      const char = String.fromCharCode(event.keyCode);
-      this.previousSearchChar = this.currentSearchChar;
-      this.currentSearchChar = char;
+    //   const char = String.fromCharCode(event.keyCode);
+    //   this.previousSearchChar = this.currentSearchChar;
+    //   this.currentSearchChar = char;
 
-      if (this.previousSearchChar === this.currentSearchChar) this.searchValue = this.currentSearchChar;
-      else this.searchValue = this.searchValue ? this.searchValue + char : char;
+    //   if (this.previousSearchChar === this.currentSearchChar) this.searchValue = this.currentSearchChar;
+    //   else this.searchValue = this.searchValue ? this.searchValue + char : char;
 
-      let searchIndex = this.getSelectedOptionIndex();
-      let newOption = this.searchOption(++searchIndex);
+    //   let searchIndex = this.getSelectedOptionIndex();
+    //   let newOption = this.searchOption(++searchIndex);
 
-      if (newOption) {
-        this.updateModel(event, this.getOptionValue(newOption));
-      }
+    //   if (newOption) {
+    //     this.updateModel(event, this.getOptionValue(newOption));
+    //   }
 
-      this.searchTimeout = setTimeout(() => {
-        this.searchValue = null;
-      }, 250);
-    },
-    searchOption(index) {
-      let option;
+    //   this.searchTimeout = setTimeout(() => {
+    //     this.searchValue = null;
+    //   }, 250);
+    // },
 
-      if (this.searchValue) {
-        option = this.searchOptionInRange(index, this.visibleOptions.length);
+    // searchOption(index) {
+    //   let option;
 
-        if (!option) {
-          option = this.searchOptionInRange(0, index);
-        }
-      }
+    //   if (this.searchValue) {
+    //     option = this.searchOptionInRange(index, this.visibleOptions.length);
 
-      return option;
-    },
-    searchOptionInRange(start, end) {
-      for (let i = start; i < end; i++) {
-        let opt = this.visibleOptions[i];
-        let label = this.getOptionLabel(opt).toLocaleLowerCase(this.filterLocale);
-        if (label.startsWith(this.searchValue.toLocaleLowerCase(this.filterLocale))) {
-          return opt;
-        }
-      }
+    //     if (!option) {
+    //       option = this.searchOptionInRange(0, index);
+    //     }
+    //   }
 
-      return null;
-    },
+    //   return option;
+    // },
+
+    // searchOptionInRange(start, end) {
+    //   for (let i = start; i < end; i++) {
+    //     let opt = this.visibleOptions[i];
+    //     let label = this.getOptionLabel(opt).toLocaleLowerCase(this.filterLocale);
+    //     if (label.startsWith(this.searchValue.toLocaleLowerCase(this.filterLocale))) {
+    //       return opt;
+    //     }
+    //   }
+    //   return null;
+    // },
     appendContainer() {
       if (this.appendTo) {
         if (this.appendTo === 'body') document.body.appendChild(this.$refs.overlayRef);

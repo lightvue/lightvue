@@ -96,7 +96,7 @@ export default {
         ? {
             // Depreciated in Vue 3
             ...this.$listeners,
-            input: event => this.updateValue(event),
+            // input: event => this.updateValue(event),
           }
         : {};
     },
