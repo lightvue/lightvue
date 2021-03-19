@@ -103,10 +103,10 @@ export default {
           page_name: 'Checkbox',
           page_path: '/vue-components/checkbox',
         },
-        {
-          page_name: 'Checkbox Group',
-          page_path: '/vue-components/checkbox-group',
-        },
+        // {
+        //   page_name: 'Checkbox Group',
+        //   page_path: '/vue-components/checkbox-group',  REFACTORING
+        // },
         {
           page_name: 'Toggle Switch',
           page_path: '/vue-components/toggle-switch',

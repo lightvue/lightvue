@@ -23,7 +23,7 @@ import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 import ButtonAPI from 'lightvueDocs/example/buttons/ButtonAPI';
 
-export default {\
+export default {
   head: {
     title: 'LightVue | Buttons ',
     meta: [
