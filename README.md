@@ -6,9 +6,11 @@ The Emerging UI Component library for Vue 2.x & Vue 3.x
 
 ```bash
 # Install lightvue package dependencies (for Vue 2.x)
-$ npm install lightvue
+npm install lightvue
+
+
 # Install lightvue package dependencies (for Vue 3.x)
-$ npm install lightvue@next
+npm install lightvue@next
 ```
 
 > For detailed docs & demo, please refer to <https://lightvue.org/>

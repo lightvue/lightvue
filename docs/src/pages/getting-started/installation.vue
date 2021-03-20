@@ -33,7 +33,7 @@
                 >
               </CodeHighlight>
             </div>
-            <h3>With Vue CLI Plugin</h3>
+            <!-- <h3>With Vue CLI Plugin</h3>
             <div class="discription__para">While using Vue CLI, LighgVue can be installed using the LightVue plugin</div>
             <div class="install__process">
               <CodeHighlight lang="javascript">
@@ -44,61 +44,18 @@
           </pre
                 >
               </CodeHighlight>
-            </div>
-            <!-- <h2>2. Configuring your Vue Project</h2>
-            <div class="install__process">
-              <CodeHighlight lang="javascript">
-                <pre>
-
-   import Vue from 'vue' <br />
-   import LightVue from 'lightVue' <br />
-          <br />
-   const components = { <br />
-   //... <br />
-   } <br />
-   Vue.use(LightVue, components)
-
-          </pre>
-              </CodeHighlight>
-            </div>
-            <h3>Injecting Global Styles</h3>
-            <div class="install__process">
-              <CodeHighlight lang="javascript">
-                <pre>
-
-   import Vue from 'vue' <br />
-   import LightVue, { LvThemeProvider, LvReset } from '@lightvue/vue' <br />
-   import App from './App.vue' <br />
-   Vue.use(LightVue) <br />
-   new Vue({ <br />
-    el: '#app', <br />
-    render: (h) => h(LvThemeProvider, [h(LvReset), h(App)]) <br />
-   }).$mount()
-
-          </pre>
-              </CodeHighlight>
             </div> -->
+
             <h3>Injecting the required components</h3>
             <div class="install__process">
               <CodeHighlight lang="javascript">
                 <pre>
-   import Vue from 'vue' <br />
-   import LightVue from 'lightVue' <br />
-   import LvInput from 'lightvue/vue-components/lv-input' <br />
-   import lvButton from 'lightvue/vue-components/lv-button' <br />
-   const settings = { <br />
-    'lv-input': {<br />
-        component: LvInput, <br />
-        props: { <br />
-        } <br />
-     }, <br />
-     'lv-button': { <br />
-         component: LvButton, <br />
-         props: { <br />
-         } <br />
-     }, <br />
-   } <br />
-   Vue.use(LightVue, settings)
+import Vue from 'vue' <br />
+import LvInput from 'lightvue/input' <br />
+import lvButton from 'lightvue/button' <br />
+
+Vue.component('LvInput', LvInput);
+Vue.component('LvButton', LvButton);
           </pre>
               </CodeHighlight>
             </div>
@@ -121,60 +78,60 @@
                 <CodeHighlight lang="css">
                   <pre>
 
-   .lv--primary { 
-      --theme-color: #38b2ac; 
-      --theme-color-light: #8ed8d6; 
-      --theme-color-dark: #319795; 
-      --theme-color-inverse: #ffffff; 
-    } 
-
-   .lv--secondary { 
-      --theme-color: #607d8b; 
-      --theme-color-light: #beccd2; 
-      --theme-color-dark: #56717d; 
-      --theme-color-inverse: #ffffff; 
-    } 
-
-   .lv--success {
-      --theme-color: #008c7f; 
-      --theme-color-light: #95e8df; 
-      --theme-color-dark: #03655b; 
-      --theme-color-inverse: #ffffff; 
-    } 
-
-   .lv--info { 
-      --theme-color: #0288d1; 
-      --theme-color-light: #89d4fe; 
-      --theme-color-dark: #027abc; 
-      --theme-color-inverse: #ffffff; 
-    } 
-
-   .lv--warning { 
-      --theme-color: #ffb300; 
-      --theme-color-light: #ffd36d; 
-      --theme-color-dark: #df9c00; 
-      --theme-color-inverse: #ffffff; 
-    } 
-
-   .lv--help { 
-      --theme-color: #795548;
-      --theme-color-light: #baafac; 
-      --theme-color-dark: #795548; 
-      --theme-color-inverse: #ffffff; 
+   .lv--primary {
+      --theme-color: #38b2ac;
+      --theme-color-light: #8ed8d6;
+      --theme-color-dark: #319795;
+      --theme-color-inverse: #ffffff;
     }
 
-   .lv--danger { 
-      --theme-color: #bb2727; 
-      --theme-color-light: #e9a5a5; 
-      --theme-color-dark: #9b2222; 
-      --theme-color-inverse: #ffffff; 
-    } 
+   .lv--secondary {
+      --theme-color: #607d8b;
+      --theme-color-light: #beccd2;
+      --theme-color-dark: #56717d;
+      --theme-color-inverse: #ffffff;
+    }
 
-   .lv--plain { 
-      --theme-color: #3f51b5; 
-      --theme-color-light: #acb7f7; 
-      --theme-color-dark: #2e3fa2; 
-      --theme-color-inverse: #ffffff; 
+   .lv--success {
+      --theme-color: #008c7f;
+      --theme-color-light: #95e8df;
+      --theme-color-dark: #03655b;
+      --theme-color-inverse: #ffffff;
+    }
+
+   .lv--info {
+      --theme-color: #0288d1;
+      --theme-color-light: #89d4fe;
+      --theme-color-dark: #027abc;
+      --theme-color-inverse: #ffffff;
+    }
+
+   .lv--warning {
+      --theme-color: #ffb300;
+      --theme-color-light: #ffd36d;
+      --theme-color-dark: #df9c00;
+      --theme-color-inverse: #ffffff;
+    }
+
+   .lv--help {
+      --theme-color: #795548;
+      --theme-color-light: #baafac;
+      --theme-color-dark: #795548;
+      --theme-color-inverse: #ffffff;
+    }
+
+   .lv--danger {
+      --theme-color: #bb2727;
+      --theme-color-light: #e9a5a5;
+      --theme-color-dark: #9b2222;
+      --theme-color-inverse: #ffffff;
+    }
+
+   .lv--plain {
+      --theme-color: #3f51b5;
+      --theme-color-light: #acb7f7;
+      --theme-color-dark: #2e3fa2;
+      --theme-color-inverse: #ffffff;
     }
 
           </pre
@@ -186,23 +143,23 @@
                 <CodeHighlight lang="css">
                   <pre>
 
-    // src/plugins/lightVue.js 
-    
-    import Vue from 'vue' 
-    import LightVue from 'LightVue/lib' 
-    const LightVue = new LightVue({ 
-      theme: { 
-        themes: { 
-          light: { 
-            primary: '#3f51b5', 
-            secondary: '#b0bec5', 
-            accent: '#8c9eff', 
-            error: '#b71c1c', 
-          }, 
-        }, 
-      }, 
+    // src/plugins/lightVue.js
+
+    import Vue from 'vue'
+    import LightVue from 'LightVue/lib'
+    const LightVue = new LightVue({
+      theme: {
+        themes: {
+          light: {
+            primary: '#3f51b5',
+            secondary: '#b0bec5',
+            accent: '#8c9eff',
+            error: '#b71c1c',
+          },
+        },
+      },
     })
-    
+
           </pre
                   >
                 </CodeHighlight>
