@@ -26,6 +26,7 @@ export default {
   created() {
     if (this.file) {
       // this.component = () => import('lightvueDocs/example/' + this.file + '.vue');
+      //
       if (!this.component) {
         import('lightvueDocs/example/' + this.file + '.vue').then(comp => {
           this.component = comp.default;
