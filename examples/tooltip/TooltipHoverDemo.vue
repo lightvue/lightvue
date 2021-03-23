@@ -36,7 +36,7 @@
 <script>
 import LvCard from 'lightvue/card';
 import LvButton from 'lightvue/button';
-import LvRangeSlider from 'lightvue/slider';
+// import LvRangeSlider from 'lightvue/slider'; REFACTORING
 import Tooltip from 'lightvue/tooltip';
 
 export default {
@@ -46,7 +46,11 @@ export default {
       value2: 10,
     };
   },
-  components: { LvCard, LvButton, LvRangeSlider },
+  components: {
+    LvCard,
+    LvButton,
+    // LvRangeSlider REFACTORING
+  },
   directives: {
     tooltip: Tooltip,
   },
