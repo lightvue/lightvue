@@ -73,10 +73,10 @@ export default {
           page_name: 'installation',
           page_path: '/getting-started/installation',
         },
-        {
-          page_name: 'customization',
-          page_path: '/getting-started/customization',
-        },
+        // {
+        //   page_name: 'customization',
+        //   page_path: '/getting-started/customization',
+        // },
       ],
     },
     {

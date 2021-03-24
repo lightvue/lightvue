@@ -117,10 +117,10 @@ const routes = [
         path: 'installation',
         component: () => import('@/pages/getting-started/installation.vue'),
       },
-      {
-        path: 'customization',
-        component: () => import('@/pages/getting-started/customization.vue'),
-      },
+      // {
+      //   path: 'customization',
+      //   component: () => import('@/pages/getting-started/customization.vue'),
+      // },
     ],
   },
   {
