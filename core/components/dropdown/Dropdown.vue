@@ -3,11 +3,10 @@
     <div class="lv-hidden-accessible">
       <input ref="focusInput" type="text" :id="inputId" readonly :disabled="disabled" @focus="onFocus" @blur="onBlur" @keydown="onKeyDown" :tabindex="tabindex" aria-haspopup="listbox" :aria-expanded="overlayVisible" :aria-labelledby="ariaLabelledBy" />
     </div>
-
-    <lv-input type="text" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" :value="editableInputValue" @input="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" ref="mainInput" v-bind="$attrs">
+    <lv-input type="text" v-bind="$attrs" ref="mainInput" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" @update:modelValue="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" :modelValue="editableInputValue" :value="editableInputValue" autocomplete="cc-csc">
       <span v-if="!editable" :class="labelClass">
         <slot name="value" :value="modelValue" :placeholder="placeholder">
-          {{ label }}
+          {{ selectedLabel }}
         </slot>
       </span>
       <template #append>
@@ -21,10 +20,6 @@
       <div ref="overlayRef" class="lv-dropdown__panel lv-component" v-if="overlayVisible">
         <div class="lv-dropdown__panel-header" v-if="filter">
           <lv-input type="text" ref="filterInput" autofocus v-model="filterValue" autoComplete="off" icon-right="light-icon-search" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown" @input-native="onFilterChange"></lv-input>
-          <!-- <div  class="lv-dropdown__filter-wrap">
-                        <input type="text" ref="filterInput" v-model="filterValue" autoComplete="off" class="lv-dropdown__filter-input p-inputtext lv-component" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown"  @input="onFilterChange"/>
-                        <span class="lv-dropdown__filter-icon pi pi-search"></span>
-                    </div> -->
         </div>
         <div class="lv-dropdown__items-wrap" :style="{ 'max-height': scrollHeight }">
           <ul class="lv-dropdown__items" role="listbox">
@@ -47,16 +42,18 @@ import { ObjectUtils } from 'lightvue/utils';
 import { DomHandler } from 'lightvue/utils';
 import Ripple from 'lightvue/ripple';
 import LvInput from 'lightvue/input';
+import { trueValueMixin } from 'lightvue/mixins';
 
 export default {
   name: 'LvDropdown',
   inheritAttrs: false,
-  emits: ['update:modelValue', 'input', 'before-show', 'before-hide', 'show', 'hide', 'change', 'filter'],
+  mixins: [trueValueMixin],
+  emits: ['before-show', 'before-hide', 'show', 'hide', 'change', 'filter'],
   components: {
     LvInput,
   },
   props: {
-    value: null,
+    // value: null,
     options: Array,
     optionLabel: null,
     optionValue: null,
@@ -68,7 +65,10 @@ export default {
     filter: Boolean,
     filterPlaceholder: String,
     filterLocale: String,
-    editable: Boolean,
+    editable: {
+      type: Boolean,
+      default: false,
+    },
     placeholder: String,
     disabled: Boolean,
     dataKey: null,
@@ -96,10 +96,10 @@ export default {
   outsideClickListener: null,
   scrollHandler: null,
   resizeListener: null,
-  searchTimeout: null,
-  currentSearchChar: null,
-  previousSearchChar: null,
-  searchValue: null,
+  // searchTimeout: null,
+  // currentSearchChar: null,
+  // previousSearchChar: null,
+  // searchValue: null,
   // overlay: null,
   beforeDestroy() {
     this.onBeforeUnmount();
@@ -200,7 +200,7 @@ export default {
           break;
 
         default:
-          this.search(event);
+          // this.search(event);
           break;
       }
     },
@@ -277,11 +277,12 @@ export default {
       this.updateModel(event, null);
     },
     onClick(event) {
+      // To focus automatically
       if (this.disabled) {
         return;
       }
 
-      if (DomHandler.hasClass(event.target, 'lv-dropdown__clear-icon') || event.target.tagName === 'INPUT') {
+      if (DomHandler.hasClass(event.target, 'lv-dropdown__clear-icon')) {
         return;
       } else if (!this.$refs.overlayRef || !this.$refs.overlayRef.contains(event.target)) {
         if (this.overlayVisible) this.hide();
@@ -305,8 +306,10 @@ export default {
       }, 200);
     },
     onEditableInput(newValue) {
-      this.$emit('input', newValue);
-      this.$emit('update:modelValue', newValue);
+      this.filterValue = newValue || '';
+      // this.$emit('input', newValue);
+      // this.$emit('update:modelValue', newValue);
+      this.updateValue(newValue); // From trueValueMixin
     },
     onOverlayEnter() {
       this.$refs.overlayRef.style.zIndex = String(DomHandler.generateZIndex());
@@ -334,12 +337,21 @@ export default {
         DomHandler.absolutePosition(this.$refs.overlayRef, this.$el);
         this.$refs.overlayRef.style.minWidth = DomHandler.getOuterWidth(this.$el) + 'px';
       } else {
-        DomHandler.relativePosition(this.$refs.overlayRef, this.$el);
+        let mainInputNode = this.$refs.mainInput.$el;
+        let inputFieldNode = null;
+        for (let node of mainInputNode.childNodes) {
+          if (node.className === 'lv-input__field') {
+            inputFieldNode = node;
+            break;
+          }
+        }
+        DomHandler.relativePosition(this.$refs.overlayRef, mainInputNode, inputFieldNode);
       }
     },
     updateModel(event, value) {
-      this.$emit('input', value);
-      this.$emit('update:modelValue', value);
+      this.updateValue(value); // From TrueValueMixin
+      // this.$emit('input', value);
+      // this.$emit('update:modelValue', value);
       this.$emit('change', { originalEvent: event, value: value });
     },
     bindOutsideClickListener() {
@@ -390,57 +402,58 @@ export default {
         this.resizeListener = null;
       }
     },
-    search(event) {
-      if (!this.visibleOptions) {
-        return;
-      }
+    // search(event) {
+    //   if (!this.visibleOptions) {
+    //     return;
+    //   }
 
-      if (this.searchTimeout) {
-        clearTimeout(this.searchTimeout);
-      }
+    //   if (this.searchTimeout) {
+    //     clearTimeout(this.searchTimeout);
+    //   }
 
-      const char = String.fromCharCode(event.keyCode);
-      this.previousSearchChar = this.currentSearchChar;
-      this.currentSearchChar = char;
+    //   const char = String.fromCharCode(event.keyCode);
+    //   this.previousSearchChar = this.currentSearchChar;
+    //   this.currentSearchChar = char;
 
-      if (this.previousSearchChar === this.currentSearchChar) this.searchValue = this.currentSearchChar;
-      else this.searchValue = this.searchValue ? this.searchValue + char : char;
+    //   if (this.previousSearchChar === this.currentSearchChar) this.searchValue = this.currentSearchChar;
+    //   else this.searchValue = this.searchValue ? this.searchValue + char : char;
 
-      let searchIndex = this.getSelectedOptionIndex();
-      let newOption = this.searchOption(++searchIndex);
+    //   let searchIndex = this.getSelectedOptionIndex();
+    //   let newOption = this.searchOption(++searchIndex);
 
-      if (newOption) {
-        this.updateModel(event, this.getOptionValue(newOption));
-      }
+    //   if (newOption) {
+    //     this.updateModel(event, this.getOptionValue(newOption));
+    //   }
 
-      this.searchTimeout = setTimeout(() => {
-        this.searchValue = null;
-      }, 250);
-    },
-    searchOption(index) {
-      let option;
+    //   this.searchTimeout = setTimeout(() => {
+    //     this.searchValue = null;
+    //   }, 250);
+    // },
 
-      if (this.searchValue) {
-        option = this.searchOptionInRange(index, this.visibleOptions.length);
+    // searchOption(index) {
+    //   let option;
 
-        if (!option) {
-          option = this.searchOptionInRange(0, index);
-        }
-      }
+    //   if (this.searchValue) {
+    //     option = this.searchOptionInRange(index, this.visibleOptions.length);
 
-      return option;
-    },
-    searchOptionInRange(start, end) {
-      for (let i = start; i < end; i++) {
-        let opt = this.visibleOptions[i];
-        let label = this.getOptionLabel(opt).toLocaleLowerCase(this.filterLocale);
-        if (label.startsWith(this.searchValue.toLocaleLowerCase(this.filterLocale))) {
-          return opt;
-        }
-      }
+    //     if (!option) {
+    //       option = this.searchOptionInRange(0, index);
+    //     }
+    //   }
 
-      return null;
-    },
+    //   return option;
+    // },
+
+    // searchOptionInRange(start, end) {
+    //   for (let i = start; i < end; i++) {
+    //     let opt = this.visibleOptions[i];
+    //     let label = this.getOptionLabel(opt).toLocaleLowerCase(this.filterLocale);
+    //     if (label.startsWith(this.searchValue.toLocaleLowerCase(this.filterLocale))) {
+    //       return opt;
+    //     }
+    //   }
+    //   return null;
+    // },
     appendContainer() {
       if (this.appendTo) {
         if (this.appendTo === 'body') document.body.appendChild(this.$refs.overlayRef);
@@ -498,12 +511,12 @@ export default {
       return [
         'lv-dropdown__label',
         {
-          '--as-placeholder': this.label === this.placeholder,
-          'lv-dropdown__label-empty': !this.$slots['value'] && (this.label === '--empty-label' || this.label.length === 0),
+          '--as-placeholder': this.selectedLabel === this.placeholder,
+          'lv-dropdown__label-empty': !this.$slots['value'] && (this.selectedLabel === '--empty-label' || this.selectedLabel.length === 0),
         },
       ];
     },
-    label() {
+    selectedLabel() {
       let selectedOption = this.getSelectedOption();
       if (selectedOption) return this.getOptionLabel(selectedOption);
       else return this.placeholder || '--empty-label';

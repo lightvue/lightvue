@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import LvCheckBox from 'lightvue/Checkbox';
+import LvCheckBox from 'lightvue/checkbox';
 export default {
   name: 'LvCheckboxGroup',
   data() {

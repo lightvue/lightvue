@@ -36,8 +36,7 @@ export default {
     label: {
       type: String,
     },
-    // loading: {
-    // upcomming with needed slot
+    // loading: { // upcomming with needed slot
     //     type: Boolean,
     //     default: false,
     // },
