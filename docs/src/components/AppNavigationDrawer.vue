@@ -73,6 +73,10 @@ export default {
           page_name: 'Installation',
           page_path: '/getting-started/installation',
         },
+        {
+          page_name: 'Light Icons',
+          page_path: '/icons/light-icons',
+        },
         // {
         //   page_name: 'Customization',
         //   page_path: '/getting-started/customization',
@@ -192,14 +196,6 @@ export default {
         {
           page_name: 'Notifications',
           page_path: '/vue-components/notification',
-        },
-      ],
-      category_name: 'LIGHT ICONS',
-      category_icon: 'light-icon-external-link',
-      pages: [
-        {
-          page_name: 'Light Icons',
-          page_path: '/icons/light-icons',
         },
       ],
     },
