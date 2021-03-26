@@ -24,10 +24,10 @@
         <div class="hero-container__row">
           <div class="hero-container__buttons">
             <nuxt-link to="/getting-started/installation" class="hero-button lv-fluid">
-              <LvButton label="Get Started" deep-shadow push size="lg" />
+              <LvButton label="Get Started" :push="true" :deep-shadow="true" type="button" size="xl" />
             </nuxt-link>
             <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
-              <LvButton label="Why LightVue" deep-shadow push size="lg" />
+              <lv-button label="Why LightVue" :push="true" :deep-shadow="true" type="button" size="xl" />
             </nuxt-link>
           </div>
         </div>
