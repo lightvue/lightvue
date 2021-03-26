@@ -182,10 +182,6 @@ export default {
           page_path: '/vue-components/overlay-panel',
         },
         {
-          page_name: 'Light Icons',
-          page_path: '/icons/light-icons',
-        },
-        {
           page_name: 'Dialog',
           page_path: '/vue-components/dialog',
         },
@@ -196,6 +192,14 @@ export default {
         {
           page_name: 'Notifications',
           page_path: '/vue-components/notification',
+        },
+      ],
+      category_name: 'LIGHT ICONS',
+      category_icon: 'light-icon-external-link',
+      pages: [
+        {
+          page_name: 'Light Icons',
+          page_path: '/icons/light-icons',
         },
       ],
     },
