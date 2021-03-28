@@ -6,7 +6,7 @@
         <br />
         <div class="vue-migrate__content-description">Easy to migrate to Vue 3: With just a one step groundwork, Light Vue offers a hastle free migration from your vue2.x to Vue 3.x projects.</div>
         <br /><br />
-        <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" style="--theme-color: #143a56; --theme-color-dark: #194a70" />
+        <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" />
       </div>
       <div class="vue-migrate__background"></div>
       <div class="vue-migrate__image-wrapper">

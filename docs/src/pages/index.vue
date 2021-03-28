@@ -4,7 +4,9 @@
     <index-features />
     <section-lightweight />
     <section-vue-migrate />
-    <section-pricing />
+    <section-lighticon />
+    <!-- <section-pricing /> -->
+    <section-enterprise />
     <index-footer />
   </div>
 </template>
@@ -14,7 +16,9 @@ import Hero from '../components/landing-page/Hero.vue';
 import IndexFeatures from '../components/landing-page/IndexFeatures.vue';
 import SectionLightweight from '../components/landing-page/SectionLightweight.vue';
 import SectionVueMigrate from '../components/landing-page/SectionVueMigrate.vue';
+import SectionLighticon from '../components/landing-page/SectionLighticon.vue';
 import SectionPricing from '../components/landing-page/SectionPricing.vue';
+import SectionEnterprise from '../components/landing-page/SectionEnterprise.vue';
 import IndexFooter from '../components/landing-page/IndexFooter.vue';
 export default {
   head: {
@@ -47,7 +51,9 @@ export default {
     IndexFooter,
     SectionLightweight,
     SectionVueMigrate,
+    SectionLighticon,
     SectionPricing,
+    SectionEnterprise,
   },
 };
 </script>

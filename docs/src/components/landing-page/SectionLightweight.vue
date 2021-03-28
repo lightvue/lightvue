@@ -11,7 +11,7 @@
         <div class="light-weight__content-description">With Light-Vue , style light as a feather web components for your projects with dead simple responsive layout. There is only so much it can do to enhance performance and robustness of a your web app.</div>
         <br />
         <br />
-        <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="button-color__revised-theme" style="--theme-color: #143a56; --theme-color-dark: #194a70" />
+        <lv-button :push="true" :deep-shadow="true"  type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70">Know More</lv-button>
       </div>
     </div>
   </section>
