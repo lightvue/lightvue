@@ -26,6 +26,7 @@
                 <lv-input :bottom-bar="true" placeholder="Your Organization" label="Your Organization" icon-left="light-icon-building-skyscraper" /> <br />
                 <lv-input :bottom-bar="true" placeholder="Profession" label="What role best describes you?" icon-left="light-icon-briefcase" /> <br />
                 <lv-textarea :bottom-bar="true" placeholder="Write to us.." label="How we would help you to build better projects?" /> <br />
+                <lv-button :push="true" :deep-shadow="true" label="Submit" class="leadform__button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" />
               </div>
             </lv-overlay-panel>
           </div>
@@ -167,6 +168,13 @@ export default {
 }
 .overlay-leadform {
   padding: 20px;
+  .leadform__button {
+    --theme-color-dark: #194a70;
+    --theme-color: #143a56;
+    margin-top: 15px;
+    height: 40px;
+    width: 250px;
+  }
 }
 @media (max-width: 768px) {
   .enterprise-section__circle-illustration {
