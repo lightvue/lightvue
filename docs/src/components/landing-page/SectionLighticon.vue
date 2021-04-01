@@ -4,7 +4,7 @@
       <div class="section-lighticons__image-wrapper">
         <img src="../../assets/images/section-lighticons.svg" alt="Light icon" class="section-lighticons__image" />
       </div>
-      <div class="section-lighticons__background"></div>
+      <!-- <div class="section-lighticons__background"></div> -->
       <div class="section-lighticons__content">
         <div class="section-lighticons__content-heading">Packed with premium collection of light icons</div>
         <br />

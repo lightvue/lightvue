@@ -2,18 +2,19 @@
   <div class="lightvue__landing-page">
     <hero />
     <index-features />
+    <section-lighticon />
     <section-lightweight />
     <section-vue-migrate />
-    <section-lighticon />
     <!-- <section-pricing /> -->
     <section-enterprise />
-    <index-footer />
+    <!-- <index-footer /> -->
   </div>
 </template>
 
 <script>
 import Hero from '../components/landing-page/Hero.vue';
-import IndexFeatures from '../components/landing-page/IndexFeatures.vue';
+import IndexFeatures from '../components/landing-page/SectionFeatures.vue';
+// import IndexFeatures from '../components/landing-page/IndexFeatures.vue';
 import SectionLightweight from '../components/landing-page/SectionLightweight.vue';
 import SectionVueMigrate from '../components/landing-page/SectionVueMigrate.vue';
 import SectionLighticon from '../components/landing-page/SectionLighticon.vue';

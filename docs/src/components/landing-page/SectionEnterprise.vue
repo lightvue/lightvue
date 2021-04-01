@@ -17,9 +17,7 @@
             <!-- <div class="expertise-feature__item">and many more...</div> -->
             <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" />
             <!-- <LvButton type="button" label="Image Overlay" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" /> -->
-
             <lv-overlay-panel style="width: 350px" ref="imageOverlay" append-to="body" :show-close-icon="true" id="image_overlay_panel">
-               
               <div class="overlay-leadform">
                 <lv-input :bottom-bar="true" placeholder="Your Name" label="Name" icon-left="light-icon-user" /> <br />
                 <lv-input :bottom-bar="true" placeholder="Your Email" label="email" icon-left="light-icon-mail" /> <br />

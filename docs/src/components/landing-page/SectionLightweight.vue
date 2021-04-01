@@ -1,19 +1,20 @@
 <template>
   <section class="light-weight">
+    <img src="../../assets/images/light-weight-bg-top.svg" width="100%" class="light-weight__bg --top" />
     <div class="light-weight__wrapper">
-      <div class="light-weight__image-wrapper">
-        <img src="../../assets/images/light-weight.svg" alt="Light weight UI" class="light-weight__image" />
-      </div>
-      <div class="light-weight__background"></div>
       <div class="light-weight__content">
-        <div class="light-weight__content-heading">Light weight in Production</div>
+        <div class="light-weight__content-heading">Light weight UI</div>
         <br />
         <div class="light-weight__content-description">With Light-Vue , style light as a feather web components for your projects with dead simple responsive layout. There is only so much it can do to enhance performance and robustness of a your web app.</div>
         <br />
         <br />
-        <lv-button :push="true" :deep-shadow="true"  type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70">Know More</lv-button>
+        <lv-button :push="true" :deep-shadow="true" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70">Know More</lv-button>
+      </div>
+      <div class="light-weight__image-wrapper">
+        <img src="../../assets/images/light-weight.svg" alt="Light weight UI" class="light-weight__image" />
       </div>
     </div>
+    <img src="../../assets/images/light-weight-bg-bottom.svg" width="100%" class="light-weight__bg --bottom" />
   </section>
 </template>
 
@@ -22,6 +23,15 @@ export default {};
 </script>
 
 <style lang="scss">
+.light-weight {
+  position: relative;
+  .light-weight__bg {
+    position: absolute;
+    &.--bottom {
+      bottom: -150px;
+    }
+  }
+}
 .light-weight__wrapper {
   display: flex;
   position: relative;
@@ -33,23 +43,16 @@ export default {};
 
   .light-weight__image-wrapper {
     width: 40%;
+    display: flex;
+    justify-content: flex-end;
     z-index: 100;
     .light-weight__image {
       width: 80%;
     }
   }
-  .light-weight__background {
-    position: absolute;
-    z-index: 0;
-    left: 15%;
-    transform: translateX(15%);
-    width: 500px;
-    height: 400px;
-    background: rgb(152 213 213 / 23%);
-    border-radius: 20px;
-  }
   .light-weight__content {
     width: 60%;
+    max-width: 650px;
     text-align: left;
     z-index: 100;
     .light-weight__content-heading {
@@ -68,15 +71,6 @@ export default {};
     }
   }
 }
-// @media (max-width: 934px) {
-//   .light-weight__wrapper {
-//     .light-weight__content {
-//       .light-weight__content-heading {
-//         font-size: 36px;
-//       }
-//     }
-//   }
-// }
 @media (max-width: 768px) {
   .light-weight__wrapper {
     flex-direction: column-reverse;

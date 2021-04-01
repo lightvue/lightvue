@@ -1,17 +1,17 @@
 <template>
   <section class="vue-migrate">
     <div class="vue-migrate__wrapper">
-      <div class="vue-migrate__content">
-        <div class="vue-migrate__content-heading">Migrate to vue 3.X</div>
-        <br />
-        <div class="vue-migrate__content-description">Easy to migrate to Vue 3: With just a one step groundwork, Light Vue offers a hastle free migration from your vue2.x to Vue 3.x projects.</div>
-        <br /><br />
-        <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" />
-      </div>
-      <div class="vue-migrate__background"></div>
       <div class="vue-migrate__image-wrapper">
         <img src="../../assets/images/migrate-vue.svg" alt="migrate-vue" class="vue-migrate__image" />
       </div>
+      <div class="vue-migrate__content">
+        <div class="vue-migrate__content-heading">Swift migration from Vue2.x to Vue3.x</div>
+        <br />
+        <div class="vue-migrate__content-description">Developing cut edge projects just got easier.With just one step upgradation, 100% backward compatibilty and identical APIs in both the environments, LightVue offers a hastle free migration from your Vue 2.x to Vue 3.x projects in just two ticks.</div>
+        <br /><br />
+        <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" />
+      </div>
+      <!-- <div class="vue-migrate__background"></div> -->
     </div>
   </section>
 </template>
@@ -36,7 +36,7 @@ export default {};
     justify-content: flex-end;
     z-index: 100;
     .vue-migrate__image {
-      width: 80%;
+      width: 100%;
     }
   }
   .vue-migrate__background {
@@ -52,7 +52,8 @@ export default {};
   }
   .vue-migrate__content {
     width: 60%;
-    text-align: right;
+    max-width: 650px;
+    // text-align: right;
     z-index: 100;
     .vue-migrate__content-heading {
       font-size: 32px;
