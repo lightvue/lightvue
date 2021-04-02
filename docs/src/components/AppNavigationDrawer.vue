@@ -73,10 +73,10 @@ export default {
           page_name: 'Installation',
           page_path: '/getting-started/installation',
         },
-        // {
-        //   page_name: 'Customization',
-        //   page_path: '/getting-started/customization',
-        // },
+        {
+          page_name: 'Lighticons',
+          page_path: '/getting-started/light-icons',
+        },
       ],
     },
     {
@@ -181,10 +181,10 @@ export default {
           page_name: 'Overlay Panel',
           page_path: '/vue-components/overlay-panel',
         },
-        {
-          page_name: 'Light Icons',
-          page_path: '/icons/light-icons',
-        },
+        // {
+        //   page_name: 'Light Icons',
+        //   page_path: '/icons/light-icons',
+        // },
         {
           page_name: 'Dialog',
           page_path: '/vue-components/dialog',

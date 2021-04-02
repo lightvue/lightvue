@@ -1,5 +1,5 @@
 <template>
-  <svg :width="width" :height="height" version="1.1" :preserveAspectRatio="preserveAspectRatio">
+  <svg :width="width" :height="height" version="1.1" :preserveAspectRatio="preserveAspectRatio" :viewBox="viewBox || `0 0 300 130`">
     <rect :style="`fill: url(${baseUrl}#${idGradient})`" :clip-path="`url(${baseUrl}#${idClip})`" x="0" y="0" width="100%" height="100%" />
 
     <defs>
@@ -20,7 +20,6 @@
 
 <script>
 import GradientStop from './GradientStop.vue';
-// :viewBox="viewBox || `0 0 300 130`"
 export default {
   name: 'LvSkeleton',
   components: {

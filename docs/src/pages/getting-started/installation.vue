@@ -66,10 +66,13 @@ Vue.component('LvButton', LvButton);
     <div class="content-section introduction">
       <div class="feature-intro">
         <h1>Customization</h1>
-        <p style="opacity: 0.8">In order to get started with light vue, you need to install LightVue and its dependency LightIcon (Only required if the icons are getting used).</p>
+        <p style="opacity: 0.8">
+          In order to get started with light vue, you need to install LightVue and its dependency LightIcon (Only required if the icons are getting used). <br />
+          For Detailed Customisation <nuxt-link :to="{ path: '/', hash: 'contact' }" style="color: #38b2ac">Contact Us</nuxt-link>
+        </p>
       </div>
       <br />
-      <div class="content-section implementation">
+      <!-- <div class="content-section implementation">
         <docs-card title="Customization" :responsive="false">
           <div class="custom__wrapper" style="padding: 1rem">
             <div class="custom__container">
@@ -137,9 +140,9 @@ Vue.component('LvButton', LvButton);
           </pre
                   >
                 </CodeHighlight>
-              </div>
-              <!-- <div class="discription__para">This can be easily configured via passing the theme property</div> -->
-              <!-- <div class="custom__process">
+              </div> -->
+      <!-- <div class="discription__para">This can be easily configured via passing the theme property</div> -->
+      <!-- <div class="custom__process">
                 <CodeHighlight lang="css">
                   <pre>
 
@@ -164,7 +167,7 @@ Vue.component('LvButton', LvButton);
                   >
                 </CodeHighlight>
               </div> -->
-            </div>
+      <!-- </div>
           </div>
         </docs-card>
       </div>
@@ -191,7 +194,7 @@ Vue.component('LvButton', LvButton);
         <docs-card title="Create Pull requests" :responsive="false">
           <div class="install__wrapper" style="padding: 1rem">Push your commit to get it back up to your fork: git push origin HEAD Visit Github, click handy “Pull request” button that it will make upon noticing your new branch. In the description field, write down issue number (if submitting code fixing an existing issue) or describe the issue + your fix (if submitting a wholly new bugfix). Hit ‘submit’! And please be patient - the maintainers will get to you when they can.</div>
         </docs-card>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
