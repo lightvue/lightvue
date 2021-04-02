@@ -17,7 +17,7 @@
             <div class="expertise-feature__item"><i class="light-icon-phone-calling"></i>24/7 customer support</div>
             <!-- <div class="expertise-feature__item">and many more...</div> -->
             <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="contact_overlay_panel" />
-            <lv-overlay-panel style="width: 350px" ref="contactOverlay" :show-close-icon="true" id="contact_overlay_panel" v-if="$lightvue.version ? $lightvue.version !== 3 : true">
+            <lv-overlay-panel style="width: 350px" ref="contactOverlay" append-to="body" :show-close-icon="true" id="contact_overlay_panel" v-if="$lightvue && $lightvue.version ? $lightvue.version !== 3 : true">
               <div class="overlay-leadform">
                 <lv-input :bottom-bar="true" placeholder="Your Name" label="Name" icon-left="light-icon-user" /> <br />
                 <lv-input :bottom-bar="true" placeholder="Your Email" label="Email" icon-left="light-icon-mail" /> <br />
@@ -177,7 +177,7 @@ export default {
   padding: 20px;
 }
 .overlay-leadform {
-  padding: 20px;
+  padding: 12px;
   .leadform__button {
     --theme-color-dark: #194a70;
     --theme-color: #143a56;
