@@ -15,17 +15,15 @@
             <div class="expertise-feature__item"><i class="light-icon-git-fork"></i>Indipendent build modules</div>
             <div class="expertise-feature__item"><i class="light-icon-phone-calling"></i>24/7 customer support</div>
             <!-- <div class="expertise-feature__item">and many more...</div> -->
-            <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" />
-            <!-- <LvButton type="button" label="Image Overlay" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" /> -->
-            <lv-overlay-panel style="width: 350px" ref="imageOverlay" append-to="body" :show-close-icon="true" id="image_overlay_panel">
+            <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="contact_overlay_panel" />
+            <lv-overlay-panel style="width: 350px" ref="contactOverlay" :show-close-icon="true" id="contact_overlay_panel" v-if="$lightvue.version ? $lightvue.version !== 3 : true">
               <div class="overlay-leadform">
                 <lv-input :bottom-bar="true" placeholder="Your Name" label="Name" icon-left="light-icon-user" /> <br />
                 <lv-input :bottom-bar="true" placeholder="Your Email" label="Email" icon-left="light-icon-mail" /> <br />
                 <lv-input :bottom-bar="true" placeholder="Your Organization" label="Your Organization" icon-left="light-icon-building-skyscraper" /> <br />
                 <lv-dropdown v-model="selectedDesignation" :options="designation" optionLabel="name" placeholder="Profession" clearable label="What role best describes you?" icon-left="light-icon-briefcase" bottom-bar /> <br />
-                <!-- <lv-input :bottom-bar="true" placeholder="Profession" label="What role best describes you?" icon-left="light-icon-briefcase" /> <br /> -->
                 <lv-textarea :bottom-bar="true" placeholder="Write to us.." label="How we would help you to build better projects?" /> <br />
-                <lv-button :push="true" :deep-shadow="true" label="Submit" class="leadform__button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" />
+                <lv-button :push="true" :deep-shadow="true" label="Submit" class="leadform__button" />
               </div>
             </lv-overlay-panel>
           </div>
@@ -57,11 +55,11 @@ export default {
     LvDropdown,
   },
   methods: {
-    toggle(event) {
-      this.$refs.op.toggle(event);
-    },
+    // toggle(event) {
+    //   this.$refs.op.toggle(event);
+    // },
     toggleImageOverlay(event) {
-      this.$refs.imageOverlay.toggle(event);
+      this.$refs.contactOverlay.toggle(event);
     },
   },
 };
