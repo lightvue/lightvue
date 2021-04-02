@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import LvCardList from 'lightvue/skeleton/preset/CardList';
+import LvCardList from 'lightvue/skeleton/preset/CardList.vue';
 export default {
   components: {
     LvCardList,

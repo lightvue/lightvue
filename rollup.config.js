@@ -167,13 +167,13 @@ function addSFC() {
   addEntry('components/dialog', 'index.js', 'dialog', 'index');
   addEntry('components/dropdown', 'index.js', 'dropdown', 'index');
   addEntry('components/input', 'index.js', 'input', 'index');
-  addEntry('components/input-toggle', 'index.js', 'toggle-switch', 'index');
+  addEntry('components/toggle-switch', 'index.js', 'toggle-switch', 'index');
   addEntry('components/loaders', 'index.js', 'loaders', 'index');
   addEntry('components/number', 'index.js', 'number', 'index');
   addEntry('components/notification', 'index.js', 'notification', 'index');
   addEntry('components/overlay-panel', 'index.js', 'overlay-panel', 'index');
-  addEntry('components/progressbar', 'index.js', 'progress-bar', 'index');
-  addEntry('components/progressspinner', 'index.js', 'progress-spinner', 'index');
+  addEntry('components/progress-bar', 'index.js', 'progress-bar', 'index');
+  addEntry('components/progress-spinner', 'index.js', 'progress-spinner', 'index');
   addEntry('components/rating', 'index.js', 'rating', 'index');
   addEntry('components/skeleton', 'index.js', 'skeleton', 'index');
   // addEntry('components/slider', 'index.js', 'slider', 'index');

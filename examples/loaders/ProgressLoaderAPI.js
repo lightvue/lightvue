@@ -14,4 +14,4 @@ const ProgressBarAPI = {
     },
   ],
 };
-export default LoadersAPI;
+export default ProgressBarAPI;
