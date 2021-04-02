@@ -83,8 +83,8 @@ export default {};
     }
   }
   .light-weight__wrapper {
-    flex-direction: column;
-    margin: 0px 0px 50px 0px;
+    flex-direction: column-reverse;
+    margin: 50px 0px 50px 0px;
     .light-weight__image-wrapper {
       width: 100%;
       margin-top: 50px;
@@ -92,7 +92,7 @@ export default {};
       justify-content: center;
       align-items: center;
       .light-weight__image {
-        height: 350px;
+        height: 300px;
         object-fit: contain;
       }
     }
@@ -102,6 +102,7 @@ export default {};
     .light-weight__content {
       width: 100%;
       padding: 20px;
+      margin-top: 0px;
     }
   }
 }
@@ -113,6 +114,7 @@ export default {};
       }
     }
     .light-weight__content {
+      padding: 20px 0px;
       .light-weight__content-heading {
         font-size: 28px;
       }

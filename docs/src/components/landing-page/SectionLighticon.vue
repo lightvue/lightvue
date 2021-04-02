@@ -80,7 +80,7 @@ export default {};
 // }
 @media (max-width: 768px) {
   .section-lighticons__wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0px 0px 50px 0px;
     .section-lighticons__image-wrapper {
       width: 100%;
@@ -89,7 +89,7 @@ export default {};
       justify-content: center;
       align-items: center;
       .section-lighticons__image {
-        width: 320px;
+        height: 350px;
         // margin: auto;
       }
     }
@@ -110,6 +110,7 @@ export default {};
       }
     }
     .section-lighticons__content {
+      padding: 0px;
       .section-lighticons__content-heading {
         font-size: 28px;
       }

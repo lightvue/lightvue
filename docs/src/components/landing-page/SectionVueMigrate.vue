@@ -1,9 +1,6 @@
 <template>
   <section class="vue-migrate" id="vue-migrate">
     <div class="vue-migrate__wrapper">
-      <div class="vue-migrate__image-wrapper">
-        <img src="../../assets/images/migrate-vue.svg" alt="migrate-vue" class="vue-migrate__image" />
-      </div>
       <div class="vue-migrate__content">
         <div class="vue-migrate__content-heading">Swift migration from Vue 2.x to Vue 3.x</div>
         <br />
@@ -11,6 +8,9 @@
         <br /><br />
         <nuxt-link :to="{ hash: 'light-weight' }" class="page-button --dark">Know More</nuxt-link>
         <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
+      </div>
+      <div class="vue-migrate__image-wrapper">
+        <img src="../../assets/images/migrate-vue.svg" alt="migrate-vue" class="vue-migrate__image" />
       </div>
       <!-- <div class="vue-migrate__background"></div> -->
     </div>
@@ -86,14 +86,15 @@ export default {};
   .vue-migrate__wrapper {
     flex-direction: column-reverse;
     margin: 0px;
+    padding: 0px 20px;
     .vue-migrate__image-wrapper {
       width: 100%;
-      margin-top: 50px;
+      margin-bottom: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
       .vue-migrate__image {
-        width: 350px;
+        width: 80%;
       }
     }
     .vue-migrate__background {

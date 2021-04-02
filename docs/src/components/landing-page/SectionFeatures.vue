@@ -98,7 +98,7 @@ export default {};
       align-items: center;
     .section-features__single-box{
         width: 280px;
-        // height: 250px;
+        height: 280px;
         padding: 30px;
         margin: 20px 10px;
         text-align: center;
