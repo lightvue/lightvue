@@ -74,8 +74,8 @@ export default {
           page_path: '/getting-started/installation',
         },
         {
-          page_name: 'Customization',
-          page_path: '/getting-started/customization',
+          page_name: 'Light Icons',
+          page_path: '/getting-started/light-icons',
         },
       ],
     },
@@ -106,6 +106,7 @@ export default {
         {
           page_name: 'Checkbox Group',
           page_path: '/vue-components/checkbox-group',
+          // REFACTORING,
         },
         {
           page_name: 'Toggle Switch',
@@ -181,10 +182,10 @@ export default {
           page_name: 'Overlay Panel',
           page_path: '/vue-components/overlay-panel',
         },
-        {
-          page_name: 'Light Icons',
-          page_path: '/icons/light-icons',
-        },
+        // {
+        //   page_name: 'Light Icons',
+        //   page_path: '/icons/light-icons',
+        // },
         {
           page_name: 'Dialog',
           page_path: '/vue-components/dialog',

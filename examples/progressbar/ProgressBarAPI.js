@@ -1,4 +1,4 @@
-const ProgressLoadersAPI = {
+const progressbarAPI = {
     props:[
         {
             name: 'value',
@@ -26,4 +26,4 @@ const ProgressLoadersAPI = {
         },
     ],
 }
-export default ProgressLoadersAPI;
+export default progressbarAPI;

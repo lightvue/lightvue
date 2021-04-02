@@ -118,18 +118,8 @@ const routes = [
         component: () => import('@/pages/getting-started/installation.vue'),
       },
       {
-        path: 'customization',
-        component: () => import('@/pages/getting-started/customization.vue'),
-      },
-    ],
-  },
-  {
-    path: '/icons',
-    component: () => import('../components/Layout/DocsLayout.vue'),
-    children: [
-      {
         path: 'light-icons',
-        component: () => import('@/pages/icons/light-icons.vue'),
+        component: () => import('@/pages/getting-started/light-icons.vue'),
       },
     ],
   },

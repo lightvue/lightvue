@@ -8,8 +8,8 @@
       </a>
     </div> -->
     <div class="app-footer__text">
-      This page is open source. Noticed a typo? Or something unclear? <br /><br />
-      <b>Improve this page on <i class="light-icon-brand-github"></i> GitHub</b> <br />
+      copyright 2021 © LightVue. all rights reserved. <br /><br />
+      <!-- <b>Improve this page on <i class="light-icon-brand-github"></i> GitHub</b> <br /> -->
     </div>
   </div>
 </template>

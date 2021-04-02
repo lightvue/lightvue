@@ -2,6 +2,7 @@
   <div>
     <lv-list-loader :width="300" :height="100" />
     <lv-list-loader />
+    <!-- REFACTORING -->
   </div>
 </template>
 
@@ -13,5 +14,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

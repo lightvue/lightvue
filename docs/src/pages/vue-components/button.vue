@@ -1,12 +1,12 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
     <button-best-demo />
-    <docs-card-vue title="Basic Usage" file="buttons/ButtonDemo_Basic" />
-    <docs-card-vue title="Rounded Buttons" file="buttons/ButtonDemo_Rounded" />
-    <docs-card-vue title="Button Groups" file="buttons/ButtonDemo_Group" />
-    <docs-card-vue title="Push Buttons" file="buttons/ButtonDemo_Raised" id="push" />
-    <docs-card-vue title="Miscellaneous Usage" file="buttons/ButtonDemo_Misc" />
-    <docs-card-vue title="Miscellaneous Usage" file="buttons/ButtonDemo_Shadow" />
+    <docs-card-vue title="Basic Usage" file="button/ButtonDemo_Basic" />
+    <docs-card-vue title="Rounded Buttons" file="button/ButtonDemo_Rounded" />
+    <docs-card-vue title="Button Groups" file="button/ButtonDemo_Group" />
+    <docs-card-vue title="Push Buttons" file="button/ButtonDemo_Raised" id="push" />
+    <docs-card-vue title="Miscellaneous Usage" file="button/ButtonDemo_Misc" />
+    <docs-card-vue title="Miscellaneous Usage" file="button/ButtonDemo_Shadow" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import ButtonBestDemo from 'lightvue/example/buttons/ButtonBestDemo.vue';
+import ButtonBestDemo from 'lightvueDocs/example/button/ButtonBestDemo.vue';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout';
 import DocsCardVue from '@/components/docs-card/DocsCardVue';
 import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
-import ButtonAPI from 'lightvue/button/ButtonAPI';
+import ButtonAPI from 'lightvueDocs/example/button/ButtonAPI';
 
 export default {
   head: {

@@ -1,13 +1,5 @@
 <template>
   <div>
-    <!-- <div class="content-section introduction">
-            <div class="feature-intro">
-                <h1>Checkbox</h1>
-                <p>Checkbox is an extension to standard checkbox element with theming.</p>
-            </div>
-            <AppInputStyleSwitch />
-        </div> -->
-
     <div class="content-section implementation">
       <h5>Basic</h5>
       <div class="lv-field-checkbox">
@@ -39,14 +31,11 @@
         <label :for="category.key">{{ category.name }}</label>
       </div>
     </div>
-
-    <!-- <CheckboxDoc/> -->
   </div>
 </template>
 
 <script>
-// import CheckboxDoc from '../../../views/checkbox/CheckboxDoc';
-import Checkbox from 'lightvue/checkbox/checkbox/Checkbox.vue';
+import Checkbox from 'lightvue/checkbox';
 
 export default {
   data() {

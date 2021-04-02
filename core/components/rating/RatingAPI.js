@@ -121,84 +121,84 @@ const RatingAPI = {
       description: 'Configures if the rating is clearable or not.',
     },
   ],
-  events: [
-    {
-      name: 'input-native',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'input',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'update:modelValue',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'change',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'click',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'focus',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-    {
-      name: 'blur',
-      params: [
-        {
-          name: 'value',
-          type: 'String',
-          description: 'Value of the input field, at any time.',
-        },
-      ],
-      description: 'Input element with rounded corners',
-    },
-  ],
+  // events: [
+  //   {
+  //     name: 'input-native',
+  //     params: [
+  //       {
+  //         name: 'value',
+  //         type: 'String',
+  //         description: 'Value of the input field, at any time.',
+  //       },
+  //     ],
+  //     description: 'Input element with rounded corners',
+  //   },
+  //   {
+  //     name: 'input',
+  //     params: [
+  //       {
+  //         name: 'value',
+  //         type: 'String',
+  //         description: 'Value of the input field, at any time.',
+  //       },
+  //     ],
+  //     description: 'Input element with rounded corners',
+  //   },
+  //   {
+  //     name: 'update:modelValue',
+  //     params: [
+  //       {
+  //         name: 'value',
+  //         type: 'String',
+  //         description: 'Value of the input field, at any time.',
+  //       },
+  //     ],
+  //     description: 'Input element with rounded corners',
+  //   },
+  //   {
+  //     name: 'change',
+  //     params: [
+  //       {
+  //         name: 'value',
+  //         type: 'String',
+  //         description: 'Value of the input field, at any time.',
+  //       },
+  //     ],
+  //     description: 'Input element with rounded corners',
+  //   },
+  //   {
+  //     name: 'click',
+  //     params: [
+  //       {
+  //         name: 'value',
+  //         type: 'String',
+  //         description: 'Value of the input field, at any time.',
+  //       },
+  //     ],
+  //     description: 'Input element with rounded corners',
+  //   },
+  //   {
+  //     name: 'focus',
+  //     params: [
+  //       {
+  //         name: 'value',
+  //         type: 'String',
+  //         description: 'Value of the input field, at any time.',
+  //       },
+  //     ],
+  //     description: 'Input element with rounded corners',
+  //   },
+  //   {
+  //     name: 'blur',
+  //     params: [
+  //       {
+  //         name: 'value',
+  //         type: 'String',
+  //         description: 'Value of the input field, at any time.',
+  //       },
+  //     ],
+  //     description: 'Input element with rounded corners',
+  //   },
+  // ],
 };
 export default RatingAPI;

@@ -12,7 +12,7 @@ import { terser } from 'rollup-plugin-terser';
 let entries = [];
 
 // ask rollup to not bundle Vue in the library #warning-treating-module-as-external-dependency
-let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/ripple', 'lightvue/utils', 'lightvue/mixins', 'lightvue/utils/DomHandler', 'lightvue/utils/ConnectedOverlayScrollHandler', 'lightvue/utils/ObjectUtils', 'lightvue/overlay-panel'];
+let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/ripple', 'lightvue/utils', 'lightvue/mixins', 'lightvue/overlay-panel'];
 
 let globalDependencies = {
   vue: 'Vue',
@@ -33,7 +33,7 @@ let globalDependencies = {
   // 'lightvue/toasteventbus': 'lightvue.toasteventbus',
   // 'lightvue/useconfirm': 'lightvue.useconfirm',
   // 'lightvue/usetoast': 'lightvue.usetoast',
-  // 'lightvue/progressbar': 'lightvue.progressbar',
+  // 'lightvue/progress-bar': 'lightvue.progressbar',
   // 'lightvue/message': 'lightvue.message',
   // 'lightvue/dropdown': 'lightvue.dropdown',
   // 'lightvue/menu': 'lightvue.menu',
@@ -161,7 +161,8 @@ function addSFC() {
   addEntry('components/button', 'index.js', 'button', 'index');
   addEntry('components/card', 'index.js', 'card', 'index');
   addEntry('components/glass-card', 'index.js', 'glass-card', 'index');
-  addEntry('components/checkbox', 'Checkbox.vue', 'checkbox', 'index');
+  addEntry('components/checkbox', 'index.js', 'checkbox', 'index');
+  addEntry('components/checkbox-group', 'index.js', 'checkbox-group', 'index');
   addEntry('components/colorpicker', 'index.js', 'color-picker', 'index');
   addEntry('components/dialog', 'index.js', 'dialog', 'index');
   addEntry('components/dropdown', 'index.js', 'dropdown', 'index');
@@ -176,6 +177,7 @@ function addSFC() {
   addEntry('components/rating', 'index.js', 'rating', 'index');
   addEntry('components/skeleton', 'index.js', 'skeleton', 'index');
   // addEntry('components/slider', 'index.js', 'slider', 'index');
+  addEntry('components/range-slider', 'index.js', 'range-slider', 'index');
   addEntry('components/textarea', 'index.js', 'textarea', 'index');
   addEntry('components/toast', 'index.js', 'toast', 'index');
 }

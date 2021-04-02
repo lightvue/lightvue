@@ -16,25 +16,24 @@
         <div class="hero-container__row">
           <div class="hero-container__pre-wrap">
             <div class="hero-container__pre">
-              <code><span class="not-selectable">$ </span>npm install lightvue</code>
+              <!-- <CopyButton :text="getNpmCode" /> -->
+              <code><span class="not-selectable">$ </span> <span class="selectable">npm install lightvue</span></code>
             </div>
           </div>
         </div>
         <div class="hero-container__row">
           <div class="hero-container__buttons">
             <nuxt-link to="/getting-started/installation" class="hero-button lv-fluid">
-              <LvButton label="Get Started" deep-shadow push size="lg" />
+              <LvButton label="Get Started" :push="true" :deep-shadow="true" type="button" size="xl" style="font-size: 16px" />
             </nuxt-link>
             <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
-              <LvButton label="Why LightVue" deep-shadow push size="lg" />
+              <lv-button label="Explore" :push="true" :deep-shadow="true" type="button" size="xl" style="font-size: 16px" />
             </nuxt-link>
           </div>
         </div>
       </div>
     </div>
-    <svg class="bottom__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="#143a56" fill-opacity="1" d="M0,224L48,197.3C96,171,192,117,288,101.3C384,85,480,107,576,138.7C672,171,768,213,864,208C960,203,1056,149,1152,128C1248,107,1344,117,1392,122.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#143a56" fill-opacity="1" d="M0,64L120,90.7C240,117,480,171,720,165.3C960,160,1200,96,1320,64L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
     <div class="hero-image">
       <img src="/hero-bg.svg" alt="" />
     </div>
@@ -42,7 +41,18 @@
 </template>
 
 <script>
-export default {};
+// import CopyButton from '@/components/docs-card/CopyButton';
+
+export default {
+  // components: {
+  //   CopyButton,
+  // },
+  // methods: {
+  //   getNpmCode() {
+  //     return this.$el.querySelector('.selectable').innerText;
+  //   },
+  // },
+};
 </script>
 
 <style scoped lang="scss">
@@ -126,6 +136,7 @@ $text-color-secondary: #eeecec;
         align-items: center;
         justify-content: center;
         .hero-container__pre {
+          position: relative;
           border-radius: 4px;
           display: inline-flex;
           font-size: 24px;

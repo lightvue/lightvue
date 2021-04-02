@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import NumberBestDemo from 'lightvue/example/number/NumberBestDemo';
+import NumberBestDemo from 'lightvueDocs/example/number/NumberBestDemo';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import NumberAPI from 'lightvue/number/NumberAPI';
+import NumberAPI from 'lightvueDocs/example/number/NumberAPI';
 
 export default {
   components: {

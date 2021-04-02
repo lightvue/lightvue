@@ -12,6 +12,7 @@
     <div><lv-list-loader :width="300" :height="100" /></div>
     <div><lv-list-loader :width="300" :height="100" primaryColor="#607c8a" secondaryColor="#8aa6b5" /></div>
     <div><lv-list-loader :width="300" :height="100" primaryColor="#38b2ac" secondaryColor="#47d9d1" /></div>
+    <!-- REFACTORING -->
   </div>
 </template>
 

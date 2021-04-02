@@ -1,20 +1,27 @@
-Light Vue is hosted on Github, which is currently in version 1.0 with with vue/ Nuxt js.
-the actual SCSS Files are in the main folder and other DOCS files are in docs folder.
-
 ## Getting Started:
 
 ### clone repository
 
 ```bash
 # Clone the repository
-git clone: https://github.com/lightvue
-cd plugui
+git clone: https://github.com/lightvue/lightvue.git
+cd lightvue
 
+
+# For Vue-2
+cd ./docs
 # Install dependencies
-$ npm install
-
+npm install
 # Preview docs with hot reload at localhost:3000
-$ npm run dev
+npm run dev
+
+# For Vue-3
+cd ./docs-v3
+# Install dependencies
+npm install
+# Preview docs with hot reload at localhost:8080
+npm run dev
+
 ```
 
 ### Preparing your Fork
