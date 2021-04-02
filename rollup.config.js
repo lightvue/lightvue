@@ -161,7 +161,8 @@ function addSFC() {
   addEntry('components/button', 'index.js', 'button', 'index');
   addEntry('components/card', 'index.js', 'card', 'index');
   addEntry('components/glass-card', 'index.js', 'glass-card', 'index');
-  addEntry('components/checkbox', 'Checkbox.vue', 'checkbox', 'index');
+  addEntry('components/checkbox', 'index.js', 'checkbox', 'index');
+  addEntry('components/checkbox-group', 'index.js', 'checkbox-group', 'index');
   addEntry('components/colorpicker', 'index.js', 'color-picker', 'index');
   addEntry('components/dialog', 'index.js', 'dialog', 'index');
   addEntry('components/dropdown', 'index.js', 'dropdown', 'index');
