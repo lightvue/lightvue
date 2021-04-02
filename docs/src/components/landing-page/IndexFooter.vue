@@ -17,7 +17,7 @@
       <div class="footer__products">
         <h6>Products</h6>
         <!-- <p><a href="#">Form Studio</a></p> -->
-        <p><nuxt-link to="/icons/light-icons">Light Icons</nuxt-link></p>
+        <p><nuxt-link to="/getting-started/light-icons">Light Icons</nuxt-link></p>
         <p><a target="_blank" href="https://plugui.com/">Plug UI</a></p>
       </div>
       <div class="footer__form">
