@@ -5,7 +5,6 @@ import LvCard from 'lightvue/card';
 import VueGtag from 'vue-gtag';
 import LvToast from 'lightvue/toast';
 import NotificationService from 'lightvue/notification/NotificationService'; // REFACTORING
-import LvToast from 'lightvue/toast/Toast.vue'; // REFACTORING
 import LvNotification from 'lightvue/notification'; // REFACTORING
 
 Vue.use(VueGtag, {

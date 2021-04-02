@@ -48,7 +48,7 @@ export default {};
     // transform: translateX(-50%);
     width: 500px;
     height: 400px;
-    background: rgb(152 213 213 / 23%);
+    background: rgba(152, 213, 213, 0.23);
     border-radius: 20px;
   }
   .vue-migrate__content {
