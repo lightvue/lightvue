@@ -177,6 +177,7 @@ function addSFC() {
   addEntry('components/rating', 'index.js', 'rating', 'index');
   addEntry('components/skeleton', 'index.js', 'skeleton', 'index');
   // addEntry('components/slider', 'index.js', 'slider', 'index');
+  addEntry('components/range-slider', 'index.js', 'range-slider', 'index');
   addEntry('components/textarea', 'index.js', 'textarea', 'index');
   addEntry('components/toast', 'index.js', 'toast', 'index');
 }
