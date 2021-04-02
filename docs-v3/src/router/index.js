@@ -123,16 +123,6 @@ const routes = [
       },
     ],
   },
-  {
-    path: '/icons',
-    component: () => import('../components/Layout/DocsLayout.vue'),
-    children: [
-      {
-        path: 'light-icons',
-        component: () => import('@/pages/getting-started/light-icons'),
-      },
-    ],
-  },
 ];
 
 const router = createRouter({

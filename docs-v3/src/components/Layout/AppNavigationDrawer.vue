@@ -74,7 +74,7 @@ export default {
           page_path: '/getting-started/installation',
         },
         {
-          page_name: 'Lighticons',
+          page_name: 'Light Icons',
           page_path: '/getting-started/light-icons',
         },
       ],

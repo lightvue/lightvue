@@ -41,17 +41,17 @@
 </template>
 
 <script>
-import CopyButton from '@/components/docs-card/CopyButton';
+// import CopyButton from '@/components/docs-card/CopyButton';
 
 export default {
-  components: {
-    CopyButton,
-  },
-  methods: {
-    getNpmCode() {
-      return this.$el.querySelector('.selectable').innerText;
-    },
-  },
+  // components: {
+  //   CopyButton,
+  // },
+  // methods: {
+  //   getNpmCode() {
+  //     return this.$el.querySelector('.selectable').innerText;
+  //   },
+  // },
 };
 </script>
 
