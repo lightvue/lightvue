@@ -3,8 +3,8 @@ const ColorpickerAPI = {
     {
       name: 'label',
       type: 'String',
-      default: 'Choose Color',
-      description: 'Adds the label to colorpicker element',
+      default: '',
+      description: 'Defines the Label of the Colorpicker Element',
     },
     //     {
     //         name: 'inputId',

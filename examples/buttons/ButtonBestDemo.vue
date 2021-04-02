@@ -1,9 +1,7 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <div class="demo__positioning">
-        <lv-button v-bind="allOptions" style="width: 100%" />
-      </div>
+      <lv-button v-bind="allOptions" style="width: 100%" />
       <template #props>
         <lv-toggle-switch v-model="allOptions.outlined" label="outlined" /> <br />
         <lv-toggle-switch v-model="allOptions.push" label="Push" /> <br />
