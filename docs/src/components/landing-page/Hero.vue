@@ -27,7 +27,7 @@
               <LvButton label="Get Started" :push="true" :deep-shadow="true" type="button" size="xl" />
             </nuxt-link>
             <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
-              <lv-button label="Why LightVue" :push="true" :deep-shadow="true" type="button" size="xl" />
+              <lv-button label="About LightVue" :push="true" :deep-shadow="true" type="button" size="xl" />
             </nuxt-link>
           </div>
         </div>

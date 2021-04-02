@@ -1,7 +1,7 @@
 <template>
   <div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#143a56" fill-opacity="1" d="M0,128L120,117.3C240,107,480,85,720,85.3C960,85,1200,107,1320,117.3L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
-    <section class="enterprise-section">
+    <section class="enterprise-section" id="contact">
       <div class="enterprise-section__wrapper">
         <div class="enterprise-heading">Ready for Enterprises</div>
         <div class="enterprise-description">Offer different versions of a product to meet the differing needs as an Enterprises.</div>
@@ -20,9 +20,10 @@
             <lv-overlay-panel style="width: 350px" ref="imageOverlay" append-to="body" :show-close-icon="true" id="image_overlay_panel">
               <div class="overlay-leadform">
                 <lv-input :bottom-bar="true" placeholder="Your Name" label="Name" icon-left="light-icon-user" /> <br />
-                <lv-input :bottom-bar="true" placeholder="Your Email" label="email" icon-left="light-icon-mail" /> <br />
+                <lv-input :bottom-bar="true" placeholder="Your Email" label="Email" icon-left="light-icon-mail" /> <br />
                 <lv-input :bottom-bar="true" placeholder="Your Organization" label="Your Organization" icon-left="light-icon-building-skyscraper" /> <br />
-                <lv-input :bottom-bar="true" placeholder="Profession" label="What role best describes you?" icon-left="light-icon-briefcase" /> <br />
+                <lv-dropdown v-model="selectedDesignation" :options="designation" optionLabel="name" placeholder="Profession" clearable label="What role best describes you?" icon-left="light-icon-briefcase" bottom-bar /> <br />
+                <!-- <lv-input :bottom-bar="true" placeholder="Profession" label="What role best describes you?" icon-left="light-icon-briefcase" /> <br /> -->
                 <lv-textarea :bottom-bar="true" placeholder="Write to us.." label="How we would help you to build better projects?" /> <br />
                 <lv-button :push="true" :deep-shadow="true" label="Submit" class="leadform__button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" />
               </div>
@@ -33,6 +34,7 @@
           </div>
         </div>
       </div>
+      <div class="enterprise-footer__text">copyright 2021 © LightVue. all rights reserved.</div>
     </section>
   </div>
 </template>
@@ -40,17 +42,19 @@
 <script>
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvTextarea from 'lightvue/textarea';
+import LvDropdown from 'lightvue/dropdown';
 
 export default {
   data() {
     return {
-      products: null,
-      selectedProduct: null,
+      selectedDesignation: null,
+      designation: [{ name: 'CEO' }, { name: 'Developer' }, { name: 'Designer' }, { name: 'Porject or Product Manager' }, { name: 'Sales and Marketing' }, { name: 'Other' }],
     };
   },
   components: {
     LvOverlayPanel,
     LvTextarea,
+    LvDropdown,
   },
   methods: {
     toggle(event) {
@@ -67,7 +71,9 @@ export default {
 .enterprise-section {
   background: #143a56;
   margin-top: -20px;
+  padding-top: 50px;
   position: relative;
+  overflow-x: hidden;
 }
 .enterprise-section__wrapper {
   max-width: 1200px;
@@ -163,6 +169,13 @@ export default {
       }
     }
   }
+}
+.enterprise-footer__text {
+  border-top: 1px solid #224b69;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
 }
 .overlay-leadform {
   padding: 20px;

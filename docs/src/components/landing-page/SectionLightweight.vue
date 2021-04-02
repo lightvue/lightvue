@@ -1,5 +1,5 @@
 <template>
-  <section class="light-weight">
+  <section class="light-weight" id="light-weight">
     <img src="../../assets/images/light-weight-bg-top.svg" width="100%" class="light-weight__bg --top" />
     <div class="light-weight__wrapper">
       <div class="light-weight__content">
@@ -8,7 +8,8 @@
         <div class="light-weight__content-description">With Light-Vue , style light as a feather web components for your projects with dead simple responsive layout. There is only so much it can do to enhance performance and robustness of a your web app.</div>
         <br />
         <br />
-        <lv-button :push="true" :deep-shadow="true" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70">Know More</lv-button>
+        <nuxt-link :to="{ hash: 'light-icons' }" class="page-button --dark">Know More</nuxt-link>
+        <!-- <lv-button :push="true" :deep-shadow="true" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70">Know More</lv-button> -->
       </div>
       <div class="light-weight__image-wrapper">
         <img src="../../assets/images/light-weight.svg" alt="Light weight UI" class="light-weight__image" />
@@ -28,7 +29,7 @@ export default {};
   .light-weight__bg {
     position: absolute;
     &.--bottom {
-      bottom: -150px;
+      bottom: -180px;
     }
   }
 }
@@ -47,14 +48,16 @@ export default {};
     justify-content: flex-end;
     z-index: 100;
     .light-weight__image {
-      width: 80%;
+      width: 70%;
     }
   }
   .light-weight__content {
     width: 60%;
     max-width: 650px;
     text-align: left;
+    margin-top: 100px;
     z-index: 100;
+    padding: 20px;
     .light-weight__content-heading {
       font-size: 32px;
       line-height: 48px;
@@ -72,8 +75,15 @@ export default {};
   }
 }
 @media (max-width: 768px) {
+  .light-weight {
+    .light-weight__bg {
+      &.--bottom {
+        display: none;
+      }
+    }
+  }
   .light-weight__wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0px 0px 50px 0px;
     .light-weight__image-wrapper {
       width: 100%;
@@ -82,8 +92,8 @@ export default {};
       justify-content: center;
       align-items: center;
       .light-weight__image {
-        width: 320px;
-        // margin: auto;
+        height: 350px;
+        object-fit: contain;
       }
     }
     .light-weight__background {
@@ -105,6 +115,20 @@ export default {};
     .light-weight__content {
       .light-weight__content-heading {
         font-size: 28px;
+      }
+    }
+  }
+}
+@media (min-width: 1900px) {
+  .light-weight {
+    position: relative;
+    .light-weight__bg {
+      position: absolute;
+      &.--top {
+        top: -120px;
+      }
+      &.--bottom {
+        bottom: -350px;
       }
     }
   }

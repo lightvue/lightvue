@@ -1,5 +1,5 @@
 <template>
-  <section class="section-lighticons">
+  <section class="section-lighticons" id="light-icons">
     <div class="section-lighticons__wrapper">
       <div class="section-lighticons__image-wrapper">
         <img src="../../assets/images/section-lighticons.svg" alt="Light icon" class="section-lighticons__image" />
@@ -8,10 +8,11 @@
       <div class="section-lighticons__content">
         <div class="section-lighticons__content-heading">Packed with premium collection of light icons</div>
         <br />
-        <div class="section-lighticons__content-description">Looking for the icons with premuium essence and lightweight in size. Find your light-icon from our premium icon collection with more than 300 lightIcons in the pack.</div>
+        <div class="section-lighticons__content-description">Your imagination has no boundaries and so does our handpicked collection of premium &amp; light-weighted icons. Explore and choose icons from the vast landscape of Light-Icons.</div>
         <br />
         <br />
-        <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" />
+        <nuxt-link :to="{ hash: 'contact' }" class="page-button --dark">Know More</nuxt-link>
+        <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
       </div>
     </div>
   </section>
@@ -28,7 +29,7 @@ export default {};
   justify-content: space-around;
   align-items: center;
   max-width: 1400px;
-  margin: 100px auto 50px auto;
+  margin: 250px auto 50px auto;
   padding: 20px;
 
   .section-lighticons__image-wrapper {
