@@ -105,6 +105,7 @@ export default {
   background: transparent;
   outline: none;
   resize: none;
+  font-family: inherit;
   &.--resize-vertical {
     resize: vertical;
   }
