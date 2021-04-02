@@ -12,7 +12,7 @@
       <div v-show="queryString" id="app-searchui__results-wrapper" @click="clearSearchbox">
         <ais-hits>
           <template slot="item" slot-scope="{ item }">
-            <nuxt-link :to="`/vue-components/${item.docslink}`">
+            <nuxt-link :to="`/vue-components/${item.donuxt - linkcslink}`">
               <ais-highlight class="app-searchui__results__title" :hit="item" attribute="name" />
               <i class="app-searchui__results__icon light-icon-arrow-right-circle"></i>
               <br />
