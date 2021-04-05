@@ -11,6 +11,10 @@
     <h4>Options as array of strings</h4>
     <lv-checkbox-group v-model="chosenCities3" name="countries" :options="countries" color="primary"></lv-checkbox-group>
     <h6>Chosen options (using v-model): {{ chosenCities3 }}</h6>
+    <br />
+    <h4>Options as array of strings [No Preselected]</h4>
+    <lv-checkbox-group v-model="chosenCities4" name="countries" :options="countries" color="primary"></lv-checkbox-group>
+    <h6>Chosen options (using v-model): {{ chosenCities4 }}</h6>
   </div>
   <!-- REFACTORING -->
 </template>
@@ -34,6 +38,7 @@ export default {
       chosenCities1: [{ name: 'Paris', code: 'PRS' }],
       chosenCities2: ['LDN', 'NY'],
       chosenCities3: ['USA'],
+      chosenCities4: null,
     };
   },
 };

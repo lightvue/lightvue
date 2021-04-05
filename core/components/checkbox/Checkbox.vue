@@ -23,11 +23,11 @@
 </template>
 
 <script>
-import { trueValueMixin } from 'lightvue/mixins';
+import { localValueMixin } from 'lightvue/mixins';
 
 export default {
   name: 'LvCheckbox',
-  mixins: [trueValueMixin],
+  mixins: [localValueMixin],
   // model: {
   //   prop: 'modelValue',
   //   event: 'change',
@@ -88,7 +88,7 @@ export default {
 
         // checkbox
         if (this.modelValue instanceof Array) {
-          // never
+          // never for group.
           return this.modelValue.includes(this.value);
         }
         if (this._trueValue) {
@@ -200,7 +200,9 @@ export default {
   },
 
   mounted() {
-    if (this.$vnode.data && !this.$vnode.data.staticClass && !this.toggle && !this.plain) this.default_mode = true;
+    // console.log(this.$el.classList);
+    // if (this.$vnode.data && !this.$vnode.data.staticClass && !this.toggle && !this.plain) this.default_mode = true; // REFACTORING
+    if (!this.toggle && !this.plain) this.default_mode = true;
     if (this._indeterminate) this.$refs.input.indeterminate = true;
     this.$el.setAttribute(`lv-${this._type}`, '');
   },

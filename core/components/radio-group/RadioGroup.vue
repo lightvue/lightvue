@@ -9,11 +9,11 @@
 </template>
 <script>
 import LvCheckBox from 'lightvue/checkbox';
-import { trueValueMixin, optionsMixin } from 'lightvue/mixins';
+import { localValueMixin, optionsMixin } from 'lightvue/mixins';
 
 export default {
   name: 'LvCheckboxGroup',
-  mixins: [trueValueMixin, optionsMixin],
+  mixins: [localValueMixin, optionsMixin],
   props: {
     // name: {
     //   required: true,

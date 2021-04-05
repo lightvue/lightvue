@@ -106,6 +106,16 @@ export default {
         {
           page_name: 'Checkbox Group',
           page_path: '/vue-components/checkbox-group',
+          // REFACTORING,
+        },
+        {
+          page_name: 'Radio',
+          page_path: '/vue-components/radio',
+        },
+        {
+          page_name: 'Radio Group',
+          page_path: '/vue-components/radio-group',
+          // REFACTORING,
         },
         {
           page_name: 'Toggle Switch',

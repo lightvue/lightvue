@@ -24,6 +24,18 @@ const routes = [
         component: () => import('@/pages/vue-components/checkbox.vue'),
       },
       {
+        path: 'checkbox-group',
+        component: () => import('@/pages/vue-components/checkbox-group.vue'),
+      },
+      {
+        path: 'radio',
+        component: () => import('@/pages/vue-components/radio.vue'),
+      },
+      {
+        path: 'radio-group',
+        component: () => import('@/pages/vue-components/radio-group.vue'),
+      },
+      {
         path: 'card',
         component: () => import('@/pages/vue-components/card.vue'),
       },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lv-check-box @change="refresh($event, option)" v-bind="$attrs" v-for="(option, i) of options" :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" role="option" :aria-selected="isOptionSelected(option)" :disabled="isOptionDisabled(option)" :value="isOptionSelected(option)" :true-value="true">
+    <lv-check-box @input="refresh($event, option)" v-bind="$attrs" v-for="(option, i) of options" :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" role="option" :aria-selected="isOptionSelected(option)" :disabled="isOptionDisabled(option)" :value="isOptionSelected(option)" :true-value="true">
       <slot name="option" :option="option" :index="i">
         {{ getOptionLabel(option) }}
       </slot>
@@ -9,12 +9,12 @@
 </template>
 <script>
 import LvCheckBox from 'lightvue/checkbox';
-import { trueValueMixin, optionsMixin } from 'lightvue/mixins';
+import { localValueMixin, optionsMixin } from 'lightvue/mixins';
 import { ObjectUtils } from 'lightvue/utils';
 
 export default {
   name: 'LvCheckboxGroup',
-  mixins: [trueValueMixin, optionsMixin],
+  mixins: [localValueMixin, optionsMixin],
   props: {
     // name: {
     //   required: true,
@@ -27,7 +27,7 @@ export default {
     refresh(isChecked, option) {
       let value = this.getOptionValue(option);
       // console.log(isChecked, value, option);
-      let newValue = [...this.modelValue];
+      let newValue = this.modelValue instanceof Array ? [...this.modelValue] : [];
 
       if (isChecked) {
         newValue.push(value);
