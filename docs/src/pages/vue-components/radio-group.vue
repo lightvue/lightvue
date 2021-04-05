@@ -1,6 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Basic" file="checkbox/CheckboxDemo_Basic" />
+    <docs-card-vue title="Basic" file="radio-group/RadioGroupDemo_Basic" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -24,10 +24,10 @@ export default {
     DocsPageLayout,
     DocsAllApi,
   },
-  title: 'Radio',
-  description: `LvRadio component can be used in projects where a way is required for user to select or deselect an option.`,
-  packageName: 'radio',
-  componentName: 'LvRadio',
+  title: 'Radio Group',
+  description: `LvRadioGroup component can be used when user needs to select or deselect options from a given array of options.`,
+  packageName: 'radio-group',
+  componentName: 'LvRadioGroup',
   apiData: CheckboxAPI,
 };
 </script>

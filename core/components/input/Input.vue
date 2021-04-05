@@ -89,7 +89,8 @@ export default {
   },
   computed: {
     modelValue() {
-      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
+      // return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
+      return this.value ? this.value : this.$attrs.modelValue ? this.$attrs.modelValue : null;
     },
     listeners() {
       return this.$listeners

@@ -1,60 +1,48 @@
 <template>
   <div>
-    <lv-check-box @change="refresh" v-bind="$attrs" :name="name" v-for="option of options" :key="optionValue ? option[optionValue] : option" v-model="checkedBooleans[options.lastIndexOf(option)]" :disabled="option.disabled">
-      {{ optionLabel ? option[optionLabel] : option }}
+    <lv-check-box @input="refresh($event, option)" v-bind="$attrs" v-for="(option, i) of options" :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" role="option" :aria-selected="isOptionSelected(option)" :disabled="isOptionDisabled(option)" :value="isOptionSelected(option)" :true-value="true">
+      <slot name="option" :option="option" :index="i">
+        {{ getOptionLabel(option) }}
+      </slot>
     </lv-check-box>
   </div>
 </template>
 <script>
 import LvCheckBox from 'lightvue/checkbox';
+import { localValueMixin, optionsMixin } from 'lightvue/mixins';
+import { ObjectUtils } from 'lightvue/utils';
+
 export default {
   name: 'LvCheckboxGroup',
-  data() {
-    return {
-      checkedBooleans: [],
-      checkedOptions: [],
-    };
+  mixins: [localValueMixin, optionsMixin],
+  props: {
+    // name: {
+    //   required: true,
+    // },
   },
   components: {
     LvCheckBox,
   },
-  created() {
-    this.$attrs.value.forEach(value => {
-      this.checkedBooleans[this.options.lastIndexOf(value)] = true;
-    });
-
-    for (let i = 0; i < this.options.length; i++) {
-      if (this.options[i].checked) this.checkedBooleans[i] = true;
-    }
-
-    this.refresh();
-  },
-  props: {
-    options: {
-      type: Array,
-    },
-    optionLabel: {
-      type: String,
-    },
-    optionValue: {
-      type: String,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-  },
   methods: {
-    refresh() {
-      this.checkedOptions = [];
-      for (let i = 0; i < this.options.length; i++) {
-        let tempOption = {};
-        tempOption[this.optionLabel] = this.options[i][this.optionLabel];
-        tempOption[this.optionValue] = this.options[i][this.optionValue];
-        if (this.checkedBooleans[i] == true) this.checkedOptions.push(this.optionLabel ? tempOption : this.options[i]);
+    refresh(isChecked, option) {
+      let value = this.getOptionValue(option);
+      // console.log(isChecked, value, option);
+      let newValue = this.modelValue instanceof Array ? [...this.modelValue] : [];
+
+      if (isChecked) {
+        newValue.push(value);
+      } else {
+        // remove from array
+        // if (option instanceof Object && !this.optionValue) {
+        let oldIndex = newValue.findIndex(item => {
+          return ObjectUtils.equals(item, value);
+        });
+        newValue.splice(oldIndex, 1);
+        // } else {
+        //   newValue.splice(newValue.indexOf(value), 1);
+        // }
       }
-      this.$emit('input', this.checkedOptions);
-      this.$emit('change', this.checkedOptions);
+      this.updateValue(newValue);
     },
   },
 };

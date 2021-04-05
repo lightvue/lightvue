@@ -23,23 +23,24 @@
 </template>
 
 <script>
-// import './Checkbox.scss';
+import { localValueMixin } from 'lightvue/mixins';
 
 export default {
   name: 'LvCheckbox',
-  model: {
-    prop: 'modelValue',
-    event: 'change',
-  },
+  mixins: [localValueMixin],
+  // model: {
+  //   prop: 'modelValue',
+  //   event: 'change',
+  // },
 
   props: {
     type: String,
     name: String,
-    value: {},
-    modelValue: {},
+    // value: {},
+    // modelValue: {},
     trueValue: {},
     falseValue: {},
-    checked: {},
+    checked: {}, // selected in case of radio
     disabled: {},
     required: {},
     indeterminate: {},
@@ -80,11 +81,14 @@ export default {
       if (this.modelValue !== undefined) {
         // radio
         if (this._type === 'radio') {
-          return this.modelValue === this.value;
+          // return this.modelValue === this.value;
+          // return true;
+          return this.checked;
         }
 
         // checkbox
         if (this.modelValue instanceof Array) {
+          // never for group.
           return this.modelValue.includes(this.value);
         }
         if (this._trueValue) {
@@ -196,7 +200,9 @@ export default {
   },
 
   mounted() {
-    if (this.$vnode.data && !this.$vnode.data.staticClass && !this.toggle && !this.plain) this.default_mode = true;
+    // console.log(this.$el.classList);
+    // if (this.$vnode.data && !this.$vnode.data.staticClass && !this.toggle && !this.plain) this.default_mode = true; // REFACTORING
+    if (!this.toggle && !this.plain) this.default_mode = true;
     if (this._indeterminate) this.$refs.input.indeterminate = true;
     this.$el.setAttribute(`lv-${this._type}`, '');
   },
@@ -204,7 +210,8 @@ export default {
   methods: {
     updateInput(event) {
       if (this._type === 'radio') {
-        this.$emit('change', this.value);
+        // this.$emit('change', this.value);
+        this.updateModel(this.value);
         return;
       }
 
@@ -223,10 +230,16 @@ export default {
           newValue.splice(newValue.indexOf(this.value), 1);
         }
 
-        this.$emit('change', newValue);
+        // this.$emit('change', newValue);
+        this.updateModel(newValue);
       } else {
-        this.$emit('change', isChecked ? (this._trueValue ? this.trueValue : true) : this._falseValue ? this.falseValue : false);
+        // this.$emit('change', isChecked ? (this._trueValue ? this.trueValue : true) : this._falseValue ? this.falseValue : false);
+        this.updateModel(isChecked ? (this._trueValue ? this.trueValue : true) : this._falseValue ? this.falseValue : false);
       }
+    },
+    updateModel(newValue) {
+      this.updateValue(newValue);
+      this.$emit('change', newValue);
     },
   },
 };

@@ -109,6 +109,15 @@ export default {
           // REFACTORING,
         },
         {
+          page_name: 'Radio',
+          page_path: '/vue-components/radio',
+        },
+        {
+          page_name: 'Radio Group',
+          page_path: '/vue-components/radio-group',
+          // REFACTORING,
+        },
+        {
           page_name: 'Toggle Switch',
           page_path: '/vue-components/toggle-switch',
         },

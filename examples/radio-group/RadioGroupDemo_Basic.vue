@@ -1,29 +1,29 @@
 <template>
   <div>
     <h4>Options as array of objects</h4>
-    <lv-checkbox-group v-model="chosenCities1" name="cities" :options="cities" optionLabel="name" pulse color="primary"></lv-checkbox-group>
+    <lv-radio-group v-model="chosenCities1" name="cities" :options="cities" optionLabel="name" pulse color="primary"></lv-radio-group>
     <h6>Chosen options (using v-model): {{ chosenCities1 }}</h6>
     <br />
-    <h4>Options as array of objects (With: optionValue="code")</h4>
-    <lv-checkbox-group v-model="chosenCities2" name="cities" :options="cities" optionLabel="name" pulse color="primary" optionValue="code"></lv-checkbox-group>
+    <h4>Options as array of objects (with optionValue="code")</h4>
+    <lv-radio-group v-model="chosenCities2" name="cities2" :options="cities" optionLabel="name" pulse color="primary" optionValue="code"></lv-radio-group>
     <h6>Chosen options (using v-model): {{ chosenCities2 }}</h6>
     <br />
     <h4>Options as array of strings</h4>
-    <lv-checkbox-group v-model="chosenCities3" name="countries" :options="countries" color="primary"></lv-checkbox-group>
+    <lv-radio-group v-model="chosenCities3" name="countries" :options="countries" color="primary" pulse></lv-radio-group>
     <h6>Chosen options (using v-model): {{ chosenCities3 }}</h6>
     <br />
-    <h4>Options as array of strings [No Preselected]</h4>
-    <lv-checkbox-group v-model="chosenCities4" name="countries" :options="countries" color="primary"></lv-checkbox-group>
+    <h4>Options as array of strings [No preselected]</h4>
+    <lv-radio-group v-model="chosenCities4" name="countries2" :options="countries" color="primary" pulse></lv-radio-group>
     <h6>Chosen options (using v-model): {{ chosenCities4 }}</h6>
   </div>
   <!-- REFACTORING -->
 </template>
 
 <script>
-import LvCheckboxGroup from 'lightvue/checkbox-group';
+import LvRadioGroup from 'lightvue/radio-group';
 export default {
   components: {
-    LvCheckboxGroup,
+    LvRadioGroup,
   },
   data() {
     return {
@@ -35,9 +35,9 @@ export default {
         { name: 'Paris', code: 'PRS' },
       ],
       countries: ['India', 'USA', 'Japan', 'France'],
-      chosenCities1: [{ name: 'Paris', code: 'PRS' }],
-      chosenCities2: ['LDN', 'NY'],
-      chosenCities3: ['USA'],
+      chosenCities1: { name: 'New York', code: 'NY' },
+      chosenCities2: 'IST',
+      chosenCities3: 'USA',
       chosenCities4: null,
     };
   },
