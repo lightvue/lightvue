@@ -9,11 +9,11 @@
     <h6>Chosen options (using v-model): {{ chosenCities2 }}</h6>
     <br />
     <h4>Options as array of strings</h4>
-    <lv-radio-group v-model="chosenCities3" name="countries" :options="countries" color="primary"></lv-radio-group>
+    <lv-radio-group v-model="chosenCities3" name="countries" :options="countries" color="primary" pulse></lv-radio-group>
     <h6>Chosen options (using v-model): {{ chosenCities3 }}</h6>
     <br />
     <h4>Options as array of strings [No preselected]</h4>
-    <lv-radio-group v-model="chosenCities4" name="countries2" :options="countries" color="primary"></lv-radio-group>
+    <lv-radio-group v-model="chosenCities4" name="countries2" :options="countries" color="primary" pulse></lv-radio-group>
     <h6>Chosen options (using v-model): {{ chosenCities4 }}</h6>
   </div>
   <!-- REFACTORING -->
