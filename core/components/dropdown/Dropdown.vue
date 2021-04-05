@@ -23,7 +23,7 @@
         </div>
         <div class="lv-dropdown__items-wrap" :style="{ 'max-height': scrollHeight }">
           <ul class="lv-dropdown__items" role="listbox">
-            <li v-for="(option, i) of visibleOptions" :class="['lv-dropdown__item', { '--selected': isSelected(option), '--disabled': isOptionDisabled(option) }]" v-ripple :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" @click="onOptionSelect($event, option)" role="option" :aria-selected="isSelected(option)">
+            <li v-for="(option, i) of visibleOptions" :class="['lv-dropdown__item', { '--selected': isOptionSelected(option), '--disabled': isOptionDisabled(option) }]" v-ripple :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" @click="onOptionSelect($event, option)" role="option" :aria-selected="isOptionSelected(option)">
               <slot name="option" :option="option" :index="i">
                 {{ getOptionLabel(option) }}
               </slot>
@@ -37,27 +37,21 @@
 </template>
 
 <script>
-import { ConnectedOverlayScrollHandler } from 'lightvue/utils';
-import { ObjectUtils } from 'lightvue/utils';
-import { DomHandler } from 'lightvue/utils';
+import { ConnectedOverlayScrollHandler, ObjectUtils, DomHandler } from 'lightvue/utils';
+import { trueValueMixin, optionsMixin } from 'lightvue/mixins';
 import Ripple from 'lightvue/ripple';
 import LvInput from 'lightvue/input';
-import { trueValueMixin } from 'lightvue/mixins';
 
 export default {
   name: 'LvDropdown',
   inheritAttrs: false,
-  mixins: [trueValueMixin],
+  mixins: [trueValueMixin, optionsMixin],
   emits: ['before-show', 'before-hide', 'show', 'hide', 'change', 'filter'],
   components: {
     LvInput,
   },
   props: {
-    // value: null,
-    options: Array,
-    optionLabel: null,
-    optionValue: null,
-    optionDisabled: null,
+    // value: null, // via mixin
     scrollHeight: {
       type: String,
       default: '200px',
@@ -71,7 +65,6 @@ export default {
     },
     placeholder: String,
     disabled: Boolean,
-    dataKey: null,
     clearable: Boolean,
     inputId: String,
     tabindex: String,
@@ -108,18 +101,6 @@ export default {
     this.onBeforeUnmount();
   },
   methods: {
-    getOptionLabel(option) {
-      return this.optionLabel ? ObjectUtils.resolveFieldData(option, this.optionLabel) : option;
-    },
-    getOptionValue(option) {
-      return this.optionValue ? ObjectUtils.resolveFieldData(option, this.optionValue) : option;
-    },
-    getOptionRenderKey(option) {
-      return this.dataKey ? ObjectUtils.resolveFieldData(option, this.dataKey) : this.getOptionLabel(option);
-    },
-    isOptionDisabled(option) {
-      return this.optionDisabled ? ObjectUtils.resolveFieldData(option, this.optionDisabled) : false;
-    },
     getSelectedOption() {
       let selectedOption;
 
@@ -134,12 +115,8 @@ export default {
 
       return selectedOption;
     },
-    isSelected(option) {
-      return ObjectUtils.equals(this.modelValue, this.getOptionValue(option), this.equalityKey);
-    },
     getSelectedOptionIndex() {
       let selectedOptionIndex = -1;
-
       if (this.modelValue != null && this.visibleOptions) {
         for (let i = 0; i < this.visibleOptions.length; i++) {
           if (ObjectUtils.equals(this.modelValue, this.getOptionValue(this.visibleOptions[i]), this.equalityKey)) {
@@ -525,9 +502,6 @@ export default {
       let selectedOption = this.getSelectedOption();
       if (selectedOption) return this.getOptionLabel(selectedOption);
       else return this.modelValue;
-    },
-    equalityKey() {
-      return this.optionValue ? null : this.dataKey;
     },
   },
   directives: {
