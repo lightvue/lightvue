@@ -1,9 +1,26 @@
 <template>
   <div>
-    <lv-input type="text" :editable="false" ref="mainInput" v-bind="$attrs" :class="{ '--not-empty': filled }">
-      <textarea :maxlength="maxLength" class="lv-textarea" v-bind="$attrs" @input="updateValue" :value="modelValue" ref="textarea" :class="{ '--resize-vertical': resize === 'vertical' }" />
+    <lv-input
+      type="text"
+      :editable="false"
+      ref="mainInput"
+      v-bind="$attrs"
+      :class="{ '--not-empty': filled }"
+    >
+      <textarea
+        :maxlength="maxLength"
+        class="lv-textarea"
+        v-bind="$attrs"
+        @input="updateValue"
+        :value="modelValue"
+        ref="textarea"
+        :class="{ '--resize-vertical': resize === 'vertical' }"
+      />
     </lv-input>
-    <div class="lv-textarea__limits" v-if="showLimit && maxLength">{{ modelValue ? modelValue.length : 0 }} / {{ maxLength }}</div>
+    <div
+      class="lv-textarea__limits"
+      v-if="showLimit && maxLength"
+    >{{ modelValue ? modelValue.length : 0 }} / {{ maxLength }}</div>
   </div>
 </template>
 
@@ -69,9 +86,16 @@ export default {
         this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
       }
     },
+    // New Function for Auto resize
+    resizeTextareaV2() {
+      this.$refs.textarea.style.height = 'auto';
+      this.$refs.textarea.style.height = this.$refs.textarea.style.scrollHeight + (this.$refs.textarea.clientHeight - this.$refs.textarea.clientHeight) + 'px';
+    },
+
     updateValue(event) {
       if (this.autoResize) {
-        this.resizeTextarea();
+        // this.resizeTextarea();
+        this.resizeTextareaV2(); // New Function for auto Resize
       }
       this.localValue = event.target.value;
       this.$emit('input-native', event);
