@@ -1,53 +1,86 @@
 <template>
   <div class="content-section implementation slider-example-wrapper">
     <h5>Basic: {{ value }}</h5>
-    <LvRangeSlider class="slider" v-model="value" />
-
-    <h5>Input:</h5>
-    <LvInput v-model="value" style="width: 196px" />
-    <LvRangeSlider class="slider" v-model="value" :showValue="false" />
-
+    <LvSlider v-model="value" />
+    <h5>Input</h5>
+    <LvInput
+      v-model="value"
+      style="width: 196px"
+    />
+    <br />
+    <LvSlider v-model="value" />
     <h5>Setting custom range</h5>
-    PROP: max, min (default 0,100):<br /><br />
+    PROP: max, min (default 0,100):
+    <br />
+    <br />
     0-10: <br />
-    <LvRangeSlider :min="0" :max="10" v-model="valueRange1" />
+    <LvSlider
+      v-model="value"
+      :showValue="true"
+      :min="0"
+      :max="10"
+    />
     <br />
+    500-550:
     <br />
-    500-550: <br />
-    <LvRangeSlider :min="500" :max="550" v-model="valueRange2" />
-    <br />
-    <br />
-
+    <LvSlider
+      v-model="value"
+      :showValue="true"
+      :min="500"
+      :max="550"
+    />
     <h5>Show/hide floating value label:</h5>
-    showValue = true: <br />
-    <LvRangeSlider class="slider" v-model="value" /> <br />
+    showValue = true:
     <br />
-    showValue = false: <br />
-    <LvRangeSlider class="slider" v-model="value" :showValue="false" />
+    <LvSlider
+      v-model="value"
+      :showValue="true"
+    />
+    <br />
+    showValue = false:
+    <br />
+    <LvSlider v-model="value" />
     <h5>Step (step-size: 20):</h5>
-    <LvRangeSlider v-model="valueStep" :step="20" />
 
-    <h5>Custom color:</h5>
-    Slider Color (default: #607C8A)<br />
-    <LvRangeSlider v-model="value" sliderColor="#38b2ac" />
+    <LvSlider
+      v-model="value"
+      :step="20"
+    />
+
+    <h5>Vertical Orientation</h5>
+    orientation = vertical (default: horizontal)
     <br />
+    verticalHeight = 200 (default: 200)
+    <LvSlider
+      :showValue="true"
+      orientation="vertical"
+      verticalHeight="200"
+      v-model="value"
+    />
+
+    <h5>Slider Color</h5>
+    sliderColor (default: #38b2ac)
     <br />
-    <LvRangeSlider v-model="value" sliderColor="#03fc5e" />
+    <LvSlider
+      :showValue="true"
+      sliderColor="#03fc5e"
+      v-model="value"
+    />
+    <h5>Track Color</h5>
+    trackColor (default: #cccccc)
     <br />
-    <br />
-    Track Color (default: #E5E5E5)<br />
-    <LvRangeSlider v-model="value" trackColor="#38b2ac" />
-    <br />
-    <br />
-    <LvRangeSlider v-model="value" trackColor="#03fc5e" />
-    <br />
-    <br />
+    <LvSlider
+      :showValue="true"
+      sliderColor="#03fc5e"
+      trackColor="#38bcac"
+      v-model="value"
+    />
+
   </div>
 </template>
 
 <script>
-import LvRangeSlider from 'lightvue/range-slider'; // REFACTORING
-
+import LvSlider from '../../core/components/slider/Slider';
 export default {
   data() {
     return {
@@ -58,21 +91,12 @@ export default {
     };
   },
   components: {
-    LvRangeSlider, // REFACTORING
+    LvSlider,
   },
 };
 </script>
 
 <style scoped>
-.lv-slider-horizontal,
-.lv-inputtext {
-  width: 14rem;
-}
-
-.lv-slider-vertical {
-  height: 14rem;
-}
-
 .slider-example-wrapper {
   width: max-content;
 }

@@ -1,18 +1,43 @@
 <template>
-  <div :class="containerClass" @click="onBarClick" ref="container">
-    <span class="lv-slider-range" :style="rangeStyle"></span>
-    <span v-if="!range" class="lv-slider-handle" :style="handleStyle" @mousedown="onHandleMouseDown($event)" @keydown="onHandleKeyDown($event)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
-    <span v-if="range" class="lv-slider-handle" :style="rangeStartHandleStyle" @mousedown="onHandleMouseDown($event, 0)" @keydown="onHandleKeyDown($event, 0)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value ? value[0] : null" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
-    <span v-if="range" class="lv-slider-handle" :style="rangeEndHandleStyle" @mousedown="onHandleMouseDown($event, 1)" @keydown="onHandleKeyDown($event, 1)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value = value[1] : null" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
+  <div
+    :class="['slider lv-slider__wrap', orientation && orientation == 'vertical' ? 'vertical' : '']"
+    :style="[orientation == 'vertical' ? verticalSliderContainerStyle : '']"
+  >
+    <input
+      @input="getSlideValue"
+      v-bind="$attrs"
+      type="range"
+      class="slider-range"
+      id="slider-range"
+      :step="step"
+      :min="min"
+      :max="max"
+      :style="[
+        {
+        background: `linear-gradient(to right, ${sliderColor} 0%, ${sliderColor} ${getPercentValue}%, ${trackColor} ${getPercentValue}% , ${trackColor} 100%)`,
+        },
+        orientation == 'vertical' ? {...verticalSliderStyle} : ''
+        ]"
+      :value="modelValue"
+    >
+    <div
+      v-if="showLabel"
+      class="slider-range-label__wrap"
+      :style="[orientation == 'vertical' ? verticalSliderStyle: '']"
+    >
+      <span
+        class="label"
+        :style="labelStyle"
+      >{{ sliderValue }}</span>
+    </div>
   </div>
 </template>
-
 <script>
-import { DomHandler } from 'lightvue/utils';
-
 export default {
   props: {
-    value: [Number, Array],
+    value: {
+      // type: Number,
+    },
     min: {
       type: Number,
       default: 0,
@@ -25,370 +50,148 @@ export default {
       type: String,
       default: 'horizontal',
     },
+    verticalHeight: {
+      type: String,
+      default: '200',
+    },
     step: {
       type: Number,
-      default: null,
+      default: 1,
     },
-    range: {
+    showLabel: {
       type: Boolean,
       default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    ariaLabelledBy: {
-      type: String,
-      default: null,
     },
     sliderColor: {
       type: String,
       default: '#38b2ac',
     },
+    trackColor: {
+      type: String,
+      default: '#e2e2e2e2',
+    },
   },
-  dragging: false,
-  handleIndex: null,
-  initX: null,
-  initY: null,
-  barWidth: null,
-  barHeight: null,
-  dragListener: null,
-  mouseupListener: null,
-  beforeDestroy() {
-    this.unbindDragListeners();
+  data() {
+    return {
+      sliderValue: 0,
+      percentValue: 0,
+    };
   },
   methods: {
-    updateDomData() {
-      let rect = this.$refs.container.getBoundingClientRect();
-      this.initX = rect.left + DomHandler.getWindowScrollLeft();
-      this.initY = rect.top + DomHandler.getWindowScrollTop();
-      this.barWidth = this.$refs.container.offsetWidth;
-      this.barHeight = this.$refs.container.offsetHeight;
+    getSlideValue(event) {
+      const finalVal = parseInt(event.target.value);
+      this.sliderValue = finalVal;
+      this.updateModal(event);
     },
-    setValueFromHandlePosition(event, handlePosition) {
-      let newValue = (this.max - this.min) * (handlePosition / 100) + this.min;
-
-      if (this.range) {
-        if (this.step) this.handleStepChange(event, newValue, this.value[this.handleIndex]);
-        else this.updateModel(event, newValue);
-      } else {
-        if (this.step) this.handleStepChange(event, newValue, this.value);
-        else this.updateModel(event, newValue);
-      }
-    },
-    onSlide(event) {
-      let handlePosition = this.horizontal ? ((event.pageX - this.initX) * 100) / this.barWidth : ((this.initY + this.barHeight - event.pageY) * 100) / this.barHeight;
-      this.setValueFromHandlePosition(event, handlePosition);
-    },
-    handleStepChange(event, newValue, oldValue) {
-      let diff = newValue - oldValue;
-      let val = oldValue;
-
-      if (diff < 0) val = oldValue + Math.ceil(newValue / this.step - oldValue / this.step) * this.step;
-      else if (diff > 0) val = oldValue + Math.floor(newValue / this.step - oldValue / this.step) * this.step;
-
-      this.updateModel(event, val);
-    },
-    updateModel(event, value) {
-      let newValue = value;
-      let modelValue;
-
-      if (this.range) {
-        if (this.handleIndex == 0) {
-          if (newValue < this.min) newValue = this.min;
-          else if (newValue >= this.value[1]) newValue = this.value[1];
-        } else {
-          if (newValue > this.max) newValue = this.max;
-          else if (newValue <= this.value[0]) newValue = this.value[0];
-        }
-
-        modelValue = [...this.value];
-        modelValue[this.handleIndex] = Math.floor(newValue);
-      } else {
-        if (newValue < this.min) newValue = this.min;
-        else if (newValue > this.max) newValue = this.max;
-
-        modelValue = Math.floor(newValue);
-      }
-
-      this.$emit('input', modelValue);
-      this.$emit('change', modelValue);
-    },
-    onBarClick(event) {
-      if (this.disabled) {
-        return;
-      }
-
-      if (!DomHandler.hasClass(event.target, 'lv-slider-handle')) {
-        this.updateDomData();
-        this.onSlide(event);
-      }
-    },
-    onHandleMouseDown(event, index) {
-      if (this.disabled) {
-        return;
-      }
-
-      DomHandler.addClass(this.$el, 'lv-slider-sliding');
-
-      this.dragging = true;
-      this.updateDomData();
-      this.handleIndex = index;
-      this.bindDragListeners();
-      event.preventDefault();
-    },
-    onHandleKeyDown(event, index) {
-      this.handleIndex = index;
-
-      switch (event.which) {
-        //down
-        case 40:
-          if (this.vertical) {
-            this.decrementValue(event, index);
-            event.preventDefault();
-          }
-          break;
-
-        //up
-        case 38:
-          if (this.vertical) {
-            this.incrementValue(event, index);
-            event.preventDefault();
-          }
-          break;
-
-        //left
-        case 37:
-          if (this.horizontal) {
-            this.decrementValue(event, index);
-            event.preventDefault();
-          }
-          break;
-
-        //right
-        case 39:
-          if (this.horizontal) {
-            this.incrementValue(event, index);
-            event.preventDefault();
-          }
-          break;
-
-        default:
-          break;
-      }
-    },
-    decrementValue(event, index) {
-      let newValue;
-
-      if (this.range) {
-        if (this.step) newValue = this.value[index] - this.step;
-        else newValue = this.value[index] - 1;
-      } else {
-        if (this.step) newValue = this.value - this.step;
-        else newValue = this.value - 1;
-      }
-
-      this.updateModel(event, newValue);
-
-      event.preventDefault();
-    },
-    incrementValue(event, index) {
-      let newValue;
-
-      if (this.range) {
-        if (this.step) newValue = this.value[index] + this.step;
-        else newValue = this.value[index] + 1;
-      } else {
-        if (this.step) newValue = this.value + this.step;
-        else newValue = this.value + 1;
-      }
-
-      this.updateModel(event, newValue);
-
-      event.preventDefault();
-    },
-    bindDragListeners() {
-      if (!this.dragListener) {
-        this.dragListener = event => {
-          if (this.dragging) {
-            this.onSlide(event);
-          }
-        };
-
-        document.addEventListener('mousemove', this.dragListener);
-      }
-
-      if (!this.mouseupListener) {
-        this.mouseupListener = event => {
-          if (this.dragging) {
-            this.dragging = false;
-            DomHandler.removeClass(this.$el, 'lv-slider-sliding');
-            this.$emit('slideend', { originalEvent: event, values: this.value });
-          }
-        };
-
-        document.addEventListener('mouseup', this.mouseupListener);
-      }
-    },
-    unbindDragListeners() {
-      if (this.dragListener) {
-        document.removeEventListener('mousemove', this.dragListener);
-        this.dragListener = null;
-      }
-
-      if (this.mouseupListener) {
-        document.removeEventListener('mouseup', this.mouseupListener);
-        this.mouseupListener = null;
-      }
+    updateModal(event) {
+      this.$emit('input', event.target.value);
+      this.$emit('change', event.target.value);
+      this.$emit('update:modelValue', event.target.value);
     },
   },
+
   computed: {
-    containerClass() {
-      return [
-        'lv-slider lv-component',
-        {
-          'lv-disabled': this.disabled,
-          'lv-slider-horizontal': this.orientation === 'horizontal',
-          'lv-slider-vertical': this.orientation === 'vertical',
-        },
-      ];
+    getPercentValue() {
+      const value = ((this.modelValue - this.min) / (this.max - this.min)) * 100;
+      this.percentValue = value >= 100 ? 100 : value <= 0 ? 0 : value;
+      return this.percentValue;
     },
-    horizontal() {
-      return this.orientation === 'horizontal';
+    labelStyle() {
+      return {
+        left: `${this.percentValue}%`,
+      };
     },
-    vertical() {
-      return this.orientation === 'vertical';
+    verticalSliderStyle() {
+      return {
+        transformOrigin: `${this.verticalHeight / 2}px ${this.verticalHeight / 2}px`,
+        transform: `rotate(-90deg)`,
+      };
     },
-    rangeStyle() {
-      if (this.range) {
-        if (this.horizontal) return { left: this.rangeStartPosition + '%', width: this.rangeEndPosition - this.rangeStartPosition + '%', background: this.sliderColor };
-        else return { bottom: this.rangeStartPosition + '%', height: this.rangeEndPosition - this.rangeStartHandlePosition + '%', background: this.sliderColor };
-      } else {
-        if (this.horizontal) return { width: this.handlePosition + '%', background: this.sliderColor };
-        else return { height: this.handlePosition + '%', background: this.sliderColor };
-      }
+    verticalSliderContainerStyle() {
+      return {
+        height: `${this.verticalHeight}px`,
+        width: `${this.verticalHeight}px`,
+      };
     },
-    handleStyle() {
-      if (this.horizontal) return { left: this.handlePosition + '%', borderColor: this.sliderColor };
-      else return { bottom: this.handlePosition + '%', borderColor: this.sliderColor };
-    },
-    handlePosition() {
-      if (this.value === 0) return 0;
-      else if (this.value < this.min) return 0;
-      else if (this.value > this.max) return 100;
-      else return ((this.value - this.min) * 100) / (this.max - this.min);
-    },
-    rangeStartPosition() {
-      if (this.value) return ((this.value[0] < this.min ? 0 : this.value[0] - this.min) * 100) / (this.max - this.min);
-      else return 0;
-    },
-    rangeEndPosition() {
-      if (this.value) return ((this.value[1] > this.max ? 100 : this.value[1] - this.min) * 100) / (this.max - this.min);
-      else return 0;
-    },
-    rangeStartHandleStyle() {
-      if (this.horizontal) return { left: this.rangeStartPosition + '%', borderColor: this.sliderColor };
-      else return { bottom: this.rangeStartPosition + '%', borderColor: this.sliderColor };
-    },
-    rangeEndHandleStyle() {
-      if (this.horizontal) return { left: this.rangeEndPosition + '%', borderColor: this.sliderColor };
-      else return { bottom: this.rangeEndPosition + '%', borderColor: this.sliderColor };
+    modelValue() {
+      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value ? this.value : this.sliderValue;
     },
   },
 };
 </script>
-
-<style>
-.lv-slider {
+<style lang="scss" scoped>
+.lv-slider__wrap {
+  flex-grow: 1;
   position: relative;
-  background: #dee2e6;
-  border: 0;
-  border-radius: 3px;
-}
+  &.vertical {
+    .slider-range-label__wrap {
+      top: 0;
+      .label {
+        transform: translateX(-50%) translateY(50%) rotate(90deg);
+        top: 5px;
+      }
+    }
+  }
+  .slider-range {
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 50px;
+    background-color: #cccccc;
+    width: 100%;
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    margin: 10px 0;
+    &:hover {
+      opacity: 1;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 16px;
+      width: 26px;
+      background-color: #b2f5ea;
+      border: 4px solid #38b2ac;
+      border-radius: 50px;
+      cursor: grab;
+      position: relative;
+    }
 
-.lv-slider .lv-slider-handle {
-  cursor: grab;
-  touch-action: none;
-}
+    &::-moz-range-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 16px;
+      width: 26px;
+      background-color: #b2f5ea;
+      border: 4px solid #38b2ac;
+      border-radius: 50%;
+      cursor: grab;
+    }
+  }
+  .slider-range-label__wrap {
+    position: absolute;
+    width: calc(100% - 20px);
+    left: 10px;
+    height: 110%;
+    top: -30px;
 
-.lv-slider .lv-slider-handle,
-.lv-slider-range {
-  position: absolute;
-  display: block;
-}
-
-.lv-slider-horizontal .lv-slider-range {
-  top: 0;
-  left: 0;
-  height: 100%;
-}
-
-.lv-slider-horizontal .lv-slider-handle {
-  top: 50%;
-}
-
-.lv-slider-vertical {
-  height: 100px;
-}
-
-.lv-slider-vertical .lv-slider-handle {
-  left: 50%;
-}
-
-.lv-slider-vertical .lv-slider-range {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-.lv-slider.lv-slider-horizontal {
-  height: 0.286rem;
-}
-
-.lv-slider.lv-slider-horizontal .lv-slider-handle {
-  margin-top: -0.5715rem;
-  margin-left: -0.5715rem;
-}
-
-.lv-slider.lv-slider-vertical {
-  width: 0.286rem;
-}
-
-.lv-slider.lv-slider-vertical .lv-slider-handle {
-  margin-left: -0.5715rem;
-  margin-bottom: -0.5715rem;
-}
-
-.lv-slider .lv-slider-handle {
-  transform: scale(1);
-  height: 1.143rem;
-  width: 1.143rem;
-  background: #d7efed;
-  border: 2px solid;
-  border-radius: 50%;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
-}
-
-.lv-slider .lv-slider-handle:focus {
-  outline: 0;
-  outline-offset: 0;
-  box-shadow: 0 0 0 0.2rem #c7c7c7;
-}
-
-.lv-slider:not(.lv-disabled) .lv-slider-handle:hover {
-  /* background: #38b2ac; */
-  transition: all 0.3s;
-  transform: scale(1.2);
-}
-
-.lv-component {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.lv-component:disabled,
-.lv-disabled {
-  opacity: 0.6;
+    .label {
+      position: absolute;
+      top: -20px;
+      background-color: #00658d;
+      padding: 5px 10px;
+      border-radius: 3px;
+      color: white;
+      transform: translate(-50%, 50%);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+  &:hover {
+    .slider-range-label__wrap .label {
+      opacity: 1;
+    }
+  }
 }
 </style>

@@ -2,7 +2,7 @@ const SliderAPI = {
   props: [
     {
       name: 'value',
-      type: 'Number, Array',
+      type: 'Number',
       default: '',
       description: 'Configures the value of slider.',
     },
@@ -25,22 +25,22 @@ const SliderAPI = {
       description: 'Configures the value to step and down while sliding.',
     },
     {
-      name: 'range',
+      name: 'showLabel',
       type: 'Boolean',
       default: 'false',
-      description: 'Configures the range of the slider.',
+      description: 'Configures the label to be visible or not.',
     },
     {
-      name: 'disabled',
-      type: 'Boolean',
-      default: 'false',
-      description: 'Configures if the slider is disabled or not.',
-    },
-    {
-      name: 'ariaLabelledBy',
+      name: 'orientation',
       type: 'String',
-      default: '',
-      description: 'Configures the aria to be labelled on the slider.',
+      default: 'horizontal',
+      description: 'Configures the orientation of the slider.',
+    },
+    {
+      name: 'verticalHeight',
+      type: 'String',
+      default: '200',
+      description: 'Configures the vertical height of the slider.',
     },
     {
       name: 'sliderColor',
@@ -48,6 +48,30 @@ const SliderAPI = {
       default: '#38b2ac',
       description: 'Configures the slider color.',
     },
+    {
+      name: 'trackColor',
+      type: 'String',
+      default: '#e2e2e2',
+      description: 'Configures the track color.',
+    },
+    // {
+    //   name: 'range',
+    //   type: 'Boolean',
+    //   default: 'false',
+    //   description: 'Configures the range of the slider.',
+    // },
+    // {
+    //   name: 'disabled',
+    //   type: 'Boolean',
+    //   default: 'false',
+    //   description: 'Configures if the slider is disabled or not.',
+    // },
+    // {
+    //   name: 'ariaLabelledBy',
+    //   type: 'String',
+    //   default: '',
+    //   description: 'Configures the aria to be labelled on the slider.',
+    // },
   ],
   // events: [
   //   {
