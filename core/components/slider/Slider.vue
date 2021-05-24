@@ -36,7 +36,7 @@
 export default {
   props: {
     value: {
-      // type: Number,
+      type: Number,
     },
     min: {
       type: Number,
@@ -84,9 +84,10 @@ export default {
       this.updateModal(event);
     },
     updateModal(event) {
-      this.$emit('input', event.target.value);
-      this.$emit('change', event.target.value);
-      this.$emit('update:modelValue', event.target.value);
+      const emitValue = parseInt(event.target.value);
+      this.$emit('input', emitValue);
+      this.$emit('change', emitValue);
+      this.$emit('update:modelValue', emitValue);
     },
   },
 
