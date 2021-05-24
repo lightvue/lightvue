@@ -89,7 +89,7 @@ export default {
     // New Function for Auto resize
     resizeTextareaV2() {
       this.$refs.textarea.style.height = 'auto';
-      this.$refs.textarea.style.height = this.$refs.textarea.style.scrollHeight + (this.$refs.textarea.clientHeight - this.$refs.textarea.clientHeight) + 'px';
+      this.$refs.textarea.style.height = this.$refs.textarea.scrollHeight + (this.$refs.textarea.clientHeight - this.$refs.textarea.offsetHeight) + 'px';
     },
 
     updateValue(event) {
