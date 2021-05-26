@@ -2,7 +2,7 @@ const SliderAPI = {
   props: [
     {
       name: 'value',
-      type: 'Number',
+      type: 'Number, Array',
       default: '',
       description: 'Configures the value of slider.',
     },
@@ -21,7 +21,7 @@ const SliderAPI = {
     {
       name: 'step',
       type: 'Number',
-      default: 'null',
+      default: '1',
       description: 'Configures the value to step and down while sliding.',
     },
     {
@@ -31,16 +31,22 @@ const SliderAPI = {
       description: 'Configures the label to be visible or not.',
     },
     {
-      name: 'orientation',
-      type: 'String',
-      default: 'horizontal',
-      description: 'Configures the orientation of the slider.',
+      name: 'range',
+      type: 'Boolean',
+      default: 'false',
+      description: 'Configures the Slider as 2-way Range Slider',
     },
     {
-      name: 'verticalHeight',
-      type: 'String',
-      default: '200',
-      description: 'Configures the vertical height of the slider.',
+      name: 'scale',
+      type: 'Boolean',
+      default: 'false',
+      description: 'Configures the slider to have scale.',
+    },
+    {
+      name: 'precision',
+      type: 'Number',
+      default: '10',
+      description: 'Configures the precision of the scale.',
     },
     {
       name: 'sliderColor',
@@ -51,8 +57,18 @@ const SliderAPI = {
     {
       name: 'trackColor',
       type: 'String',
-      default: '#e2e2e2',
+      default: '#c2ebe9',
       description: 'Configures the track color.',
+    },
+    {
+      name: 'thumbColor',
+      type: 'String',
+      description: 'Configures the thumb color.',
+    },
+    {
+      name: 'thumbBorderColor',
+      type: 'String',
+      description: 'Configures the thumb border color.',
     },
     // {
     //   name: 'range',

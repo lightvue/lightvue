@@ -119,6 +119,10 @@ const routes = [
         path: 'tooltip',
         component: () => import('@/pages/vue-components/tooltip.vue'),
       },
+      {
+        path: 'breadcrumb',
+        component: () => import('@/pages/vue-components/breadcrumb.vue'),
+      },
     ],
   },
   {

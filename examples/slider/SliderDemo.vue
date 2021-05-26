@@ -1,81 +1,96 @@
 <template>
   <div class="content-section implementation slider-example-wrapper">
+
     <h5>Basic: {{ value }}</h5>
     <LvSlider v-model="value" />
+
     <h5>Input</h5>
     <LvInput
       v-model="value"
       style="width: 196px"
     />
-    <br />
     <LvSlider v-model="value" />
-    <h5>Setting custom range</h5>
-    PROP: max, min (default 0,100):
-    <br />
-    <br />
-    0-10: <br />
-    <LvSlider
-      v-model="value"
-      :showValue="true"
-      :min="0"
-      :max="10"
-    />
-    <br />
-    500-550:
-    <br />
-    <LvSlider
-      v-model="value"
-      :showValue="true"
-      :min="500"
-      :max="550"
-    />
-    <h5>Show/hide floating value label:</h5>
-    showValue = true:
-    <br />
-    <LvSlider
-      v-model="value"
-      :showValue="true"
-    />
-    <br />
-    showValue = false:
-    <br />
-    <LvSlider v-model="value" />
-    <h5>Step (step-size: 20):</h5>
 
+    <h5>Setting custom range</h5>
+    max,min (default 0,100)
+    <LvSlider v-model="value" />
+
+    <h5>Show/hide floating value label:</h5>
+    showValue = true
+    <LvSlider
+      v-model="value"
+      showValue
+    />
+    showValue = false
+    <LvSlider v-model="value" />
+
+    <h5>Scales</h5>
+    scale = true
+    <LvSlider
+      v-model="value"
+      scale
+    />
+
+    <br />
+    <h5>Scales with precision</h5>
+    precision = "2" (type = number)
+    <LvSlider
+      v-model="value"
+      :precision="4"
+      scale
+    />
+
+    <br />
+    <h5>Custom Step size</h5>
+    step = "20" (type = number)
     <LvSlider
       v-model="value"
       :step="20"
     />
 
-    <h5>Vertical Orientation</h5>
-    orientation = vertical (default: horizontal)
-    <br />
-    verticalHeight = 200 (default: 200)
+    <h5>Slider with range</h5>
+    range = true
     <LvSlider
-      :showValue="true"
-      orientation="vertical"
-      verticalHeight="200"
-      v-model="value"
+      v-model="valueRange"
+      :precision="4"
+      showValue
+      range
     />
 
-    <h5>Slider Color</h5>
-    sliderColor (default: #38b2ac)
-    <br />
+    <h5>Range with scale</h5>
+    range = true, scale = true
     <LvSlider
-      :showValue="true"
-      sliderColor="#03fc5e"
-      v-model="value"
-    />
-    <h5>Track Color</h5>
-    trackColor (default: #cccccc)
-    <br />
-    <LvSlider
-      :showValue="true"
-      sliderColor="#03fc5e"
-      trackColor="#38bcac"
-      v-model="value"
+      v-model="valueRange"
+      :precision="4"
+      range
+      scale
     />
 
+    <br />
+    <h5>Fully Customizable Color Options</h5>
+    sliderColor = "#4066E0"
+    <LvSlider
+      sliderColor="#4066E0"
+      v-model="value"
+    />
+    trackColor = "#B9BFFF"
+    <LvSlider
+      sliderColor="#4066E0"
+      trackColor="#B9BFFF"
+      v-model="value"
+      showValue
+    />
+    thumbColor = "#ffffff", thumbBorderColor = "#663399"
+    <LvSlider
+      sliderColor="#4066E0"
+      trackColor="#B9BFFF"
+      thumbBorderColor="#663399"
+      thumbColor="#ffffff"
+      v-model="value"
+      showValue
+    />
+    <br />
+    <br />
   </div>
 </template>
 
@@ -85,9 +100,7 @@ export default {
   data() {
     return {
       value: 20,
-      valueRange1: 0,
-      valueRange2: 500,
-      valueStep: 20,
+      valueRange: [0, 10],
     };
   },
   components: {
