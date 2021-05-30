@@ -12,7 +12,7 @@ import { terser } from 'rollup-plugin-terser';
 let entries = [];
 
 // ask rollup to not bundle Vue in the library #warning-treating-module-as-external-dependency
-let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/ripple', 'lightvue/utils', 'lightvue/mixins', 'lightvue/overlay-panel'];
+let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/checkbox', 'lightvue/ripple', 'lightvue/utils', 'lightvue/mixins', 'lightvue/overlay-panel'];
 
 let globalDependencies = {
   vue: 'Vue',
@@ -22,6 +22,7 @@ let globalDependencies = {
   'lightvue/mixins': 'lightvue.mixins',
   'lightvue/button': 'lightvue.button',
   'lightvue/input': 'lightvue.input',
+  'lightvue/checkbox': 'lightvue.checkbox',
   'lightvue/overlay-panel': 'lightvue.overlay-panel',
   // 'lightvue/utils/DomHandler': 'lightvue.utils-DomHandler',
   // 'lightvue/utils/ConnectedOverlayScrollHandler': 'lightvue.utils-ConnectedOverlayScrollHandler',
@@ -163,7 +164,7 @@ function addSFC() {
   addEntry('components/glass-card', 'index.js', 'glass-card', 'index');
   addEntry('components/checkbox', 'index.js', 'checkbox', 'index');
   addEntry('components/checkbox-group', 'index.js', 'checkbox-group', 'index');
-  addEntry('components/colorpicker', 'index.js', 'color-picker', 'index');
+  addEntry('components/color-picker', 'index.js', 'color-picker', 'index');
   addEntry('components/dialog', 'index.js', 'dialog', 'index');
   addEntry('components/dropdown', 'index.js', 'dropdown', 'index');
   addEntry('components/input', 'index.js', 'input', 'index');
