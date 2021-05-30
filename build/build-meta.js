@@ -14,7 +14,7 @@ const path = require('path');
 // fs.copySync(path.resolve(__dirname, './LICENSE.md'), 'dist/LICENSE.md');
 
 fs.readdirSync('dist/').forEach(folder => {
-  if (folder !== 'lightvue.css' && folder !== 'package.json') {
+  if (folder !== 'lightvue.css' && folder !== 'package.json' && folder !== 'README.md') {
     fs.copySync(path.resolve(__dirname, './package-build.json'), 'dist/' + folder + '/package.json');
   }
   if (folder === 'skeleton') {
