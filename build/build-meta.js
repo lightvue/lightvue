@@ -21,3 +21,5 @@ fs.readdirSync('dist/').forEach(folder => {
     fs.copySync('core/components/skeleton/preset', 'dist/skeleton/preset');
   }
 });
+
+// Make sure to update correct version in ./dist/package.json file.
