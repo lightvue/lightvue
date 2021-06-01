@@ -3,6 +3,7 @@
     :title="$options.title"
     :description="$options.description"
   >
+    <slider-best-demo />
     <docs-card-vue
       title="Slider demo"
       file="slider/SliderDemo"
@@ -24,6 +25,7 @@ import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import SliderAPI from 'lightvueDocs/example/slider/SliderAPI';
+import SliderBestDemo from '../../../../examples/slider/SliderBestDemo.vue';
 
 export default {
   components: {
@@ -32,6 +34,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    SliderBestDemo,
   },
   title: 'Slider',
   description: `Slider is another basic component from light vue which provide user to have a slider in the web application which can be used to rate or select a range.`,

@@ -3,7 +3,12 @@
     class="slider range-slider"
     @mouseenter="showValue ? handleMouseEnter() : ''"
     @mouseleave="showValue ? handleMouseLeave() : ''"
+    :style="getIconStyle"
   >
+    <!-- {
+      marginLeft:`${iconLeft && iconLeft != '' ? 20 : ''}px`,
+      marginRight:`${iconRight && iconRight != '' ? 20 : ''}px`,
+    } -->
     <!-- Input Slider --Hidden -->
     <input
       @input="setLeftValue"
@@ -28,6 +33,16 @@
 
     <!-- Actual Visible Slider -->
     <div class="visible-slider">
+      <div
+        v-if="iconLeft"
+        class="icon --left"
+      >
+        <i :class="iconLeft"></i>
+      </div>
+      <div
+        v-if="iconRight"
+        class="icon --right"
+      ><i :class="iconRight"></i></div>
       <div
         class="track"
         :style="{ backgroundColor: `${trackColor}` }"
@@ -57,13 +72,7 @@
               : '',
           ]"
         >
-          {{ range
-              ? modelValue
-                ? modelValue[0]
-                : value[0]
-              : modelValue
-              ? modelValue
-              : value }}
+          {{ range ? (modelValue ? modelValue[0] : value[0]) : modelValue ? modelValue : value }}
         </div>
       </div>
       <div
@@ -82,13 +91,7 @@
               : '',
           ]"
         >
-          {{ range
-              ? modelValue
-                ? modelValue[1]
-                : value[1]
-              : modelValue
-              ? modelValue
-              : value }}
+          {{ range ? (modelValue ? modelValue[1] : value[1]) : modelValue ? modelValue : value }}
         </div>
       </div>
       <div
@@ -99,7 +102,7 @@
           class="scale__item"
           :key="item"
           v-for="item in max / precision + 1"
-          :style="(item - 1) * getUnitScale >= getLeftPercent && (item - 1) * getUnitScale <= 100 - getRightPercent ? { backgroundColor: `${sliderColor}`, height: '20px' } : ''"
+          :style="(item - 1) * getUnitScale >= getLeftPercent && (item - 1) * getUnitScale <= 100 - getRightPercent ? { backgroundColor: `${sliderColor}`, height: '15px' } : ''"
         ></div>
       </div>
     </div>
@@ -111,7 +114,6 @@ export default {
     return {
       leftValue: 0,
       rightValue: 0,
-      overallValue: 0,
       valueFromProp: null,
       label: false,
     };
@@ -167,6 +169,12 @@ export default {
       type: String,
       default: '#c2ebe9',
     },
+    iconLeft: {
+      type: String,
+    },
+    iconRight: {
+      type: String,
+    },
   },
   methods: {
     handleMouseEnter() {
@@ -176,22 +184,16 @@ export default {
       this.label = false;
     },
 
-    getOverallValue() {
-      this.overallValue = this.rightValue - this.leftValue;
-    },
-
     setLeftValue(event) {
       const left = Math.min(parseInt(event.target.value), parseInt(this.rightValue));
       event.target.value = left;
       this.leftValue = left;
-      this.getOverallValue();
       this.updateModal();
     },
     setRightValue(event) {
       const right = Math.max(parseInt(event.target.value), parseInt(this.leftValue));
       event.target.value = right;
       this.rightValue = right;
-      this.getOverallValue();
       this.updateModal();
     },
 
@@ -223,7 +225,9 @@ export default {
           this.leftValue = this.getValueBetweenMinMax(value[0]);
           this.rightValue = this.getValueBetweenMinMax(value[1]);
         }
-      } else {
+      }
+      if (!this.range) {
+        this.leftValue = 0;
         const tempValue = this.getValueBetweenMinMax(value);
         if (this.step > 1) {
           this.rightValue = this.getValueFromStep(tempValue);
@@ -251,6 +255,12 @@ export default {
       const singlePipLength = ((this.max - this.min) * this.precision) / this.max;
       return (singlePipLength / (this.max - this.min)) * 100;
     },
+    getIconStyle() {
+      return {
+        marginLeft: `${this.iconLeft && this.iconLeft != '' ? 20 : ''}px`,
+        marginRight: `${this.iconRight && this.iconRight != '' ? 20 : ''}px`,
+      };
+    },
   },
   watch: {
     value(value) {
@@ -261,7 +271,7 @@ export default {
     },
   },
   mounted() {
-    this.value ? this.setValue(this.value) : this.setValue(this.modelValue);
+    this.modelValue ? this.setValue(this.modelValue) : this.setValue(this.value);
   },
 };
 </script>
@@ -277,6 +287,22 @@ export default {
     margin: 0 15px;
     // width: 400px;
     z-index: 1;
+    .icon {
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      top: 2px;
+      transform: translateY(-12px);
+      i {
+        font-size: 24px;
+      }
+      &.--left {
+        left: -35px;
+      }
+      &.--right {
+        right: -35px;
+      }
+    }
     .track {
       position: absolute;
       z-index: 1;
@@ -359,7 +385,10 @@ export default {
     height: 10px;
     width: 100%;
     left: 0;
+
+    // Comment Opacity to look at actual input field
     opacity: 0;
+
     // &::-webkit-slider-runnable-track {
     //   -webkit-appearance: none;
     // }

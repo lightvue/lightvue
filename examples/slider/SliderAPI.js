@@ -49,6 +49,18 @@ const SliderAPI = {
       description: 'Configures the precision of the scale.',
     },
     {
+      name: 'iconLeft',
+      type: 'String',
+      default: '',
+      description: 'Configures the left icon.',
+    },
+    {
+      name: 'iconRight',
+      type: 'String',
+      default: '',
+      description: 'Configures the icon right.',
+    },
+    {
       name: 'sliderColor',
       type: 'String',
       default: '#38b2ac',

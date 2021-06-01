@@ -39,7 +39,8 @@ export default {
   inheritAttrs: false,
   props: {
     value: {
-      type: [String, Number],
+      // Array is kept because of Range Slider took Array as input in Playground
+      type: [String, Number, Array],
       default: null,
     },
     label: {

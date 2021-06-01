@@ -24,6 +24,24 @@
     showValue = false
     <LvSlider v-model="value" />
 
+    <h5>Left/Right Icons:</h5>
+    iconLeft = 'light-icon-arrow-narrow-left'
+    <LvSlider
+      v-model="value"
+      iconLeft="light-icon-arrow-narrow-left"
+    />
+    iconRight = 'light-icon-arrow-narrow-right'
+    <LvSlider
+      v-model="value"
+      iconRight="light-icon-arrow-narrow-right"
+    />
+    iconLeft & iconRight
+    <LvSlider
+      v-model="value"
+      iconLeft="light-icon-arrow-narrow-left"
+      iconRight="light-icon-arrow-narrow-right"
+    />
+
     <h5>Scales</h5>
     scale = true
     <LvSlider
@@ -95,7 +113,7 @@
 </template>
 
 <script>
-import LvSlider from '../../core/components/slider/Slider';
+import LvSlider from 'lightvue/slider';
 export default {
   data() {
     return {
