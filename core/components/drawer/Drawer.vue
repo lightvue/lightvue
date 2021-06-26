@@ -14,7 +14,8 @@
       '--absolute':absolute
     }"
     :style="{
-      zIndex:zIndex
+      zIndex:zIndex,
+      backdropFilter: backdropBlur && 'blur(3px)'
     }"
     ref="drawerWrapper"
   >
@@ -97,6 +98,7 @@ export default {
     close: Boolean,
     customStyle: Object,
     shadow: Boolean,
+    backdropBlur: Boolean,
     absolute: {
       type: Boolean,
       default: false,
@@ -370,7 +372,7 @@ export default {
     min-height: 100vh;
     min-width: 100vw;
     background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3px);
+    // backdrop-filter: blur(3px);
   }
 }
 </style>
