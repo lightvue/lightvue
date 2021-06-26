@@ -3,8 +3,9 @@
     :title="$options.title"
     :description="$options.description"
   >
+    <drawer-best-demo />
     <docs-card-vue
-      title="Drawer demo"
+      title="Drawer"
       file="drawer/DrawerDemo"
     />
     <template #api>
@@ -24,6 +25,7 @@ import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import DrawerAPI from 'lightvueDocs/example/drawer/DrawerAPI';
+import DrawerBestDemo from 'lightvueDocs/example/drawer/DrawerBestDemo.vue';
 
 export default {
   components: {
@@ -32,6 +34,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    DrawerBestDemo,
   },
   title: 'Drawer',
   description: ``,

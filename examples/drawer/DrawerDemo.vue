@@ -1,12 +1,13 @@
 <template>
-  <div class="drawer-opener-container">
+  <div class="drawer-container">
+    <!--  -->
     <h3>Relative to the window</h3>
     props: {absolute: false} default
-    <div class="drawer-wrapper">
-      <div class="card">
-        <div class="card-header">
+    <div class="drawer-container__wrapper">
+      <div class="wrapper__card">
+        <div class="card__header">
           <div
-            class="header-item --left"
+            class="header__icon --left"
             @click="drawer1 = !drawer1"
           >
             <i class="light-icon-menu-2"></i>
@@ -34,19 +35,20 @@
         </template>
       </lv-drawer>
     </div>
+    <!--  -->
     <h3>Relative to the window</h3>
     props : {absolute = true}
-    <div class="drawer-wrapper --absolute">
-      <div class="card">
-        <div class="card-header">
+    <div class="drawer-container__wrapper --absolute">
+      <div class="wrapper__card">
+        <div class="card__header">
           <div
-            class="header-item --left"
+            class="header__icon --left"
             @click="drawer2 = !drawer2"
           >
             <i class="light-icon-menu-2"></i>
           </div>
         </div>
-        <div class="card-drawer">
+        <div class="card__drawer">
           <lv-drawer
             v-model="drawer2"
             left
@@ -88,11 +90,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.drawer-opener-container {
+.drawer-container {
   height: 100%;
   width: 100%;
   margin: auto;
-  .drawer-wrapper {
+  .drawer-container__wrapper {
     position: relative;
     height: 100%;
     width: 100%;
@@ -110,7 +112,7 @@ export default {
         }
       }
     }
-    .card {
+    .wrapper__card {
       height: 100%;
       width: 100%;
       overflow: hidden;
@@ -118,13 +120,13 @@ export default {
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
       margin: 20px 0;
       position: relative;
-      .card-header {
+      .card__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 50px;
         background-color: #fff;
-        .header-item {
+        .header__icon {
           cursor: pointer;
           height: 100%;
           width: 50px;
@@ -150,17 +152,17 @@ export default {
       }
     }
     &.--absolute {
-      .card {
+      .wrapper__card {
         height: 600px;
-        .card-header {
+        .card__header {
           background-color: #607c8a;
-          .header-item {
+          .header__icon {
             i {
               color: white;
             }
           }
         }
-        .card-drawer {
+        .card__drawer {
           position: relative;
           height: 100%;
           width: 100%;

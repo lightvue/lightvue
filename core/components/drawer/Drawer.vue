@@ -82,7 +82,7 @@ export default {
       isMobile: false,
       snap: 0,
       drawerHeight: 0,
-      windowWidth: window.innerWidth,
+      windowWidth: 0,
       containerHeight: 0,
       timeOutID: null,
     };
@@ -94,11 +94,11 @@ export default {
     right: Boolean,
     bottom: Boolean,
     left: Boolean,
-    headerTitle: String,
     close: Boolean,
-    customStyle: Object,
     shadow: Boolean,
     backdropBlur: Boolean,
+    customStyle: Object,
+    headerTitle: String,
     absolute: {
       type: Boolean,
       default: false,
@@ -108,12 +108,20 @@ export default {
       default: false,
     },
     width: {
-      type: String,
-      default: '250px',
+      type: Number,
+      default: 250,
     },
     height: {
       type: Number,
       default: 250,
+    },
+    zIndex: {
+      type: Number,
+      default: 10,
+    },
+    maxSpan: {
+      type: Number,
+      default: 70,
     },
     background: {
       type: String,
@@ -126,10 +134,6 @@ export default {
     headerBackground: {
       type: String,
       default: '#fff',
-    },
-    zIndex: {
-      type: Number,
-      default: 10,
     },
     headerFontSize: {
       type: String,
@@ -180,9 +184,9 @@ export default {
     // New Snap
     getSnap(top) {
       const tenPercentHeight = (this.containerHeight * 10) / 100;
-      const thirtyPercentHeight = (this.containerHeight * 30) / 100;
-      if (top <= thirtyPercentHeight) {
-        this.snap = thirtyPercentHeight.toString() + 'px';
+      const maxPercentHeight = (this.containerHeight * (100 - this.maxSpan)) / 100;
+      if (top <= maxPercentHeight) {
+        this.snap = maxPercentHeight.toString() + 'px';
       } else if (top > this.containerHeight - tenPercentHeight) {
         this.snap = '100%';
         this.drawerClose();
@@ -210,7 +214,7 @@ export default {
     },
     getDrawerStyle() {
       return {
-        width: this.left || this.right ? this.width : '100%',
+        width: this.left || this.right ? this.width + 'px' : '100%',
         zIndex: this.zIndex + 5,
         padding: this.padding,
         background: this.background,
@@ -241,7 +245,8 @@ export default {
         right: 0,
         top: 0,
         bottom: 0,
-        transform: this.drawer ? 'translateX(0)' : 'translateX(100%)',
+        left: '100%',
+        transform: !this.drawer ? 'translateX(0)' : 'translateX(-100%)',
       };
     },
     getTopStyle() {
@@ -262,6 +267,9 @@ export default {
         top: this.drawer ? (!this.isMoving ? this.snap : this.getTopPx + 'px') : '100%',
       };
     },
+  },
+  beforeMount() {
+    this.windowWidth = window.innerWidth;
   },
   mounted() {
     this.isMobile = this.windowWidth <= 550 ? true : false;
