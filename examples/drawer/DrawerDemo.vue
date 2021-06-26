@@ -9,12 +9,12 @@
           >
             <i class="light-icon-menu-2"></i>
           </div>
-          <div
+          <!-- <div
             class="header-item --right"
             @click="drawer = !drawer"
           >
             <i class="light-icon-menu-2"></i>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -22,10 +22,9 @@
         v-model="drawer"
         left
         headerTitle="Title Of Header"
-        headerColor="#fff"
+        headerColor="#607c8a"
         close
         shadow
-        headerBackground="#762CFF"
         background="#fff"
         :zIndex="1000"
       >
@@ -85,7 +84,7 @@ export default {
   margin: auto;
   .drawer-wrapper {
     position: relative;
-    height: 500px;
+    height: 100%;
     width: 100%;
     .list {
       display: flex;
@@ -93,39 +92,47 @@ export default {
       & > div {
         padding: 10px 15px;
         color: black;
-        &:active {
-          background-color: #762cff5b;
+        cursor: pointer;
+        &:active,
+        &:hover {
+          background-color: #607c8a9f;
           color: white;
         }
       }
     }
     .card {
       height: 100%;
-      width: 100%;
+      width: 50%;
       overflow: hidden;
-      // padding: 15px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
       .card-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 60px;
-        background-image: linear-gradient(to bottom right, #2c4bff, #762cff);
-        //   padding: 15px;
+        height: 50px;
+        background-color: #fff;
         .header-item {
-          background-color: rgba(0, 0, 0, 0.13);
-          padding: 15px;
           cursor: pointer;
           height: 100%;
-          color: white;
-          font-size: 25px;
+          width: 50px;
+          // color: white;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
           i {
+            font-size: 28px;
+            font-weight: 700;
+            color: #607c8a;
             &::before,
             &::after {
               vertical-align: initial;
             }
           }
           &:hover {
-            background-color: rgba(0, 0, 0, 0.459);
+            i {
+              color: #607c8abb;
+            }
           }
         }
       }

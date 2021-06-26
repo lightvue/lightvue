@@ -123,7 +123,7 @@ export default {
     },
     headerBackground: {
       type: String,
-      default: 'rgba(0, 0, 0, 0.2)',
+      default: '#fff',
     },
     zIndex: {
       type: Number,
@@ -349,8 +349,8 @@ export default {
   }
   &.--mobile {
     .wrapper__drawer-container {
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px;
     }
   }
   &.--moving {
@@ -370,6 +370,7 @@ export default {
     min-height: 100vh;
     min-width: 100vw;
     background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
   }
 }
 </style>
