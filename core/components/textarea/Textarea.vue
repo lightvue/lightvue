@@ -1,26 +1,9 @@
 <template>
   <div>
-    <lv-input
-      type="text"
-      :editable="false"
-      ref="mainInput"
-      v-bind="$attrs"
-      :class="{ '--not-empty': filled }"
-    >
-      <textarea
-        :maxlength="maxLength"
-        class="lv-textarea"
-        v-bind="$attrs"
-        @input="updateValue"
-        :value="modelValue"
-        ref="textarea"
-        :class="{ '--resize-vertical': resize === 'vertical' }"
-      />
+    <lv-input type="text" :editable="false" ref="mainInput" v-bind="$attrs" :class="{ '--not-empty': filled }">
+      <textarea :maxlength="maxLength" class="lv-textarea" v-bind="$attrs" @input="updateValue" :value="modelValue" ref="textarea" :class="{ '--resize-vertical': resize === 'vertical' }" />
     </lv-input>
-    <div
-      class="lv-textarea__limits"
-      v-if="showLimit && maxLength"
-    >{{ modelValue ? modelValue.length : 0 }} / {{ maxLength }}</div>
+    <div class="lv-textarea__limits" v-if="showLimit && maxLength">{{ modelValue ? modelValue.length : 0 }} / {{ maxLength }}</div>
   </div>
 </template>
 
@@ -59,33 +42,33 @@ export default {
       default: 'none',
     },
   },
-  cachedScrollHeight: null,
+  // cachedScrollHeight: null,
   mounted() {
     if (this.$refs.textarea.offsetParent && this.autoResize) {
-      this.resizeTextarea();
+      this.resizeTextareaV2();
     }
   },
   methods: {
-    resizeTextarea() {
-      if (!this.cachedScrollHeight) {
-        this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
-        this.$refs.textarea.style.overflow = 'hidden';
-      }
+    // resizeTextarea() {
+    //   if (!this.cachedScrollHeight) {
+    //     this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
+    //     this.$refs.textarea.style.overflow = 'hidden';
+    //   }
 
-      if (this.cachedScrollHeight !== this.$refs.textarea.scrollHeight) {
-        this.$refs.textarea.style.height = '';
-        this.$refs.textarea.style.height = this.$refs.textarea.scrollHeight + 'px';
+    //   if (this.cachedScrollHeight !== this.$refs.textarea.scrollHeight) {
+    //     this.$refs.textarea.style.height = '';
+    //     this.$refs.textarea.style.height = this.$refs.textarea.scrollHeight + 'px';
 
-        if (parseFloat(this.$refs.textarea.style.height) >= parseFloat(this.$refs.textarea.style.maxHeight)) {
-          this.$refs.textarea.style.overflowY = 'scroll';
-          this.$refs.textarea.style.height = this.$refs.textarea.style.maxHeight;
-        } else {
-          this.$refs.textarea.style.overflow = 'hidden';
-        }
+    //     if (parseFloat(this.$refs.textarea.style.height) >= parseFloat(this.$refs.textarea.style.maxHeight)) {
+    //       this.$refs.textarea.style.overflowY = 'scroll';
+    //       this.$refs.textarea.style.height = this.$refs.textarea.style.maxHeight;
+    //     } else {
+    //       this.$refs.textarea.style.overflow = 'hidden';
+    //     }
 
-        this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
-      }
-    },
+    //     this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
+    //   }
+    // },
     // New Function for Auto resize
     resizeTextareaV2() {
       this.$refs.textarea.style.height = 'auto';

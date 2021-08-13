@@ -78,6 +78,10 @@ export default {
       type: String,
       default: 'No results found',
     },
+    closeOnResize: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -294,7 +298,7 @@ export default {
       this.alignOverlay();
       this.bindOutsideClickListener();
       this.bindScrollListener();
-      this.bindResizeListener();
+      this.closeOnResize && this.bindResizeListener();
 
       if (this.filter) {
         this.$refs.filterInput.$el.querySelector('input').focus();
@@ -305,7 +309,7 @@ export default {
     onOverlayLeave() {
       this.unbindOutsideClickListener();
       this.unbindScrollListener();
-      this.unbindResizeListener();
+      this.closeOnResize && this.unbindResizeListener();
       this.$emit('hide');
       // this.overlay = null;
     },
