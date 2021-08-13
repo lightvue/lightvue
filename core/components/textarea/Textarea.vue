@@ -42,36 +42,43 @@ export default {
       default: 'none',
     },
   },
-  cachedScrollHeight: null,
+  // cachedScrollHeight: null,
   mounted() {
     if (this.$refs.textarea.offsetParent && this.autoResize) {
-      this.resizeTextarea();
+      this.resizeTextareaV2();
     }
   },
   methods: {
-    resizeTextarea() {
-      if (!this.cachedScrollHeight) {
-        this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
-        this.$refs.textarea.style.overflow = 'hidden';
-      }
+    // resizeTextarea() {
+    //   if (!this.cachedScrollHeight) {
+    //     this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
+    //     this.$refs.textarea.style.overflow = 'hidden';
+    //   }
 
-      if (this.cachedScrollHeight !== this.$refs.textarea.scrollHeight) {
-        this.$refs.textarea.style.height = '';
-        this.$refs.textarea.style.height = this.$refs.textarea.scrollHeight + 'px';
+    //   if (this.cachedScrollHeight !== this.$refs.textarea.scrollHeight) {
+    //     this.$refs.textarea.style.height = '';
+    //     this.$refs.textarea.style.height = this.$refs.textarea.scrollHeight + 'px';
 
-        if (parseFloat(this.$refs.textarea.style.height) >= parseFloat(this.$refs.textarea.style.maxHeight)) {
-          this.$refs.textarea.style.overflowY = 'scroll';
-          this.$refs.textarea.style.height = this.$refs.textarea.style.maxHeight;
-        } else {
-          this.$refs.textarea.style.overflow = 'hidden';
-        }
+    //     if (parseFloat(this.$refs.textarea.style.height) >= parseFloat(this.$refs.textarea.style.maxHeight)) {
+    //       this.$refs.textarea.style.overflowY = 'scroll';
+    //       this.$refs.textarea.style.height = this.$refs.textarea.style.maxHeight;
+    //     } else {
+    //       this.$refs.textarea.style.overflow = 'hidden';
+    //     }
 
-        this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
-      }
+    //     this.cachedScrollHeight = this.$refs.textarea.scrollHeight;
+    //   }
+    // },
+    // New Function for Auto resize
+    resizeTextareaV2() {
+      this.$refs.textarea.style.height = 'auto';
+      this.$refs.textarea.style.height = this.$refs.textarea.scrollHeight + (this.$refs.textarea.clientHeight - this.$refs.textarea.offsetHeight) + 'px';
     },
+
     updateValue(event) {
       if (this.autoResize) {
-        this.resizeTextarea();
+        // this.resizeTextarea();
+        this.resizeTextareaV2(); // New Function for auto Resize
       }
       this.localValue = event.target.value;
       this.$emit('input-native', event);
