@@ -17,13 +17,14 @@
       <div class="footer__products">
         <h6>Products</h6>
         <!-- <p><a href="#">Form Studio</a></p> -->
-        <p><nuxt-link to="/icons/light-icons">Light Icons</nuxt-link></p>
+        <p><nuxt-link to="/getting-started/light-icons">Light Icons</nuxt-link></p>
         <p><a target="_blank" href="https://plugui.com/">Plug UI</a></p>
       </div>
       <div class="footer__form">
-        <h6>Subscribe for more Updates</h6>
-        <input type="email" name="email" placeholder="user@example.com" />
-        <button>Subscribe</button>
+        <h6>Have an query?</h6>
+        <div class="footer__form-email"><i class="light-icon-mail"></i><a target="_blank" href="mailto:info@lightvue.org">info@lightvue.org</a></div>
+        <!-- <input type="email" name="email" placeholder="user@example.com" /> -->
+        <!-- <button>Subscribe</button> -->
         <!-- <p>Follow for more</p> -->
         <!-- <a target="_blank" href="#"><i class="light-icon-brand-facebook"></i></a>
         <a target="_blank" href="#"><i class="light-icon-brand-twitter"></i></a>
@@ -99,54 +100,61 @@ footer .footer__products p {
   margin-bottom: 8px;
   width: 150px;
 }
-footer .footer__form p,
-input {
-  padding: 5px;
-}
-footer .footer__form input {
-  outline: 0;
-  border: none;
-  color: #fff;
-  padding: 14px 16px;
-  border-radius: 4px;
-  background-color: #224b69;
-  display: block;
-  width: 100%;
-}
-footer .footer__form button {
-  margin: 20px 0;
-  outline: none;
-  border: none;
-  width: fit-content;
-  text-decoration: none;
-  padding: 12px 50px;
-  border-radius: 5px;
-  max-width: 100%;
-  color: #fff;
-  font-weight: 500;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  transition: all 0.3s ease-in-out;
-  background-color: #00a3a0;
-  box-shadow: 0 6px 15px -1px #00a3a0;
-}
-footer .footer__form a {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin-right: 5px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 20px;
-  &:hover {
-    transform: scale(1.5);
-    transition: all 0.2s ease-in-out;
+footer .footer__form {
+  i {
+    color: #fff;
+    margin-top: 2px;
+    margin-right: 5px;
+  }
+  .footer__form-email {
+    display: flex;
+    align-items: center;
   }
 }
+// footer .footer__form input {
+//   outline: 0;
+//   border: none;
+//   color: #fff;
+//   padding: 14px 16px;
+//   border-radius: 4px;
+//   background-color: #224b69;
+//   display: block;
+//   width: 100%;
+// }
+// footer .footer__form button {
+//   margin: 20px 0;
+//   outline: none;
+//   border: none;
+//   width: fit-content;
+//   text-decoration: none;
+//   padding: 12px 50px;
+//   border-radius: 5px;
+//   max-width: 100%;
+//   color: #fff;
+//   font-weight: 500;
+//   white-space: nowrap;
+//   cursor: pointer;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   transition: all 0.3s ease-in-out;
+//   background-color: #00a3a0;
+//   box-shadow: 0 6px 15px -1px #00a3a0;
+// }
+// footer .footer__form a {
+//   display: inline-block;
+//   width: 30px;
+//   height: 30px;
+//   margin-right: 5px;
+//   border-radius: 50%;
+//   text-align: center;
+//   line-height: 20px;
+//   &:hover {
+//     transform: scale(1.5);
+//     transition: all 0.2s ease-in-out;
+//   }
+// }
 @media (max-width: 767px) {
   .footer__wrapper {
     padding: 0 30px;

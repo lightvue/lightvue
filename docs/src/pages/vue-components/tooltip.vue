@@ -4,7 +4,7 @@
     <docs-card-vue title="With Focus event" file="tooltip/TooltipFocusDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <!-- <docs-all-api :api-data="$options.apiData"/> -->
+      <!-- <docs-all-api :api-data="$options.apiData" /> -->
     </template>
   </docs-page-layout>
 </template>
@@ -15,7 +15,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-// import TooltipAPI from 'lightvue/tooltip/TooltipAPI';
+import TooltipAPI from 'lightvueDocs/example/tooltip/TooltipAPI';
 
 export default {
   components: {
@@ -29,7 +29,7 @@ export default {
   description: `Tooltips can be used to show additional information about any element upon hovering over it.`,
   packageName: 'tooltip',
   componentName: 'LvTooltip',
-  // apiData: TooltipAPI,
+  apiData: TooltipAPI,
   apiData: {},
 };
 </script>

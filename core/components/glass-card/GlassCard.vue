@@ -8,27 +8,27 @@
 
 <script>
 export default {
-    name: 'LvGlasscard',
+  name: 'LvGlasscard',
   props: {
     backgroundBlur: {
       type: String,
-      default: "15px",
+      default: '15px',
     },
     padding: {
       type: String,
-      default: "20px",
+      default: '20px',
     },
     borderRadius: {
       type: String,
-      default: "4px",
+      default: '4px',
     },
     backgroundColor: {
       type: String,
-      default: "#ffffff",
+      default: '#ffffff',
     },
     backgroundOpacity: {
       type: String,
-      default: "70",
+      default: '70',
     },
     showBorder: {
       type: Boolean,
@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     computedClass() {
-      return [this.showBorder && "lv-glasscard--border"];
+      return [this.showBorder && 'lv-glasscard--border'];
     },
     computedStyle() {
       let backgroundOpacity = this.backgroundOpacity + '';

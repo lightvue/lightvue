@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import LvTextarea from 'lightvue/textarea/Textarea';
-import LvButton from 'lightvue/button/Button';
+import LvTextarea from 'lightvue/textarea';
+import LvButton from 'lightvue/button';
 export default {
   components: {
     LvTextarea,

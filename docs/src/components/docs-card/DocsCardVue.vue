@@ -25,9 +25,10 @@ export default {
   },
   created() {
     if (this.file) {
-      // this.component = () => import('lightvue/example/' + this.file + '.vue');
+      // this.component = () => import('lightvueDocs/example/' + this.file + '.vue');
+      //
       if (!this.component) {
-        import('lightvue/example/' + this.file + '.vue').then(comp => {
+        import('lightvueDocs/example/' + this.file + '.vue').then(comp => {
           this.component = comp.default;
         });
       }
@@ -36,7 +37,7 @@ export default {
         // import('@/' + this.file + '.vue').then(comp => {
         //   this.component = comp.default;
         // }),
-        import('!raw-loader!lightvue/example/' + this.file + '.vue').then(comp => {
+        import('!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
           this.parseComponent(comp.default);
         }),
       ]).then(() => {

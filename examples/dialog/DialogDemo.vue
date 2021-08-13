@@ -95,7 +95,7 @@
 </template>
 
 <script>
-import LvDialog from 'lightvue/dialog/Dialog.vue';
+import LvDialog from 'lightvue/dialog';
 
 export default {
   data() {

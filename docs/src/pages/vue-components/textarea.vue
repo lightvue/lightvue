@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import TextareaBestDemo from 'lightvue/example/textarea/TextareaBestDemo';
+import TextareaBestDemo from 'lightvueDocs/example/textarea/TextareaBestDemo';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import TextareaAPI from 'lightvue/textarea/TextareaAPI';
+import TextareaAPI from 'lightvueDocs/example/textarea/TextareaAPI';
 
 export default {
   components: {

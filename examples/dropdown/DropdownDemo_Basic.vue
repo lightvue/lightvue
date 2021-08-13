@@ -7,7 +7,7 @@
     <lv-dropdown v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" disabled clearable />
 
     <h5>With editable input field</h5>
-    <lv-dropdown v-model="selectedCity2" :options="cities" optionLabel="name" :editable="true" />
+    <lv-dropdown v-model="selectedCity2" :options="cities" optionLabel="name" placeholder="Select a City" label="Your City?" editable clearable />
 
     <h5>Advanced dropdown with Templating, Filtering and Clear Button</h5>
     <lv-dropdown v-model="selectedCountry" :options="countries" optionLabel="name" :filter="true" placeholder="Select a Country" :clearable="true" optionDisabled="disabled">
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import LvDropdown from 'lightvue/dropdown/Dropdown.vue';
+import LvDropdown from 'lightvue/dropdown';
 export default {
   data() {
     return {

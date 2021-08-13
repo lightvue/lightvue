@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Tooltip from 'lightvue/tooltip/Tooltip';
+import Tooltip from 'lightvue/tooltip';
 export default {
   directives: {
     tooltip: Tooltip,
@@ -54,7 +54,6 @@ export default {
     margin-left: 0px;
     width: 100%;
     min-width: 0;
-
   }
 }
 </style>

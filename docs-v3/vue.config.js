@@ -9,7 +9,7 @@ module.exports = {
         'lightvue/tooltip': path.join(__dirname, '/../core/directives/tooltip'),
         'lightvue/ripple': path.join(__dirname, '/../core/directives/ripple'),
         'lightvue/utils': path.join(__dirname, '/../core/utils'),
-        'lightvue/example': path.join(__dirname, '/../examples'),
+        'lightvueDocs/example': path.join(__dirname, '/../examples'),
         'lightvue/mixins': path.join(__dirname, '/../core/mixins'),
         lightvue: path.join(__dirname, '/../core/components'),
         splitpanes: path.join(__dirname, '/src/components/splitpanes'),

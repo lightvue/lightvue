@@ -24,6 +24,18 @@ const routes = [
         component: () => import('@/pages/vue-components/checkbox.vue'),
       },
       {
+        path: 'checkbox-group',
+        component: () => import('@/pages/vue-components/checkbox-group.vue'),
+      },
+      {
+        path: 'radio',
+        component: () => import('@/pages/vue-components/radio.vue'),
+      },
+      {
+        path: 'radio-group',
+        component: () => import('@/pages/vue-components/radio-group.vue'),
+      },
+      {
         path: 'card',
         component: () => import('@/pages/vue-components/card.vue'),
       },
@@ -118,18 +130,8 @@ const routes = [
         component: () => import('@/pages/getting-started/installation.vue'),
       },
       {
-        path: 'customization',
-        component: () => import('@/pages/getting-started/customization.vue'),
-      },
-    ],
-  },
-  {
-    path: '/icons',
-    component: () => import('../components/Layout/DocsLayout.vue'),
-    children: [
-      {
         path: 'light-icons',
-        component: () => import('@/pages/icons/light-icons.vue'),
+        component: () => import('@/pages/getting-started/light-icons.vue'),
       },
     ],
   },
