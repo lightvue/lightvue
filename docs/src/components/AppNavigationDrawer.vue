@@ -1,30 +1,12 @@
 <template>
-  <div
-    class="light-scrollbar"
-    :class="`sidebar --theme-${theme} ${showDrawer ? 'show-drawer' : ''}`"
-    @click="$emit('toggle-drawer')"
-  >
+  <div class="light-scrollbar" :class="`sidebar --theme-${theme} ${showDrawer ? 'show-drawer' : ''}`" @click="$emit('toggle-drawer')">
     <div class="nav-list">
-      <div
-        class="sidebar__logo"
-        @click="$router.push('/')"
-      >
-        <img
-          src="/logo_v2.svg"
-          class="header-logo"
-        />
+      <div class="sidebar__logo" @click="$router.push('/')">
+        <img src="/logo_v2.svg" class="header-logo" />
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
-      <div
-        class="nav-list__category-wrap"
-        v-for="category in $options.categories"
-        :key="category.category_name"
-        :class="{ '--active': activeCategory === category.category_name }"
-      >
-        <div
-          class="nav-list__category"
-          @click.stop="setActiveCategory(category.category_name)"
-        >
+      <div class="nav-list__category-wrap" v-for="category in $options.categories" :key="category.category_name" :class="{ '--active': activeCategory === category.category_name }">
+        <div class="nav-list__category" @click.stop="setActiveCategory(category.category_name)">
           <div class="nav-list__category-label">
             <i :class="category.category_icon"></i>
             {{ category.category_name }}
@@ -32,16 +14,8 @@
           <i :class="activeCategory === category.category_name ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
         </div>
         <!-- <div :class="['nav-list__category-items', (activeCategory === category.category_name) && 'nav-list__category-items--active']" v-show="activeCategory === category.category_name" > -->
-        <div
-          class="nav-list__category-items"
-          :style="{ height: (activeCategory === category.category_name) * (category.pages.length * 32 + 10) + 'px', opacity: (activeCategory === category.category_name) * 1 }"
-        >
-          <nuxt-link
-            :to="page.page_path"
-            class="nav-list__category-item --link"
-            v-for="page in category.pages"
-            :key="page.page_name"
-          >
+        <div class="nav-list__category-items" :style="{ height: (activeCategory === category.category_name) * (category.pages.length * 32 + 10) + 'px', opacity: (activeCategory === category.category_name) * 1 }">
+          <nuxt-link :to="page.page_path" class="nav-list__category-item --link" v-for="page in category.pages" :key="page.page_name">
             <div class="nav-list__item-line"></div>
             <div class="nav-list__item-bullet"></div>
             <div class="nac-list__item-label">

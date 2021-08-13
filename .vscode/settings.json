@@ -17,8 +17,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // "prettier.proseWrap": "never",
-  // "prettier.printWidth": 800
+  "prettier.proseWrap": "never",
+  "prettier.printWidth": 800
 }

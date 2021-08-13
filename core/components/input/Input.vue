@@ -1,73 +1,32 @@
 <template>
   <div :class="['lv-input__group', { '--with-floating-label': floatingLabel }, { '--not-empty': filled }, { '--with-bottom-bar': floatingLabel || bottomBar }]">
     <label :for="name">
-      <div
-        class="lv-input__label"
-        v-if="label"
-        :for="name"
-      >{{ label }}</div>
+      <div class="lv-input__label" v-if="label" :for="name">{{ label }}</div>
     </label>
-    <div
-      :class="['lv-input__field', { '--rounded': rounded }]"
-      :style="`--placeholder-color: ${placeholderColor}`"
-    >
-      <div
-        class="lv-input__prepend"
-        v-if="$slots['prepend'] || iconLeft"
-      >
+    <div :class="['lv-input__field', { '--rounded': rounded }]" :style="`--placeholder-color: ${placeholderColor}`">
+      <div class="lv-input__prepend" v-if="$slots['prepend'] || iconLeft">
         <slot name="prepend">
-          <div
-            class="lv-input__icon"
-            v-if="iconLeft"
-          >
+          <div class="lv-input__icon" v-if="iconLeft">
             <i :class="iconLeft" />
           </div>
         </slot>
       </div>
-      <input
-        class="lv-input__element"
-        :value="modelValue"
-        v-bind="$attrs"
-        v-on="listeners"
-        @input="this.updateValue"
-        :name="name"
-        :id="name"
-        v-if="editable"
-      />
-      <div
-        v-else
-        class="lv-input__default"
-      >
+      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @input="this.updateValue" :name="name" :id="name" v-if="editable" />
+      <div v-else class="lv-input__default">
         <slot>{{ modelValue || $attrs.placeholder }}</slot>
         <div class="lv-hidden-accessible">
-          <input
-            type="text"
-            readonly
-            :value="modelValue"
-            v-bind="$attrs"
-            v-on="listeners"
-            :name="name"
-          />
+          <input type="text" readonly :value="modelValue" v-bind="$attrs" v-on="listeners" :name="name" />
         </div>
       </div>
-      <div
-        class="lv-input__append"
-        v-if="$slots['append'] || iconRight"
-      >
+      <div class="lv-input__append" v-if="$slots['append'] || iconRight">
         <slot name="append">
-          <div
-            class="lv-input__icon"
-            v-if="iconRight"
-          >
+          <div class="lv-input__icon" v-if="iconRight">
             <i :class="iconRight" />
           </div>
         </slot>
       </div>
     </div>
-    <div
-      class="lv-input__help"
-      v-if="helpText"
-    >
+    <div class="lv-input__help" v-if="helpText">
       {{ helpText }}
     </div>
   </div>
