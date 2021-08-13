@@ -19,6 +19,12 @@ const DropdownAPI = {
       description: 'Used to define the value of the options.',
     },
     {
+      name: 'closeOnResize',
+      type: 'Boolean',
+      default: '',
+      description: 'Used to close the dropdown on window resize.',
+    },
+    {
       name: 'scrollHeight',
       type: 'String',
       default: '200px',
