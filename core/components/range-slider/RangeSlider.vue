@@ -65,11 +65,7 @@ export default {
     let defaultValue = Number(this.value);
 
     if (this.value == null || isNaN(defaultValue)) {
-      if (min > max) {
-        defaultValue = min;
-      } else {
-        defaultValue = (min + max) / 2;
-      }
+      defaultValue = min > max ? min : (min + max) / 2;
     }
 
     this.actualValue = this.round(defaultValue);
