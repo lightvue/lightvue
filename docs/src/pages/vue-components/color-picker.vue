@@ -1,6 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
     <docs-card-vue title="Demo" file="colorpicker/ColorpickerDemo" />
+    <docs-card-vue title="Color palette" file="colorpicker/ColorPaletteDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
