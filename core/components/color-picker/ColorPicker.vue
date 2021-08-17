@@ -10,10 +10,10 @@
     </LvInput>
 
     <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
-      <ColorpickerCore v-model="localValue" style="width: 195px; transform: scale(1.05)" />
+      <ColorpickerCore v-model="localValue" style="width: 200px; transform: scale(1.05)" />
 
       <div class="palette-container" v-if="palette">
-        <div class="lv-colorpicker__colorblock-wrap" style="transform: scale(0.48)" v-for="color in colors" :key="color" @click="handleClick(color)">
+        <div class="lv-colorpicker__colorblock-wrap palette-color" v-for="color in colors" :key="color" @click="handleClick(color)">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: color }"></div>
           <checkboard grey="#607c8a" />
         </div>
@@ -103,13 +103,21 @@ export default {
   width: 100%;
   z-index: 1;
 }
-
 .palette-container {
-  display: grid;
-  grid-gap: 0.7rem;
   border-top: 1px solid silver;
   margin-top: 1rem;
   padding-top: 1rem;
-  grid-template-columns: repeat(8, 1rem);
+  display: flex;
+  width: 200px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.palette-color {
+  transform: scale(0.55);
+  flex-basis: 12.4%;
+}
+.palette-color:hover {
+  transform: scale(0.6);
+  transition: 0.3s ease-in-out;
 }
 </style>

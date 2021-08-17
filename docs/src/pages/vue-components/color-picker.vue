@@ -26,7 +26,7 @@ export default {
     DocsAllApi,
   },
   title: 'Colorpicker',
-  description: `Colorpicker`,
+  description: `LvColorpicker can be used when a user needs to pick a color. Additionally, a customized color palette can also be passed as an array.`,
   packageName: 'colorpicker',
   componentName: 'LvColorpicker',
   apiData: ColorpickerAPI,
