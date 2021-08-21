@@ -19,8 +19,8 @@
         </div>
       </div>
       <div class="lv-input__append" v-if="$slots['append'] || iconRight || clearable">
-        <div class="lv-input__icon" v-if="clearable && filled" style="cursor: pointer">
-          <i class="light-icon-x" @click="clear" />
+        <div class="lv-input__icon" v-if="clearable && filled" style="cursor: pointer" @click="clear">
+          <i class="light-icon-x" />
         </div>
         <slot name="append">
           <div class="lv-input__icon" v-if="iconRight">
@@ -114,9 +114,9 @@ export default {
   },
   methods: {
     updateValue(event, newValue) {
-      this.$emit('input-native', event && event);
+      this.$emit('input-native', event);
       this.$emit('input', (event && event.target.value) || newValue); // Only for Vue 2
-      this.$emit('update:modelValue', (event && event?.target.value) || newValue); // Only for Vue 3
+      this.$emit('update:modelValue', (event && event.target.value) || newValue); // Only for Vue 3
     },
     clear() {
       this.updateValue(null, '');
