@@ -1,6 +1,11 @@
 <template>
   <div class="lv-colorpicker-wrapper">
-    <LvInput :label="label" ref="colorPickerInput" v-model="localValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
+    <div class="lv-colorpicker__colorblock-wrap" v-if="block" @click="toggleColorBlockOverlay">
+      <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: localValue }"></div>
+      <checkboard grey="#607c8a" />
+    </div>
+
+    <LvInput v-else :label="label" ref="colorPickerInput" v-model="localValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template #append>
         <div class="lv-colorpicker__colorblock-wrap" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: localValue }"></div>
@@ -9,7 +14,7 @@
       </template>
     </LvInput>
 
-    <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
+    <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" :alignRight="!block">
       <ColorpickerCore v-model="localValue" style="width: 200px; transform: scale(1.05)" />
 
       <div class="palette-container" v-if="palette">
@@ -36,6 +41,10 @@ export default {
       default: '',
     },
     palette: {
+      type: Boolean,
+      default: false,
+    },
+    block: {
       type: Boolean,
       default: false,
     },
@@ -71,6 +80,9 @@ export default {
   methods: {
     toggleColorpickerOverlay(event) {
       this.$refs.ColorpickerOverlay.toggle(null, this.$refs.colorPickerInput.$el);
+    },
+    toggleColorBlockOverlay(event) {
+      this.$refs.ColorpickerOverlay.toggle(event);
     },
     handleClick(color) {
       this.localValue = color;
@@ -113,6 +125,7 @@ export default {
   justify-content: center;
 }
 .palette-color {
+  height: 25px;
   transform: scale(0.55);
   flex-basis: 12.4%;
 }

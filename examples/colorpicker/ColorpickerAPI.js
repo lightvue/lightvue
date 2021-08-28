@@ -18,6 +18,12 @@ const ColorpickerAPI = {
       default: "['#607C8A', '#008080', '#00FF7F', ... ,]",
       description: 'Array of 16 hex codes of colors for the color palette',
     },
+    {
+      name: 'block',
+      type: 'Boolean',
+      default: 'false',
+      description: 'Independent color picker block (without input)',
+    },
     //     {
     //         name: 'inputId',
     //         type: 'String',
