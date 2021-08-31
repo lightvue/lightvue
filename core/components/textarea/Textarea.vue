@@ -1,7 +1,7 @@
 <template>
   <div>
-    <lv-input type="text" :editable="false" ref="mainInput" v-bind="$attrs" :class="{ '--not-empty': filled }">
-      <textarea :maxlength="maxLength" class="lv-textarea" v-bind="$attrs" @input="updateValue" :value="modelValue" ref="textarea" :class="{ '--resize-vertical': resize === 'vertical' }" />
+    <lv-input type="text" :editable="false" ref="mainInput" v-bind="$attrs" :class="{ '--not-empty': filled }" :value="modelValue" @clear="handleClear()">
+      <textarea :maxlength="maxLength" class="lv-textarea" v-bind="$attrs" @input="updateModel" :value="modelValue" ref="textarea" :class="{ '--resize-vertical': resize === 'vertical' }" />
     </lv-input>
     <div class="lv-textarea__limits" v-if="showLimit && maxLength">{{ modelValue ? modelValue.length : 0 }} / {{ maxLength }}</div>
   </div>
@@ -75,15 +75,22 @@ export default {
       this.$refs.textarea.style.height = this.$refs.textarea.scrollHeight + (this.$refs.textarea.clientHeight - this.$refs.textarea.offsetHeight) + 'px';
     },
 
-    updateValue(event) {
+    updateModel(event) {
+      this.$emit('input-native', event);
+      this.updateValue(event.target.value);
+    },
+    updateValue(newValue) {
       if (this.autoResize) {
         // this.resizeTextarea();
         this.resizeTextareaV2(); // New Function for auto Resize
       }
-      this.localValue = event.target.value;
-      this.$emit('input-native', event);
-      this.$emit('input', event.target.value); // Only for Vue 2
-      this.$emit('update:modelValue', event.target.value); // Only for Vue 3
+      this.localValue = newValue;
+      this.$emit('input', newValue); // Only for Vue 2
+      this.$emit('update:modelValue', newValue); // Only for Vue 3
+    },
+    handleClear() {
+      this.updateValue('');
+      this.$emit('clear');
     },
   },
   computed: {
@@ -91,7 +98,7 @@ export default {
       return {
         ...this.$listeners,
         input: event => {
-          this.updateValue(event);
+          this.updateModel(event);
         },
       };
     },
