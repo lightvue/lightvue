@@ -4,6 +4,11 @@ export default `<style>
   font-size: 1.1rem;
 }
 
+.lv-text-editor__content p{
+  line-height: 1.4;
+  margin: 0px;
+}
+
 .lv-text-editor__content code {
   padding: 0.2em;
   margin: 0.2em;

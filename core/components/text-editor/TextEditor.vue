@@ -78,7 +78,7 @@ export default {
   },
   data() {
     return {
-      content: `${style}`,
+      content: `<p>\u200B</p>${style}`,
       characterCount: 0,
       tools: [
         {
@@ -227,6 +227,7 @@ export default {
       this.characterCount = this.$refs.content.innerText.replaceAll('\n', '').length || 0;
     },
     action(tool) {
+      if (!tool) return;
       let { selection, container } = getContainer();
       if (!selection) return;
       if (!container) return;
@@ -247,6 +248,31 @@ export default {
       tool.type === 'align' && this.toggleAlign(container, tool);
       tool.type === 'link' && this.insertLink(selection, container);
       tool.type === 'image' && this.insertImage(container);
+
+      const bold = container.closest('span[style*="font-weight: bold"]');
+      const italic = container.closest('span[style*="font-style: italic"]');
+      const lineThrough = container.closest('span[style*="text-decoration-line: line-through"]');
+      const underline = container.closest('span[style*="text-decoration-line: underline"]');
+
+      const initial = container.closest('span[style*="font-weight: initial"]');
+      const initialI = container.closest('span[style*="font-style: initial"]');
+      const lineThroughI = container.closest('span[style*="text-decoration-line: initial"]');
+
+      this.tools[this.tools.findIndex(tool => tool.name == 'Bold')].active = container.style.fontWeight == 'bold' || !!(bold && !(initial && bold.contains(initial)));
+
+      this.tools[this.tools.findIndex(tool => tool.name == 'Italic')].active = container.style.fontStyle == 'italic' || !!(italic && !(initialI && italic.contains(initialI)));
+
+      this.tools[this.tools.findIndex(tool => tool.name == 'Underline')].active = container.style.textDecorationLine == 'underline' || !!(underline && !(lineThroughI && underline.contains(linehroughI)));
+
+      this.tools[this.tools.findIndex(tool => tool.name == 'Strike')].active = container.style.textDecorationLine == 'line-through' || !!(lineThrough && !(lineThroughI && lineThrough.contains(lineThroughI)));
+
+      this.tools[this.tools.findIndex(tool => tool.value == 'right')].active = !!container.closest('.right');
+      this.tools[this.tools.findIndex(tool => tool.value == 'center')].active = !!container.closest('.center');
+      this.tools[this.tools.findIndex(tool => tool.value == 'justify')].active = container.closest('.justify');
+      this.tools[this.tools.findIndex(tool => tool.value == 'left')].active = !!container.closest('.left');
+      this.tools[this.tools.findIndex(tool => tool.tag == 'ul')].active = !!container.closest('ul');
+      this.tools[this.tools.findIndex(tool => tool.tag == 'ol')].active = !!container.closest('ol');
+      this.tools[this.tools.findIndex(tool => tool.name == 'Code')].active = !!container.closest('code');
     },
     setCurrentActivity(event) {
       // TODO active tools
@@ -257,13 +283,24 @@ export default {
 
       const paths = path.filter((_, i) => i < index);
 
-      let bold = container.closest('span[style*="font-weight: bold"]');
-      let initial = container.closest('span[style*="font-weight: initial"]');
+      const bold = container.closest('span[style*="font-weight: bold"]');
+      const italic = container.closest('span[style*="font-style: italic"]');
+      const lineThrough = container.closest('span[style*="text-decoration-line: line-through"]');
+      const underline = container.closest('span[style*="text-decoration-line: underline"]');
+      const initial = container.closest('span[style*="font-weight: initial"]');
+      const initialI = container.closest('span[style*="font-style: initial"]');
 
       this.tools[this.tools.findIndex(tool => tool.name == 'Bold')].active = container.style.fontWeight == 'bold' || !!(bold && !(initial && bold.contains(initial)));
 
+      this.tools[this.tools.findIndex(tool => tool.name == 'Italic')].active = container.style.fontStyle == 'italic' || !!(italic && !(initialI && italic.contains(initialI)));
+
+      this.tools[this.tools.findIndex(tool => tool.name == 'Underline')].active = container.style.textDecorationLine == 'underline' || !!(underline && !(initial && underline.contains(initial)));
+
+      this.tools[this.tools.findIndex(tool => tool.name == 'Strike')].active = container.style.textDecorationLine == 'line-through' || !!(lineThrough && !(initial && lineThrough.contains(initial)));
+
       this.tools[this.tools.findIndex(tool => tool.value == 'right')].active = container.closest('.right');
       this.tools[this.tools.findIndex(tool => tool.value == 'center')].active = container.closest('.center');
+      this.tools[this.tools.findIndex(tool => tool.value == 'justify')].active = container.closest('.justify');
       this.tools[this.tools.findIndex(tool => tool.value == 'left')].active = container.closest('.left');
       this.tools[this.tools.findIndex(tool => tool.tag == 'ul')].active = container.closest('ul');
       this.tools[this.tools.findIndex(tool => tool.tag == 'ol')].active = container.closest('ol');
@@ -284,7 +321,7 @@ export default {
     },
 
     toggleAlign(container, tool) {
-      const enclosingDivContainer = container.closest('.lv-text-editor ol') || container.closest('.lv-text-editor ul') || container.closest('.lv-text-editor div');
+      const enclosingDivContainer = container.closest('.lv-text-editor ol') || container.closest('.lv-text-editor ul') || container.closest('.lv-text-editor p');
 
       // const enclosingEndContainer = endContainer.closest('div');
 
@@ -300,6 +337,7 @@ export default {
 
       this.editorTools[this.editorTools.findIndex(tool => tool.value == 'right')].active = container.closest('.right');
       this.editorTools[this.editorTools.findIndex(tool => tool.value == 'center')].active = container.closest('.center');
+      this.editorTools[this.editorTools.findIndex(tool => tool.value == 'justify')].active = container.closest('.justify');
       this.editorTools[this.editorTools.findIndex(tool => tool.value == 'left')].active = container.closest('.left');
     },
 
@@ -394,23 +432,32 @@ export default {
     },
     toggleHeading(selection, container, tool) {
       let range = selection.getRangeAt(0);
+      let blockParent = container.closest('.lv-text-editor p');
       if (selection.toString()) {
         let elem = document.createElement(tool.tag);
         elem.innerHTML = selection.toString();
-        range.deleteContents();
-        // container.classList.contains('lv-text-editor__content') ? range.insertNode(elem) : container.parentNode.insertBefore(elem, container.nextSibling);
-        container.classList.contains('lv-text-editor__content') ? range.insertNode(elem) : this.$refs.content.appendChild(elem);
+        if(blockParent.innerText == selection.toString()){
+          // replace
+          blockParent.replaceWith(elem)
+          return
+        }
+        blockParent && blockParent.parentNode.insertBefore(elem, blockParent.nextSibling);
+
       } else {
         if (container.localName == tool.tag) {
-          let elem = document.createElement('div');
+          let elem = document.createElement('p');
           elem.innerHTML = container.innerHTML;
           container.replaceWith(elem);
         } else {
           let elem = document.createElement(tool.tag);
           elem.innerHTML = '\u200B';
-          // container.classList.contains('lv-text-editor__content') ? range.insertNode(elem) : container.parentNode.insertBefore(elem, container.nextSibling);
+           if(blockParent.innerText == ''){
+          // replace
+          blockParent.replaceWith(elem)
+          return
+        }
+          blockParent && blockParent.parentNode.insertBefore(elem, blockParent.nextSibling);
           range.selectNodeContents(elem);
-          container.classList.contains('lv-text-editor__content') ? range.insertNode(elem) : this.$refs.content.appendChild(elem);
         }
       }
     },
