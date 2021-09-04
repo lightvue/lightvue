@@ -59,6 +59,10 @@ export default {
   },
   methods: {
     updateValue(eventValue) {
+      if (eventValue === '') {
+        // Handling clear functionality
+        eventValue = this.min; // TODO: Ideally should be blank.
+      }
       let floatValue = parseFloat(eventValue);
       if (floatValue >= this.min && (this.max ? floatValue <= this.max : true)) {
         this.localValue = floatValue;
