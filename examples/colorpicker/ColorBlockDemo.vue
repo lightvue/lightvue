@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h4>Chosen color: {{ hexCode }}</h4>
-    <LvColorpicker v-model="hexCode" style="max-width: 600px" block />
+    <h4>Chosen color: {{ hexCode }}: <LvColorpicker v-model="hexCode" style="max-width: 600px" block /></h4>
   </div>
 </template>
 

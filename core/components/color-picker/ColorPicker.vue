@@ -5,7 +5,7 @@
       <checkboard grey="#607c8a" />
     </div>
 
-    <LvInput v-else :label="label" ref="colorPickerInput" v-model="localValue" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
+    <LvInput v-else :label="label" ref="colorPickerInput" v-model="localValue" v-bind="$attrs" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template #append>
         <div class="lv-colorpicker__colorblock-wrap" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: localValue }"></div>
@@ -17,7 +17,7 @@
     <LvOverlayPanel style="width: max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" :alignRight="!block">
       <ColorpickerCore v-model="localValue" style="width: 200px; transform: scale(1.05)" />
 
-      <div class="palette-container" v-if="palette">
+      <div class="palette-container" v-if="!hidePalette">
         <div class="lv-colorpicker__colorblock-wrap palette-color" v-for="color in colors" :key="color" @click="handleClick(color)">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: color }"></div>
           <checkboard grey="#607c8a" />
@@ -40,7 +40,7 @@ export default {
       type: String,
       default: '',
     },
-    palette: {
+    hidePalette: {
       type: Boolean,
       default: false,
     },
@@ -116,7 +116,7 @@ export default {
   z-index: 1;
 }
 .palette-container {
-  border-top: 1px solid silver;
+  border-top: 1px solid #edf2f6;
   margin-top: 1rem;
   padding-top: 1rem;
   display: flex;
