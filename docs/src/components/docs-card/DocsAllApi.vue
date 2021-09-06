@@ -74,6 +74,14 @@ export default {
   }
   &.--default {
     width: 120px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    padding-bottom: inherit;
+  }
+  &.--full-view {
+    display: block;
   }
   &.--params {
     width: 240px;
