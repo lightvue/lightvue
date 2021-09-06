@@ -59,7 +59,7 @@ export default {
       }
     },
   },
-  created() {
+  mounted() {
     this.localValue = this.modelValue;
   },
   components: {
