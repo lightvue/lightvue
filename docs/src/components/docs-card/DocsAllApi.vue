@@ -81,7 +81,7 @@ export default {
     padding-bottom: inherit;
   }
   &.--full-view {
-    display: block;
+    display: table-cell;
   }
   &.--params {
     width: 240px;
