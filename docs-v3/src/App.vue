@@ -2,6 +2,7 @@
   <div>
     <router-view />
     <LvToast position="top" />
+    <LvToast position="center" />
     <LvToast position="bottom" />
     <LvNotification />
     <LvNotification position="top-left" />

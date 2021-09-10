@@ -5,7 +5,7 @@ import LvCard from 'lightvue/card';
 import VueGtag from 'vue-gtag';
 import LvToast from 'lightvue/toast';
 // import NotificationService from 'lightvue/notification/NotificationService'; // REFACTORING
-// import LvNotification from 'lightvue/notification'; // REFACTORING
+import LvNotification from 'lightvue/notification'; // REFACTORING
 
 Vue.use(VueGtag, {
   config: { id: 'G-NSCV9YG71N' },
@@ -13,7 +13,7 @@ Vue.use(VueGtag, {
 });
 
 Vue.use(LvToast);
-// Vue.use(NotificationService); // REFACTORING
+Vue.use(LvNotification); // REFACTORING
 // Vue.component('LvToast', LvToast); // REFACTORING
 // Vue.component('LvNotification', LvNotification); // REFACTORING
 
