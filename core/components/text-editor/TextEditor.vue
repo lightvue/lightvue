@@ -3,7 +3,7 @@
     <div class="lv-text-editor__toolbar" :style="{ backgroundColor: theme }">
       <LvButton v-for="(tool, i) in editorTools" :key="i" :icon="tool.icon" :style="{ backgroundColor: theme, color }" size="xl" :class="['lv-text-editor__toolbar__btn', { 'lv-text-editor__toolbar__btn--active': tool.active }]" v-tooltip.top="`${tool.tooltipText}`" @mousedown.prevent.stop="action(tool)" />
     </div>
-    <div class="lv-text-editor__content light-scrollbar" ref="content" contenteditable @keydown="handleKeyControls" v-html="content" @input="handleInput"></div>
+    <div class="lv-text-editor__content light-scrollbar" ref="content" contenteditable @keydown="handleKeyControls" v-html="content" @input="handleInput" @click.prevent="toggleButtons"></div>
     <div class="lv-text-editor__footer">Characters: {{ characterCount }}</div>
 
     <LvOverlayPanel ref="linkOP" appendTo="body" style="max-width: 300px" :dismissable="false">
@@ -29,7 +29,7 @@
 <script>
 import Tooltip from 'lightvue/tooltip';
 import LvOverlayPanel from 'lightvue/overlay-panel';
-import { format, heading, list, addLink, align, addImage, getContainer, code } from './helper';
+import { format, heading, list, align, getContainer, code } from './helper';
 export default {
   components: {
     LvOverlayPanel,
@@ -214,6 +214,7 @@ export default {
     action(tool, code = null) {
       this.checkFocus();
       if (code) tool = this.editorTools.find(e => e.code == code);
+      tool.active = !tool.active;
       if (tool && tool.name == 'Link') {
         const { selection, container } = getContainer();
         const closestLink = container.closest('.lv-text-editor__content a');
@@ -293,7 +294,25 @@ export default {
         range.collapse(false);
       }
     },
-    toggleButtons(e) {},
+    toggleButtons(e) {
+      const { container } = getContainer();
+
+      ['bold', 'italic', 'underline', 'line-through'].forEach(option => {
+        const tool = this.editorTools.find(e => e.value == option);
+        if (tool) {
+          const main = container.closest(`span[style*="${tool.property}: ${tool.value}"]`);
+          const initial = container.closest(`span[style*="${tool.property}: initial"]`);
+          tool.active = !!(main && !(initial && main.contains(initial)));
+        }
+      });
+
+      ['h1', 'h2', 'code', 'ul', 'ol', 'a'].forEach(option => {
+        const tool = this.editorTools.find(e => e.tag == option);
+        if (tool) {
+          tool.active = !!container.closest(`.lv-text-editor__content ${option}`);
+        }
+      });
+    },
     save() {
       if (this.linkURL == '') {
         if (this.linkContainer && this.linkContainer.hasAttribute('href')) {
