@@ -137,4 +137,179 @@ function flattenChildren(action, span) {
   Promise.all(flattenChildrenChildren);
 }
 
-export { updateSelection, replaceSelection, getContainer };
+const format = function (tool = null, code = null) {
+  const optionCodes = {
+    66: {
+      property: 'font-weight',
+      value: 'bold',
+    },
+    73: {
+      property: 'font-style',
+      value: 'italic',
+    },
+    83: {
+      property: 'text-decoration-line',
+      value: 'line-through',
+    },
+    85: {
+      property: 'text-decoration-line',
+      value: 'underline',
+    },
+  };
+
+  let option = tool;
+  if (code) option = optionCodes[code];
+
+  const { selection, container } = getContainer();
+  if (selection.toString()) {
+    const sameSelection = container && container.innerText === selection.toString();
+
+    if (sameSelection && container.style.type !== undefined) {
+      updateSelection(container, {
+        style: option.property,
+        value: option.value,
+        initial: element => element && element.style[option.property] === option.value,
+      });
+      return;
+    }
+
+    replaceSelection(
+      container,
+      {
+        style: option.property,
+        value: option.value,
+        initial: element => element && element.style[option.property] === option.value,
+      },
+      selection
+    );
+  } else {
+    let range = selection.getRangeAt(0);
+    range.deleteContents();
+    let elem = document.createElement('span');
+    elem.innerHTML = '\u200B';
+
+    elem.style[option.property] = container.style[option.property] === option.value ? 'initial' : option.value;
+
+    range.insertNode(elem);
+    range.selectNodeContents(elem);
+  }
+};
+
+const heading = function (tool = null, code = null) {
+  const { selection, container } = getContainer();
+  let range = selection.getRangeAt(0);
+  let blockParent = container.closest('.lv-text-editor p');
+  if (selection.toString()) {
+    let elem = document.createElement(tool.tag);
+    elem.innerHTML = selection.toString();
+    if (blockParent && blockParent.innerText == selection.toString()) {
+      blockParent.replaceWith(elem);
+      return;
+    }
+    blockParent && blockParent.parentNode.insertBefore(elem, blockParent.nextSibling);
+  } else {
+    if (container.localName == tool.tag) {
+      let elem = document.createElement('p');
+      elem.innerHTML = container.innerHTML;
+      container.replaceWith(elem);
+    } else {
+      let elem = document.createElement(tool.tag);
+      elem.innerHTML = '\u200B';
+      blockParent && blockParent.localName == 'p' && blockParent.innerHTML.toString() === '<br>' ? blockParent.parentNode.insertBefore(elem, blockParent) : blockParent.parentNode.insertBefore(elem, blockParent.nextSibling);
+      range.selectNodeContents(elem);
+    }
+  }
+};
+
+const code = function (tool = null, code = null) {
+  // this.tools[this.tools.findIndex(t => t.name == tool.name)].active = !this.tools[this.tools.findIndex(t => t.name == tool.name)].active;
+  const { selection, container } = getContainer();
+
+  let range = selection.getRangeAt(0);
+  let elem;
+  if (container.localName !== tool.tag) {
+    elem = document.createElement(tool.tag);
+    elem.innerHTML = selection.toString() || '\u200B';
+    range.deleteContents();
+    range.insertNode(elem);
+    range.selectNodeContents(elem);
+  } else {
+    elem = document.createElement('span');
+    elem.innerHTML = '\u200B';
+    container.parentNode.appendChild(elem);
+    range.selectNodeContents(elem);
+  }
+};
+
+const list = function (tool = null, code = null) {
+  const { selection, container, endContainer } = getContainer();
+  const item = container.closest('.lv-text-editor__content ul') || container.closest('.lv-text-editor__content ol');
+
+  if (item) {
+    if (tool.tag != item.localName) {
+      const newList = document.createElement(tool.tag);
+      for (let i of item.children) {
+        const item = document.createElement(i.localName);
+        item.innerHTML = i.innerHTML;
+        newList.appendChild(item);
+      }
+      item.parentNode.insertBefore(newList, item);
+      item.parentNode.removeChild(item);
+    } else {
+      // remove list
+      const newItem = document.createElement('div');
+      for (let i of item.children) {
+        const item = document.createElement('p');
+        item.innerHTML = i.innerHTML;
+        newItem.appendChild(item);
+      }
+      item.parentNode.insertBefore(newItem, item);
+      item.parentNode.removeChild(item);
+    }
+  } else {
+    // new list
+    let range = selection.getRangeAt(0);
+    const newList = document.createElement(tool.tag);
+    const li = document.createElement('li');
+    li.innerHTML = selection.toString() || '\u200B';
+    newList.appendChild(li);
+    // container.appendChild(newList);
+    container.localName == 'p' && container.innerHTML.toString() === '<br>' ? container.parentNode.insertBefore(newList, container) : container.parentNode.insertBefore(newList, container.nextSibling);
+
+    range.selectNodeContents(newList);
+  }
+};
+
+const align = function (tool, code = null) {
+  const codemap = {
+    76: 'left',
+    69: 'center',
+    74: 'justify',
+    82: 'right',
+  };
+  let className = tool && tool.value ? tool.value : codemap[code];
+
+  const { selection, container, endContainer } = getContainer();
+
+  const enclosingContainer = container.closest('.lv-text-editor li') || container.closest('.lv-text-editor li') || container.closest('.lv-text-editor p') || container.closest('.lv-text-editor h1') || container.closest('.lv-text-editor h2') || container.closest('.lv-text-editor__content div');
+
+  const enclosingEndContainer = endContainer.closest('.lv-text-editor li') || endContainer.closest('.lv-text-editor li') || endContainer.closest('.lv-text-editor p') || container.closest('.lv-text-editor h1') || container.closest('.lv-text-editor h2') || endContainer.closest('.lv-text-editor__content div');
+
+  let i = Array.prototype.indexOf.call(enclosingContainer.parentElement.children, enclosingContainer);
+  let j = Array.prototype.indexOf.call(enclosingEndContainer.parentElement.children, enclosingEndContainer);
+
+  if (j < i) [i, j] = [j, i];
+
+  for (let index = i; index <= j; index++) {
+    if (enclosingContainer.parentElement.children[index].classList.contains(className)) {
+      enclosingContainer.parentElement.children[index].classList.remove(className);
+    } else {
+      Object.values(codemap).forEach(item => {
+        enclosingContainer.parentElement.children[index].classList.remove(item);
+      });
+      enclosingContainer.parentElement.children[index].classList.toggle(className);
+    }
+  }
+};
+
+export { format, heading, list, align, getContainer, code };

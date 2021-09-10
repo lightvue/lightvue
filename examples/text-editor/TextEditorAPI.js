@@ -9,13 +9,13 @@ export default {
     {
       name: 'theme',
       type: 'String',
-      default: '#38b2ac',
+      default: '#ffffff',
       description: 'Allows users to specify the theme of the text editor',
     },
     {
       name: 'color',
       type: 'String',
-      default: '#ffffff',
+      default: '#333333',
       description: 'Allows users to specify the color of the icon stroke',
     },
   ],

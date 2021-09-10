@@ -8,7 +8,6 @@
         <Lv-colorpicker v-model="allOptions['color']" label="Icon Color" />
         <br />
         <label for="menu">Menu</label>
-        <!-- // TODO fix space between wrapped checkboxes -->
         <lv-checkbox-group id="menu" v-model="allOptions['menu']" name="menu" :options="menu" color="primary"></lv-checkbox-group>
       </template>
       <template #code>
@@ -37,9 +36,9 @@ export default {
       allOptions: {
         color: '#000000',
         theme: '#ffffff',
-        menu: ['Bold', 'Italic', 'Strike', 'Heading 1', 'Heading 2', 'Align', 'Link', 'List'],
+        menu: ['Bold', 'Italic', 'Strikethrough', 'Heading 1', 'Heading 2', 'Align', 'Link', 'List'],
       },
-      menu: ['Bold', 'Italic', 'Strike', 'Underline', 'Heading 1', 'Heading 2', 'Align', 'Link', 'Code', 'List', 'Image'],
+      menu: ['Bold', 'Italic', 'Strikethrough', 'Underline', 'Heading 1', 'Heading 2', 'Align', 'Link', 'Code', 'List', 'Image'],
       stringProps: ['color', 'theme'],
     };
   },
