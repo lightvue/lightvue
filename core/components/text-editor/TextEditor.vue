@@ -15,7 +15,7 @@
       <LvButton label="Cancel" @click.prevent="close" />
     </LvOverlayPanel>
 
-    <LvOverlayPanel ref="linkVisitOP" appendTo="body" style="max-width: 500px">
+    <LvOverlayPanel ref="linkVisitOP" appendTo="body" style="max-width: 500px" :style="{ boxShadow: '1px 1px 2px 2px silver' }">
       <i class="light-icon-link"></i>
       <a :href="linkURL" :dismissable="false" target="_blank">
         {{ linkURL }}
@@ -260,6 +260,7 @@ export default {
     close() {
       // if empty a tag (used for anchoring the overlay panel), remove the tag
       if (this.linkContainer && this.linkContainer.localName === 'a' && !this.linkContainer.hasAttribute('href')) this.linkContainer.parentNode.removeChild(this.linkContainer);
+      this.editorTools.find(e => e.name == 'Link').active = false;
       this.$refs.linkOP.hide();
     },
     handleInput() {
@@ -354,19 +355,16 @@ export default {
           tool.active = !!container.closest(`.lv-text-editor__content .${option}`);
         }
       });
+
+      const enclosingA = container.closest('.lv-text-editor__content a');
+      if (enclosingA) {
+        this.linkText = enclosingA.innerHTML;
+        this.linkContainer = enclosingA;
+        this.linkURL = enclosingA.href;
+        this.$refs.linkVisitOP.toggle(null, enclosingA);
+      }
     },
     save() {
-      if (this.linkURL == '') {
-        // if (this.linkContainer && this.linkContainer.hasAttribute('href')) {
-        //   this.linkContainer.removeAttribute('href');
-        //   const textNode = document.createTextNode(this.linkContainer.innerHTML);
-        //   this.linkContainer.replaceWith(textNode);
-        //   this.linkContainer = null;
-        // }
-        // this.range && this.range.deleteContents();
-        // this.$refs.linkOP.hide();
-        // return;
-      }
       const elem = this.linkContainer.localName === 'a' ? this.linkContainer : document.createElement('a');
 
       // set link text to url if link text is an empty string

@@ -175,7 +175,7 @@ const format = function (tool = null) {
 const heading = function (tool = null) {
   const { selection, container } = getContainer();
   let range = selection.getRangeAt(0);
-  let blockParent = container.closest('.lv-text-editor p');
+  let blockParent = container.closest('.lv-text-editor p') || container.closest('.lv-text-editor div');
   if (selection.toString()) {
     let elem = document.createElement(tool.tag);
     elem.innerHTML = selection.toString();
