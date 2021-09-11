@@ -28,7 +28,7 @@ export default {
     DocsAllApi,
   },
   title: 'Collapsible',
-  description: `collapsible component of lightVue allow the user to show notifications on the page with any required content.`,
+  description: `Collapsible component Easily toggle visibility of almost any content on your pages in a vertically and horizontally collapsing container`,
   packageName: 'collapsible',
   componentName: 'LvCollapsible',
   apiData: CollapsibleAPI,
