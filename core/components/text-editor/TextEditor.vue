@@ -203,6 +203,7 @@ export default {
   },
   computed: {
     editorTools() {
+      // find the tools matching prop or prop group
       return this.menu
         .map(item => item.toLowerCase())
         .filter(item => item in this.tools || item in this.tools.format || item in this.tools.heading)
@@ -212,39 +213,42 @@ export default {
   },
   methods: {
     action(tool, code = null) {
+      // check if focus is outside the editor
       this.checkFocus();
+
+      // if shortcut then find tool
       if (code) tool = this.editorTools.find(e => e.code == code);
-      tool.active = !tool.active;
-      if (tool && tool.name == 'Link') {
-        const { selection, container } = getContainer();
-        const closestLink = container.closest('.lv-text-editor__content a');
-        this.linkURL = this.linkText = '';
 
-        if (closestLink) {
-          this.linkContainer = closestLink;
-          this.linkURL = closestLink.href;
-          this.linkText = closestLink.innerText;
-        } else {
-          this.linkText = this.linkURL = '';
+      if (tool) {
+        if (tool.property == 'text-align') {
+          ['center', 'left', 'right', 'justify']
+            .filter(prop => prop !== tool.value)
+            .forEach(el => {
+              const _tool = this.editorTools.find(e => e.value == el);
+              if (_tool) {
+                _tool.active = false;
+              }
+            });
+        }
 
-          let range = selection.getRangeAt(0);
-          const a = document.createElement('a');
-          this.linkContainer = a;
-          this.linkText = selection.toString() || '';
-          this.range = range;
-          range.insertNode(a);
-          this.$refs.linkOP.toggle(null, a);
+        tool.active = !tool.active;
+
+        if (tool.name == 'Link') {
+          this.handleLink();
           return;
         }
-        this.$refs.linkOP.toggle(null, closestLink || container);
+
+        if (tool.name == 'Image') {
+          this.$refs.imageInput.click();
+          return;
+        }
+
+        tool.action(tool, code);
       }
-      if (tool && tool.name == 'Image') {
-        this.$refs.imageInput.click();
-      }
-      tool && tool.action(tool, code);
     },
     checkFocus() {
       const { selection, container } = getContainer();
+      // set focus to last element of the editor if selection is not within the editor
       if (!container.closest('.lv-text-editor__content')) {
         let range = document.createRange();
         range.selectNodeContents(this.$refs.content.lastElementChild);
@@ -254,6 +258,7 @@ export default {
       }
     },
     close() {
+      // if empty a tag (used for anchoring the overlay panel), remove the tag
       if (this.linkContainer && this.linkContainer.localName === 'a' && !this.linkContainer.hasAttribute('href')) this.linkContainer.parentNode.removeChild(this.linkContainer);
       this.$refs.linkOP.hide();
     },
@@ -265,8 +270,6 @@ export default {
     handleKeyControls(e) {
       this.toggleButtons(e);
       if (e.ctrlKey) {
-        let i = this.editorTools.findIndex(item => item.code == e.keyCode);
-        // i != -1 && this.editorTools[i].active == !this.editorTools[i].active;
         switch (e.keyCode) {
           case 66:
           case 73:
@@ -283,6 +286,34 @@ export default {
         }
       }
     },
+    handleLink() {
+      const { selection, container } = getContainer();
+
+      // find the closest link enclosing link within the text editor
+      const closestLink = container.closest('.lv-text-editor__content a');
+      this.linkURL = this.linkText = '';
+
+      if (closestLink) {
+        //  link already exists
+        this.linkContainer = closestLink;
+        this.linkURL = closestLink.href;
+        this.linkText = closestLink.innerText;
+      } else {
+        // create a new link
+        this.linkText = this.linkURL = '';
+        let range = selection.getRangeAt(0);
+        const a = document.createElement('a');
+        this.linkContainer = a;
+        this.linkText = selection.toString() || '';
+        this.range = range;
+        range.insertNode(a);
+        // anchor the overlay panel on newly created link
+        this.$refs.linkOP.toggle(null, a);
+        return;
+      }
+      // anchor the overlay panel on existing link or the enclosing container if null
+      this.$refs.linkOP.toggle(null, closestLink || container);
+    },
     onFileChange({ target }) {
       const file = target && target.files && target.files[0];
       if (file) {
@@ -294,9 +325,11 @@ export default {
         range.collapse(false);
       }
     },
+    // set active tools
     toggleButtons(e) {
       const { container } = getContainer();
 
+      // active toggling for formatting options
       ['bold', 'italic', 'underline', 'line-through'].forEach(option => {
         const tool = this.editorTools.find(e => e.value == option);
         if (tool) {
@@ -306,27 +339,37 @@ export default {
         }
       });
 
+      // active toggling for semantic tags
       ['h1', 'h2', 'code', 'ul', 'ol', 'a'].forEach(option => {
         const tool = this.editorTools.find(e => e.tag == option);
         if (tool) {
           tool.active = !!container.closest(`.lv-text-editor__content ${option}`);
         }
       });
+
+      // active toggling for alignment tools
+      ['center', 'left', 'right', 'justify'].forEach(option => {
+        const tool = this.editorTools.find(e => e.value == option);
+        if (tool) {
+          tool.active = !!container.closest(`.lv-text-editor__content .${option}`);
+        }
+      });
     },
     save() {
       if (this.linkURL == '') {
-        if (this.linkContainer && this.linkContainer.hasAttribute('href')) {
-          this.linkContainer.removeAttribute('href');
-          const textNode = document.createTextNode(this.linkContainer.innerHTML);
-          this.linkContainer.replaceWith(textNode);
-          this.linkContainer = null;
-        }
-        this.range && this.range.deleteContents();
-        this.$refs.linkOP.hide();
-        return;
+        // if (this.linkContainer && this.linkContainer.hasAttribute('href')) {
+        //   this.linkContainer.removeAttribute('href');
+        //   const textNode = document.createTextNode(this.linkContainer.innerHTML);
+        //   this.linkContainer.replaceWith(textNode);
+        //   this.linkContainer = null;
+        // }
+        // this.range && this.range.deleteContents();
+        // this.$refs.linkOP.hide();
+        // return;
       }
       const elem = this.linkContainer.localName === 'a' ? this.linkContainer : document.createElement('a');
 
+      // set link text to url if link text is an empty string
       elem.innerHTML = this.linkText || this.linkURL;
       elem.href = this.linkURL;
 

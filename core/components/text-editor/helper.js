@@ -44,14 +44,13 @@ const getStyle = function (container, action) {
     return action.value;
   }
 
-  // remove style
+  // remove style, set property to initial
   if (action.initial(container)) {
     return 'initial';
   }
 
   const style = findStyleNode(container, action.style);
 
-  console.warn(style);
   if (action.initial(style)) {
     return 'initial';
   }
@@ -137,38 +136,16 @@ function flattenChildren(action, span) {
   Promise.all(flattenChildrenChildren);
 }
 
-const format = function (tool = null, code = null) {
-  const optionCodes = {
-    66: {
-      property: 'font-weight',
-      value: 'bold',
-    },
-    73: {
-      property: 'font-style',
-      value: 'italic',
-    },
-    83: {
-      property: 'text-decoration-line',
-      value: 'line-through',
-    },
-    85: {
-      property: 'text-decoration-line',
-      value: 'underline',
-    },
-  };
-
-  let option = tool;
-  if (code) option = optionCodes[code];
-
+const format = function (tool = null) {
   const { selection, container } = getContainer();
   if (selection.toString()) {
     const sameSelection = container && container.innerText === selection.toString();
 
     if (sameSelection && container.style.type !== undefined) {
       updateSelection(container, {
-        style: option.property,
-        value: option.value,
-        initial: element => element && element.style[option.property] === option.value,
+        style: tool.property,
+        value: tool.value,
+        initial: element => element && element.style[tool.property] === tool.value,
       });
       return;
     }
@@ -176,9 +153,9 @@ const format = function (tool = null, code = null) {
     replaceSelection(
       container,
       {
-        style: option.property,
-        value: option.value,
-        initial: element => element && element.style[option.property] === option.value,
+        style: tool.property,
+        value: tool.value,
+        initial: element => element && element.style[tool.property] === tool.value,
       },
       selection
     );
@@ -188,14 +165,14 @@ const format = function (tool = null, code = null) {
     let elem = document.createElement('span');
     elem.innerHTML = '\u200B';
 
-    elem.style[option.property] = container.style[option.property] === option.value ? 'initial' : option.value;
+    elem.style[tool.property] = container.style[tool.property] === tool.value ? 'initial' : tool.value;
 
     range.insertNode(elem);
     range.selectNodeContents(elem);
   }
 };
 
-const heading = function (tool = null, code = null) {
+const heading = function (tool = null) {
   const { selection, container } = getContainer();
   let range = selection.getRangeAt(0);
   let blockParent = container.closest('.lv-text-editor p');
@@ -221,7 +198,7 @@ const heading = function (tool = null, code = null) {
   }
 };
 
-const code = function (tool = null, code = null) {
+const code = function (tool = null) {
   // this.tools[this.tools.findIndex(t => t.name == tool.name)].active = !this.tools[this.tools.findIndex(t => t.name == tool.name)].active;
   const { selection, container } = getContainer();
 
@@ -241,11 +218,12 @@ const code = function (tool = null, code = null) {
   }
 };
 
-const list = function (tool = null, code = null) {
-  const { selection, container, endContainer } = getContainer();
+const list = function (tool = null) {
+  const { selection, container } = getContainer();
   const item = container.closest('.lv-text-editor__content ul') || container.closest('.lv-text-editor__content ol');
 
   if (item) {
+    // interchange list
     if (tool.tag != item.localName) {
       const newList = document.createElement(tool.tag);
       for (let i of item.children) {
@@ -280,16 +258,8 @@ const list = function (tool = null, code = null) {
   }
 };
 
-const align = function (tool, code = null) {
-  const codemap = {
-    76: 'left',
-    69: 'center',
-    74: 'justify',
-    82: 'right',
-  };
-  let className = tool && tool.value ? tool.value : codemap[code];
-
-  const { selection, container, endContainer } = getContainer();
+const align = function (tool) {
+  const { container, endContainer } = getContainer();
 
   const enclosingContainer = container.closest('.lv-text-editor li') || container.closest('.lv-text-editor li') || container.closest('.lv-text-editor p') || container.closest('.lv-text-editor h1') || container.closest('.lv-text-editor h2') || container.closest('.lv-text-editor__content div');
 
@@ -301,13 +271,13 @@ const align = function (tool, code = null) {
   if (j < i) [i, j] = [j, i];
 
   for (let index = i; index <= j; index++) {
-    if (enclosingContainer.parentElement.children[index].classList.contains(className)) {
-      enclosingContainer.parentElement.children[index].classList.remove(className);
+    if (enclosingContainer.parentElement.children[index].classList.contains(tool.value)) {
+      enclosingContainer.parentElement.children[index].classList.remove(tool.value);
     } else {
-      Object.values(codemap).forEach(item => {
+      ['left', 'right', 'center', 'justify'].forEach(item => {
         enclosingContainer.parentElement.children[index].classList.remove(item);
       });
-      enclosingContainer.parentElement.children[index].classList.toggle(className);
+      enclosingContainer.parentElement.children[index].classList.toggle(tool.value);
     }
   }
 };
