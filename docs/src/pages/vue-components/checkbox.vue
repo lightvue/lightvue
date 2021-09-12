@@ -24,10 +24,10 @@ export default {
     DocsPageLayout,
     DocsAllApi,
   },
-  title: 'Radio',
-  description: `LvRadio component can be used in projects where a way is required for user to select or deselect an option.`,
-  packageName: 'radio',
-  componentName: 'LvRadio',
+  title: 'Checkbox',
+  description: `LvCheckbox component can be used in projects where a way is required for user to select or deselect an option.`,
+  packageName: 'CheckBox',
+  componentName: 'LvCheckBox',
   apiData: CheckboxAPI,
 };
 </script>

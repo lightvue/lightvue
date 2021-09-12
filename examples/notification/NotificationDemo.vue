@@ -61,5 +61,6 @@ export default {
 <style lang="scss">
 .--mr-4 {
   margin-right: 8px;
+  margin-top: 3px;
 }
 </style>
