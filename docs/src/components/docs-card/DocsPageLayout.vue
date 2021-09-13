@@ -2,7 +2,10 @@
   <div>
     <div class="content-section introduction">
       <div class="feature-intro">
-        <h1>{{ title }}</h1>
+        <div class="feature-intro--title">
+          <h1>{{ title }}</h1>
+          <LvBadge class="--mr1" info>{{ status }}</LvBadge>
+        </div>
         <p style="opacity: 0.8">
           {{ description }}
         </p>
@@ -25,8 +28,12 @@
 </template>
 
 <script>
+import LvBadge from 'lightvue/badge';
 export default {
-  props: ['title', 'description'],
+  components: {
+    LvBadge,
+  },
+  props: ['title', 'description', 'badge', 'status'],
   data() {
     return {
       selectedTab: 'collection', //'api'
@@ -74,6 +81,15 @@ export default {
       background-color: #607c8a;
       color: #fff;
     }
+  }
+}
+.feature-intro--title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .--mr1 {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
   }
 }
 </style>
