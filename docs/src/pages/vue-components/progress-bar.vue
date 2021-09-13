@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Dynamic" file="progressbar/ProgressBarDemo_Dynamic" />
     <docs-card-vue title="Static" file="progressbar/ProgressBarDemo_Static" />
     <docs-card-vue title="Indeterminate" file="progressbar/ProgressBarDemo_Indeterminate" />
@@ -31,6 +31,8 @@ export default {
   description: `Progress Bar component can be used as a process status indicator for a time-consuming process.`,
   packageName: 'progressbar',
   componentName: 'lv-progressbar',
+  status: 'Stable',
+  badge: 'info',
   apiData: ProgressBarAPI,
 };
 </script>

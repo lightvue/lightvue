@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Basic" file="checkbox/CheckboxDemo_Basic" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -28,6 +28,8 @@ export default {
   description: `LvRadio component can be used in projects where a way is required for user to select or deselect an option.`,
   packageName: 'radio',
   componentName: 'LvRadio',
+  status: 'Stable',
+  badge: 'info',
   apiData: CheckboxAPI,
 };
 </script>

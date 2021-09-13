@@ -18,7 +18,7 @@ $primary-color: #38b2ac;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
+  padding: 16px 16px 16px 0px;
   cursor: pointer;
   font-size: 18px;
   .nav-list__category-label {
@@ -78,8 +78,8 @@ $primary-color: #38b2ac;
   }
 }
 .collapisible--answer {
-  padding: 3px 15px 15px 22px;
-  margin-left: 18px;
+  padding: 10px 15px 10px 9px;
+
   background: #f7fcfc;
   border-left: 3px solid #38b2ac;
 }

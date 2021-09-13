@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="nav-list__category-wrap">
-      <div class="collapsible_catgory" @click="open1" :class="{ active: isOpenA == true }">
+      <div class="collapsible_catgory" @click="open1" v-ripple>
         <div class="nav-list__category-label">
           <i class="light-icon-adjustments"></i>
           What is lightVue
@@ -9,13 +9,13 @@
         <i :class="isOpenA ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
       </div>
       <LvCollapsible>
-        <div v-show="isOpenA" class="collapisible--answer" key="1">
+        <div v-show="isOpenA" class="collapisible--answer" key="1" @click="isOpen1 = false">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quasi ab blanditiis, iure consectetur, eius rerum vitae ipsa doloremque beatae sapiente? Alias ea atque sint excepturi. Possimus consequatur distinctio sequi.</p>
         </div>
       </LvCollapsible>
     </div>
     <div class="nav-list__category-wrap">
-      <div class="collapsible_catgory" @click="open2" :class="{ active: isOpenB == true }">
+      <div class="collapsible_catgory" @click="open2" v-ripple>
         <div class="nav-list__category-label">
           <i class="light-icon-adjustments"></i>
           How to install lightVue
@@ -29,7 +29,7 @@
       </LvCollapsible>
     </div>
     <div class="nav-list__category-wrap">
-      <div class="collapsible_catgory" @click="open3" :class="{ active: isOpenC == true }">
+      <div class="collapsible_catgory" @click="open3" :class="{ active: isOpenC == true }" v-ripple>
         <div class="nav-list__category-label">
           <i class="light-icon-adjustments"></i>
           Is lightvue compatible for both vue2 and vue3
@@ -46,9 +46,13 @@
 </template>
 <script>
 import LvCollapsible from 'lightvue/collapsible-component';
+import ripple from 'lightvue/ripple';
 export default {
   components: {
     LvCollapsible,
+  },
+  directives: {
+    ripple: ripple,
   },
   data() {
     return {
@@ -76,4 +80,8 @@ export default {
   },
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.lv-ink {
+  background-color: #38b2ac;
+}
+</style>

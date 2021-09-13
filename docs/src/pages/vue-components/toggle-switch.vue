@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Demo" file="input-toggle/ToggleSwitchDemo_Basic" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -28,6 +28,8 @@ export default {
   description: `ToggleSwitch is used to select a boolean value.`,
   packageName: 'toggle-switch',
   componentName: 'LvToggleSwitch',
+  status: 'Stable',
+  badge: 'info',
   apiData: ToggleSwitchAPI,
 };
 </script>

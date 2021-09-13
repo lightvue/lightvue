@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Slider demo" file="slider/SliderDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -28,6 +28,8 @@ export default {
   description: `Slider is another basic component from light vue which provide user to have a slider in the web application which can be used to rate or select a range.`,
   packageName: 'slider',
   componentName: 'LvSlider',
+  status: 'Under-development',
+  badge: 'info',
   apiData: SliderAPI,
 };
 </script>

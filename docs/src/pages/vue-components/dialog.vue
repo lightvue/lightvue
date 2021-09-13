@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Dialog" file="dialog/DialogDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -46,6 +46,8 @@ export default {
   description: `Lv Dialog helps the user to have modal and additional dialog box with their data.`,
   packageName: 'dialog',
   componentName: 'LvDialog',
+  status: 'UnStable',
+  badge: 'info',
   apiData: DialogAPI,
 };
 </script>

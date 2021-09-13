@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Basic" file="checkbox/CheckboxDemo_Basic" />
     <!-- <docs-card-vue title="Basic" file="checkbox/CheckboxDemo" /> -->
     <template #api>
@@ -29,6 +29,8 @@ export default {
   description: `LvCheckbox component can be used in projects where a way is required for user to select or deselect an option.`,
   packageName: 'CheckBox',
   componentName: 'LvCheckBox',
+  status: 'Stable',
+  badge: 'info',
   apiData: CheckboxAPI,
 };
 </script>

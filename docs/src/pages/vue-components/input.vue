@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <input-best-demo />
     <docs-card-vue title="Basic" file="input/InputDemo_Basic" />
     <docs-card-vue title="Rounded" file="input/InputDemo_Rounded" />
@@ -50,6 +50,8 @@ export default {
   description: `Light-input provides with a variety of input fields with various available customizations which helps it to fulfill the need of almost every web application/project.`,
   packageName: 'input',
   componentName: 'LvInput',
+  status: 'Rc',
+  badge: 'info',
   apiData: InputAPI,
 };
 </script>

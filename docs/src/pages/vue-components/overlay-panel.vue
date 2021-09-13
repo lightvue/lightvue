@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Basic" file="overlay-panel/OverlayPanelDemo_Basic" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -28,6 +28,8 @@ export default {
   description: `OverlayPanel is a container component positioned as connected to its target.`,
   packageName: 'overlay-panel',
   componentName: 'LvOverlayPanel',
+  status: 'Stable',
+  badge: 'info',
   apiData: OverlayPanelAPI,
 };
 </script>

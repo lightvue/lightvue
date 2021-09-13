@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <button-best-demo />
     <docs-card-vue title="Basic Usage" file="button/ButtonDemo_Basic" />
     <docs-card-vue title="Rounded Buttons" file="button/ButtonDemo_Rounded" />
@@ -54,6 +54,8 @@ export default {
   description: `Button is an extension to standard button element with an option to add icons and your custom theming.`,
   packageName: 'button',
   componentName: 'LvButton',
+  status: 'Stable',
+  badge: 'info',
   apiData: ButtonAPI,
 };
 </script>

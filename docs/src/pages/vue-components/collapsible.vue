@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Basic" file="collapsible/AccordianDemo" overflow />
     <docs-card-vue title="Nested" file="collapsible/CollapsibleDemo" overflow />
     <template #api>
@@ -31,6 +31,8 @@ export default {
   description: `Collapsible component Easily toggle visibility of almost any content on your pages in a vertically and horizontally collapsing container`,
   packageName: 'collapsible',
   componentName: 'LvCollapsible',
+  status: 'Under-development',
+  badge: 'info',
   apiData: CollapsibleAPI,
 };
 </script>

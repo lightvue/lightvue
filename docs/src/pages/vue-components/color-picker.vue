@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Demo" file="colorpicker/ColorpickerDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -28,6 +28,8 @@ export default {
   description: `Colorpicker`,
   packageName: 'colorpicker',
   componentName: 'LvColorpicker',
+  status: 'Stable',
+  badge: 'info',
   apiData: ColorpickerAPI,
 };
 </script>

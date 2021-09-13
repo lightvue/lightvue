@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <docs-card-vue title="Adjusting height & width" file="shimmers/examples/ShimmersDemo_dimension" />
     <docs-card-vue title="Adjusting color" file="shimmers/examples/ShimmersDemo_color" />
     <docs-card-vue title="Adjusting opacity" file="shimmers/examples/ShimmersDemo_opacity" />
@@ -37,6 +37,8 @@ export default {
   description: `Skeleton Loader components can be used as a loading animations or space-fillers while waiting for the actual content to load.`,
   packageName: 'LvSkeleton',
   componentName: 'LvSkeleton',
+  status: 'Stable',
+  badge: 'info',
   apiData: ShimmersAPI,
 };
 </script>

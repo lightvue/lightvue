@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
     <!-- <docs-card-vue title="Modifying Options" file="rating/examples/RatingDemo_Options" /> -->
     <!-- <docs-card-vue title="Modifying style" file="rating/examples/RatingDemo_Styling" /> -->
     <docs-card-vue title="Modifying increment" file="rating/examples_options/RatingDemo_1" />
@@ -39,6 +39,8 @@ export default {
   description: `Rating component can be used when user wants to provide an option to rate the products/services provided.`,
   packageName: 'rating',
   componentName: 'LvRating',
+  status: 'Stable',
+  badge: 'info',
   apiData: RatingAPI,
 };
 </script>

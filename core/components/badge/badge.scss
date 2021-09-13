@@ -1,0 +1,99 @@
+.lv-badge {
+  //   height: 20px;
+  //   width: 20px;
+  //   border-radius: 50%;
+
+  display: inline-block;
+  color: white;
+  padding: 0.25em 0.4em;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+.--top-right {
+  // height: 5px;
+  // width: 5px;
+  font-size: 12px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  //   z-index: 5000000;
+}
+.--top-left {
+  // height: 5px;
+  // width: 5px;
+  font-size: 12px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  //   z-index: 5000000;
+}
+.--Bottom-left {
+  // height: 5px;
+  // width: 5px;
+  font-size: 12px;
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  //   z-index: 5000000;
+}
+.--Bottom-right {
+  // height: 5px;
+  // width: 5px;
+  font-size: 12px;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  //   z-index: 5000000;
+}
+.--rounded {
+  border-radius: 2px;
+}
+.--primary {
+  background-color: #007bff;
+  border: 1px solid #1384fd;
+}
+.--secondary {
+  background-color: #6c757d;
+  border: 1px solid #727980;
+}
+.--sucess {
+  color: #fff;
+  background-color: #28a745;
+  border: 1px solid #33ac50;
+}
+.--danger {
+  background-color: #dc3545;
+  border: 1px solid #dd4958;
+}
+.--warning {
+  background-color: #ffc107;
+  border: 1px solid #facc42;
+}
+.--info {
+  background-color: #17a2b8;
+  border: 1px solid #4fa8b6;
+}
+.--light {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+.--dark {
+  background-color: #343a40;
+}

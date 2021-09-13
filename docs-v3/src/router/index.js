@@ -108,6 +108,10 @@ const routes = [
         component: () => import('@/pages/vue-components/collapsible.vue'),
       },
       {
+        path: 'badge',
+        component: () => import('@/pages/vue-components/badge.vue'),
+      },
+      {
         path: 'textarea',
         component: () => import('@/pages/vue-components/textarea.vue'),
       },
