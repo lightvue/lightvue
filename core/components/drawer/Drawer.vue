@@ -1,52 +1,28 @@
 <template>
-  <!-- Handle Edge Case -->
-  <!-- For Mobile Drawer -->
-  <!-- Disable Auto Scroll    --Done-->
-  <!-- Take Proper top pixels --Done -->
-  <!-- Configurable fixed and absolute position -->
   <div
     class="lv-drawer__wrapper"
     :class="{
       '--shadow': shadow,
       '--close': !drawer,
-      '--mobile': isMobile,
+      '--mobile': getDrawerPosition,
       '--moving': isMoving,
-      '--absolute':absolute
+      '--absolute': absolute,
     }"
     :style="{
-      zIndex:zIndex,
-      backdropFilter: backdropBlur && 'blur(3px)'
+      zIndex: zIndex,
     }"
     ref="drawerWrapper"
   >
     <!-- Drawer Contents -->
-    <aside
-      class="wrapper__drawer-container"
-      :style="getDrawerStyle"
-      ref="drawer"
-    >
-      <div
-        class="touch-dragger"
-        v-if="isMobile"
-        @touchstart.prevent="handleTouchStart"
-        @touchmove.prevent="handleTouchMove"
-        @touchend.prevent="handleTouchEnd"
-      >---</div>
+    <aside class="wrapper__drawer-container" :style="getDrawerStyle" ref="drawer">
+      <div class="touch-dragger" v-if="getDrawerPosition" @touchstart.prevent="handleTouchStart" @touchmove.prevent="handleTouchMove" @touchend.prevent="handleTouchEnd"></div>
       <!-- Header -->
-      <div
-        class="drawer-container__header"
-        ref="drawerHeader"
-        :style="getHeaderStyle"
-        v-if="headerTitle"
-      >
-        <div class="header__title">
+      <div class="drawer-container__header" ref="drawerHeader" :style="getHeaderStyle" v-if="headerTitle || close">
+        <div v-if="!$slots.customHeader" class="header__title">
           {{ headerTitle }}
         </div>
-        <div
-          class="header__close"
-          @click="drawerClose"
-          v-if="close"
-        >
+        <slot v-else name="customHeader"></slot>
+        <div class="header__close" @click="drawerClose" v-if="close">
           <!-- Light Icon -->
           <i class="light-icon-x"></i>
         </div>
@@ -63,6 +39,8 @@
       @click="drawerClose"
       :style="{
         zIndex: zIndex - 1,
+        backdropFilter: backdropBlur && 'blur(2px)',
+        opacity: backdropOpacity,
       }"
     ></div>
   </div>
@@ -83,6 +61,7 @@ export default {
       snap: 0,
       drawerHeight: 0,
       windowWidth: 0,
+      windowHeight: 0,
       containerHeight: 0,
       timeOutID: null,
     };
@@ -99,6 +78,10 @@ export default {
     backdropBlur: Boolean,
     customStyle: Object,
     headerTitle: String,
+    backdropOpacity: {
+      type: String,
+      default: '0.3',
+    },
     absolute: {
       type: Boolean,
       default: false,
@@ -115,6 +98,8 @@ export default {
       type: Number,
       default: 250,
     },
+    percentWidth: Number,
+    percentHeight: Number,
     zIndex: {
       type: Number,
       default: 10,
@@ -143,19 +128,17 @@ export default {
       type: String,
       default: '0px',
     },
-  },
-  watch: {
-    value(value) {
-      this.drawer = value;
-    },
-    modelValue(value) {
-      this.drawer = value;
+    noBottom: {
+      type: Boolean,
+      default: false,
     },
   },
+
   methods: {
     drawerClose() {
       this.drawer = false;
       this.snap = this.drawerHeight;
+      this.$emit('close');
       this.$emit('input', this.drawer);
       this.$emit('update:modelValue', this.drawer);
     },
@@ -196,12 +179,13 @@ export default {
     },
     handleResize() {
       this.windowWidth = window.innerWidth;
-      this.isMobile = this.windowWidth <= 550 ? true : false;
+      this.windowHeight = window.innerHeight;
+      this.isMobile = this.windowWidth <= 525 ? true : false;
       // In order to run the following code when resize is completed --optimisation
       clearTimeout(this.timeOutID);
       this.timeOutID = setTimeout(() => {
         this.containerHeight = this.$refs.drawerWrapper.clientHeight;
-        this.drawerHeight = this.containerHeight - this.height + 'px';
+        this.drawerHeight = this.containerHeight - this.getHeight + 'px';
         this.snap = this.drawerHeight;
         console.log('changed');
       }, 250);
@@ -214,7 +198,7 @@ export default {
     },
     getDrawerStyle() {
       return {
-        width: this.left || this.right ? this.width + 'px' : '100%',
+        width: this.left || this.right ? this.getWidth : '100%',
         zIndex: this.zIndex + 5,
         padding: this.padding,
         background: this.background,
@@ -230,7 +214,7 @@ export default {
       };
     },
     getTransitionStyle() {
-      return this.isMobile ? this.getBottomTouchStyle : this.left ? this.getLeftStyle : this.right ? this.getRightStyle : this.getTopStyle;
+      return this.getDrawerPosition ? this.getBottomTouchStyle : this.left ? this.getLeftStyle : this.right ? this.getRightStyle : this.getTopStyle;
     },
     getLeftStyle() {
       return {
@@ -267,15 +251,38 @@ export default {
         top: this.drawer ? (!this.isMoving ? this.snap : this.getTopPx + 'px') : '100%',
       };
     },
+    getDrawerPosition() {
+      return this.noBottom ? false : this.isMobile;
+    },
+    getHeight() {
+      if (!this.percentHeight) return Math.min(this.height, this.windowHeight);
+
+      return (this.percentHeight * this.windowHeight) / 100;
+    },
+    getWidth() {
+      return this.percentWidth ? this.percentWidth + '%' : this.width + 'px';
+    },
+  },
+  watch: {
+    value(value) {
+      this.drawer = value;
+      value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
+    },
+    modelValue(value) {
+      this.drawer = value;
+      value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
+    },
   },
   beforeMount() {
+    this.windowHeight = window.innerHeight;
     this.windowWidth = window.innerWidth;
   },
   mounted() {
-    this.isMobile = this.windowWidth <= 550 ? true : false;
+    this.isMobile = this.windowWidth <= 525 ? true : false;
     this.containerHeight = this.$refs.drawerWrapper.clientHeight;
-    this.drawerHeight = this.containerHeight - this.height + 'px';
+    this.drawerHeight = this.containerHeight - this.getHeight + 'px';
     this.snap = this.drawerHeight;
+    document.documentElement.style.overflow = this.value == true || this.modelValue == true ? 'hidden' : 'overlay';
     window.addEventListener('resize', this.handleResize);
   },
   beforeDestroy() {
@@ -297,7 +304,7 @@ export default {
   .wrapper__drawer-container {
     position: absolute;
     z-index: 10;
-    transition: all 0.1s ease;
+    transition: all 0.3s ease;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -307,17 +314,32 @@ export default {
     flex-direction: column;
     width: 100%;
     overflow-y: auto;
+    margin: 0 !important ;
+    max-width: 100vw !important;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .touch-dragger {
       font-size: 30px;
       text-align: center;
       line-height: 20px;
-      i {
-        object-fit: cover;
-        font-size: 50px;
-        &::before,
-        &::after {
-          vertical-align: initial;
-        }
+      position: relative;
+      height: max-content;
+      width: 100%;
+      position: sticky;
+      height: 15px;
+      top: 0;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.3);
+        height: 4px;
+        width: 45px;
+        border-radius: 50px;
+        overflow: hidden;
       }
     }
     .drawer-container__header {
@@ -325,6 +347,8 @@ export default {
       justify-content: space-between;
       align-items: center;
       touch-action: none;
+      // overflow: hidden;
+      min-height: max-content;
       .header__title {
         padding: 10px;
       }
@@ -340,13 +364,17 @@ export default {
             vertical-align: initial;
           }
         }
-        &:hover {
-          transform: scale(1.2);
-        }
+        // &:hover {
+        //   transform: scale(1.2);
+        // }
       }
     }
     .drawer-container__slot-content {
+      height: 100%;
       overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
   &.--close {
@@ -379,7 +407,8 @@ export default {
     bottom: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgb(0, 0, 0);
+    // opacity: 0.3;
     // backdrop-filter: blur(3px);
   }
 }
