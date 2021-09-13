@@ -3,23 +3,17 @@
     <div class="lv-hidden-accessible">
       <input ref="focusInput" type="text" :id="inputId" readonly :disabled="disabled" @focus="onFocus" @blur="onBlur" @keydown="onKeyDown" :tabindex="tabindex" aria-haspopup="listbox" :aria-expanded="overlayVisible" :aria-labelledby="ariaLabelledBy" />
     </div>
-    <lv-input type="text" v-bind="$attrs" ref="mainInput" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" @update:modelValue="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" :modelValue="editableInputValue" :value="editableInputValue" autocomplete="cc-csc">
+    <lv-input type="text" v-bind="$attrs" ref="mainInput" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" @update:modelValue="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" :modelValue="editableInputValue" :value="editableInputValue" autocomplete="cc-csc" :icon-right="iconRight || 'light-icon-chevron-down'">
       <span v-if="!editable" :class="labelClass">
         <slot name="value" :value="modelValue" :placeholder="placeholder">
           {{ selectedLabel }}
         </slot>
       </span>
-      <template #append>
-        <i v-if="clearable && modelValue != null" class="lv-dropdown__clear-icon light-icon-x" @click="onClearClick($event)"></i>
-        <div class="lv-dropdown__trigger" role="button" aria-haspopup="listbox" :aria-expanded="overlayVisible">
-          <span :class="iconRight || 'light-icon-chevron-down'"></span>
-        </div>
-      </template>
     </lv-input>
     <transition name="lv-transition__overlay" @enter="onOverlayEnter" @leave="onOverlayLeave">
       <div ref="overlayRef" class="lv-dropdown__panel lv-component" v-if="overlayVisible">
         <div class="lv-dropdown__panel-header" v-if="filter">
-          <lv-input type="text" ref="filterInput" autofocus v-model="filterValue" autoComplete="off" icon-right="light-icon-search" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown" @input-native="onFilterChange"></lv-input>
+          <lv-input type="text" ref="filterInput" autofocus v-bind="$attrs" v-model="filterValue" autoComplete="off" icon-right="light-icon-search" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown" @input-native="onFilterChange" @click.stop></lv-input>
         </div>
         <div class="lv-dropdown__items-wrap" :style="{ 'max-height': scrollHeight }">
           <ul class="lv-dropdown__items" role="listbox">
@@ -65,7 +59,6 @@ export default {
     },
     placeholder: String,
     disabled: Boolean,
-    clearable: Boolean,
     inputId: String,
     tabindex: String,
     iconRight: String,
@@ -77,6 +70,10 @@ export default {
     emptyFilterMessage: {
       type: String,
       default: 'No results found',
+    },
+    closeOnResize: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -250,18 +247,16 @@ export default {
       if (this.isOptionDisabled(option)) return this.findPrevOption(i);
       else return option;
     },
-    onClearClick(event) {
-      this.updateModel(event, null);
-    },
     onClick(event) {
       // To focus automatically
       if (this.disabled) {
         return;
       }
 
-      if (DomHandler.hasClass(event.target, 'lv-dropdown__clear-icon')) {
-        return;
-      } else if (!this.$refs.overlayRef || !this.$refs.overlayRef.contains(event.target)) {
+      // if (DomHandler.hasClass(event.target, 'lv-dropdown__clear-icon')) {
+      //   return;
+      // } else
+      if (!this.$refs.overlayRef || !this.$refs.overlayRef.contains(event.target)) {
         if (this.overlayVisible) this.hide();
         else this.show();
 
@@ -294,7 +289,7 @@ export default {
       this.alignOverlay();
       this.bindOutsideClickListener();
       this.bindScrollListener();
-      this.bindResizeListener();
+      this.closeOnResize && this.bindResizeListener();
 
       if (this.filter) {
         this.$refs.filterInput.$el.querySelector('input').focus();
@@ -305,7 +300,7 @@ export default {
     onOverlayLeave() {
       this.unbindOutsideClickListener();
       this.unbindScrollListener();
-      this.unbindResizeListener();
+      this.closeOnResize && this.unbindResizeListener();
       this.$emit('hide');
       // this.overlay = null;
     },
@@ -478,7 +473,7 @@ export default {
         'lv-dropdown lv-component',
         {
           '--disabled': this.disabled,
-          '--clearable': this.clearable && !this.disabled,
+          // '--clearable': this.clearable && !this.disabled,
           '--focused': this.focused,
           '--filled': this.modelValue, // only usefull for floating-label case
         },
