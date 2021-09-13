@@ -10,6 +10,8 @@
     <br />
     <lv-input id="username" type="text" v-model="value1" label="Floating Label" placeholder="Enter username here..." floating-label rounded />
     <br />
+    <lv-input type="text" v-model="value1" label="Clearable input" placeholder="Search" clearable rounded />
+    <br />
     <lv-input type="text" v-model="value1" icon-left="light-icon-search" icon-right="light-icon-arrow-up-right-circle" label="Left Right Icons" rounded />
     <br />
     <lv-input type="text" v-model="value1" placeholder="Search" label="Prepend Append" rounded>
