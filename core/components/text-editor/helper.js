@@ -175,7 +175,7 @@ const format = function (tool = null) {
 const heading = function (tool = null) {
   const { selection, container } = getContainer();
   let range = selection.getRangeAt(0);
-  let blockParent = container.closest('.lv-text-editor p') || container.closest('.lv-text-editor div');
+  let blockParent = container.closest('.lv-text-editor__content p') || container.closest('.lv-text-editor__content div') || container.closest('.lv-text-editor__content h1') || container.closest('.lv-text-editor__content h2') || container.closest('.lv-text-editor__content li');
   if (selection.toString()) {
     let elem = document.createElement(tool.tag);
     elem.innerHTML = selection.toString();
@@ -199,27 +199,25 @@ const heading = function (tool = null) {
 };
 
 const code = function (tool = null) {
-  // this.tools[this.tools.findIndex(t => t.name == tool.name)].active = !this.tools[this.tools.findIndex(t => t.name == tool.name)].active;
   const { selection, container } = getContainer();
 
-  let range = selection.getRangeAt(0);
+  const range = selection.getRangeAt(0);
   let elem;
   if (container.localName !== tool.tag) {
     elem = document.createElement(tool.tag);
     elem.innerHTML = selection.toString() || '\u200B';
     range.deleteContents();
     range.insertNode(elem);
-    range.selectNodeContents(elem);
   } else {
     elem = document.createElement('span');
     elem.innerHTML = '\u200B';
-    container.parentNode.appendChild(elem);
-    range.selectNodeContents(elem);
+    container.parentNode.insertBefore(elem, container.nextSibling);
   }
+  range.selectNodeContents(elem);
 };
 
 const list = function (tool = null) {
-  const { selection, container } = getContainer();
+  const { selection, container, endContainer } = getContainer();
   const item = container.closest('.lv-text-editor__content ul') || container.closest('.lv-text-editor__content ol');
 
   if (item) {
@@ -246,15 +244,36 @@ const list = function (tool = null) {
     }
   } else {
     // new list
-    let range = selection.getRangeAt(0);
-    const newList = document.createElement(tool.tag);
-    const li = document.createElement('li');
-    li.innerHTML = selection.toString() || '\u200B';
-    newList.appendChild(li);
-    // container.appendChild(newList);
-    container.localName == 'p' && container.innerHTML.toString() === '<br>' ? container.parentNode.insertBefore(newList, container) : container.parentNode.insertBefore(newList, container.nextSibling);
+    if (selection.toString()) {
+      let i = Array.prototype.indexOf.call(container.parentElement.children, container);
+      let j = Array.prototype.indexOf.call(endContainer.parentElement.children, endContainer);
 
-    range.selectNodeContents(newList);
+      if (j < i) [i, j] = [j, i];
+
+      const parent = container.parentElement;
+      const children = parent.children;
+
+      const list = document.createElement(tool.tag);
+
+      parent.insertBefore(list, children[i]);
+
+      for (let index = j; index >= i; index--) {
+        const li = document.createElement('li');
+        li.innerHTML = children[index + 1].innerHTML;
+        list.prepend(li);
+        parent.removeChild(children[index + 1]);
+      }
+    } else {
+      let range = selection.getRangeAt(0);
+      const newList = document.createElement(tool.tag);
+      const li = document.createElement('li');
+      li.innerHTML = '\u200B';
+      newList.appendChild(li);
+      // container.appendChild(newList);
+      container.localName == 'p' && container.innerHTML.toString() === '<br>' ? container.parentNode.insertBefore(newList, container) : container.parentNode.insertBefore(newList, container.nextSibling);
+
+      range.selectNodeContents(newList);
+    }
   }
 };
 

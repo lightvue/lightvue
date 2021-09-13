@@ -249,7 +249,7 @@ export default {
     checkFocus() {
       const { selection, container } = getContainer();
       // set focus to last element of the editor if selection is not within the editor
-      if (!container.closest('.lv-text-editor__content')) {
+      if (!container || !container.closest('.lv-text-editor__content')) {
         let range = document.createRange();
         range.selectNodeContents(this.$refs.content.lastElementChild);
         range.collapse(false);
@@ -265,7 +265,7 @@ export default {
     },
     handleInput() {
       // handling backspace/del
-      if (this.$refs.content.innerHTML == '') this.$refs.content.innerHTML = '<p><br/></p>';
+      if (this.$refs.content.innerHTML == '' || this.$refs.content.innerHTML == '<div><br/></div>') this.$refs.content.innerHTML = '<p><br/></p>';
       this.updateCharacterCount();
     },
     handleKeyControls(e) {
