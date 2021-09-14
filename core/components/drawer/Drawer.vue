@@ -184,8 +184,7 @@ export default {
       // In order to run the following code when resize is completed --optimisation
       clearTimeout(this.timeOutID);
       this.timeOutID = setTimeout(() => {
-        this.containerHeight = this.$refs.drawerWrapper.clientHeight;
-        this.drawerHeight = this.containerHeight - this.getHeight + 'px';
+        this.drawerHeight = this.getHeight; // in px
         this.snap = this.drawerHeight;
         console.log('changed');
       }, 250);
@@ -255,12 +254,17 @@ export default {
       return this.noBottom ? false : this.isMobile;
     },
     getHeight() {
-      if (!this.percentHeight) return Math.min(this.height, this.windowHeight);
-
-      return (this.percentHeight * this.windowHeight) / 100;
+      this.containerHeight = this.$refs.drawerWrapper.clientHeight;
+      let resultHeight = 0;
+      if (this.percentHeight) {
+        (this.percentHeight * this.windowHeight) / 100;
+      } else {
+        resultHeight = Math.min(this.height, this.windowHeight);
+      }
+      return `${this.containerHeight - resultHeight}px`;
     },
     getWidth() {
-      return this.percentWidth ? this.percentWidth + '%' : this.width + 'px';
+      return this.percentWidth ? `${this.percentWidth}%` : `${this.width}px`;
     },
   },
   watch: {
@@ -279,8 +283,7 @@ export default {
   },
   mounted() {
     this.isMobile = this.windowWidth <= 525 ? true : false;
-    this.containerHeight = this.$refs.drawerWrapper.clientHeight;
-    this.drawerHeight = this.containerHeight - this.getHeight + 'px';
+    this.drawerHeight = this.getHeight(); // in px
     this.snap = this.drawerHeight;
     document.documentElement.style.overflow = this.value == true || this.modelValue == true ? 'hidden' : 'overlay';
     window.addEventListener('resize', this.handleResize);
