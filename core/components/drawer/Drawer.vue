@@ -3,7 +3,7 @@
     class="lv-drawer__wrapper"
     :class="{
       '--shadow': shadow,
-      '--close': !drawer,
+      '--close': !modelValue,
       '--mobile': getDrawerPosition,
       '--moving': isMoving,
       '--absolute': absolute,
@@ -47,11 +47,14 @@
 </template>
 
 <script>
+import { trueValueMixin } from 'lightvue/mixins';
+
 export default {
-  name: 'Drawer',
+  name: 'LvDrawer',
+  mixins: [trueValueMixin],
   data() {
     return {
-      drawer: false,
+      // drawer: false,
       initialTouch: 0,
       currentTouch: 0,
       changedTouch: 0,
@@ -67,8 +70,8 @@ export default {
     };
   },
   props: {
-    modelValue: Boolean,
-    value: Boolean,
+    // modelValue: Boolean,
+    // value: Boolean,
     top: Boolean,
     right: Boolean,
     bottom: Boolean,
@@ -136,11 +139,12 @@ export default {
 
   methods: {
     drawerClose() {
-      this.drawer = false;
+      // this.drawer = false;
       this.snap = this.drawerHeight;
       this.$emit('close');
-      this.$emit('input', this.drawer);
-      this.$emit('update:modelValue', this.drawer);
+      this.updateValue(false);
+      // this.$emit('input', this.drawer);
+      // this.$emit('update:modelValue', this.drawer);
     },
     handleTouchStart(event) {
       this.initialTouch = this.$refs.drawer.offsetTop; // Initial Touch with respect to the drawer element
@@ -220,7 +224,7 @@ export default {
         left: 0,
         top: 0,
         bottom: 0,
-        transform: this.drawer ? 'translateX(0)' : 'translateX(-100%)',
+        transform: this.modelValue ? 'translateX(0)' : 'translateX(-100%)',
       };
     },
     getRightStyle() {
@@ -229,7 +233,7 @@ export default {
         top: 0,
         bottom: 0,
         left: '100%',
-        transform: !this.drawer ? 'translateX(0)' : 'translateX(-100%)',
+        transform: !this.modelValue ? 'translateX(0)' : 'translateX(-100%)',
       };
     },
     getTopStyle() {
@@ -237,7 +241,7 @@ export default {
         left: 0,
         right: 0,
         top: 0,
-        bottom: this.drawer ? this.drawerHeight : '100%',
+        bottom: this.modelValue ? this.drawerHeight : '100%',
       };
     },
     getBottomTouchStyle() {
@@ -247,7 +251,7 @@ export default {
         bottom: 0,
         width: '100%',
         height: 'auto',
-        top: this.drawer ? (!this.isMoving ? this.snap : this.getTopPx + 'px') : '100%',
+        top: this.modelValue ? (!this.isMoving ? this.snap : this.getTopPx + 'px') : '100%',
       };
     },
     getDrawerPosition() {
@@ -268,12 +272,12 @@ export default {
     },
   },
   watch: {
-    value(value) {
-      this.drawer = value;
-      value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
-    },
+    // value(value) {
+    //   this.drawer = value;
+    //   value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
+    // },
     modelValue(value) {
-      this.drawer = value;
+      // this.drawer = value;
       value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
     },
   },
@@ -283,9 +287,9 @@ export default {
   },
   mounted() {
     this.isMobile = this.windowWidth <= 525 ? true : false;
-    this.drawerHeight = this.getHeight(); // in px
+    this.drawerHeight = this.getHeight; // in px
     this.snap = this.drawerHeight;
-    document.documentElement.style.overflow = this.value == true || this.modelValue == true ? 'hidden' : 'overlay';
+    document.documentElement.style.overflow = this.modelValue == true ? 'hidden' : 'overlay';
     window.addEventListener('resize', this.handleResize);
   },
   beforeDestroy() {
