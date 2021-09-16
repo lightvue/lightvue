@@ -11,9 +11,24 @@
         <lv-number v-model="allOptions.increment" label="Increment" step="0.5" /> <br />
         <lv-number v-model="allOptions.fixedPoints" label="Fixed point" /> <br />
         <lv-number v-model="allOptions.maxRating" label="Max rating" /> <br />
-        <lv-number v-model="allOptions.starSize" label="Star size" step="5" /> <br />
-        <lv-number v-model="allOptions.padding" label="Padding" /> <br />
-        <lv-number v-model="allOptions.borderWidth" label="Border width" /> <br />
+
+        <span>Star size</span>
+        <br />
+        <br />
+        <LvSlider v-model="allOptions.starSize" :min="0" :max="100" sliderColor="#607C8A" />
+        <br />
+
+        <span>Padding</span>
+        <br />
+        <br />
+        <LvSlider v-model="allOptions.padding" :min="0" :max="25" sliderColor="#607C8A" />
+        <br />
+
+        <span>Border width</span>
+        <br />
+        <br />
+        <LvSlider v-model="allOptions.borderWidth" :min="0" :max="10" sliderColor="#607C8A" />
+        <br />
 
         <lv-colorpicker v-model="allOptions.activeColor" label="Active color" /> <br />
         <lv-colorpicker v-model="allOptions.inactiveColor" label="Inactive color" /> <br />
@@ -40,6 +55,8 @@ import LvRating from 'lightvue/rating';
 import LvToggleSwitch from 'lightvue/toggle-switch';
 import LvNumber from 'lightvue/number';
 import LvColorpicker from 'lightvue/color-picker';
+import LvSlider from 'lightvue/slider';
+
 export default {
   components: {
     DocsCardBest,
@@ -47,6 +64,7 @@ export default {
     LvToggleSwitch,
     LvNumber,
     LvColorpicker,
+    LvSlider,
   },
   computed: {
     enabledOptions() {
