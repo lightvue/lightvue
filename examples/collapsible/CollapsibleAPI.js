@@ -7,23 +7,18 @@ const CollapsibleAPI = {
       description: 'Configures the name of transition.',
     },
     {
-      name: 'dimension',
+      name: 'orientation',
       type: 'String',
-      default: 'height',
+      default: 'vertical',
       description: 'Configures the direction of transition.',
     },
     {
       name: 'duration',
       type: 'Number',
-      default: '300',
+      default: '350',
       description: 'Configures the duration of transition.',
     },
-    {
-      name: 'easing',
-      type: 'String',
-      default: 'ease-in-out',
-      description: 'Configures if the easing property.',
-    },
+
     // {
     //   name: 'disabled',
     //   type: 'Boolean',

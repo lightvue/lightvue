@@ -292,7 +292,7 @@ $primary-color: #38b2ac;
   .nav-list__category-items {
     padding: 0px 16px 8px;
     margin-left: 8px;
-    margin-top: -8px;
+    /* margin-top: -8px; */
     /* 
     height: 0px;
     opacity: 0;

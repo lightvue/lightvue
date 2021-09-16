@@ -9,7 +9,7 @@
         <i :class="isOpenA ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
       </div>
       <LvCollapsible>
-        <div v-show="isOpenA" class="collapisible--answer" key="1">
+        <div v-show="isOpenA" class="collapisible--answer">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quasi ab blanditiis, iure consectetur, eius rerum vitae ipsa doloremque beatae sapiente? Alias ea atque sint excepturi. Possimus consequatur distinctio sequi.</p>
         </div>
       </LvCollapsible>
@@ -23,7 +23,7 @@
         <i :class="isOpenB ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
       </div>
       <LvCollapsible>
-        <div v-show="isOpenB" class="collapisible--answer" key="1">
+        <div v-show="isOpenB" class="collapisible--answer">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quasi ab blanditiis, iure consectetur, eius rerum vitae ipsa doloremque beatae sapiente? Alias ea atque sint excepturi. Possimus consequatur distinctio sequi.</p>
         </div>
       </LvCollapsible>
@@ -37,7 +37,7 @@
         <i :class="isOpenC ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
       </div>
       <LvCollapsible>
-        <div v-show="isOpenC" class="collapisible--answer" key="1">
+        <div v-show="isOpenC" class="collapisible--answer">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quasi ab blanditiis, iure consectetur, eius rerum vitae ipsa doloremque beatae sapiente? Alias ea atque sint excepturi. Possimus consequatur distinctio sequi.</p>
         </div>
       </LvCollapsible>
