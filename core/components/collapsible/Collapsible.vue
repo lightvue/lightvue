@@ -58,13 +58,13 @@ export default {
 
       return transitions.join(', ');
     },
-    computedOrientation() {
-      if (this.orientation == 'horizontal') {
-        return (this.comp_orientation = 'width');
-      } else {
-        return (this.comp_orientation = 'height');
-      }
-    },
+    // computedOrientation() {
+    //   if (this.orientation == 'horizontal') {
+    //     return (this.comp_orientation = 'width');
+    //   } else {
+    //     return (this.comp_orientation = 'height');
+    //   }
+    // },
   },
 
   methods: {
@@ -194,7 +194,7 @@ export default {
 
     detectRelevantOrientations(el) {
       // These properties will be transitioned
-      if (this.computedOrientation === 'height') {
+      if (this.orientation === 'vertical') {
         return {
           height: el.offsetHeight + 'px',
           paddingTop: el.style.paddingTop || this.getCssValue(el, 'padding-top'),
@@ -202,7 +202,7 @@ export default {
         };
       }
 
-      if (this.computedOrientation === 'width') {
+      if (this.orientation === 'horizontal') {
         return {
           width: el.offsetWidth + 'px',
           paddingLeft: el.style.paddingLeft || this.getCssValue(el, 'padding-left'),
@@ -249,8 +249,7 @@ export default {
 
     forceRepaint(el) {
       // Force repaint to make sure the animation is triggered correctly.
-
-      getComputedStyle(el)[this.computedOrientation];
+      getComputedStyle(el)[this.orientation === 'vertical' ? 'height' : 'width'];
     },
 
     getCssValue(el, style) {
