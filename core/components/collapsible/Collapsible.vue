@@ -1,5 +1,5 @@
 <template>
-  <transition :name="name" @before-appear="beforeAppear" @appear="appear" @after-appear="afterAppear" @appear-cancelled="appearCancelled" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @enter-cancelled="enterCancelled" @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave" @leave-cancelled="leaveCancelled">
+  <transition :name="name" v-bind="$attrs" @enter="enter" @after-enter="afterEnter" @leave="leave" @after-leave="afterLeave">
     <div v-show="show" class="lv-collapsible__wrap">
       <slot></slot>
     </div>
@@ -68,27 +68,27 @@ export default {
   },
 
   methods: {
-    beforeAppear(el) {
-      // Emit the event to the parent
-      this.$emit('before-appear', el);
-    },
+    // beforeAppear(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('before-appear', el);
+    // },
 
-    appear(el) {
-      this.$emit('appear', el);
-    },
+    // appear(el) {
+    //   this.$emit('appear', el);
+    // },
 
-    afterAppear(el) {
-      this.$emit('after-appear', el);
-    },
+    // afterAppear(el) {
+    //   this.$emit('after-appear', el);
+    // },
 
-    appearCancelled(el) {
-      this.$emit('appear-cancelled', el);
-    },
+    // appearCancelled(el) {
+    //   this.$emit('appear-cancelled', el);
+    // },
 
-    beforeEnter(el) {
-      // Emit the event to the parent
-      this.$emit('before-enter', el);
-    },
+    // beforeEnter(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('before-enter', el);
+    // },
 
     enter(el, done) {
       this.detectAndCacheOrientations(el);
@@ -116,15 +116,15 @@ export default {
       this.$emit('after-enter', el);
     },
 
-    enterCancelled(el) {
-      // Emit the event to the parent
-      this.$emit('enter-cancelled', el);
-    },
+    // enterCancelled(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('enter-cancelled', el);
+    // },
 
-    beforeLeave(el) {
-      // Emit the event to the parent
-      this.$emit('before-leave', el);
-    },
+    // beforeLeave(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('before-leave', el);
+    // },
 
     leave(el, done) {
       // For some reason, @leave triggered when starting
@@ -161,10 +161,10 @@ export default {
       this.$emit('after-leave', el);
     },
 
-    leaveCancelled(el) {
-      // Emit the event to the parent
-      this.$emit('leave-cancelled', el);
-    },
+    // leaveCancelled(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('leave-cancelled', el);
+    // },
 
     detectAndCacheOrientations(el) {
       // Cache actual Orientations
@@ -277,6 +277,3 @@ export default {
   },
 };
 </script>
-<style lang="sass">
-@import './collapsible.scss'
-</style>
