@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import LvCollapsible from 'lightvue/collapsible-component';
+import LvCollapsible from 'lightvue/collapsible';
 export default {
   components: {
     LvCollapsible,

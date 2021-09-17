@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import LvCollapsible from 'lightvue/collapsible-component';
+import LvCollapsible from 'lightvue/collapsible';
 export default {
   components: {
     LvCollapsible,
@@ -293,7 +293,7 @@ $primary-color: #38b2ac;
     padding: 0px 16px 8px;
     margin-left: 8px;
     /* margin-top: -8px; */
-    /* 
+    /*
     height: 0px;
     opacity: 0;
     transition: all 0.3s; */
