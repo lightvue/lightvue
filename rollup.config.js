@@ -181,6 +181,7 @@ function addSFC() {
   addEntry('components/range-slider', 'index.js', 'range-slider', 'index');
   addEntry('components/textarea', 'index.js', 'textarea', 'index');
   addEntry('components/toast', 'index.js', 'toast', 'index');
+  addEntry('components/collapsible', 'index.js', 'collapsible', 'index');
 }
 
 function addDirectives() {
