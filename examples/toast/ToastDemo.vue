@@ -62,7 +62,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .--mr-4 {
   margin-right: 8px;
 }
