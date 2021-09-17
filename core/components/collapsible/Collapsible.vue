@@ -1,6 +1,8 @@
 <template>
   <transition :name="name" @before-appear="beforeAppear" @appear="appear" @after-appear="afterAppear" @appear-cancelled="appearCancelled" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @enter-cancelled="enterCancelled" @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave" @leave-cancelled="leaveCancelled">
-    <slot></slot>
+    <div v-show="show" class="lv-collapsible__wrap">
+      <slot></slot>
+    </div>
   </transition>
 </template>
 <script>
@@ -12,6 +14,11 @@ export default {
       type: String,
       required: false,
       default: 'collapsible',
+    },
+    show: {
+      type: Boolean,
+      required: true,
+      default: true,
     },
     orientation: {
       type: String,

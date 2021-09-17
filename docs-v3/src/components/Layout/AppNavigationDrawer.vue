@@ -14,8 +14,8 @@
           <i :class="activeCategory === category.category_name ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
         </div>
         <!-- <div :class="['nav-list__category-items', (activeCategory === category.category_name) && 'nav-list__category-items--active']" v-show="activeCategory === category.category_name" > -->
-        <LvCollapsible easing="ease-out">
-          <div v-show="activeCategory === category.category_name" class="nav-list__category-items" :key="category.category_name">
+        <LvCollapsible :show="activeCategory === category.category_name">
+          <div class="nav-list__category-items" :key="category.category_name">
             <nuxt-link :to="page.page_path" class="nav-list__category-item --link" v-for="page in category.pages" :key="page.page_name">
               <div class="nav-list__item-line"></div>
               <div class="nav-list__item-bullet"></div>

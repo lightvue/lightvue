@@ -8,8 +8,8 @@
         </div>
         <i :class="isOpenA ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
       </div>
-      <LvCollapsible>
-        <div class="nav-list__category-wrap" v-show="isOpenA">
+      <LvCollapsible :show="isOpenA">
+        <div class="nav-list__category-wrap">
           <div class="collapsible_catgory" @click="isOpenB = !isOpenB" :class="{ active: isOpenB == true }">
             <div class="nav-list__category-label">
               <i class="light-icon-directions"></i>
@@ -17,8 +17,8 @@
             </div>
             <i :class="isOpenB ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
           </div>
-          <LvCollapsible>
-            <div class="collapsible__category-items" v-show="isOpenB">
+          <LvCollapsible :show="isOpenB">
+            <div class="collapsible__category-items">
               <div class="nav-list__category-item --link">
                 <div class="nav-list__item-line"></div>
                 <div class="nav-list__item-bullet"></div>

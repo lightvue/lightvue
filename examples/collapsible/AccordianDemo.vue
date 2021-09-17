@@ -8,8 +8,8 @@
         </div>
         <i :class="isOpenA ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
       </div>
-      <LvCollapsible>
-        <div v-show="isOpenA" class="collapisible--answer">
+      <LvCollapsible :show="isOpenA">
+        <div class="collapisible--answer">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quasi ab blanditiis, iure consectetur, eius rerum vitae ipsa doloremque beatae sapiente? Alias ea atque sint excepturi. Possimus consequatur distinctio sequi.</p>
         </div>
       </LvCollapsible>
@@ -22,8 +22,8 @@
         </div>
         <i :class="isOpenB ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
       </div>
-      <LvCollapsible>
-        <div v-show="isOpenB" class="collapisible--answer">
+      <LvCollapsible :show="isOpenB">
+        <div class="collapisible--answer">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quasi ab blanditiis, iure consectetur, eius rerum vitae ipsa doloremque beatae sapiente? Alias ea atque sint excepturi. Possimus consequatur distinctio sequi.</p>
         </div>
       </LvCollapsible>
@@ -36,8 +36,8 @@
         </div>
         <i :class="isOpenC ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
       </div>
-      <LvCollapsible>
-        <div v-show="isOpenC" class="collapisible--answer">
+      <LvCollapsible :show="isOpenC">
+        <div class="collapisible--answer">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quasi ab blanditiis, iure consectetur, eius rerum vitae ipsa doloremque beatae sapiente? Alias ea atque sint excepturi. Possimus consequatur distinctio sequi.</p>
         </div>
       </LvCollapsible>
