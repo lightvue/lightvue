@@ -12,7 +12,7 @@
     <br />
     <lv-number placeholder="Enter Number" label="Without Buttons" :controls="false" />
     <br />
-    <lv-number placeholder="Enter Number" label="Material Effect" bottom-bar />
+    <lv-number placeholder="Enter Number" label="Material Effect" bottom-bar clearable />
     <br />
   </div>
 </template>

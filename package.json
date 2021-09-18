@@ -1,6 +1,6 @@
 {
   "name": "lightvue",
-  "version": "0.4.5",
+  "version": "0.4.7",
   "title": "LightVue | The Emerging UI Component library for Vue",
   "description": "The Emerging UI Component library for Vue 2.x & Vue 3.x",
   "author": "Pulkit <pulkit.cloud@gmail.com>",
@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "cd docs && npm run dev",
     "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js && node build/build-meta.js",
+    "postbuild": "cp package.json dist",
     "release": "release-it --no-git.requireCleanWorkingDir --npm.publishPath dist"
   },
   "devDependencies": {
@@ -29,6 +30,5 @@
     "rollup-plugin-vue": "^5.1.9",
     "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.12"
-  },
-  "license": "MIT"
+  }
 }
