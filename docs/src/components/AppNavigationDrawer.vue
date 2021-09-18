@@ -32,30 +32,28 @@
           <i :class="activeCategory === category.category_name ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
         </div>
         <!-- <div :class="['nav-list__category-items', (activeCategory === category.category_name) && 'nav-list__category-items--active']" v-show="activeCategory === category.category_name" > -->
-        <div
-          class="nav-list__category-items"
-          :style="{ height: (activeCategory === category.category_name) * (category.pages.length * 32 + 10) + 'px', opacity: (activeCategory === category.category_name) * 1 }"
-        >
-          <nuxt-link
-            :to="page.page_path"
-            class="nav-list__category-item --link"
-            v-for="page in category.pages"
-            :key="page.page_name"
-          >
-            <div class="nav-list__item-line"></div>
-            <div class="nav-list__item-bullet"></div>
-            <div class="nac-list__item-label">
-              {{ page.page_name }}
-            </div>
-          </nuxt-link>
-        </div>
+        <LvCollapsible :show="activeCategory === category.category_name">
+          <div class="nav-list__category-items" :key="category.category_name">
+            <nuxt-link :to="page.page_path" class="nav-list__category-item --link" v-for="page in category.pages" :key="page.page_name">
+              <div class="nav-list__item-line"></div>
+              <div class="nav-list__item-bullet"></div>
+              <div class="nac-list__item-label">
+                {{ page.page_name }}
+              </div>
+            </nuxt-link>
+          </div>
+        </LvCollapsible>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import LvCollapsible from 'lightvue/collapsible';
 export default {
+  components: {
+    LvCollapsible,
+  },
   props: {
     showDrawer: {
       type: Boolean,
@@ -94,6 +92,7 @@ export default {
     {
       category_name: 'Getting Started',
       category_icon: 'light-icon-info-circle',
+
       pages: [
         {
           page_name: 'Installation',
@@ -108,6 +107,7 @@ export default {
     {
       category_name: 'Form Elements',
       category_icon: 'light-icon-clipboard',
+
       pages: [
         {
           page_name: 'Input',
@@ -173,6 +173,7 @@ export default {
     {
       category_name: 'Loaders',
       category_icon: 'light-icon-rotate-clockwise',
+
       pages: [
         {
           page_name: 'Progress Bar',
@@ -195,6 +196,7 @@ export default {
     {
       category_name: 'Directives',
       category_icon: 'light-icon-directions',
+
       pages: [
         {
           page_name: 'Tooltip',
@@ -209,6 +211,7 @@ export default {
     {
       category_name: 'Misc.',
       category_icon: 'light-icon-square-plus',
+
       pages: [
         {
           page_name: 'Cards',
@@ -237,6 +240,10 @@ export default {
         {
           page_name: 'Notifications',
           page_path: '/vue-components/notification',
+        },
+        {
+          page_name: 'Collapsible',
+          page_path: '/vue-components/collapsible',
         },
       ],
     },
@@ -308,11 +315,11 @@ $primary-color: #38b2ac;
   .nav-list__category-items {
     padding: 0px 16px 8px;
     margin-left: 8px;
-    margin-top: -8px;
-
+    /* margin-top: -8px; */
+    /*
     height: 0px;
     opacity: 0;
-    transition: all 0.3s;
+    transition: all 0.3s; */
     overflow: hidden;
   }
 
