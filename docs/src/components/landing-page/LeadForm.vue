@@ -5,7 +5,7 @@
     <lv-input :bottom-bar="true" placeholder="Your Organization" v-model="organization" label="Your Organization" icon-left="light-icon-building-skyscraper" /> <br />
     <lv-dropdown v-model="selectedDesignation" :options="designation" optionLabel="name" placeholder="Profession" clearable label="What role best describes you?" icon-left="light-icon-briefcase" bottom-bar /> <br />
     <lv-textarea :bottom-bar="true" placeholder="Write to us.." v-model="comments" label="How we would help you to build better projects?" /> <br />
-    <lv-checkbox name="newsletter" v-model="newsletterChecked" value="true" rounded thick pulse outline color="success">
+    <lv-checkbox name="newsletter" v-model="newsletterChecked" rounded thick pulse outline color="success">
       <span class="dropdown-label"> Subscribe to <b class="--brand-color">LightVue</b> Newsletter </span>
     </lv-checkbox>
     <lv-button :push="true" :deep-shadow="true" label="Submit" class="leadform__button" @click="sendLead" />
@@ -73,7 +73,9 @@ export default {
         body: JSON.stringify({ ...leadDetails, geo_info, navigator }),
       })
         .then(response => {
+          // TODO: Notification isn't working in Vue2.x docs.
           this.$notification.add({ type: 'success', title: 'Thanks', content: 'Your Message has been recieved', duration: 3000 });
+
           this.$emit('success');
         })
         .catch(function (e) {
