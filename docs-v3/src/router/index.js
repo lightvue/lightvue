@@ -104,6 +104,10 @@ const routes = [
         component: () => import('@/pages/vue-components/slider.vue'),
       },
       {
+        path: 'collapsible',
+        component: () => import('@/pages/vue-components/collapsible.vue'),
+      },
+      {
         path: 'textarea',
         component: () => import('@/pages/vue-components/textarea.vue'),
       },

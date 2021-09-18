@@ -60,6 +60,12 @@ const InputAPI = {
       default: 'false',
       description: 'Input element with rounded corners',
     },
+    {
+      name: 'clearable',
+      type: 'Boolean',
+      default: 'false',
+      description: 'Clearable input element',
+    },
   ],
   slots: [
     {
