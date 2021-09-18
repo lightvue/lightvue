@@ -24,7 +24,7 @@
 export default {
   methods: {
     showSuccess() {
-      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 30000 });
+      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 3000 });
     },
     showInfo() {
       this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
