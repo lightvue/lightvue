@@ -24,7 +24,7 @@
 export default {
   methods: {
     showSuccess() {
-      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 30000 });
+      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 3000 });
     },
     showInfo() {
       this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
@@ -58,8 +58,9 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .--mr-4 {
   margin-right: 8px;
+  margin-top: 3px;
 }
 </style>

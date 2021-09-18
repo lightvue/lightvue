@@ -56,6 +56,7 @@
   justify-content: center;
   overflow: hidden;
   position: relative;
+  flex-shrink: 0;
   &.lv-link {
     cursor: pointer;
   }
