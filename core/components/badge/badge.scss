@@ -1,19 +1,110 @@
+.lv--primary {
+  --theme-color: #38b2ac;
+  --theme-color-light: #8ed8d6;
+  --theme-color-dark: #319795;
+  --theme-color-inverse: #ffffff;
+}
+.lv--secondary {
+  --theme-color: #607d8b;
+  --theme-color-light: #beccd2;
+  --theme-color-dark: #56717d;
+  --theme-color-inverse: #ffffff;
+}
+.lv--success {
+  --theme-color: #008c7f;
+  --theme-color-light: #95e8df;
+  --theme-color-dark: #03655b;
+  --theme-color-inverse: #ffffff;
+}
+.lv--info {
+  --theme-color: #0288d1;
+  --theme-color-light: #89d4fe;
+  --theme-color-dark: #027abc;
+  --theme-color-inverse: #ffffff;
+}
+.lv--warning {
+  --theme-color: #ffb300;
+  --theme-color-light: #ffd36d;
+  --theme-color-dark: #df9c00;
+  --theme-color-inverse: #ffffff;
+}
+.lv--help {
+  --theme-color: #795548;
+  --theme-color-light: #baafac;
+  --theme-color-dark: #795548;
+  --theme-color-inverse: #ffffff;
+}
+.lv--danger {
+  --theme-color: #bb2727;
+  --theme-color-light: #e9a5a5;
+  --theme-color-dark: #9b2222;
+  --theme-color-inverse: #ffffff;
+}
+.lv--plain {
+  --theme-color: #3f51b5;
+  --theme-color-light: #acb7f7;
+  --theme-color-dark: #2e3fa2;
+  --theme-color-inverse: #ffffff;
+}
+.--topbadge {
+  position: relative;
+  padding: 0.25em 0.4em;
+  color: white;
+  background: #007bff;
+}
+
 .lv-badge {
   //   height: 20px;
   //   width: 20px;
   //   border-radius: 50%;
 
-  display: inline-block;
-  color: white;
-  padding: 0.25em 0.4em;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
+  color: var(--theme-color-inverse);
+  background-color: var(--theme-color);
+  // border: 1px solid var(--primary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, border-radius 0.3s;
+  border-radius: 1rem;
+  &:hover {
+    // background: #319795;
+    background-color: var(--theme-color-dark);
+    color: #ffffff;
+    // border-color: #319795;
+  }
+  &.--size-sm {
+    font-size: 0.875rem;
+    padding: 0.4375rem 0.875rem;
+    .lv-button__icon i {
+      font-size: 0.875rem;
+    }
+  }
+  &.--size-md {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    .lv-button__icon i {
+      font-size: 1rem;
+    }
+  }
+  &.--size-lg {
+    font-size: 1.25rem;
+    padding: 0.625rem 1.25rem;
+    .lv-button__icon i {
+      font-size: 1.25rem;
+    }
+  }
+  &.--size-xl {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    .lv-button__icon i {
+      font-size: 1.5rem;
+    }
+  }
 }
 .--top-right {
   // height: 5px;
   // width: 5px;
-  font-size: 12px;
+
   position: absolute;
   top: -10px;
   right: -10px;
@@ -26,7 +117,7 @@
 .--top-left {
   // height: 5px;
   // width: 5px;
-  font-size: 12px;
+
   position: absolute;
   top: -10px;
   left: -10px;
@@ -39,7 +130,7 @@
 .--Bottom-left {
   // height: 5px;
   // width: 5px;
-  font-size: 12px;
+
   position: absolute;
   bottom: -10px;
   left: -10px;
@@ -52,7 +143,7 @@
 .--Bottom-right {
   // height: 5px;
   // width: 5px;
-  font-size: 12px;
+
   position: absolute;
   bottom: -10px;
   right: -10px;
@@ -64,36 +155,4 @@
 }
 .--rounded {
   border-radius: 2px;
-}
-.--primary {
-  background-color: #007bff;
-  border: 1px solid #1384fd;
-}
-.--secondary {
-  background-color: #6c757d;
-  border: 1px solid #727980;
-}
-.--sucess {
-  color: #fff;
-  background-color: #28a745;
-  border: 1px solid #33ac50;
-}
-.--danger {
-  background-color: #dc3545;
-  border: 1px solid #dd4958;
-}
-.--warning {
-  background-color: #ffc107;
-  border: 1px solid #facc42;
-}
-.--info {
-  background-color: #17a2b8;
-  border: 1px solid #4fa8b6;
-}
-.--light {
-  color: #212529;
-  background-color: #f8f9fa;
-}
-.--dark {
-  background-color: #343a40;
 }

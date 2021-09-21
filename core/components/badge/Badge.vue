@@ -9,75 +9,26 @@
 export default {
   name: 'LvBadge',
   props: {
-    rounded: {
-      type: Boolean,
-      default: false,
+    size: {
+      type: String,
+      default: 'md',
     },
-    primary: {
-      type: Boolean,
-      default: false,
-    },
-    secondary: {
-      type: Boolean,
-      default: false,
-    },
-    sucess: {
-      type: Boolean,
-      default: false,
-    },
-    danger: {
-      type: Boolean,
-      default: false,
-    },
-    warning: {
-      type: Boolean,
-      default: false,
-    },
-    info: {
-      type: Boolean,
-      default: false,
-    },
-    light: {
-      type: Boolean,
-      default: false,
-    },
-    dark: {
-      type: Boolean,
-      default: false,
-    },
-    topRight: {
-      type: Boolean,
-      default: false,
-    },
-    topLeft: {
-      type: Boolean,
-      default: false,
-    },
-    bottomLeft: {
-      type: Boolean,
-      default: false,
-    },
-    bottomRight: {
-      type: Boolean,
-      default: false,
+    position: {
+      type: String,
+      default: '',
     },
   },
   computed: {
     badgeClass() {
       return {
-        '--rounded': this.rounded,
-        '--primary': this.primary,
-        '--secondary': this.secondary,
-        '--sucess': this.sucess,
-        '--danger': this.danger,
-        '--warning': this.warning,
-        '--info': this.info,
-        '--light': this.light,
-        '--dark': this.dark,
-        '--top-right': this.topRight,
-        '--top-left': this.topLeft,
-        '--Bottom-left': this.bottomLeft,
-        '--Bottom-right': this.bottomRight,
+        '--size-sm': this.size === 'sm',
+        '--size-md': this.size === 'md',
+        '--size-lg': this.size === 'lg',
+        '--size-xl': this.size === 'xl',
+        '--top-right': this.position === 'topRight',
+        '--top-left': this.position === 'topLeft',
+        '--Bottom-left': this.position === 'bottomLeft',
+        '--Bottom-right': this.position === 'bottomRight',
       };
     },
   },

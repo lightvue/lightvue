@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="nav-list__category-wrap">
-      <div class="collapsible_catgory" @click="open1" v-ripple>
+      <div class="collapsible_catgory" @click="open1">
         <div class="nav-list__category-label">
           <i class="light-icon-adjustments"></i>
           What is lightVue
@@ -15,7 +15,7 @@
       </LvCollapsible>
     </div>
     <div class="nav-list__category-wrap">
-      <div class="collapsible_catgory" @click="open2" v-ripple>
+      <div class="collapsible_catgory" @click="open2">
         <div class="nav-list__category-label">
           <i class="light-icon-adjustments"></i>
           How to install lightVue
@@ -29,7 +29,7 @@
       </LvCollapsible>
     </div>
     <div class="nav-list__category-wrap">
-      <div class="collapsible_catgory" @click="open3" :class="{ active: isOpenC == true }" v-ripple>
+      <div class="collapsible_catgory" @click="open3" :class="{ active: isOpenC == true }">
         <div class="nav-list__category-label">
           <i class="light-icon-adjustments"></i>
           Is lightvue compatible for both vue2 and vue3
@@ -46,14 +46,11 @@
 </template>
 <script>
 import LvCollapsible from 'lightvue/collapsible-component';
-import ripple from 'lightvue/ripple';
 export default {
   components: {
     LvCollapsible,
   },
-  directives: {
-    ripple: ripple,
-  },
+ 
   data() {
     return {
       isOpenA: false,

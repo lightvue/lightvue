@@ -31,7 +31,7 @@ export default {
   packageName: 'badge',
   componentName: 'LvBadge',
   status: 'Under-development',
-  badge: 'info',
+  badge: 'lv--warning',
   apiData: BadgeAPI,
 };
 </script>

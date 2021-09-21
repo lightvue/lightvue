@@ -4,7 +4,7 @@
       <div class="feature-intro">
         <div class="feature-intro--title">
           <h1>{{ title }}</h1>
-          <LvBadge class="--mr1" info>{{ status }}</LvBadge>
+          <LvBadge class="--mr1" :class="badge">{{ status }}</LvBadge>
         </div>
         <p style="opacity: 0.8">
           {{ description }}

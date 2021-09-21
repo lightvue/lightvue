@@ -1,29 +1,29 @@
 const BadgeAPI = {
   props: [
     {
-      name: 'name',
+      name: 'size',
       type: 'String',
-      default: 'collapsible',
-      description: 'Configures the name of transition.',
+      default: 'md',
+      description: 'Configures the size of badge.',
     },
-    {
-      name: 'dimension',
-      type: 'String',
-      default: 'height',
-      description: 'Configures the direction of transition.',
-    },
-    {
-      name: 'duration',
-      type: 'Number',
-      default: '300',
-      description: 'Configures the duration of transition.',
-    },
-    {
-      name: 'easing',
-      type: 'String',
-      default: 'ease-in-out',
-      description: 'Configures if the easing property.',
-    },
+    // {
+    //   name: 'dimension',
+    //   type: 'String',
+    //   default: 'height',
+    //   description: 'Configures the direction of transition.',
+    // },
+    // {
+    //   name: 'duration',
+    //   type: 'Number',
+    //   default: '300',
+    //   description: 'Configures the duration of transition.',
+    // },
+    // {
+    //   name: 'easing',
+    //   type: 'String',
+    //   default: 'ease-in-out',
+    //   description: 'Configures if the easing property.',
+    // },
     // {
     //   name: 'disabled',
     //   type: 'Boolean',
