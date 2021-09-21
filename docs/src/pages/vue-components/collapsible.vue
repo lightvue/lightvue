@@ -31,8 +31,8 @@ export default {
   description: `Collapsible component Easily toggle visibility of almost any content on your pages in a vertically and horizontally collapsing container`,
   packageName: 'collapsible',
   componentName: 'LvCollapsible',
-  status: 'Under-development',
-  badge: 'info',
+  status: 'New',
+  badge: 'lv--plain',
   apiData: CollapsibleAPI,
 };
 </script>

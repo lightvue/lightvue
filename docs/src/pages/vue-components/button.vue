@@ -55,7 +55,7 @@ export default {
   packageName: 'button',
   componentName: 'LvButton',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: ButtonAPI,
 };
 </script>

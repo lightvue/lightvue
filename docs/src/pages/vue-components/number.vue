@@ -35,7 +35,7 @@ export default {
   packageName: 'number',
   componentName: 'LvNumber',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: NumberAPI,
 };
 </script>

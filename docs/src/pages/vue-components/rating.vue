@@ -40,7 +40,7 @@ export default {
   packageName: 'rating',
   componentName: 'LvRating',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: RatingAPI,
 };
 </script>

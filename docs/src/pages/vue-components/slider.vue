@@ -29,7 +29,7 @@ export default {
   packageName: 'slider',
   componentName: 'LvSlider',
   status: 'Under-development',
-  badge: 'info',
+  badge: 'lv--warning',
   apiData: SliderAPI,
 };
 </script>

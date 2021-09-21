@@ -30,7 +30,7 @@ export default {
   packageName: 'dropdown',
   componentName: 'LvDropdown',
   status: 'Updated',
-  badge: 'info',
+  badge: 'lv--secondary',
   apiData: DropdownAPI,
 };
 </script>

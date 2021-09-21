@@ -30,7 +30,7 @@ export default {
   packageName: 'tooltip',
   componentName: 'LvTooltip',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: TooltipAPI,
   apiData: {},
 };

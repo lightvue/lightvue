@@ -31,8 +31,8 @@ export default {
   description: `Card components can be used as flexible containers/wrappers for other UI elements.`,
   packageName: 'card',
   componentName: 'LvCard',
-  status: 'Under-development',
-  badge: 'info',
+  status: 'Stable',
+  badge: 'lv--success',
   apiData: CardAPI,
 };
 </script>

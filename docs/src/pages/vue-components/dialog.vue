@@ -47,7 +47,7 @@ export default {
   packageName: 'dialog',
   componentName: 'LvDialog',
   status: 'UnStable',
-  badge: 'info',
+  badge: 'lv--danger',
   apiData: DialogAPI,
 };
 </script>

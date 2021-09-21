@@ -29,8 +29,8 @@ export default {
   description: `Add a material ripple effect on click, to any DOM element/Vue component.`,
   packageName: 'ripple',
   componentName: 'Ripple',
-  status: 'Stable',
-  badge: 'info',
+  status: 'Under-development',
+  badge: 'lv--warning',
   apiData: RippleAPI,
   apiData: {},
 };

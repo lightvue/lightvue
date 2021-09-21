@@ -29,7 +29,7 @@ export default {
   packageName: 'Toast',
   componentName: 'LvToast',
   status: 'Updated',
-  badge: 'info',
+  badge: 'lv--info',
   apiData: ToastAPI,
 };
 </script>

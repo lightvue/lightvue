@@ -32,7 +32,7 @@ export default {
   packageName: 'progressSpinner',
   componentName: 'lv-progressspinner',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: ProgressSpinnerAPI,
 };
 </script>

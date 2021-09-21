@@ -33,7 +33,7 @@ export default {
   packageName: 'textarea',
   componentName: 'LVTextarea',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: TextareaAPI,
 };
 </script>

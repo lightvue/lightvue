@@ -29,7 +29,7 @@ export default {
   packageName: 'radio-group',
   componentName: 'LvRadioGroup',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: CheckboxAPI,
 };
 </script>

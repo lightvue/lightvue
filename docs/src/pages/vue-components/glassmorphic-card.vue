@@ -32,7 +32,7 @@ export default {
   packageName: 'glasscard',
   componentName: 'LvGlassCard',
   status: 'Pre-release',
-  badge: 'info',
+  badge: 'lv--info',
   apiData: GlassCardAPI,
 };
 </script>

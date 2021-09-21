@@ -38,7 +38,7 @@ export default {
   packageName: 'LvSkeleton',
   componentName: 'LvSkeleton',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: ShimmersAPI,
 };
 </script>

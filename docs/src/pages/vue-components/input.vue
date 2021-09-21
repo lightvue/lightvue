@@ -51,7 +51,7 @@ export default {
   packageName: 'input',
   componentName: 'LvInput',
   status: 'Rc',
-  badge: 'info',
+  badge: 'lv--primary',
   apiData: InputAPI,
 };
 </script>

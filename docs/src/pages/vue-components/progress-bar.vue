@@ -32,7 +32,7 @@ export default {
   packageName: 'progressbar',
   componentName: 'lv-progressbar',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: ProgressBarAPI,
 };
 </script>

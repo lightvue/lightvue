@@ -30,7 +30,7 @@ export default {
   packageName: 'checkbox-group',
   componentName: 'LvCheckboxGroup',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: CheckboxAPI,
 };
 </script>

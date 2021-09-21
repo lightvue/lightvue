@@ -29,7 +29,7 @@ export default {
   packageName: 'toggle-switch',
   componentName: 'LvToggleSwitch',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: ToggleSwitchAPI,
 };
 </script>

@@ -29,7 +29,7 @@ export default {
   packageName: 'overlay-panel',
   componentName: 'LvOverlayPanel',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: OverlayPanelAPI,
 };
 </script>

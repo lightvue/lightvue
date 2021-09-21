@@ -59,7 +59,7 @@ export default {
   packageName: 'progressloader',
   componentName: 'LvLoader',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: ProgressLoaderAPI,
 };
 </script>

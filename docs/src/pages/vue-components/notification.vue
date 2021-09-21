@@ -31,7 +31,7 @@ export default {
   packageName: 'notification',
   componentName: 'LvNotification',
   status: 'Updated',
-  badge: 'info',
+  badge: 'lv--info',
   apiData: NotificationAPI,
 };
 </script>

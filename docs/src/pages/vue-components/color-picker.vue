@@ -29,7 +29,7 @@ export default {
   packageName: 'colorpicker',
   componentName: 'LvColorpicker',
   status: 'Stable',
-  badge: 'info',
+  badge: 'lv--success',
   apiData: ColorpickerAPI,
 };
 </script>
