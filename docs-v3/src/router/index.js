@@ -123,6 +123,10 @@ const routes = [
         path: 'tooltip',
         component: () => import('@/pages/vue-components/tooltip.vue'),
       },
+      {
+        path: 'contact-input',
+        component: () => import('@/pages/vue-components/contact-input.vue'),
+      },
     ],
   },
   {

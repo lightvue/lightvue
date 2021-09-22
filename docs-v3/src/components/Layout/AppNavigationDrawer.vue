@@ -143,6 +143,10 @@ export default {
           page_name: 'Rating',
           page_path: '/vue-components/rating',
         },
+        {
+          page_name: 'Contact Input',
+          page_path: '/vue-components/contact-input',
+        },
       ],
     },
     {
