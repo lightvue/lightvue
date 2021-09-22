@@ -1,10 +1,10 @@
 <template>
   <div>
-    <lv-contact-input label="With flag" />
+    <lv-contact-input label="With flags" iconLeft="light-icon-phone" />
     <br />
-    <lv-contact-input :showFlag="false" />
+    <lv-contact-input :showFlag="false" label="Without flags" />
     <br />
-    <lv-contact-input showCountryName />
+    <lv-contact-input showCountryName label="With country name" />
   </div>
 </template>
 

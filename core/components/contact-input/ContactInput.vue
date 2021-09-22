@@ -1,7 +1,7 @@
 <template>
-  <lv-input type="tel" v-model="phone" clearable v-bind="$attrs" pattern="\d.*">
+  <lv-input type="tel" v-model.trim="phone" clearable v-bind="$attrs" :help-text="help">
     <template #prepend>
-      <lv-dropdown iconLeft="light-icon-phone" v-model="selectedCountry" :options="countries" optionLabel="name" filter placeholder="Country code">
+      <lv-dropdown v-bind="$attrs" v-model="selectedCountry" :options="countries" optionLabel="name" filter placeholder="Country code" filterPlaceholder="Search country" label="">
         <template #value="slotProps">
           <div class="country-item country-item-value" v-if="slotProps.value">
             <div>{{ slotProps.value.callingCode }}</div>
@@ -9,7 +9,7 @@
         </template>
         <template #option="slotProps">
           <div class="country-item">
-            <img v-if="showFlag" :src="slotProps.option.flag" width="20" class="flag" />
+            <img v-if="showFlag" :src="slotProps.option.flag" class="flag" />
             <div>{{ slotProps.option.callingCode }}</div>
             <div v-if="showCountryName" style="margin-left: 5px">{{ slotProps.option.name }}</div>
           </div>
@@ -23,7 +23,7 @@
 <script>
 import LvInput from 'lightvue/input';
 import LvDropdown from 'lightvue/dropdown';
-import res from './info.json';
+import countries from './info.json';
 
 export default {
   components: {
@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       selectedCountry: '',
-      countries: [],
+      countries,
       phone: '',
     };
   },
@@ -51,17 +51,13 @@ export default {
     fullPhoneNumber() {
       return this.selectedCountry && this.selectedCountry.callingCode + this.phone;
     },
-  },
-  created() {
-    // const res = await fetch('https://restcountries.eu/rest/v2/all');
-    // const data = await res.json();
-    // const countries = data.map(({ alpha3Code, callingCodes, flag, name }) => ({
-    //   alpha3Code,
-    //   callingCode: `+${callingCodes[0]}`,
-    //   flag,
-    //   name,
-    // }));
-    this.countries = res;
+    help() {
+      // let message = this.phone ? (/^[0-9]+$/g.test(this.phone) ? '' : 'Contain Digits') : '';
+      // if (this.selectedCountry.callingCode === '+91') {
+      //   message = /^[789]{1}[0-9]{9}$/g.test(this.phone) ? '' : !/^[789]/.test(this.phone) ? '789 beginning' : '10 digits';
+      // }
+      // return message;
+    },
   },
 };
 </script>
