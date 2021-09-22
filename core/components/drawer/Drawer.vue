@@ -201,7 +201,7 @@ export default {
     },
     getDrawerStyle() {
       return {
-        width: this.left || this.right ? this.getWidth : '100%',
+        width: this.left || this.right ? this.getWidth : !this.top && !this.right ? this.getWidth : '100%',
         zIndex: this.zIndex + 5,
         padding: this.padding,
         background: this.background,
@@ -217,7 +217,7 @@ export default {
       };
     },
     getTransitionStyle() {
-      return this.getDrawerPosition ? this.getBottomTouchStyle : this.left ? this.getLeftStyle : this.right ? this.getRightStyle : this.getTopStyle;
+      return this.getDrawerPosition ? this.getBottomTouchStyle : this.left ? this.getLeftStyle : this.right ? this.getRightStyle : this.top ? this.getTopStyle : this.getLeftStyle;
     },
     getLeftStyle() {
       return {
