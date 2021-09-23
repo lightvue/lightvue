@@ -1,5 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
+    <rating-best-demo />
     <!-- <docs-card-vue title="Modifying Options" file="rating/examples/RatingDemo_Options" /> -->
     <!-- <docs-card-vue title="Modifying style" file="rating/examples/RatingDemo_Styling" /> -->
     <docs-card-vue title="Modifying increment" file="rating/examples_options/RatingDemo_1" />
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+import RatingBestDemo from 'lightvueDocs/example/rating/RatingBestDemo.vue';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
@@ -29,6 +31,7 @@ import RatingAPI from 'lightvueDocs/example/rating/RatingAPI';
 
 export default {
   components: {
+    RatingBestDemo,
     DocsCardVue,
     DocsCard,
     GettingStarted,

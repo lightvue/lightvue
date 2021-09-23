@@ -1,47 +1,50 @@
 <template>
-  <transition-group :name="name" @before-appear="beforeAppear" @appear="appear" @after-appear="afterAppear" @appear-cancelled="appearCancelled" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @enter-cancelled="enterCancelled" @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave" @leave-cancelled="leaveCancelled">
-    <slot></slot>
-  </transition-group>
+  <transition :name="name" v-bind="$attrs" @enter="enter" @after-enter="afterEnter" @leave="leave" @after-leave="afterLeave">
+    <div v-show="show" class="lv-collapsible__wrap">
+      <slot></slot>
+    </div>
+  </transition>
 </template>
 <script>
 export default {
   name: 'LvCollapsible',
-
+  // inheritAttrs: false,
   props: {
     name: {
       type: String,
       required: false,
       default: 'collapsible',
     },
-    dimension: {
+    show: {
+      type: Boolean,
+      required: true,
+      default: true,
+    },
+    orientation: {
       type: String,
       required: false,
-      default: 'height',
+      default: 'vertical',
       validator: value => {
-        return ['height', 'width'].includes(value);
+        return ['vertical', 'horizontal'].includes(value);
       },
     },
     duration: {
       type: Number,
       required: false,
-      default: 300,
-    },
-    easing: {
-      type: String,
-      required: false,
-      default: 'ease-in-out',
+      default: 350,
     },
   },
 
   watch: {
-    dimension() {
-      this.clearCachedDimensions();
+    orientation() {
+      this.clearCachedOrientations();
     },
   },
 
   data() {
     return {
       cachedStyles: null,
+      comp_orientation: '',
     };
   },
 
@@ -50,47 +53,51 @@ export default {
       let transitions = [];
 
       Object.keys(this.cachedStyles).forEach(key => {
-        transitions.push(`${this.convertToCssProperty(key)} ${this.duration}ms ${this.easing}`);
+        transitions.push(`${this.convertToCssProperty(key)} ${this.duration}ms `);
       });
 
       return transitions.join(', ');
     },
+    // computedOrientation() {
+    //   if (this.orientation == 'horizontal') {
+    //     return (this.comp_orientation = 'width');
+    //   } else {
+    //     return (this.comp_orientation = 'height');
+    //   }
+    // },
   },
 
   methods: {
-    beforeAppear(el) {
-      // Emit the event to the parent
-      this.$emit('before-appear', el);
-    },
+    // beforeAppear(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('before-appear', el);
+    // },
 
-    appear(el) {
-      // Emit the event to the parent
-      this.$emit('appear', el);
-    },
+    // appear(el) {
+    //   this.$emit('appear', el);
+    // },
 
-    afterAppear(el) {
-      // Emit the event to the parent
-      this.$emit('after-appear', el);
-    },
+    // afterAppear(el) {
+    //   this.$emit('after-appear', el);
+    // },
 
-    appearCancelled(el) {
-      // Emit the event to the parent
-      this.$emit('appear-cancelled', el);
-    },
+    // appearCancelled(el) {
+    //   this.$emit('appear-cancelled', el);
+    // },
 
-    beforeEnter(el) {
-      // Emit the event to the parent
-      this.$emit('before-enter', el);
-    },
+    // beforeEnter(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('before-enter', el);
+    // },
 
     enter(el, done) {
-      this.detectAndCacheDimensions(el);
+      this.detectAndCacheOrientations(el);
 
-      this.setClosedDimensions(el);
+      this.setClosedOrientations(el);
       this.hideOverflow(el);
       this.forceRepaint(el);
       this.setTransition(el);
-      this.setOpenedDimensions(el);
+      this.setOpenedOrientations(el);
 
       // Emit the event to the parent
       this.$emit('enter', el, done);
@@ -102,36 +109,36 @@ export default {
       // Clean up inline styles
       this.unsetOverflow(el);
       this.unsetTransition(el);
-      this.unsetDimensions(el);
-      this.clearCachedDimensions();
+      this.unsetOrientations(el);
+      this.clearCachedOrientations();
 
       // Emit the event to the parent
       this.$emit('after-enter', el);
     },
 
-    enterCancelled(el) {
-      // Emit the event to the parent
-      this.$emit('enter-cancelled', el);
-    },
+    // enterCancelled(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('enter-cancelled', el);
+    // },
 
-    beforeLeave(el) {
-      // Emit the event to the parent
-      this.$emit('before-leave', el);
-    },
+    // beforeLeave(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('before-leave', el);
+    // },
 
     leave(el, done) {
       // For some reason, @leave triggered when starting
       // from open state on page load. So for safety,
-      // check if the dimensions have been cached.
-      this.detectAndCacheDimensions(el);
+      // check if the Orientations have been cached.
+      this.detectAndCacheOrientations(el);
 
       // The order of applying styles is less important
 
-      this.setOpenedDimensions(el);
+      this.setOpenedOrientations(el);
       this.hideOverflow(el);
       this.forceRepaint(el);
       this.setTransition(el);
-      this.setClosedDimensions(el);
+      this.setClosedOrientations(el);
 
       // Emit the event to the parent
       this.$emit('leave', el, done);
@@ -147,20 +154,20 @@ export default {
       // Clean up inline styles
       this.unsetOverflow(el);
       this.unsetTransition(el);
-      this.unsetDimensions(el);
-      this.clearCachedDimensions();
+      this.unsetOrientations(el);
+      this.clearCachedOrientations();
 
       // Emit the event to the parent
       this.$emit('after-leave', el);
     },
 
-    leaveCancelled(el) {
-      // Emit the event to the parent
-      this.$emit('leave-cancelled', el);
-    },
+    // leaveCancelled(el) {
+    //   // Emit the event to the parent
+    //   this.$emit('leave-cancelled', el);
+    // },
 
-    detectAndCacheDimensions(el) {
-      // Cache actual dimensions
+    detectAndCacheOrientations(el) {
+      // Cache actual Orientations
       // only once to void invalid values when
       // triggering during a transition
       if (this.cachedStyles) return;
@@ -172,21 +179,22 @@ export default {
       // height of a hidden element
       el.style.visibility = 'hidden';
       el.style.display = '';
+      el.style['backface-visibility'] = 'hidden';
 
-      this.cachedStyles = this.detectRelevantDimensions(el);
+      this.cachedStyles = this.detectRelevantOrientations(el);
 
       // Restore any original styling
       el.style.visibility = visibility;
       el.style.display = display;
     },
 
-    clearCachedDimensions() {
+    clearCachedOrientations() {
       this.cachedStyles = null;
     },
 
-    detectRelevantDimensions(el) {
+    detectRelevantOrientations(el) {
       // These properties will be transitioned
-      if (this.dimension === 'height') {
+      if (this.orientation === 'vertical') {
         return {
           height: el.offsetHeight + 'px',
           paddingTop: el.style.paddingTop || this.getCssValue(el, 'padding-top'),
@@ -194,7 +202,7 @@ export default {
         };
       }
 
-      if (this.dimension === 'width') {
+      if (this.orientation === 'horizontal') {
         return {
           width: el.offsetWidth + 'px',
           paddingLeft: el.style.paddingLeft || this.getCssValue(el, 'padding-left'),
@@ -221,19 +229,19 @@ export default {
       el.style.overflow = '';
     },
 
-    setClosedDimensions(el) {
+    setClosedOrientations(el) {
       Object.keys(this.cachedStyles).forEach(key => {
         el.style[key] = '0';
       });
     },
 
-    setOpenedDimensions(el) {
+    setOpenedOrientations(el) {
       Object.keys(this.cachedStyles).forEach(key => {
         el.style[key] = this.cachedStyles[key];
       });
     },
 
-    unsetDimensions(el) {
+    unsetOrientations(el) {
       Object.keys(this.cachedStyles).forEach(key => {
         el.style[key] = '';
       });
@@ -241,8 +249,7 @@ export default {
 
     forceRepaint(el) {
       // Force repaint to make sure the animation is triggered correctly.
-
-      getComputedStyle(el)[this.dimension];
+      getComputedStyle(el)[this.orientation === 'vertical' ? 'height' : 'width'];
     },
 
     getCssValue(el, style) {
@@ -269,6 +276,3 @@ export default {
   },
 };
 </script>
-<style lang="sass">
-@import './collapsible.scss'
-</style>

@@ -130,6 +130,9 @@ export default {
       this.selectedRating = val;
       this.createStars(this.shouldRound);
     },
+    maxRating(val) {
+      this.currentRating = val < this.selectedRating ? val : this.selectedRating;
+    },
   },
   created() {
     this.step = this.increment * 100;
