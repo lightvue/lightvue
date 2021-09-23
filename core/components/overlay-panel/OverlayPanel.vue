@@ -67,10 +67,18 @@ export default {
   beforeUnmount() {
     this.onBeforeUnmount();
   },
+  mounted() {
+    window.addEventListener('popstate', this.detectHistory); //detecting the backEvent
+  },
   methods: {
+    detectHistory() {
+      console.log('hii from popEvet ');
+      this.hide(); //Closing the panel when user press back
+    },
     toggle(event, target) {
       let domTarget = event ? event.currentTarget : target;
       console.log(domTarget);
+      window.history.pushState({ id: 1 }, null, null); //Creating imaginary history
       if (this.visible) this.hide();
       else this.show(domTarget);
     },

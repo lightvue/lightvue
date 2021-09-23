@@ -138,6 +138,10 @@ export default {
   },
 
   methods: {
+    detectHistory(e) {
+      console.log(e);
+      this.drawerClose();
+    },
     drawerClose() {
       // this.drawer = false;
       this.snap = this.drawerHeight;
@@ -291,6 +295,8 @@ export default {
     this.snap = this.drawerHeight;
     document.documentElement.style.overflow = this.modelValue == true ? 'hidden' : 'overlay';
     window.addEventListener('resize', this.handleResize);
+    window.addEventListener('popstate', this.detectHistory);
+    window.history.pushState({ id: 2 }, null, null);
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
@@ -408,13 +414,18 @@ export default {
   }
   .wrapper__backdrop {
     position: absolute;
+
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, -28.7);
+
+    /* /backdrop-filter: blur(2px); */
+
+    /*  */
     // opacity: 0.3;
     // backdrop-filter: blur(3px);
   }
