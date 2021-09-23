@@ -67,6 +67,7 @@ export default {
       windowHeight: 0,
       containerHeight: 0,
       timeOutID: null,
+      popstateEvent: null,
     };
   },
   props: {
@@ -138,10 +139,6 @@ export default {
   },
 
   methods: {
-    detectHistory(e) {
-      console.log(e);
-      this.drawerClose();
-    },
     drawerClose() {
       // this.drawer = false;
       this.snap = this.drawerHeight;
@@ -196,6 +193,13 @@ export default {
         this.snap = this.drawerHeight;
         console.log('changed');
       }, 250);
+    },
+    preventPopstate() {
+      window.removeEventListener('popstate', null);
+      this.popstateEvent = null;
+      if (this.modelValue === true) {
+        this.drawerClose();
+      }
     },
   },
   computed: {
@@ -283,6 +287,21 @@ export default {
     modelValue(value) {
       // this.drawer = value;
       value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
+      //
+      if (value === true) {
+        window.history.pushState({ id: 2 }, null, null);
+        window.addEventListener('popstate', this.preventPopstate);
+        this.popstateEvent = true;
+      } else {
+        if (this.popstateEvent) {
+          // window.history.back();
+          if (this.$router) {
+            this.$router.go(-1);
+          }
+          window.removeEventListener('popstate', null);
+          this.popstateEvent = null;
+        }
+      }
     },
   },
   beforeMount() {
@@ -295,8 +314,6 @@ export default {
     this.snap = this.drawerHeight;
     document.documentElement.style.overflow = this.modelValue == true ? 'hidden' : 'overlay';
     window.addEventListener('resize', this.handleResize);
-    window.addEventListener('popstate', this.detectHistory);
-    window.history.pushState({ id: 2 }, null, null);
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
