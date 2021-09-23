@@ -47,11 +47,11 @@
 </template>
 
 <script>
-import { trueValueMixin } from 'lightvue/mixins';
+import { trueValueMixin, preventBrowserBackMixin } from 'lightvue/mixins';
 
 export default {
   name: 'LvDrawer',
-  mixins: [trueValueMixin],
+  mixins: [trueValueMixin, preventBrowserBackMixin],
   data() {
     return {
       // drawer: false,
@@ -67,7 +67,6 @@ export default {
       windowHeight: 0,
       containerHeight: 0,
       timeOutID: null,
-      popstateEvent: null,
     };
   },
   props: {
@@ -194,9 +193,8 @@ export default {
         console.log('changed');
       }, 250);
     },
-    preventPopstate() {
-      window.removeEventListener('popstate', null);
-      this.popstateEvent = null;
+    handleOnBrowserBack() {
+      // Called from Mixin
       if (this.modelValue === true) {
         this.drawerClose();
       }
@@ -289,18 +287,9 @@ export default {
       value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
       //
       if (value === true) {
-        window.history.pushState({ id: 2 }, null, null);
-        window.addEventListener('popstate', this.preventPopstate);
-        this.popstateEvent = true;
+        this.preventPopstate(); // from Mixin
       } else {
-        if (this.popstateEvent) {
-          // window.history.back();
-          if (this.$router) {
-            this.$router.go(-1);
-          }
-          window.removeEventListener('popstate', null);
-          this.popstateEvent = null;
-        }
+        this.manuallyClosePopstate(); // From Mixin
       }
     },
   },
