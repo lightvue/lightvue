@@ -1,7 +1,7 @@
 <template>
   <lv-input type="tel" v-model.trim="phone" clearable v-bind="$attrs" :help-text="help">
     <template #prepend>
-      <lv-dropdown v-bind="$attrs" v-model="selectedCountry" :options="countries" optionLabel="name" filter placeholder="Country code" filterPlaceholder="Search country" label="">
+      <lv-dropdown v-bind="$attrs" v-model="selectedCountry" :options="countries" optionLabel="name" filter label="">
         <template #value="slotProps">
           <div class="country-item country-item-value" v-if="slotProps.value">
             <div>{{ slotProps.value.callingCode }}</div>
