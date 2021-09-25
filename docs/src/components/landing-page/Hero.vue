@@ -33,7 +33,9 @@
         </div>
       </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#143a56" fill-opacity="1" d="M0,64L120,90.7C240,117,480,171,720,165.3C960,160,1200,96,1320,64L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
+    <svg viewBox="0 0 1440 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1440 0H0V78.7375C265.747 120.349 397.724 150 718.001 150C1038.28 150 1152.27 131.392 1440 78.7375V0Z" fill="#143A56" />
+    </svg>
     <div class="hero-image">
       <img src="/hero-bg.svg" alt="" />
     </div>
