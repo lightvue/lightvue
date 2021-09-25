@@ -9,22 +9,22 @@
           <div class="hero-container__content">
             <div class="hero-container__subtext">
               The Emerging UI Component library<br />
-              for <span class="subtext-highlight">Vue 3.x</span> &amp; <span class="subtext-highlight">Vue 2.x </span>
+              <span style="font-size: 0.8em"> Designed for <span class="subtext-highlight">Vue 3.x</span> &amp; <span class="subtext-highlight">Vue 2.x </span> </span>
             </div>
           </div>
         </div>
         <div class="hero-container__row">
           <div class="hero-container__pre-wrap">
             <div class="hero-container__pre">
-              <!-- <CopyButton :text="getNpmCode" /> -->
               <code><span class="not-selectable">$ </span> <span class="selectable">npm install lightvue</span></code>
+              <CopyButton text="npm install lightvue" />
             </div>
           </div>
         </div>
         <div class="hero-container__row">
           <div class="hero-container__buttons">
             <nuxt-link to="/getting-started/installation" class="hero-button lv-fluid">
-              <LvButton label="Get Started" :push="true" :deep-shadow="true" type="button" size="xl" style="font-size: 16px" />
+              <LvButton label="Documentaton" :push="true" :deep-shadow="true" type="button" size="xl" style="font-size: 16px" />
             </nuxt-link>
             <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
               <lv-button label="Explore" :push="true" :deep-shadow="true" type="button" size="xl" style="font-size: 16px" />
@@ -43,17 +43,12 @@
 </template>
 
 <script>
-// import CopyButton from '@/components/docs-card/CopyButton';
+import CopyButton from '@/components/docs-card/CopyButton';
 
 export default {
-  // components: {
-  //   CopyButton,
-  // },
-  // methods: {
-  //   getNpmCode() {
-  //     return this.$el.querySelector('.selectable').innerText;
-  //   },
-  // },
+  components: {
+    CopyButton,
+  },
 };
 </script>
 
@@ -78,9 +73,9 @@ $text-color-secondary: #eeecec;
     .hero-logo {
       margin: auto;
       display: flex;
-      height: 150px;
+      height: 100px; /** Just to prevent fluctuation on initial-load **/
       width: 500px;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       justify-content: center;
       align-items: center;
       img {
@@ -102,7 +97,7 @@ $text-color-secondary: #eeecec;
       float: left;
       .hero-container__content {
         text-align: center;
-        margin-bottom: 2.3em;
+        margin-bottom: 100px;
         .hero-container__heading {
           font-weight: 700;
           font-size: 3.75rem;
@@ -141,12 +136,12 @@ $text-color-secondary: #eeecec;
           position: relative;
           border-radius: 4px;
           display: inline-flex;
-          font-size: 24px;
+          font-size: 20px;
           color: #ffffff;
-          background: #135483;
+          background: rgba(0, 0, 0, 0.15);
           margin-bottom: 2rem;
-          overflow-x: auto;
-          padding: 20px 24px;
+          // overflow-x: auto;
+          padding: 24px 80px 24px 24px;
           white-space: pre;
           .not-selectable {
             user-select: none;
@@ -176,7 +171,7 @@ $text-color-secondary: #eeecec;
         .hero-container__content {
           .hero-container__subtext {
             font-size: 1.5em;
-            margin: 50px 0px;
+            margin: 30px 0px 80px;
           }
         }
       }
@@ -231,8 +226,9 @@ $text-color-secondary: #eeecec;
       .hero-logo {
         margin: auto;
         display: flex;
-        height: 100px;
+        height: 60px; /** Just to prevent fluctuation on initial-load **/
         width: 280px;
+        max-width: 90vw;
       }
       .hero-container__row {
         .hero-container__pre-wrap {
@@ -257,5 +253,12 @@ $text-color-secondary: #eeecec;
       }
     }
   }
+}
+</style>
+<style>
+.hero-container__pre .copy-btn__tag {
+  left: 150%;
+  right: unset;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 </style>
