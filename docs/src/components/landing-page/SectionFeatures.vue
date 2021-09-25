@@ -106,7 +106,11 @@ export default {};
         flex-direction: column;
         border-radius: 8px;
         background: #ffffff;
-        box-shadow: 16px 16px 32px #e8e8e8, -16px -16px 32px #ffffff;
+        cursor: pointer;
+        box-shadow: 0px 0px 16px 0px rgba(19, 58, 86, 0.1);
+        &:hover {
+          box-shadow: 0px 0px 16px 0px rgba(19, 58, 86, 0.3);
+        }
         &.--first {
           position: absolute;
           bottom: 120px;
