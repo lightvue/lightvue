@@ -24,21 +24,29 @@
         <div class="hero-container__row">
           <div class="hero-container__buttons">
             <nuxt-link to="/getting-started/installation" class="hero-button lv-fluid">
-              <LvButton label="Documentaton" :push="true" :deep-shadow="true" type="button" size="xl" style="font-size: 16px" />
+              <LvButton label="Documentaton" push type="button" size="xl" icon-right="light-icon-chevron-right" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
             </nuxt-link>
             <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
-              <lv-button label="Explore" :push="true" :deep-shadow="true" type="button" size="xl" style="font-size: 16px" />
+              <lv-button label="Know More" push type="button" size="xl" icon-right="light-icon-plane-departure" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
             </nuxt-link>
           </div>
         </div>
       </div>
     </div>
-    <svg viewBox="0 0 1440 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1440 0H0V78.7375C265.747 120.349 397.724 150 718.001 150C1038.28 150 1152.27 131.392 1440 78.7375V0Z" fill="#143A56" />
-    </svg>
-    <div class="hero-image">
+    <!-- <div class="hero-wave__wrap">
+      <svg viewBox="0 0 1440 380" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-wave__svg">
+        <path d="M1440 0H0V78.7375C265.747 120.349 397.724 150 718.001 150C1038.28 150 1152.27 131.392 1440 78.7375V0Z" fill="#143A56" />
+      </svg>
+      <div>
+        <div class="hero-cover-image">
+          <img src="/hero-bg.svg" alt="LightVue Illustration" />
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="hero-image">
       <img src="/hero-bg.svg" alt="" />
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -68,7 +76,7 @@ $text-color-secondary: #eeecec;
   position: relative;
 
   .hero-wrapper {
-    padding: 4em 0 12em;
+    padding: 4em 0 0;
     background-color: #133a56;
     .hero-logo {
       margin: auto;
@@ -123,7 +131,7 @@ $text-color-secondary: #eeecec;
         z-index: 200;
         .hero-button {
           width: 180px;
-          margin: 16px;
+          margin: 12px;
           white-space: nowrap;
           z-index: 999;
         }
@@ -138,7 +146,7 @@ $text-color-secondary: #eeecec;
           display: inline-flex;
           font-size: 20px;
           color: #ffffff;
-          background: rgba(0, 0, 0, 0.15);
+          background: rgba(255, 255, 255, 0.05);
           margin-bottom: 2rem;
           // overflow-x: auto;
           padding: 24px 80px 24px 24px;
@@ -221,7 +229,7 @@ $text-color-secondary: #eeecec;
     position: relative;
 
     .hero-wrapper {
-      padding: 4em 0 12em;
+      padding: 4em 0 0em;
       background-color: #133a56;
       .hero-logo {
         margin: auto;
@@ -230,28 +238,25 @@ $text-color-secondary: #eeecec;
         width: 280px;
         max-width: 90vw;
       }
-      .hero-container__row {
-        .hero-container__pre-wrap {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          .hero-container__pre {
-            border-radius: 4px;
-            display: inline-flex;
-            font-size: 18px;
-            color: #ffffff;
-            background: #135483;
-            margin-bottom: 2rem;
-            overflow-x: auto;
-            padding: 18px 22px;
-            white-space: pre;
-            .not-selectable {
-              user-select: none;
-            }
-          }
-        }
-      }
     }
+  }
+}
+.hero-wave__wrap {
+  width: 100%;
+  position: relative;
+  .hero-wave__svg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
+.hero-cover-image {
+  height: 720px;
+  display: flex;
+  img {
+    height: 100%;
+    z-index: 1;
+    margin: auto;
   }
 }
 </style>
@@ -260,5 +265,10 @@ $text-color-secondary: #eeecec;
   left: 150%;
   right: unset;
   background-color: rgba(0, 0, 0, 0.15);
+}
+@media only screen and (max-width: 400px) {
+  .hero-container__pre .copy-btn__wrap {
+    display: none;
+  }
 }
 </style>
