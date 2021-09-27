@@ -49,6 +49,8 @@ export default {};
     z-index: 100;
     .light-weight__image {
       width: 70%;
+      animation: ballonFloat 5s infinite ease-in-out alternate-reverse 2s;
+      // transform-origin: bottom;
     }
   }
   .light-weight__content {
@@ -133,6 +135,15 @@ export default {};
         bottom: -350px;
       }
     }
+  }
+}
+
+@keyframes ballonFloat {
+  from {
+    transform: translate(-5%, -5%);
+  }
+  to {
+    transform: translate(5%, 5%);
   }
 }
 </style>
