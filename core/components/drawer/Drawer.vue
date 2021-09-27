@@ -427,7 +427,7 @@ export default {
     bottom: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: rgba(0, 0, 0, -28.7);
+    background-color: rgba(0, 0, 0);
 
     /* /backdrop-filter: blur(2px); */
 
