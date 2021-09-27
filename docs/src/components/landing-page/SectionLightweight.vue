@@ -49,9 +49,8 @@ export default {};
     z-index: 100;
     .light-weight__image {
       width: 70%;
-      transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
-      animation: opening 1.5s ease-in-out 0.5s forwards, Shake 2.5s infinite ease-in-out alternate-reverse 2s;
-      transform-origin: bottom;
+      animation: Shake 5s infinite ease-in-out alternate-reverse 2s;
+      // transform-origin: bottom;
     }
   }
   .light-weight__content {
@@ -149,19 +148,19 @@ export default {};
 } */
 @keyframes Shake {
   from {
-    transform: translateX(-5%) translateY(-5%);
+    transform: translate(-5%, -5%);
   }
   to {
-    transform: translateX(5%) translateY(5%);
+    transform: translate(5%, 5%);
   }
 }
 
-@keyframes opening {
-  from {
-    transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
-  }
-  to {
-    transform: translateY(0%) rotateZ(0deg) rotateX(0deg);
-  }
-}
+// @keyframes opening {
+//   from {
+//     transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+//   }
+//   to {
+//     transform: translateY(0%) rotateZ(0deg) rotateX(0deg);
+//   }
+// }
 </style>

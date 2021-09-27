@@ -20,39 +20,35 @@
 <script>
 export default {
   mounted() {
-    function animateOnScroll(ele, animationName) {
+    this.animateOnScroll('#migrate', 'before-enter');
+  },
+  methods: {
+    elementInView(el, offset = 0) {
+      const elementTop = el.getBoundingClientRect().top;
+      return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+    },
+
+    displayScrollElement(scrollElement) {
+      scrollElement.classList.add('enter');
+    },
+
+    hideScrollElement(scrollElement, animationName) {
+      scrollElement.classList.add(animationName);
+    },
+    handleScrollAnimation(el, animationName) {
       const scrollOffset = 100;
-
-      const scrollElement = document.querySelector(ele);
-
-      const elementInView = (el, offset = 0) => {
-        const elementTop = el.getBoundingClientRect().top;
-
-        return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
-      };
-
-      const displayScrollElement = () => {
-        scrollElement.classList.add('enter');
-      };
-
-      const hideScrollElement = () => {
-        scrollElement.classList.add(animationName);
-      };
-
-      const handleScrollAnimation = () => {
-        if (elementInView(scrollElement, scrollOffset)) {
-          displayScrollElement();
-        } else {
-          hideScrollElement();
-        }
-      };
-
-      window.addEventListener('scroll', () => {
-        handleScrollAnimation();
+      const scrollElement = document.querySelector(el);
+      if (this.elementInView(scrollElement, scrollOffset)) {
+        this.displayScrollElement(scrollElement);
+      } else {
+        this.hideScrollElement(scrollElement, animationName);
+      }
+    },
+    animateOnScroll(el, animationName) {
+      window.addEventListener('scroll', e => {
+        this.handleScrollAnimation(el, animationName);
       });
-    }
-
-    animateOnScroll('#migrate', 'before-enter');
+    },
   },
 };
 </script>
@@ -171,7 +167,7 @@ export default {
   transform: scale(0.5) rotateZ(-25deg);
   transition: all 1s ease-out;
 }
-/* 
+/*
     If the element intersects with the viewport, the before-enter class is added.
   */
 .enter {
