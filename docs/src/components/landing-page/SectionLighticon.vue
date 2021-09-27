@@ -2,7 +2,7 @@
   <section class="section-lighticons" id="light-icons">
     <div class="section-lighticons__wrapper">
       <div class="section-lighticons__image-wrapper">
-        <img src="../../assets/images/section-lighticons.svg" alt="Light icon" class="section-lighticons__image" />
+        <img src="../../assets/images/section-lighticons.svg" alt="Light icon" class="section-lighticons__image animate" id="img2" />
       </div>
       <!-- <div class="section-lighticons__background"></div> -->
       <div class="section-lighticons__content">
@@ -19,7 +19,39 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    const scrollOffset = 100;
+
+    const scrollElement = document.querySelector('#img2');
+
+    const elementInView = (el, offset = 0) => {
+      const elementTop = el.getBoundingClientRect().top;
+
+      return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+    };
+
+    const displayScrollElement = () => {
+      scrollElement.classList.add('enter');
+    };
+
+    const hideScrollElement = () => {
+      scrollElement.classList.add('before-enter');
+    };
+
+    const handleScrollAnimation = () => {
+      if (elementInView(scrollElement, scrollOffset)) {
+        displayScrollElement();
+      } else {
+        hideScrollElement();
+      }
+    };
+
+    window.addEventListener('scroll', () => {
+      handleScrollAnimation();
+    });
+  },
+};
 </script>
 
 <style lang="scss">
@@ -116,5 +148,90 @@ export default {};
       }
     }
   }
+}
+
+/* Left Slide In  */
+/* .Lbtn {
+  animation: leftSlide ease 1s infinite;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode: forwards; 
+  -webkit-animation: leftSlide ease 1s infinite;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode: forwards; 
+} */
+/* 
+@keyframes leftSlide {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -1500px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(0px, 30px);
+  }
+  80% {
+    transform: translate(0px, -10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes leftSlide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, -1500px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 30px);
+  }
+  80% {
+    -webkit-transform: translate(0px, -10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+  }
+}
+
+//back in right
+
+//back right
+@keyframes backInRight {
+  0% {
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.backInRight {
+  animation: backInRight 1s ease-in-out infinite;
+} */
+
+.before-enter {
+  opacity: 0;
+  transform: scale(0.5) rotateZ(-25deg);
+  transition: all 1s ease-out;
+}
+/* 
+    If the element intersects with the viewport, the before-enter class is added.
+  */
+.enter {
+  opacity: 1;
+  transform: scale(1) rotateZ(0deg);
 }
 </style>

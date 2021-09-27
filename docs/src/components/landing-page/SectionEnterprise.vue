@@ -3,13 +3,13 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#143a56" fill-opacity="1" d="M0,128L120,117.3C240,107,480,85,720,85.3C960,85,1200,107,1320,117.3L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
     <section class="enterprise-section" id="contact">
       <div class="enterprise-section__wrapper">
-        <div class="enterprise-heading">Ready for Enterprises</div>
-        <div class="enterprise-description">Offer different versions of a product to meet the differing needs as an Enterprises.</div>
+        <div class="enterprise-heading" id="heading1">Ready for Enterprises</div>
+        <div class="enterprise-description" id="heading2">Offer different versions of a product to meet the differing needs as an Enterprises.</div>
         <div class="expertise-section__information-wrapper">
           <div class="enterprise-section__circle-illustration --one"></div>
           <div class="enterprise-section__circle-illustration --two"></div>
           <div class="enterprise-section__circle-illustration --three"></div>
-          <div class="expertise-section__features-wrapper">
+          <div class="expertise-section__features-wrapper" id="card">
             <div class="expertise-feature__item"><i class="light-icon-palette"></i> Unlimited Customisation</div>
             <div class="expertise-feature__item"><i class="light-icon-package"></i> Light icon Pack</div>
             <div class="expertise-feature__item"><i class="light-icon-directions"></i> Vue 3.x Migration Support</div>
@@ -49,6 +49,44 @@ export default {
     toggleImageOverlay(event) {
       this.$refs.contactOverlay.toggle(event);
     },
+  },
+
+  mounted() {
+    function animateOnScroll(ele, animationName) {
+      const scrollOffset = 100;
+
+      const scrollElement = document.querySelector(ele);
+
+      const elementInView = (el, offset = 0) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+      };
+
+      const displayScrollElement = () => {
+        scrollElement.classList.add(animationName);
+      };
+
+      const hideScrollElement = () => {
+        scrollElement.classList.add('enter');
+      };
+
+      const handleScrollAnimation = () => {
+        if (elementInView(scrollElement, scrollOffset)) {
+          displayScrollElement();
+        } else {
+          hideScrollElement();
+        }
+      };
+
+      window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+      });
+    }
+
+    animateOnScroll('#heading1', 'InRight');
+    animateOnScroll('#heading2', 'InLeft');
+    animateOnScroll('#card', 'zoomIn');
   },
 };
 </script>
@@ -180,5 +218,84 @@ export default {
   .expertise-section__image-wrapper {
     display: none;
   }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+//right key
+@keyframes InRight {
+  from {
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: skewX(-5deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+//left
+@keyframes InLeft {
+  from {
+    transform: translate3d(-100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: skewX(-20deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: skewX(5deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.InLeft {
+  animation: InLeft 2s ease-out;
+  animation-timing-function: ease-out;
+}
+
+.InRight {
+  animation: InRight 2s ease-out;
+  animation-timing-function: ease-out;
+}
+
+.zoomIn {
+  animation: zoomIn 1.3s ease-in-out;
+}
+.before-enter {
+  opacity: 0;
+  transform: scale(0.5) rotateZ(-25deg);
+  transition: all 1s ease-out;
+}
+/* 
+    If the element intersects with the viewport, the before-enter class is added.
+  */
+.enter {
+  opacity: 1;
+  transform: scale(1) rotateZ(0deg);
 }
 </style>

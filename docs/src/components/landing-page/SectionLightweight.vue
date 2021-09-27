@@ -49,6 +49,9 @@ export default {};
     z-index: 100;
     .light-weight__image {
       width: 70%;
+      transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+      animation: opening 1.5s ease-in-out 0.5s forwards, Shake 2.5s infinite ease-in-out alternate-reverse 2s;
+      transform-origin: bottom;
     }
   }
   .light-weight__content {
@@ -133,6 +136,32 @@ export default {};
         bottom: -350px;
       }
     }
+  }
+}
+/* keyframes */
+/* @keyframes Shake {
+  from {
+    transform: rotateX(-5deg) rotateZ(-10deg);
+  }
+  to {
+    transform: rotateX(5deg) rotateZ(10deg);
+  }
+} */
+@keyframes Shake {
+  from {
+    transform: translateX(-5%) translateY(-5%);
+  }
+  to {
+    transform: translateX(5%) translateY(5%);
+  }
+}
+
+@keyframes opening {
+  from {
+    transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+  }
+  to {
+    transform: translateY(0%) rotateZ(0deg) rotateX(0deg);
   }
 }
 </style>

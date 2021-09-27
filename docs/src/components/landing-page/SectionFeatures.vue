@@ -18,7 +18,7 @@
           <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
         </div>
       </div>
-      <div class="section-features__box-wrapper">
+      <div class="section-features__box-wrapper" id="img">
         <div class="features-box__group">
           <div class="section-features__single-box">
             <div class="single-box__icon"><i class="light-icon-mist"></i></div>
@@ -64,7 +64,39 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    const scrollOffset = 100;
+
+    const scrollElement = document.querySelector('#img');
+
+    const elementInView = (el, offset = 0) => {
+      const elementTop = el.getBoundingClientRect().top;
+
+      return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+    };
+
+    const displayScrollElement = () => {
+      scrollElement.classList.add('enter');
+    };
+
+    const hideScrollElement = () => {
+      scrollElement.classList.add('before-enter');
+    };
+
+    const handleScrollAnimation = () => {
+      if (elementInView(scrollElement, scrollOffset)) {
+        displayScrollElement();
+      } else {
+        hideScrollElement();
+      }
+    };
+
+    window.addEventListener('scroll', () => {
+      handleScrollAnimation();
+    });
+  },
+};
 </script>
 
 <style lang="scss">
@@ -253,5 +285,81 @@ export default {};
       font-size: 28px;
     }
   }
+}
+
+/* @keyframes flipx {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipY {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+.flipY {
+  backface-visibility: visible !important;
+  animation: flipY 1s ease-in-out infinite;
+}
+
+.flipx {
+  backface-visibility: visible !important;
+  animation: flipx 1s ease-in-out infinite;
+} */
+
+.before-enter {
+  opacity: 0;
+  transform: scale(0.5) rotateZ(-25deg);
+  transition: all 1s ease-out;
+  transition-delay: 1s;
+}
+/* 
+    If the element intersects with the viewport, the before-enter class is added.
+  */
+.enter {
+  opacity: 1;
+  transform: scale(1) rotateZ(0deg);
 }
 </style>

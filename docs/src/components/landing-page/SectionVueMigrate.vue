@@ -1,7 +1,7 @@
 <template>
   <section class="vue-migrate" id="vue-migrate">
     <div class="vue-migrate__wrapper">
-      <div class="vue-migrate__content">
+      <div class="vue-migrate__content" id="migrationdes">
         <div class="vue-migrate__content-heading">Swift migration from Vue 2.x to Vue 3.x</div>
         <br />
         <div class="vue-migrate__content-description">Developing cut edge projects just got easier.With just one step upgradation, 100% backward compatibilty and identical APIs in both the environments, LightVue offers a hastle free migration from your Vue 2.x to Vue 3.x projects in just two ticks.</div>
@@ -10,7 +10,7 @@
         <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
       </div>
       <div class="vue-migrate__image-wrapper">
-        <img src="../../assets/images/migrate-vue.svg" alt="migrate-vue" class="vue-migrate__image" />
+        <img src="../../assets/images/migrate-vue.svg" alt="migrate-vue" class="vue-migrate__image" id="migrate" />
       </div>
       <!-- <div class="vue-migrate__background"></div> -->
     </div>
@@ -18,7 +18,43 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    function animateOnScroll(ele, animationName) {
+      const scrollOffset = 100;
+
+      const scrollElement = document.querySelector(ele);
+
+      const elementInView = (el, offset = 0) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+      };
+
+      const displayScrollElement = () => {
+        scrollElement.classList.add('enter');
+      };
+
+      const hideScrollElement = () => {
+        scrollElement.classList.add(animationName);
+      };
+
+      const handleScrollAnimation = () => {
+        if (elementInView(scrollElement, scrollOffset)) {
+          displayScrollElement();
+        } else {
+          hideScrollElement();
+        }
+      };
+
+      window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+      });
+    }
+
+    animateOnScroll('#migrate', 'before-enter');
+  },
+};
 </script>
 
 <style lang="scss">
@@ -118,6 +154,63 @@ export default {};
         font-size: 28px;
       }
     }
+  }
+}
+.Lbtn {
+  animation: leftSlide ease 1s infinite;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode: forwards; /*when the spec is finished*/
+  -webkit-animation: leftSlide ease 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode: forwards; /*Chrome 16+, Safari 4+*/
+}
+.before-enter {
+  opacity: 0;
+  transform: scale(0.5) rotateZ(-25deg);
+  transition: all 1s ease-out;
+}
+/* 
+    If the element intersects with the viewport, the before-enter class is added.
+  */
+.enter {
+  opacity: 1;
+  transform: scale(1) rotateZ(0deg);
+}
+@keyframes leftSlide {
+  0% {
+    opacity: 0;
+    transform: translate(-1500px, 0px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(30px, 0px);
+  }
+  80% {
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes leftSlide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-1500px, 0px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(30px, 0px);
+  }
+  80% {
+    -webkit-transform: translate(-10px, 0px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
   }
 }
 </style>

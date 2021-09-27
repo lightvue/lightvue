@@ -1,7 +1,7 @@
 <template>
   <section class="hero-section">
     <div class="hero-wrapper">
-      <div class="hero-logo">
+      <div class="hero-logo fadeInUp">
         <img src="/logo_v2.svg" alt="" />
       </div>
       <div class="hero-container">
@@ -52,6 +52,35 @@ export default {
   //     return this.$el.querySelector('.selectable').innerText;
   //   },
   // },
+  // mounted() {
+  // function animateOnScroll(ele, animationName) {
+  //   const scrollOffset = 100;
+  //   const scrollElement = document.querySelector(ele);
+  //   const elementInView = (el, offset = 0) => {
+  //     const elementTop = el.getBoundingClientRect().top;
+  //     return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+  //   };
+  //   const displayScrollElement = () => {
+  //     scrollElement.classList.add(animationName);
+  //   };
+  //   const hideScrollElement = () => {
+  //     scrollElement.classList.add('enter');
+  //   };
+  //   const handleScrollAnimation = () => {
+  //     if (elementInView(scrollElement, scrollOffset)) {
+  //       displayScrollElement();
+  //     } else {
+  //       hideScrollElement();
+  //     }
+  //   };
+  //   window.addEventListener('scroll', () => {
+  //     handleScrollAnimation();
+  //   });
+  // }
+  // animateOnScroll('#logo', 'fadeOutUp');
+  // animateOnScroll('#subtex', 'fadeOutUp');
+  // animateOnScroll('#card', 'fadeOutUp');
+  // },
 };
 </script>
 
@@ -66,6 +95,17 @@ $text-color-secondary: #eeecec;
   box-sizing: border-box;
   line-height: 1.5;
 }
+
+/* .LeftSideINAnimation {
+  animation: leftSlide ease 1s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode: forwards; 
+  -webkit-animation: leftSlide ease 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode: forwards; 
+} */
 
 .hero-section {
   position: relative;
@@ -255,5 +295,69 @@ $text-color-secondary: #eeecec;
       }
     }
   }
+}
+/* left side Slide in animation Keyframes */
+/* @keyframes leftSlide {
+  0% {
+    opacity: 0;
+    transform: translate(-1500px, 0px);
+  }
+  60% {
+    
+    transform: translate(30px, 0px);
+  }
+  80% {
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes leftSlide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-1500px, 0px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(30px, 0px);
+  }
+  80% {
+    -webkit-transform: translate(-10px, 0px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+  }
+} */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Fade out animation keyframes */
+/* @keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+} */
+
+.fadeInUp {
+  animation: fadeInUp 1s ease-in-out;
 }
 </style>
