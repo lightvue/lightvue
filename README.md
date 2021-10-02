@@ -1,11 +1,13 @@
 <div align="center">
-<br/>
-<a href="https://lightvue.org">
-  <img src="https://lightvue.org/logo_v2.svg" width="300">
-</a>
-
-<br/>
-<h3>The Emerging UI Component library for Vue 2.x & Vue 3.x</h3>  
+  <br/>
+  <a href="https://lightvue.org">
+    <img src="https://lightvue.org/logo_v2.svg" width="250">
+  </a>
+ 
+  <br/>
+  <br/>
+  
+  <p>The Emerging UI Component library for <b>Vue 2.x</b> & <b>Vue 3.x</b></p>
 </div>
 
 ## About LightVue
