@@ -54,23 +54,16 @@
 }
 
 .lv-badge {
-  //   height: 20px;
-  //   width: 20px;
-  //   border-radius: 50%;
-
   color: var(--theme-color-inverse);
   background-color: var(--theme-color);
-  // border: 1px solid var(--primary-color);
   border: none;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, border-radius 0.3s;
-  border-radius: 1rem;
+  border-radius: 32px;
   &:hover {
-    // background: #319795;
     background-color: var(--theme-color-dark);
     color: #ffffff;
-    // border-color: #319795;
   }
   &.--size-sm {
     font-size: 0.875rem;
@@ -102,9 +95,6 @@
   }
 }
 .--top-right {
-  // height: 5px;
-  // width: 5px;
-
   position: absolute;
   top: -10px;
   right: -10px;
@@ -112,12 +102,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  //   z-index: 5000000;
 }
 .--top-left {
-  // height: 5px;
-  // width: 5px;
-
   position: absolute;
   top: -10px;
   left: -10px;
@@ -127,7 +113,7 @@
   border-radius: 50%;
   //   z-index: 5000000;
 }
-.--Bottom-left {
+.--bottom-left {
   // height: 5px;
   // width: 5px;
 
@@ -140,7 +126,7 @@
   border-radius: 50%;
   //   z-index: 5000000;
 }
-.--Bottom-right {
+.--bottom-right {
   // height: 5px;
   // width: 5px;
 

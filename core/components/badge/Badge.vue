@@ -1,5 +1,5 @@
 <template>
-  <div class="Badge__wrapper">
+  <div class="lv-badge__wrap">
     <div :class="badgeClass" class="lv-badge">
       <slot></slot>
     </div>
@@ -17,6 +17,10 @@ export default {
       type: String,
       default: '',
     },
+    color: {
+      type: String,
+      default: 'primary',
+    },
   },
   computed: {
     badgeClass() {
@@ -27,8 +31,9 @@ export default {
         '--size-xl': this.size === 'xl',
         '--top-right': this.position === 'topRight',
         '--top-left': this.position === 'topLeft',
-        '--Bottom-left': this.position === 'bottomLeft',
-        '--Bottom-right': this.position === 'bottomRight',
+        '--bottom-left': this.position === 'bottomLeft',
+        '--bottom-right': this.position === 'bottomRight',
+        [`lv--${this.color}`]: true,
       };
     },
   },
