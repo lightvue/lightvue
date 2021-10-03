@@ -7,7 +7,7 @@
     <lv-dropdown v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" disabled clearable />
 
     <h5>With editable input field</h5>
-    <lv-dropdown v-model="selectedCity2" :options="cities" optionLabel="name" :editable="true" />
+    <lv-dropdown v-model="selectedCity2" :options="cities" optionLabel="name" placeholder="Select a City" label="Your City?" editable clearable />
 
     <h5>Advanced dropdown with Templating, Filtering and Clear Button</h5>
     <lv-dropdown v-model="selectedCountry" :options="countries" optionLabel="name" :filter="true" placeholder="Select a Country" :clearable="true" optionDisabled="disabled">
@@ -29,7 +29,7 @@
     </lv-dropdown>
 
     <h5>Adding help text</h5>
-    <lv-dropdown v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" help-text="Help text content" clearable />
+    <lv-dropdown v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" help-text="Help text content" clearable icon-right="light-icon-arrow-down-circle" />
 
     <h5>Adjusting scroll-height (default: 200px)</h5>
     <lv-dropdown scrollHeight="100px" v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Scroll height: 100px" clearable />

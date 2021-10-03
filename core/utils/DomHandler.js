@@ -199,7 +199,7 @@ export default class DomHandler {
     element.style.left = left + 'px';
   }
 
-  static relativePosition(element, target) {
+  static relativePosition(element, target, reverseTarget) {
     let elementDimensions = element.offsetParent ? { width: element.offsetWidth, height: element.offsetHeight } : this.getHiddenElementDimensions(element);
     const targetHeight = target.offsetHeight;
     const targetOffset = target.getBoundingClientRect();
@@ -207,13 +207,19 @@ export default class DomHandler {
     let top, left;
 
     if (targetOffset.top + targetHeight + elementDimensions.height > viewport.height) {
-      top = -1 * elementDimensions.height;
-      element.style.transformOrigin = 'bottom';
-      if (targetOffset.top + top < 0) {
-        top = -1 * targetOffset.top;
+      // reverseTarget
+      if (reverseTarget) {
+        element.style.bottom = reverseTarget.offsetHeight + 'px';
+        element.style.transformOrigin = 'bottom';
+      } else {
+        top = -1 * elementDimensions.height;
+        element.style.transformOrigin = 'bottom';
+        if (targetOffset.top + top < 0) {
+          top = -1 * targetOffset.top;
+        }
       }
     } else {
-      top = targetHeight;
+      element.style.top = targetHeight + 'px';
       element.style.transformOrigin = 'top';
     }
 
@@ -227,8 +233,6 @@ export default class DomHandler {
       // element fits on screen (align with target)
       left = 0;
     }
-
-    element.style.top = top + 'px';
     element.style.left = left + 'px';
   }
 

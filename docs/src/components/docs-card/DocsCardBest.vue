@@ -148,25 +148,17 @@ export default {
 .dy-comp__wrap {
   flex-grow: 1;
   min-height: 200px;
-  display: flex;
+  // display: flex;
   overflow-y: auto;
   justify-content: center;
   width: 100%;
-  padding: 20px;
+  padding: 48px;
   background: #ffffff;
 }
 
 .dy-props__toggle-drawer {
   display: none;
   cursor: pointer;
-}
-
-.demo__positioning {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  margin: auto;
 }
 
 .dy-code__wrap {
@@ -213,7 +205,7 @@ export default {
   }
 
   .dy-comp__wrap {
-    padding: 0px;
+    padding: 16px;
   }
 
   .dy-props__toggle-drawer {

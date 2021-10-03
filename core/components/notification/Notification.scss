@@ -78,3 +78,25 @@
     }
   }
 }
+@media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .lv-notification {
+    width: 18rem !important;
+    .lv-notification__icon-close-icon {
+      font-size: 15px;
+    }
+    .lv-notification__message {
+      margin: 0 0 0.6rem 0;
+
+      .lv-notification__message-content {
+        padding: 0.8rem;
+        .lv-notification__message-icon {
+          font-size: 2.2rem;
+          padding: 0px 5px;
+        }
+        .lv-notification__content {
+          margin: 0.5rem 0 0 0;
+        }
+      }
+    }
+  }
+}

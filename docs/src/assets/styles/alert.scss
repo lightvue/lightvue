@@ -1,0 +1,40 @@
+.lv-alert {
+  margin: 0.5rem 0;
+  padding: 1rem 1rem;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+
+  i {
+    font-size: 28px;
+    font-weight: 600;
+    margin-right: 16px;
+  }
+  &.--info {
+    color: #1c587a;
+    background-color: #e7f1fa;
+    border-top: 5px solid #2b9af3;
+  }
+  &.--success {
+    color: #366331;
+    background-color: #f3faf2;
+    border-top: 5px solid #3e8635;
+  }
+  &.--warning {
+    color: #89691c;
+    background-color: #fdf7e7;
+    border-top: 5px solid #f0ab00;
+  }
+  &.--error {
+    color: #7d1007;
+    background-color: #faeae8;
+    border-top: 5px solid #c9190b;
+  }
+  &.--transparent {
+    background: #ffffff !important;
+  }
+  &.--no-shadow {
+    box-shadow: none !important;
+  }
+}

@@ -24,6 +24,22 @@ const routes = [
         component: () => import('@/pages/vue-components/checkbox.vue'),
       },
       {
+        path: 'checkbox-group',
+        component: () => import('@/pages/vue-components/checkbox-group.vue'),
+      },
+      {
+        path: 'drawer',
+        component: () => import('@/pages/vue-components/drawer.vue'),
+      },
+      {
+        path: 'radio',
+        component: () => import('@/pages/vue-components/radio.vue'),
+      },
+      {
+        path: 'radio-group',
+        component: () => import('@/pages/vue-components/radio-group.vue'),
+      },
+      {
         path: 'card',
         component: () => import('@/pages/vue-components/card.vue'),
       },
@@ -92,8 +108,20 @@ const routes = [
         component: () => import('@/pages/vue-components/slider.vue'),
       },
       {
+        path: 'collapsible',
+        component: () => import('@/pages/vue-components/collapsible.vue'),
+      },
+      {
+        path: 'badge',
+        component: () => import('@/pages/vue-components/badge.vue'),
+      },
+      {
         path: 'textarea',
         component: () => import('@/pages/vue-components/textarea.vue'),
+      },
+      {
+        path: 'text-editor',
+        component: () => import('@/pages/vue-components/text-editor.vue'),
       },
       {
         path: 'toast',
@@ -118,18 +146,8 @@ const routes = [
         component: () => import('@/pages/getting-started/installation.vue'),
       },
       {
-        path: 'customization',
-        component: () => import('@/pages/getting-started/customization.vue'),
-      },
-    ],
-  },
-  {
-    path: '/icons',
-    component: () => import('../components/Layout/DocsLayout.vue'),
-    children: [
-      {
         path: 'light-icons',
-        component: () => import('@/pages/icons/light-icons.vue'),
+        component: () => import('@/pages/getting-started/light-icons.vue'),
       },
     ],
   },

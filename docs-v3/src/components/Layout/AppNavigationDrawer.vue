@@ -14,22 +14,28 @@
           <i :class="activeCategory === category.category_name ? 'light-icon-chevron-up' : 'light-icon-chevron-down'"></i>
         </div>
         <!-- <div :class="['nav-list__category-items', (activeCategory === category.category_name) && 'nav-list__category-items--active']" v-show="activeCategory === category.category_name" > -->
-        <div class="nav-list__category-items" :style="{ height: (activeCategory === category.category_name) * (category.pages.length * 32 + 10) + 'px', opacity: (activeCategory === category.category_name) * 1 }">
-          <nuxt-link :to="page.page_path" class="nav-list__category-item --link" v-for="page in category.pages" :key="page.page_name">
-            <div class="nav-list__item-line"></div>
-            <div class="nav-list__item-bullet"></div>
-            <div class="nac-list__item-label">
-              {{ page.page_name }}
-            </div>
-          </nuxt-link>
-        </div>
+        <LvCollapsible :show="activeCategory === category.category_name">
+          <div class="nav-list__category-items" :key="category.category_name">
+            <nuxt-link :to="page.page_path" class="nav-list__category-item --link" v-for="page in category.pages" :key="page.page_name">
+              <div class="nav-list__item-line"></div>
+              <div class="nav-list__item-bullet"></div>
+              <div class="nac-list__item-label">
+                {{ page.page_name }}
+              </div>
+            </nuxt-link>
+          </div>
+        </LvCollapsible>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import LvCollapsible from 'lightvue/collapsible';
 export default {
+  components: {
+    LvCollapsible,
+  },
   props: {
     showDrawer: {
       type: Boolean,
@@ -74,8 +80,8 @@ export default {
           page_path: '/getting-started/installation',
         },
         {
-          page_name: 'customization',
-          page_path: '/getting-started/customization',
+          page_name: 'Light Icons',
+          page_path: '/getting-started/light-icons',
         },
       ],
     },
@@ -106,6 +112,17 @@ export default {
         {
           page_name: 'Checkbox Group',
           page_path: '/vue-components/checkbox-group',
+          // REFACTORING,
+        },
+
+        {
+          page_name: 'Radio',
+          page_path: '/vue-components/radio',
+        },
+        {
+          page_name: 'Radio Group',
+          page_path: '/vue-components/radio-group',
+          // REFACTORING,
         },
         {
           page_name: 'Toggle Switch',
@@ -126,6 +143,10 @@ export default {
         {
           page_name: 'Rating',
           page_path: '/vue-components/rating',
+        },
+        {
+          page_name: 'Text Editor',
+          page_path: '/vue-components/text-editor',
         },
       ],
     },
@@ -181,10 +202,10 @@ export default {
           page_name: 'Overlay Panel',
           page_path: '/vue-components/overlay-panel',
         },
-        {
-          page_name: 'Light Icons',
-          page_path: '/icons/light-icons',
-        },
+        // {
+        //   page_name: 'Light Icons',
+        //   page_path: '/icons/light-icons',
+        // },
         {
           page_name: 'Dialog',
           page_path: '/vue-components/dialog',
@@ -196,6 +217,19 @@ export default {
         {
           page_name: 'Notifications',
           page_path: '/vue-components/notification',
+        },
+        {
+          page_name: 'Navigation Drawer',
+          page_path: '/vue-components/drawer',
+          // REFACTORING,
+        },
+        {
+          page_name: 'Collapsible',
+          page_path: '/vue-components/collapsible',
+        },
+        {
+          page_name: 'Badge',
+          page_path: '/vue-components/badge',
         },
       ],
     },
@@ -267,12 +301,12 @@ $primary-color: #38b2ac;
   .nav-list__category-items {
     padding: 0px 16px 8px;
     margin-left: 8px;
-    margin-top: -8px;
+    /* margin-top: -8px; */
 
-    height: 0px;
+    /* height: 0px;
     opacity: 0;
-    transition: all 0.3s;
-    overflow: hidden;
+    transition: all 0.3s; */
+    /* overflow: hidden; */
   }
 
   .nav-list__item-line {

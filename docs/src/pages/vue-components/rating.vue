@@ -1,5 +1,6 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+    <rating-best-demo />
     <!-- <docs-card-vue title="Modifying Options" file="rating/examples/RatingDemo_Options" /> -->
     <!-- <docs-card-vue title="Modifying style" file="rating/examples/RatingDemo_Styling" /> -->
     <docs-card-vue title="Modifying increment" file="rating/examples_options/RatingDemo_1" />
@@ -20,15 +21,18 @@
 </template>
 
 <script>
+import RatingBestDemo from 'lightvueDocs/example/rating/RatingBestDemo.vue';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import RatingAPI from 'lightvueDocs/example/rating/RatingAPI';
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   components: {
+    RatingBestDemo,
     DocsCardVue,
     DocsCard,
     GettingStarted,
@@ -39,6 +43,7 @@ export default {
   description: `Rating component can be used when user wants to provide an option to rate the products/services provided.`,
   packageName: 'rating',
   componentName: 'LvRating',
+  status: COMPONENT_STATUS.UPDATED,
   apiData: RatingAPI,
 };
 </script>

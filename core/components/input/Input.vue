@@ -1,9 +1,7 @@
 <template>
   <div :class="['lv-input__group', { '--with-floating-label': floatingLabel }, { '--not-empty': filled }, { '--with-bottom-bar': floatingLabel || bottomBar }]">
     <label :for="name">
-      <div class="lv-input__label" v-if="label" :for="name">
-        {{ label }}
-      </div>
+      <div class="lv-input__label" v-if="label" :for="name">{{ label }}</div>
     </label>
     <div :class="['lv-input__field', { '--rounded': rounded }]" :style="`--placeholder-color: ${placeholderColor}`">
       <div class="lv-input__prepend" v-if="$slots['prepend'] || iconLeft">
@@ -13,7 +11,6 @@
           </div>
         </slot>
       </div>
-      \
       <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @input="this.updateValue" :name="name" :id="name" v-if="editable" />
       <div v-else class="lv-input__default">
         <slot>{{ modelValue || $attrs.placeholder }}</slot>
@@ -21,7 +18,10 @@
           <input type="text" readonly :value="modelValue" v-bind="$attrs" v-on="listeners" :name="name" />
         </div>
       </div>
-      <div class="lv-input__append" v-if="$slots['append'] || iconRight">
+      <div class="lv-input__append" v-if="$slots['append'] || iconRight || clearable">
+        <div class="lv-input__icon" v-if="clearable && filled" style="cursor: pointer" @click.stop="handleClear">
+          <i class="light-icon-x" />
+        </div>
         <slot name="append">
           <div class="lv-input__icon" v-if="iconRight">
             <i :class="iconRight" />
@@ -36,6 +36,7 @@
 </template>
 
 <script>
+// import { uniqueComponentId } from 'lightvue/utils';
 export default {
   name: 'Input',
   inheritAttrs: false,
@@ -44,17 +45,13 @@ export default {
       type: [String, Number],
       default: null,
     },
-    // modelValue: {
-    //     type: String,
-    //     default: null
-    // },
     label: {
       type: String,
       default: null,
     },
     name: {
       type: String,
-      // default: `text_${parseInt(window.performance.now() * Math.random())}`
+      // default: `text_${uniqueComponentId()}`,
     },
     helpText: {
       type: String,
@@ -92,17 +89,22 @@ export default {
       type: String,
       default: '',
     },
+    clearable: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     modelValue() {
-      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
+      // return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
+      return this.value ? this.value : this.$attrs.modelValue ? this.$attrs.modelValue : null;
     },
     listeners() {
       return this.$listeners
         ? {
             // Depreciated in Vue 3
             ...this.$listeners,
-            input: event => this.updateValue(event),
+            input: event => this.updateModel(event),
           }
         : {};
     },
@@ -111,10 +113,17 @@ export default {
     },
   },
   methods: {
-    updateValue(event) {
+    updateModel(event) {
       this.$emit('input-native', event);
-      this.$emit('input', event.target.value); // Only for Vue 2
-      this.$emit('update:modelValue', event.target.value); // Only for Vue 3
+      this.updateValue(event.target.value);
+    },
+    updateValue(newValue) {
+      this.$emit('input', newValue); // Only for Vue 2
+      this.$emit('update:modelValue', newValue); // Only for Vue 3
+    },
+    handleClear() {
+      this.updateValue('');
+      this.$emit('clear');
     },
   },
 };

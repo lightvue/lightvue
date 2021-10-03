@@ -9,6 +9,7 @@
   background: rgba(255, 255, 255, 0.5);
   border-radius: 100%;
   transform: scale(0);
+  /* pointer-events: none; */
 }
 
 .lv-ink-active {
