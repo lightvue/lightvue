@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Basic" file="notification/NotificationDemo" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -30,8 +30,7 @@ export default {
   description: `Notification component of lightVue allow the user to show notifications on the page with any required content.`,
   packageName: 'notification',
   componentName: 'LvNotification',
-  status: 'Updated',
-  badge: 'lv--info',
+  // status: 'Updated',
   apiData: NotificationAPI,
 };
 </script>

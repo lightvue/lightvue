@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="TYPE: ball-scale" file="progressloader/BallTypeDemos/BallScaleDemo" />
     <docs-card-vue title="TYPE: ball-scale-multiple" file="progressloader/BallTypeDemos/BallScaleMultipleDemo" />
     <docs-card-vue title="TYPE: ball-scale-random" file="progressloader/BallTypeDemos/BallScaleRandomDemo" />
@@ -58,8 +58,7 @@ export default {
   description: `Progress Loader components can be used as a loading animations or space-fillers while waiting for the actual content to load.`,
   packageName: 'progressloader',
   componentName: 'LvLoader',
-  status: 'Stable',
-  badge: 'lv--success',
+  // status: 'Stable',
   apiData: ProgressLoaderAPI,
 };
 </script>

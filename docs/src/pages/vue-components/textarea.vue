@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <TextareaBestDemo />
     <docs-card-vue title="Basic" file="textarea/TextareaDemo__Basic" overflow />
     <docs-card-vue title="Customised" file="textarea/TextareaDemo__Customised" overflow />
@@ -32,8 +32,7 @@ export default {
   description: `Textarea component allows user to write long text/ paragraphs.`,
   packageName: 'textarea',
   componentName: 'LVTextarea',
-  status: 'Stable',
-  badge: 'lv--success',
+  // status: 'Stable',
   apiData: TextareaAPI,
 };
 </script>

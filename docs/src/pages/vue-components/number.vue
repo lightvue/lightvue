@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <number-best-demo />
     <docs-card-vue title="Basic" file="number/Number_BasicDemo" overflow />
     <docs-card-vue title="Rounded" file="number/Number_RoundedDemo" overflow />
@@ -34,8 +34,7 @@ export default {
   description: `Input Number component allows user to Take Number as a input.`,
   packageName: 'number',
   componentName: 'LvNumber',
-  status: 'Stable',
-  badge: 'lv--success',
+  // status: 'Stable',
   apiData: NumberAPI,
 };
 </script>

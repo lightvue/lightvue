@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="With Hover event" file="tooltip/TooltipHoverDemo" />
     <docs-card-vue title="With Focus event" file="tooltip/TooltipFocusDemo" />
     <template #api>
@@ -29,8 +29,7 @@ export default {
   description: `Tooltips can be used to show additional information about any element upon hovering over it.`,
   packageName: 'tooltip',
   componentName: 'LvTooltip',
-  status: 'Stable',
-  badge: 'lv--success',
+  // status: 'Stable',
   apiData: TooltipAPI,
   apiData: {},
 };

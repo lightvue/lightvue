@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Modifying behaviour" file="dropdown/DropdownDemo_Basic" overflow />
     <docs-card-vue title="Modifying styling" file="dropdown/DropdownDemo_Styled" overflow />
     <template #api>
@@ -16,6 +16,7 @@ import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import DropdownAPI from 'lightvueDocs/example/dropdown/DropdownAPI';
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   components: {
@@ -29,8 +30,7 @@ export default {
   description: `Dropdown component allows user to choose an option from the provided options.`,
   packageName: 'dropdown',
   componentName: 'LvDropdown',
-  status: 'Updated',
-  badge: 'lv--secondary',
+  status: COMPONENT_STATUS.UPDATED,
   apiData: DropdownAPI,
 };
 </script>

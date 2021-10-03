@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
+  <docs-page-layout :title="$options.title" :description="$options.description">
     <docs-card-vue title="Shadow styles" file="card/CardShadowDemo" />
     <docs-card-vue title="Border radius" file="card/CardRadiusDemo" />
     <docs-card-vue title="Background color and Padding" file="card/CardPaddingAndBGcolorDemo" />
@@ -31,8 +31,6 @@ export default {
   description: `Card components can be used as flexible containers/wrappers for other UI elements.`,
   packageName: 'card',
   componentName: 'LvCard',
-  status: 'Stable',
-  badge: 'lv--success',
   apiData: CardAPI,
 };
 </script>

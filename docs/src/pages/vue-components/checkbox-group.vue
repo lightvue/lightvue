@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :badge="$options.badge">
+  <docs-page-layout :title="$options.title" :description="$options.description">
     <docs-card-vue title="Basic" file="checkbox-group/CheckboxGroupDemo_Basic" />
     <!-- <docs-card-vue title="Basic" file="checkbox/CheckboxDemo" /> -->
     <template #api>
@@ -29,8 +29,6 @@ export default {
   description: `LvCheckboxGroup component can be used when user needs to select or deselect options from a given array of options.`,
   packageName: 'checkbox-group',
   componentName: 'LvCheckboxGroup',
-  status: 'Stable',
-  badge: 'lv--success',
   apiData: CheckboxAPI,
 };
 </script>
