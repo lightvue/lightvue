@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <drawer-best-demo />
     <docs-card-vue title="Drawer" file="drawer/DrawerDemo" />
     <template #api>
