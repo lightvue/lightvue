@@ -8,7 +8,7 @@
       </a>
     </div> -->
     <div class="app-footer__text">
-      copyright 2021 © LightVue. all rights reserved. <br /><br />
+      Copyright 2021 © LightVue. All rights reserved. <br /><br />
       <!-- <b>Improve this page on <i class="light-icon-brand-github"></i> GitHub</b> <br /> -->
     </div>
   </div>

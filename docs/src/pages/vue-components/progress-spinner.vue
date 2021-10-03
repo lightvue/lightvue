@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Size" file="progressspinner/ProgressSpinnerSizeDemo" />
     <docs-card-vue title="Color" file="progressspinner/ProgressSpinnerColorDemo" />
     <docs-card-vue title="Stroke-width" file="progressspinner/ProgressSpinnerStrokeDemo" />
@@ -31,6 +31,7 @@ export default {
   description: `Progress spinner components can be used as a loading animations or space-fillers while waiting for the actual content to load.`,
   packageName: 'progressSpinner',
   componentName: 'lv-progressspinner',
+  // status: 'Stable',
   apiData: ProgressSpinnerAPI,
 };
 </script>

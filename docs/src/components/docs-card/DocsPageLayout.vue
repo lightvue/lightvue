@@ -2,10 +2,19 @@
   <div>
     <div class="content-section introduction">
       <div class="feature-intro">
-        <h1>{{ title }}</h1>
+        <div class="feature-intro__title">
+          <h1>{{ title }}</h1>
+          <div class="feature-intro__title-right">
+            <LvBadge v-if="status" :color="status.color" :title="status.description">{{ status.label }}</LvBadge>
+            <slot name="title-right"></slot>
+          </div>
+        </div>
+        <slot name="title-below"></slot>
+
         <p style="opacity: 0.8">
           {{ description }}
         </p>
+        <slot name="description-below"></slot>
       </div>
     </div>
 
@@ -25,8 +34,12 @@
 </template>
 
 <script>
+import LvBadge from 'lightvue/badge';
 export default {
-  props: ['title', 'description'],
+  props: ['title', 'description', 'status'],
+  components: {
+    LvBadge,
+  },
   data() {
     return {
       selectedTab: 'collection', //'api'
@@ -74,6 +87,17 @@ export default {
       background-color: #607c8a;
       color: #fff;
     }
+  }
+}
+.feature-intro__title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .feature-intro__title-right {
+    margin-left: 1rem;
+    margin-bottom: 1rem; /** To normatize the default margin below H1 */
+    display: flex;
+    align-items: center;
   }
 }
 </style>

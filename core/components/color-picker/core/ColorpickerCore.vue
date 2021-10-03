@@ -70,6 +70,13 @@
         <!-- btn -->
       </div>
     </div>
+
+    <div class="palette-container" v-if="!$attrs.hidePalette">
+      <div class="lv-colorpicker__colorblock-wrap" style="transform: scale(0.55); height: 25px; flex-basis: 12.5%" v-for="(color, i) in $attrs.colors" :key="i" @click="handleClick(color)">
+        <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: color }"></div>
+        <checkboard grey="#607c8a" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -126,6 +133,10 @@ export default {
     },
   },
   methods: {
+    handleClick(color) {
+      this.updateValue(color);
+      this.$emit('close');
+    },
     childChange(data) {
       this.colorChange(data);
       this.updateOverlayValue(this.colors, this.fieldsIndex);
@@ -341,5 +352,12 @@ export default {
 .vc-chrome__disable-alpha .vc-chrome-hue-wrap {
   margin-top: 4px;
   margin-bottom: 4px;
+}
+.palette-container {
+  border-top: 1px solid rgba(100, 100, 100, 0.4);
+  padding: 8px 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 </style>

@@ -134,6 +134,7 @@ export default {
           page_path: '/vue-components/checkbox-group',
           // REFACTORING,
         },
+
         {
           page_name: 'Radio',
           page_path: '/vue-components/radio',
@@ -166,6 +167,10 @@ export default {
         {
           page_name: 'Breadcrumb',
           page_path: '/vue-components/breadcrumb',
+        },
+        {
+          page_name: 'Text Editor',
+          page_path: '/vue-components/text-editor',
         },
       ],
     },
@@ -241,8 +246,17 @@ export default {
           page_path: '/vue-components/notification',
         },
         {
+          page_name: 'Navigation Drawer',
+          page_path: '/vue-components/drawer',
+          // REFACTORING,
+        },
+        {
           page_name: 'Collapsible',
           page_path: '/vue-components/collapsible',
+        },
+        {
+          page_name: 'Badge',
+          page_path: '/vue-components/badge',
         },
       ],
     },
