@@ -22,13 +22,13 @@ const InputAPI = {
       name: 'icon-left',
       type: 'String',
       default: '',
-      description: `Input element with an icon on it's left`,
+      description: `Input element with an icon on its left`,
     },
     {
       name: 'icon-right',
       type: 'String',
       default: '',
-      description: `Input element with an icon on it's right`,
+      description: `Input element with an icon on its right`,
     },
     {
       name: 'label',
@@ -59,6 +59,12 @@ const InputAPI = {
       type: 'Boolean',
       default: 'false',
       description: 'Input element with rounded corners',
+    },
+    {
+      name: 'clearable',
+      type: 'Boolean',
+      default: 'false',
+      description: 'Clearable input element',
     },
   ],
   slots: [

@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      currentVersion: '1.0.2',
+      currentVersion: '1.0.10',
     };
   },
 };

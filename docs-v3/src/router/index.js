@@ -28,6 +28,10 @@ const routes = [
         component: () => import('@/pages/vue-components/checkbox-group.vue'),
       },
       {
+        path: 'drawer',
+        component: () => import('@/pages/vue-components/drawer.vue'),
+      },
+      {
         path: 'radio',
         component: () => import('@/pages/vue-components/radio.vue'),
       },
@@ -104,8 +108,20 @@ const routes = [
         component: () => import('@/pages/vue-components/slider.vue'),
       },
       {
+        path: 'collapsible',
+        component: () => import('@/pages/vue-components/collapsible.vue'),
+      },
+      {
+        path: 'badge',
+        component: () => import('@/pages/vue-components/badge.vue'),
+      },
+      {
         path: 'textarea',
         component: () => import('@/pages/vue-components/textarea.vue'),
+      },
+      {
+        path: 'text-editor',
+        component: () => import('@/pages/vue-components/text-editor.vue'),
       },
       {
         path: 'toast',

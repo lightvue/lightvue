@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Basic" file="checkbox/CheckboxDemo_Basic" />
     <!-- <docs-card-vue title="Basic" file="checkbox/CheckboxDemo" /> -->
     <template #api>
@@ -25,10 +25,11 @@ export default {
     DocsPageLayout,
     DocsAllApi,
   },
-  title: 'Checkbox',
-  description: `LvCheckbox component can be used in projects where a way is required for user to select or deselect an option.`,
-  packageName: 'CheckBox',
-  componentName: 'LvCheckBox',
+  title: 'Radio',
+  description: `LvRadio component can be used in projects where a way is required for user to select or deselect an option.`,
+  packageName: 'radio',
+  componentName: 'LvRadio',
+  // status: 'Stable',
   apiData: CheckboxAPI,
 };
 </script>
