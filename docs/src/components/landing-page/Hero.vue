@@ -9,49 +9,54 @@
           <div class="hero-container__content">
             <div class="hero-container__subtext">
               The Emerging UI Component library<br />
-              for <span class="subtext-highlight">Vue 3.x</span> &amp; <span class="subtext-highlight">Vue 2.x </span>
+              <span style="font-size: 0.8em"> Designed for <span class="subtext-highlight">Vue 3.x</span> &amp; <span class="subtext-highlight">Vue 2.x </span> </span>
             </div>
           </div>
         </div>
         <div class="hero-container__row">
           <div class="hero-container__pre-wrap">
             <div class="hero-container__pre">
-              <!-- <CopyButton :text="getNpmCode" /> -->
               <code><span class="not-selectable">$ </span> <span class="selectable">npm install lightvue</span></code>
+              <CopyButton text="npm install lightvue" />
             </div>
           </div>
         </div>
         <div class="hero-container__row">
           <div class="hero-container__buttons">
             <nuxt-link to="/getting-started/installation" class="hero-button lv-fluid">
-              <LvButton label="Get Started" :push="true" :deep-shadow="true" type="button" size="xl" style="font-size: 16px" />
+              <LvButton label="Documentaton" push type="button" size="xl" icon-right="light-icon-chevron-right" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
             </nuxt-link>
             <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
-              <lv-button label="Explore" :push="true" :deep-shadow="true" type="button" size="xl" style="font-size: 16px" />
+              <lv-button label="Know More" push type="button" size="xl" icon-right="light-icon-plane-departure" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
             </nuxt-link>
           </div>
         </div>
       </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#143a56" fill-opacity="1" d="M0,64L120,90.7C240,117,480,171,720,165.3C960,160,1200,96,1320,64L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
-    <div class="hero-image">
+    <!-- <div class="hero-wave__wrap">
+      <svg viewBox="0 0 1440 380" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-wave__svg">
+        <path d="M1440 0H0V78.7375C265.747 120.349 397.724 150 718.001 150C1038.28 150 1152.27 131.392 1440 78.7375V0Z" fill="#143A56" />
+      </svg>
+      <div>
+        <div class="hero-cover-image">
+          <img src="/hero-bg.svg" alt="LightVue Illustration" />
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="hero-image">
       <img src="/hero-bg.svg" alt="" />
-    </div>
+    </div> -->
   </section>
 </template>
 
 <script>
-// import CopyButton from '@/components/docs-card/CopyButton';
+import CopyButton from '@/components/docs-card/CopyButton';
 
 export default {
-  // components: {
-  //   CopyButton,
-  // },
-  // methods: {
-  //   getNpmCode() {
-  //     return this.$el.querySelector('.selectable').innerText;
-  //   },
-  // },
+  components: {
+    CopyButton,
+  },
 };
 </script>
 
@@ -71,14 +76,14 @@ $text-color-secondary: #eeecec;
   position: relative;
 
   .hero-wrapper {
-    padding: 4em 0 12em;
+    padding: 4em 0 0;
     background-color: #133a56;
     .hero-logo {
       margin: auto;
       display: flex;
-      height: 150px;
+      height: 100px; /** Just to prevent fluctuation on initial-load **/
       width: 500px;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       justify-content: center;
       align-items: center;
       img {
@@ -100,7 +105,7 @@ $text-color-secondary: #eeecec;
       float: left;
       .hero-container__content {
         text-align: center;
-        margin-bottom: 2.3em;
+        margin-bottom: 100px;
         .hero-container__heading {
           font-weight: 700;
           font-size: 3.75rem;
@@ -126,7 +131,7 @@ $text-color-secondary: #eeecec;
         z-index: 200;
         .hero-button {
           width: 180px;
-          margin: 16px;
+          margin: 12px;
           white-space: nowrap;
           z-index: 999;
         }
@@ -139,12 +144,12 @@ $text-color-secondary: #eeecec;
           position: relative;
           border-radius: 4px;
           display: inline-flex;
-          font-size: 24px;
+          font-size: 20px;
           color: #ffffff;
-          background: #135483;
+          background: rgba(255, 255, 255, 0.05);
           margin-bottom: 2rem;
-          overflow-x: auto;
-          padding: 20px 24px;
+          // overflow-x: auto;
+          padding: 24px 80px 24px 24px;
           white-space: pre;
           .not-selectable {
             user-select: none;
@@ -174,7 +179,7 @@ $text-color-secondary: #eeecec;
         .hero-container__content {
           .hero-container__subtext {
             font-size: 1.5em;
-            margin: 50px 0px;
+            margin: 30px 0px 80px;
           }
         }
       }
@@ -224,36 +229,46 @@ $text-color-secondary: #eeecec;
     position: relative;
 
     .hero-wrapper {
-      padding: 4em 0 12em;
+      padding: 4em 0 0em;
       background-color: #133a56;
       .hero-logo {
         margin: auto;
         display: flex;
-        height: 100px;
+        height: 60px; /** Just to prevent fluctuation on initial-load **/
         width: 280px;
-      }
-      .hero-container__row {
-        .hero-container__pre-wrap {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          .hero-container__pre {
-            border-radius: 4px;
-            display: inline-flex;
-            font-size: 18px;
-            color: #ffffff;
-            background: #135483;
-            margin-bottom: 2rem;
-            overflow-x: auto;
-            padding: 18px 22px;
-            white-space: pre;
-            .not-selectable {
-              user-select: none;
-            }
-          }
-        }
+        max-width: 90vw;
       }
     }
+  }
+}
+.hero-wave__wrap {
+  width: 100%;
+  position: relative;
+  .hero-wave__svg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
+.hero-cover-image {
+  height: 720px;
+  display: flex;
+  img {
+    height: 100%;
+    z-index: 1;
+    margin: auto;
+  }
+}
+</style>
+<style>
+.hero-container__pre .copy-btn__tag {
+  left: 150%;
+  right: unset;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+@media only screen and (max-width: 400px) {
+  .hero-container__pre .copy-btn__wrap {
+    display: none;
   }
 }
 </style>

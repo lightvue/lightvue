@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Background blur" file="glasscard/GlassBlurDemo" />
     <docs-card-vue title="Background opacity" file="glasscard/GlassOpacityDemo" />
     <docs-card-vue title="BG color and padding" file="glasscard/GlassBGandPaddingDemo" />
@@ -31,6 +31,7 @@ export default {
   description: `Glass Card components can be used as elegant containers/wrappers for placing content over images.`,
   packageName: 'glasscard',
   componentName: 'LvGlassCard',
+  // status: 'Pre-release',
   apiData: GlassCardAPI,
 };
 </script>

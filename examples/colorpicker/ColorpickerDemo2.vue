@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h4>Chosen color: {{ val1 }} (using v-bind)</h4>
-    <LvColorpicker v-model="val1" style="max-width: 600px" clearable />
+    <h4>Chosen color: {{ hexCode }} : <LvColorpicker v-model="hexCode" style="max-width: 600px" withoutInput /></h4>
   </div>
 </template>
 
@@ -10,11 +9,13 @@ import LvColorpicker from 'lightvue/color-picker';
 export default {
   data() {
     return {
-      val1: '#607C8A',
+      hexCode: '#607C8A',
     };
   },
   components: {
-    LvColorpicker: LvColorpicker,
+    LvColorpicker,
   },
 };
 </script>
+
+<style></style>

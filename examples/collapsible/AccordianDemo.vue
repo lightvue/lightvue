@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="nav-list__category-wrap">
-      <div class="collapsible_catgory" @click="open1" :class="{ active: isOpenA == true }">
+      <div class="collapsible_catgory" @click="open1">
         <div class="nav-list__category-label">
           <i class="light-icon-adjustments"></i>
           What is lightVue
@@ -15,7 +15,7 @@
       </LvCollapsible>
     </div>
     <div class="nav-list__category-wrap">
-      <div class="collapsible_catgory" @click="open2" :class="{ active: isOpenB == true }">
+      <div class="collapsible_catgory" @click="open2">
         <div class="nav-list__category-label">
           <i class="light-icon-adjustments"></i>
           How to install lightVue
@@ -50,6 +50,7 @@ export default {
   components: {
     LvCollapsible,
   },
+
   data() {
     return {
       isOpenA: false,
@@ -76,4 +77,8 @@ export default {
   },
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.lv-ink {
+  background-color: #38b2ac;
+}
+</style>
