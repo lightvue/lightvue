@@ -1,18 +1,9 @@
 <template>
-  <docs-page-layout
-    :title="$options.title"
-    :description="$options.description"
-  >
+  <docs-page-layout :title="$options.title" :description="$options.description">
     <drawer-best-demo />
-    <docs-card-vue
-      title="Drawer"
-      file="drawer/DrawerDemo"
-    />
+    <docs-card-vue title="Drawer" file="drawer/DrawerDemo" />
     <template #api>
-      <getting-started
-        :package-name="$options.packageName"
-        :component-name="$options.componentName"
-      />
+      <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
     </template>
   </docs-page-layout>
@@ -26,6 +17,7 @@ import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import DrawerAPI from 'lightvueDocs/example/drawer/DrawerAPI';
 import DrawerBestDemo from 'lightvueDocs/example/drawer/DrawerBestDemo.vue';
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   components: {
@@ -40,6 +32,7 @@ export default {
   description: ``,
   packageName: 'drawer',
   componentName: 'LvDrawer',
+  status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
   apiData: DrawerAPI,
 };
 </script>
