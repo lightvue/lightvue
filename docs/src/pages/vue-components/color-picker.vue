@@ -1,6 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Demo" file="colorpicker/ColorpickerDemo" />
+    <docs-card-vue title="Without input" file="colorpicker/ColorpickerDemo2" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -26,7 +27,7 @@ export default {
     DocsAllApi,
   },
   title: 'Colorpicker',
-  description: `Colorpicker`,
+  description: `LvColorpicker can be used when a user needs to pick a color. Additionally, a customized color palette can also be passed as an array.`,
   packageName: 'colorpicker',
   componentName: 'LvColorpicker',
   status: COMPONENT_STATUS.UPDATED,
