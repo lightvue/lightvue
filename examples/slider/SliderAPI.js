@@ -21,26 +21,44 @@ const SliderAPI = {
     {
       name: 'step',
       type: 'Number',
-      default: 'null',
+      default: '1',
       description: 'Configures the value to step and down while sliding.',
+    },
+    {
+      name: 'showLabel',
+      type: 'Boolean',
+      default: 'false',
+      description: 'Configures the label to be visible or not.',
     },
     {
       name: 'range',
       type: 'Boolean',
       default: 'false',
-      description: 'Configures the range of the slider.',
+      description: 'Configures the Slider as 2-way Range Slider',
     },
     {
-      name: 'disabled',
+      name: 'scale',
       type: 'Boolean',
       default: 'false',
-      description: 'Configures if the slider is disabled or not.',
+      description: 'Configures the slider to have scale.',
     },
     {
-      name: 'ariaLabelledBy',
+      name: 'precision',
+      type: 'Number',
+      default: '10',
+      description: 'Configures the precision of the scale.',
+    },
+    {
+      name: 'iconLeft',
       type: 'String',
       default: '',
-      description: 'Configures the aria to be labelled on the slider.',
+      description: 'Configures the left icon.',
+    },
+    {
+      name: 'iconRight',
+      type: 'String',
+      default: '',
+      description: 'Configures the icon right.',
     },
     {
       name: 'sliderColor',
@@ -48,6 +66,40 @@ const SliderAPI = {
       default: '#38b2ac',
       description: 'Configures the slider color.',
     },
+    {
+      name: 'trackColor',
+      type: 'String',
+      default: '#c2ebe9',
+      description: 'Configures the track color.',
+    },
+    {
+      name: 'thumbColor',
+      type: 'String',
+      description: 'Configures the thumb color.',
+    },
+    {
+      name: 'thumbBorderColor',
+      type: 'String',
+      description: 'Configures the thumb border color.',
+    },
+    // {
+    //   name: 'range',
+    //   type: 'Boolean',
+    //   default: 'false',
+    //   description: 'Configures the range of the slider.',
+    // },
+    // {
+    //   name: 'disabled',
+    //   type: 'Boolean',
+    //   default: 'false',
+    //   description: 'Configures if the slider is disabled or not.',
+    // },
+    // {
+    //   name: 'ariaLabelledBy',
+    //   type: 'String',
+    //   default: '',
+    //   description: 'Configures the aria to be labelled on the slider.',
+    // },
   ],
   // events: [
   //   {

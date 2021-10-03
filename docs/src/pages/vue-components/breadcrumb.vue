@@ -1,7 +1,12 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <slider-best-demo />
-    <docs-card-vue title="Slider demo" file="slider/SliderDemo" />
+  <docs-page-layout
+    :title="$options.title"
+    :description="$options.description"
+  >
+    <docs-card-vue
+      title="Breadcrumb demo"
+      file="breadcrumb/BreadcrumbDemo"
+    />
     <template #api>
       <getting-started
         :package-name="$options.packageName"
@@ -18,9 +23,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import SliderAPI from 'lightvueDocs/example/slider/SliderAPI';
-import SliderBestDemo from '../../../../examples/slider/SliderBestDemo.vue';
-import { COMPONENT_STATUS } from '@/static/data/constant.ts';
+import BreadcrumbAPI from 'lightvueDocs/example/breadcrumb/BreadcrumbAPI';
 
 export default {
   components: {
@@ -29,13 +32,11 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
-    SliderBestDemo,
   },
-  title: 'Slider',
-  description: `Slider is another basic component from light vue which provide user to have a slider in the web application which can be used to rate or select a range.`,
-  packageName: 'slider',
-  componentName: 'LvSlider',
-  status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
-  apiData: SliderAPI,
+  title: 'Breadcrumb',
+  description: `Breadcrumb is a basic component which essentially provides help in the navigation of web pages.`,
+  packageName: 'breadcrumb',
+  componentName: 'LvBreadcrumb',
+  apiData: BreadcrumbAPI,
 };
 </script>

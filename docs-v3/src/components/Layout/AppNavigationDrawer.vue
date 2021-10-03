@@ -1,12 +1,30 @@
 <template>
-  <div class="light-scrollbar" :class="`sidebar --theme-${theme} ${showDrawer ? 'show-drawer' : ''}`" @click="$emit('toggle-drawer')">
+  <div
+    class="light-scrollbar"
+    :class="`sidebar --theme-${theme} ${showDrawer ? 'show-drawer' : ''}`"
+    @click="$emit('toggle-drawer')"
+  >
     <div class="nav-list">
-      <div class="sidebar__logo" @click="$router.push('/')">
-        <img src="/logo_v2.svg" class="header-logo" />
+      <div
+        class="sidebar__logo"
+        @click="$router.push('/')"
+      >
+        <img
+          src="/logo_v2.svg"
+          class="header-logo"
+        />
         <!-- <h3>&nbsp; LightVue</h3> -->
       </div>
-      <div class="nav-list__category-wrap" v-for="category in $options.categories" :key="category.category_name" :class="{ '--active': activeCategory === category.category_name }">
-        <div class="nav-list__category" @click.stop="setActiveCategory(category.category_name)">
+      <div
+        class="nav-list__category-wrap"
+        v-for="category in $options.categories"
+        :key="category.category_name"
+        :class="{ '--active': activeCategory === category.category_name }"
+      >
+        <div
+          class="nav-list__category"
+          @click.stop="setActiveCategory(category.category_name)"
+        >
           <div class="nav-list__category-label">
             <i :class="category.category_icon"></i>
             {{ category.category_name }}
@@ -143,6 +161,10 @@ export default {
         {
           page_name: 'Rating',
           page_path: '/vue-components/rating',
+        },
+        {
+          page_name: 'Breadcrumb',
+          page_path: '/vue-components/breadcrumb',
         },
         {
           page_name: 'Text Editor',

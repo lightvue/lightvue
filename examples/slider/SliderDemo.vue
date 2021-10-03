@@ -1,78 +1,133 @@
 <template>
   <div class="content-section implementation slider-example-wrapper">
-    <h5>Basic: {{ value }}</h5>
-    <LvRangeSlider class="slider" v-model="value" />
 
-    <h5>Input:</h5>
-    <LvInput v-model="value" style="width: 196px" />
-    <LvRangeSlider class="slider" v-model="value" :showValue="false" />
+    <h5>Basic: {{ value }}</h5>
+    <LvSlider v-model="value" />
+
+    <h5>Input</h5>
+    <LvInput
+      v-model="value"
+      style="width: 196px"
+    />
+    <LvSlider v-model="value" />
 
     <h5>Setting custom range</h5>
-    PROP: max, min (default 0,100):<br /><br />
-    0-10: <br />
-    <LvRangeSlider :min="0" :max="10" v-model="valueRange1" />
-    <br />
-    <br />
-    500-550: <br />
-    <LvRangeSlider :min="500" :max="550" v-model="valueRange2" />
-    <br />
-    <br />
+    max,min (default 0,100)
+    <LvSlider v-model="value" />
 
     <h5>Show/hide floating value label:</h5>
-    showValue = true: <br />
-    <LvRangeSlider class="slider" v-model="value" /> <br />
-    <br />
-    showValue = false: <br />
-    <LvRangeSlider class="slider" v-model="value" :showValue="false" />
-    <h5>Step (step-size: 20):</h5>
-    <LvRangeSlider v-model="valueStep" :step="20" />
+    showValue = true
+    <LvSlider
+      v-model="value"
+      showValue
+    />
+    showValue = false
+    <LvSlider v-model="value" />
 
-    <h5>Custom color:</h5>
-    Slider Color (default: #607C8A)<br />
-    <LvRangeSlider v-model="value" sliderColor="#38b2ac" />
+    <h5>Left/Right Icons:</h5>
+    iconLeft = 'light-icon-arrow-narrow-left'
+    <LvSlider
+      v-model="value"
+      iconLeft="light-icon-arrow-narrow-left"
+    />
+    iconRight = 'light-icon-arrow-narrow-right'
+    <LvSlider
+      v-model="value"
+      iconRight="light-icon-arrow-narrow-right"
+    />
+    iconLeft & iconRight
+    <LvSlider
+      v-model="value"
+      iconLeft="light-icon-arrow-narrow-left"
+      iconRight="light-icon-arrow-narrow-right"
+    />
+
+    <h5>Scales</h5>
+    scale = true
+    <LvSlider
+      v-model="value"
+      scale
+    />
+
     <br />
+    <h5>Scales with precision</h5>
+    precision = "2" (type = number)
+    <LvSlider
+      v-model="value"
+      :precision="4"
+      scale
+    />
+
     <br />
-    <LvRangeSlider v-model="value" sliderColor="#03fc5e" />
+    <h5>Custom Step size</h5>
+    step = "20" (type = number)
+    <LvSlider
+      v-model="value"
+      :step="20"
+    />
+
+    <h5>Slider with range</h5>
+    range = true
+    <LvSlider
+      v-model="valueRange"
+      :precision="4"
+      showValue
+      range
+    />
+
+    <h5>Range with scale</h5>
+    range = true, scale = true
+    <LvSlider
+      v-model="valueRange"
+      :precision="4"
+      range
+      scale
+    />
+
     <br />
-    <br />
-    Track Color (default: #E5E5E5)<br />
-    <LvRangeSlider v-model="value" trackColor="#38b2ac" />
-    <br />
-    <br />
-    <LvRangeSlider v-model="value" trackColor="#03fc5e" />
+    <h5>Fully Customizable Color Options</h5>
+    sliderColor = "#4066E0"
+    <LvSlider
+      sliderColor="#4066E0"
+      v-model="value"
+    />
+    trackColor = "#B9BFFF"
+    <LvSlider
+      sliderColor="#4066E0"
+      trackColor="#B9BFFF"
+      v-model="value"
+      showValue
+    />
+    thumbColor = "#ffffff", thumbBorderColor = "#663399"
+    <LvSlider
+      sliderColor="#4066E0"
+      trackColor="#B9BFFF"
+      thumbBorderColor="#663399"
+      thumbColor="#ffffff"
+      v-model="value"
+      showValue
+    />
     <br />
     <br />
   </div>
 </template>
 
 <script>
-import LvRangeSlider from 'lightvue/range-slider'; // REFACTORING
-
+import LvSlider from 'lightvue/slider';
 export default {
   data() {
     return {
       value: 20,
-      valueRange1: 0,
-      valueRange2: 500,
-      valueStep: 20,
+      valueRange: [0, 10],
     };
   },
   components: {
-    LvRangeSlider, // REFACTORING
+    LvSlider,
   },
 };
 </script>
 
 <style scoped>
-.lv-slider-horizontal,
-.lv-inputtext {
-  width: 14rem;
-}
-
-.lv-slider-vertical {
-  height: 14rem;
-}
-
 .slider-example-wrapper {
   width: max-content;
 }

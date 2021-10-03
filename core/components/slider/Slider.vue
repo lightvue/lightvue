@@ -1,394 +1,433 @@
 <template>
-  <div :class="containerClass" @click="onBarClick" ref="container">
-    <span class="lv-slider-range" :style="rangeStyle"></span>
-    <span v-if="!range" class="lv-slider-handle" :style="handleStyle" @mousedown="onHandleMouseDown($event)" @keydown="onHandleKeyDown($event)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
-    <span v-if="range" class="lv-slider-handle" :style="rangeStartHandleStyle" @mousedown="onHandleMouseDown($event, 0)" @keydown="onHandleKeyDown($event, 0)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value ? value[0] : null" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
-    <span v-if="range" class="lv-slider-handle" :style="rangeEndHandleStyle" @mousedown="onHandleMouseDown($event, 1)" @keydown="onHandleKeyDown($event, 1)" tabindex="0" role="slider" :aria-valuemin="min" aria-valuenow="value = value[1] : null" aria-valuemax="max" :aria-labelledby="ariaLabelledBy"></span>
+  <div
+    class="slider range-slider"
+    @mouseenter="showValue ? handleMouseEnter() : ''"
+    @mouseleave="showValue ? handleMouseLeave() : ''"
+    :style="getIconStyle"
+  >
+    <!-- {
+      marginLeft:`${iconLeft && iconLeft != '' ? 20 : ''}px`,
+      marginRight:`${iconRight && iconRight != '' ? 20 : ''}px`,
+    } -->
+    <!-- Input Slider --Hidden -->
+    <input
+      @input="setLeftValue"
+      type="range"
+      id="input-left"
+      :max="max"
+      :min="min"
+      :step="step"
+      :value="leftValue"
+      v-if="range"
+      :style="getLeftPercent > 90 ? { zIndex: '3' } : ''"
+    />
+    <input
+      @input="setRightValue"
+      type="range"
+      id="input-right"
+      :max="max"
+      :min="min"
+      :step="step"
+      :value="rightValue"
+    />
+
+    <!-- Actual Visible Slider -->
+    <div class="visible-slider">
+      <div
+        v-if="iconLeft"
+        class="icon --left"
+      >
+        <i :class="iconLeft"></i>
+      </div>
+      <div
+        v-if="iconRight"
+        class="icon --right"
+      ><i :class="iconRight"></i></div>
+      <div
+        class="track"
+        :style="{ backgroundColor: `${trackColor}` }"
+      ></div>
+      <div
+        class="range"
+        :style="{
+          left: `${getLeftPercent}%`,
+          right: `${getRightPercent}%`,
+          backgroundColor: `${sliderColor}`,
+        }"
+      ></div>
+      <div
+        class="thumb --left"
+        :style="{ left: `${getLeftPercent}%`, backgroundColor: `${thumbColor ? thumbColor : trackColor}`, borderColor: `${thumbBorderColor ? thumbBorderColor : sliderColor}` }"
+        v-if="range"
+      >
+        <div
+          class="label --left"
+          v-if="showValue"
+          :style="[
+            { borderColor: `${thumbBorderColor || sliderColor}`, color: `${thumbBorderColor || sliderColor}` },
+            label
+              ? {
+                  opacity: '1',
+                }
+              : '',
+          ]"
+        >
+          {{ range ? (modelValue ? modelValue[0] : value[0]) : modelValue ? modelValue : value }}
+        </div>
+      </div>
+      <div
+        class="thumb --right"
+        :style="{ right: `${getRightPercent}%`, backgroundColor: `${thumbColor ? thumbColor : trackColor}`, borderColor: `${thumbBorderColor ? thumbBorderColor : sliderColor}` }"
+      >
+        <div
+          class="label --right"
+          v-if="showValue"
+          :style="[
+            { borderColor: `${thumbBorderColor || sliderColor}`, color: `${thumbBorderColor || sliderColor}` },
+            label
+              ? {
+                  opacity: '1',
+                }
+              : '',
+          ]"
+        >
+          {{ range ? (modelValue ? modelValue[1] : value[1]) : modelValue ? modelValue : value }}
+        </div>
+      </div>
+      <div
+        v-if="scale"
+        class="scale"
+      >
+        <div
+          class="scale__item"
+          :key="item"
+          v-for="item in max / precision + 1"
+          :style="(item - 1) * getUnitScale >= getLeftPercent && (item - 1) * getUnitScale <= 100 - getRightPercent ? { backgroundColor: `${sliderColor}`, height: '15px' } : ''"
+        ></div>
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
-import { DomHandler } from 'lightvue/utils';
-
 export default {
+  data() {
+    return {
+      leftValue: 0,
+      rightValue: 0,
+      valueFromProp: null,
+      label: false,
+    };
+  },
   props: {
-    value: [Number, Array],
+    modelValue: {
+      type: [Number, Array],
+    },
+    value: {
+      type: [Number, Array],
+    },
     min: {
       type: Number,
       default: 0,
     },
+
     max: {
       type: Number,
       default: 100,
     },
-    orientation: {
-      type: String,
-      default: 'horizontal',
-    },
+
     step: {
       type: Number,
-      default: null,
+      default: 1,
+    },
+    showValue: {
+      type: Boolean,
+      default: false,
+    },
+    precision: {
+      type: Number,
+      default: 10,
     },
     range: {
       type: Boolean,
       default: false,
     },
-    disabled: {
+    scale: {
       type: Boolean,
       default: false,
     },
-    ariaLabelledBy: {
+    thumbColor: {
       type: String,
-      default: null,
+    },
+    thumbBorderColor: {
+      type: String,
     },
     sliderColor: {
       type: String,
       default: '#38b2ac',
     },
-  },
-  dragging: false,
-  handleIndex: null,
-  initX: null,
-  initY: null,
-  barWidth: null,
-  barHeight: null,
-  dragListener: null,
-  mouseupListener: null,
-  beforeDestroy() {
-    this.unbindDragListeners();
+    trackColor: {
+      type: String,
+      default: '#c2ebe9',
+    },
+    iconLeft: {
+      type: String,
+    },
+    iconRight: {
+      type: String,
+    },
   },
   methods: {
-    updateDomData() {
-      let rect = this.$refs.container.getBoundingClientRect();
-      this.initX = rect.left + DomHandler.getWindowScrollLeft();
-      this.initY = rect.top + DomHandler.getWindowScrollTop();
-      this.barWidth = this.$refs.container.offsetWidth;
-      this.barHeight = this.$refs.container.offsetHeight;
+    handleMouseEnter() {
+      this.label = this.showValue;
     },
-    setValueFromHandlePosition(event, handlePosition) {
-      let newValue = (this.max - this.min) * (handlePosition / 100) + this.min;
+    handleMouseLeave() {
+      this.label = false;
+    },
 
+    setLeftValue(event) {
+      const left = Math.min(parseInt(event.target.value), parseInt(this.rightValue));
+      event.target.value = left;
+      this.leftValue = left;
+      this.updateModal();
+    },
+    setRightValue(event) {
+      const right = Math.max(parseInt(event.target.value), parseInt(this.leftValue));
+      event.target.value = right;
+      this.rightValue = right;
+      this.updateModal();
+    },
+
+    updateModal() {
       if (this.range) {
-        if (this.step) this.handleStepChange(event, newValue, this.value[this.handleIndex]);
-        else this.updateModel(event, newValue);
+        this.$emit('input', [this.leftValue, this.rightValue]);
+        this.$emit('change', [this.leftValue, this.rightValue]);
+        this.$emit('update:modelValue', [this.leftValue, this.rightValue]);
       } else {
-        if (this.step) this.handleStepChange(event, newValue, this.value);
-        else this.updateModel(event, newValue);
+        this.$emit('input', this.rightValue);
+        this.$emit('change', this.rightValue);
+        this.$emit('update:modelValue', this.rightValue);
       }
     },
-    onSlide(event) {
-      let handlePosition = this.horizontal ? ((event.pageX - this.initX) * 100) / this.barWidth : ((this.initY + this.barHeight - event.pageY) * 100) / this.barHeight;
-      this.setValueFromHandlePosition(event, handlePosition);
+    getValueBetweenMinMax(value) {
+      return value < this.min ? this.min : value > this.max ? this.max : value;
     },
-    handleStepChange(event, newValue, oldValue) {
-      let diff = newValue - oldValue;
-      let val = oldValue;
-
-      if (diff < 0) val = oldValue + Math.ceil(newValue / this.step - oldValue / this.step) * this.step;
-      else if (diff > 0) val = oldValue + Math.floor(newValue / this.step - oldValue / this.step) * this.step;
-
-      this.updateModel(event, val);
+    getValueFromStep(value) {
+      return (value - this.min) % this.step <= this.step / 2 ? value - this.min - ((value - this.min) % this.step) + this.min : value - this.min + (this.step - ((value - this.min) % this.step)) + this.min;
     },
-    updateModel(event, value) {
-      let newValue = value;
-      let modelValue;
-
-      if (this.range) {
-        if (this.handleIndex == 0) {
-          if (newValue < this.min) newValue = this.min;
-          else if (newValue >= this.value[1]) newValue = this.value[1];
+    setValue(value) {
+      if (this.range && value[0] <= value[1]) {
+        if (this.step > 1) {
+          const tempValueLeft = this.getValueBetweenMinMax(value[0]);
+          const tempValueRight = this.getValueBetweenMinMax(value[1]);
+          this.leftValue = this.getValueFromStep(tempValueLeft);
+          this.rightValue = this.getValueFromStep(tempValueRight);
         } else {
-          if (newValue > this.max) newValue = this.max;
-          else if (newValue <= this.value[0]) newValue = this.value[0];
+          this.leftValue = this.getValueBetweenMinMax(value[0]);
+          this.rightValue = this.getValueBetweenMinMax(value[1]);
         }
-
-        modelValue = [...this.value];
-        modelValue[this.handleIndex] = Math.floor(newValue);
-      } else {
-        if (newValue < this.min) newValue = this.min;
-        else if (newValue > this.max) newValue = this.max;
-
-        modelValue = Math.floor(newValue);
       }
-
-      this.$emit('input', modelValue);
-      this.$emit('change', modelValue);
-    },
-    onBarClick(event) {
-      if (this.disabled) {
-        return;
-      }
-
-      if (!DomHandler.hasClass(event.target, 'lv-slider-handle')) {
-        this.updateDomData();
-        this.onSlide(event);
-      }
-    },
-    onHandleMouseDown(event, index) {
-      if (this.disabled) {
-        return;
-      }
-
-      DomHandler.addClass(this.$el, 'lv-slider-sliding');
-
-      this.dragging = true;
-      this.updateDomData();
-      this.handleIndex = index;
-      this.bindDragListeners();
-      event.preventDefault();
-    },
-    onHandleKeyDown(event, index) {
-      this.handleIndex = index;
-
-      switch (event.which) {
-        //down
-        case 40:
-          if (this.vertical) {
-            this.decrementValue(event, index);
-            event.preventDefault();
-          }
-          break;
-
-        //up
-        case 38:
-          if (this.vertical) {
-            this.incrementValue(event, index);
-            event.preventDefault();
-          }
-          break;
-
-        //left
-        case 37:
-          if (this.horizontal) {
-            this.decrementValue(event, index);
-            event.preventDefault();
-          }
-          break;
-
-        //right
-        case 39:
-          if (this.horizontal) {
-            this.incrementValue(event, index);
-            event.preventDefault();
-          }
-          break;
-
-        default:
-          break;
-      }
-    },
-    decrementValue(event, index) {
-      let newValue;
-
-      if (this.range) {
-        if (this.step) newValue = this.value[index] - this.step;
-        else newValue = this.value[index] - 1;
-      } else {
-        if (this.step) newValue = this.value - this.step;
-        else newValue = this.value - 1;
-      }
-
-      this.updateModel(event, newValue);
-
-      event.preventDefault();
-    },
-    incrementValue(event, index) {
-      let newValue;
-
-      if (this.range) {
-        if (this.step) newValue = this.value[index] + this.step;
-        else newValue = this.value[index] + 1;
-      } else {
-        if (this.step) newValue = this.value + this.step;
-        else newValue = this.value + 1;
-      }
-
-      this.updateModel(event, newValue);
-
-      event.preventDefault();
-    },
-    bindDragListeners() {
-      if (!this.dragListener) {
-        this.dragListener = event => {
-          if (this.dragging) {
-            this.onSlide(event);
-          }
-        };
-
-        document.addEventListener('mousemove', this.dragListener);
-      }
-
-      if (!this.mouseupListener) {
-        this.mouseupListener = event => {
-          if (this.dragging) {
-            this.dragging = false;
-            DomHandler.removeClass(this.$el, 'lv-slider-sliding');
-            this.$emit('slideend', { originalEvent: event, values: this.value });
-          }
-        };
-
-        document.addEventListener('mouseup', this.mouseupListener);
-      }
-    },
-    unbindDragListeners() {
-      if (this.dragListener) {
-        document.removeEventListener('mousemove', this.dragListener);
-        this.dragListener = null;
-      }
-
-      if (this.mouseupListener) {
-        document.removeEventListener('mouseup', this.mouseupListener);
-        this.mouseupListener = null;
+      if (!this.range) {
+        this.leftValue = 0;
+        const tempValue = this.getValueBetweenMinMax(value);
+        if (this.step > 1) {
+          this.rightValue = this.getValueFromStep(tempValue);
+        } else {
+          this.rightValue = tempValue;
+        }
       }
     },
   },
   computed: {
-    containerClass() {
-      return [
-        'lv-slider lv-component',
-        {
-          'lv-disabled': this.disabled,
-          'lv-slider-horizontal': this.orientation === 'horizontal',
-          'lv-slider-vertical': this.orientation === 'vertical',
-        },
-      ];
-    },
-    horizontal() {
-      return this.orientation === 'horizontal';
-    },
-    vertical() {
-      return this.orientation === 'vertical';
-    },
-    rangeStyle() {
+    getLeftPercent() {
       if (this.range) {
-        if (this.horizontal) return { left: this.rangeStartPosition + '%', width: this.rangeEndPosition - this.rangeStartPosition + '%', background: this.sliderColor };
-        else return { bottom: this.rangeStartPosition + '%', height: this.rangeEndPosition - this.rangeStartHandlePosition + '%', background: this.sliderColor };
+        const value = ((this.leftValue - this.min) / (this.max - this.min)) * 100;
+        return value;
       } else {
-        if (this.horizontal) return { width: this.handlePosition + '%', background: this.sliderColor };
-        else return { height: this.handlePosition + '%', background: this.sliderColor };
+        return 0;
       }
     },
-    handleStyle() {
-      if (this.horizontal) return { left: this.handlePosition + '%', borderColor: this.sliderColor };
-      else return { bottom: this.handlePosition + '%', borderColor: this.sliderColor };
+    getRightPercent() {
+      const value = ((this.max - this.rightValue) / (this.max - this.min)) * 100;
+
+      return value > 100 ? 100 : value < 0 ? 0 : value;
     },
-    handlePosition() {
-      if (this.value === 0) return 0;
-      else if (this.value < this.min) return 0;
-      else if (this.value > this.max) return 100;
-      else return ((this.value - this.min) * 100) / (this.max - this.min);
+    getUnitScale() {
+      const singlePipLength = ((this.max - this.min) * this.precision) / this.max;
+      return (singlePipLength / (this.max - this.min)) * 100;
     },
-    rangeStartPosition() {
-      if (this.value) return ((this.value[0] < this.min ? 0 : this.value[0] - this.min) * 100) / (this.max - this.min);
-      else return 0;
+    getIconStyle() {
+      return {
+        marginLeft: `${this.iconLeft && this.iconLeft != '' ? 20 : ''}px`,
+        marginRight: `${this.iconRight && this.iconRight != '' ? 20 : ''}px`,
+      };
     },
-    rangeEndPosition() {
-      if (this.value) return ((this.value[1] > this.max ? 100 : this.value[1] - this.min) * 100) / (this.max - this.min);
-      else return 0;
+  },
+  watch: {
+    value(value) {
+      this.value ? this.setValue(value) : '';
     },
-    rangeStartHandleStyle() {
-      if (this.horizontal) return { left: this.rangeStartPosition + '%', borderColor: this.sliderColor };
-      else return { bottom: this.rangeStartPosition + '%', borderColor: this.sliderColor };
+    modelValue(value) {
+      this.modelValue ? this.setValue(value) : '';
     },
-    rangeEndHandleStyle() {
-      if (this.horizontal) return { left: this.rangeEndPosition + '%', borderColor: this.sliderColor };
-      else return { bottom: this.rangeEndPosition + '%', borderColor: this.sliderColor };
-    },
+  },
+  mounted() {
+    this.modelValue ? this.setValue(this.modelValue) : this.setValue(this.value);
   },
 };
 </script>
-
-<style>
-.lv-slider {
+<style lang="scss" scoped>
+.slider {
+  box-sizing: border-box;
+  width: auto;
   position: relative;
-  background: #dee2e6;
-  border: 0;
-  border-radius: 3px;
-}
+  padding: 14px 0;
+  .visible-slider {
+    position: relative;
+    height: 6px;
+    margin: 0 15px;
+    // width: 400px;
+    z-index: 1;
+    .icon {
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      top: 2px;
+      transform: translateY(-12px);
+      i {
+        font-size: 24px;
+      }
+      &.--left {
+        left: -35px;
+      }
+      &.--right {
+        right: -35px;
+      }
+    }
+    .track {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 50px;
+      //   background-color: #c2ebe9;
+    }
+    .range {
+      position: absolute;
+      z-index: 2;
+      left: 25%;
+      right: 25%;
+      top: 0;
+      bottom: 0;
+      //   background-color: #38b2ac;
+      border-radius: 50px;
+    }
+    .thumb {
+      position: absolute;
+      z-index: 3;
+      height: 16px;
+      width: 26px;
+      //   background-color: #b2f5ea;
+      border: 4px solid #38b2ac;
+      border-radius: 50px;
+      cursor: grab;
+      // opacity: 0.3;
+      top: 0;
+      &.--left {
+        left: 25%;
+        transform: translate(-13px, -5px);
+      }
+      &.--right {
+        right: 25%;
+        transform: translate(13px, -5px);
+      }
+      .label {
+        position: absolute;
+        height: 24px;
+        width: 38px;
+        left: -10px;
+        top: -34px;
+        background-color: #ffffff;
+        border: 2px solid #38b2ac;
+        border-radius: 5px;
+        color: #38b2ac;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .scale {
+      position: absolute;
+      display: flex;
+      top: 20px;
+      left: 0;
+      right: 0;
+      flex-grow: 1;
+      justify-content: space-between;
+      .scale__item {
+        height: 10px;
+        width: 2px;
+        background-color: #cccccc;
+        transition: all 0.2s;
+        border-radius: 1px;
+      }
+    }
+  }
+  input[type='range'] {
+    position: absolute;
+    -webkit-appearance: none;
+    pointer-events: none;
+    z-index: 2;
+    height: 10px;
+    width: 100%;
+    left: 0;
 
-.lv-slider .lv-slider-handle {
-  cursor: grab;
-  touch-action: none;
-}
+    // Comment Opacity to look at actual input field
+    opacity: 0;
 
-.lv-slider .lv-slider-handle,
-.lv-slider-range {
-  position: absolute;
-  display: block;
-}
+    // &::-webkit-slider-runnable-track {
+    //   -webkit-appearance: none;
+    // }
+    // &#input-left {
 
-.lv-slider-horizontal .lv-slider-range {
-  top: 0;
-  left: 0;
-  height: 100%;
-}
+    // }
+    // &#input-right {
 
-.lv-slider-horizontal .lv-slider-handle {
-  top: 50%;
-}
-
-.lv-slider-vertical {
-  height: 100px;
-}
-
-.lv-slider-vertical .lv-slider-handle {
-  left: 50%;
-}
-
-.lv-slider-vertical .lv-slider-range {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-.lv-slider.lv-slider-horizontal {
-  height: 0.286rem;
-}
-
-.lv-slider.lv-slider-horizontal .lv-slider-handle {
-  margin-top: -0.5715rem;
-  margin-left: -0.5715rem;
-}
-
-.lv-slider.lv-slider-vertical {
-  width: 0.286rem;
-}
-
-.lv-slider.lv-slider-vertical .lv-slider-handle {
-  margin-left: -0.5715rem;
-  margin-bottom: -0.5715rem;
-}
-
-.lv-slider .lv-slider-handle {
-  transform: scale(1);
-  height: 1.143rem;
-  width: 1.143rem;
-  background: #d7efed;
-  border: 2px solid;
-  border-radius: 50%;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
-}
-
-.lv-slider .lv-slider-handle:focus {
-  outline: 0;
-  outline-offset: 0;
-  box-shadow: 0 0 0 0.2rem #c7c7c7;
-}
-
-.lv-slider:not(.lv-disabled) .lv-slider-handle:hover {
-  /* background: #38b2ac; */
-  transition: all 0.3s;
-  transform: scale(1.2);
-}
-
-.lv-component {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.lv-component:disabled,
-.lv-disabled {
-  opacity: 0.6;
+    // }
+    &::-webkit-slider-thumb {
+      pointer-events: all;
+      height: 30px;
+      width: 30px;
+      border-radius: 0;
+      border: 0 none;
+      cursor: grab;
+      background-color: black;
+      -webkit-appearance: none;
+    }
+    &::-moz-range-thumb {
+      pointer-events: all;
+      height: 30px;
+      width: 30px;
+      border-radius: 0;
+      border: 0 none;
+      cursor: grab;
+      background-color: black;
+      -webkit-appearance: none;
+    }
+    &::-ms-thumb {
+      pointer-events: all;
+      height: 30px;
+      width: 30px;
+      border-radius: 0;
+      border: 0 none;
+      cursor: grab;
+      background-color: black;
+      -webkit-appearance: none;
+    }
+  }
 }
 </style>
