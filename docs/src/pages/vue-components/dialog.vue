@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Dialog" file="dialog/DialogDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -15,6 +15,7 @@ import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 import DialogAPI from 'lightvueDocs/example/dialog/DialogAPI';
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   head: {
@@ -46,6 +47,7 @@ export default {
   description: `Lv Dialog helps the user to have modal and additional dialog box with their data.`,
   packageName: 'dialog',
   componentName: 'LvDialog',
+  status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
   apiData: DialogAPI,
 };
 </script>
