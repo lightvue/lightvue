@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Basic" file="collapsible/AccordianDemo" overflow />
     <docs-card-vue title="Nested" file="collapsible/CollapsibleDemo" overflow />
     <template #api>
@@ -16,6 +16,7 @@ import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import CollapsibleAPI from 'lightvueDocs/example/collapsible/CollapsibleAPI';
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   components: {
@@ -29,6 +30,7 @@ export default {
   description: `Collapsible component Easily toggle visibility of almost any content on your pages in a vertically and horizontally collapsing container`,
   packageName: 'collapsible',
   componentName: 'LvCollapsible',
+  status: COMPONENT_STATUS.NEW,
   apiData: CollapsibleAPI,
 };
 </script>

@@ -7,14 +7,10 @@
         <div class="api-table__cell">Default</div>
         <div class="api-table__cell">Description</div>
       </div>
-      <div
-        v-for="property in propsList"
-        :key="property.name"
-        class="api-table__row"
-      >
+      <div v-for="property in propsList" :key="property.name" class="api-table__row">
         <div class="api-table__cell --name">{{ property.name }}</div>
         <div class="api-table__cell --type">{{ property.type }}</div>
-        <div class="api-table__cell --default">{{ property.default }}</div>
+        <div :class="['api-table__cell --default', { '--full-view': property.default.length < 40 }]" @click="$event.target.classList.toggle('--full-view')">{{ property.default }}</div>
         <div class="api-table__cell --description">
           {{ property.description }}
         </div>
@@ -24,9 +20,9 @@
 </template>
 
 <script>
-import { copyToClipboard } from "../../utils";
+import { copyToClipboard } from '../../utils';
 export default {
-  props: ["propsList"],
+  props: ['propsList'],
   data() {
     return {};
   },
@@ -38,10 +34,10 @@ export default {
   methods: {
     async fetchAPI() {
       fetch(`${this.apiPath}`)
-        .then((_) => {
+        .then(_ => {
           return _.json();
         })
-        .then((_) => {
+        .then(_ => {
           this.properties = _;
         });
     },

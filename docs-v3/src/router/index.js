@@ -28,6 +28,10 @@ const routes = [
         component: () => import('@/pages/vue-components/checkbox-group.vue'),
       },
       {
+        path: 'drawer',
+        component: () => import('@/pages/vue-components/drawer.vue'),
+      },
+      {
         path: 'radio',
         component: () => import('@/pages/vue-components/radio.vue'),
       },
@@ -106,6 +110,10 @@ const routes = [
       {
         path: 'collapsible',
         component: () => import('@/pages/vue-components/collapsible.vue'),
+      },
+      {
+        path: 'badge',
+        component: () => import('@/pages/vue-components/badge.vue'),
       },
       {
         path: 'textarea',

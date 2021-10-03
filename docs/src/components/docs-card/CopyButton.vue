@@ -3,19 +3,14 @@
     <div class="copy-btn" @click="copy">
       <i class="light-icon-copy"></i>
     </div>
-    <transition
-      enter-active-class="animated fadeIn"
-      leave-active-class="animated fadeOut"
-    >
-      <div v-show="copied" class="copy-btn__tag">
-        <i class="light-icon-circle-check" /> Copied to clipboard
-      </div>
+    <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+      <div v-show="copied" class="copy-btn__tag"><i class="light-icon-circle-check" /> Copied to clipboard</div>
     </transition>
   </div>
 </template>
 
 <script>
-import { copyToClipboard } from "../../utils";
+import { copyToClipboard } from '../../utils';
 export default {
   props: {
     text: [Function, String],
@@ -27,7 +22,7 @@ export default {
   },
   methods: {
     copy() {
-      const text = typeof this.text === "function" ? this.text() : this.text;
+      const text = typeof this.text === 'function' ? this.text() : this.text;
       copyToClipboard(text)
         .then(() => {
           this.copied = true;
@@ -71,7 +66,7 @@ export default {
   white-space: nowrap;
   background-color: #607b89;
   color: #fff;
-  border-radius: 16px;
+  border-radius: 24px;
   padding: 6px 12px 6px 6px;
 
   display: flex;

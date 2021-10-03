@@ -1,6 +1,7 @@
 <template>
   <div class="lightvue__landing-page">
     <hero />
+    <hero-cover />
     <index-features />
     <section-vue-migrate />
     <section-lightweight />
@@ -13,6 +14,7 @@
 
 <script>
 import Hero from '../components/landing-page/Hero.vue';
+import HeroCover from '../components/landing-page/HeroCover.vue';
 import IndexFeatures from '../components/landing-page/SectionFeatures.vue';
 // import IndexFeatures from '../components/landing-page/IndexFeatures.vue';
 import SectionLightweight from '../components/landing-page/SectionLightweight.vue';
@@ -48,6 +50,7 @@ export default {
   layout: 'landing',
   components: {
     Hero,
+    HeroCover,
     IndexFeatures,
     IndexFooter,
     SectionLightweight,
