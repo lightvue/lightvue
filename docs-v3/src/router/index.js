@@ -120,6 +120,10 @@ const routes = [
         component: () => import('@/pages/vue-components/textarea.vue'),
       },
       {
+        path: 'text-editor',
+        component: () => import('@/pages/vue-components/text-editor.vue'),
+      },
+      {
         path: 'toast',
         component: () => import('@/pages/vue-components/toast.vue'),
       },

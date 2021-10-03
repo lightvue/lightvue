@@ -144,6 +144,10 @@ export default {
           page_name: 'Rating',
           page_path: '/vue-components/rating',
         },
+        {
+          page_name: 'Text Editor',
+          page_path: '/vue-components/text-editor',
+        },
       ],
     },
     {
