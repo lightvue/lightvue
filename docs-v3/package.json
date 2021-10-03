@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "light-icons": "^1.0.2",
+    "light-icons": "^1.0.10",
     "lightvue": "^1.4.5",
     "prismjs": "^1.23.0",
     "vue": "^3.0.0",

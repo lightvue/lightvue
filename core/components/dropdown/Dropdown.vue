@@ -3,27 +3,21 @@
     <div class="lv-hidden-accessible">
       <input ref="focusInput" type="text" :id="inputId" readonly :disabled="disabled" @focus="onFocus" @blur="onBlur" @keydown="onKeyDown" :tabindex="tabindex" aria-haspopup="listbox" :aria-expanded="overlayVisible" :aria-labelledby="ariaLabelledBy" />
     </div>
-    <lv-input type="text" v-bind="$attrs" ref="mainInput" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" @update:modelValue="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" :modelValue="editableInputValue" :value="editableInputValue" autocomplete="cc-csc">
+    <lv-input type="text" v-bind="$attrs" ref="mainInput" :disabled="disabled" @focus="onFocus" @blur="onBlur" :placeholder="placeholder" @update:modelValue="onEditableInput" @keydown="onKeyDown" aria-haspopup="listbox" :aria-expanded="overlayVisible" :editable="editable" :modelValue="editableInputValue" :value="editableInputValue" autocomplete="cc-csc" :icon-right="iconRight || 'light-icon-chevron-down'">
       <span v-if="!editable" :class="labelClass">
         <slot name="value" :value="modelValue" :placeholder="placeholder">
           {{ selectedLabel }}
         </slot>
       </span>
-      <template #append>
-        <i v-if="clearable && modelValue != null" class="lv-dropdown__clear-icon light-icon-x" @click="onClearClick($event)"></i>
-        <div class="lv-dropdown__trigger" role="button" aria-haspopup="listbox" :aria-expanded="overlayVisible">
-          <span :class="iconRight || 'light-icon-chevron-down'"></span>
-        </div>
-      </template>
     </lv-input>
     <transition name="lv-transition__overlay" @enter="onOverlayEnter" @leave="onOverlayLeave">
       <div ref="overlayRef" class="lv-dropdown__panel lv-component" v-if="overlayVisible">
         <div class="lv-dropdown__panel-header" v-if="filter">
-          <lv-input type="text" ref="filterInput" autofocus v-model="filterValue" autoComplete="off" icon-right="light-icon-search" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown" @input-native="onFilterChange"></lv-input>
+          <lv-input type="text" ref="filterInput" autofocus v-bind="$attrs" v-model="filterValue" autoComplete="off" icon-right="light-icon-search" :placeholder="filterPlaceholder" @keydown="onFilterKeyDown" @input-native="onFilterChange" @click.stop></lv-input>
         </div>
         <div class="lv-dropdown__items-wrap" :style="{ 'max-height': scrollHeight }">
           <ul class="lv-dropdown__items" role="listbox">
-            <li v-for="(option, i) of visibleOptions" :class="['lv-dropdown__item', { '--selected': isSelected(option), '--disabled': isOptionDisabled(option) }]" v-ripple :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" @click="onOptionSelect($event, option)" role="option" :aria-selected="isSelected(option)">
+            <li v-for="(option, i) of visibleOptions" :class="['lv-dropdown__item', { '--selected': isOptionSelected(option), '--disabled': isOptionDisabled(option) }]" v-ripple :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" @click="onOptionSelect($event, option)" role="option" :aria-selected="isOptionSelected(option)">
               <slot name="option" :option="option" :index="i">
                 {{ getOptionLabel(option) }}
               </slot>
@@ -37,27 +31,21 @@
 </template>
 
 <script>
-import { ConnectedOverlayScrollHandler } from 'lightvue/utils';
-import { ObjectUtils } from 'lightvue/utils';
-import { DomHandler } from 'lightvue/utils';
+import { ConnectedOverlayScrollHandler, ObjectUtils, DomHandler } from 'lightvue/utils';
+import { trueValueMixin, optionsMixin } from 'lightvue/mixins';
 import Ripple from 'lightvue/ripple';
 import LvInput from 'lightvue/input';
-import { trueValueMixin } from 'lightvue/mixins';
 
 export default {
   name: 'LvDropdown',
   inheritAttrs: false,
-  mixins: [trueValueMixin],
+  mixins: [trueValueMixin, optionsMixin],
   emits: ['before-show', 'before-hide', 'show', 'hide', 'change', 'filter'],
   components: {
     LvInput,
   },
   props: {
-    // value: null,
-    options: Array,
-    optionLabel: null,
-    optionValue: null,
-    optionDisabled: null,
+    // value: null, // via mixin
     scrollHeight: {
       type: String,
       default: '200px',
@@ -71,8 +59,6 @@ export default {
     },
     placeholder: String,
     disabled: Boolean,
-    dataKey: null,
-    clearable: Boolean,
     inputId: String,
     tabindex: String,
     iconRight: String,
@@ -84,6 +70,10 @@ export default {
     emptyFilterMessage: {
       type: String,
       default: 'No results found',
+    },
+    closeOnResize: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -108,18 +98,6 @@ export default {
     this.onBeforeUnmount();
   },
   methods: {
-    getOptionLabel(option) {
-      return this.optionLabel ? ObjectUtils.resolveFieldData(option, this.optionLabel) : option;
-    },
-    getOptionValue(option) {
-      return this.optionValue ? ObjectUtils.resolveFieldData(option, this.optionValue) : option;
-    },
-    getOptionRenderKey(option) {
-      return this.dataKey ? ObjectUtils.resolveFieldData(option, this.dataKey) : this.getOptionLabel(option);
-    },
-    isOptionDisabled(option) {
-      return this.optionDisabled ? ObjectUtils.resolveFieldData(option, this.optionDisabled) : false;
-    },
     getSelectedOption() {
       let selectedOption;
 
@@ -134,12 +112,8 @@ export default {
 
       return selectedOption;
     },
-    isSelected(option) {
-      return ObjectUtils.equals(this.modelValue, this.getOptionValue(option), this.equalityKey);
-    },
     getSelectedOptionIndex() {
       let selectedOptionIndex = -1;
-
       if (this.modelValue != null && this.visibleOptions) {
         for (let i = 0; i < this.visibleOptions.length; i++) {
           if (ObjectUtils.equals(this.modelValue, this.getOptionValue(this.visibleOptions[i]), this.equalityKey)) {
@@ -273,18 +247,16 @@ export default {
       if (this.isOptionDisabled(option)) return this.findPrevOption(i);
       else return option;
     },
-    onClearClick(event) {
-      this.updateModel(event, null);
-    },
     onClick(event) {
       // To focus automatically
       if (this.disabled) {
         return;
       }
 
-      if (DomHandler.hasClass(event.target, 'lv-dropdown__clear-icon')) {
-        return;
-      } else if (!this.$refs.overlayRef || !this.$refs.overlayRef.contains(event.target)) {
+      // if (DomHandler.hasClass(event.target, 'lv-dropdown__clear-icon')) {
+      //   return;
+      // } else
+      if (!this.$refs.overlayRef || !this.$refs.overlayRef.contains(event.target)) {
         if (this.overlayVisible) this.hide();
         else this.show();
 
@@ -317,7 +289,7 @@ export default {
       this.alignOverlay();
       this.bindOutsideClickListener();
       this.bindScrollListener();
-      this.bindResizeListener();
+      this.closeOnResize && this.bindResizeListener();
 
       if (this.filter) {
         this.$refs.filterInput.$el.querySelector('input').focus();
@@ -328,7 +300,7 @@ export default {
     onOverlayLeave() {
       this.unbindOutsideClickListener();
       this.unbindScrollListener();
-      this.unbindResizeListener();
+      this.closeOnResize && this.unbindResizeListener();
       this.$emit('hide');
       // this.overlay = null;
     },
@@ -501,7 +473,7 @@ export default {
         'lv-dropdown lv-component',
         {
           '--disabled': this.disabled,
-          '--clearable': this.clearable && !this.disabled,
+          // '--clearable': this.clearable && !this.disabled,
           '--focused': this.focused,
           '--filled': this.modelValue, // only usefull for floating-label case
         },
@@ -525,9 +497,6 @@ export default {
       let selectedOption = this.getSelectedOption();
       if (selectedOption) return this.getOptionLabel(selectedOption);
       else return this.modelValue;
-    },
-    equalityKey() {
-      return this.optionValue ? null : this.dataKey;
     },
   },
   directives: {

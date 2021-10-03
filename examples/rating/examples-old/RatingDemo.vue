@@ -2,22 +2,23 @@
   <div>
     <div class="content-section implementation">
       <h5>Basic {{ val1 }}</h5>
-      <Rating v-model="val1" />
+      <lv-rating v-model="val1" />
 
       <h5>Without Cancel</h5>
-      <Rating v-model="val2" :cancel="false" />
+      <lv-rating v-model="val2" :cancel="false" />
 
       <h5>ReadOnly</h5>
-      <Rating :value="5" :readonly="true" :stars="10" :cancel="false" />
+      <lv-rating :value="5" :readonly="true" :stars="10" :cancel="false" />
 
       <h5>Disabled</h5>
-      <Rating :value="8" :disabled="true" :stars="10" />
+      <lv-rating :value="8" :disabled="true" :stars="10" />
     </div>
   </div>
 </template>
 
 <script>
-import Rating from 'lightvue/rating/rating-old/RatingOld.vue';
+import LvRating from 'lightvue/rating';
+// REFACTORING;
 
 export default {
   data() {
@@ -27,7 +28,7 @@ export default {
     };
   },
   components: {
-    Rating,
+    LvRating,
   },
 };
 </script>

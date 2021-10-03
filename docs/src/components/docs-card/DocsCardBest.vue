@@ -148,26 +148,17 @@ export default {
 .dy-comp__wrap {
   flex-grow: 1;
   min-height: 200px;
-  display: flex;
+  // display: flex;
   overflow-y: auto;
   justify-content: center;
   width: 100%;
-  padding: 60px 60px 20px;
+  padding: 48px;
   background: #ffffff;
 }
 
-// .best__demo__code {
-//   overflow-y: auto;
-// }
-
-// .demo__code {
-//   position: relative;
-//   background: #ffffff;
-//   overflow: hidden;
-// }
-
 .dy-props__toggle-drawer {
   display: none;
+  cursor: pointer;
 }
 
 .dy-code__wrap {
@@ -209,11 +200,12 @@ export default {
       z-index: 900;
       display: block;
       height: 100%;
+      width: 100%;
     }
   }
 
   .dy-comp__wrap {
-    padding: 0px;
+    padding: 16px;
   }
 
   .dy-props__toggle-drawer {

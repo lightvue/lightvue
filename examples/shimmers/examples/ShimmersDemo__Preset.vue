@@ -12,13 +12,14 @@
     <div><lv-list-loader :width="300" :height="100" /></div>
     <div><lv-list-loader :width="300" :height="100" primaryColor="#607c8a" secondaryColor="#8aa6b5" /></div>
     <div><lv-list-loader :width="300" :height="100" primaryColor="#38b2ac" secondaryColor="#47d9d1" /></div>
+    <!-- REFACTORING -->
   </div>
 </template>
 
 <script>
-import LvCardList from 'lightvue/skeleton/preset/CardList';
-import LvCodeLoader from 'lightvue/skeleton/preset/CodeLoader';
-import LvListLoader from 'lightvue/skeleton/preset/ListLoader';
+import LvCardList from 'lightvue/skeleton/preset/CardList.vue';
+import LvCodeLoader from 'lightvue/skeleton/preset/CodeLoader.vue';
+import LvListLoader from 'lightvue/skeleton/preset/ListLoader.vue';
 
 export default {
   data() {

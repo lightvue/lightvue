@@ -11,11 +11,13 @@
 
 <script>
 import { ConnectedOverlayScrollHandler } from 'lightvue/utils';
+import { preventBrowserBackMixin } from 'lightvue/mixins';
 
 import { DomHandler } from 'lightvue/utils';
 
 export default {
   name: 'LvOverlaypanel',
+  mixins: [preventBrowserBackMixin],
   props: {
     dismissable: {
       type: Boolean,
@@ -68,6 +70,12 @@ export default {
     this.onBeforeUnmount();
   },
   methods: {
+    handleOnBrowserBack() {
+      // Called from Mixin
+      if (this.visible === true) {
+        this.hide();
+      }
+    },
     toggle(event, target) {
       let domTarget = event ? event.currentTarget : target;
       console.log(domTarget);
@@ -77,9 +85,11 @@ export default {
     show(target) {
       this.visible = true;
       this.target = target;
+      this.preventPopstate(); // from Mixin
     },
     hide() {
       this.visible = false;
+      this.manuallyClosePopstate(); // From Mixin
     },
     onContentClick() {
       this.selfClick = true;
@@ -131,7 +141,8 @@ export default {
       if (!this.outsideClickListener) {
         this.outsideClickListener = event => {
           if (this.visible && !this.selfClick && !this.isTargetClicked(event)) {
-            this.visible = false;
+            // this.visible = false;
+            this.hide();
           }
           this.selfClick = false;
         };
@@ -149,7 +160,8 @@ export default {
       if (!this.scrollHandler) {
         this.scrollHandler = new ConnectedOverlayScrollHandler(this.target, () => {
           if (this.visible) {
-            this.visible = false;
+            // this.visible = false;
+            this.hide();
           }
         });
       }
@@ -165,7 +177,8 @@ export default {
       if (!this.resizeListener) {
         this.resizeListener = () => {
           if (this.visible) {
-            this.visible = false;
+            // this.visible = false;
+            this.hide();
           }
         };
         window.addEventListener('resize', this.resizeListener);

@@ -1,6 +1,6 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Demo" file="input-toggle-switch/ToggleSwitchDemo_Basic" />
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+    <docs-card-vue title="Demo" file="input-toggle/ToggleSwitchDemo_Basic" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import ToggleSwitchAPI from 'lightvue/input-toggle/ToggleSwitchAPI';
+import ToggleSwitchAPI from 'lightvueDocs/example/input-toggle/ToggleSwitchAPI';
 
 export default {
   components: {
@@ -28,6 +28,7 @@ export default {
   description: `ToggleSwitch is used to select a boolean value.`,
   packageName: 'toggle-switch',
   componentName: 'LvToggleSwitch',
+  // status: 'Stable',
   apiData: ToggleSwitchAPI,
 };
 </script>

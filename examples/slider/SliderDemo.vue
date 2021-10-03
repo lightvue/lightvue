@@ -46,8 +46,7 @@
 </template>
 
 <script>
-// import LvSlider from 'lightvue/slider/Slider';
-import LvRangeSlider from 'lightvue/rangeslider/RangeSlider';
+import LvRangeSlider from 'lightvue/range-slider'; // REFACTORING
 
 export default {
   data() {
@@ -59,7 +58,7 @@ export default {
     };
   },
   components: {
-    LvRangeSlider,
+    LvRangeSlider, // REFACTORING
   },
 };
 </script>

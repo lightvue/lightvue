@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h4>Choosen color: {{ val1 }} (using v-bind)</h4>
-    <LvColorpicker v-model="val1" style="max-width: 600px" />
+    <h4>Chosen color: {{ val1 }} (using v-bind)</h4>
+    <LvColorpicker v-model="val1" style="max-width: 600px" clearable />
   </div>
 </template>
 
 <script>
-import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
+import LvColorpicker from 'lightvue/color-picker';
 export default {
   data() {
     return {

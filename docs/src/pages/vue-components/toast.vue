@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Toast" file="toast/ToastDemo" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -14,7 +14,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import ToastAPI from 'lightvue/toast/ToastAPI';
+import ToastAPI from 'lightvueDocs/example/toast/ToastAPI';
 
 export default {
   components: {
@@ -28,6 +28,7 @@ export default {
   description: `Toast allows to show toast messages with the page or after an action is performed.`,
   packageName: 'Toast',
   componentName: 'LvToast',
+  // status: 'Updated',
   apiData: ToastAPI,
 };
 </script>

@@ -1,9 +1,7 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <div class="demo__positioning">
-        <lv-number v-bind="allOptions" />
-      </div>
+      <lv-number v-bind="allOptions" style="width: 100%" />
       <template #props>
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
@@ -33,10 +31,10 @@
 
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
-import LvInput from 'lightvue/input/Input';
-import LvNumber from 'lightvue/number/Number';
-// import LvColorpicker from 'lightvue/colorpicker/ColorPicker';
-import LvToggleSwitch from 'lightvue/input-toggle/ToggleSwitch';
+import LvInput from 'lightvue/input';
+import LvNumber from 'lightvue/number';
+// import LvColorpicker from 'lightvue/color-picker/ColorPicker';
+import LvToggleSwitch from 'lightvue/toggle-switch';
 
 export default {
   data() {
@@ -73,9 +71,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.demo__positioning {
-  margin: auto;
-  width: 80%;
-}
-</style>
+<style lang="scss"></style>

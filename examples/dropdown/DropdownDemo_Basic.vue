@@ -29,7 +29,7 @@
     </lv-dropdown>
 
     <h5>Adding help text</h5>
-    <lv-dropdown v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" help-text="Help text content" clearable />
+    <lv-dropdown v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" help-text="Help text content" clearable icon-right="light-icon-arrow-down-circle" />
 
     <h5>Adjusting scroll-height (default: 200px)</h5>
     <lv-dropdown scrollHeight="100px" v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Scroll height: 100px" clearable />
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import LvDropdown from 'lightvue/dropdown/Dropdown.vue';
+import LvDropdown from 'lightvue/dropdown';
 export default {
   data() {
     return {

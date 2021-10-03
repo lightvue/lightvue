@@ -12,13 +12,13 @@
     <br />
     <lv-number placeholder="Enter Number" label="Without Buttons" :controls="false" />
     <br />
-    <lv-number placeholder="Enter Number" label="Material Effect" bottom-bar />
+    <lv-number placeholder="Enter Number" label="Material Effect" bottom-bar clearable />
     <br />
   </div>
 </template>
 
 <script>
-import LvNumber from 'lightvue/number/Number.vue';
+import LvNumber from 'lightvue/number';
 
 // import LvNumber from 'lightvue/number';
 export default {

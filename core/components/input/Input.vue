@@ -18,7 +18,10 @@
           <input type="text" readonly :value="modelValue" v-bind="$attrs" v-on="listeners" :name="name" />
         </div>
       </div>
-      <div class="lv-input__append" v-if="$slots['append'] || iconRight">
+      <div class="lv-input__append" v-if="$slots['append'] || iconRight || clearable">
+        <div class="lv-input__icon" v-if="clearable && filled" style="cursor: pointer" @click.stop="handleClear">
+          <i class="light-icon-x" />
+        </div>
         <slot name="append">
           <div class="lv-input__icon" v-if="iconRight">
             <i :class="iconRight" />
@@ -86,17 +89,22 @@ export default {
       type: String,
       default: '',
     },
+    clearable: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     modelValue() {
-      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
+      // return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
+      return this.value ? this.value : this.$attrs.modelValue ? this.$attrs.modelValue : null;
     },
     listeners() {
       return this.$listeners
         ? {
             // Depreciated in Vue 3
             ...this.$listeners,
-            // input: event => this.updateValue(event),
+            input: event => this.updateModel(event),
           }
         : {};
     },
@@ -105,10 +113,17 @@ export default {
     },
   },
   methods: {
-    updateValue(event) {
+    updateModel(event) {
       this.$emit('input-native', event);
-      this.$emit('input', event.target.value); // Only for Vue 2
-      this.$emit('update:modelValue', event.target.value); // Only for Vue 3
+      this.updateValue(event.target.value);
+    },
+    updateValue(newValue) {
+      this.$emit('input', newValue); // Only for Vue 2
+      this.$emit('update:modelValue', newValue); // Only for Vue 3
+    },
+    handleClear() {
+      this.updateValue('');
+      this.$emit('clear');
     },
   },
 };
