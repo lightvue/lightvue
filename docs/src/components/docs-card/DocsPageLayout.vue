@@ -5,6 +5,7 @@
         <div class="feature-intro__title">
           <h1>{{ title }}</h1>
           <div class="feature-intro__title-right">
+            <LvBadge v-if="status" :color="status.color" :title="status.description">{{ status.label }}</LvBadge>
             <slot name="title-right"></slot>
           </div>
         </div>
@@ -33,8 +34,12 @@
 </template>
 
 <script>
+import LvBadge from 'lightvue/badge';
 export default {
-  props: ['title', 'description'],
+  props: ['title', 'description', 'status'],
+  components: {
+    LvBadge,
+  },
   data() {
     return {
       selectedTab: 'collection', //'api'
@@ -91,6 +96,8 @@ export default {
   .feature-intro__title-right {
     margin-left: 1rem;
     margin-bottom: 1rem; /** To normatize the default margin below H1 */
+    display: flex;
+    align-items: center;
   }
 }
 </style>

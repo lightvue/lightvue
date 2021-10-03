@@ -1,13 +1,6 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
-    <template #title-right>
-      <!-- <div style="cursor: pointer" @click="showStatus = !showStatus">
-        Current Status
-        <i class="light-icon-chevron-up" v-if="showStatus"></i>
-        <i class="light-icon-chevron-down" v-else></i>
-      </div> -->
-      <lv-badge>Under Development</lv-badge>
-    </template>
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+    <template #title-right> </template>
     <docs-card-vue title="Basic" file="badge/BadgeDemo" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -25,6 +18,7 @@ import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import BadgeAPI from 'lightvueDocs/example/badge/BadgeApi';
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   components: {
@@ -38,13 +32,7 @@ export default {
   description: `The LvBadge component superscripts or subscripts an avatar-like icon or text onto content to highlight information to a user or to just draw attention to a specific element. Content within the badge usually contains numbers or icons.`,
   packageName: 'badge',
   componentName: 'LvBadge',
-  // status: 'Under-development',
-  // badge: 'lv--warning',
+  status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
   apiData: BadgeAPI,
-  data() {
-    return {
-      showStatus: false,
-    };
-  },
 };
 </script>
