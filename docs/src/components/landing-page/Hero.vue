@@ -24,7 +24,7 @@
         <div class="hero-container__row">
           <div class="hero-container__buttons">
             <nuxt-link to="/getting-started/installation" class="hero-button lv-fluid">
-              <LvButton label="Documentaton" push type="button" size="xl" icon-right="light-icon-chevron-right" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
+              <LvButton label="Documentation" push type="button" size="xl" icon-right="light-icon-chevron-right" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
             </nuxt-link>
             <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
               <lv-button label="Know More" push type="button" size="xl" icon-right="light-icon-plane-departure" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
