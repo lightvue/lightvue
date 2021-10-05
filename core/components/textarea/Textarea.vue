@@ -1,7 +1,7 @@
 <template>
   <div>
     <lv-input type="text" :editable="false" ref="mainInput" v-bind="$attrs" :class="{ '--not-empty': filled }" :value="modelValue" @clear="handleClear()">
-      <textarea :maxlength="maxLength" class="lv-textarea" v-bind="$attrs" @input="updateModel" :value="modelValue" ref="textarea" :class="{ '--resize-vertical': resize === 'vertical' }" />
+      <textarea :maxlength="maxLength" class="light-scrollbar" class="lv-textarea" v-bind="$attrs" @input="updateModel" :value="modelValue" ref="textarea" :class="{ '--resize-vertical': resize === 'vertical' }" />
     </lv-input>
     <div class="lv-textarea__limits" v-if="showLimit && maxLength">{{ modelValue ? modelValue.length : 0 }} / {{ maxLength }}</div>
   </div>
