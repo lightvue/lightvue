@@ -33,7 +33,10 @@ npm install lightvue@next
 ```
 
 ## Available components
-- [LvInput (Vue 2/Vue 3)](https://lightvue.org/vue-components/input "LvInput (Vue2/Vue3)")
+
+### Form Elements:
+
+- LvInput: [Vue2.x](https://lightvue.org/vue-components/input 'Vue2.x DEMO') [Vue3.x](https://vue3.lightvue.org/vue-components/input 'Vue3.x DEMO')
 
 ## Contribution
 
