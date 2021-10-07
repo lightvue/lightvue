@@ -17,7 +17,7 @@
         </div>
         <div class="lv-dropdown__items-wrap" :style="{ 'max-height': scrollHeight }">
           <ul class="lv-dropdown__items" role="listbox">
-            <li v-for="(option, i) of visibleOptions" :class="['lv-dropdown__item', { '--selected': isOptionSelected(option), '--disabled': isOptionDisabled(option) }]" v-ripple :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" @click="onOptionSelect($event, option)" role="option" :aria-selected="isOptionSelected(option)">
+            <li v-for="(option, i) of visibleOptions" :class="['lv-dropdown__item', { '--selected': isOptionSelected(option), '--disabled': isOptionDisabled(option) }]" :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" @click="onOptionSelect($event, option)" role="option" :aria-selected="isOptionSelected(option)">
               <slot name="option" :option="option" :index="i">
                 {{ getOptionLabel(option) }}
               </slot>
@@ -33,7 +33,7 @@
 <script>
 import { ConnectedOverlayScrollHandler, ObjectUtils, DomHandler } from 'lightvue/utils';
 import { trueValueMixin, optionsMixin } from 'lightvue/mixins';
-import Ripple from 'lightvue/ripple';
+// import Ripple from 'lightvue/ripple';
 import LvInput from 'lightvue/input';
 
 export default {
@@ -500,7 +500,7 @@ export default {
     },
   },
   directives: {
-    ripple: Ripple,
+    // ripple: Ripple,
   },
 };
 </script>

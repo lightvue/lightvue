@@ -172,20 +172,20 @@ export default {
         },
       ],
     },
-    {
-      category_name: 'Directives',
-      category_icon: 'light-icon-directions',
-      pages: [
-        {
-          page_name: 'Tooltip',
-          page_path: '/vue-components/tooltip',
-        },
-        {
-          page_name: 'Ripple effect',
-          page_path: '/vue-components/ripple',
-        },
-      ],
-    },
+    // {
+    //   category_name: 'Directives',
+    //   category_icon: 'light-icon-directions',
+    //   pages: [
+    //     {
+    //       page_name: 'Tooltip',
+    //       page_path: '/vue-components/tooltip',
+    //     },
+    //     {
+    //       page_name: 'Ripple effect',
+    //       page_path: '/vue-components/ripple',
+    //     },
+    //   ],
+    // },
     {
       category_name: 'Misc.',
       category_icon: 'light-icon-square-plus',
