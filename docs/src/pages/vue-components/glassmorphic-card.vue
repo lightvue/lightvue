@@ -1,5 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+    <GlassCardBestDemo />
     <docs-card-vue title="Background blur" file="glasscard/GlassBlurDemo" />
     <docs-card-vue title="Background opacity" file="glasscard/GlassOpacityDemo" />
     <docs-card-vue title="BG color and padding" file="glasscard/GlassBGandPaddingDemo" />
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import GlassCardBestDemo from 'lightvueDocs/example/glasscard/GlassCardBestDemo';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
@@ -26,6 +28,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    GlassCardBestDemo,
   },
   title: 'Glassmorphic Card',
   description: `Glass Card components can be used as elegant containers/wrappers for placing content over images.`,

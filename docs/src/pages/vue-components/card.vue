@@ -1,5 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
+    <CardBestDemo />
     <docs-card-vue title="Shadow styles" file="card/CardShadowDemo" />
     <docs-card-vue title="Border radius" file="card/CardRadiusDemo" />
     <docs-card-vue title="Background color and Padding" file="card/CardPaddingAndBGcolorDemo" />
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import CardBestDemo from 'lightvueDocs/example/card/CardBestDemo';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
@@ -26,6 +28,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    CardBestDemo,
   },
   title: 'Card',
   description: `Card components can be used as flexible containers/wrappers for other UI elements.`,
