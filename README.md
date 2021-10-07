@@ -37,6 +37,8 @@ npm install lightvue@next
 ### Form Elements:
 
 - LvInput: [Vue2.x](https://lightvue.org/vue-components/input 'Vue2.x DEMO') [Vue3.x](https://vue3.lightvue.org/vue-components/input 'Vue3.x DEMO')
+- LvNumber: [Vue2.x](https://lightvue.org/vue-components/number 'Vue2.x DEMO') [Vue3.x](https://vue3.lightvue.org/vue-components/number 'Vue3.x DEMO')
+
 
 ## Contribution
 
