@@ -28,7 +28,7 @@ export default {
     DocsAllApi,
     TextareaBestDemo,
   },
-  title: 'Teaxtarea',
+  title: 'Textarea',
   description: `Textarea component allows user to write long text/ paragraphs.`,
   packageName: 'textarea',
   componentName: 'LVTextarea',
