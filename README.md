@@ -32,6 +32,9 @@ npm install lightvue
 npm install lightvue@next
 ```
 
+## Available components
+- [LvInput (Vue 2/Vue 3)](https://lightvue.org/vue-components/input "LvInput (Vue2/Vue3)")
+
 ## Contribution
 
 Thank you for considering contributing to LightVue. Please read the [contribution guide](https://github.com/lightvue/lightvue/blob/master/CONTRIBUTING.md) before making a pull request.
