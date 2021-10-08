@@ -27,7 +27,7 @@ export default {
     DocsAllApi,
   },
   title: 'Collapsible',
-  description: `Collapsible component Easily toggle visibility of almost any content on your pages in a vertically and horizontally collapsing container`,
+  description: `Collapsible component easily toggles visibility of almost any content on your pages in a vertically and horizontally collapsing container`,
   packageName: 'collapsible',
   componentName: 'LvCollapsible',
   status: COMPONENT_STATUS.NEW,

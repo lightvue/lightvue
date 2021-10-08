@@ -25,7 +25,7 @@ export default {
     DocsAllApi,
   },
   title: 'Toggle Switch',
-  description: `ToggleSwitch is used to select a boolean value.`,
+  description: `ToggleSwitch is used to select a boolean value i.e. it allows you to select or deselect an attribute.`,
   packageName: 'toggle-switch',
   componentName: 'LvToggleSwitch',
   // status: 'Stable',
