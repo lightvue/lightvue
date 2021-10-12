@@ -73,7 +73,7 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2) !default;
 }
 
 .lv-range-slider__knob__val {
-  display: inline-block;
+  display: none;
   position: relative;
   color: val(--rail-fill-color);
   background-color: #ffffff;
@@ -92,4 +92,5 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2) !default;
 .lv-range-slider__knob:hover .lv-range-slider__knob__val {
   top: -26px;
   opacity: 1;
+  display: inline-block;
 }
