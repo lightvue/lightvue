@@ -70,21 +70,22 @@ export default {
 
       switch (this.placement) {
         case 'top':
+          console.log(this.$refs.popover.offsetHeight);
           popover.style.left = contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-          popover.style.top = -this.$refs.popover.offsetHeight - contentHeight + 20 + 'px';
+          popover.style.top = -this.$refs.popover.offsetHeight - offset + 'px';
           break;
         case 'left':
-          popover.style.left = -popover.offsetWidth - offset + 10 + 'px';
+          popover.style.left = -popover.offsetWidth - offset + 'px';
           popover.style.top = contentHeight / 2 - popover.offsetHeight / 2 + 'px';
           break;
         case 'right':
-          popover.style.left = contentWidth + offset - 12 + 'px';
+          popover.style.left = contentWidth + offset + 'px';
           popover.style.top = contentHeight / 2 - popover.offsetHeight / 2 + 'px';
           break;
         case 'bottom':
         default:
           popover.style.left = contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-          popover.style.top = contentHeight + offset - 10 + 'px';
+          popover.style.top = contentHeight + offset + 'px';
           break;
       }
     },

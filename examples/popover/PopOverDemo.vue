@@ -1,18 +1,18 @@
 <template>
   <div class="test-content">
-    <LvPopOver :offset="20" placement="bottom">
+    <LvPopOver :offset="10" placement="bottom">
       <LvButton label="Bottom" class="lv--primary" slot="popover" />
       <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
-    <LvPopOver :offset="20" placement="top">
+    <LvPopOver :offset="10" placement="top">
       <LvButton label="Top" class="lv--primary" slot="popover" />
       <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
-    <LvPopOver :offset="20" placement="right">
+    <LvPopOver :offset="10" placement="right">
       <LvButton label="Right" class="lv--primary" slot="popover" />
       <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
-    <LvPopOver :offset="20" placement="left">
+    <LvPopOver :offset="10" placement="left">
       <LvButton label="Left" class="lv--primary" slot="popover" />
       <div class="d-flex">
         <lv-input type="text" v-model="value1" label="First Name" placeholder="Enter your first name" />
