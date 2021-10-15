@@ -7,7 +7,7 @@
         <div v-show="isShow">
           <div class="popover-overlay" @click.stop="Hide"></div>
 
-          <div ref="popover" :class="className">
+          <div ref="popover" :class="className" :style="computedStyle">
             <div class="popover--content">
               <slot></slot>
             </div>
@@ -40,6 +40,18 @@ export default {
       type: Number,
       default: 15,
     },
+    width: {
+      type: String,
+      default: '200px',
+    },
+    height: {
+      type: String,
+      default: '70vh',
+    },
+    backgroundColor: {
+      type: String,
+      default: '#ffffff',
+    },
   },
   data: () => ({
     isShow: false,
@@ -52,6 +64,13 @@ export default {
     className() {
       this.positionClass = `arrow-position-${this.placement}`;
       return ['popover-item', this.positionClass];
+    },
+    computedStyle() {
+      return {
+        'min-width': this.width,
+        'max-height': this.height,
+        backgroundColor: this.backgroundColor,
+      };
     },
   },
   methods: {
