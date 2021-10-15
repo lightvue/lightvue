@@ -19,6 +19,24 @@ import DropdownAPI from 'lightvueDocs/example/dropdown/DropdownAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
+  head: {
+    title: 'LightVue | DropdownDocs',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+      {
+        property: 'og:site_name',
+        content: 'LightVue | Dropdown Docs',
+      },
+      {
+        property: 'og:description',
+        content: 'Dropdown component allows user to choose an option from the provided options.',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,
