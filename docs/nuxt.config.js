@@ -47,7 +47,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['@/assets/styles/lightvue.scss'],
+  css: ['@/assets/styles/lightvue.scss', 'lightvue/lightvue.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['plugins/global.js'],
