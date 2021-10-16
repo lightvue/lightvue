@@ -11,42 +11,25 @@
       <docs-card title="Getting Started" :responsive="false">
         <div class="install__wrapper" style="padding: 1rem">
           <div class="install__container">
-            <h2>1. Installing LightVue</h2>
+            <h2>Installing LightVue</h2>
             <div class="install__process">
               <CodeHighlight lang="javascript">
                 <pre>
 
-   npm install lightvue
+// For Vue 2.x
+npm install lightvue
 
+// For Vue 3.x
+npm install lightvue@next
+
+// OR:
+yarn add lightvue
+yarn add lightvue@next
           </pre
                 >
               </CodeHighlight>
             </div>
-            <div class="discription__para">OR</div>
-            <div class="install__process">
-              <CodeHighlight lang="javascript">
-                <pre>
-
-   yarn add lightvue
-
-          </pre
-                >
-              </CodeHighlight>
-            </div>
-            <!-- <h3>With Vue CLI Plugin</h3>
-            <div class="discription__para">While using Vue CLI, LighgVue can be installed using the LightVue plugin</div>
-            <div class="install__process">
-              <CodeHighlight lang="javascript">
-                <pre>
-
-    vue add lightVue
-
-          </pre
-                >
-              </CodeHighlight>
-            </div> -->
-
-            <h3>Injecting the required components</h3>
+            <h3>Register Components, as per need</h3>
             <div class="install__process">
               <CodeHighlight lang="javascript">
                 <pre>
