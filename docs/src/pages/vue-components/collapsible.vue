@@ -19,6 +19,24 @@ import CollapsibleAPI from 'lightvueDocs/example/collapsible/CollapsibleAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
+  head: {
+    title: 'LightVue | CollasibleDocs ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: 'LightVue | CollapsibleDocs',
+      },
+      {
+        property: 'og:description',
+        content: 'Collapsible component Easily toggle visibility of almost any content on your pages in a vertically and horizontally collapsing container',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,

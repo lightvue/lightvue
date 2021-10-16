@@ -20,6 +20,24 @@ import DrawerBestDemo from 'lightvueDocs/example/drawer/DrawerBestDemo.vue';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
+  head: {
+    title: 'LightVue | DrawerDocs ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: 'LightVue | DrawerDocs',
+      },
+      {
+        property: 'og:description',
+        content: ' ',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,

@@ -20,6 +20,24 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import ProgressSpinnerAPI from 'lightvueDocs/example/progressspinner/ProgressSpinnerAPI';
 
 export default {
+  head: {
+    title: 'LightVue | ProgressSpinnerDocs ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: 'LightVue | ProgressSpinnerDocs',
+      },
+      {
+        property: 'og:description',
+        content: 'Progress spinner components can be used as a loading animations or space-fillers while waiting for the actual content to load. ',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,

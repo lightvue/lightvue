@@ -17,6 +17,24 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import ToastAPI from 'lightvueDocs/example/toast/ToastAPI';
 
 export default {
+  head: {
+    title: 'LightVue | ToastDocs ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: 'LightVue | ToastDocs',
+      },
+      {
+        property: 'og:description',
+        content: 'Toast allows to show toast messages with the page or after an action is performed. ',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,
