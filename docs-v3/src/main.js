@@ -7,6 +7,7 @@ import LvButton from 'lightvue/button';
 import LvToast from 'lightvue/toast';
 import LvNotification from 'lightvue/notification';
 import LvInput from 'lightvue/input';
+import LvBadge from 'lightvue/badge';
 
 const app = createApp(App).use(router);
 app.config.globalProperties.$listeners = '';
@@ -16,6 +17,7 @@ app.use(LvNotification);
 
 app.component('NuxtLink', RouterLink);
 app.component('LvButton', LvButton);
+app.component('LvBadge', LvBadge);
 app.component('LvInput', LvInput);
 
 app.mount('#app');

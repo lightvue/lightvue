@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import LvInput from 'lightvue/input';
 import LvButton from 'lightvue/button';
+import LvBadge from 'lightvue/badge';
 import LvCard from 'lightvue/card';
 import VueGtag from 'vue-gtag';
 import LvToast from 'lightvue/toast';
@@ -17,6 +18,7 @@ Vue.use(LvNotification);
 
 Vue.component('LvInput', LvInput);
 Vue.component('LvButton', LvButton);
+Vue.component('LvBadge', LvBadge);
 Vue.component('LvCard', LvCard);
 Vue.component('LvCollapsible', LvCollapsible);
 Vue.prototype.$lightvue = { ripple: true };
