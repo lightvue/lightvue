@@ -112,7 +112,7 @@ export default {
     ALGOLIA_PROJECT_ID: process.env.ALGOLIA_PROJECT_ID,
   },
   alias: {
-    // 'lightvue/tooltip': path.join(__dirname, '/../dist/tooltip'),
+    // 'lightvue/tooltip': path.join(__dirname, '/../core/directives/tooltip'),
     // 'lightvue/ripple': path.join(__dirname, '/../core/directives/ripple'),
     // 'lightvue/utils': path.join(__dirname, '/../core/utils'),
     // 'lightvue/mixins': path.join(__dirname, '/../core/mixins'),
