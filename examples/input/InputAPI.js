@@ -110,7 +110,7 @@ const InputAPI = {
           description: 'Native JS function of input',
         },
       ],
-      description: 'Javascript input native function',
+      description: 'JavaScript input native function',
     },
   ],
 };

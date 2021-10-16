@@ -10,7 +10,7 @@ const NumberAPI = {
       name: 'controls',
       type: 'Boolean',
       default: '',
-      description: 'Allows user to confugure with the control of number component if the value is true.',
+      description: 'Allows user to configure with the control of number component if the value is true.',
     },
     {
       name: 'iconRight',

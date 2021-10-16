@@ -2,7 +2,7 @@
   <div class="custom__wrapper">
     <div class="custom__container">
       <h1>Customizing LightVue</h1>
-      <div class="discription__para">LightVue Can be easily customized in order to make the custom theme which can fulfill the needs of user's project</div>
+      <div class="discription__para">LightVue Can be easily customized in order to make the custom theme which can fulfil the needs of user's project</div>
       <div class="discription__para">By default, this is the theme that is applied to all the components</div>
       <div class="custom__process">
         <CodeHighlight lang="css">

@@ -163,12 +163,12 @@ const ToggleSwitchAPI = {
       description: 'Label slot when checkbox is hovered',
     },
     {
-      name: 'intermedinate-extra',
-      description: 'An extra slot when checkbox is on intermedinate state',
+      name: 'intermediate-extra',
+      description: 'An extra slot when checkbox is on intermediate state',
     },
     {
-      name: 'intermedinate-label',
-      description: 'Label slot when checkbox is on intermedinate state',
+      name: 'intermediate-label',
+      description: 'Label slot when checkbox is on intermediate state',
     },
   ],
 
