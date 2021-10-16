@@ -12,7 +12,7 @@
 </template>
 
 <script>
-// import Ripple from 'lightvue/ripple';
+import Ripple from 'lightvue/ripple';
 
 export default {
   props: {
@@ -51,7 +51,7 @@ export default {
     },
   },
   directives: {
-    // ripple: Ripple,
+    ripple: Ripple,
   },
 };
 </script>

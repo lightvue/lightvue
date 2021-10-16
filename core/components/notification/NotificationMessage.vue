@@ -6,7 +6,7 @@
         <span class="lv-notification__title">{{ message.title }}</span>
         <div class="lv-notification__content">{{ message.content }}</div>
       </div>
-      <button class="lv-notification__icon-close lv-link" @click="onCloseClick" v-if="message.closable !== false" type="button">
+      <button class="lv-notification__icon-close lv-link" @click="onCloseClick" v-if="message.closable !== false" type="button" v-ripple>
         <span class="lv-notification__icon-close-icon light-icon-x"></span>
       </button>
     </div>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-// import Ripple from 'lightvue/ripple';
+import Ripple from 'lightvue/ripple';
 
 export default {
   props: {
@@ -65,7 +65,7 @@ export default {
     },
   },
   directives: {
-    // ripple: Ripple,
+    ripple: Ripple,
   },
 };
 </script>

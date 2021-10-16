@@ -7,10 +7,10 @@
             <span :id="ariaLabelledById" class="lv-dialog-title" v-if="header">{{ header }}</span>
           </slot>
           <div class="lv-dialog-header-icons">
-            <LvButton class="lv-dialog-header-icon lv-dialog-header-maximize lv-link" @click="maximize" v-if="maximizable" type="button" tabindex="-1">
+            <LvButton class="lv-dialog-header-icon lv-dialog-header-maximize lv-link" @click="maximize" v-if="maximizable" type="button" tabindex="-1" v-ripple>
               <span :class="maximizeIconClass"></span>
             </LvButton>
-            <LvButton class="lv-dialog-header-icon lv-dialog-header-close lv-link" @click="close" v-if="closable" :aria-label="ariaCloseLabel" type="button" tabindex="-1">
+            <LvButton class="lv-dialog-header-icon lv-dialog-header-close lv-link" @click="close" v-if="closable" :aria-label="ariaCloseLabel" type="button" tabindex="-1" v-ripple>
               <span class="lv-dialog-header-close-icon light-icon-x"></span>
             </LvButton>
           </div>
@@ -29,7 +29,7 @@
 import { uniqueComponentId } from 'lightvue/utils';
 import { DomHandler } from 'lightvue/utils';
 
-// import Ripple from 'lightvue/ripple';
+import Ripple from 'lightvue/ripple';
 
 export default {
   inheritAttrs: false,
@@ -245,9 +245,9 @@ export default {
       return this.header != null ? this.ariaId + '_header' : null;
     },
   },
-  // directives: {
-  //   ripple: Ripple,
-  // },
+  directives: {
+    ripple: Ripple,
+  },
 };
 </script>
 <style lang="scss">

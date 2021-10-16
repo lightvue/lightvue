@@ -1,7 +1,7 @@
 <template>
   <div class="lv-text-editor">
     <div class="lv-text-editor__toolbar" :style="{ backgroundColor: theme }">
-      <LvButton v-for="(tool, i) in editorTools" :key="i" :icon="tool.icon" :style="{ backgroundColor: theme, color }" size="xl" :class="['lv-text-editor__toolbar__btn', { 'lv-text-editor__toolbar__btn--active': tool.active }]" @mousedown.prevent.stop="action(tool)" />
+      <LvButton v-for="(tool, i) in editorTools" :key="i" :icon="tool.icon" :style="{ backgroundColor: theme, color }" size="xl" :class="['lv-text-editor__toolbar__btn', { 'lv-text-editor__toolbar__btn--active': tool.active }]" v-tooltip.top="`${tool.tooltipText}`" @mousedown.prevent.stop="action(tool)" />
     </div>
     <div class="lv-text-editor__content light-scrollbar" ref="content" contenteditable @keydown="handleKeyControls" v-html="content" @input="handleInput" @click.prevent="toggleButtons"></div>
     <div class="lv-text-editor__footer">Characters: {{ characterCount }}</div>
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-// import Tooltip from 'lightvue/tooltip';
+import Tooltip from 'lightvue/tooltip';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import { format, heading, list, align, getContainer, code } from './helper';
 export default {
@@ -199,7 +199,7 @@ export default {
     };
   },
   directives: {
-    // tooltip: Tooltip,
+    tooltip: Tooltip,
   },
   computed: {
     editorTools() {
