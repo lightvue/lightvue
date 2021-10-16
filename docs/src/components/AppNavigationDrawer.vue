@@ -59,7 +59,6 @@ export default {
     // to sort categories into alpha
     getSortCategories() {
       this.$options.categories.forEach((element, index) => {
-        console.log(element);
         if (element.category_name !== 'Getting Started' || index !== 0) {
           this.$options.categories[index].pages.sort((x, y) => (x.page_name > y.page_name ? 1 : y.page_name > x.page_name ? -1 : 0));
         }
