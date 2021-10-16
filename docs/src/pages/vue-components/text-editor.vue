@@ -29,7 +29,7 @@ export default {
     DocsAllApi,
   },
   title: 'Text Editor',
-  description: `LvTextEditor is WYSISYG editor that lets users format content, align content, embed links & more.`,
+  description: `LvTextEditor is WYSIWYG editor that lets users format content, align content, embed links & more.`,
   packageName: 'texteditor',
   componentName: 'LvTextEditor',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,

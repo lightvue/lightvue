@@ -33,7 +33,7 @@ export default {
       },
       {
         property: 'og:description',
-        content: 'Light-input provides with a variety of input fields with various available customizations which helps it to fulfill the need of almost every web application/project',
+        content: 'Light-input provides with a variety of input fields with various available customizations which helps it to fulfil the need of almost every web application/project',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -47,7 +47,7 @@ export default {
     InputBestDemo,
   },
   title: 'Light-input',
-  description: `Light-input provides with a variety of input fields with various available customizations which helps it to fulfill the need of almost every web application/project.`,
+  description: `Light-input provides with a variety of input fields with various available customizations which helps it to fulfil the need of almost every web application/project.`,
   packageName: 'input',
   componentName: 'LvInput',
   // status: 'Rc',
