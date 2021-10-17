@@ -47,7 +47,7 @@ export default {
 .copy-btn i {
   color: #566d79;
   padding: 5px;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
   border-radius: 50%;
   background-color: #d6dfe8;
@@ -74,6 +74,20 @@ export default {
   i {
     font-size: 20px;
     margin-right: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .copy-btn i {
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    left: auto;
+    opacity: 0;
+    fill: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.2s linear;
   }
 }
 </style>
