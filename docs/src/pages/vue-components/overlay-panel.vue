@@ -19,7 +19,7 @@ import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   head: {
-    title: 'LightVue | OverlaPanelDocs ',
+    title: ' OverlayPanel Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -27,7 +27,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | OverlaPanelDocs',
+        content: ' OverlayPanel Docs | LightVue ',
       },
       {
         property: 'og:description',
@@ -36,6 +36,7 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+
   components: {
     DocsCardVue,
     DocsCard,
@@ -43,6 +44,7 @@ export default {
     DocsPageLayout,
     DocsAllApi,
   },
+
   title: 'Overlay Panel',
   description: `OverlayPanel is a container component positioned as connected to its target.`,
   packageName: 'overlay-panel',

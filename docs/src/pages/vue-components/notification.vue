@@ -20,7 +20,7 @@ import NotificationAPI from 'lightvueDocs/example/notification/NotificationAPI';
 
 export default {
   head: {
-    title: 'LightVue | NotificationDocs ',
+    title: ' Notification Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -28,7 +28,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | NotificationDocs',
+        content: ' Notification Docs | LightVue ',
       },
       {
         property: 'og:description',

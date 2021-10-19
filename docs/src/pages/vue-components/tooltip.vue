@@ -19,7 +19,7 @@ import TooltipAPI from 'lightvueDocs/example/tooltip/TooltipAPI';
 
 export default {
   head: {
-    title: 'LightVue | TooltipDocs ',
+    title: ' Tooltip Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -27,7 +27,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | TooltipDocs',
+        content: ' Tooltip Docs | LightVue ',
       },
       {
         property: 'og:description',

@@ -21,7 +21,7 @@ import ProgressBarAPI from 'lightvueDocs/example/progressbar/ProgressBarAPI';
 
 export default {
   head: {
-    title: 'LightVue | ProgressBarDocs ',
+    title: 'ProgressBar Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,7 +29,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | ProgressBarDocs',
+        content: ' ProgressBar Docs | LightVue',
       },
       {
         property: 'og:description',

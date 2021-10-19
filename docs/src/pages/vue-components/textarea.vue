@@ -20,8 +20,8 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import TextareaAPI from 'lightvueDocs/example/textarea/TextareaAPI';
 
 export default {
-   head: {
-    title: 'LightVue | TextAreaDocs',
+  head: {
+    title: ' TextArea Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,7 +29,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | TextArea Docs',
+        content: 'TextArea Docs | LightVue ',
       },
       {
         property: 'og:description',

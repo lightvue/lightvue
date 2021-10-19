@@ -48,7 +48,7 @@ import ProgressLoaderAPI from 'lightvueDocs/example/loaders/ProgressLoaderAPI';
 
 export default {
   head: {
-    title: 'LightVue | LoadersDocs ',
+    title: ' Loaders Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -56,7 +56,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | LoadersDocs',
+        content: ' Loaders Docs | LightVue ',
       },
       {
         property: 'og:description',

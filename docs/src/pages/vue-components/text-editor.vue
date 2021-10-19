@@ -20,8 +20,8 @@ import TextEditorAPI from 'lightvueDocs/example/text-editor/TextEditorAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
-   head: {
-    title: 'LightVue | TextEditorDocs',
+  head: {
+    title: ' TextEditor Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,7 +29,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | TextEditor Docs',
+        content: ' TextEditor Docs | LightVue ',
       },
       {
         property: 'og:description',

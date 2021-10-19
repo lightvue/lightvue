@@ -204,7 +204,7 @@ import DocsCard from '@/components/docs-card/DocsCard';
 import CodeHighlight from '@/components/docs-card/CodeHighlight.vue';
 export default {
   head: {
-    title: 'LightVue | InstallationDocs ',
+    title: ' Installation Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -212,7 +212,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | InstallationDocs',
+        content: 'Installation Docs | LightVue',
       },
       {
         property: 'og:description',

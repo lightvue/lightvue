@@ -23,7 +23,7 @@ import NumberAPI from 'lightvueDocs/example/number/NumberAPI';
 
 export default {
   head: {
-    title: 'LightVue | NumberDocs',
+    title: ' Number Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -31,7 +31,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | Number Docs',
+        content: ' Number Docs | LightVue ',
       },
       {
         property: 'og:description',

@@ -18,7 +18,7 @@ import ToastAPI from 'lightvueDocs/example/toast/ToastAPI';
 
 export default {
   head: {
-    title: 'LightVue | ToastDocs ',
+    title: ' Toast Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,7 +26,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | ToastDocs',
+        content: ' Toast Docs | LightVue ',
       },
       {
         property: 'og:description',
