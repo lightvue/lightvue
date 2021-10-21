@@ -222,6 +222,10 @@ export default {
           page_name: 'Collapsible',
           page_path: '/vue-components/collapsible',
         },
+        {
+          page_name: 'Carousel',
+          page_path: '/vue-components/carousel',
+        },
       ],
     },
   ],

@@ -13,10 +13,10 @@
       <carousel-slide v-for="slide in slides" :key="slide" class="carousel-slider">
         <LvCard class="card">
           <img :src="slide.component" :alt="slide" class="slide" @click="location(slide.name)" />
-          <div class="component--title">{{ slide.name }} <br /></div>
+          <!-- <div class="component--title">{{ slide.name }} <br /></div>
           <div class="des">
             {{ slide.Description }}
-          </div>
+          </div> -->
         </LvCard>
       </carousel-slide>
     </LvCarousel>
@@ -26,20 +26,20 @@
 import LvCarousel from 'lightvue/carousel';
 import CarouselSlide from 'lightvue/carousel';
 import LvCard from 'lightvue/card';
-import btn from './img/button.png';
-import checkbox from './img/checkbox.png';
-import dropdown from './img/dropdown.png';
-import input from './img/input.png';
-import number from './img/number.png';
-import quickloader from './img/quickloader.png';
-import progress_bar from './img/progress_bar.png';
-import progress_spinner from './img/progress_spinner.png';
-import rating from './img/rating.png';
-import radio from './img/radio.png';
-import shimmer from './img/shimmer.png';
-import slider from './img/slider.png';
-import text_area from './img/text_area.png';
-import toggle_switch from './img/toggle_switch.png';
+import btn from '../../static/elements/button.png';
+import checkbox from '../../static/elements/checkbox.png';
+import dropdown from '../../static/elements/dropdown.png';
+import input from '../../static/elements/input.png';
+import number from '../../static/elements/number.png';
+import quickloader from '../../static/elements/quickloader.png';
+import progress_bar from '../../static/elements/progress_bar.png';
+import progress_spinner from '../../static/elements/progress_spinner.png';
+import rating from '../../static/elements/rating.png';
+import radio from '../../static/elements/radio.png';
+import shimmer from '../../static/elements/shimmer.png';
+import slider from '../../static/elements/slider.png';
+import text_area from '../../static/elements/text_area.png';
+import toggle_switch from '../../static/elements/toggle_switch.png';
 
 export default {
   components: {
@@ -97,8 +97,8 @@ export default {
   padding-left: 22px;
 }
 .slide {
-  /* height: 300px; */
-  width: 200px;
+  height: 200px;
+  /* width: 300px; */
 }
 .card {
   cursor: pointer;
