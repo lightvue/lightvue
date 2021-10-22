@@ -1,9 +1,22 @@
 <template>
   <div class="app-header">
     <div class="header-items">
-       <div class="sidebar__logo" @click="$router.push('/')">
-        <img src="/logo_v2.svg" class="header-logo" />
+       <div class="sidebar__logo" >
+        <img src="/logo_v2.svg" class="header-logo" @click="$router.push('/')" />
         <!-- <h3>&nbsp; LightVue</h3> -->
+      </div>
+      <div class="lightvue--version">
+        <div class="dropdown">
+    Version
+    <div class="dropdown-content">
+      <ul>
+        <li>0.4.8</li>
+        <li @click="vue3">Vue2</li>
+        <li @click="vue3">Vue3</li>
+        
+      </ul>
+    </div>
+  </div>
       </div>
       <div class="header__logo-row">
         <i class="light-icon-align-left menu-icon" @click="$emit('toggle-drawer')"></i>
@@ -35,7 +48,22 @@ export default {
   components: {
     AppSearch,
   },
+  methods:{
+  vue2(e) {
+      console.log(window.location.href);
+      let location = window.location.href.slice(22);
+      console.log(location);
+      window.location.href = 'https://lightvue.org/' + location;
+    },
+    vue3(e) {
+      console.log(window.location.href);
+      let location = window.location.href.slice(22);
+      console.log(location);
+      window.location.href = 'https://vue3.lightvue.org/' + location;
+    },
+}
 };
+
 </script>
 
 <style scoped lang="scss">
@@ -157,13 +185,56 @@ export default {
 
 .sidebar__logo {
   /* padding: 6px 32px; */
-  cursor: pointer;
   /* height: 60px; */
   .header-logo {
     width: 60%;
+    cursor: pointer;
   }
 }
+.dropdown {
+    position: relative;
+   
+    font-size: 12px;
+    font-weight: 600;
+   margin-left: -5rem;
 
+    cursor: pointer;
+    
+  }
+  
+  .dropdown-content {
+    
+    display: none;
+    position: absolute;
+    min-width: 87px;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index:1111;
+    font-size: 12px;
+   left: -2px;
+    padding-top: 10px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content ul {
+    list-style-type: none;
+  }
+  
+  .dropdown-content li {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+  }
+  
+  .dropdown-content li:nth-child(2n-1) {
+    background-color: #e9e9e9;
+  }
+  
+  .dropdown-content li:hover {
+    background-color: #c9c9c9;
+  }
 @media (max-width: 768px) {
   .app-header {
     padding-left: 10px;
