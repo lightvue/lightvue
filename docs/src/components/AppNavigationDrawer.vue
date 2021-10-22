@@ -236,6 +236,10 @@ export default {
           page_name: 'Badge',
           page_path: '/vue-components/badge',
         },
+        {
+          page_name: 'Typer',
+          page_path: '/vue-components/typer',
+        },
       ],
     },
   ],
