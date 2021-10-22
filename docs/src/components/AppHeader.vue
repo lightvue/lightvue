@@ -1,6 +1,10 @@
 <template>
   <div class="app-header">
     <div class="header-items">
+       <div class="sidebar__logo" @click="$router.push('/')">
+        <img src="/logo_v2.svg" class="header-logo" />
+        <!-- <h3>&nbsp; LightVue</h3> -->
+      </div>
       <div class="header__logo-row">
         <i class="light-icon-align-left menu-icon" @click="$emit('toggle-drawer')"></i>
       </div>
@@ -10,9 +14,9 @@
         </div>
       </div>
       <div class="social__row">
-         <!-- <a href="" class="social-links">
+          <a href="https://github.com/lightvue/lightvue" target="_blank" class="social-links">
             <i class="header-social light-icon-brand-github"></i>
-          </a> -->
+          </a>
           <a href="https://twitter.com/lightvue" class="social-links">
             <i class="header-social light-icon-brand-twitter"></i>
           </a>
@@ -58,6 +62,7 @@ export default {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+
 }
 .header-items {
   width: 100%;
@@ -126,9 +131,14 @@ export default {
 }
 .social-links {
   color: inherit;
+  font-size: 25px;
   text-decoration: none;
 }
 .social__row {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 6%;
   .header-social-icons__container {
     .header-social {
       font-size: 24px;
@@ -142,6 +152,15 @@ export default {
         background: #dfdfdf;
       }
     }
+  }
+}
+
+.sidebar__logo {
+  /* padding: 6px 32px; */
+  cursor: pointer;
+  /* height: 60px; */
+  .header-logo {
+    width: 60%;
   }
 }
 
