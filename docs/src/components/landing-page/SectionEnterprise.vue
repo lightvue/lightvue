@@ -18,7 +18,7 @@
             <!-- <div class="expertise-feature__item">and many more...</div> -->
             <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="drawer1 = !drawer1" aria:haspopup="true" aria-controls="contact_overlay_panel" />
             <div class="enterprise--drawer">
-              <lv-drawer v-model="drawer1" right headerTitle="Contact US" headerColor="#607c8a" close shadow background="#fff" :zIndex="9999999999" padding="10px" :width="350">
+              <lv-drawer v-model="drawer1" :right="true" :close="true" headerTitle="Contact US" headerColor="#607c8a" :shadow="true" background="#fff" :zIndex="9999" padding="10px" :width="350">
                 <template>
                   <lead-form />
                 </template>
@@ -30,6 +30,7 @@
           </div>
         </div>
       </div>
+
       <div class="enterprise-footer__text">copyright 2021 © LightVue. all rights reserved.</div>
     </section>
   </div>
@@ -134,6 +135,7 @@ export default {
       }
     }
     .expertise-section__features-wrapper {
+      position: relative;
       width: 350px;
       background: rgba(76, 104, 124, 0.86);
       border-radius: 20px;
