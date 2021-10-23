@@ -52,7 +52,7 @@ export default {
     },
     fontWeight: {
       type: Number,
-      default: 700,
+      default: 300,
     },
   },
   data: () => {

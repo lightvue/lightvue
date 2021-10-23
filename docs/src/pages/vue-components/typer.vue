@@ -1,6 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Basic" file="typer/TyperDemo" overflow />
+    <docs-card-vue title="Text styles" file="typer/TyperDemoFont" overflow />
 
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />

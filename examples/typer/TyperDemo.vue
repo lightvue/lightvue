@@ -1,6 +1,8 @@
 <template>
   <div class="typer">
-    <LvTyper :words="['Arya Stark', 'Jon Snow', 'Daenerys Targaryen', 'Melisandre', 'Tyrion Lannister']"> hello hi </LvTyper>
+    Default:</br>
+    <LvTyper :words="['Arya Stark', 'Jon Snow', 'Daenerys Targaryen', 'Melisandre', 'Tyrion Lannister']"></LvTyper></br>
+    
   </div>
 </template>
 <script>
@@ -13,6 +15,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .typer {
-  font-size: 3rem;
+  font-size: 20px;
 }
 </style>
