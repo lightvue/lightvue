@@ -8,7 +8,7 @@
     <lv-checkbox name="newsletter" v-model="newsletterChecked" rounded thick pulse outline color="success">
       <span class="dropdown-label"> Subscribe to <b class="--brand-color">LightVue</b> Newsletter </span>
     </lv-checkbox>
-    <lv-button :push="true" :deep-shadow="true" label="Submit" class="leadform__button" @click="sendLead" />
+    <lv-button :push="true" :deep-shadow="true" label="Submit" class="leadform__button" @click="sendLead" style="width: 100%; margin-top: 1rem" />
   </div>
 </template>
 

@@ -16,12 +16,14 @@
             <div class="expertise-feature__item"><i class="light-icon-git-fork"></i>Independent build modules</div>
             <div class="expertise-feature__item"><i class="light-icon-phone-calling"></i>24/7 Customer support</div>
             <!-- <div class="expertise-feature__item">and many more...</div> -->
-            <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="contact_overlay_panel" />
-            <lv-overlay-panel style="width: 350px" ref="contactOverlay" append-to="body" :show-close-icon="true" id="contact_overlay_panel">
-              <div class="overlay-leadform">
-                <lead-form @success="toggleImageOverlay" />
-              </div>
-            </lv-overlay-panel>
+            <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="drawer1 = !drawer1" aria:haspopup="true" aria-controls="contact_overlay_panel" />
+            <div class="enterprise--drawer">
+              <lv-drawer v-model="drawer1" right headerTitle="Contact US" headerColor="#607c8a" close shadow background="#fff" :zIndex="9999999999" padding="10px" :width="350">
+                <template>
+                  <lead-form />
+                </template>
+              </lv-drawer>
+            </div>
           </div>
           <div class="expertise-section__image-wrapper">
             <img src="../../assets/images/footer-image.svg" class="expertise-section__image" />
@@ -38,12 +40,19 @@ import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvTextarea from 'lightvue/textarea';
 import LvDropdown from 'lightvue/dropdown';
 import LeadForm from './LeadForm.vue';
+import LvDrawer from 'lightvue/drawer';
 export default {
   components: {
     LvOverlayPanel,
     LvTextarea,
     LvDropdown,
     LeadForm,
+    LvDrawer,
+  },
+  data() {
+    return {
+      drawer1: false,
+    };
   },
   methods: {
     toggleImageOverlay(event) {
@@ -130,7 +139,7 @@ export default {
       border-radius: 20px;
       padding: 50px 50px;
       color: #ffffff;
-      z-index: 100;
+      z-index: 1000000;
       margin-top: 60px;
       .expertise-feature__item {
         z-index: 100;
@@ -172,6 +181,9 @@ export default {
     height: 40px;
     width: 250px;
   }
+}
+.enterprise--drawer {
+  color: rgb(96, 124, 138);
 }
 @media (max-width: 768px) {
   .enterprise-section__circle-illustration {
