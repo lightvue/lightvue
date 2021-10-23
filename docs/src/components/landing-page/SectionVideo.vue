@@ -5,7 +5,7 @@
         <img src="../../static/elements/undraw_videographer_nnc7.svg" alt="camera man svg" class="vue-video__image" />
       </div>
       <div class="light-video">
-        <iframe width="600" height="300" src="https://www.youtube.com/embed/fjYPDdf4rGA" title="LightVue introduction Video" frameborder="0"></iframe>
+        <iframe width="600" height="300" src="https://www.youtube.com/embed/fjYPDdf4rGA?rel=0" title="LightVue introduction Video" frameborder="0"></iframe>
       </div>
     </div>
   </section>
