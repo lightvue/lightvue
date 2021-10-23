@@ -1,7 +1,7 @@
 <template>
   <span>
-    <span class="typed-text">{{ typeValue }}</span>
-    <!-- <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span> -->
+    <span class="typed-text" :style="computedStyle">{{ typeValue }}</span>
+    <span v-show="cursorLine" class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
   </span>
 </template>
 <script>
@@ -22,14 +22,35 @@ export default {
         return value.every(item => typeof item === 'string' && item.length > 0);
       },
     },
+    typingSpeed: {
+      type: Number,
+      default: 160,
+    },
+    erasingSpeed: {
+      type: Number,
+      default: 80,
+    },
+    newTextDelay: {
+      type: Number,
+      default: 2000,
+    },
+    textColor: {
+      type: String,
+      default: '',
+    },
+    backgroundColor: {
+      type: String,
+      default: '#fff',
+    },
+    cursorLine: {
+      type: Boolean,
+      default: false,
+    },
   },
   data: () => {
     return {
       typeValue: '',
       typeStatus: false,
-      typingSpeed: 160,
-      erasingSpeed: 80,
-      newTextDelay: 2000,
       typeArrayIndex: 0,
       charIndex: 0,
     };
@@ -37,6 +58,12 @@ export default {
   computed: {
     typeArray() {
       return this.words;
+    },
+    computedStyle() {
+      return {
+        color: this.textColor,
+        backgroundColor: this.backgroundColor,
+      };
     },
   },
   methods: {
@@ -78,13 +105,13 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-span.typed-text {
+/* span.typed-text {
   color: teal;
-}
+} */
 span.cursor {
   display: inline-block;
   width: 4px;
-  background-color: #fff;
+  background-color: teal;
   animation: cursorBlink 1s infinite;
 }
 span.cursor.typing {
