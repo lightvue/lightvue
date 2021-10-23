@@ -46,6 +46,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    fontSize: {
+      type: String,
+      default: '2rem',
+    },
+    fontWeight: {
+      type: Number,
+      default: 700,
+    },
   },
   data: () => {
     return {
@@ -63,6 +71,8 @@ export default {
       return {
         color: this.textColor,
         backgroundColor: this.backgroundColor,
+        fontSize: this.fontSize,
+        fontWeight: this.fontWeight,
       };
     },
   },
@@ -106,7 +116,7 @@ export default {
   box-sizing: border-box;
 }
 /* span.typed-text {
-  color: teal;
+  font-size: 3rem;
 } */
 span.cursor {
   display: inline-block;
