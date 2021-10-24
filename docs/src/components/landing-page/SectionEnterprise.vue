@@ -18,7 +18,7 @@
             <!-- <div class="expertise-feature__item">and many more...</div> -->
             <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="drawer1 = !drawer1" aria:haspopup="true" aria-controls="contact_overlay_panel" />
             <div class="enterprise--drawer">
-              <lv-drawer v-model="drawer1" :right="true" :close="true" headerTitle="Contact US" headerColor="#607c8a" :shadow="true" background="#fff" :zIndex="9999" padding="10px" :width="350">
+              <lv-drawer v-model="drawer1" :right="true" :close="true" headerTitle="Contact US" headerColor="#607c8a" :shadow="true" background="#fff" :zIndex="9999" padding="15px" :width="400">
                 <template>
                   <lead-form />
                 </template>
@@ -54,11 +54,6 @@ export default {
     return {
       drawer1: false,
     };
-  },
-  methods: {
-    toggleImageOverlay(event) {
-      this.$refs.contactOverlay.toggle(event);
-    },
   },
 };
 </script>
