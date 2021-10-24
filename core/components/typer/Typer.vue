@@ -25,14 +25,32 @@ export default {
     typingSpeed: {
       type: Number,
       default: 160,
+      validator(value) {
+        if (typeof value === 'String') {
+          return Number('value');
+        }
+        return value;
+      },
     },
     erasingSpeed: {
       type: Number,
       default: 80,
+      validator(value) {
+        if (typeof value === 'String') {
+          return Number('value');
+        }
+        return value;
+      },
     },
     newTextDelay: {
       type: Number,
       default: 2000,
+      validator(value) {
+        if (typeof value === 'String') {
+          return Number('value');
+        }
+        return value;
+      },
     },
     textColor: {
       type: String,
@@ -53,6 +71,12 @@ export default {
     fontWeight: {
       type: Number,
       default: 300,
+      validator(value) {
+        if (typeof value === 'String') {
+          return Number('value');
+        }
+        return value;
+      },
     },
   },
   data: () => {

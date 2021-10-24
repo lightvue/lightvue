@@ -1,7 +1,7 @@
 <template>
   <div class="typer">
     Default:</br>
-    <LvTyper :words="['Arya Stark', 'Jon Snow', 'Daenerys Targaryen', 'Melisandre', 'Tyrion Lannister']"></LvTyper></br>
+    <LvTyper :words="['Arya Stark', 'Jon Snow', 'Daenerys Targaryen', 'Melisandre', 'Tyrion Lannister']" ></LvTyper></br>
     
   </div>
 </template>
