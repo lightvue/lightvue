@@ -133,33 +133,6 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* span.typed-text {
-  font-size: 3rem;
-} */
-span.cursor {
-  display: inline-block;
-  width: 4px;
-  background-color: teal;
-  animation: cursorBlink 1s infinite;
-}
-span.cursor.typing {
-  animation: none;
-}
-@keyframes cursorBlink {
-  49% {
-    background-color: #fff;
-  }
-  50% {
-    background-color: transparent;
-  }
-  99% {
-    background-color: transparent;
-  }
-}
+<style lang="scss">
+@import './typer.scss';
 </style>
