@@ -1,6 +1,22 @@
 <template>
   <div class="app-header">
     <div class="header-items">
+      <div class="sidebar__logo">
+        <img src="/logo_v2.svg" class="header-logo" @click="$router.push('/')" />
+        <!-- <h3>&nbsp; LightVue</h3> -->
+      </div>
+      <div class="lightvue--version">
+        <div class="dropdown">
+          Version
+          <div class="dropdown-content">
+            <ul>
+              <li>0.4.8</li>
+              <li @click="vue3">Vue2</li>
+              <li @click="vue3">Vue3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="header__logo-row">
         <i class="light-icon-align-left menu-icon" @click="$emit('toggle-drawer')"></i>
       </div>
@@ -11,9 +27,9 @@
       </div>
       <div class="social__row">
         <div class="header-social-icons__container">
-          <!-- <a href="" class="social-links">
+          <a href="https://github.com/lightvue/lightvue" target="_blank" class="social-links">
             <i class="header-social light-icon-brand-github"></i>
-          </a> -->
+          </a>
           <a href="https://twitter.com/lightvue" class="social-links">
             <i class="header-social light-icon-brand-twitter"></i>
           </a>
@@ -32,6 +48,20 @@ export default {
   components: {
     // AppSearch,
   },
+  methods: {
+    vue2(e) {
+      console.log(window.location.href);
+      let location = window.location.href.slice(22);
+      console.log(location);
+      window.location.href = 'https://lightvue.org/' + location;
+    },
+    vue3(e) {
+      console.log(window.location.href);
+      let location = window.location.href.slice(22);
+      console.log(location);
+      window.location.href = 'https://vue3.lightvue.org/' + location;
+    },
+  },
 };
 </script>
 
@@ -49,7 +79,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 997;
+  z-index: 99999;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   /* border-bottom: 1px solid #dee2e6; */
@@ -127,9 +157,14 @@ export default {
 }
 .social-links {
   color: inherit;
+  font-size: 25px;
   text-decoration: none;
 }
 .social__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 6%;
   .header-social-icons__container {
     .header-social {
       font-size: 24px;
@@ -144,6 +179,67 @@ export default {
       }
     }
   }
+}
+.sidebar__logo {
+  /* &::after {
+      content: '';
+      height: 60px;
+      top: 0;
+      width: 8px;
+      background-color: white;
+      position: fixed;
+      left: 250px;
+    } */
+
+  /* padding: 6px 32px; */
+  /* height: 60px; */
+  .header-logo {
+    width: 60%;
+    cursor: pointer;
+  }
+}
+.dropdown {
+  position: relative;
+
+  font-size: 12px;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  margin-left: -8rem;
+
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 87px;
+  box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1111;
+  font-size: 12px;
+  left: -2px;
+  padding-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content ul {
+  list-style-type: none;
+}
+
+.dropdown-content li {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.dropdown-content li:nth-child(2n-1) {
+  background-color: #e9e9e9;
+}
+
+.dropdown-content li:hover {
+  background-color: #c9c9c9;
 }
 
 @media (max-width: 768px) {
@@ -167,6 +263,9 @@ export default {
   .search-bar {
     width: calc(100% - 90px);
     left: 80px;
+  }
+  .sidebar__logo {
+    display: none;
   }
 }
 </style>

@@ -97,7 +97,7 @@ export default {
   display: flex;
   align-items: center;
   justify-items: space-between;
-  z-index: 999999999;
+  z-index: 99999;
 }
 
 .header-items .menu-icon {
@@ -185,6 +185,17 @@ export default {
 }
 
 .sidebar__logo {
+   
+    /* &::after {
+      content: '';
+      height: 60px;
+      top: 0;
+      width: 8px;
+      background-color: white;
+      position: fixed;
+      left: 250px;
+    } */
+  
   /* padding: 6px 32px; */
   /* height: 60px; */
   .header-logo {
@@ -259,6 +270,9 @@ export default {
   .search-bar {
     width: calc(100% - 90px);
     left: 80px;
+  }
+    .sidebar__logo {
+    display: none;
   }
 }
 </style>
