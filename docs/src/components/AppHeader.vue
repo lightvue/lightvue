@@ -80,7 +80,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 997;
+  z-index: 9999;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   /* border-bottom: 1px solid #dee2e6; */
@@ -97,6 +97,7 @@ export default {
   display: flex;
   align-items: center;
   justify-items: space-between;
+  z-index: 999999999;
 }
 
 .header-items .menu-icon {
@@ -195,12 +196,14 @@ export default {
     position: relative;
    
     font-size: 12px;
+    margin-top: 1.5rem;
     font-weight: 600;
-   margin-left: -5rem;
+   margin-left: -8rem;
 
     cursor: pointer;
     
   }
+ 
   
   .dropdown-content {
     
