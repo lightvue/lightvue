@@ -2,7 +2,7 @@
   <div>
     <LvCarousel class="carousel">
       <carousel-slide v-for="slide in slides" :key="slide" class="carousel-slider">
-        <LvCard class="card">
+        <LvCard class="card" borderRadius="8px" padding="30px" :shadowStyle="6">
           <img :src="slide" :alt="slide" class="slide" />
         </LvCard>
       </carousel-slide>
@@ -34,7 +34,7 @@ export default {
 </script>
 <style lang="scss">
 .slide {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  /* width: 300px; */
 }
 </style>

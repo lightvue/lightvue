@@ -9,19 +9,21 @@
 
 <script>
 import NavButtons from './NavButtons.vue';
+
 export default {
   components: { NavButtons },
   name: 'LvCarousel',
   data() {
     return {
-      scroll: true,
       prevScroll: 0,
       showLeft: false,
       showRight: true,
+      scroll: true,
     };
   },
   props: {
     start: { type: Boolean, default: false },
+
     noPadding: Boolean,
   },
   methods: {
@@ -46,6 +48,16 @@ export default {
     setScroll() {
       this.scroll = this.start ? true : this.$refs.cardWrapper.scrollWidth > this.$refs.cardWrapper.clientWidth ? true : false;
     },
+    checkSlide(event) {
+      console.log(event.key);
+      if (event.keyCode === 39) {
+        this.nextSlide();
+      } else if (event.keyCode === 37) {
+        this.prevSlide();
+      } else {
+        return;
+      }
+    },
   },
 
   mounted() {
@@ -57,30 +69,6 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-.slider-wrapper {
-  position: relative;
-  width: 100%;
-  .slider-wrapper__slider {
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    display: flex;
-    align-items: center;
-    padding: 16px 10px;
-    &::-webkit-scrollbar {
-      height: 0;
-      width: 0;
-    }
-    &.--no-scroll {
-      justify-content: center;
-    }
-  }
-}
-@media only screen and (max-width: '525px') {
-  .slider-wrapper {
-    .slider-wrapper__nav-buttons {
-      display: none;
-    }
-  }
-}
+<style lang="scss">
+@import './Carousel.scss';
 </style>

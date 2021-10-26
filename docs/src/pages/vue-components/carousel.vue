@@ -25,9 +25,9 @@ export default {
     DocsAllApi,
   },
   title: 'Carousel',
-  description: `Collapsible component Easily toggle visibility of almost any content on your pages in a vertically and horizontally collapsing container`,
+  description: `LvCarousel component for cycling through elements—images or slides of text`,
   packageName: 'carousel',
-  componentName: 'LvCollapsible',
+  componentName: 'LvCarousel',
   apiData: CarouselAPI,
 };
 </script>
