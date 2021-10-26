@@ -10,8 +10,8 @@
     </div>
 
     <LvCarousel class="carousel">
-      <carousel-slide v-for="slide in slides" :key="slide" class="carousel-slider">
-        <LvCard class="card">
+      <carousel-slide v-for="slide in slides" :key="slide.name" class="carousel-slider">
+        <LvCard class="card" borderRadius="8px" padding="30px" :shadowStyle="6">
           <img :src="slide.component" :alt="slide" class="slide" @click="location(slide.name)" />
           <!-- <div class="component--title">{{ slide.name }} <br /></div>
           <div class="des">
@@ -79,6 +79,7 @@ export default {
 <style lang="scss">
 .component-section {
   margin-left: 22px;
+  height: 100vh;
 }
 .title {
   font-size: 32px;
