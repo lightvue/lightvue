@@ -1,5 +1,5 @@
 <template>
-  <div class="slider-wrapper">
+  <div class="slider-wrapper" @mouseenter="stopSlideTimer" @mouseout="startTimer">
     <div class="slider-wrapper__slider" ref="cardWrapper" @scroll="handleScroll" :class="{ '--no-scroll': !scroll }">
       <slot></slot>
     </div>
@@ -19,14 +19,45 @@ export default {
       showLeft: false,
       showRight: true,
       scroll: true,
+      timer: null,
+      isPause: false,
     };
   },
   props: {
     start: { type: Boolean, default: false },
+    pauseHover: {
+      type: Boolean,
+      default: true,
+    },
+    autoplay: {
+      type: Boolean,
+      default: true,
+    },
+    repeat: {
+      type: Boolean,
+      default: true,
+    },
+    interval: {
+      type: Number,
+      default: 5000,
+    },
 
     noPadding: Boolean,
   },
   methods: {
+    startTimer() {
+      console.log('hii from mouseleve');
+      this.stopSlideTimer();
+      this.slideInterval = setInterval(() => {
+        this.nextSlide();
+      }, this.interval);
+
+      //     }
+      // }, (this.interval || config.defaultCarouselInterval))
+    },
+    stopSlideTimer() {
+      clearInterval(this.slideInterval);
+    },
     nextSlide() {
       this.prevScroll = this.$refs.cardWrapper.scrollLeft;
       const scrollLeft = this.prevScroll + 0.75 * this.$refs.cardWrapper.offsetWidth;
@@ -58,6 +89,15 @@ export default {
         return;
       }
     },
+    checkPause() {
+      console.log('hello from mouseEnter');
+      // if (this.pauseHover && this.autoplay) {
+      //     this.pauseTimer()
+      // }
+    },
+    //   autoplay(status) {
+    //     status ? this.startTimer() : this.pauseTimer()
+    // },
   },
 
   mounted() {
@@ -66,7 +106,14 @@ export default {
       // console.log(this.$refs.cardWrapper.scrollWidth);
       this.setScroll();
     });
+    this.startTimer();
   },
+  beforeUnmount() {
+    this.stopSlideTimer();
+  },
+  // beforeDestroy() {
+  //     this.pauseTimer()
+  // }
 };
 </script>
 <style lang="scss">

@@ -11,7 +11,7 @@
 
     <LvCarousel class="carousel">
       <carousel-slide v-for="slide in slides" :key="slide.name" class="carousel-slider">
-        <LvCard class="card" borderRadius="8px" padding="30px" :shadowStyle="6">
+        <LvCard class="card" borderRadius="9px" padding="30px" :shadowStyle="1">
           <img :src="slide.component" :alt="slide" class="slide" @click="location(slide.name)" />
           <!-- <div class="component--title">{{ slide.name }} <br /></div>
           <div class="des">
