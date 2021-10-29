@@ -1,6 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
     <docs-card-vue title="Basic" file="carousel/CarouselDemo" overflow />
+    <docs-card-vue title="Auto Play" file="carousel/CarouselAutoDemo" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

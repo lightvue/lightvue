@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LvCarousel class="carousel" :autoplay="false">
+    <LvCarousel class="carousel">
       <template>
         <div v-for="slide in slides" :key="slide" class="carousel-slider" slot="slide">
           <LvCard :class="`card ${slide.color}`" borderRadius="8px" padding="30px" :shadowStyle="6">
