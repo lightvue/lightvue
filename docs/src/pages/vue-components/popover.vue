@@ -1,6 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Basic" file="popover/PopOverDemo" />
+    <docs-card-vue title="Hover" file="popover/PopOverHoverDemo" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />

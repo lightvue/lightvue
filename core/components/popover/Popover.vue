@@ -1,11 +1,11 @@
 <template>
-  <div @click="Show">
+  <div @click="Show" @mouseenter="ShowHover" @mouseleave="HideHover">
     <div v-if="$slots.popover" :class="[Position]" class="popover" ref="parent">
       <slot name="popover"></slot>
 
       <transition :duration="{ enter: 300, leave: 300 }" name="fade" @enter="Enter">
         <div v-show="isShow">
-          <div class="popover-overlay" @click.stop="Hide"></div>
+          <div class="popover-overlay" @click.stop="Hide" v-if="!hover"></div>
 
           <div ref="popover" :class="className" :style="computedStyle">
             <div class="popover--content">
@@ -34,6 +34,10 @@ export default {
     placement: {
       type: String,
       default: 'top',
+    },
+    hover: {
+      type: Boolean,
+      default: false,
     },
 
     offset: {
@@ -77,8 +81,19 @@ export default {
     Show() {
       this.isShow = true;
     },
+
     Hide() {
       this.isShow = false;
+    },
+    ShowHover() {
+      if (this.hover) {
+        this.isShow = true;
+      }
+    },
+    HideHover() {
+      if (this.hover) {
+        this.isShow = false;
+      }
     },
     Enter() {
       const content = this.$slots.popover[0].elm;

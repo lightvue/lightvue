@@ -1,34 +1,34 @@
 const PopOverAPI = {
   props: [
     {
-      name: 'dismissable',
-      type: 'Boolean',
-      default: 'true',
-      description: 'Configures if the overplay panel is dismissable or not.',
+      name: 'Placement',
+      type: 'String',
+      default: 'top',
+      description: 'Configures The position of a popover.',
     },
     {
-      name: 'showCloseIcon',
+      name: 'hover',
       type: 'Boolean',
       default: 'false',
-      description: 'Configures if the close icon needs to be displayed or not.',
+      description: 'Show the popover on Hover',
     },
     {
-      name: 'appendTo',
-      type: 'String',
-      default: '',
-      description: 'Configures where to what overplay panel needs to be appended.',
-    },
-    {
-      name: 'baseZIndex',
+      name: 'offset',
       type: 'Number',
-      default: '0',
-      description: 'Configures the base Z index of overlay panel.',
+      default: '15',
+      description: 'Configures the offset of a Popover.',
     },
     {
-      name: 'autoZindex',
-      type: 'Boolean',
-      default: 'true',
-      description: 'Configures if the Z index should be auto or not.',
+      name: 'width',
+      type: 'String',
+      default: '200px',
+      description: 'Configures the Width of a Popover.',
+    },
+    {
+      name: 'height',
+      type: 'String',
+      default: '70vh',
+      description: 'Configures The height of a Popover.',
     },
     {
       name: 'ariaCloseLabel',
