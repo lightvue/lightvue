@@ -1,17 +1,17 @@
 const CarouselAPI = {
   props: [
-    // {
-    //   name: 'name',
-    //   type: 'String',
-    //   default: 'collapsible',
-    //   description: 'Configures the name of transition.',
-    // },
-    // {
-    //   name: 'show',
-    //   type: 'Boolean',
-    //   default: true,
-    //   description: 'Configures the visibility of the content, inside collapsible component.',
-    // },
+    {
+      name: 'autoplay',
+      type: 'Boolean',
+      default: 'true',
+      description: 'Configures the autoplay feature.',
+    },
+    {
+      name: 'interval',
+      type: 'Number',
+      default: '5000',
+      description: 'Configures the Duration for autoplay.',
+    },
     // {
     //   name: 'orientation',
     //   type: 'String',
