@@ -16,7 +16,7 @@ import LightIconsDisplay from '@/components/light-icons/LightIconsDisplay.vue';
 
 export default {
   head: {
-    title: ' LightIcons Docs | LightVue ',
+    title: ' Light Icons Documentation | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,7 +24,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: ' LightIcons Docs | LightVue',
+        content: ' LightIcons Documentation | LightVue',
       },
       {
         property: 'og:description',
