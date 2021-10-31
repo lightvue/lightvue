@@ -21,7 +21,7 @@ import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   head: {
-    title: ' Drawer Docs | LightVue ',
+    title: ' Drawer Documentation | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,7 +29,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: ' Drawer Docs | LightVue ',
+        content: ' Drawer Documentation | LightVue ',
       },
       {
         property: 'og:description',

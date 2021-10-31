@@ -20,7 +20,7 @@ import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   head: {
-    title: ' Collasible Docs | LightVue ',
+    title: ' Collasible Documentation | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -28,7 +28,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: ' Collapsible Docs | LightVue ',
+        content: ' Collapsible Documentation | LightVue ',
       },
       {
         property: 'og:description',
