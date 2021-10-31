@@ -1,7 +1,9 @@
 <template>
   <div ref="container" :class="containerClass">
     <transition-group name="lv-toast__message" tag="div">
-      <ToastMessage v-for="msg of messages" :key="msg.id" :message="msg" @close="remove($event)" />
+      <ToastMessage v-for="msg of messages" :key="msg.id" :message="msg" @close="remove($event)">
+        <i class="light-icon-circle-check"></i>
+      </ToastMessage>
     </transition-group>
   </div>
 </template>
