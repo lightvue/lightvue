@@ -45,7 +45,6 @@ npm install lightvue@next
 - Checkbox Group: [[Vue2.x](https://lightvue.org/vue-components/checkbox-group 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/checkbox-group 'Vue3.x DEMO')]
 - Radio: [[Vue2.x](https://lightvue.org/vue-components/radio 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/radio 'Vue3.x DEMO')]
 - Radio Group: [[Vue2.x](https://lightvue.org/vue-components/radio-group 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/radio-group 'Vue3.x DEMO')]
-- Radio Group: [[Vue2.x](https://lightvue.org/vue-components/radio-group 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/radio-group 'Vue3.x DEMO')]
 - Toggle Switch: [[Vue2.x](https://lightvue.org/vue-components/toggle-switch 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/toggle-switch 'Vue3.x DEMO')]
 - Slider: [[Vue2.x](https://lightvue.org/vue-components/slider 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/slider 'Vue3.x DEMO')]
 - Color Picker: [[Vue2.x](https://lightvue.org/vue-components/color-picker 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/color-picker 'Vue3.x DEMO')]
