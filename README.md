@@ -49,6 +49,8 @@ npm install lightvue@next
 - Slider: [[Vue2.x](https://lightvue.org/vue-components/slider 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/slider 'Vue3.x DEMO')]
 - Color Picker: [[Vue2.x](https://lightvue.org/vue-components/color-picker 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/color-picker 'Vue3.x DEMO')]
 - Rating: [[Vue2.x](https://lightvue.org/vue-components/rating 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/rating 'Vue3.x DEMO')]
+- TextEditor: [[Vue2.x](https://lightvue.org/vue-components/text-editor 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/text-editor 'Vue3.x DEMO')]
+
 
 
 
