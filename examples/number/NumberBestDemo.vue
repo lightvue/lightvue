@@ -12,7 +12,9 @@
         <lv-number v-model="allOptions.step" label="Increment Value" /> <br />
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.placeholder" label="Placeholder" /> <br />
-        <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br />
+        <!-- TODO: commented the help-text, because it's not clear what should it do: the number input is expected to accept only numbers, so maybe this is a redundant functionality? -->
+        <!-- This case is not described in the NumberAPI.js which makes me think it's redundant -->
+        <!-- <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br /> -->
         <lv-input v-model="allOptions.iconLeft" label="Left Icons" /> <br />
         <lv-input v-model="allOptions.iconRight" label="Right Icons" /> <br />
       </template>

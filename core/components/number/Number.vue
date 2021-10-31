@@ -20,13 +20,12 @@ export default {
   },
   data() {
     return {
-      localValue: '',
+      localValue: 0,
     };
   },
   props: {
     value: {
-      type: String,
-      default: '',
+      type: Number,
     },
     controls: {
       type: Boolean,
@@ -46,7 +45,6 @@ export default {
     },
     max: {
       type: Number,
-      // default: 100,
     },
     step: {
       type: Number,
@@ -54,20 +52,31 @@ export default {
     },
     min: {
       type: Number,
-      default: 0,
     },
   },
   methods: {
+    isNumber(num) {
+      return typeof num === 'number' && !Number.isNaN(num);
+    },
+    isValueValid(val) {
+      if (!this.isNumber(val)) return false;
+      if (this.isNumber(this.min) && val < this.min) return false;
+      if (this.isNumber(this.max) && val > this.max) return false;
+      return true;
+    },
     updateValue(eventValue) {
       if (eventValue === '') {
         // Handling clear functionality
-        eventValue = this.min; // TODO: Ideally should be blank.
+        eventValue = undefined;
       }
       let floatValue = parseFloat(eventValue);
-      if (floatValue >= this.min && (this.max ? floatValue <= this.max : true)) {
+      const isValueValid = this.isValueValid(floatValue);
+      if (isValueValid) {
         this.localValue = floatValue;
         this.$emit('input', floatValue); // Only for Vue 2
         this.$emit('update:modelValue', floatValue); // Only for Vue
+      } else {
+        //TODO: clarify what should be a fallback in this case, should we reset the input value?
       }
     },
     LocalIncrement(event) {
@@ -79,7 +88,11 @@ export default {
   },
   computed: {
     modelValue() {
-      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value ? this.value : this.localValue;
+      if (this.isNumber(this.$attrs.modelValue)) {
+        return this.$attrs.modelValue;
+      } else {
+        return this.isNumber(this.value) ? this.value : this.localValue;
+      }
     },
   },
 };
