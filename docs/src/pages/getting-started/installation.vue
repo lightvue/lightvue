@@ -186,6 +186,24 @@ Vue.component('LvButton', LvButton);
 import DocsCard from '@/components/docs-card/DocsCard';
 import CodeHighlight from '@/components/docs-card/CodeHighlight.vue';
 export default {
+  head: {
+    title: ' Installation Docs | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: 'Installation Docs | LightVue',
+      },
+      {
+        property: 'og:description',
+        content: ' ',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCard,
     CodeHighlight,

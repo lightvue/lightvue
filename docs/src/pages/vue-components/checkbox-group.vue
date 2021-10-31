@@ -18,6 +18,24 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import CheckboxAPI from 'lightvueDocs/example/checkbox/CheckboxAPI';
 
 export default {
+  head: {
+    title: ' CheckGroup Docs | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+      {
+        property: 'og:site_name',
+        content: ' CheckGroup Docs | LightVue ',
+      },
+      {
+        property: 'og:description',
+        content: 'CheckboxGroup component can be used when user needs to select or deselect options from a given array of options.',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,
