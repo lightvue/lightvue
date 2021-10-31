@@ -5,11 +5,18 @@
     border-radius: 25px;
     background: #38b2ac;
     .lv-toast__message-content {
+      display: flex;
+      justify-content: center;
+      // align-items: center;
       padding: 1rem;
       border-width: 0 0 0 0;
-      text-align: center;
+      // text-align: center;
       color: white !important;
       width: 100%;
+
+      .lv-toast__prepend {
+        padding-right: 6px;
+      }
       .lv-toast__message-text {
         color: white !important;
       }
