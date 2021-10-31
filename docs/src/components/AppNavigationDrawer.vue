@@ -92,18 +92,6 @@ export default {
 
       pages: [
         {
-          page_name: 'Input',
-          page_path: '/vue-components/input',
-        },
-        {
-          page_name: 'Number',
-          page_path: '/vue-components/number',
-        },
-        {
-          page_name: 'Text Area',
-          page_path: '/vue-components/textarea',
-        },
-        {
           page_name: 'Button',
           page_path: '/vue-components/button',
         },
@@ -116,6 +104,27 @@ export default {
           page_path: '/vue-components/checkbox-group',
           // REFACTORING,
         },
+        {
+          page_name: 'Color Picker',
+          page_path: '/vue-components/color-picker',
+        },
+        {
+          page_name: 'Dropdown',
+          page_path: '/vue-components/dropdown',
+        },
+        {
+          page_name: 'Input',
+          page_path: '/vue-components/input',
+        },
+        {
+          page_name: 'Number',
+          page_path: '/vue-components/number',
+        },
+
+        {
+          page_name: 'Rating',
+          page_path: '/vue-components/rating',
+        },
 
         {
           page_name: 'Radio',
@@ -127,28 +136,21 @@ export default {
           // REFACTORING,
         },
         {
-          page_name: 'Toggle Switch',
-          page_path: '/vue-components/toggle-switch',
-        },
-        {
           page_name: 'Slider',
           page_path: '/vue-components/slider',
         },
         {
-          page_name: 'Color Picker',
-          page_path: '/vue-components/color-picker',
-        },
-        {
-          page_name: 'Dropdown',
-          page_path: '/vue-components/dropdown',
-        },
-        {
-          page_name: 'Rating',
-          page_path: '/vue-components/rating',
+          page_name: 'Text Area',
+          page_path: '/vue-components/textarea',
         },
         {
           page_name: 'Text Editor',
           page_path: '/vue-components/text-editor',
+        },
+
+        {
+          page_name: 'Toggle Switch',
+          page_path: '/vue-components/toggle-switch',
         },
       ],
     },
