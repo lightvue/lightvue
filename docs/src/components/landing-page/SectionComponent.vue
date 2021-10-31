@@ -10,7 +10,7 @@
     </div>
 
     <LvCarousel class="carousel">
-      <carousel-slide v-for="slide in slides" :key="slide.name" class="carousel-slider">
+      <div v-for="slide in slides" :key="slide.name" class="carousel-slider" slot="slide">
         <LvCard class="card" borderRadius="9px" padding="30px" :shadowStyle="1">
           <img :src="slide.component" :alt="slide" class="slide" @click="location(slide.name)" />
           <!-- <div class="component--title">{{ slide.name }} <br /></div>
@@ -18,7 +18,7 @@
             {{ slide.Description }}
           </div> -->
         </LvCard>
-      </carousel-slide>
+      </div>
     </LvCarousel>
   </section>
 </template>
@@ -116,5 +116,8 @@ export default {
   line-height: 15px;
   opacity: 0.7;
   color: #143a56;
+}
+.carousel-slider {
+  padding: 1rem;
 }
 </style>
