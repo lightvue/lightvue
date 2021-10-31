@@ -2,15 +2,14 @@ const NumberAPI = {
   props: [
     {
       name: 'value',
-      type: 'String',
-      default: '',
+      type: 'Number',
       description: 'Configures the value of the number.',
     },
     {
       name: 'controls',
       type: 'Boolean',
       default: '',
-      description: 'Allows user to confugure with the control of number component if the value is true.',
+      description: 'Allows user to configure with the control of number component if the value is true.',
     },
     {
       name: 'iconRight',
@@ -33,19 +32,17 @@ const NumberAPI = {
     {
       name: 'max',
       type: 'Number',
-      default: '100',
       description: 'Configures the max value of the number component.',
     },
     {
       name: 'min',
       type: 'Number',
-      default: '0',
       description: 'Configures the min value of the number component.',
     },
     {
       name: 'step',
       type: 'Number',
-      default: '0',
+      default: 1,
       description: 'Defines the step to go up or down in the number component.',
     },
   ],
