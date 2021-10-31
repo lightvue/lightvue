@@ -70,6 +70,17 @@ export default {
   beforeUnmount() {
     this.onBeforeUnmount();
   },
+  created() {
+    const onEscape = (e) => {
+      if (this.visible && e.keyCode === 27) {
+        this.hide()
+      }
+    }
+    document.addEventListener('keydown', onEscape)
+    this.$once('hook:destroyed', () => {
+      document.removeEventListener('keydown', onEscape)
+    })
+  },
 
   methods: {
     handleOnBrowserBack() {
