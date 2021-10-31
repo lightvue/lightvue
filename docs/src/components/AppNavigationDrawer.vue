@@ -198,13 +198,34 @@ export default {
 
       pages: [
         {
+          page_name: 'Badge',
+          page_path: '/vue-components/badge',
+        },
+        {
           page_name: 'Cards',
           page_path: '/vue-components/card',
+        },
+        {
+          page_name: 'Collapsible',
+          page_path: '/vue-components/collapsible',
+        },
+        {
+          page_name: 'Dialog',
+          page_path: '/vue-components/dialog',
         },
         {
           page_name: 'Glassmorphic Card',
           page_path: '/vue-components/glassmorphic-card',
         },
+        {
+          page_name: 'Navigation Drawer',
+          page_path: '/vue-components/drawer',
+        },
+        {
+          page_name: 'Notifications',
+          page_path: '/vue-components/notification',
+        },
+
         {
           page_name: 'Overlay Panel',
           page_path: '/vue-components/overlay-panel',
@@ -213,30 +234,10 @@ export default {
         //   page_name: 'Light Icons',
         //   page_path: '/icons/light-icons',
         // },
-        {
-          page_name: 'Dialog',
-          page_path: '/vue-components/dialog',
-        },
+
         {
           page_name: 'Toast',
           page_path: '/vue-components/toast',
-        },
-        {
-          page_name: 'Notifications',
-          page_path: '/vue-components/notification',
-        },
-        {
-          page_name: 'Navigation Drawer',
-          page_path: '/vue-components/drawer',
-          // REFACTORING,
-        },
-        {
-          page_name: 'Collapsible',
-          page_path: '/vue-components/collapsible',
-        },
-        {
-          page_name: 'Badge',
-          page_path: '/vue-components/badge',
         },
       ],
     },
