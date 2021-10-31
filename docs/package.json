@@ -20,7 +20,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "instantsearch.css": "^7.4.5",
-    "light-icons": "^1.0.5",
+    "light-icons": "^1.0.10",
     "nuxt": "^2.15.2",
     "prismjs": "^1.23.0",
     "split.js": "^1.6.2",

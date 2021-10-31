@@ -22,13 +22,13 @@ const InputAPI = {
       name: 'icon-left',
       type: 'String',
       default: '',
-      description: `Input element with an icon on it's left`,
+      description: `Input element with an icon on its left`,
     },
     {
       name: 'icon-right',
       type: 'String',
       default: '',
-      description: `Input element with an icon on it's right`,
+      description: `Input element with an icon on its right`,
     },
     {
       name: 'label',
@@ -110,7 +110,7 @@ const InputAPI = {
           description: 'Native JS function of input',
         },
       ],
-      description: 'Javascript input native function',
+      description: 'JavaScript input native function',
     },
   ],
 };

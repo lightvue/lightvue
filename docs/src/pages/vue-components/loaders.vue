@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="TYPE: ball-scale" file="loaders/BallTypeDemos/BallScaleDemo" />
     <docs-card-vue title="TYPE: ball-scale-multiple" file="loaders/BallTypeDemos/BallScaleMultipleDemo" />
     <docs-card-vue title="TYPE: ball-scale-random" file="loaders/BallTypeDemos/BallScaleRandomDemo" />
@@ -47,6 +47,24 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import ProgressLoaderAPI from 'lightvueDocs/example/loaders/ProgressLoaderAPI';
 
 export default {
+  head: {
+    title: ' Loaders Docs | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: ' Loaders Docs | LightVue ',
+      },
+      {
+        property: 'og:description',
+        content: ' ',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,
@@ -58,6 +76,7 @@ export default {
   description: `Progress Loader components can be used as a loading animations or space-fillers while waiting for the actual content to load.`,
   packageName: 'progressloader',
   componentName: 'LvLoader',
+  // status: 'Updated',
   apiData: ProgressLoaderAPI,
 };
 </script>

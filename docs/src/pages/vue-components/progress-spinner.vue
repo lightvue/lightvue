@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <docs-card-vue title="Size" file="progressspinner/ProgressSpinnerSizeDemo" />
     <docs-card-vue title="Color" file="progressspinner/ProgressSpinnerColorDemo" />
     <docs-card-vue title="Stroke-width" file="progressspinner/ProgressSpinnerStrokeDemo" />
@@ -20,6 +20,24 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import ProgressSpinnerAPI from 'lightvueDocs/example/progressspinner/ProgressSpinnerAPI';
 
 export default {
+  head: {
+    title: ' ProgressSpinner Docs | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: ' ProgressSpinner Docs | LightVue ',
+      },
+      {
+        property: 'og:description',
+        content: 'Progress spinner components can be used as a loading animations or space-fillers while waiting for the actual content to load. ',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,
@@ -31,6 +49,7 @@ export default {
   description: `Progress spinner components can be used as a loading animations or space-fillers while waiting for the actual content to load.`,
   packageName: 'progressSpinner',
   componentName: 'lv-progressspinner',
+  // status: 'Stable',
   apiData: ProgressSpinnerAPI,
 };
 </script>

@@ -29,7 +29,7 @@ import SectionEnterprise from '../components/landing-page/SectionEnterprise.vue'
 import IndexFooter from '../components/landing-page/IndexFooter.vue';
 export default {
   head: {
-    title: 'LightVue | Emerging Collection of well Crafted UI Components',
+    title: ' Emerging Collection of well Crafted UI Components | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -37,7 +37,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | The Ultimate Vue Component Library',
+        content: ' The Ultimate Vue Component Library | LightVue ',
       },
       {
         property: 'og:description',

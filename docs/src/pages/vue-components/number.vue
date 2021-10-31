@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <number-best-demo />
     <docs-card-vue title="Basic" file="number/Number_BasicDemo" overflow />
     <docs-card-vue title="Rounded" file="number/Number_RoundedDemo" overflow />
@@ -22,6 +22,24 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import NumberAPI from 'lightvueDocs/example/number/NumberAPI';
 
 export default {
+  head: {
+    title: ' Number Docs | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+      {
+        property: 'og:site_name',
+        content: ' Number Docs | LightVue ',
+      },
+      {
+        property: 'og:description',
+        content: 'Input Number component allows user to Take Number as a input.',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,
@@ -34,6 +52,7 @@ export default {
   description: `Input Number component allows user to Take Number as a input.`,
   packageName: 'number',
   componentName: 'LvNumber',
+  // status: 'Stable',
   apiData: NumberAPI,
 };
 </script>

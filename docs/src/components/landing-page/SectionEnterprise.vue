@@ -10,11 +10,11 @@
           <div class="enterprise-section__circle-illustration --two"></div>
           <div class="enterprise-section__circle-illustration --three"></div>
           <div class="expertise-section__features-wrapper">
-            <div class="expertise-feature__item"><i class="light-icon-palette"></i> Unlimited Customisation</div>
-            <div class="expertise-feature__item"><i class="light-icon-package"></i> Light icon Pack</div>
-            <div class="expertise-feature__item"><i class="light-icon-directions"></i> Vue 3.x Migration Support</div>
-            <div class="expertise-feature__item"><i class="light-icon-git-fork"></i>Indipendent build modules</div>
-            <div class="expertise-feature__item"><i class="light-icon-phone-calling"></i>24/7 customer support</div>
+            <div class="expertise-feature__item"><i class="light-icon-palette"></i> Unlimited customisation</div>
+            <div class="expertise-feature__item"><i class="light-icon-package"></i> Light icons pack</div>
+            <div class="expertise-feature__item"><i class="light-icon-directions"></i> Vue 3.x Migration support</div>
+            <div class="expertise-feature__item"><i class="light-icon-git-fork"></i>Independent build modules</div>
+            <div class="expertise-feature__item"><i class="light-icon-phone-calling"></i>24/7 Customer support</div>
             <!-- <div class="expertise-feature__item">and many more...</div> -->
             <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="contact_overlay_panel" />
             <lv-overlay-panel style="width: 350px" ref="contactOverlay" append-to="body" :show-close-icon="true" id="contact_overlay_panel">

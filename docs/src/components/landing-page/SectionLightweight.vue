@@ -5,7 +5,7 @@
       <div class="light-weight__content">
         <div class="light-weight__content-heading">Light weight UI</div>
         <br />
-        <div class="light-weight__content-description">With Light-Vue , style light as a feather web components for your projects with dead simple responsive layout. There is only so much it can do to enhance performance and robustness of a your web app.</div>
+        <div class="light-weight__content-description">With Light-Vue , style light as a feather web components for your projects with dead simple responsive layout. There is so much it can do to enhance performance and robustness of your web app.</div>
         <br />
         <br />
         <nuxt-link :to="{ hash: 'light-icons' }" class="page-button --dark">Know More</nuxt-link>

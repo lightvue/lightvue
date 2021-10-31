@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <input-best-demo />
     <docs-card-vue title="Basic" file="input/InputDemo_Basic" />
     <docs-card-vue title="Rounded" file="input/InputDemo_Rounded" />
@@ -21,7 +21,7 @@ import InputAPI from 'lightvueDocs/example/input/InputAPI';
 
 export default {
   head: {
-    title: 'LightVue | InputDocs',
+    title: ' Input Docs | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,11 +29,11 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
       {
         property: 'og:site_name',
-        content: 'LightVue | Input Docs',
+        content: ' Input Docs | LightVue ',
       },
       {
         property: 'og:description',
-        content: 'Light-input provides with a variety of input fields with various available customizations which helps it to fulfill the need of almost every web application/project',
+        content: 'Light-input provides with a variety of input fields with various available customizations which helps it to fulfil the need of almost every web application/project',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -47,9 +47,10 @@ export default {
     InputBestDemo,
   },
   title: 'Light-input',
-  description: `Light-input provides with a variety of input fields with various available customizations which helps it to fulfill the need of almost every web application/project.`,
+  description: `Light-input provides with a variety of input fields with various available customizations which helps it to fulfil the need of almost every web application/project.`,
   packageName: 'input',
   componentName: 'LvInput',
+  // status: 'Rc',
   apiData: InputAPI,
 };
 </script>
