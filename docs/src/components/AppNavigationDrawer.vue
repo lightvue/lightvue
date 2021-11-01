@@ -104,6 +104,10 @@ export default {
           page_path: '/vue-components/textarea',
         },
         {
+          page_name: 'Upload',
+          page_path: '/vue-components/upload',
+        },
+        {
           page_name: 'Button',
           page_path: '/vue-components/button',
         },
