@@ -1,7 +1,16 @@
 <template>
-  <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged" width="100%">
-    <i class="light-icon-cloud-upload"></i>
-  </LvUpload>
+  <div>
+    <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged">
+      <div class="upload">
+        <i class="light-icon-cloud-upload"></i>
+      </div>
+    </LvUpload>
+    <!-- <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged" width="100%">
+      <div class="upload">
+        <LvButton label="Upload" size="lg" icon="light-icon-cloud-upload" class="lv--primary" />
+      </div>
+    </LvUpload> -->
+  </div>
 </template>
 <script>
 import LvUpload from 'lightvue/upload';
@@ -22,12 +31,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.badge__wrapper {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.--mr {
-  margin-left: 4px;
+.upload {
+  font-size: 4rem;
+  font-weight: 700;
 }
 </style>
