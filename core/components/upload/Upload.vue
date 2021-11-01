@@ -10,13 +10,15 @@
       @drop.prevent="handleDrop">
 
       <input ref="LvFileInput" type="file" tabindex="-1" :multiple="multiple" :accept="acceptExtensions" @change="handleChange" />
-</div>
-    
-   
 
       <div  @click="$refs.LvFileInput.click()">
         <slot>Select</slot>
       </div>
+</div>
+    
+   
+
+      
 
     
     </div>

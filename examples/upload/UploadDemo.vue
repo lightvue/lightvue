@@ -1,5 +1,5 @@
 <template>
-  <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged"> Select image files </LvUpload>
+  <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged" :height="200"> Select image files </LvUpload>
 </template>
 <script>
 import LvUpload from 'lightvue/upload';

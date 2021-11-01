@@ -1,12 +1,6 @@
 .Lv__file {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px dotted black;
-  height: 100%;
-  width: 100%;
   position: relative;
-  padding: 9rem;
+
   .file--upload {
     display: flex;
     flex-direction: column;
