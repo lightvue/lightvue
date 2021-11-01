@@ -1,22 +1,21 @@
 <template>
-  <div>
-    <div class="badge__wrapper">
-      <LvBadge class="--mr" color="primary">primary</LvBadge>
-      <LvBadge class="--mr" color="secondary">secondary</LvBadge>
-      <LvBadge class="--mr" color="success">sucess</LvBadge>
-      <LvBadge class="--mr" color="info">info</LvBadge>
-      <LvBadge class="--mr" color="warning">warning</LvBadge>
-      <LvBadge class="--mr" color="help">help</LvBadge>
-      <LvBadge class="--mr" color="danger">danger</LvBadge>
-      <LvBadge class="--mr" color="plain">Plain</LvBadge>
-    </div>
-  </div>
+  <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged"> Select image files </LvUpload>
 </template>
 <script>
-import LvBadge from 'lightvue/badge';
+import LvUpload from 'lightvue/upload';
 export default {
   components: {
-    LvBadge,
+    LvUpload,
+  },
+  methods: {
+    handleFilesValidated(result, files) {
+      console.log('Validation result: ', result);
+    },
+
+    handleFilesChanged(files) {
+      console.log('Selected files: ');
+      console.table(files);
+    },
   },
 };
 </script>
