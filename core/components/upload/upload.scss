@@ -1,6 +1,12 @@
 .Lv__file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dotted black;
+  height: 100%;
+  width: 100%;
   position: relative;
-
+  padding: 9rem;
   .file--upload {
     display: flex;
     flex-direction: column;
@@ -16,7 +22,8 @@
     }
   }
 
-  &.fs-drag-enter {
+  &.lv-drag-enter {
+    background: rgba(177, 176, 176, 0.486);
     // to prevent dragleave event triggered while user dragging over child items
     .file--upload::before {
       content: '';

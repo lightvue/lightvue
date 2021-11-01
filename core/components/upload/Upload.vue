@@ -1,5 +1,5 @@
 <template>
-  <div class="Lv__file"  :class="{ 'fs-drag-enter': isDragEnter }" >
+  <div class="Lv__file"  :class="{ 'lv-drag-enter': isDragEnter }" >
     
 
 <div class="file--upload"   ref="LvDroppable"
@@ -14,7 +14,7 @@
     
    
 
-      <div href="#" class="fs-btn-select" @click="$refs.LvFileInput.click()">
+      <div  @click="$refs.LvFileInput.click()">
         <slot>Select</slot>
       </div>
 
