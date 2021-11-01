@@ -1,10 +1,40 @@
 const UploadAPI = {
   props: [
     {
-      name: 'size',
+      name: 'drop',
+      type: 'Boolean',
+      default: 'false',
+      description: 'drag and drop files.',
+    },
+    {
+      name: 'multiple',
+      type: 'Boolean',
+      default: 'false',
+      description: 'Multiple files upload.',
+    },
+    {
+      name: 'acceptExtensions',
       type: 'String',
-      default: 'md',
-      description: 'Configures the size of badge.',
+      default: '',
+      description: 'Restrict the file extension.',
+    },
+    {
+      name: 'maxFileSize',
+      type: 'Number',
+      default: 'NaN',
+      description: 'Restrict the fileSize.',
+    },
+    {
+      name: 'height',
+      type: 'String',
+      default: '2rem',
+      description: 'Height of a container.',
+    },
+    {
+      name: 'width',
+      type: 'String',
+      default: '2rem',
+      description: 'width of a container.',
     },
     // {
     //   name: 'dimension',

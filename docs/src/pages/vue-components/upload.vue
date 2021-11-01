@@ -22,7 +22,7 @@ import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   head: {
-    title: ' Badge Documentation | LightVue ',
+    title: ' LvUpload Documentation | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,11 +30,11 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: 'upload Documentation | LightVue',
+        content: 'LvUpload Documentation | LightVue',
       },
       {
         property: 'og:description',
-        content: 'upload component superscripts or subscripts an avatar-like icon or text onto content to highlight information to a user or to just draw attention to a specific element. Content within the badge usually contains numbers or icons.',
+        content: 'LightVue supplies a way for you to upload files through the LvUpload component .',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -47,7 +47,7 @@ export default {
     DocsAllApi,
   },
   title: 'Upload',
-  description: `The LvBadge component superscripts or subscripts an avatar-like icon or text onto content to highlight information to a user or to just draw attention to a specific element. Content within the badge usually contains numbers or icons.`,
+  description: `LightVue supplies a way for you to upload files through the LvUpload component.`,
   packageName: 'upload',
   componentName: 'LvUpload',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
