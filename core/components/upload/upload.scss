@@ -1,25 +1,34 @@
 .Lv__file {
   position: relative;
+  display: inline-flex;
 
-  .file--upload {
+  input[type='file'] {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    outline: none;
+    z-index: -1;
+  }
+
+  .file--upload__draggable {
+    cursor: pointer;
+    padding: 0.25em;
+    border: 1px dotted gray;
+    border-radius: 1rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-
-    input[type='file'] {
-      visibility: hidden;
-      position: absolute;
-      width: 1px;
-      height: 1px;
-    }
   }
 
   &.lv-drag-enter {
     background: rgba(177, 176, 176, 0.486);
+
     // to prevent dragleave event triggered while user dragging over child items
-    .file--upload::before {
+    .file--upload__draggable::before {
       content: '';
       position: absolute;
       top: 0;

@@ -1,33 +1,22 @@
 <template>
-  <div class="Lv__file"  :class="{ 'lv-drag-enter': isDragEnter }" >
-    
-
-<div class="file--upload"   ref="LvDroppable"
-      :style="{ height: height + 'px' }"
-      @dragenter.prevent="isDragEnter = true"
-      @dragover.prevent="() => {}"
-      @dragleave.prevent="isDragEnter = false"
-      @drop.prevent="handleDrop">
-
-      <input ref="LvFileInput" type="file" tabindex="-1" :multiple="multiple" :accept="acceptExtensions" @change="handleChange" />
-
-      <div  @click="$refs.LvFileInput.click()">
-        <slot>Select</slot>
-      </div>
-</div>
-    
-   
-
-      
-
-    
+  <label class="Lv__file" :class="{ 'lv-drag-enter': isDragEnter }" :style="computedStyle">
+    <template v-if="!drop">
+      <slot />
+    </template>
+    <div v-else class="file--upload__draggable" ref="LvDroppable" @dragenter.prevent="isDragEnter = true" @dragover.prevent="() => {}" @dragleave.prevent="isDragEnter = false" @drop.prevent="handleDrop" :style="computedStyle">
+      <slot></slot>
     </div>
-  </div>
+    <input ref="LvFileInput" type="file" tabindex="-1" :multiple="multiple" :accept="acceptExtensions" @change="handleChange" />
+  </label>
 </template>
 <script>
 export default {
   name: 'LvUpload',
   props: {
+    drop: {
+      type: Boolean,
+      default: false,
+    },
     multiple: {
       type: Boolean,
       default: false,
@@ -50,8 +39,12 @@ export default {
     },
 
     height: {
-      type: Number,
-      default: NaN,
+      type: String,
+      default: '2rem',
+    },
+    width: {
+      type: String,
+      default: '2rem',
     },
 
     validateFn: {
@@ -64,6 +57,15 @@ export default {
     return {
       isDragEnter: false,
     };
+  },
+
+  computed: {
+    computedStyle() {
+      return {
+        height: this.height,
+        width: this.width,
+      };
+    },
   },
 
   methods: {
