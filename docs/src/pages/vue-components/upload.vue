@@ -2,11 +2,11 @@
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template #title-right> </template>
     <docs-card-vue title="Basic" file="upload/UploadDemo" overflow />
+    <docs-card-vue title="Drop" file="upload/UploadDragDemo" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <docs-card title="APIs" :responsive="false">
-        <docs-all-api :api-data="$options.apiData" />
-      </docs-card>
+
+      <docs-all-api :api-data="$options.apiData" />
     </template>
   </docs-page-layout>
 </template>
