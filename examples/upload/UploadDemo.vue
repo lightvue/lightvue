@@ -1,13 +1,17 @@
 <template>
   <div>
-    <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged">
+    <h5>Default</h5>
+    <LvUpload @validated="handleFilesValidated" @changed="handleFilesChanged" :withButtonInput="true"> </LvUpload><br />
+    <h5>Restriction for file type (.svg,.jpg)</h5>
+    <LvUpload accept-extensions=".jpg,.svg" @validated="handleFilesValidated" @changed="handleFilesChanged" :withButtonInput="true"> </LvUpload><br />
+    <h5>Restriction for file Size</h5>
+
+    <LvUpload :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged" :withButtonInput="true"> </LvUpload><br />
+    <!-- <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged" width="100%" height="100%">
       <div class="upload">
-        <i class="light-icon-cloud-upload"></i>
-      </div>
-    </LvUpload>
-    <!-- <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged" width="100%">
-      <div class="upload">
-        <LvButton label="Upload" size="lg" icon="light-icon-cloud-upload" class="lv--primary" />
+        <LvButton size="lg" icon="light-icon-cloud-upload" class="lv--primary" />
+        Click me
+        <button @click.prevent.stop>click</button>
       </div>
     </LvUpload> -->
   </div>
@@ -35,4 +39,7 @@ export default {
   font-size: 4rem;
   font-weight: 700;
 }
+/* button {
+  pointer-events: none;
+} */
 </style>

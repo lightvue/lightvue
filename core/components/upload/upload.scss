@@ -4,14 +4,12 @@
 
   cursor: pointer;
   input[type='file'] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    height: 0.1px;
     opacity: 0;
-    outline: none;
+    overflow: hidden;
+    position: absolute;
     z-index: -1;
+    width: 0.1px;
   }
 
   .file--upload__draggable {

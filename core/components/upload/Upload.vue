@@ -1,21 +1,57 @@
 <template>
   <label class="Lv__file" :class="{ 'lv-drag-enter': isDragEnter }" :style="computedStyle">
-    <template v-if="!drop">
+    <template v-if="!drop && !withButtonInput">
       <slot />
     </template>
+    <template v-else-if="!drop && withButtonInput">
+      <!-- <div class="fileupload__content">
+        <div class="fileupload__icon">
+          <slot name="icon">
+            <i class="light-icon-cloud-upload"></i>
+          </slot>
+        </div>
+
+        <span v-if="hasSelection" class="fileupload__display-text">{{ displayText }}</span>
+        <slot v-else>{{ placeholder }}</slot>
+      </div> -->
+      <!-- <input class="md-input" readonly v-bind="{ placeholder }" @click="openPicker" /> -->
+      <lv-input type="text" v-model="value1" :placeholder="placeholder" clearable @click="openPicker">
+        <template #prepend>
+          <LvButton :icon="icon" :class="ButtonClass" @click="openPicker" />
+        </template>
+      </lv-input>
+    </template>
+
     <div v-else class="file--upload__draggable" ref="LvDroppable" @dragenter.prevent="isDragEnter = true" @dragover.prevent="() => {}" @dragleave.prevent="isDragEnter = false" @drop.prevent="handleDrop" :style="computedStyle">
       <slot></slot>
     </div>
-    <input ref="LvFileInput" type="file" tabindex="-1" :multiple="multiple" :accept="acceptExtensions" @change="handleChange" />
+    <input ref="LvFileInput" type="file" :tabindex="tabindex" :multiple="multiple" :accept="acceptExtensions" @change="handleChange" />
   </label>
 </template>
 <script>
+import LvInput from 'lightvue/input';
 export default {
   name: 'LvUpload',
+  components: {
+    LvInput,
+  },
   props: {
+    tabindex: [String, Number],
     drop: {
       type: Boolean,
       default: false,
+    },
+    withButtonInput: {
+      type: Boolean,
+      default: false,
+    },
+    icon: {
+      type: String,
+      default: 'light-icon-cloud-upload',
+    },
+    ButtonClass: {
+      type: String,
+      default: 'lv--success',
     },
     multiple: {
       type: Boolean,
@@ -51,11 +87,15 @@ export default {
       type: Function,
       default: () => true,
     },
+    label: String,
   },
 
   data() {
     return {
       isDragEnter: false,
+      hasSelection: false,
+      displayText: '',
+      value1: '',
     };
   },
 
@@ -66,11 +106,50 @@ export default {
         width: this.width,
       };
     },
+    placeholder() {
+      if (this.label) {
+        return this.label;
+      }
+
+      return this.multiple ? 'Choose files' : 'Choose a file';
+    },
   },
 
   methods: {
+    openPicker() {
+      this.$refs.LvFileInput.click();
+    },
     handleChange($event) {
+      this.onFileSelected($event);
       this.preprocessFiles($event.target.files);
+    },
+
+    onFileSelected({ target, dataTransfer }) {
+      const files = target.files || dataTransfer.files;
+
+      this.value1 = this.getFileName(files, target);
+    },
+    getFileName(files, target) {
+      if (!files || files.length === 0) {
+        return target.value.split('\\').pop();
+      }
+
+      if (files.length > 1) {
+        return this.getMultipleName(files);
+      }
+
+      if (files.length === 1) {
+        return files[0].name;
+      }
+
+      return null;
+    },
+    getMultipleName(files) {
+      let names = [];
+
+      [...files].forEach(({ name }) => names.push(name));
+
+      return names.join(', ');
     },
 
     handleDrop($event) {
