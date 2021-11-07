@@ -15,7 +15,7 @@
         <slot v-else>{{ placeholder }}</slot>
       </div> -->
       <!-- <input class="md-input" readonly v-bind="{ placeholder }" @click="openPicker" /> -->
-      <lv-input type="text" v-model="value1" :placeholder="placeholder" clearable @click="openPicker">
+      <lv-input type="text" v-model="value1" :placeholder="placeholder" clearable @click="openPicker" :rounded="rounded">
         <template #prepend>
           <LvButton :icon="icon" :class="ButtonClass" @click="openPicker" />
         </template>
@@ -51,7 +51,7 @@ export default {
     },
     icon: {
       type: String,
-      default: 'light-icon-cloud-upload',
+      default: 'light-icon-upload',
     },
     ButtonClass: {
       type: String,

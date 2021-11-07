@@ -36,6 +36,30 @@ const UploadAPI = {
       default: '2rem',
       description: 'width of a container.',
     },
+    {
+      name: 'Rounded',
+      type: 'Boolean',
+      default: 'false',
+      description: 'Rounded Corners.',
+    },
+    {
+      name: 'withButtonInput',
+      type: 'Boolean',
+      default: 'false',
+      description: 'The Lvupload with icon button and the text field for display name of the uploaded file ',
+    },
+    {
+      name: 'icon',
+      type: 'String',
+      default: 'light-icon-cloud-upload',
+      description: 'The light icon button ',
+    },
+    {
+      name: 'ButtonClass',
+      type: 'String',
+      default: 'lv--success',
+      description: 'The Lvbutton class',
+    },
     // {
     //   name: 'dimension',
     //   type: 'String',

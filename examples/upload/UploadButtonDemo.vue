@@ -7,7 +7,7 @@
     <h5>Restriction for file Size</h5>
 
     <LvUpload :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged"> </LvUpload><br />
-    <h5>With Imgage Preview</h5>
+    <h5>With Image Preview</h5>
     <LvUpload accept-extensions=".jpg,.svg" @validated="handleFilesValidated" @changed="handleFilesChangedPreview"> </LvUpload><br />
     <div class="page__demo-preview" v-if="filePreviewImage.length > 0">
       <img alt="filePreviewName" class="page__demo-preview-image" :src="filePreviewImage" />
