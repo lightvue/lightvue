@@ -1,7 +1,8 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template #title-right> </template>
-    <docs-card-vue title="Basic" file="upload/UploadDemo" overflow />
+    <docs-card-vue title="Basic" file="upload/UploadButtonDemo" overflow />
+    <docs-card-vue title="Light Upload" file="upload/UploadDemo" overflow />
     <docs-card-vue title="Drop" file="upload/UploadDragDemo" overflow />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />

@@ -7,13 +7,6 @@
     <h5>Restriction for file Size</h5>
 
     <LvUpload :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged" :withButtonInput="true"> </LvUpload><br />
-    <!-- <LvUpload accept-extensions=".jpg,.svg" :multiple="true" :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged" width="100%" height="100%">
-      <div class="upload">
-        <LvButton size="lg" icon="light-icon-cloud-upload" class="lv--primary" />
-        Click me
-        <button @click.prevent.stop>click</button>
-      </div>
-    </LvUpload> -->
   </div>
 </template>
 <script>

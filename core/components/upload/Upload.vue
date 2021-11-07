@@ -1,7 +1,7 @@
 <template>
-  <label class="Lv__file" :class="{ 'lv-drag-enter': isDragEnter }" :style="computedStyle">
+  <label class="Lv__file" :class="{ 'lv-drag-enter': isDragEnter }">
     <template v-if="!drop && !withButtonInput">
-      <slot />
+      <LvButton :icon="icon" :class="ButtonClass" @click="openPicker" :rounded="rounded" :label="placeholder" />
     </template>
     <template v-else-if="!drop && withButtonInput">
       <!-- <div class="fileupload__content">
@@ -38,6 +38,10 @@ export default {
   props: {
     tabindex: [String, Number],
     drop: {
+      type: Boolean,
+      default: false,
+    },
+    rounded: {
       type: Boolean,
       default: false,
     },

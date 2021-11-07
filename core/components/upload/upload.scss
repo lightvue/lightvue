@@ -1,6 +1,8 @@
 .Lv__file {
   position: relative;
   display: inline-flex;
+  height: 100%;
+  width: 100%;
 
   cursor: pointer;
   input[type='file'] {
