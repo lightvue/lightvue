@@ -40,6 +40,10 @@ const routes = [
         component: () => import('@/pages/vue-components/radio-group.vue'),
       },
       {
+        path: 'upload',
+        component: () => import('@/pages/vue-components/upload.vue'),
+      },
+      {
         path: 'card',
         component: () => import('@/pages/vue-components/card.vue'),
       },
