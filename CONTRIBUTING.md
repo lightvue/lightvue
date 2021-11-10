@@ -1,7 +1,7 @@
 # LightVue Contribution Guide
 
   <a href="https://github.com/lightvue/lightvue/issues">
-    <img alt="Issues" src="https://img.shields.io/github/issues/lightvue/lightvue?color=0088ff" />
+    <img alt="Issues" src="https://img.shields.io/github/issues/lightvue/lightvue" />
   </a> &nbsp;
   
   <a href="https://github.com/lightvue/lightvue/labels/good%20first%20issue">
@@ -71,58 +71,40 @@ Add comments if method is too complex and/or whenever you judge necessary.
 
 [![versionnode](https://img.shields.io/badge/nodejs->=6%20and%20<=_14-006cb8.svg?logo=node.js&color=3e863d)](http://nodejs.org/)
 
-- Clone this repository
+```bash
+# Clone this repository
+git clone https://github.com/lightvue/lightvue
 
-  ```bash
-  git clone https://github.com/lightvue/lightvue
-  ```
+# From the project's root folder, install the dependencies
+npm install
+```
 
-- From the project's root folder, install the dependencies
+**Vue 2.x Docs:**
 
-  ```bash
-  npm install
-  ```
+```bash
+# Navigate to `docs/` (from the root)
+cd ./docs
 
-  **Vue 2.x**
+# Install dependencies for Vue 2.x
+npm install
 
-  - navigate to `docs/` (from the root)
+# Serve docs with hot reload
+npm run dev
+```
 
-    ```bash
-    cd ./docs
-    ```
+Visit <http://localhost:3000>
 
-  - Install dependencies for Vue 2
+**Vue 3.x Docs:**
 
-    ```bash
-    npm install
-    ```
+```bash
+# Navigate to `docs-v3/` (from the root)
+cd ./docs-v3
 
-  - Serve docs with hot reload
+# Install dependencies for Vue 3
+npm install
 
-    ```bash
-    npm run dev
-    ```
+# Serve with hot reload
+npm run dev
+```
 
-  - Visit <http://localhost:3000>
-
-  **Vue 3.x**
-
-  - navigate to `docs-v3/` (from the root)
-
-    ```bash
-    cd ./docs-v3
-    ```
-
-  - Install dependencies for Vue 3
-
-    ```bash
-    npm install
-    ```
-
-  - Serve with hot reload
-
-    ```bash
-    npm run dev
-    ```
-
-  - Visit <http://localhost:8081>
+Visit <http://localhost:8080>
