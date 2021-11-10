@@ -5,21 +5,20 @@
         <i class="light-icon-align-left menu-icon" @click="$emit('toggle-drawer')"></i>
       </div>
       <div class="search-row">
-        <div class="search-bar">
+        <div class="search-bar" v-if="$lightvue && $lightvue.version !== 3">
           <AppSearch />
         </div>
       </div>
       <div class="social__row">
-         <!-- <a href="" class="social-links">
+        <!-- <a href="" class="social-links">
             <i class="header-social light-icon-brand-github"></i>
           </a> -->
-          <a href="https://twitter.com/lightvue" class="social-links">
-            <i class="header-social light-icon-brand-twitter"></i>
-          </a>
-          <!-- <a href="" class="social-links">
+        <a href="https://twitter.com/lightvue" class="social-links">
+          <i class="header-social light-icon-brand-twitter"></i>
+        </a>
+        <!-- <a href="" class="social-links">
             <i class="header-social light-icon-brand-facebook"></i>
           </a> -->
-        </div>
       </div>
     </div>
   </div>

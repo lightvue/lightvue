@@ -14,7 +14,7 @@
 
 <script>
 import 'light-icons/dist/light-icon.css';
-import AppHeader from './AppHeader.vue';
+import AppHeader from '@/components/AppHeader.vue';
 import AppNavigationDrawer from './AppNavigationDrawer.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
