@@ -28,11 +28,11 @@ export default {
   props: {
     width: {
       type: [Number, String],
-      default: 200
+      // default: 200
     },
     height: {
       type: [Number, String],
-      default: 20
+      // default: 20
     },
     viewBox: {
       type: String,
