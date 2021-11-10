@@ -6,10 +6,10 @@
     <docs-card-vue title="Adjusting speed" file="shimmers/examples/ShimmersDemo_speed" />
     <docs-card-vue title="Disabling animation" file="shimmers/examples/ShimmersDemo_animate" />
     <docs-card-vue title="Presets" file="shimmers/examples/ShimmersDemo__Preset" />
-    <docs-card-vue title="Default" file="shimmers/examples/ShimmersDemo__Basic" />
     <docs-card-vue title="Code Loader" file="shimmers/examples/ShimmersDemo__CodeLoader" />
     <docs-card-vue title="List Loader" file="shimmers/examples/ShimmersDemo__ListLoader" />
     <docs-card-vue title="Card List" file="shimmers/examples/ShimmersDemo__CardList" />
+    <docs-card-vue title="Custom Loaders" file="shimmers/examples/ShimmersDemo__Basic" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
