@@ -10,45 +10,42 @@
           <div class="enterprise-section__circle-illustration --two"></div>
           <div class="enterprise-section__circle-illustration --three"></div>
           <div class="expertise-section__features-wrapper">
-            <div class="expertise-feature__item"><i class="light-icon-palette"></i> Unlimited customisation</div>
-            <div class="expertise-feature__item"><i class="light-icon-package"></i> Light icons pack</div>
-            <div class="expertise-feature__item"><i class="light-icon-directions"></i> Vue 3.x Migration support</div>
-            <div class="expertise-feature__item"><i class="light-icon-git-fork"></i>Independent build modules</div>
-            <div class="expertise-feature__item"><i class="light-icon-phone-calling"></i>24/7 Customer support</div>
+            <div class="expertise-feature__item"><i class="light-icon-palette"></i> Premium Components</div>
+            <div class="expertise-feature__item"><i class="light-icon-package"></i> Custom Theme Pack</div>
+            <div class="expertise-feature__item"><i class="light-icon-git-fork"></i>Whitelabel Branding</div>
+            <div class="expertise-feature__item"><i class="light-icon-directions"></i> Vue 3.x Migration Support</div>
+            <div class="expertise-feature__item"><i class="light-icon-phone-calling"></i>24/7 Customer Support</div>
             <!-- <div class="expertise-feature__item">and many more...</div> -->
-            <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="contact_overlay_panel" />
-            <lv-overlay-panel style="width: 350px" ref="contactOverlay" append-to="body" :show-close-icon="true" id="contact_overlay_panel">
-              <div class="overlay-leadform">
-                <lead-form @success="toggleImageOverlay" />
-              </div>
-            </lv-overlay-panel>
+            <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="showContactDrawer = !showContactDrawer" aria:haspopup="true" aria-controls="contact_overlay_panel" />
+            <div class="enterprise--drawer">
+              <lv-drawer v-model="showContactDrawer" right close shadow background="#fff" :zIndex="9999" :width="600" :height="600">
+                <lead-form />
+              </lv-drawer>
+            </div>
           </div>
           <div class="expertise-section__image-wrapper">
             <img src="../../assets/images/footer-image.svg" class="expertise-section__image" />
           </div>
         </div>
       </div>
-      <div class="enterprise-footer__text">copyright 2021 © LightVue. all rights reserved.</div>
+
+      <div class="enterprise-footer__text">Copyright 2021 © LightVue. all rights reserved.</div>
     </section>
   </div>
 </template>
 
 <script>
-import LvOverlayPanel from 'lightvue/overlay-panel';
-import LvTextarea from 'lightvue/textarea';
-import LvDropdown from 'lightvue/dropdown';
 import LeadForm from './LeadForm.vue';
+import LvDrawer from 'lightvue/drawer';
 export default {
   components: {
-    LvOverlayPanel,
-    LvTextarea,
-    LvDropdown,
     LeadForm,
+    LvDrawer,
   },
-  methods: {
-    toggleImageOverlay(event) {
-      this.$refs.contactOverlay.toggle(event);
-    },
+  data() {
+    return {
+      showContactDrawer: false,
+    };
   },
 };
 </script>
@@ -125,12 +122,13 @@ export default {
       }
     }
     .expertise-section__features-wrapper {
+      position: relative;
       width: 350px;
       background: rgba(76, 104, 124, 0.86);
       border-radius: 20px;
       padding: 50px 50px;
       color: #ffffff;
-      z-index: 100;
+      z-index: 1000000;
       margin-top: 60px;
       .expertise-feature__item {
         z-index: 100;
@@ -172,6 +170,9 @@ export default {
     height: 40px;
     width: 250px;
   }
+}
+.enterprise--drawer {
+  color: rgb(96, 124, 138);
 }
 @media (max-width: 768px) {
   .enterprise-section__circle-illustration {
