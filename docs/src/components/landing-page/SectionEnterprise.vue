@@ -10,18 +10,16 @@
           <div class="enterprise-section__circle-illustration --two"></div>
           <div class="enterprise-section__circle-illustration --three"></div>
           <div class="expertise-section__features-wrapper">
-            <div class="expertise-feature__item"><i class="light-icon-palette"></i> Unlimited customisation</div>
-            <div class="expertise-feature__item"><i class="light-icon-package"></i> Light icons pack</div>
-            <div class="expertise-feature__item"><i class="light-icon-directions"></i> Vue 3.x Migration support</div>
-            <div class="expertise-feature__item"><i class="light-icon-git-fork"></i>Independent build modules</div>
-            <div class="expertise-feature__item"><i class="light-icon-phone-calling"></i>24/7 Customer support</div>
+            <div class="expertise-feature__item"><i class="light-icon-palette"></i> Premium Components</div>
+            <div class="expertise-feature__item"><i class="light-icon-package"></i> Custom Theme Pack</div>
+            <div class="expertise-feature__item"><i class="light-icon-git-fork"></i>Whitelabel Branding</div>
+            <div class="expertise-feature__item"><i class="light-icon-directions"></i> Vue 3.x Migration Support</div>
+            <div class="expertise-feature__item"><i class="light-icon-phone-calling"></i>24/7 Customer Support</div>
             <!-- <div class="expertise-feature__item">and many more...</div> -->
-            <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="drawer1 = !drawer1" aria:haspopup="true" aria-controls="contact_overlay_panel" />
+            <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="showContactDrawer = !showContactDrawer" aria:haspopup="true" aria-controls="contact_overlay_panel" />
             <div class="enterprise--drawer">
-              <lv-drawer v-model="drawer1" :right="true" :close="true" headerTitle="Contact US" headerColor="#607c8a" :shadow="true" background="#fff" :zIndex="9999" padding="15px" :width="400">
-                <template>
-                  <lead-form />
-                </template>
+              <lv-drawer v-model="showContactDrawer" right close shadow background="#fff" :zIndex="9999" :width="600" :height="600">
+                <lead-form />
               </lv-drawer>
             </div>
           </div>
@@ -31,7 +29,7 @@
         </div>
       </div>
 
-      <div class="enterprise-footer__text">copyright 2021 © LightVue. all rights reserved.</div>
+      <div class="enterprise-footer__text">Copyright 2021 © LightVue. all rights reserved.</div>
     </section>
   </div>
 </template>
@@ -52,7 +50,7 @@ export default {
   },
   data() {
     return {
-      drawer1: false,
+      showContactDrawer: false,
     };
   },
 };
