@@ -15,6 +15,24 @@ import LightIconsDocumentation from '@/components/light-icons/LightIconsDocument
 import LightIconsDisplay from '@/components/light-icons/LightIconsDisplay.vue';
 
 export default {
+  head: {
+    title: ' Light Icons Documentation | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: ' LightIcons Documentation | LightVue',
+      },
+      {
+        property: 'og:description',
+        content: ' ',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: { LightIconsHeader, LightIconsNavbar, LightIconsDocumentation, LightIconsDisplay },
 };
 </script>

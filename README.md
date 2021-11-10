@@ -38,6 +38,24 @@ npm install lightvue@next
 
 - Input:  [[Vue2.x](https://lightvue.org/vue-components/input 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/input 'Vue3.x DEMO')]
 - Number: [[Vue2.x](https://lightvue.org/vue-components/number 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/number 'Vue3.x DEMO')]
+- TextArea: [[Vue2.x](https://lightvue.org/vue-components/textarea 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/textarea 'Vue3.x DEMO')]
+- Dropdown: [[Vue2.x](https://lightvue.org/vue-components/dropdown 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/dropdown 'Vue3.x DEMO')]
+- Button: [[Vue2.x](https://lightvue.org/vue-components/button 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/button 'Vue3.x DEMO')]
+- Checkbox: [[Vue2.x](https://lightvue.org/vue-components/checkbox 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/checkbox 'Vue3.x DEMO')]
+- Checkbox Group: [[Vue2.x](https://lightvue.org/vue-components/checkbox-group 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/checkbox-group 'Vue3.x DEMO')]
+- Radio: [[Vue2.x](https://lightvue.org/vue-components/radio 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/radio 'Vue3.x DEMO')]
+- Radio Group: [[Vue2.x](https://lightvue.org/vue-components/radio-group 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/radio-group 'Vue3.x DEMO')]
+- Toggle Switch: [[Vue2.x](https://lightvue.org/vue-components/toggle-switch 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/toggle-switch 'Vue3.x DEMO')]
+- Slider: [[Vue2.x](https://lightvue.org/vue-components/slider 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/slider 'Vue3.x DEMO')]
+- Color Picker: [[Vue2.x](https://lightvue.org/vue-components/color-picker 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/color-picker 'Vue3.x DEMO')]
+- Rating: [[Vue2.x](https://lightvue.org/vue-components/rating 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/rating 'Vue3.x DEMO')]
+- TextEditor: [[Vue2.x](https://lightvue.org/vue-components/text-editor 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/text-editor 'Vue3.x DEMO')]
+
+
+
+
+
+
 
 
 ## Contribution

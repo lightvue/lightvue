@@ -4,7 +4,7 @@
       <div class="app-searchui__bar-wrapper">
         <ais-search-box placeholder="Type to start searching..." class="searchbox">
           <div slot-scope="{ isSearchStalled, refine }">
-            <lv-input icon-left="light-icon-search" type="search" :value="queryString" @input="handleOnType($event, refine)" placeholder="Type to start searching..." />
+            <lv-input icon-left="light-icon-search" type="search" :value="queryString" bottom-bar @input="handleOnType($event, refine)" placeholder="Type to start searching..." />
             <span :hidden="!isSearchStalled"></span>
           </div>
         </ais-search-box>

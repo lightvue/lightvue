@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: '/vue-components',
-    component: () => import('../components/Layout/DocsLayout.vue'),
+    component: () => import('@/components/DocsLayout.vue'),
     children: [
       {
         path: 'input',
@@ -139,7 +139,7 @@ const routes = [
   },
   {
     path: '/getting-started',
-    component: () => import('../components/Layout/DocsLayout.vue'),
+    component: () => import('@/components/DocsLayout.vue'),
     children: [
       {
         path: 'installation',
