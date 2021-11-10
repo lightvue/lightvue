@@ -5,8 +5,8 @@
         <i class="light-icon-align-left menu-icon" @click="$emit('toggle-drawer')"></i>
       </div>
       <div class="search-row">
-        <div class="search-bar" v-if="$lightvue && $lightvue.version !== 3">
-          <AppSearch />
+        <div class="search-bar">
+          <slot name="app-search"></slot>
         </div>
       </div>
       <div class="social__row">
@@ -25,12 +25,7 @@
 </template>
 
 <script>
-import AppSearch from '@/components/AppSearch';
-export default {
-  components: {
-    AppSearch,
-  },
-};
+export default {};
 </script>
 
 <style scoped lang="scss">

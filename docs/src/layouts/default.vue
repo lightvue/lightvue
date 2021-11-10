@@ -1,14 +1,10 @@
 <template>
   <div id="app">
-    <app-header @toggle-drawer="toggleDrawer()" />
-    <div class="sidemenu__backdrop" v-if="showDrawer" @click="toggleDrawer()"></div>
-    <app-navigation-drawer :show-drawer="showDrawer" @toggle-drawer="toggleDrawer()" />
-    <div class="page-wrap">
-      <div class="page-content">
-        <nuxt-child />
-      </div>
-      <app-footer />
-    </div>
+    <docs-layout>
+      <template #app-search>
+        <app-search v-if="$lightvue && $lightvue.version !== 3" />
+      </template>
+    </docs-layout>
     <LvToast position="top" />
     <LvToast position="center" />
     <LvToast position="bottom" />
@@ -20,17 +16,14 @@
 </template>
 
 <script>
-import 'light-icons/dist/light-icon.css';
-import AppHeader from '@/components/AppHeader.vue';
-import AppNavigationDrawer from '@/components/AppNavigationDrawer.vue';
-import AppFooter from '@/components/AppFooter.vue';
+import DocsLayout from '@/components/DocsLayout.vue';
+import AppSearch from '@/components/AppSearch';
 
 export default {
   scrollToTop: true,
   components: {
-    AppHeader,
-    AppNavigationDrawer,
-    AppFooter,
+    DocsLayout,
+    AppSearch,
   },
   data() {
     return {
