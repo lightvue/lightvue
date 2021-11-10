@@ -13,10 +13,6 @@
     <img alt="Contributors" src="https://img.shields.io/github/contributors/lightvue/lightvue?color=269286" />
   </a> 
   
-  <a href="https://github.com/lightvue/lightvue/issues">
-     <img alt="Issues" src="https://img.shields.io/github/issues/lightvue/lightvue?color=fec750" />
-  </a>
-  
   <a href="https://github.com/lightvue/lightvue/pulls">
     <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/lightvue/lightvue?color=ffeeee" />
   </a>
@@ -60,7 +56,7 @@ npm install lightvue@next
 
 ### Form Elements:
 
-- Input:  [[Vue2.x](https://lightvue.org/vue-components/input 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/input 'Vue3.x DEMO')]
+- Input: [[Vue2.x](https://lightvue.org/vue-components/input 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/input 'Vue3.x DEMO')]
 - Number: [[Vue2.x](https://lightvue.org/vue-components/number 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/number 'Vue3.x DEMO')]
 - TextArea: [[Vue2.x](https://lightvue.org/vue-components/textarea 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/textarea 'Vue3.x DEMO')]
 - Dropdown: [[Vue2.x](https://lightvue.org/vue-components/dropdown 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/dropdown 'Vue3.x DEMO')]
@@ -74,13 +70,6 @@ npm install lightvue@next
 - Color Picker: [[Vue2.x](https://lightvue.org/vue-components/color-picker 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/color-picker 'Vue3.x DEMO')]
 - Rating: [[Vue2.x](https://lightvue.org/vue-components/rating 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/rating 'Vue3.x DEMO')]
 - TextEditor: [[Vue2.x](https://lightvue.org/vue-components/text-editor 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/text-editor 'Vue3.x DEMO')]
-
-
-
-
-
-
-
 
 ## Contribution
 
