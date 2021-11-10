@@ -3,8 +3,8 @@
     <div class="content-wrapper">
       <light-icons-header />
       <light-icons-navbar />
-      <light-icons-documentation v-if="$route.hash === '#docs'" />
-      <light-icons-display v-else />
+      <light-icons-documentation v-show="$route.hash === '#docs'" />
+      <light-icons-display v-show="$route.hash !== '#docs'" />
     </div>
   </div>
 </template>
