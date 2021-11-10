@@ -35,16 +35,10 @@
 </template>
 
 <script>
-import LvOverlayPanel from 'lightvue/overlay-panel';
-import LvTextarea from 'lightvue/textarea';
-import LvDropdown from 'lightvue/dropdown';
 import LeadForm from './LeadForm.vue';
 import LvDrawer from 'lightvue/drawer';
 export default {
   components: {
-    LvOverlayPanel,
-    LvTextarea,
-    LvDropdown,
     LeadForm,
     LvDrawer,
   },
