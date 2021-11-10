@@ -9,7 +9,9 @@
     <app-navigation-drawer :show-drawer="showDrawer" @toggle-drawer="toggleDrawer()" />
     <div class="page-wrap">
       <div class="page-content">
-        <component :is="$lightvue && $lightvue.version === 3 ? 'router-view' : 'nuxt-child'" />
+        <slot name="page-content">
+          <component :is="$lightvue && $lightvue.version === 3 ? 'router-view' : 'nuxt-child'" />
+        </slot>
       </div>
       <app-footer />
     </div>
