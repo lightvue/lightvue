@@ -20,6 +20,24 @@ import TextEditorAPI from 'lightvueDocs/example/text-editor/TextEditorAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
+  head: {
+    title: ' TextEditor Docs | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+      {
+        property: 'og:site_name',
+        content: ' TextEditor Docs | LightVue ',
+      },
+      {
+        property: 'og:description',
+        content: 'TextEditor is WYSISYG editor that lets users format content, align content, embed links & more.',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     TextEditorBestDemo,
     DocsCardVue,
@@ -29,7 +47,7 @@ export default {
     DocsAllApi,
   },
   title: 'Text Editor',
-  description: `LvTextEditor is WYSISYG editor that lets users format content, align content, embed links & more.`,
+  description: `LvTextEditor is WYSIWYG editor that lets users format content, align content, embed links & more.`,
   packageName: 'texteditor',
   componentName: 'LvTextEditor',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,

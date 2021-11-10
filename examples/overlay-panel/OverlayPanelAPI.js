@@ -4,7 +4,7 @@ const OverlayPanelAPI = {
       name: 'dismissable',
       type: 'Boolean',
       default: 'true',
-      description: 'Configures if the overplay panel is dismissable or not.',
+      description: 'Configures if the overplay panel is dismissible or not.',
     },
     {
       name: 'showCloseIcon',

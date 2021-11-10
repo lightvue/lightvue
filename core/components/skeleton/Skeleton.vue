@@ -1,5 +1,5 @@
 <template>
-  <svg :width="width" :height="height" version="1.1" :preserveAspectRatio="preserveAspectRatio" :viewBox="viewBox || `0 0 300 130`">
+  <svg :width="width" :height="height" version="1.1" :preserveAspectRatio="preserveAspectRatio" :viewBox="viewBox || `0 0 ${width} ${height}`">
     <rect :style="`fill: url(${baseUrl}#${idGradient})`" :clip-path="`url(${baseUrl}#${idClip})`" x="0" y="0" width="100%" height="100%" />
 
     <defs>
@@ -28,9 +28,11 @@ export default {
   props: {
     width: {
       type: [Number, String],
+      // default: 200
     },
     height: {
       type: [Number, String],
+      // default: 20
     },
     viewBox: {
       type: String,

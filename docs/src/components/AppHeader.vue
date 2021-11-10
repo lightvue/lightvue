@@ -6,32 +6,26 @@
       </div>
       <div class="search-row">
         <div class="search-bar">
-          <AppSearch />
+          <slot name="app-search"></slot>
         </div>
       </div>
       <div class="social__row">
-         <!-- <a href="" class="social-links">
-            <i class="header-social light-icon-brand-github"></i>
-          </a> -->
-          <a href="https://twitter.com/lightvue" class="social-links">
-            <i class="header-social light-icon-brand-twitter"></i>
-          </a>
-          <!-- <a href="" class="social-links">
+        <a href="https://github.com/lightvue/lightvue" target="_blank" class="social-links">
+          <i class="header-social light-icon-brand-github"></i>
+        </a>
+        <a href="https://twitter.com/lightvue" class="social-links">
+          <i class="header-social light-icon-brand-twitter"></i>
+        </a>
+        <!-- <a href="" class="social-links">
             <i class="header-social light-icon-brand-facebook"></i>
           </a> -->
-        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import AppSearch from '@/components/AppSearch';
-export default {
-  components: {
-    AppSearch,
-  },
-};
+export default {};
 </script>
 
 <style scoped lang="scss">
@@ -89,7 +83,6 @@ export default {
 .search-row {
   display: flex;
   margin: auto;
-  padding: 40px 0;
 }
 .search-bar {
   position: relative;
@@ -126,21 +119,23 @@ export default {
 }
 .social-links {
   color: inherit;
+  font-size: 25px;
   text-decoration: none;
 }
 .social__row {
-  .header-social-icons__container {
-    .header-social {
-      font-size: 24px;
+  display: flex;
+  align-items: center;
+  .header-social {
+    font-size: 24px;
+    margin-left: 12px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: black;
       padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      &:hover {
-        color: black;
-        padding: 10px;
-        background: #dfdfdf;
-      }
+      background: #dfdfdf;
     }
   }
 }
@@ -154,7 +149,7 @@ export default {
     margin-right: 12px;
     cursor: pointer;
   }
-  .header-social-icons__container,
+  .social-row,
   .logo-text {
     display: none;
   }
