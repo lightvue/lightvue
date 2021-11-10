@@ -1,7 +1,7 @@
 <template>
   <div class="page-nav__tabs">
     <nuxt-link :to="{ hash: '' }" class="page-nav__tab"> Icons </nuxt-link>
-    <nuxt-link :to="{ hash: 'docs' }" class="page-nav__tab"> Installation </nuxt-link>
+    <nuxt-link :to="{ hash: '#docs' }" class="page-nav__tab"> Installation </nuxt-link>
   </div>
 </template>
 
@@ -33,6 +33,7 @@ export default {};
       background: #edf2f6;
     }
     &.active,
+    &.router-link-exact-active,
     &.nuxt-link-exact-active {
       background-color: #607c8a !important;
       color: #fff !important;
