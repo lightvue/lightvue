@@ -4,7 +4,7 @@
     <section class="enterprise-section" id="contact">
       <div class="enterprise-section__wrapper">
         <div class="enterprise-heading">Ready for Enterprises</div>
-        <div class="enterprise-description">Offer different versions of a product to meet the differing needs as an Enterprises.</div>
+        <div class="enterprise-description">LightVue supports unlimited customization of UI to meet the differing needs of Enterprises.</div>
         <div class="expertise-section__information-wrapper">
           <div class="enterprise-section__circle-illustration --one"></div>
           <div class="enterprise-section__circle-illustration --two"></div>

@@ -3,9 +3,9 @@
     <img src="../../assets/images/light-weight-bg-top.svg" width="100%" class="light-weight__bg --top" />
     <div class="light-weight__wrapper">
       <div class="light-weight__content">
-        <div class="light-weight__content-heading">Light weight UI</div>
+        <div class="light-weight__content-heading">Fastest, LIGHT UI Elements in the Planet</div>
         <br />
-        <div class="light-weight__content-description">With Light-Vue , style light as a feather web components for your projects with dead simple responsive layout. There is so much it can do to enhance performance and robustness of your web app.</div>
+        <div class="light-weight__content-description">Every element of the LightVue is standalon &amp; designed to ensure Optimal Performance across devices. LightVue web components are even lighter than feather with dead simple responsive layouts. There is so much LightVue does natively to enhance performance and robustness of your web app.</div>
         <br />
         <br />
         <nuxt-link :to="{ hash: 'light-icons' }" class="page-button --dark">Know More</nuxt-link>
