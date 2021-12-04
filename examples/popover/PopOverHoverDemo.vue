@@ -1,22 +1,30 @@
 <template>
   <div class="test-content">
     <LvPopOver :offset="10" placement="bottom" :hover="true">
-      <LvButton label="Bottom" class="lv--primary" slot="popover" />
-      <LvButton label="Submit" class="lv--primary" />
+      <template #popover>
+        <LvButton label="Submit" class="lv--primary" />
+      </template>
+      <LvButton label="Bottom" class="lv--primary" />
     </LvPopOver>
     <LvPopOver :offset="10" placement="top" :hover="true">
-      <LvButton label="Top" class="lv--primary" slot="popover" />
-      <LvButton label="Submit" class="lv--primary" />
+      <template #popover>
+        <LvButton label="Submit" class="lv--primary" />
+      </template>
+      <LvButton label="Top" class="lv--primary" />
     </LvPopOver>
     <LvPopOver :offset="10" placement="right" :hover="true">
-      <LvButton label="Right" class="lv--primary" slot="popover" />
-      <LvButton label="Submit" class="lv--primary" />
+      <template #popover>
+        <LvButton label="Submit" class="lv--primary" />
+      </template>
+      <LvButton label="Right" class="lv--primary" />
     </LvPopOver>
     <LvPopOver :offset="10" placement="left" :hover="true">
-      <LvButton label="Left" class="lv--primary" slot="popover" />
-      <div class="d-flex">
-        <lv-input type="text" v-model="value1" label="First Name" placeholder="Enter your first name" />
-      </div>
+      <template #popover>
+        <div class="d-flex">
+          <lv-input type="text" label="First Name" placeholder="Enter your first name" />
+        </div>
+      </template>
+      <LvButton label="Left" class="lv--primary" />
     </LvPopOver>
   </div>
 </template>

@@ -135,6 +135,10 @@ const routes = [
         path: 'tooltip',
         component: () => import('@/pages/vue-components/tooltip.vue'),
       },
+      {
+        path: 'popover',
+        component: () => import('@/pages/vue-components/popover.vue'),
+      },
     ],
   },
   {

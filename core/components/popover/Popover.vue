@@ -1,7 +1,7 @@
 <template>
   <div @click="Show" @mouseenter="ShowHover" @mouseleave="HideHover">
     <div v-if="$slots.popover" :class="[Position]" class="popover" ref="parent">
-      <slot name="popover"></slot>
+      <slot></slot>
 
       <transition :duration="{ enter: 300, leave: 300 }" name="fade" @enter="Enter">
         <div v-show="isShow">
@@ -9,7 +9,7 @@
 
           <div ref="popover" :class="className" :style="computedStyle">
             <div class="popover--content">
-              <slot></slot>
+              <slot name="popover"></slot>
             </div>
             <div class="popover-tip"></div>
           </div>
@@ -77,6 +77,9 @@ export default {
       };
     },
   },
+  mounted() {
+    console.log('THIS IS PARENT', this.$refs.parent.children[0]);
+  },
   methods: {
     Show() {
       this.isShow = true;
@@ -96,7 +99,7 @@ export default {
       }
     },
     Enter() {
-      const content = this.$slots.popover[0].elm;
+      const content = this.$refs.parent.children[0];
       const popover = this.$refs.popover;
       const offset = this.offset;
       const contentWidth = content.offsetWidth;

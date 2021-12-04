@@ -231,6 +231,10 @@ export default {
           page_name: 'Badge',
           page_path: '/vue-components/badge',
         },
+        {
+          page_name: 'PopOver',
+          page_path: '/vue-components/popover',
+        },
       ],
     },
   ],
