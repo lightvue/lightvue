@@ -1,50 +1,50 @@
 .lv--primary {
-  --theme-color: #38b2ac;
-  --theme-color-light: #8ed8d6;
-  --theme-color-dark: #319795;
-  --theme-color-inverse: #ffffff;
+  --theme-color: var(--primary) ;
+  --theme-color-light: var(--primary-light);
+  --theme-color-dark: var(--primary-dark);
+  --theme-color-inverse: var(--primary-inverse);
 }
 .lv--secondary {
-  --theme-color: #607d8b;
-  --theme-color-light: #beccd2;
-  --theme-color-dark: #56717d;
-  --theme-color-inverse: #ffffff;
+  --theme-color: var(--secondary) ;
+  --theme-color-light: var(--secondary-light);
+  --theme-color-dark: var(--secondary-dark);
+  --theme-color-inverse: var(--secondary-inverse);
 }
 .lv--success {
-  --theme-color: #008c7f;
-  --theme-color-light: #95e8df;
-  --theme-color-dark: #03655b;
-  --theme-color-inverse: #ffffff;
+  --theme-color: var(--success) ;
+  --theme-color-light: var(--success-light);
+  --theme-color-dark: var(--success-dark);
+  --theme-color-inverse: var(--success-inverse);
 }
 .lv--info {
-  --theme-color: #0288d1;
-  --theme-color-light: #89d4fe;
-  --theme-color-dark: #027abc;
-  --theme-color-inverse: #ffffff;
+  --theme-color: var(--info) ;
+  --theme-color-light: var(--info-light);
+  --theme-color-dark: var(--info-dark);
+  --theme-color-inverse: var(--info-inverse);
 }
 .lv--warning {
-  --theme-color: #ffb300;
-  --theme-color-light: #ffd36d;
-  --theme-color-dark: #df9c00;
-  --theme-color-inverse: #ffffff;
+  --theme-color: var(--warning) ;
+  --theme-color-light: var(--warning-light);
+  --theme-color-dark: var(--warning-dark);
+  --theme-color-inverse: var(--warning-inverse);
 }
 .lv--help {
-  --theme-color: #795548;
-  --theme-color-light: #baafac;
-  --theme-color-dark: #795548;
-  --theme-color-inverse: #ffffff;
+  --theme-color: var(--help) ;
+  --theme-color-light: var(--help-light);
+  --theme-color-dark: var(--help-dark);
+  --theme-color-inverse: var(--help-inverse);
 }
 .lv--danger {
-  --theme-color: #bb2727;
-  --theme-color-light: #e9a5a5;
-  --theme-color-dark: #9b2222;
-  --theme-color-inverse: #ffffff;
+  --theme-color: var(--danger) ;
+  --theme-color-light: var(--danger-light);
+  --theme-color-dark: var(--danger-dark);
+  --theme-color-inverse: var(--danger-inverse);
 }
 .lv--plain {
-  --theme-color: #3f51b5;
-  --theme-color-light: #acb7f7;
-  --theme-color-dark: #2e3fa2;
-  --theme-color-inverse: #ffffff;
+  --theme-color: var(--plain) ;
+  --theme-color-light: var(--plain-light);
+  --theme-color-dark: var(--plain-dark);
+  --theme-color-inverse: var(--plain-inverse);
 }
 .lv-button {
   // color: #ffffff;

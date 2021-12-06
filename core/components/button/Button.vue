@@ -1,5 +1,5 @@
 <template>
-  <button class="lv-button lv--primary" :class="buttonClass" v-bind="$attrs" :type="type" v-on="listeners">
+  <button class="lv-button" :class="buttonClass" v-bind="$attrs" :type="type" v-on="listeners">
     <div v-if="$slots['prepend'] || icon" class="lv-button__prepend">
       <slot name="prepend">
         <div v-if="icon" class="lv-button__icon">
@@ -78,6 +78,10 @@ export default {
       type: String,
       default: 'button',
     },
+     color: {
+      type: String,
+      default: 'primary'
+    }
   },
   computed: {
     buttonClass() {
@@ -93,6 +97,14 @@ export default {
         '--deep-shadow': this.deepShadow,
         '--push': this.raised || this.outlined || this.push,
         '--outlined': this.outlined,
+        'lv--primary': this.color === 'primary',
+        'lv--secondary': this.color === 'secondary',
+        'lv--success': this.color === 'success',
+        'lv--info': this.color === 'info',
+        'lv--warning': this.color === 'warning',
+        'lv--help': this.color === 'help',
+        'lv--danger': this.color === 'danger',
+        'lv--plain': this.color === 'plain',
       };
     },
     listeners() {

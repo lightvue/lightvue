@@ -15,6 +15,7 @@
         <lv-input v-model="allOptions.type" label="Type" /> <br />
         <lv-input v-model="allOptions['icon-right']" label="Right Icon" /> <br />
         <lv-input v-model="allOptions.size" label="Size" /> <br />
+        <lv-input v-model="allOptions.color" label="Color" /> <br />
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -50,6 +51,7 @@ export default {
         icon: '',
         'icon-right': '',
         size: 'xl',
+        color: 'primary'
       },
       stringProps: ['label', 'icon-right', 'size', 'type'],
     };
