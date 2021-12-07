@@ -135,6 +135,10 @@ const routes = [
         path: 'tooltip',
         component: () => import('@/pages/vue-components/tooltip.vue'),
       },
+      {
+        path: 'carousel',
+        component: () => import('@/pages/vue-components/carousel.vue'),
+      },
     ],
   },
   {

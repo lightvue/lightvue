@@ -13,14 +13,12 @@
 </template>
 <script>
 import LvCarousel from 'lightvue/carousel';
-import CarouselSlide from 'lightvue/carousel';
 import LvCard from 'lightvue/card';
 
 export default {
   components: {
     LvCarousel,
     LvCard,
-    CarouselSlide,
   },
   data() {
     return {
