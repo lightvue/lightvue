@@ -15,7 +15,11 @@ export default {
   methods: {
     updateModel(e) {
       console.log(e.target.value);
-      let val = e.target.value.replaceAll('/', '');
+
+      this.modelValue = this.maskDate(e.target.value);
+    },
+    maskDate(date) {
+      let val = date.replaceAll('/', '');
       console.log(val);
       val = val.split('');
       if (val.length > 4 && val.length < 9) {
@@ -33,24 +37,7 @@ export default {
         val.splice(2, 0, '/');
         val.splice(5, 0, '/');
       }
-      this.modelValue = val.join('');
-      console.log(val, this.modelValue);
-      // const regex = /^[0-1][0-9]-[0-3][0-9]-[0-9]{4}$/;
-      // if (len > 2) {
-      //   let val;
-      //   if (this.modelValue.includes('/')) {
-      //     val = this.modelValue.split('/');
-      //   } else {
-      //     val = this.modelValue.split('');
-      //   }
-      //   console.log(val);
-      //   for (let i = 1; i <= parseInt(len / 2); i++) {
-      //     console.log(i);
-      //     if (val[i * 2] != '/') val.splice(i * 2, 0, '/');
-      //   }
-      //   this.modelValue = val.join('');
-      //   console.log(val, this.modelValue);
-      // }
+      return val.join('');
     },
   },
 };
