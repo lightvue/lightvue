@@ -1,8 +1,8 @@
 <template>
   <div>
     <LvCarousel class="carousel">
-      <template>
-        <div v-for="slide in slides" :key="slide.text" class="carousel-slider" slot="slide">
+      <template #slide>
+        <div v-for="slide in slides" :key="slide.text" class="carousel-slider">
           <LvCard :class="`card ${slide.color}`" borderRadius="8px" padding="30px" :shadowStyle="6">
             {{ slide.text }}
           </LvCard>
