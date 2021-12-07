@@ -10,17 +10,15 @@
     </div>
 
     <LvCarousel class="carousel">
-      <template #slide>
-        <div v-for="slide in slides" :key="slide.name" class="carousel-slider">
-          <LvCard class="card" borderRadius="9px" padding="30px" :shadowStyle="1">
-            <img :src="slide.component" :alt="slide" class="slide" @click="location(slide.name)" />
-            <!-- <div class="component--title">{{ slide.name }} <br /></div>
+      <div v-for="slide in slides" :key="slide.name" class="carousel-slider">
+        <LvCard class="card" borderRadius="9px" padding="30px" :shadowStyle="1">
+          <img :src="slide.component" :alt="slide" class="slide" @click="location(slide.name)" />
+          <!-- <div class="component--title">{{ slide.name }} <br /></div>
             <div class="des">
               {{ slide.Description }}
             </div> -->
-          </LvCard>
-        </div>
-      </template>
+        </LvCard>
+      </div>
     </LvCarousel>
   </section>
 </template>
