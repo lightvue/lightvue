@@ -7,6 +7,11 @@
     display: flex;
     align-items: center;
     padding: 16px 10px;
+    scroll-snap-type: x proximity;
+    overflow-x: scroll;
+    .carousel-slider{
+      scroll-snap-align: center;
+    }
     &::-webkit-scrollbar {
       height: 0;
       width: 0;
@@ -19,6 +24,7 @@
 
 @media only screen and (max-width: '525px') {
   .slider-wrapper {
+    padding: 16px 10px;
     .slider-wrapper__nav-buttons {
       display: none;
     }

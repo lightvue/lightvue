@@ -1,5 +1,5 @@
 <template>
-  <div class="slider-wrapper" @mouseenter="stopSlideTimer" @mouseout="startTimer">
+  <div class="slider-wrapper"  @mouseover="stopSlideTimer" @mouseout="startTimer">
     <div class="slider-wrapper__slider" ref="cardWrapper" @scroll="handleScroll" :class="{ '--no-scroll': !scroll }">
       <slot name="slide"></slot>
     </div>
@@ -48,13 +48,11 @@ export default {
   methods: {
     startTimer() {
       if (this.autoplay) {
-        console.log('hii from mouseleve');
         this.stopSlideTimer();
         this.slideInterval = setInterval(() => {
           this.nextSlide();
         }, this.interval);
       } else return;
-
       //     }
       // }, (this.interval || config.defaultCarouselInterval))
     },
@@ -62,16 +60,15 @@ export default {
       clearInterval(this.slideInterval);
     },
     nextSlide() {
+      console.log(this.$refs.cardWrapper.scrollLeft);
       this.prevScroll = this.$refs.cardWrapper.scrollLeft;
-      console.log('this is prevscroll' + this.prevScroll);
-      const scrollLeft = this.prevScroll + 0.75 * this.$refs.cardWrapper.offsetWidth;
+      
+      const scrollLeft = this.prevScroll + 0.5 * this.$refs.cardWrapper.offsetWidth;
       this.$refs.cardWrapper.scrollLeft = scrollLeft;
     },
     prevSlide() {
       this.prevScroll = this.$refs.cardWrapper.scrollLeft;
-      console.log('this is prevscroll' + this.prevScroll);
-      const scrollLeft = this.prevScroll - 0.75 * this.$refs.cardWrapper.offsetWidth;
-      console.log('this is prevscroll' + scrollLeft);
+      const scrollLeft = this.prevScroll - 0.5 * this.$refs.cardWrapper.offsetWidth;
       this.$refs.cardWrapper.scrollLeft = scrollLeft;
     },
     setLeft() {

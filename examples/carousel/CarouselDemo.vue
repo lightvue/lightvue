@@ -2,7 +2,7 @@
   <div>
     <LvCarousel class="carousel" :autoplay="false">
       <template>
-        <div v-for="slide in slides" :key="slide" class="carousel-slider" slot="slide">
+        <div v-for="slide in slides" :key="slide.text" class="carousel-slider" slot="slide">
           <LvCard :class="`card ${slide.color}`" borderRadius="8px" padding="30px" :shadowStyle="6">
             {{ slide.text }}
           </LvCard>
