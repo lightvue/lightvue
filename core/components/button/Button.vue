@@ -97,14 +97,7 @@ export default {
         '--deep-shadow': this.deepShadow,
         '--push': this.raised || this.outlined || this.push,
         '--outlined': this.outlined,
-        'lv--primary': this.variant === 'primary',
-        'lv--secondary': this.variant === 'secondary',
-        'lv--success': this.variant === 'success',
-        'lv--info': this.variant === 'info',
-        'lv--warning': this.variant === 'warning',
-        'lv--help': this.variant === 'help',
-        'lv--danger': this.variant === 'danger',
-        'lv--plain': this.variant === 'plain',
+        [`lv--${this.variant}`]: true,
       };
     },
     listeners() {
@@ -122,6 +115,7 @@ export default {
 };
 </script>
 <style lang="scss">
+@import '../GlobalTheme.scss';
 @import './Button.scss';
 @import './ButtonTheme.scss';
 </style>
