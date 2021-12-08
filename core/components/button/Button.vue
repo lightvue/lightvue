@@ -78,7 +78,7 @@ export default {
       type: String,
       default: 'button',
     },
-     color: {
+     variant: {
       type: String,
       default: 'primary'
     }
@@ -97,14 +97,14 @@ export default {
         '--deep-shadow': this.deepShadow,
         '--push': this.raised || this.outlined || this.push,
         '--outlined': this.outlined,
-        'lv--primary': this.color === 'primary',
-        'lv--secondary': this.color === 'secondary',
-        'lv--success': this.color === 'success',
-        'lv--info': this.color === 'info',
-        'lv--warning': this.color === 'warning',
-        'lv--help': this.color === 'help',
-        'lv--danger': this.color === 'danger',
-        'lv--plain': this.color === 'plain',
+        'lv--primary': this.variant === 'primary',
+        'lv--secondary': this.variant === 'secondary',
+        'lv--success': this.variant === 'success',
+        'lv--info': this.variant === 'info',
+        'lv--warning': this.variant === 'warning',
+        'lv--help': this.variant === 'help',
+        'lv--danger': this.variant === 'danger',
+        'lv--plain': this.variant === 'plain',
       };
     },
     listeners() {
