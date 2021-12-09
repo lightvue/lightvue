@@ -115,7 +115,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import '../GlobalTheme.scss';
+/* @import '../GlobalTheme.scss'; */
 @import './Button.scss';
 @import './ButtonTheme.scss';
 </style>
