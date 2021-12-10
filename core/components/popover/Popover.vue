@@ -7,7 +7,7 @@
         <div v-show="isShow">
           <div class="popover-overlay" @click.stop="Hide" v-if="!hover"></div>
 
-          <div ref="popover" :class="className" :style="computedStyle">
+          <div ref="popover" :class="className" :style="computedStyle" @blur="blurred" @focus="focused">
             <div class="popover--content">
               <slot name="popover"></slot>
             </div>
@@ -56,6 +56,10 @@ export default {
       type: String,
       default: '#ffffff',
     },
+    isVisible: {
+      type: Boolean,
+      default: false,
+    },
   },
   data: () => ({
     isShow: false,
@@ -77,10 +81,17 @@ export default {
       };
     },
   },
-  mounted() {
-    console.log('THIS IS PARENT', this.$refs.parent.children[0]);
+  watch: {
+    isVisible: {
+      handler: 'toggleShow',
+      deep: true,
+    },
   },
   methods: {
+    toggleShow(newVal, oldVal) {
+      this.isShow = newVal;
+    },
+
     Show() {
       this.isShow = true;
     },
@@ -104,7 +115,7 @@ export default {
       const offset = this.offset;
       const contentWidth = content.offsetWidth;
       const contentHeight = content.offsetHeight;
-
+      // console.log(popover.getBoundingClientRect().bottom < window.innerHeight);
       switch (this.placement) {
         case 'top':
           console.log(this.$refs.popover.offsetHeight);
@@ -121,11 +132,19 @@ export default {
           break;
         case 'bottom':
         default:
-          popover.style.left = contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-          popover.style.top = contentHeight + offset + 'px';
+          if (popover.getBoundingClientRect().bottom < window.innerHeight) {
+            popover.style.left = contentWidth / 2 - popover.offsetWidth / 2 + 'px';
+            popover.style.top = contentHeight + offset + 'px';
+          } else {
+            this.placement = 'top';
+          }
           break;
       }
     },
+    // setBottom(popover) {
+    //   popover.style.left = contentWidth / 2 - popover.offsetWidth / 2 + 'px';
+    //   popover.style.top = contentHeight + offset + 'px';
+    // },
   },
 };
 </script>
