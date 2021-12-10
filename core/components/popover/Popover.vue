@@ -7,7 +7,7 @@
         <div v-show="isShow">
           <div class="popover-overlay" @click.stop="Hide" v-if="!hover"></div>
 
-          <div ref="popover" :class="className" :style="computedStyle" @blur="blurred" @focus="focused">
+          <div ref="popover" :class="className" :style="computedStyle">
             <div class="popover--content">
               <slot name="popover"></slot>
             </div>
