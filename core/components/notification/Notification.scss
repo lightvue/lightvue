@@ -8,7 +8,7 @@
     margin: 0 0 1rem 0;
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 3px;
-    background: #38b2ac;
+    background: var(--theme-color);
     .lv-notification__message-content {
       padding: 1rem;
       border-width: 0 0 0 0;
@@ -52,30 +52,30 @@
     .lv-notification__icon-close {
       color: rgba(255, 255, 255, 0.7) !important;
     }
-    &.--info {
-      background: #3298dc;
-      // border: solid #0891cf;
-      // border-width: 0 0 0 0px;
-      // color: #044868;
-    }
-    &.--success {
-      background: #48c774;
-      // border: solid #439446;
-      // border-width: 0 0 0 0px;
-      // color: #224a23;
-    }
-    &.--warn {
-      background: #f4c430;
-      // border: solid #d9a300;
-      // border-width: 0 0 0 0;
-      // color: #6d5100;
-    }
-    &.--error {
-      background: #bb2727;
-      // border: solid #e60017;
-      // border-width: 0;
-      // color: #73000c;
-    }
+    // &.--info {
+    //   background: var(--info);
+    //   // border: solid #0891cf;
+    //   // border-width: 0 0 0 0px;
+    //   // color: #044868;
+    // }
+    // &.--success {
+    //   background: var(--success);
+    //   // border: solid #439446;
+    //   // border-width: 0 0 0 0px;
+    //   // color: #224a23;
+    // }
+    // &.--warn {
+    //   background: var(--warning);
+    //   // border: solid #d9a300;
+    //   // border-width: 0 0 0 0;
+    //   // color: #6d5100;
+    // }
+    // &.--error {
+    //   background: var(--danger);
+    //   // border: solid #e60017;
+    //   // border-width: 0;
+    //   // color: #73000c;
+    // }
   }
 }
 @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
