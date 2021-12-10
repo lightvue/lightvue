@@ -44,7 +44,6 @@ export default {
     disabled: {},
     required: {},
     indeterminate: {},
-    color: String,
     offColor: String,
     hoverColor: String,
     indeterminateColor: String,
@@ -61,6 +60,10 @@ export default {
     icon: Boolean, //
     bigger: Boolean, //
     locked: Boolean, //
+    variant: {
+      type:String,
+      default: 'primary',
+    }
   },
 
   data() {
@@ -145,6 +148,7 @@ export default {
         '--with-icon': this.icon,
         '--bigger': this.bigger,
         '--locked': this.locked,
+        // [`lv--${this.variant}`]: true,
       };
     },
     onClasses() {
@@ -152,10 +156,10 @@ export default {
         state: true,
         'lv-on': this._toggle,
       };
-      if (this.color) {
-        classes[`lv-${this.color}`] = true;
+      if (this.variant) {
+        classes[`lv-${this.variant}`] = true;
         if (this.outline) {
-          classes[`lv-${this.color}-o`] = true;
+          classes[`lv-${this.variant}-o`] = true;
         }
       }
 
@@ -167,7 +171,6 @@ export default {
         'lv-off': true,
       };
       if (this.offColor) classes[`lv-${this.offColor}`] = true;
-
       return classes;
     },
     hoverClasses() {

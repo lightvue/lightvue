@@ -2,11 +2,11 @@ $light-checkbox--class-name: lv-checkbox !default;
 
 // colors
 $light-checkbox--color-default: #bdc3c7 !default;
-$light-checkbox--color-primary: #428bca !default;
-$light-checkbox--color-info: #5bc0de !default;
-$light-checkbox--color-success: #4dc0b5 !default;
-$light-checkbox--color-warning: #f0ad4e !default;
-$light-checkbox--color-danger: #d9534f !default;
+$light-checkbox--color-primary: var(--primary) !default;
+$light-checkbox--color-info: var(--info) !default;
+$light-checkbox--color-success: var(--success) !default;
+$light-checkbox--color-warning: var(--warning) !default;
+$light-checkbox--color-danger: var(--danger) !default;
 $light-checkbox--color-dark: #5a656b !default;
 
 // z-index
