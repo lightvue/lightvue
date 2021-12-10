@@ -1,0 +1,92 @@
+:root{
+  // Primary
+  --primary: #521EEB;
+  --primary-light: #8ed8d6;
+  --primary-dark:#319795;
+  --primary-inverse: #ffffff;
+  // Secondary
+  --secondary:#0CEBD7;
+  --secondary-light:#beccd2;
+  --secondary-dark:#56717d;
+  --secondary-inverse: #ffffff;
+  //Success
+  --success:#0CEB7B;
+  --success-light:#95e8df;
+  --success-dark:#03655b;
+  --success-inverse: #ffffff;
+  //Info
+  --info:#0CC3EB;
+  --info-light:#89d4fe;
+  --info-dark:#027abc;
+  --info-inverse: #ffffff;
+  //Warning
+  --warning: #ffe11c;
+  --warning-light:#ffd36d;
+  --warning-dark:#df9c00;
+  --warning-inverse: #ffffff;
+  //Help
+  --help:#795548;
+  --help-light:#baafac;
+  --help-dark:#795548;
+  --help-inverse: #ffffff;
+  //Danger
+  --danger:#EB2F17;
+  --danger-light:#e9a5a5;
+  --danger-dark:#9b2222;
+  --danger-inverse: #ffffff;
+  //Plain
+  --plain:#3f51b5;
+  --plain-light:#acb7f7;
+  --plain-dark:#2e3fa2;
+  --plain-inverse: #ffffff;
+}
+
+.lv--primary {
+  --theme-color: var(--primary) ;
+  --theme-color-light: var(--primary-light);
+  --theme-color-dark: var(--primary-dark);
+  --theme-color-inverse: var(--primary-inverse);
+}
+.lv--secondary {
+  --theme-color: var(--secondary) ;
+  --theme-color-light: var(--secondary-light);
+  --theme-color-dark: var(--secondary-dark);
+  --theme-color-inverse: var(--secondary-inverse);
+}
+.lv--success {
+  --theme-color: var(--success) ;
+  --theme-color-light: var(--success-light);
+  --theme-color-dark: var(--success-dark);
+  --theme-color-inverse: var(--success-inverse);
+}
+.lv--info {
+  --theme-color: var(--info) ;
+  --theme-color-light: var(--info-light);
+  --theme-color-dark: var(--info-dark);
+  --theme-color-inverse: var(--info-inverse);
+}
+.lv--warning {
+  --theme-color: var(--warning) ;
+  --theme-color-light: var(--warning-light);
+  --theme-color-dark: var(--warning-dark);
+  --theme-color-inverse: var(--warning-inverse);
+}
+.lv--help {
+  --theme-color: var(--help) ;
+  --theme-color-light: var(--help-light);
+  --theme-color-dark: var(--help-dark);
+  --theme-color-inverse: var(--help-inverse);
+}
+.lv--danger {
+  --theme-color: var(--danger) ;
+  --theme-color-light: var(--danger-light);
+  --theme-color-dark: var(--danger-dark);
+  --theme-color-inverse: var(--danger-inverse);
+}
+.lv--plain {
+  --theme-color: var(--plain) ;
+  --theme-color-light: var(--plain-light);
+  --theme-color-dark: var(--plain-dark);
+  --theme-color-inverse: var(--plain-inverse);
+}
+
