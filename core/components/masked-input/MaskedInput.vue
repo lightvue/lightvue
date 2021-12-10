@@ -1,7 +1,7 @@
 <template>
   <lv-input type="text" :editable="false" :class="{ '--not-empty': true }" :value="modelValue" @clear="handleClear()">
     <label for="">{{ modelValue }}</label>
-    <input id="msked" placeholder="________" @blur="handleBlur" @focus="handleFocus" class="lv-masked-input" v-bind="$attrs" @input="updateModel" :value="modelValue" />
+    <input id="msked" placeholder="__/__/____" @blur="handleBlur" @focus="handleFocus" class="lv-masked-input" v-bind="$attrs" @input="updateModel" :value="modelValue" />
   </lv-input>
 </template>
 
@@ -15,24 +15,28 @@ export default {
   },
   methods: {
     updateModel(e) {
-      let newVal = e.target.value;
-      let oldVal = this.modelValue.split('');
-      let curPos = e.target.selectionStart - 1;
-      console.log(oldVal, curPos, 1, '_');
-      if (newVal.length < 8) {
-        console.log('backspaced');
-        console.log(curPos + 1);
-        // oldVal[curPos + 1] = '_';
-        console.log(oldVal, curPos + 1, 1, '_');
-        oldVal.splice(curPos + 1, 1, '_');
-        this.modelValue = oldVal.join('');
-        this.updateModelValue(oldVal, curPos, e);
-      } else if (newVal[curPos] != oldVal[curPos]) {
-        oldVal[curPos] = newVal[curPos];
-        this.modelValue = oldVal.join('');
+      let newVal = e.target.value.replace('/', '');
+      if (newVal.length == 8) this.modelValue = newVal.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
+      else if (newVal.length == 4) this.modelValue = newVal.replace(/(\d{2})(\d{2})/, '$1/$2/');
+      else if (newVal.length == 2) this.modelValue = newVal.replace(/(\d{2})/, '$1/');
 
-        this.updateModelValue(oldVal, curPos, e);
-      }
+      // let oldVal = this.modelValue.split('');
+      // let curPos = e.target.selectionStart - 1;
+      // console.log(oldVal, curPos, 1, '_');
+      // if (newVal.length < 8) {
+      //   console.log('backspaced');
+      //   console.log(curPos + 1);
+      //   // oldVal[curPos + 1] = '_';
+      //   console.log(oldVal, curPos + 1, 1, '_');
+      //   oldVal.splice(curPos + 1, 1, '_');
+      //   this.modelValue = oldVal.join('');
+      //   this.updateModelValue(oldVal, curPos, e);
+      // } else if (newVal[curPos] != oldVal[curPos]) {
+      //   oldVal[curPos] = newVal[curPos];
+      //   this.modelValue = oldVal.join('');
+
+      //   this.updateModelValue(oldVal, curPos, e);
+      // }
     },
     updateModelValue(oldVal, i, e) {
       this.modelValue = oldVal.join('');
@@ -63,12 +67,12 @@ export default {
 
     handleFocus() {
       if (!this.modelValue) {
-        this.modelValue = '________';
+        this.modelValue = '__/__/____';
       }
     },
 
     handleBlur() {
-      if (this.modelValue == '________') {
+      if (this.modelValue == '__/__/____') {
         this.modelValue = '';
       }
     },
