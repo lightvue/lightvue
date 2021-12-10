@@ -3,30 +3,30 @@
     <LvButton label="ToggleVis" @click.stop="toggleVisibility" />
 
     <LvPopOver :offset="10" placement="bottom" :isVisible="visibility">
-      <template #popover>
+      <template #anchor>
         <LvButton label="Submit" class="lv--primary" />
       </template>
       <LvButton label="Bottom" class="lv--primary" />
     </LvPopOver>
     <LvPopOver :offset="10" placement="top" :isVisible="visibility">
-      <template #popover>
+      <template #anchor>
         <LvButton label="Submit" class="lv--primary" />
       </template>
       <LvButton label="Top" class="lv--primary" />
     </LvPopOver>
     <LvPopOver :offset="10" placement="right" :isVisible="visibility">
-      <template #popover>
+      <template #anchor>
         <LvButton label="Submit" class="lv--primary" />
       </template>
       <LvButton label="Right" class="lv--primary" />
     </LvPopOver>
     <LvPopOver :offset="10" placement="left" :isVisible="visibility">
-      <template #popover>
-        <div class="d-flex">
-          <lv-input type="text" label="First Name" placeholder="Enter your first name" />
-        </div>
+      <template #anchor>
+        <LvButton label="Left" class="lv--primary" />
       </template>
-      <LvButton label="Left" class="lv--primary" />
+      <div class="d-flex">
+        <lv-input type="text" label="First Name" placeholder="Enter your first name" />
+      </div>
     </LvPopOver>
   </div>
 </template>

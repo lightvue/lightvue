@@ -1,15 +1,15 @@
 <template>
   <div @click="Show" @mouseenter="ShowHover" @mouseleave="HideHover">
-    <div v-if="$slots.popover" :class="[Position]" class="popover" ref="parent">
-      <slot></slot>
+    <div :class="wrapperClass" class="popover" ref="parent">
+      <slot name="anchor"></slot>
 
       <transition :duration="{ enter: 300, leave: 300 }" name="fade" @enter="Enter">
         <div v-show="isShow">
           <div class="popover-overlay" @click.stop="Hide" v-if="!hover"></div>
 
-          <div ref="popover" :class="className" :style="computedStyle">
+          <div ref="popover" :class="popoverClass" :style="computedStyle">
             <div class="popover--content">
-              <slot name="popover"></slot>
+              <slot></slot>
             </div>
             <div class="popover-tip"></div>
           </div>
@@ -20,14 +20,6 @@
 </template>
 
 <script>
-const BaseClass = 'popover--';
-const PopoverPosition = {
-  top: BaseClass + 'top',
-  bottom: BaseClass + 'bottom',
-  right: BaseClass + 'right',
-  left: BaseClass + 'left',
-};
-
 export default {
   name: 'LvPopOver',
   props: {
@@ -66,10 +58,10 @@ export default {
     positionClass: '',
   }),
   computed: {
-    Position() {
-      return PopoverPosition[this.placement];
+    wrapperClass() {
+      return `popover--${this.placement}`;
     },
-    className() {
+    popoverClass() {
       this.positionClass = `arrow-position-${this.placement}`;
       return ['popover-item', this.positionClass];
     },
