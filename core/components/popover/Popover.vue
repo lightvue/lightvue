@@ -4,9 +4,8 @@
       <slot name="anchor"></slot>
 
       <transition :duration="{ enter: 300, leave: 300 }" name="fade" @enter="Enter">
-        <div v-show="isShow">
+        <div v-if="isShow || modelValue">
           <div class="popover-overlay" @click.stop="Hide" v-if="!hover"></div>
-
           <div ref="popover" :class="popoverClass" :style="computedStyle">
             <div class="popover--content">
               <slot></slot>
@@ -20,8 +19,11 @@
 </template>
 
 <script>
+import { trueValueMixin } from 'lightvue/mixins';
+
 export default {
   name: 'LvPopOver',
+  mixins: [trueValueMixin],
   props: {
     placement: {
       type: String,
@@ -55,6 +57,7 @@ export default {
   },
   data: () => ({
     isShow: false,
+    // isVisible: false,
     positionClass: '',
   }),
   computed: {
@@ -73,32 +76,25 @@ export default {
       };
     },
   },
-  watch: {
-    isVisible: {
-      handler: 'toggleShow',
-      deep: true,
-    },
-  },
-  methods: {
-    toggleShow(newVal, oldVal) {
-      this.isShow = newVal;
-    },
 
+  methods: {
     Show() {
       this.isShow = true;
+      this.updateValue(true);
     },
 
     Hide() {
       this.isShow = false;
+      this.updateValue(false);
     },
     ShowHover() {
       if (this.hover) {
-        this.isShow = true;
+        this.Show();
       }
     },
     HideHover() {
       if (this.hover) {
-        this.isShow = false;
+        this.Hide();
       }
     },
     Enter() {

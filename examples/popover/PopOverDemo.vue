@@ -2,16 +2,10 @@
   <div class="test-content">
     <LvButton label="ToggleVis" @click.stop="toggleVisibility" />
 
-    <LvPopOver :offset="10" placement="bottom" :isVisible="visibility">
-      <template #anchor>
-        <LvButton label="Submit" class="lv--primary" />
-      </template>
+    <LvPopOver :offset="10" placement="bottom" v-model="visibility">
       <LvButton label="Bottom" class="lv--primary" />
     </LvPopOver>
-    <LvPopOver :offset="10" placement="top" :isVisible="visibility">
-      <template #anchor>
-        <LvButton label="Submit" class="lv--primary" />
-      </template>
+    <LvPopOver :offset="10" placement="top" :isVisible="visibility" id="XYZ">
       <LvButton label="Top" class="lv--primary" />
     </LvPopOver>
     <LvPopOver :offset="10" placement="right" :isVisible="visibility">
