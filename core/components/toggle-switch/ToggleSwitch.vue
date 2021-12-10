@@ -60,6 +60,10 @@ export default {
     icon: String,
     checkedIcon: String,
     ariaLabelledBy: null,
+    variant: {
+      type: String,
+      default: 'primary'
+    }
   },
   data() {
     return {
@@ -87,6 +91,7 @@ export default {
           "--checked": this.modelValue,
           "--disabled": this.disabled,
           "--dense": this.dense,
+          [`lv--${this.variant}`]:true 
         },
       ];
     },
@@ -99,7 +104,6 @@ export default {
         this.$emit("update:modelValue", !this.modelValue); // Only for Vue 3
         this.$emit("change", event);
         this.$emit("click", event);
-
         this.$refs.input.focus();
       }
     },
@@ -123,5 +127,6 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "../GlobalTheme.scss";
 @import "./ToggleSwitch.scss";
 </style>
