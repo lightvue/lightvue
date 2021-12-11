@@ -63,7 +63,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import './GlobalTheme.scss';
 .page-button {
   width: fit-content;
   text-decoration: none;

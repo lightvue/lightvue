@@ -41,12 +41,8 @@ export default {
     containerClass() {
       return [
         'lv-toast__message',
-        {
-          '--info': this.message.type === 'info',
-          '--warn': this.message.type === 'warn',
-          '--error': this.message.type === 'error',
-          '--success': this.message.type === 'success',
-        },
+        'lv--primary', //default
+        `lv--${this.message.type}`
       ];
     },
   },

@@ -4,28 +4,28 @@
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 25px;
     // background: #38b2ac;
-    background:var(--primary);
+    background:var(--theme-color) !important;
     .lv-toast__message-content {
       padding: 1rem;
       border-width: 0 0 0 0;
       text-align: center;
-      color: white !important;
+      color: var(--theme-color-inverse) !important;
       width: 100%;
       .lv-toast__message-text {
-        color: white !important;
+        color: var(--theme-color-inverse) !important;
       }
     }
-    &.--info {
-      background: var(--info);
-    }
-    &.--success {
-      background: var(--success);
-    }
-    &.--warn {
-      background: var(--warning);
-    }
-    &.--error {
-      background: var(--danger);
-    }
+    // &.--info {
+    //   background: var(--info);
+    // }
+    // &.--success {
+    //   background: var(--success);
+    // }
+    // &.--warn {
+    //   background: var(--warning);
+    // }
+    // &.--error {
+    //   background: var(--danger);
+    // }
   }
 }
