@@ -4,7 +4,7 @@
       <LvButton :icon="icon" :class="ButtonClass" @click="openPicker" :rounded="rounded" :label="placeholder" />
     </template>
     <template v-else-if="!drop && withButtonInput">
-      <lv-input type="text" v-model="value1" :placeholder="placeholder" clearable @click="openPicker" :rounded="rounded">
+      <lv-input type="text" v-model="value1" :placeholder="placeholder" clearable :rounded="rounded">
         <template #prepend>
           <LvButton :icon="icon" :class="ButtonClass" @click="openPicker" />
         </template>
@@ -77,11 +77,6 @@ export default {
       type: String,
       default: '2rem',
     },
-
-    validateFn: {
-      type: Function,
-      default: () => true,
-    },
     label: String,
   },
 
@@ -127,7 +122,8 @@ export default {
         return;
       }
       // check File extension for normal upload its not necessary but for drop we have to check the extension
-      if (!this.checkFileExtensions(files)) {
+      console.log(this.checkFileExtensions(files));
+      if (this.checkFileExtensions(files)) {
         this.$emit('extension-error', files);
         this.$refs.LvFileInput.value = '';
         return;
@@ -148,7 +144,7 @@ export default {
       // check if the selected files are in supported extensions
       const invalidFileIndex = list.findIndex(file => {
         const ext = `.${file.name.toLowerCase().split('.').pop()}`;
-        return !extList.includes(ext);
+        return extList.includes(ext);
       });
 
       // all exts are valid
