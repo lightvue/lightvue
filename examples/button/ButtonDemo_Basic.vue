@@ -4,6 +4,7 @@
     <LvButton label="Submit" class="lv--primary" />
     <LvButton label="Disabled" disabled="disabled" class="lv--primary" />
     <LvButton label="Link" class="--link-button lv--primary" />
+    <LvButton label="Cancel" class="lv--cancel" />
 
     <h5>Icons</h5>
     <LvButton icon="light-icon-alert-circle" class="lv--primary" />
@@ -17,6 +18,7 @@
     <LvButton icon="light-icon-arrow-down-circle" class="--link-button lv--primary" />
     <LvButton label="Submit" icon="light-icon-arrow-down-circle" class="--link-button lv--primary" />
     <LvButton label="Submit" icon-right="light-icon-arrow-down-circle" class="--link-button lv--primary" />
+  
 
     <h5>Severities</h5>
     <LvButton label="Primary" class="lv--primary" />
@@ -26,6 +28,7 @@
     <LvButton label="Warning" class="lv--warning" />
     <LvButton label="Help" class="lv--help" />
     <LvButton label="Danger" class="lv--danger" />
+    <LvButton label="Cancel" class="lv--cancel" />
     <br />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--primary" />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--secondary" />
@@ -34,6 +37,7 @@
     <LvButton icon="light-icon-arrow-down-circle" class="lv--warning" />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--help" />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--danger" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--cancel" />
 
     <h5>Raised Buttons</h5>
     <LvButton label="Primary" raised class="lv--primary" />
@@ -43,6 +47,7 @@
     <LvButton label="Warning" class="lv--warning" raised />
     <LvButton label="Help" class="lv--help" raised />
     <LvButton label="Danger" class="lv--danger" raised />
+    <LvButton label="Danger" class="lv--cancel" raised />
     <br />
     <LvButton icon="light-icon-arrow-down-circle" raised class="lv--primary" />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--secondary" raised />
@@ -50,7 +55,7 @@
     <LvButton icon="light-icon-arrow-down-circle" class="lv--info" raised />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--warning" raised />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--help" raised />
-    <LvButton icon="light-icon-arrow-down-circle" class="lv--danger" raised />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--cancel" raised />
 
     <h5>Text Buttons</h5>
     <LvButton label="Primary" class="--text-button lv--primary" />
@@ -61,6 +66,7 @@
     <LvButton label="Help" class="lv--help --text-button" />
     <LvButton label="Danger" class="lv--danger --text-button" />
     <LvButton label="Plain" class="--text-button lv--plain" />
+    <LvButton label="Plain" class="--text-button lv--cancel" />
     <br />
     <LvButton icon="light-icon-arrow-down-circle" class="--text-button lv--primary" />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--secondary --text-button" />
@@ -69,6 +75,7 @@
     <LvButton icon="light-icon-arrow-down-circle" class="lv--warning --text-button" />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--help --text-button" />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--danger --text-button" />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--cancel --text-button" />
 
     <h5>Outlined Buttons</h5>
     <LvButton label="Primary" outlined class="lv--primary" />
@@ -78,6 +85,7 @@
     <LvButton label="Warning" outlined class="lv--warning" />
     <LvButton label="Help" outlined class="lv--help" />
     <LvButton label="Danger" outlined class="lv--danger" />
+    <LvButton label="Cancel" outlined class="lv--cancel" />
     <br />
     <LvButton icon="light-icon-arrow-down-circle" outlined class="lv--primary" />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--secondary" outlined />
@@ -86,6 +94,7 @@
     <LvButton icon="light-icon-arrow-down-circle" class="lv--warning" outlined />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--help" outlined />
     <LvButton icon="light-icon-arrow-down-circle" class="lv--danger" outlined />
+    <LvButton icon="light-icon-arrow-down-circle" class="lv--cancel" outlined />
 
     <!-- <h5>Append / Prepend [slots]</h5>
         <LvButton type="button" label="Emails" badge="8" />
@@ -102,6 +111,7 @@
       <LvButton icon="light-icon-arrow-down-circle" size="md" class="lv--primary" />
       <LvButton icon="light-icon-arrow-down-circle" size="lg" class="lv--primary" />
       <LvButton icon="light-icon-arrow-down-circle" size="xl" class="lv--primary" />
+      <LvButton icon="light-icon-arrow-down-circle" size="xl" class="lv--cancel" />
     </div>
   </div>
 </template>
