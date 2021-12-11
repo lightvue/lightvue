@@ -14,7 +14,7 @@
       border-width: 0 0 0 0;
       .lv-notification__message-text {
         margin: 0 0 0 1rem;
-        color: white !important;
+        color: var(--theme-color-inverse) !important;
       }
       .lv-notification__message-icon {
         font-size: 2.4rem;
