@@ -1,12 +1,11 @@
 <template>
   <div>
     <h5>Default</h5>
-    <LvUpload @validated="handleFilesValidated" @changed="handleFilesChanged" :withButtonInput="true"> </LvUpload><br />
-    <h5>Restriction for file type (.svg,.jpg)</h5>
-    <LvUpload accept-extensions=".jpg,.svg" @validated="handleFilesValidated" @changed="handleFilesChanged" :withButtonInput="true"> </LvUpload><br />
-    <h5>Restriction for file Size</h5>
-
-    <LvUpload :max-file-size="5 * 1024 * 1024" @validated="handleFilesValidated" @changed="handleFilesChanged" :withButtonInput="true"> </LvUpload><br />
+    <LvUpload @submit-image="handleFilesChanged($event)" @file-size-error="showError" :label="fileName" @extension-error="showExtensionError" :withButtonInput="true"> </LvUpload><br />
+    <h5>Restriction for file type (.pdf)</h5>
+    <LvUpload extensions=".pdf" @submit-image="handleFilesChanged($event)" @file-size-error="showError" :label="fileName" @extension-error="showExtensionError" :withButtonInput="true"> </LvUpload><br />
+    <h5>Restriction for file Size(Less Than 2MB)</h5>
+    <LvUpload :max-file-size="2024" @submit-image="handleFilesChanged($event)" @file-size-error="showError" :label="fileName" @extension-error="showExtensionError" :withButtonInput="true"> </LvUpload><br />
   </div>
 </template>
 <script>
@@ -15,14 +14,23 @@ export default {
   components: {
     LvUpload,
   },
+  data() {
+    return {
+      filePreviewImage: '',
+      fileName: '',
+    };
+  },
   methods: {
-    handleFilesValidated(result, files) {
-      console.log('Validation result: ', result);
+    showError() {
+      this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Please select file less than 1mb', duration: 3000 });
     },
-
+    showExtensionError() {
+      this.$notification.add({ type: 'error', title: 'Extension error', content: 'Please select right file', duration: 3000 });
+    },
     handleFilesChanged(files) {
-      console.log('Selected files: ');
-      console.table(files);
+      console.log('Selected files: ', files);
+      this.fileName = files[0].name;
+      this.$notification.add({ type: 'success', title: 'File Uploaded', content: 'File Upload success', duration: 3000 });
     },
   },
 };
