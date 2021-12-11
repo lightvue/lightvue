@@ -10,18 +10,18 @@ const UploadAPI = {
       name: 'multiple',
       type: 'Boolean',
       default: 'false',
-      description: 'Multiple files upload.',
+      description: 'Native Multiple files upload.',
     },
     {
-      name: 'acceptExtensions',
+      name: 'extensions',
       type: 'String',
       default: '',
-      description: 'Restrict the file extension.',
+      description: 'Native extensions restrict the file extension.',
     },
     {
       name: 'maxFileSize',
       type: 'Number',
-      default: 'NaN',
+      default: '1024',
       description: 'Restrict the fileSize.',
     },
     {
@@ -52,7 +52,7 @@ const UploadAPI = {
       name: 'icon',
       type: 'String',
       default: 'light-icon-cloud-upload',
-      description: 'The light icon button ',
+      description: 'The light icon Class',
     },
     {
       name: 'ButtonClass',
@@ -60,12 +60,12 @@ const UploadAPI = {
       default: 'lv--success',
       description: 'The Lvbutton class',
     },
-    // {
-    //   name: 'dimension',
-    //   type: 'String',
-    //   default: 'height',
-    //   description: 'Configures the direction of transition.',
-    // },
+    {
+      name: 'label',
+      type: 'String',
+      default: 'Choose files & Choose a file',
+      description: 'The lable for buttons and Placeholder for input Field',
+    },
     // {
     //   name: 'duration',
     //   type: 'Number',
@@ -109,84 +109,109 @@ const UploadAPI = {
     //   description: 'Input element with rounded corners',
     // },
   ],
-  // events: [
-  //   {
-  //     name: 'input-native',
-  //     params: [
-  //       {
-  //         name: 'value',
-  //         type: 'String',
-  //         description: 'Value of the input field, at any time.',
-  //       },
-  //     ],
-  //     description: 'Input element with rounded corners',
-  //   },
-  //   {
-  //     name: 'input',
-  //     params: [
-  //       {
-  //         name: 'value',
-  //         type: 'String',
-  //         description: 'Value of the input field, at any time.',
-  //       },
-  //     ],
-  //     description: 'Input element with rounded corners',
-  //   },
-  //   {
-  //     name: 'update:modelValue',
-  //     params: [
-  //       {
-  //         name: 'value',
-  //         type: 'String',
-  //         description: 'Value of the input field, at any time.',
-  //       },
-  //     ],
-  //     description: 'Input element with rounded corners',
-  //   },
-  //   {
-  //     name: 'change',
-  //     params: [
-  //       {
-  //         name: 'value',
-  //         type: 'String',
-  //         description: 'Value of the input field, at any time.',
-  //       },
-  //     ],
-  //     description: 'Input element with rounded corners',
-  //   },
-  //   {
-  //     name: 'click',
-  //     params: [
-  //       {
-  //         name: 'value',
-  //         type: 'String',
-  //         description: 'Value of the input field, at any time.',
-  //       },
-  //     ],
-  //     description: 'Input element with rounded corners',
-  //   },
-  //   {
-  //     name: 'focus',
-  //     params: [
-  //       {
-  //         name: 'value',
-  //         type: 'String',
-  //         description: 'Value of the input field, at any time.',
-  //       },
-  //     ],
-  //     description: 'Input element with rounded corners',
-  //   },
-  //   {
-  //     name: 'blur',
-  //     params: [
-  //       {
-  //         name: 'value',
-  //         type: 'String',
-  //         description: 'Value of the input field, at any time.',
-  //       },
-  //     ],
-  //     description: 'Input element with rounded corners',
-  //   },
-  // ],
+  events: [
+    {
+      name: 'submit-image',
+      params: [
+        {
+          name: 'files',
+          type: 'Object',
+          description: 'onChange native event',
+        },
+      ],
+
+      description: 'File that catch through onChange native event',
+    },
+    {
+      name: 'extension-error',
+      params: [
+        {
+          name: 'files',
+          type: 'Object',
+          description: 'File that catch through onChange native event',
+        },
+      ],
+
+      description: 'If File Extension does not match with provided value',
+    },
+    {
+      name: 'file-size-error',
+      params: [
+        {
+          name: 'imageSize',
+          type: 'Number',
+          description: 'Uploaded File Size',
+        },
+      ],
+
+      description: 'If Uploaded file size exceeds maxFileSize',
+    },
+    //   {
+    //     name: 'input',
+    //     params: [
+    //       {
+    //         name: 'value',
+    //         type: 'String',
+    //         description: 'Value of the input field, at any time.',
+    //       },
+    //     ],
+    //     description: 'Input element with rounded corners',
+    //   },
+    //   {
+    //     name: 'update:modelValue',
+    //     params: [
+    //       {
+    //         name: 'value',
+    //         type: 'String',
+    //         description: 'Value of the input field, at any time.',
+    //       },
+    //     ],
+    //     description: 'Input element with rounded corners',
+    //   },
+    //   {
+    //     name: 'change',
+    //     params: [
+    //       {
+    //         name: 'value',
+    //         type: 'String',
+    //         description: 'Value of the input field, at any time.',
+    //       },
+    //     ],
+    //     description: 'Input element with rounded corners',
+    //   },
+    //   {
+    //     name: 'click',
+    //     params: [
+    //       {
+    //         name: 'value',
+    //         type: 'String',
+    //         description: 'Value of the input field, at any time.',
+    //       },
+    //     ],
+    //     description: 'Input element with rounded corners',
+    //   },
+    //   {
+    //     name: 'focus',
+    //     params: [
+    //       {
+    //         name: 'value',
+    //         type: 'String',
+    //         description: 'Value of the input field, at any time.',
+    //       },
+    //     ],
+    //     description: 'Input element with rounded corners',
+    //   },
+    //   {
+    //     name: 'blur',
+    //     params: [
+    //       {
+    //         name: 'value',
+    //         type: 'String',
+    //         description: 'Value of the input field, at any time.',
+    //       },
+    //     ],
+    //     description: 'Input element with rounded corners',
+    // },
+  ],
 };
 export default UploadAPI;
