@@ -5,7 +5,7 @@
 
       <transition :duration="{ enter: 300, leave: 300 }" name="fade" @enter="Enter">
         <div v-if="isShow || modelValue">
-          <div class="popover-overlay" @click.stop="Hide" v-if="!hover"></div>
+          <!-- <div class="popover-overlay" @click.stop="Hide" v-if="!hover"></div> -->
           <div ref="popover" :class="popoverClass" :style="computedStyle">
             <div class="popover--content">
               <slot></slot>
@@ -60,6 +60,10 @@ export default {
     // isVisible: false,
     positionClass: '',
   }),
+  mounted() {},
+  beforeUnmount() {
+    document.removeEventListener('click', this.closePopover);
+  },
   computed: {
     wrapperClass() {
       return `popover--${this.placement}`;
@@ -81,11 +85,20 @@ export default {
     Show() {
       this.isShow = true;
       this.updateValue(true);
+      console.log('Runnign show and addind listeern');
+      setTimeout(() => {
+        document.addEventListener('click', this.closePopover);
+      }, 1);
+    },
+    closePopover(e) {
+      if (!this.$refs.popover.contains(e.target)) this.Hide();
     },
 
     Hide() {
       this.isShow = false;
       this.updateValue(false);
+      console.log('Runnign hide');
+      document.removeEventListener('click', this.closePopover);
     },
     ShowHover() {
       if (this.hover) {
