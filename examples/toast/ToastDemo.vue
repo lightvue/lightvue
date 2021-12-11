@@ -34,10 +34,10 @@ export default {
       this.$toast.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
     showWarn() {
-      this.$toast.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
+      this.$toast.add({ type: 'warning', title: 'Warn Message', content: 'Message Content', duration: 3000 });
     },
     showError() {
-      this.$toast.add({ type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
+      this.$toast.add({ type: 'danger', title: 'Error Message', content: 'Message Content', duration: 3000 });
     },
     showTop() {
       this.$toast.add({ type: 'info', title: 'Info Message', content: 'Message Content', position: 'top', duration: 3000 });
@@ -46,14 +46,14 @@ export default {
       this.$toast.add({ type: 'info', title: 'Info Message', content: 'Message Content', position: 'center', duration: 3000 });
     },
     showBottom() {
-      this.$toast.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', position: 'bottom', duration: 3000 });
+      this.$toast.add({ type: 'warning', title: 'Warn Message', content: 'Message Content', position: 'bottom', duration: 3000 });
     },
     showSticky() {
       this.$toast.add({ type: 'info', title: 'Sticky Message', content: 'Message Content' });
     },
     showMultiple() {
       this.$toast.add({ type: 'info', title: 'Message 1', content: 'Message 1 Content', duration: 3000 });
-      this.$toast.add({ type: 'warn', title: 'Message 2', content: 'Message 2 Content', duration: 3000 });
+      this.$toast.add({ type: 'warning', title: 'Message 2', content: 'Message 2 Content', duration: 3000 });
       this.$toast.add({ title: 'Message 3', content: 'Message 3 Content', duration: 3000 });
     },
     clear() {
