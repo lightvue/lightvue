@@ -54,6 +54,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    target: {
+      type: String,
+      default: '',
+    },
   },
   data: () => ({
     isShow: false,
@@ -61,9 +65,6 @@ export default {
     positionClass: '',
   }),
   mounted() {},
-  beforeUnmount() {
-    document.removeEventListener('click', this.closePopover);
-  },
   computed: {
     wrapperClass() {
       return `popover--${this.placement}`;
@@ -77,18 +78,23 @@ export default {
         'min-width': this.width,
         'max-height': this.height,
         backgroundColor: this.backgroundColor,
+        position: this.target ? 'fixed' : 'absolute',
       };
     },
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.closePopover);
   },
 
   methods: {
     Show() {
-      this.isShow = true;
-      this.updateValue(true);
-      console.log('Runnign show and addind listeern');
-      setTimeout(() => {
-        document.addEventListener('click', this.closePopover);
-      }, 1);
+      if (!this.isShow) {
+        this.isShow = true;
+        this.updateValue(true);
+        setTimeout(() => {
+          document.addEventListener('click', this.closePopover);
+        }, 1);
+      }
     },
     closePopover(e) {
       if (!this.$refs.popover.contains(e.target)) this.Hide();
@@ -97,7 +103,6 @@ export default {
     Hide() {
       this.isShow = false;
       this.updateValue(false);
-      console.log('Runnign hide');
       document.removeEventListener('click', this.closePopover);
     },
     ShowHover() {
@@ -111,33 +116,39 @@ export default {
       }
     },
     Enter() {
-      const content = this.$refs.parent.children[0];
+      const targetEl = this.target ? document.querySelector(this.target) : '';
+      const content = targetEl ? targetEl : this.$refs.parent.children[0];
       const popover = this.$refs.popover;
       const offset = this.offset;
       const contentWidth = content.offsetWidth;
       const contentHeight = content.offsetHeight;
+      const contentOffsetTop = targetEl ? content.getBoundingClientRect().top : 0;
+      const contentOffsetLeft = targetEl ? content.getBoundingClientRect().left : 0;
+      if (!targetEl) console.warn(`Given target: '${this.target}' is not a valid element.`);
       // console.log(popover.getBoundingClientRect().bottom < window.innerHeight);
+
+      console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n', content, contentOffsetLeft, contentOffsetTop);
       switch (this.placement) {
-        case 'top':
-          console.log(this.$refs.popover.offsetHeight);
-          popover.style.left = contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-          popover.style.top = -this.$refs.popover.offsetHeight - offset + 'px';
-          break;
         case 'left':
-          popover.style.left = -popover.offsetWidth - offset + 'px';
-          popover.style.top = contentHeight / 2 - popover.offsetHeight / 2 + 'px';
+          popover.style.left = contentOffsetLeft + -popover.offsetWidth - offset + 'px';
+          popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
           break;
         case 'right':
-          popover.style.left = contentWidth + offset + 'px';
-          popover.style.top = contentHeight / 2 - popover.offsetHeight / 2 + 'px';
+          popover.style.left = contentOffsetLeft + contentWidth + offset + 'px';
+          popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
           break;
         case 'bottom':
+          popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
+          popover.style.top = contentOffsetTop + contentHeight + offset + 'px';
+          break;
+        case 'top':
         default:
-          if (popover.getBoundingClientRect().bottom < window.innerHeight) {
-            popover.style.left = contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-            popover.style.top = contentHeight + offset + 'px';
+          if (popover.getBoundingClientRect().top < window.innerHeight) {
+            popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
+            popover.style.top = contentOffsetTop + contentHeight + offset + 'px';
           } else {
-            this.placement = 'top';
+            popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
+            popover.style.top = contentOffsetTop + -this.$refs.popover.offsetHeight - offset + 'px';
           }
           break;
       }
