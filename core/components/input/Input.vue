@@ -1,5 +1,5 @@
 <template>
-  <div :class="['lv-input__group', { '--with-floating-label': floatingLabel }, { '--not-empty': filled }, { '--with-bottom-bar': floatingLabel || bottomBar }]">
+  <div :class="['lv-input__group', { '--with-floating-label': floatingLabel }, { '--not-empty': filled }, { '--with-bottom-bar': floatingLabel || bottomBar } , `lv--${this.variant}`]">
     <label :for="name">
       <div class="lv-input__label" v-if="label" :for="name">{{ label }}</div>
     </label>
@@ -93,6 +93,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    variant: {
+      type: String,
+      default: 'primary'
+    }
   },
   computed: {
     modelValue() {
