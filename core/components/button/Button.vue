@@ -1,5 +1,5 @@
 <template>
-  <button class="lv-button lv--primary" :class="buttonClass" v-bind="$attrs" :type="type" v-on="listeners">
+  <button class="lv-button lv--cancel" :class="buttonClass" v-bind="$attrs" :type="type" v-on="listeners">
     <div v-if="$slots['prepend'] || icon" class="lv-button__prepend">
       <slot name="prepend">
         <div v-if="icon" class="lv-button__icon">

@@ -8,6 +8,7 @@
     text-align: center;
     overflow: hidden;
     position: relative;
+    white-space: nowrap;
     &:disabled{
         opacity: 0.6;
         cursor: default;
@@ -15,14 +16,15 @@
     &.--rounded {
         border-radius: 2rem;
     }
-    &.--push{
-        transition: all .2s ease-in-out;
+    // &.--push{
+        // transition: all .2s ease-in-out;
         // box-shadow: none !important;
-        &:active {
-            box-shadow: none;
-            transform: translateY(2px);
-        }
+    &:active {
+        transition: all .2s ease-in-out;
+        box-shadow: none;
+        transform: translateY(2px);
     }
+    // }
     &.--icon-only {
         justify-content: center;
         &.--rounded {

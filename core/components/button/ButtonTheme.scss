@@ -46,6 +46,14 @@
   --theme-color-dark: #2e3fa2;
   --theme-color-inverse: #ffffff;
 }
+
+.lv--cancel{
+  --theme-color: #edf1f5 !important;
+  --theme-color-light: #8ed8d6 !important;
+  --theme-color-dark: #dfe5ea !important;
+  --theme-color-inverse: #718096 !important;
+}
+
 .lv-button {
   // color: #ffffff;
   // background: var(--primary-color);
@@ -53,7 +61,7 @@
   background-color: var(--theme-color);
   // border: 1px solid var(--primary-color);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 12px 20px;
   font-size: 1rem;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, border-radius 0.3s;
   border-radius: 4px;
@@ -61,13 +69,13 @@
     &:hover {
       // background: #319795;
       background-color: var(--theme-color-dark);
-      color: #ffffff;
+      color: var(--theme-color-inverse);
       // border-color: #319795;
     }
     &:active {
       // background: var(--primary-color);
       background-color: var(--theme-color);
-      color: #ffffff;
+      color: var(--theme-color-inverse);
       // border-color: var(--primary-color);
     }
   }
