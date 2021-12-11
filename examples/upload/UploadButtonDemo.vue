@@ -33,13 +33,11 @@ export default {
       this.$notification.add({ type: 'error', title: 'Extension error', content: 'Please select right file', duration: 3000 });
     },
     handleFilesChanged(files) {
-      console.log('Selected files: ', files);
       this.fileName = files[0].name;
       this.$notification.add({ type: 'success', title: 'File Uploaded', content: 'File Upload success', duration: 3000 });
       this.handleFilesChangedPreview(files);
     },
     handleFilesChangedPreview(files) {
-      console.log('Selected files: ');
       this.filePreviewImage = URL.createObjectURL(files[0]);
     },
   },

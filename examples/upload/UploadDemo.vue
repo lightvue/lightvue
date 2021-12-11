@@ -22,13 +22,12 @@ export default {
   },
   methods: {
     showError() {
-      this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Please select file less than 1mb', duration: 3000 });
+      this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Please select file less than 2mb', duration: 3000 });
     },
     showExtensionError() {
       this.$notification.add({ type: 'error', title: 'Extension error', content: 'Please select right file', duration: 3000 });
     },
     handleFilesChanged(files) {
-      console.log('Selected files: ', files);
       this.fileName = files[0].name;
       this.$notification.add({ type: 'success', title: 'File Uploaded', content: 'File Upload success', duration: 3000 });
     },
