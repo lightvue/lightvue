@@ -1,11 +1,11 @@
 <template>
-  <div @click="Show" @mouseenter="ShowHover" @mouseleave="HideHover">
+  <div @click="showPopover" @mouseenter="showHover" @mouseleave="hideHover">
     <div :class="wrapperClass" class="popover" ref="parent">
       <slot name="anchor"></slot>
 
-      <transition :duration="{ enter: 300, leave: 300 }" name="fade" @enter="Enter">
+      <transition :duration="{ enter: 300, leave: 300 }" name="fade" @enter="enterPopover">
         <div v-if="isShow || modelValue">
-          <!-- <div class="popover-overlay" @click.stop="Hide" v-if="!hover"></div> -->
+          <!-- <div class="popover-overlay" @click.stop="hidePopover" v-if="!hover"></div> -->
           <div ref="popover" :class="popoverClass" :style="computedStyle">
             <div class="popover--content">
               <slot></slot>
@@ -63,14 +63,17 @@ export default {
     isShow: false,
     // isVisible: false,
     positionClass: '',
+    computedPlacement: '',
   }),
-  mounted() {},
+  mounted() {
+    this.computedPlacement = this.placement ? this.placement : 'top';
+  },
   computed: {
     wrapperClass() {
       return `popover--${this.placement}`;
     },
     popoverClass() {
-      this.positionClass = `arrow-position-${this.placement}`;
+      this.positionClass = `arrow-position-${this.computedPlacement}`;
       return ['popover-item', this.positionClass];
     },
     computedStyle() {
@@ -87,7 +90,7 @@ export default {
   },
 
   methods: {
-    Show() {
+    showPopover() {
       if (!this.isShow) {
         this.isShow = true;
         this.updateValue(true);
@@ -97,25 +100,25 @@ export default {
       }
     },
     closePopover(e) {
-      if (!this.$refs.popover.contains(e.target)) this.Hide();
+      if (!this.$refs.popover.contains(e.target)) this.hidePopover();
     },
 
-    Hide() {
+    hidePopover() {
       this.isShow = false;
       this.updateValue(false);
       document.removeEventListener('click', this.closePopover);
     },
-    ShowHover() {
+    showHover() {
       if (this.hover) {
-        this.Show();
+        this.showPopover();
       }
     },
-    HideHover() {
+    hideHover() {
       if (this.hover) {
-        this.Hide();
+        this.hidePopover();
       }
     },
-    Enter() {
+    enterPopover() {
       const targetEl = this.target ? document.querySelector(this.target) : '';
       const content = targetEl ? targetEl : this.$refs.parent.children[0];
       const popover = this.$refs.popover;
@@ -124,39 +127,38 @@ export default {
       const contentHeight = content.offsetHeight;
       const contentOffsetTop = targetEl ? content.getBoundingClientRect().top : 0;
       const contentOffsetLeft = targetEl ? content.getBoundingClientRect().left : 0;
-      if (!targetEl) console.warn(`Given target: '${this.target}' is not a valid element.`);
+      if (!targetEl && this.target) console.warn(`Given target: '${this.target}' is not a valid element.`);
       // console.log(popover.getBoundingClientRect().bottom < window.innerHeight);
 
-      console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n', content, contentOffsetLeft, contentOffsetTop);
-      switch (this.placement) {
-        case 'left':
-          popover.style.left = contentOffsetLeft + -popover.offsetWidth - offset + 'px';
-          popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
-          break;
-        case 'right':
-          popover.style.left = contentOffsetLeft + contentWidth + offset + 'px';
-          popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
-          break;
-        case 'bottom':
-          popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-          popover.style.top = contentOffsetTop + contentHeight + offset + 'px';
-          break;
-        case 'top':
-        default:
-          if (popover.getBoundingClientRect().top < window.innerHeight) {
-            popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-            popover.style.top = contentOffsetTop + contentHeight + offset + 'px';
-          } else {
-            popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-            popover.style.top = contentOffsetTop + -this.$refs.popover.offsetHeight - offset + 'px';
-          }
-          break;
+      if (this.computedPlacement == 'left') {
+        popover.style.left = contentOffsetLeft + -popover.offsetWidth - offset + 'px';
+        popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
+      } else if (this.computedPlacement == 'right') {
+        popover.style.left = contentOffsetLeft + contentWidth + offset + 'px';
+        popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
+      } else if (this.computedPlacement == 'bottom') {
+        popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
+        popover.style.top = contentOffsetTop + contentHeight + offset + 'px';
+      } else if (this.computedPlacement == 'top') {
+        popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
+        popover.style.top = contentOffsetTop + -this.$refs.popover.offsetHeight - offset + 'px';
+      }
+      const popoverBounding = popover.getBoundingClientRect();
+      console.log(popoverBounding);
+      if (popoverBounding.top < 0 && this.computedPlacement == 'top') {
+        this.computedPlacement = 'bottom';
+        this.enterPopover();
+      } else if (popoverBounding.top > window.innerHeight && this.computedPlacement == 'bottom') {
+        this.computedPlacement = 'top';
+        this.enterPopover();
+      } else if (popoverBounding.left < 0 && this.computedPlacement == 'left') {
+        this.computedPlacement = 'right';
+        this.enterPopover();
+      } else if (popoverBounding.left + popoverBounding.width > window.innerWidth && this.computedPlacement == 'right') {
+        this.computedPlacement = 'left';
+        this.enterPopover();
       }
     },
-    // setBottom(popover) {
-    //   popover.style.left = contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-    //   popover.style.top = contentHeight + offset + 'px';
-    // },
   },
 };
 </script>

@@ -1,19 +1,14 @@
+0
 <template>
   <div class="test-content">
     <LvButton label="ToggleVis" @click.stop="toggleVisibility" />
 
-    <LvPopOver :offset="10" v-model="visibility">
+    <LvPopOver :offset="10" placement="top" v-model="visibility" target=".header-logo">
       <LvButton label="Bottom" class="lv--primary" />
     </LvPopOver>
-    <LvPopOver :offset="10" placement="bottom" :isVisible="visibility">
+    <LvPopOver :offset="10" placement="top">
       <template #anchor>
         <LvButton label="Top" class="lv--primary" />
-      </template>
-      <LvButton label="Submit" class="lv--primary" />
-    </LvPopOver>
-    <LvPopOver :offset="10" placement="right">
-      <template #anchor>
-        <LvButton label="Right" class="lv--primary" />
       </template>
       <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
@@ -25,7 +20,35 @@
         <lv-input type="text" label="First Name" placeholder="Enter your first name" />
       </div>
     </LvPopOver>
+    <LvPopOver :offset="10" placement="right">
+      <template #anchor>
+        <LvButton label="Right" class="lv--primary" />
+      </template>
+      <LvButton label="Submit" class="lv--primary" />
+    </LvPopOver>
   </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
 </template>
 
 <script>
