@@ -1,30 +1,30 @@
 <template>
   <div class="test-content">
     <LvPopOver :offset="10" placement="bottom" :hover="true">
-      <template #popover>
-        <LvButton label="Submit" class="lv--primary" />
+      <template #anchor>
+        <LvButton label="Bottom" class="lv--primary" />
       </template>
-      <LvButton label="Bottom" class="lv--primary" />
+      <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
     <LvPopOver :offset="10" placement="top" :hover="true">
-      <template #popover>
-        <LvButton label="Submit" class="lv--primary" />
+      <template #anchor>
+        <LvButton label="Top" class="lv--primary" />
       </template>
-      <LvButton label="Top" class="lv--primary" />
-    </LvPopOver>
-    <LvPopOver :offset="10" placement="right" :hover="true">
-      <template #popover>
-        <LvButton label="Submit" class="lv--primary" />
-      </template>
-      <LvButton label="Right" class="lv--primary" />
+      <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
     <LvPopOver :offset="10" placement="left" :hover="true">
-      <template #popover>
-        <div class="d-flex">
-          <lv-input type="text" label="First Name" placeholder="Enter your first name" />
-        </div>
+      <template #anchor>
+        <LvButton label="Left" class="lv--primary" />
       </template>
-      <LvButton label="Left" class="lv--primary" />
+      <div class="d-flex">
+        <lv-input type="text" label="First Name" placeholder="Enter your first name" />
+      </div>
+    </LvPopOver>
+    <LvPopOver :offset="10" placement="right" :hover="true">
+      <template #anchor>
+        <LvButton label="Right" class="lv--primary" />
+      </template>
+      <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
   </div>
 </template>

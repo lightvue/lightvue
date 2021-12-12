@@ -27,28 +27,6 @@
       <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
   </div>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
 </template>
 
 <script>
