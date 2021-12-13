@@ -20,6 +20,7 @@
 import LvInput from 'lightvue/input';
 export default {
   name: 'LvUpload',
+  emits: ['file-size-error', 'extension-error', 'submit-image'],
   components: {
     LvInput,
   },
