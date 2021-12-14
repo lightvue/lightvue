@@ -132,47 +132,69 @@ export default {
       // console.log(popover.getBoundingClientRect().bottom < window.innerHeight);
 
       if (this.computedPlacement == 'left') {
-        popover.style.left = contentOffsetLeft + -popover.offsetWidth - offset + 'px';
-        popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
-        this.positionClass = `arrow-position-${this.placement}`;
+        this.setLeft(contentOffsetTop, contentOffsetLeft, contentHeight);
         const popoverBounding = popover.getBoundingClientRect();
         if (popoverBounding.left < 0) {
-          this.computedPlacement = 'right';
-          this.enterPopover();
+          this.setRight(contentWidth, contentOffsetTop, contentOffsetLeft, contentHeight);
         }
       } else if (this.computedPlacement == 'right') {
-        popover.style.left = contentOffsetLeft + contentWidth + offset + 'px';
-        popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
-        this.positionClass = `arrow-position-${this.placement}`;
         const popoverBounding = popover.getBoundingClientRect();
+        this.setRight(contentWidth, contentOffsetTop, contentOffsetLeft, contentHeight);
         if (popoverBounding.left + popoverBounding.width > window.innerWidth) {
-          this.computedPlacement = 'left';
-          this.enterPopover();
+          this.setLeft(contentOffsetTop, contentOffsetLeft, contentHeight);
         }
       } else if (this.computedPlacement == 'bottom') {
-        console.log('setting bottom', contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px', contentOffsetTop + contentHeight + offset + 'px');
-        popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-        popover.style.top = contentOffsetTop + contentHeight + offset + 'px';
-        this.positionClass = `arrow-position-${this.placement}`;
+        this.setBottom(contentWidth, contentOffsetTop, contentOffsetLeft, contentHeight, contentWidth);
         const popoverBounding = popover.getBoundingClientRect();
-        if (popoverBounding.top > window.innerHeight) {
-          this.computedPlacement = 'top';
-          this.enterPopover();
+        if (popoverBounding.top + popoverBounding.height > window.innerHeight) {
+          this.setTop(contentWidth, contentOffsetTop, contentOffsetLeft);
         }
       } else if (this.computedPlacement == 'top') {
-        console.log('setting top');
-        popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
-        popover.style.top = contentOffsetTop + -this.$refs.popover.offsetHeight - offset + 'px';
-        this.positionClass = `arrow-position-${this.placement}`;
+        this.setTop(contentWidth, contentOffsetTop, contentOffsetLeft);
         const popoverBounding = popover.getBoundingClientRect();
         if (popoverBounding.top < 0) {
-          this.computedPlacement = 'bottom';
-          this.enterPopover();
+          this.setBottom(contentWidth, contentOffsetTop, contentOffsetLeft, contentHeight, contentWidth);
         }
       }
       this.positionClass = `arrow-position-${this.computedPlacement}`;
 
       console.log(this.positionClass, this.computedPlacement);
+    },
+    setLeft(contentOffsetTop, contentOffsetLeft, contentHeight) {
+      this.computedPlacement = 'left';
+      const popover = this.$refs.popover;
+      const offset = this.offset;
+
+      popover.style.left = contentOffsetLeft + -popover.offsetWidth - offset + 'px';
+      popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
+      this.positionClass = `arrow-position-${this.computedPlacement}`;
+    },
+    setRight(contentWidth, contentOffsetTop, contentOffsetLeft, contentHeight) {
+      this.computedPlacement = 'right';
+      const popover = this.$refs.popover;
+      const offset = this.offset;
+
+      popover.style.left = contentOffsetLeft + contentWidth + offset + 'px';
+      popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
+      this.positionClass = `arrow-position-${this.computedPlacement}`;
+    },
+    setTop(contentWidth, contentOffsetTop, contentOffsetLeft) {
+      this.computedPlacement = 'top';
+      const popover = this.$refs.popover;
+      const offset = this.offset;
+
+      popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
+      popover.style.top = contentOffsetTop + -this.$refs.popover.offsetHeight - offset + 'px';
+      this.positionClass = `arrow-position-${this.computedPlacement}`;
+    },
+    setBottom(contentWidth, contentOffsetTop, contentOffsetLeft, contentHeight) {
+      this.computedPlacement = 'bottom';
+      const popover = this.$refs.popover;
+      const offset = this.offset;
+
+      popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
+      popover.style.top = contentOffsetTop + contentHeight + offset + 'px';
+      this.positionClass = `arrow-position-${this.computedPlacement}`;
     },
   },
 };
