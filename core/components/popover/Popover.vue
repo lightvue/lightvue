@@ -6,7 +6,7 @@
       <transition :duration="{ enter: 300, leave: 300 }" name="fade" @enter="enterPopover">
         <div v-if="isShow || modelValue">
           <!-- <div class="popover-overlay" @click.stop="hidePopover" v-if="!hover"></div> -->
-          <div ref="popover" :class="popoverClass" :style="computedStyle">
+          <div ref="popover" :class="['popover-item', this.positionClass]" :style="computedStyle">
             <div class="popover--content">
               <slot></slot>
             </div>
@@ -74,7 +74,8 @@ export default {
     },
     popoverClass() {
       this.positionClass = `arrow-position-${this.computedPlacement}`;
-      return ['popover-item', this.positionClass];
+
+      return [];
     },
     computedStyle() {
       return {
@@ -133,31 +134,45 @@ export default {
       if (this.computedPlacement == 'left') {
         popover.style.left = contentOffsetLeft + -popover.offsetWidth - offset + 'px';
         popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
+        this.positionClass = `arrow-position-${this.placement}`;
+        const popoverBounding = popover.getBoundingClientRect();
+        if (popoverBounding.left < 0) {
+          this.computedPlacement = 'right';
+          this.enterPopover();
+        }
       } else if (this.computedPlacement == 'right') {
         popover.style.left = contentOffsetLeft + contentWidth + offset + 'px';
         popover.style.top = contentOffsetTop + contentHeight / 2 - popover.offsetHeight / 2 + 'px';
+        this.positionClass = `arrow-position-${this.placement}`;
+        const popoverBounding = popover.getBoundingClientRect();
+        if (popoverBounding.left + popoverBounding.width > window.innerWidth) {
+          this.computedPlacement = 'left';
+          this.enterPopover();
+        }
       } else if (this.computedPlacement == 'bottom') {
+        console.log('setting bottom', contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px', contentOffsetTop + contentHeight + offset + 'px');
         popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
         popover.style.top = contentOffsetTop + contentHeight + offset + 'px';
+        this.positionClass = `arrow-position-${this.placement}`;
+        const popoverBounding = popover.getBoundingClientRect();
+        if (popoverBounding.top > window.innerHeight) {
+          this.computedPlacement = 'top';
+          this.enterPopover();
+        }
       } else if (this.computedPlacement == 'top') {
+        console.log('setting top');
         popover.style.left = contentOffsetLeft + contentWidth / 2 - popover.offsetWidth / 2 + 'px';
         popover.style.top = contentOffsetTop + -this.$refs.popover.offsetHeight - offset + 'px';
+        this.positionClass = `arrow-position-${this.placement}`;
+        const popoverBounding = popover.getBoundingClientRect();
+        if (popoverBounding.top < 0) {
+          this.computedPlacement = 'bottom';
+          this.enterPopover();
+        }
       }
-      const popoverBounding = popover.getBoundingClientRect();
-      console.log(popoverBounding);
-      if (popoverBounding.top < 0 && this.computedPlacement == 'top') {
-        this.computedPlacement = 'bottom';
-        this.enterPopover();
-      } else if (popoverBounding.top > window.innerHeight && this.computedPlacement == 'bottom') {
-        this.computedPlacement = 'top';
-        this.enterPopover();
-      } else if (popoverBounding.left < 0 && this.computedPlacement == 'left') {
-        this.computedPlacement = 'right';
-        this.enterPopover();
-      } else if (popoverBounding.left + popoverBounding.width > window.innerWidth && this.computedPlacement == 'right') {
-        this.computedPlacement = 'left';
-        this.enterPopover();
-      }
+      this.positionClass = `arrow-position-${this.computedPlacement}`;
+
+      console.log(this.positionClass, this.computedPlacement);
     },
   },
 };
