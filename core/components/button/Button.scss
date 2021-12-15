@@ -16,15 +16,15 @@
     &.--rounded {
         border-radius: 2rem;
     }
-    // &.--push{
-        // transition: all .2s ease-in-out;
-        // box-shadow: none !important;
-    &:active {
+    &.--push{
         transition: all .2s ease-in-out;
-        box-shadow: none;
-        transform: translateY(2px);
+        box-shadow: none !important;
+        &:active {
+            transition: all .2s ease-in-out;
+            box-shadow: none;
+            transform: translateY(2px);
     }
-    // }
+    }
     &.--icon-only {
         justify-content: center;
         &.--rounded {
