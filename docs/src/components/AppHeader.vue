@@ -10,6 +10,7 @@
         </div>
       </div>
       <div class="social__row">
+        <LvToggleswitch name='dark-theme-toggle' v-model="isDarkTheme" />
         <a href="https://github.com/lightvue/lightvue" target="_blank" class="social-links">
           <i class="header-social light-icon-brand-github"></i>
         </a>
@@ -25,7 +26,22 @@
 </template>
 
 <script>
-export default {};
+import LvToggleswitch from 'lightvue/toggle-switch'
+export default {
+  data(){
+    return{
+      isDarkTheme: false
+    }
+  },
+  watch: {
+    isDarkTheme(){
+      document.getElementById('app').classList.toggle('lv--darkTheme');
+    }
+  },
+  components: {
+    LvToggleswitch
+  }
+};
 </script>
 
 <style scoped lang="scss">
