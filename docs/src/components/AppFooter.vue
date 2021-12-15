@@ -17,6 +17,8 @@
 <style lang="scss">
 .app-footer {
   padding: 0px 30px;
+  background: var(--background-color) !important;
+  color: var(--text-color) !important;
   .app-footer__text {
     padding: 12px 0px;
     font-size: 13px;

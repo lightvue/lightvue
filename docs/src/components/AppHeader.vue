@@ -51,7 +51,8 @@ export default {
   cursor: pointer;
 }
 .app-header {
-  background-color: #ffffff;
+  background-color: var(--background-color);
+  color:var(--text-color);
   padding: 0 24px;
   height: 60px;
   position: fixed;

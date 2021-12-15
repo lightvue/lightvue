@@ -1,4 +1,7 @@
 :root{
+  --background-color: #fff;
+  --text-color: #566d79;
+  --gray: #bac4ca;
   // Primary
   --primary: #38b2ac;
   --primary-light: #8ed8d6;
@@ -40,6 +43,13 @@
   --plain-dark:#2e3fa2;
   --plain-inverse: #ffffff;
 }
+
+.lv--darkTheme{
+  --background-color: #121212;
+  --text-color: #fff;
+  --gray: #566d79;
+}
+
 
 .lv--primary {
   --theme-color: var(--primary) ;
