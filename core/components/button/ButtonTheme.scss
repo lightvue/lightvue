@@ -47,7 +47,7 @@
   --theme-color-inverse: #ffffff;
 }
 
-.lv--cancel{
+.lv--complementary{
   --theme-color: #edf1f5 !important;
   --theme-color-light: #8ed8d6 !important;
   --theme-color-dark: #dfe5ea !important;
@@ -153,6 +153,22 @@
         border: 1px solid var(--theme-color);
       }
     }
+    &.lv--complementary{
+      color: var(--theme-color-inverse);
+      &:enabled {
+        &:hover {
+          background: rgba(33, 150, 243, 0.04);
+          color: var(--theme-color-inverse);
+          border-color: var(--theme-color-inverse);
+        }
+        &:active {
+          background: rgba(33, 150, 243, 0.04);
+          color: var(--theme-color-inverse);
+          border-color: var(--theme-color-inverse); 
+        }
+      }
+    }
+
   }
   &.--text-button {
     background-color: transparent;
@@ -168,6 +184,22 @@
         background: rgba(33, 150, 243, 0.04);
         color: var(--theme-color);
         border-color: var(--theme-color);
+      }
+    }
+    //Different behavior for complementary variant
+    &.lv--complementary{
+      color: var(--theme-color-inverse);
+      &:enabled {
+        &:hover {
+          background: rgba(33, 150, 243, 0.04);
+          color: var(--theme-color-inverse);
+          border-color: var(--theme-color-inverse);
+        }
+        &:active {
+          background: rgba(33, 150, 243, 0.04);
+          color: var(--theme-color-inverse);
+          border-color: var(--theme-color-inverse); 
+        }
       }
     }
   }
