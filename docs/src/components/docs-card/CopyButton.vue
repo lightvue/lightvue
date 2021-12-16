@@ -64,7 +64,7 @@ export default {
   right: 52px;
   font-size: 14px;
   white-space: nowrap;
-  background-color: #607b89;
+  background-color: var(--gray);
   color: #fff;
   border-radius: 24px;
   padding: 6px 12px 6px 6px;

@@ -32,6 +32,6 @@ export default {
 <style>
 .code-wrap {
   position: relative;
-  border-bottom: 1px solid #edf2f6;
+  border-bottom: 1px solid var(--lightGray);
 }
 </style>

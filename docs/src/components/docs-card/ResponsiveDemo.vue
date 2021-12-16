@@ -116,7 +116,7 @@ export default {
 <style lang="scss">
 .responsive-area {
   flex-grow: 1;
-  background-color: #ffffff !important;
+  background-color: var(--background-color) !important;
   padding: 20px !important;
   border-radius: 0px 0px 0px 4px;
   width: 100%; /* Initial default width */

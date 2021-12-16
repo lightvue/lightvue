@@ -13,7 +13,7 @@ body {
   background-color: var(--background-color-alt) !important;
   font-family: var(--font-family);
   font-weight: normal;
-  color: var(--text-color);
+  color: var(--text-color) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,7 +32,7 @@ h6 {
   font-family: inherit;
   font-weight: 600;
   line-height: 1.2;
-  color: inherit;
+  color: #ffffff !important;
 
   &:first-child {
     margin-top: 0;
@@ -66,6 +66,7 @@ h6 {
 p {
   line-height: 1.5;
   margin: 0 0 1rem 0;
+  color: var(--text-color);
 }
 
 input[type='number'] {

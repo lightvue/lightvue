@@ -12,6 +12,7 @@
       top: $light-checkbox-top-offset;
       border: 1px solid transparent;
       opacity: 0;
+    
     }
 
     .icon:before {
@@ -30,6 +31,7 @@
   input:checked ~ .state {
     .icon {
       opacity: 1;
+      background: transparent;
     }
 
     label:before {

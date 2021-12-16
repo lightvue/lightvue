@@ -370,7 +370,7 @@ $primary-color: #38b2ac;
 .sidebar.--theme-light {
   background-color: #ffffff;
   .nav-list__category-wrap {
-    border-top: 1px solid var(--gray);
+    border-top: 1px solid var(--lightGray);
     &.--active {
       background-color: rgba(55, 179, 171, 0.04);
       box-shadow: none;

@@ -77,14 +77,14 @@ export default {
     padding: 0.8rem 0;
     cursor: pointer;
     user-select: none;
-
-    background-color: #ffffff;
+    color:var(--text-color);
+    background-color: var(--background-color);
     transition: all 0.2s ease-in-out;
     &:hover {
-      background: #edf2f6;
+      background: var(--lightGray);
     }
     &.active {
-      background-color: #607c8a;
+      background-color: var(--gray);
       color: #fff;
     }
   }

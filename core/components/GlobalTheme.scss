@@ -2,7 +2,8 @@
   --background-color: #fff;
   --background-color-alt: #f5f8fa;
   --text-color: #566d79;
-  --gray: #bac4ca;
+  --gray: #566d79;
+  --lightGray: #dfe7eb;
   // Primary
   --primary: #38b2ac;
   --primary-light: #8ed8d6;
@@ -48,7 +49,8 @@
 [data-theme='dark']{
   --background-color: #161b22 ;
   --background-color-alt: #0d1117 ;
-  --text-color: #fff;
+  --text-color: rgb(255, 255, 255,0.8);
+  --lightGray:#21262d;
   --gray: #566d79;
 }
 // .lv--darkTheme{
