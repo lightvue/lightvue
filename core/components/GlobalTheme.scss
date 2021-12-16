@@ -1,5 +1,6 @@
 :root{
   --background-color: #fff;
+  --background-color-alt: #f5f8fa;
   --text-color: #566d79;
   --gray: #bac4ca;
   // Primary
@@ -44,11 +45,18 @@
   --plain-inverse: #ffffff;
 }
 
-.lv--darkTheme{
-  --background-color: #121212;
+[data-theme='dark']{
+  --background-color: #161b22 ;
+  --background-color-alt: #0d1117 ;
   --text-color: #fff;
   --gray: #566d79;
 }
+// .lv--darkTheme{
+//   --background-color: #121212 ;
+//   --background-color-alt: #252525 ;
+//   --text-color: #fff;
+//   --gray: #566d79;
+// }
 
 
 .lv--primary {
