@@ -5,6 +5,7 @@
   --gray: #566d79;
   --lightGray: #dfe7eb;
   // Input Field
+  --input-placeholder-color: rgba(0,0,0,0.3);
   --input-field-bg: #edf2f7;
   --input-field-text: #495057;
   // Api Table
@@ -89,6 +90,7 @@
   --table-text-color: #00a2ff;
 
   // Input Field
+  --input-placeholder-color: rgba(255,255,255,0.3);
   --input-field-bg: hsl(215, 21%, 20%);
   --input-field-text: var(--text-color) ;
 }

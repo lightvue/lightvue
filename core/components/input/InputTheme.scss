@@ -1,3 +1,6 @@
+input{
+  color:var(--input-field-text);
+}
 .lv-input__group {
   position: relative;
   &.--with-floating-label {
@@ -35,7 +38,7 @@
       .lv-input__label {
         top: -18px;
         font-size: 10px;
-        color: var(--theme-color);
+        color: var(--text-color);
         font-weight: 600;
       }
     }
@@ -70,7 +73,7 @@
   .lv-input__field {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 1rem;
-    color: var(--theme-color-inverse) !important;
+    color: var(--text-color) !important;
     background: var(--input-field-bg);
     // border: 2px solid transparent;
     padding: 0px 12px;
@@ -90,7 +93,7 @@
       padding: 10px 0px;
       &::placeholder {
         // color: rgba(0, 0, 0, 0.3);
-        color: var(--theme-color-inverse);
+        color: var(--input-placeholder-color);
       }
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px #edf2f7 inset;
