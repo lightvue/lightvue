@@ -125,7 +125,7 @@ pre[class*="language-"]:after {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: var(--code-tag);
+	color: var(--code-red);
 }
 
 .token.selector,
@@ -135,7 +135,7 @@ pre[class*="language-"]:after {
 .token.function,
 .token.builtin,
 .token.inserted {
-	color: var(--code-pre);
+	color: var(--code-green);
 }
 
 .token.operator,
@@ -150,7 +150,7 @@ pre[class*="language-"]:after {
 .token.attr-value,
 .token.keyword,
 .token.class-name {
-	color: var(--code-pre-span);
+	color: var(--code-blue);
 }
 
 .token.regex,

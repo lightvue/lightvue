@@ -171,14 +171,14 @@ export default {
 
   // padding: 5px;
   pre {
-    color: var(--code-pre);
+    color: var(--code-green);
     span {
-      color: var(--code-pre-span);
+      color: var(--code-blue);
     }
   }
   .dy-code-row {
     &.--tag-row {
-      color: var(--code-tag);
+      color: var(--code-red);
       padding-left: 16px;
     }
     &.--empty-row {

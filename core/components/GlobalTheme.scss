@@ -17,9 +17,9 @@
   --table-text-color: #1c587a;
 
   // Code Wrap
-  --code-tag: hsl(0, 64%, 48%);
-  --code-pre: hsl(105, 88%, 33%);
-  --code-pre-span: #1990b8;
+  --code-red: hsl(0, 64%, 48%);
+  --code-green: hsl(105, 88%, 33%);
+  --code-blue: #1990b8;
   --code-row-even: var(--background-color);
   --code-row-odd: hsl(210, 50%, 98%);
 --code-stripes: linear-gradient(transparent 50%, hsl(210, 50%, 98%) 50%);
@@ -73,9 +73,9 @@
   --gray: #566d79;
    
   // Code Wrap
-  --code-tag: hsl(0, 86%, 66%);
-  --code-pre: hsl(105, 64%, 61%);
-  --code-pre-span: hsl(189, 93%, 62%);
+  --code-red: hsl(0, 86%, 66%);
+  --code-green: hsl(105, 64%, 61%);
+  --code-blue: hsl(189, 93%, 62%);
   --code-row-even: var(--background-color);
   --code-row-odd: hsla(0,0%,0%,0.2);
   --code-stripes: linear-gradient(transparent 50%, hsla(0, 0%, 0%,0.2) 50%);
