@@ -158,7 +158,7 @@ export default {
   }
 }
 .docs-card__code-tab {
-  background: var(--lightGray);
+  /* background: var(--); */
   color: #757575;
   border-bottom: 1px solid #cccccc;
   border-bottom: none;

@@ -70,8 +70,8 @@
   .lv-input__field {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 1rem;
-    color: #495057;
-    background: #edf2f7;
+    color: var(--theme-color-inverse) !important;
+    background: var(--input-field-bg);
     // border: 2px solid transparent;
     padding: 0px 12px;
     border: none;
@@ -90,7 +90,7 @@
       padding: 10px 0px;
       &::placeholder {
         // color: rgba(0, 0, 0, 0.3);
-        color: var(--placeholder-color);
+        color: var(--theme-color-inverse);
       }
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px #edf2f7 inset;

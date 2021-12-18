@@ -4,6 +4,25 @@
   --text-color: #566d79;
   --gray: #566d79;
   --lightGray: #dfe7eb;
+  // Input Field
+  --input-field-bg: #edf2f7;
+  --input-field-text: #495057;
+  // Api Table
+  --table-border-color:#e7e7e7;
+  --table-background: rgb(137, 111, 111);
+  --table-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --table-odd-row: #edf2f7;
+  --table-header-bg: #d7dfe8;
+  --table-text-color: #1c587a;
+
+  // Code Wrap
+  --code-tag: hsl(0, 64%, 48%);
+  --code-pre: hsl(105, 88%, 33%);
+  --code-pre-span: #1990b8;
+  --code-row-even: var(--background-color);
+  --code-row-odd: hsl(210, 50%, 98%);
+--code-stripes: linear-gradient(transparent 50%, hsl(210, 50%, 98%) 50%);
   // Primary
   --primary: #38b2ac;
   --primary-light: #8ed8d6;
@@ -47,19 +66,32 @@
 }
 
 [data-theme='dark']{
-  --background-color: #161b22 ;
-  --background-color-alt: #0d1117 ;
+  --background-color: hsl(215, 21%, 11%) ;
+  --background-color-alt: hsl(215, 28%, 7%) ;
   --text-color: rgb(255, 255, 255,0.8);
   --lightGray:#21262d;
   --gray: #566d79;
-}
-// .lv--darkTheme{
-//   --background-color: #121212 ;
-//   --background-color-alt: #252525 ;
-//   --text-color: #fff;
-//   --gray: #566d79;
-// }
+   
+  // Code Wrap
+  --code-tag: hsl(0, 86%, 66%);
+  --code-pre: hsl(105, 64%, 61%);
+  --code-pre-span: hsl(189, 93%, 62%);
+  --code-row-even: var(--background-color);
+  --code-row-odd: hsla(0,0%,0%,0.2);
+  --code-stripes: linear-gradient(transparent 50%, hsla(0, 0%, 0%,0.2) 50%);
+  // Api Table
+  --table-border-color:#2c2c2c;
+  --table-background: var(--background-color);
+  --table-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --table-odd-row: #edf2f7;
+  --table-header-bg: #243242;
+  --table-text-color: #00a2ff;
 
+  // Input Field
+  --input-field-bg: hsl(215, 21%, 20%);
+  --input-field-text: var(--text-color) ;
+}
 
 .lv--primary {
   --theme-color: var(--primary) ;

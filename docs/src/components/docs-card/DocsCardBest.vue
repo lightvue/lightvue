@@ -168,17 +168,17 @@ export default {
   line-height: 1.5;
   overflow: auto;
   position: relative;
-  background: var(--background-color);
+
   // padding: 5px;
   pre {
-    color: #2f9c0a;
+    color: var(--code-pre);
     span {
-      color: #1990b8;
+      color: var(--code-pre-span);
     }
   }
   .dy-code-row {
     &.--tag-row {
-      color: #c92c2c;
+      color: var(--code-tag);
       padding-left: 16px;
     }
     &.--empty-row {
@@ -186,10 +186,10 @@ export default {
       min-height: 4px;
     }
     &:nth-child(even) {
-      background-color: #f6f9fc;
+      background-color: var(--code-row-even);
     }
     &:nth-child(odd) {
-      background-color: #ffffff;
+      background-color: var(--code-row-odd);
     }
   }
 }
