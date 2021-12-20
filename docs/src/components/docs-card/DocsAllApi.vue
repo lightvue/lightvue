@@ -58,6 +58,7 @@ export default {
 }
 .api-table__cell {
   display: table-cell;
+  color: var(--text-color);
   border-right: 1px solid var(--table-border-color);
   padding: 10px 12px;
   &.--name {
@@ -66,7 +67,7 @@ export default {
     font-weight: 600;
   }
   &.--type {
-    color: #1c587a;
+    color: var(--table-highlight-text);
     font-weight: 100;
     font-family: monospace;
     white-space: nowrap;

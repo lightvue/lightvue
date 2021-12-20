@@ -16,7 +16,8 @@
   0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --table-odd-row: #edf2f7;
   --table-header-bg: var(--gray);
-  --table-text-color: #1c587a;
+  --table-highlight-text: #1c587a;
+  --table-text-color:var(--text-color);
   // Code Wrap
   --code-red: hsl(0, 64%, 48%);
   --code-green: hsl(105, 88%, 33%);
@@ -72,7 +73,7 @@
   --text-color: rgb(255, 255, 255,0.8);
   --lightGray:#21262d;
   --gray: #566d79;
-   
+
   // Code Wrap
   --code-red: hsl(0, 86%, 66%);
   --code-green: hsl(105, 64%, 61%);
@@ -87,8 +88,8 @@
   --table-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
   0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --table-odd-row: hsla(0,0%,0%,0.2);
-  --table-text-color: #387ea5;
-
+  --table-highlight-text: #58b7eb;
+  --table-text-color:var(--text-color);
   // Input Field
   --input-placeholder-color: rgba(255,255,255,0.3);
   --input-field-bg: hsl(215, 21%, 20%);
