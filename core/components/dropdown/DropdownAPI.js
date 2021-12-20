@@ -66,6 +66,12 @@ const DropdownAPI = {
       default: 'No results found',
       description: 'Configures the empty filter message to be shown.',
     },
+    {
+      name: 'variant',
+      type: 'String',
+      default : 'primary',
+      description: 'Allows user to change color of the material styled field.'
+    }
   ],
   events: [
     {

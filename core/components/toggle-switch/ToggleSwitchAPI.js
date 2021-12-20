@@ -55,7 +55,7 @@ const ToggleSwitchAPI = {
       description: 'Defines the size of toggle switch component',
     },
     {
-      name: 'color',
+      name: 'variant',
       type: 'String',
       default: '',
       description: 'Defines the color of toggle switch component.',

@@ -49,10 +49,10 @@ const ToggleSwitchAPI = {
       description: 'Adds an intermediate value to the checkbox',
     },
     {
-      name: 'color',
+      name: 'variant',
       type: 'String',
-      default: '',
-      description: 'Defines the color of the checkbox',
+      default : 'primary',
+      description: 'Allows user to change color of the checkbox.'
     },
     {
       name: 'offcolor',
@@ -144,6 +144,7 @@ const ToggleSwitchAPI = {
       default: 'False',
       description: 'Configures if the checkbox is locked or not',
     },
+    
   ],
   slots: [
     {

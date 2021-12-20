@@ -72,6 +72,12 @@ const ButtonAPI = {
       default: 'button',
       description: 'Configures the type of the button.',
     },
+    {
+      name: 'variant',
+      type: 'String',
+      default : 'primary',
+      description: 'Allows user to change color of the button.'
+    }
   ],
   events: [
     {
