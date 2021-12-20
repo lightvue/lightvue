@@ -191,7 +191,6 @@ export default {
       this.timeOutID = setTimeout(() => {
         this.drawerHeight = this.getHeight; // in px
         this.snap = this.drawerHeight;
-        console.log('changed');
       }, 250);
     },
     handleOnBrowserBack() {
@@ -285,7 +284,11 @@ export default {
     // },
     modelValue(value) {
       // this.drawer = value;
-      value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
+      if (this.noBackdrop) {
+        value == true ? ((document.documentElement.style.overflow = 'scroll'), (document.documentElement.style.scrollBehavior = 'smooth')) : (document.documentElement.style.overflow = 'overlay');
+      } else {
+        value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
+      }
       //
       if (value === true) {
         this.preventPopstate(); // from Mixin
