@@ -89,7 +89,8 @@ export default {
   border-radius: 50%;
   transition: 0.3s ease-in-out all;
   &:hover {
-    background: #e0e0e0;
+    background: var(--background-color-alt);
+    color: var(--text-color);
   }
 }
 .header__logo-row {
@@ -125,7 +126,7 @@ export default {
   border: 0px;
   border-radius: 20px;
   transition: all 0.25s ease;
-  background: #f5f8fa;
+  background: var(--input-field-bg);
   &:focus {
     outline: none;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
@@ -154,9 +155,9 @@ export default {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     &:hover {
-      color: black;
+      color: var(--text-color);
       padding: 10px;
-      background: #dfdfdf;
+      background: var(--background-color-alt);
     }
   }
 }
