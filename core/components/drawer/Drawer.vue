@@ -7,6 +7,7 @@
       '--mobile': getDrawerPosition,
       '--moving': isMoving,
       '--absolute': absolute,
+      '--no_backdrop': noBackdrop,
     }"
     :style="{
       zIndex: zIndex,
@@ -311,6 +312,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.--no_backdrop {
+  pointer-events: none;
+}
 .lv-drawer__wrapper {
   position: fixed;
   top: 0;
@@ -321,6 +325,7 @@ export default {
   width: 100%;
   overflow: hidden;
   .wrapper__drawer-container {
+    pointer-events: all;
     position: absolute;
     z-index: 10;
     transition: all 0.3s ease;
