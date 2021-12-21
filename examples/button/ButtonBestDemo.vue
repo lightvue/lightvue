@@ -1,7 +1,7 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-button v-bind="allOptions" style="width: 100%" />
+      <lv-button v-bind="allOptions" style="width: 100%"  class="lv--fadeIn-right"/>
       <template #props>
         <lv-toggle-switch v-model="allOptions.outlined" label="outlined" /> <br />
         <lv-toggle-switch v-model="allOptions.push" label="Push" /> <br />
@@ -9,7 +9,7 @@
         <lv-toggle-switch v-model="allOptions['deep-shadow']" label="Deep Shadow" /> <br />
         <lv-toggle-switch v-model="allOptions['deep-shadow-hover']" label="Deep Shadow Hover" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
-
+    
         <br />
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.type" label="Type" /> <br />

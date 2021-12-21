@@ -1,0 +1,9 @@
+
+@import './fadeIn.scss';
+@import 'fadeOut.scss';
+
+
+:root{
+  --fade-duration: 600ms ;
+  --fade-timing-function: linear;
+}
