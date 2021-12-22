@@ -1,9 +1,11 @@
 
 @import './fadeIn.scss';
-@import 'fadeOut.scss';
-
+@import './fadeOut.scss';
+@import './zoom.scss';
+@import './slideIn.scss';
+@import './slideOut.scss';
 
 :root{
-  --fade-duration: 600ms ;
-  --fade-timing-function: linear;
+  --duration: 600ms;
+  --timing-function: linear;
 }
