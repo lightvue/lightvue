@@ -13,11 +13,9 @@
         <br />
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.type" label="Type" /> <br />
-        <lv-dropdown v-model="allOptions.variant" optionsLabel='variants' placeholder="Select a variant" :options="variants" label="Variants" clearable>
         <lv-input v-model="allOptions['icon-right']" label="Right Icon" /> <br />
         <lv-input v-model="allOptions.size" label="Size" /> <br />
-          
-        </lv-dropdown>
+        <lv-dropdown v-model="allOptions.variant" optionsLabel='variants' placeholder="Select a variant" :options="variants" label="Variants" clearable/>
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
