@@ -1,22 +1,23 @@
 // Animation Classes
-.lv--slideIn-left{
-  animation: slideInLeft var(--duration) ease-in;  
+// lv-animate__slide-in--left
+.lv-animate__slidein--left{
+  animation: slideinLeft var(--duration) ease-in;  
 }
 
-.lv--slideIn-right{
-  animation: slideInRight var(--duration) ease-in;  
+.lv-animate__slide-in--right{
+  animation: slideinRight var(--duration) ease-in;  
 }
 
-.lv--slideIn-top{
-  animation: slideInTop var(--duration) ease-in;  
+.lv-animate__slide-in--top{
+  animation: slideinTop var(--duration) ease-in;  
 }
 
-.lv--slideIn-bottom{
-  animation: slideInBottom var(--duration) ease-in;  
+.lv-animate__slide-in--bottom{
+  animation: slideinBottom var(--duration) ease-in;  
 }
 
 // Keyframes
-@keyframes slideInLeft{
+@keyframes slideinLeft{
   from{
     opacity: 0;
     transform: translate3d(-100%,0,0);
@@ -27,7 +28,7 @@
   }
 }
 
-@keyframes slideInRight{
+@keyframes slideinRight{
   from{
     transform: translate3d(100%,0,0);
   }
@@ -36,7 +37,7 @@
   }
 }
 
-@keyframes slideInTop{
+@keyframes slideinTop{
   from{
     transform: translate3d(0,-100%,0);
   }
@@ -45,7 +46,7 @@
   }
 }
 
-@keyframes slideInBottom{
+@keyframes slideinBottom{
   from{
     transform: translate3d(0,100%,0);
   }

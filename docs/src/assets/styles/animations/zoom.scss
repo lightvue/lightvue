@@ -1,8 +1,8 @@
-.lv--zoomIn {
+.lv-animate__zoom-in {
   animation: zoomIn var(--duration) var(--timing-function);
 }
 
-.lv--zoomOut {
+.lv-animate__zoom-out {
   animation: zoomOut var(--duration) var(--timing-function);
 }
 

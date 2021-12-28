@@ -1,21 +1,21 @@
 // Animation Classes
-.lv--fadeIn{
+.lv-animate__fade-in{
   animation: fadeIn var(--duration) var(--timing-function);  
 }
 
-.lv--fadeIn-left{
+.lv-animate__fade-in--left{
   animation: fadeInLeft var(--duration) var(--timing-function);  
 }
 
-.lv--fadeIn-right{
+.lv-animate__fade-in--right{
   animation: fadeInRight var(--duration) var(--timing-function);  
 }
 
-.lv--fadeIn-top{
+.lv-animate__fade-in--top{
   animation: fadeInTop var(--duration) var(--timing-function);  
 }
 
-.lv--fadeIn-bottom{
+.lv-animate__fade-in--bottom{
   animation: fadeInBottom var(--duration) var(--timing-function);  
 }
 
