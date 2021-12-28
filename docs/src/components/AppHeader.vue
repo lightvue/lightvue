@@ -10,7 +10,19 @@
         </div>
       </div>
       <div class="social__row">
-        <LvToggleswitch @click="switchTheme" name='dark-theme-toggle' v-model="isDarkTheme" />
+        <!-- <LvToggleswitch @click="switchTheme" name='dark-theme-toggle' v-model="isDarkTheme" /> -->
+          <!-- Version Selector -->
+        
+         <!-- Theme Selector -->
+         <div class="dropdown">
+          <div class="dropdown-btn">
+            {{currentTheme}}
+             <i class="light-icon-chevron-down"></i>
+          </div>
+          <div class="dropdown-content">
+            <div class="dropdown-item" v-for="theme in themeList" @click="setTheme(theme)">{{theme.name}}</div>
+          </div>
+        </div>
         <a href="https://github.com/lightvue/lightvue" target="_blank" class="social-links">
           <i class="header-social light-icon-brand-github"></i>
         </a>
@@ -30,16 +42,17 @@ import LvToggleswitch from 'lightvue/toggle-switch'
 export default {
   data(){
     return{
-      isDarkTheme: false
+      themeList:[ 
+          {name:'🌕 Light',value:'light'},
+          {name:'🌚 Dark', value:'dark'},
+      ],
+      currentTheme: "🌕 Light",  
     }
   },
   methods: {
-    switchTheme(){
-      if(this.isDarkTheme){
-        document.documentElement.setAttribute('data-theme','dark');
-      } else {
-        document.documentElement.setAttribute('data-theme','light');
-      }
+    setTheme(theme){
+        this.currentTheme = theme.name;
+        document.documentElement.setAttribute('data-theme',theme.value);
     }
   },
   components: {
@@ -49,6 +62,46 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.dropdown{
+  position:relative;
+  margin: auto;
+}
+.dropdown-btn{
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--lightGray);
+}
+
+.dropdown-content{
+  background: var(--background-color);
+  width: 100%;
+  display: none;
+  position: absolute;
+  left:0%; 
+  overflow: hidden;
+}
+
+.dropdown-item{
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.dropdown-item:hover{
+  background: var(--input-field-bg);
+  }
+
+.dropdown-btn:hover{
+  background: var(--input-field-bg);
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+  border: 1px solid var(--lightGray);
+  border-radius: 4px;
+}
 .logo {
   display: flex;
   align-items: center;
