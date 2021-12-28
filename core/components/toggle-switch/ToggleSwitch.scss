@@ -62,7 +62,7 @@
         }
         &.--checked{
             .d-toggle__track{
-                background: #d7efed;
+                background: var(--toggle-track-checked);
             }
             .d-toggle__thumb{
                 left: 1rem;
