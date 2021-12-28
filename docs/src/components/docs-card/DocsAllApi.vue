@@ -58,7 +58,7 @@ export default {
 }
 .api-table__cell {
   display: table-cell;
-  color: var(--text-color);
+  color: #fff;
   border-right: 1px solid var(--table-border-color);
   padding: 10px 12px;
   &.--name {

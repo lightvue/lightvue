@@ -26,6 +26,7 @@
   --code-row-odd: hsl(210, 50%, 98%);
   --code-stripes: linear-gradient(transparent 50%, hsl(210, 50%, 98%) 50%);
   //Toggle Switch
+  --toggle-thumb-unchecked: #cbd5e0;
   --toggle-track-checked: hsla(0,0%,0%,0.08);
   // Primary
   --primary: #38b2ac;
@@ -75,7 +76,6 @@
   --text-color: rgb(255, 255, 255,0.8);
   --lightGray:#21262d;
   --gray: #566d79;
-
   // Code Wrap
   --code-red: hsl(0, 86%, 66%);
   --code-green: hsl(105, 64%, 61%);
@@ -84,7 +84,7 @@
   --code-row-odd: hsla(0,0%,0%,0.2);
   --code-stripes: linear-gradient(transparent 50%, hsla(0, 0%, 0%,0.2) 50%);
     //Toggle Switch
-    --toggle-track-checked: hsla(0,0%,100%,0.08);
+  --toggle-track-checked: hsla(0,0%,100%,0.15);
   // Api Table
   --table-border-color:var(--lightGray);
   --table-bg-color: var(--background-color);
