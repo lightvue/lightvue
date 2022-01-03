@@ -32,8 +32,8 @@
 
 
         .d-toggle__track{
-            background: var(--input-field-bg);
-            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+            background: var(--input-field-background-color);
+            transition: border-color 0.2s, box-shadow 0.2s;
             border-radius: 30px;
             width: 100%;
             height: 100%;

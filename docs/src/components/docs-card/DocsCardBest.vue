@@ -88,14 +88,13 @@ export default {
   max-height: 60vh;
   background: var(--background-color);
   /* padding: 20px; */
-  transition: all 0.2s ease-in-out;
-  border-left: 2px solid #edf2f6;
+  border-left: 2px solid var(--lightGray);
   .dy-props__header {
     padding: 22px;
-    border-bottom: 1px solid #edf2f6;
+    border-bottom: 1px solid var(--lightGray);
     font-weight: 600;
     font-size: 1em;
-    color: #008080;
+    color: var(--primary);
   }
 
   .dy-props__body {
@@ -116,7 +115,7 @@ export default {
   border-bottom: 1px solid var(--lightGray);
   .component__header {
     padding: 20px;
-    color: teal;
+    color: var(--primary);
     font-size: 18px;
     font-weight: bold;
     /* border: 1px solid #edf2f6; */

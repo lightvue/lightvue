@@ -79,7 +79,6 @@ export default {
     user-select: none;
     color:var(--text-color);
     background-color: var(--background-color);
-    transition: all 0.2s ease-in-out;
     &:hover {
       background: var(--lightGray);
     }

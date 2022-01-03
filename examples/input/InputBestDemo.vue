@@ -1,7 +1,7 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-input v-bind="allOptions" />
+      <lv-input class='--shadow-none' v-bind="allOptions" />
       <template #props>
         <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating Label" v-if="!allOptions['icon-left'] && !allOptions['Placeholder']" /> <br />
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />

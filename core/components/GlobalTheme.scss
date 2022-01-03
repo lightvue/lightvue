@@ -1,13 +1,11 @@
+
 :root{
   --background-color: #fff;
   --background-color-alt: #f5f8fa;
   --text-color: #566d79;
   --gray: #566d79;
   --lightGray: #dfe7eb;
-  // Input Field
-  --input-placeholder-color: rgba(0,0,0,0.3);
-  --input-field-bg: #edf2f7;
-  --input-field-text: #495057;
+
   // Api Table
   --api-table-border-color:#e7e7e7;
   --api-table-bg-color: var(--background-color);
@@ -94,10 +92,7 @@
   --api-table-odd-row: hsla(0,0%,0%,0.2);
   --api-table-highlight-text: #58b7eb;
   --api-table-text-color:var(--text-color);
-  // Input Field
-  --input-placeholder-color: rgba(255,255,255,0.3);
-  --input-field-bg: hsl(215, 21%, 20%);
-  --input-field-text: var(--text-color) ;
+
 }
 
 .lv--primary {
