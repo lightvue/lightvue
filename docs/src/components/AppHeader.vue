@@ -5,12 +5,16 @@
         <i class="light-icon-align-left menu-icon" @click="$emit('toggle-drawer')"></i>
         <AppDropdown>
           <div class="dropdown-btn">
-            Vue {{ currentVersion }}
+            Vue {{ $lightvue && $lightvue.version === 3 ? '3.x' : '2.x' }}
             <i class="light-icon-chevron-down"></i>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item" @click="setVersion('2.x')">2.x</div>
-            <div class="dropdown-item" @click="setVersion('3.x')">3.x</div>
+            <a :href="`https://vue3.lightvue.org${$route.fullPath}`" :target="$lightvue && $lightvue.version === 3 ? '_self' : '_blank'">
+              <div class="dropdown-item">Vue 3.x</div>
+            </a>
+            <a :href="`https://lightvue.org${$route.fullPath}`" :target="$lightvue && $lightvue.version === 3 ? '_blank' : '_self'">
+              <div class="dropdown-item">Vue 2.x</div>
+            </a>
           </div>
         </AppDropdown>
       </div>
@@ -35,26 +39,9 @@
 </template>
 
 <script>
-import AppDropdown from "./AppDropdown.vue";
+import AppDropdown from './AppDropdown.vue';
 export default {
-    data() {
-        return {
-            currentVersion: "2.x",
-        };
-    },
-    methods: {
-        setVersion(version) {
-                this.currentVersion = version;
-            
-                if (version === "2.x") {
-                    window.location.replace("https://lightvue.org"+this.$route.fullPath);
-                }
-                if (version === "3.x") {
-                    window.location.replace("https://vue3.lightvue.org"+this.$route.fullPath);
-                }
-        },
-    },
-    components: { AppDropdown }
+  components: { AppDropdown },
 };
 </script>
 
@@ -192,5 +179,9 @@ export default {
     width: calc(100% - 90px);
     left: 80px;
   }
+}
+
+.dropdown-content a {
+  color: #566d79;
 }
 </style>
