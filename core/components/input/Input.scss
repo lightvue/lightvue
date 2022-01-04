@@ -3,13 +3,13 @@
   display: flex;
   align-items: stretch; // to set equal height
   position: relative;
-  overflow: hidden;
   .lv-input__element {
     flex-grow: 1;
     background-color: transparent;
     border: none;
     outline: none;
     font-size: inherit;
+    overflow: hidden;
   }
   .lv-input__default {
     flex-grow: 1;

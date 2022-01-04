@@ -81,17 +81,15 @@ input{
     transition: var(--input-field-transition);
     appearance: none;
     border-radius: var(--input-field-border-radius);
-    &:hover{
-      box-shadow: var(--input-field-hover-shadow);
-    }
     &:focus-within {
       outline: 0 none;
       outline-offset: 0;
-      box-shadow: var(--input-field-focus-shadow);
-      // background-color: hsl(210, 38%, 90%);
+      // box-shadow: var(--input-field-focus-shadow);
+      background-color: var(--input-field-focus-background);
       // box-shadow: 0 0 0 0.2rem #e1e7ec;
       /* border: 2px solid #e1e7ec; */
     }
+    
     .lv-input__element {
       padding: 10px 0px;
       &::placeholder {
@@ -124,12 +122,6 @@ input{
       padding-left: 12px;
     }
 
-    .lv-input-field:hover {
-      /* border-color: #2196F3; */
-    }
-
-    .lv-input-field:focus-within {
-    }
 
     .lv-input-field.lv-error,
     .lv-input-field.lv-invalid {
@@ -168,4 +160,14 @@ input{
       padding: 0.625rem 0.625rem;
     }
   }
+  
+  .--shadow-border{
+    &:hover{
+      box-shadow: var(--input-field-hover-shadow);
+    }
+    &:focus-within{
+      box-shadow: var(--input-field-focus-shadow);
+    }
+  }
+  
 }

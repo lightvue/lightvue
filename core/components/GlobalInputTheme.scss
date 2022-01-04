@@ -8,8 +8,9 @@
   --input-field-placeholder-color: rgba(0,0,0,0.3);
   --input-field-background-color: #edf2f7;
   --input-field-text-color: #495057; 
-  --input-field-focus-shadow: 0 0 0 2px var(--primary);
-  --input-field-hover-shadow: 0 0 0 2px #a7bfd780;
+  --input-field-focus-background: hsl(210, 38%, 90%);
+  --input-field-focus-shadow: 0 0 0 0;
+  --input-field-hover-shadow: 0 0 0 0;
   // Prepend Append
   --input-prepend-append-padding: 12px;
   --input-prepend-append-margin: -12px;
@@ -21,12 +22,10 @@
   --input-label-margin-bottom: 8px;
 }
 
-
-.--shadow-none{
-  --input-field-focus-shadow: 0 0 0 0;
-  --input-field-hover-shadow: 0 0 0 0;
+.--shadow-border{
+  --input-field-focus-shadow: 0 0 0 2px var(--primary);
+  --input-field-hover-shadow: 0 0 0 2px #a7bfd780;
 }
-  
 
 
 [data-theme='dark']{
