@@ -12,7 +12,7 @@
         <div class="section-features__content">
           <div class="section-features__content-heading">The LightVue</div>
           <br />
-          <div class="section-features__content-description">One of the most emerging UI Component Library that hands out everything you need to create modern, engaging, and responsive web applications. LightVue is designed for Vue3.x & Vue2.x to offer unlimited customizations natively.</div>
+          <div class="section-features__content-description">lightVue is one of the most emerging UI Component.Library that hands out everything you need to create a <strong>modern</strong>,<strong>engaging</strong> and <strong>responsive web applications</strong>. LightVue is specifically designed for the users of both Vue3.x and Vue2.x to offer unlimited customizations natively.</div>
           <br /><br />
           <nuxt-link :to="{ hash: 'vue-migrate' }" class="page-button --dark">Know More</nuxt-link>
           <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
@@ -27,25 +27,25 @@
           </div>
           <div class="section-features__single-box">
             <div class="single-box__icon"><i class="light-icon-palette"></i></div>
-            <div class="single-box__heading">Customizable</div>
-            <div class="single-box__description">Structure your ideal design by choosing from countless customizable UI variants that LightVue offers.</div>
+            <div class="single-box__heading">Custom-Built</div>
+            <div class="single-box__description">Assemble your ideal design by choosing from numerous customizable UI variants that LightVue puts forward.</div>
           </div>
           <div class="section-features__single-box">
             <div class="single-box__icon"><i class="light-icon-devices"></i></div>
             <div class="single-box__heading">Responsive</div>
-            <div class="single-box__description">Create layouts which adapts and adjusts smoothly to various screen sizes.</div>
+            <div class="single-box__description">Build in layouts that adapts and adjusts smoothly to a variety of screen sizes..</div>
           </div>
-          <div class="section-features__single-box --toggle-row1">
+          <!-- <div class="section-features__single-box --toggle-row1">
             <div class="single-box__icon"><i class="light-icon-social"></i></div>
-            <div class="single-box__heading">No Dependency</div>
+            <div class="single-box__heading"> </div>
             <div class="single-box__description">LightVue offers zero dependency and most Web portable code that makes it reliable and fast.</div>
-          </div>
+          </div> -->
         </div>
         <div class="features-box__group">
           <div class="section-features__single-box --toggle-row2">
             <div class="single-box__icon"><i class="light-icon-social"></i></div>
-            <div class="single-box__heading">No Dependency</div>
-            <div class="single-box__description">LightVue offers zero dependency and most Web portable code that makes it reliable and fast.</div>
+            <div class="single-box__heading">Self-dependent</div>
+            <div class="single-box__description">LightVue is a self-sufficient library and offers zero dependence in terms of third party format. It extends most web portable codes that make it reliable and fast.</div>
           </div>
           <div class="section-features__single-box">
             <div class="single-box__icon"><i class="light-icon-atom"></i></div>
