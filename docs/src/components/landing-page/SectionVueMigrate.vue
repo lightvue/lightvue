@@ -12,9 +12,6 @@
         <nuxt-link :to="{ hash: 'light-weight' }" class="page-button --dark">Know More</nuxt-link>
         <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
       </div>
-      <!-- <div class="vue-migrate__image-wrapper">
-        <img src="../../assets/images/migrate-vue.svg" alt="migrate-vue" class="vue-migrate__image" />
-      </div> -->
       <!-- <div class="vue-migrate__background"></div> -->
     </div>
   </section>
