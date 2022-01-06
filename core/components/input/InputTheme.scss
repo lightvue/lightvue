@@ -35,7 +35,7 @@
       .lv-input__label {
         top: -18px;
         font-size: 10px;
-        color: #38b2ab;
+        color: var(--theme-color);
         font-weight: 600;
       }
     }
@@ -51,7 +51,7 @@
         content: '';
         height: 2px;
         left: 50%;
-        background-color: #38b2ab;
+        background-color: var(--theme-color);
         position: absolute;
         transition: all 0.2s ease;
         width: 0;
@@ -127,7 +127,7 @@
 
     .lv-input-field.lv-error,
     .lv-input-field.lv-invalid {
-      border-color: #f44336;
+      border-color: var(--danger);
     }
 
     .lv-input-field.lv-input-field-sm {

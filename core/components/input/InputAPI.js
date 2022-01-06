@@ -60,6 +60,7 @@ const InputAPI = {
       default: 'false',
       description: 'Input element with rounded corners',
     },
+
   ],
   slots: [
     {

@@ -48,6 +48,12 @@ const NumberAPI = {
       default: '0',
       description: 'Defines the step to go up or down in the number component.',
     },
+    {
+      name: 'variant',
+      type: 'String',
+      default : 'primary',
+      description: 'Allows user to change color of the button.'
+    }
   ],
   events: [
     {

@@ -17,7 +17,7 @@ export default {
       type: String,
       default: '',
     },
-    color: {
+    variant: {
       type: String,
       default: 'primary',
     },
@@ -33,7 +33,7 @@ export default {
         '--top-left': this.position === 'topLeft',
         '--bottom-left': this.position === 'bottomLeft',
         '--bottom-right': this.position === 'bottomRight',
-        [`lv--${this.color}`]: true,
+        [`lv--${this.variant}`]: true,
       };
     },
   },
