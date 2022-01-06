@@ -60,15 +60,16 @@ export default {
       clearInterval(this.slideInterval);
     },
     nextSlide() {
-      console.log(this.$refs.cardWrapper.scrollLeft);
-      this.prevScroll = this.$refs.cardWrapper.scrollLeft;
 
-      const scrollLeft = this.prevScroll + 0.5 * this.$refs.cardWrapper.offsetWidth;
+      this.prevScroll = this.$refs.cardWrapper.scrollLeft;
+      const wrapperOffsetWidth = this.$refs.cardWrapper.offsetWidth;
+      const scrollLeft = this.prevScroll + (wrapperOffsetWidth > 700 ? 0.5 : 1) * wrapperOffsetWidth;
       this.$refs.cardWrapper.scrollLeft = scrollLeft;
     },
     prevSlide() {
       this.prevScroll = this.$refs.cardWrapper.scrollLeft;
-      const scrollLeft = this.prevScroll - 0.5 * this.$refs.cardWrapper.offsetWidth;
+      const wrapperOffsetWidth = this.$refs.cardWrapper.offsetWidth;
+      const scrollLeft = this.prevScroll - (wrapperOffsetWidth > 700 ? 0.5 : 1) * wrapperOffsetWidth;
       this.$refs.cardWrapper.scrollLeft = scrollLeft;
     },
     setLeft() {
@@ -83,7 +84,6 @@ export default {
       this.scroll = this.start ? true : this.$refs.cardWrapper.scrollWidth > this.$refs.cardWrapper.clientWidth ? true : false;
     },
     checkSlide(event) {
-      console.log(event.key);
       if (event.keyCode === 39) {
         this.nextSlide();
       } else if (event.keyCode === 37) {
@@ -93,7 +93,6 @@ export default {
       }
     },
     checkPause() {
-      console.log('hello from mouseEnter');
       // if (this.pauseHover && this.autoplay) {
       //     this.pauseTimer()
       // }
