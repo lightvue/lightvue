@@ -9,6 +9,7 @@
     <!-- <section-pricing /> -->
     <section-enterprise />
     <!-- <index-footer /> -->
+  <VideoDemo/>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import SectionLighticon from '../components/landing-page/SectionLighticon.vue';
 import SectionPricing from '../components/landing-page/SectionPricing.vue';
 import SectionEnterprise from '../components/landing-page/SectionEnterprise.vue';
 import IndexFooter from '../components/landing-page/IndexFooter.vue';
+import VideoDemo from '../components/landing-page/VideoDemo.vue'
 export default {
   head: {
     title: ' Emerging Collection of well Crafted UI Components | LightVue ',
@@ -58,6 +60,7 @@ export default {
     SectionLighticon,
     SectionPricing,
     SectionEnterprise,
+    VideoDemo
   },
 };
 </script>
