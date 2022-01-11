@@ -1,9 +1,9 @@
 <template>
   
-  <lv-input :label="label" :helpText="helpText" :editable="false">
+  <lv-input :label="label" :rounded="rounded" :helpText="helpText" :editable="false">
     <template #prepend>
       <div class="lv-tags__container">
-        <span class="lv-tag" v-for="(tag,index) in tags" :key="index">
+        <span class="lv-tag" :class="{'--rounded-tags':rounded}" v-for="(tag,index) in tags" :key="index">
           {{tag}}
         <i @click="removeTag(index)" class="light-icon-x lv-tag__delete"></i>
         </span>
@@ -44,6 +44,10 @@ export default{
       type: String,
       default: '',
     },
+    rounded: {
+      type: Boolean,
+      default: false
+    }
   },
   data(){
     return {
