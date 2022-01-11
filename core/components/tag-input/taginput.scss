@@ -1,0 +1,31 @@
+.lv-tags__container{
+  display: flex;
+  gap: 0.25rem;
+  padding-left: 4px;
+}
+
+.lv-tag{
+ background: #38b2ac;
+ padding: 0 0.5rem ;
+ margin: 4px 0;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 0.25rem;
+ color: white;
+ border-radius: 4px;
+ white-space: nowrap;
+}
+.lv-tag__delete{
+ cursor: pointer;
+}
+.lv-tag__input-field{
+ border: none;
+ flex-grow: 1;
+ background: transparent;
+ width: 100%;
+
+}
+input:focus-within{
+ outline: none;
+}
