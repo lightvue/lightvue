@@ -1,13 +1,13 @@
 <template>
   <div>
     <h5>Default</h5>
-    <LvUpload @submit-image="handleFilesChanged($event)" @file-size-error="showError" :label="fileName" @extension-error="showExtensionError"> </LvUpload><br />
+    <LvUpload @submit-image="handleFilesChanged($event)" @file-size-error="showError('file-size-error')" :label="fileName" @extension-error="showError('extension-error')"> </LvUpload><br />
     <h5>Restriction for file type (.svg,.jpg)</h5>
-    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @file-size-error="showError" :label="fileName" @extension-error="showExtensionError"> </LvUpload><br />
+    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @file-size-error="showError('file-size-error')" :label="fileName" @extension-error="showError('extension-error')"> </LvUpload><br />
     <h5>Restriction for file Size 2MB</h5>
-    <LvUpload :maxFileSize="2024" @submit-image="handleFilesChanged($event)" @file-size-error="showError" :label="fileName" @extension-error="showExtensionError"> </LvUpload><br />
+    <LvUpload :maxFileSize="2024" @submit-image="handleFilesChanged($event)" @file-size-error="showError('file-size-error')" :label="fileName" @extension-error="showError('extension-error')"> </LvUpload><br />
     <h5>With Image Preview</h5>
-    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @file-size-error="showError" :label="fileName" @extension-error="showExtensionError"> </LvUpload><br />
+    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @file-size-error="showError('file-size-error')" :label="fileName" @extension-error="showError('extension-error')"> </LvUpload><br />
     <div class="page__demo-preview" v-if="filePreviewImage.length > 0">
       <img alt="filePreviewName" class="page__demo-preview-image" :src="filePreviewImage" />
     </div>
@@ -26,11 +26,13 @@ export default {
     };
   },
   methods: {
-    showError() {
-      this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Please select file less than 1mb', duration: 3000 });
-    },
-    showExtensionError() {
-      this.$notification.add({ type: 'error', title: 'Extension error', content: 'Please select right file', duration: 3000 });
+    showError(err) {
+      if(err === 'file-size-error'){
+        this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Please select file less than 2mb', duration: 3000 });
+      }
+      if(err === 'extension-error'){
+        this.$notification.add({ type: 'error', title: 'Extension error', content: 'Please select right file', duration: 3000 });
+      }
     },
     handleFilesChanged(files) {
       this.fileName = files[0].name;
