@@ -1,16 +1,17 @@
 <template>
-  
-  <lv-input :label="label" :rounded="rounded" :helpText="helpText" :editable="false">
+  <div>
+  <lv-input v-bind="$attrs" :editable="false">
     <template #prepend>
       <div class="lv-tags__container">
         <span class="lv-tag" :class="{'--rounded-tags':rounded}" v-for="(tag,index) in tags" :key="index">
           {{tag}}
-        <i @click="removeTag(index)" class="light-icon-x lv-tag__delete"></i>
+          <i @click="removeTag(index)" class="light-icon-x lv-tag__delete"></i>
         </span>
       </div>
     </template>
     <input :placeholder="placeholder" class="lv-tag__input-field" :name="name" type="text" @keydown="keyEvents"  v-model="newTagValue" >
   </lv-input>
+  </div>
 </template>
 
 <script>
@@ -33,21 +34,6 @@ export default{
      type: Number,
      default: -1,
     },
-     label: {
-      type: String,
-      default: null,
-    },
-    name: {
-      type: String,
-    },
-    helpText: {
-      type: String,
-      default: '',
-    },
-    rounded: {
-      type: Boolean,
-      default: false
-    }
   },
   data(){
     return {
@@ -69,6 +55,7 @@ export default{
         // ',' is pressed -> Add a new tag
         // Remove , from the tag
         this.addNewTag();
+        this.newTagValue = '';
       }
     },
     addNewTag(){
@@ -77,7 +64,6 @@ export default{
         this.updateValue(this.tags);
         // this.value.push(this.newTagValue);
         this.newTagValue = '';
-        
       }
     },
     removeLastTag(){

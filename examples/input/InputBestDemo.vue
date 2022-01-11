@@ -3,7 +3,7 @@
     <docs-card-best title="Playground">
       <lv-input v-bind="allOptions" />
       <h4>Tag input</h4>
-      <lv-tag-input label="Tag input" helpText="This is Help text" v-model="mytags" placeholder="Add a tag" :limit="6"/>
+      <lv-tag-input v-bind="allOptions" v-model="mytags" />
       <template #props>
         <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating Label" v-if="!allOptions['icon-left'] && !allOptions['Placeholder']" /> <br />
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
