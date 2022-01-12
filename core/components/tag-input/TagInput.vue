@@ -3,13 +3,13 @@
   <lv-input v-bind="$attrs" :editable="false">
     <template #prepend>
       <div class="lv-tags__container">
-        <span class="lv-tag" :class="{'--rounded-tags':rounded}" v-for="(tag,index) in tags" :key="index">
+        <span class="lv-tag" v-for="(tag,index) in tags" :key="index">
           {{tag}}
           <i @click="removeTag(index)" class="light-icon-x lv-tag__delete"></i>
         </span>
       </div>
     </template>
-    <input :placeholder="placeholder" class="lv-tag__input-field" :name="name" type="text" @keydown="keyEvents"  v-model="newTagValue" >
+    <input  class="lv-tag__input-field" v-bind="$attrs" type="text" @keydown="keyEvents"  v-model="newTagValue" >
   </lv-input>
   </div>
 </template>
