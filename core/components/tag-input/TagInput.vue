@@ -55,6 +55,7 @@ export default{
         // Remove , from the tag
         this.addNewTag();
         this.newTagValue = '';
+        e.preventDefault();
       }
     },
     addNewTag(){
