@@ -2,8 +2,6 @@
   <div>
     <docs-card-best title="Playground">
       <lv-input v-bind="allOptions" />
-      <h4>Tag input</h4>
-      <lv-tag-input v-bind="allOptions" v-model="mytags" />
       <template #props>
         <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating Label" v-if="!allOptions['icon-left'] && !allOptions['Placeholder']" /> <br />
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
@@ -33,7 +31,6 @@
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input';
 import LvColorpicker from 'lightvue/color-picker';
-import LvTagInput from 'lightvue/tag-input'
 import LvToggleSwitch from 'lightvue/toggle-switch';
 export default {
   data() {
@@ -52,11 +49,6 @@ export default {
       stringProps: ['label', 'placeholder-color', 'icon-left', 'icon-right', 'help-text', 'placeholder'],
     };
   },
-  watch:{
-    mytags(){
-      console.log(this.mytags);
-    }
-  },
   computed: {
     enabledOptions() {
       return Object.entries(this.allOptions).reduce((a, [k, v]) => (v ? ((a[k] = v), a) : a), {});
@@ -67,7 +59,6 @@ export default {
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
-    LvTagInput
   },
 };
 </script>

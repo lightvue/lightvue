@@ -4,23 +4,6 @@
   padding-left: 4px;
 }
 
-.lv-tag{
- background: #38b2ac;
- padding: 0 0.5rem ;
- margin: 4px 0;
- display: flex;
- align-items: center;
- justify-content: space-between;
- gap: 0.25rem;
- color: white;
- border-radius: 4px;
- white-space: nowrap;
-
- &.--rounded-tags{
-   padding: 0 1rem;
-   border-radius: 3rem;
-  }
-}
 
 .lv-tag__delete{
  cursor: pointer;
