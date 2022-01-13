@@ -11,7 +11,7 @@
           </div>
         </slot>
       </div>
-      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @input="this.updateValue" :name="name" :id="name" v-if="editable" />
+      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @input="this.inputEventHandler" :name="name" :id="name" v-if="editable" />
       <div v-else class="lv-input__default">
         <slot>{{ modelValue || $attrs.placeholder }}</slot>
         <div class="lv-hidden-accessible">
@@ -104,7 +104,7 @@ export default {
         ? {
             // Depreciated in Vue 3
             ...this.$listeners,
-            input: event => this.updateModel(event),
+            input: event => this.inputEventHandler(event),
           }
         : {};
     },
@@ -113,7 +113,7 @@ export default {
     },
   },
   methods: {
-    updateModel(event) {
+    inputEventHandler(event) {
       this.$emit('input-native', event);
       this.updateValue(event.target.value);
     },
