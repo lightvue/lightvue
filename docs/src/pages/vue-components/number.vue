@@ -22,6 +22,24 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import NumberAPI from 'lightvueDocs/example/number/NumberAPI';
 
 export default {
+  head: {
+    title: ' Number Docs | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+      {
+        property: 'og:site_name',
+        content: ' Number Docs | LightVue ',
+      },
+      {
+        property: 'og:description',
+        content: 'Input Number component allows user to Take Number as a input.',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,

@@ -15,6 +15,12 @@ npm install light-icons --save</code-highlight>
         <code-highlight lang="javascript"
           >// import directly in JS files
 import "light-icons/dist/light-icon.css";</code-highlight>
+        <br/>
+        <h3>Via unpkg CDN</h3>
+        <code-highlight lang="html"
+          ><!-- import in HTML file  -->
+&lt;link href="https://unpkg.com/light-icons/dist/light-icon.css" rel="stylesheet"&gt;
+</code-highlight>
       </div>
       <div>
         <br/>

@@ -1,6 +1,7 @@
 .--no_backdrop {
   pointer-events: none;
 }
+
 .lv-drawer__wrapper {
   position: fixed;
   top: 0;
@@ -119,5 +120,11 @@
     min-height: 100vh;
     min-width: 100vw;
     background-color: rgba(0, 0, 0);
+
+    /* /backdrop-filter: blur(2px); */
+
+    /*  */
+    // opacity: 0.3;
+    // backdrop-filter: blur(3px);
   }
 }

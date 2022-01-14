@@ -4,7 +4,7 @@ const ColorpickerAPI = {
       name: 'label',
       type: 'String',
       default: '',
-      description: 'Defines the Label of the Colorpicker Element',
+      description: 'Defines the Label of the Color Picker Element',
     },
     {
       name: 'hidePalette',

@@ -12,7 +12,7 @@ import { terser } from 'rollup-plugin-terser';
 let entries = [];
 
 // ask rollup to not bundle Vue in the library #warning-treating-module-as-external-dependency
-let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/checkbox', 'lightvue/ripple', 'lightvue/utils', 'lightvue/mixins', 'lightvue/overlay-panel'];
+let externals = ['vue', 'lightvue', 'lightvue/input', 'lightvue/button', 'lightvue/checkbox', 'lightvue/ripple', 'lightvue/tooltip', 'lightvue/utils', 'lightvue/mixins', 'lightvue/overlay-panel'];
 
 let globalDependencies = {
   vue: 'Vue',
@@ -159,29 +159,33 @@ function addSFC() {
   //         }
   //     });
   // });
+  addEntry('components/badge', 'index.js', 'badge', 'index');
   addEntry('components/button', 'index.js', 'button', 'index');
   addEntry('components/card', 'index.js', 'card', 'index');
   addEntry('components/glass-card', 'index.js', 'glass-card', 'index');
   addEntry('components/checkbox', 'index.js', 'checkbox', 'index');
   addEntry('components/checkbox-group', 'index.js', 'checkbox-group', 'index');
+  addEntry('components/collapsible', 'index.js', 'collapsible', 'index');
   addEntry('components/color-picker', 'index.js', 'color-picker', 'index');
   addEntry('components/dialog', 'index.js', 'dialog', 'index');
+  addEntry('components/drawer', 'index.js', 'drawer', 'index');
   addEntry('components/dropdown', 'index.js', 'dropdown', 'index');
   addEntry('components/input', 'index.js', 'input', 'index');
-  addEntry('components/toggle-switch', 'index.js', 'toggle-switch', 'index');
   addEntry('components/loaders', 'index.js', 'loaders', 'index');
-  addEntry('components/number', 'index.js', 'number', 'index');
   addEntry('components/notification', 'index.js', 'notification', 'index');
+  addEntry('components/number', 'index.js', 'number', 'index');
   addEntry('components/overlay-panel', 'index.js', 'overlay-panel', 'index');
   addEntry('components/progress-bar', 'index.js', 'progress-bar', 'index');
   addEntry('components/progress-spinner', 'index.js', 'progress-spinner', 'index');
+  addEntry('components/radio-group', 'index.js', 'radio-group', 'index');
+  addEntry('components/range-slider', 'index.js', 'range-slider', 'index');
   addEntry('components/rating', 'index.js', 'rating', 'index');
   addEntry('components/skeleton', 'index.js', 'skeleton', 'index');
-  // addEntry('components/slider', 'index.js', 'slider', 'index');
-  addEntry('components/range-slider', 'index.js', 'range-slider', 'index');
+  addEntry('components/slider', 'index.js', 'slider', 'index');
+  addEntry('components/text-editor', 'index.js', 'text-editor', 'index');
   addEntry('components/textarea', 'index.js', 'textarea', 'index');
   addEntry('components/toast', 'index.js', 'toast', 'index');
-  addEntry('components/collapsible', 'index.js', 'collapsible', 'index');
+  addEntry('components/toggle-switch', 'index.js', 'toggle-switch', 'index');
 }
 
 function addDirectives() {

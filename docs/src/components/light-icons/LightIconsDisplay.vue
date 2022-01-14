@@ -29,7 +29,7 @@ import { copyToClipboard } from '@/utils';
 export default {
   data() {
     return {
-      apiPath: '/light-icon_list.json',
+      // apiPath: '/light-icon_list.json',
       query: '',
       allIcons: [],
       copiedIcon: '',
@@ -50,13 +50,11 @@ export default {
     document.removeEventListener('scroll', this.handleScroll);
   },
   created() {
-    if (this.apiPath) {
-      this.fetchAPI();
-    }
+    this.fetchAPI();
   },
   methods: {
     async fetchAPI() {
-      fetch(`${this.apiPath}`)
+      fetch('https://unpkg.com/light-icons/dist/light-icon_list.json')
         .then(_ => {
           return _.json();
         })

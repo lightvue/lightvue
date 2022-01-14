@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path: '/vue-components',
-    component: () => import('../components/Layout/DocsLayout.vue'),
+    component: () => import('@/components/DocsLayout.vue'),
     children: [
       {
         path: 'input',
@@ -120,6 +120,10 @@ const routes = [
         component: () => import('@/pages/vue-components/textarea.vue'),
       },
       {
+        path: 'text-editor',
+        component: () => import('@/pages/vue-components/text-editor.vue'),
+      },
+      {
         path: 'toast',
         component: () => import('@/pages/vue-components/toast.vue'),
       },
@@ -135,7 +139,7 @@ const routes = [
   },
   {
     path: '/getting-started',
-    component: () => import('../components/Layout/DocsLayout.vue'),
+    component: () => import('@/components/DocsLayout.vue'),
     children: [
       {
         path: 'installation',
