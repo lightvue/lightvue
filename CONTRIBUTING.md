@@ -1,6 +1,29 @@
-> Thanks for CONTRIBUTING!
+# LightVue Contribution Guide
 
-## LightVue Contribution Guide
+  <a href="https://github.com/lightvue/lightvue/issues">
+    <img alt="Issues" src="https://img.shields.io/github/issues/lightvue/lightvue" />
+  </a> &nbsp;
+  
+  <a href="https://github.com/lightvue/lightvue/labels/good%20first%20issue">
+   <img alt="GitHub Issues | good first issue" src="https://img.shields.io/github/issues/lightvue/lightvue/good%20first%20issue?color=7679fc" />
+  </a>
+  
+  <a href="https://github.com/lightvue/lightvue/labels/bug">
+   <img alt="GitHub Issues | bug" src="https://img.shields.io/github/issues/lightvue/lightvue/bug?color=88271f" />
+  </a>
+  
+  <a href="https://github.com/lightvue/lightvue/labels/enhancement">
+   <img alt="GitHub Issues | enhancement" src="https://img.shields.io/github/issues/lightvue/lightvue/enhancement?color=8ed8af" />
+  </a>
+  
+  <a href="https://github.com/lightvue/lightvue/labels/documentation">
+   <img alt="GitHub Issues | documentation" src="https://img.shields.io/github/issues/lightvue/lightvue/documentation?color=2aa3db" />
+  </a>
+  
+  <br/>
+  <br/>
+  
+  Thank you for CONTRIBUTING!
 
 ## Raising an Issue
 
@@ -30,42 +53,58 @@
 - UI needs to be compatible with Desktop & Mobile devices both.
 - It should support **Vue2** and **Vue3** with absolute no API change.
 - Performance directly affects the UX, keep it as lightweight as possible.
-- Avoid any other external dpendency
+- Avoid any other external dependency
 - Avoid HTML-only components, if it doesn't need JavaScript, then it doesn't need Vue (with a few exceptions).
 
-## LightVue Javascript Guidlines
+## LightVue JavaScript Guidelines
 
 Add comments if method is too complex and/or whenever you judge necessary.
 
-## LightVue Sass Guidlines
+## LightVue Sass Guidelines
 
-- **Always on a separated file**
-- **Use .scss extension**
-- **Use BEM naming conventions**
-- **Use only **rem** or **em** for `padding`, `margin` and `font-size`**
+- Always on a separated file
+- Use .scss extension
+- Use **BEM** naming conventions
+- Use only **rem** or **em** for `padding`, `margin` and `font-size`
 
-# Development Setup
+## Development Setup
 
-You need [Node.js](http://nodejs.org/) **version >= 6 and <= 11**.
-
-After cloning the repo, run:
-for vue2
+[![versionnode](https://img.shields.io/badge/nodejs->=6%20and%20<=_14-006cb8.svg?logo=node.js&color=3e863d)](http://nodejs.org/)
 
 ```bash
+# Clone this repository
+git clone https://github.com/lightvue/lightvue
+
+# From the project's root folder, install the dependencies
+npm install
+```
+
+**Vue 2.x Docs:**
+
+```bash
+# Navigate to `docs/` (from the root)
 cd ./docs
-# Install dependencies
+
+# Install dependencies for Vue 2.x
 npm install
-# serve docs with hot reload at localhost:3000
+
+# Serve docs with hot reload
 npm run dev
 ```
 
-For vue3
+Visit <http://localhost:3000>
+
+**Vue 3.x Docs:**
 
 ```bash
+# Navigate to `docs-v3/` (from the root)
 cd ./docs-v3
-# Install dependencies
+
+# Install dependencies for Vue 3
 npm install
 
-#serve docs with hot relod at localhost:8080
+# Serve with hot reload
 npm run dev
 ```
+
+Visit <http://localhost:8080>
