@@ -8,7 +8,7 @@
       <div class="section-lighticons__content">
         <div class="section-lighticons__content-heading">Packed with Premium Collection of LIGHT ICONS</div>
         <br />
-        <div class="section-lighticons__content-description">Your imagination has no boundaries and so does our handpicked collection of premium &amp; light-weighted icons. Explore and choose icons from the vast landscape of LIGHT ICONS.</div>
+        <div class="section-lighticons__content-description">Your imagination has no boundaries and so does our handpicked collection of premium &amp; light-weighted icons. Explore and choose icons from the vast landscape of <strong>LIGHT ICONS</strong>.</div>
         <br />
         <br />
         <nuxt-link :to="{ hash: 'contact' }" class="page-button --dark">Know More</nuxt-link>

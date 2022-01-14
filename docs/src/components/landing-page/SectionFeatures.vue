@@ -23,7 +23,7 @@
           <div class="section-features__single-box">
             <div class="single-box__icon"><i class="light-icon-mist"></i></div>
             <div class="single-box__heading">LIGHT Weight</div>
-            <div class="single-box__description">One of the smallest UI Library available in the web for developing fast and powerful web interfaces.</div>
+            <div class="single-box__description">One of the smallest UI Library available in the planet for developing fast and powerful web interfaces.</div>
           </div>
           <div class="section-features__single-box">
             <div class="single-box__icon"><i class="light-icon-palette"></i></div>
