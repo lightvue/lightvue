@@ -1,7 +1,18 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-tag-input v-bind="allOptions"/>
+      <lv-tag-input v-bind="allOptions" icon-left="light-icon-user">
+        <template #prepend>
+          <button>Hello</button>
+        </template>
+        <template #tag="{content,deleteTag}">
+          <div class="custom-tag">
+           {{content}}
+          <button @click="deleteTag()">X</button>
+          </div>
+        </template>
+      </lv-tag-input>
+      
       <!-- <template #props>
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
@@ -39,3 +50,14 @@ export default{
 }
 
 </script>
+
+<style lang="scss">
+.custom-tag{
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+  background: lightgreen;
+  border-radius: 10px;
+  padding:0 12px ;
+}
+</style>

@@ -1,15 +1,20 @@
 <template>
   <div>
   <lv-input v-bind="$attrs" :editable="false">
-    <template #prepend>
+      <template #prepend>
+      <slot name="prepend">
+
+      </slot>
+      </template>
       <div class="lv-tags__container">
-        <span class="lv-tag" v-for="(tag,index) in tags" :key="index">
-          {{tag}}
-          <i @click="removeTag(index)" class="light-icon-x lv-tag__delete"></i>
-        </span>
+        <slot name="tag" v-for="(tag,index) in tags" :deleteTag="() => removeTag(index)" :content="tag" :key="index">
+          <div class="lv-tag">
+            {{tag}}
+          <div @click="removeTag(index)">X</div>
+          </div>
+        </slot>
+      <input  class="lv-tag__input-field" v-bind="$attrs" type="text" @keydown="keyEvents"  v-model="newTagValue" >
       </div>
-    </template>
-    <input  class="lv-tag__input-field" v-bind="$attrs" type="text" @keydown="keyEvents"  v-model="newTagValue" >
   </lv-input>
   </div>
 </template>
