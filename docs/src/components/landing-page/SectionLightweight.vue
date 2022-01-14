@@ -69,10 +69,14 @@ export default {};
     }
     .light-weight__content-description {
       font-size: 20px;
-      line-height: 26px;
+      line-height: 30px;
       opacity: 0.7;
+      font-weight: 300;
       color: #143a56;
-      margin-bottom: 0.78em;
+      margin-bottom: 0.5em;
+      strong {
+        font-weight: 500;
+      }
     }
   }
 }

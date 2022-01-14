@@ -8,7 +8,7 @@
         <div class="hero-container__row">
           <div class="hero-container__content">
             <div class="hero-container__subtext">
-              The Emerging UI Component library<br />
+              The Emerging UI Component Library<br />
               <span style="font-size: 0.8em"> Designed for <span class="subtext-highlight">Vue 3.x</span> &amp; <span class="subtext-highlight">Vue 2.x </span> </span>
             </div>
           </div>
