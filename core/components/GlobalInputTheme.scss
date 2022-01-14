@@ -20,6 +20,7 @@
   --input-help-margin-top: 4px;
   //Input Label
   --input-label-margin-bottom: 8px;
+  --input-label-color: 
 }
 
 .--shadow-border{
@@ -29,7 +30,10 @@
 
 
 [data-theme='dark']{
+  
     --input-field-placeholder-color: rgba(255,255,255,0.3);
     --input-field-background-color: hsl(215, 21%, 20%);
+    --input-field-focus-background: hsl(215, 21%, 30%);
     --input-field-textColor: var(--text-color);
+    --input-field-text-color: hsl(210, 9%, 90%); 
 }

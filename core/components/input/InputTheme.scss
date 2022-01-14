@@ -6,9 +6,8 @@ input{
   &.--with-floating-label {
     .lv-input__label {
       position: absolute;
-      top: 8px;
+      top: 12px;
       font-weight: 300;
-      // color: ;
       z-index: 1;
       left: 12px;
       transition: all 0.2s ease;
@@ -66,6 +65,9 @@ input{
           width: 100%;
         }
       }
+    }
+    &.lv-input__label{
+      color: var(--text-color);
     }
   }
 
