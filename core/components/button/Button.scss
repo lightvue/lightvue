@@ -8,6 +8,7 @@
     text-align: center;
     overflow: hidden;
     position: relative;
+    white-space: nowrap;
     &:disabled{
         opacity: 0.6;
         cursor: default;
@@ -17,11 +18,12 @@
     }
     &.--push{
         transition: all .2s ease-in-out;
-        // box-shadow: none !important;
+        box-shadow: none !important;
         &:active {
+            transition: all .2s ease-in-out;
             box-shadow: none;
             transform: translateY(2px);
-        }
+    }
     }
     &.--icon-only {
         justify-content: center;
