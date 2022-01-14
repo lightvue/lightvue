@@ -1,19 +1,18 @@
 <template>
-  <div>
-  <lv-input v-bind="$attrs" :editable="false">
+  <div >
+  <lv-input v-bind="$attrs" :rounded="rounded" :editable="false">
       <template #prepend>
       <slot name="prepend">
-
       </slot>
       </template>
-      <div class="lv-tags__container">
-        <slot name="tag" v-for="(tag,index) in tags" :deleteTag="() => removeTag(index)" :content="tag" :key="index">
-          <div class="lv-tag">
+      <div class="lv-tag__input-container">
+        <slot name="tag" v-for="(tag,index) in tags"  :deleteTag="() => removeTag(index)" :content="tag">
+          <div :class="{'--rounded-tags':rounded}" :style="{backgroundColor:tagColor,color:tagTextColor}" class="lv-tag" >
             {{tag}}
-          <div @click="removeTag(index)">X</div>
+            <i class="light-icon-x" @click="removeTag(index)"></i>
           </div>
         </slot>
-      <input  class="lv-tag__input-field" v-bind="$attrs" type="text" @keydown="keyEvents"  v-model="newTagValue" >
+        <input class="lv-tag__input-field" v-bind="$attrs" type="text" @keydown="keyEvents"  v-model="newTagValue" >
       </div>
   </lv-input>
   </div>
@@ -21,23 +20,35 @@
 
 <script>
 import LvInput from 'lightvue/input';
-import { localValueMixin } from '../../mixins';
+import { localValueMixin, optionsMixin } from '../../mixins';
 export default{
   name:'LvTagInput',
-  mixins: [localValueMixin],
+  mixins: [localValueMixin,optionsMixin],
   props:{
+    dataType:{
+      type:String,
+      default: 'string'
+    },
     value: {
       type:Array,
       default: () => []
-    },
-    placeholder:{
-      type: String,
-      default: "",
     },
     limit:{
      type: Number,
      default: -1,
     },
+    rounded:{
+      type:Boolean,
+      default: false
+    },
+    tagColor: {
+      type:String,
+      default: '#38b2ac',
+    },
+    tagTextColor:{
+      type:String,
+      default: '#fff'
+    }
   },
   data(){
     return {
@@ -75,6 +86,7 @@ export default{
       if(this.newTagValue === ''){
         this.tags.pop();
         this.updateValue(this.tags);
+
       }
     },
     removeTag(index){
