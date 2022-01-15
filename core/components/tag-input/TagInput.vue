@@ -1,10 +1,10 @@
 <template>
   <div class="lv-tag__input">
   <lv-input v-bind="$attrs" :rounded="rounded" :editable="false">
-      <!-- <template #prepend>
+      <template #prepend>
       <slot name="prepend">
       </slot>
-      </template> -->
+      </template>
       <div class="lv-tag__input-container">
         <slot name="tag" v-for="(tag,index) in tags"  :deleteTag="() => removeTag(index)" :content="tag">
           <div :class="{'--rounded-tags':rounded}" :style="{backgroundColor:tagColor,color:tagTextColor}" class="lv-tag" >

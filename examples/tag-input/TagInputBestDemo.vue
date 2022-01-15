@@ -10,8 +10,8 @@
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.placeholder" label="Placeholder" /> <br />
         <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br />
-        <Lv-colorpicker v-model="allOptions.tagColor" label="Tag color" /> <br><br>
-        <Lv-colorpicker v-model="allOptions.tagTextColor" label="Tag text color" />
+        <Lv-colorpicker v-model="allOptions['tag-color']" label="Tag color" /> <br><br>
+        <Lv-colorpicker v-model="allOptions['tag-text-color']" label="Tag text color" />
       </template>
         <template #code>
         <span class="dy-code-row --empty-row"></span>
