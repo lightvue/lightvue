@@ -25,15 +25,13 @@
   color: white;
   border-radius: 4px;
   white-space: nowrap;
+  cursor: pointer;
   &.--rounded-tags{
     padding: 0 1rem;
     border-radius: 3rem;
    }
  }
  
-.lv-tag__delete{
- cursor: pointer;
-}
 
 .lv-tag__input-field{
  border: none;
