@@ -40,8 +40,8 @@
       @click="drawerClose"
       :style="{
         zIndex: zIndex - 1,
-        backdropFilter: backdropBlur && 'blur(2px)',
-        opacity: backdropOpacity,
+        backdropFilter: backdropBlur && 'blur(5px)',
+        filter: `${backdropBlur ? 'blur(5px) ' : ''}opacity(${backdropOpacity})`,
       }"
     ></div>
   </div>
@@ -83,8 +83,8 @@ export default {
     customStyle: Object,
     headerTitle: String,
     backdropOpacity: {
-      type: String,
-      default: '0.3',
+      type: Number,
+      default: 0.3,
     },
     absolute: {
       type: Boolean,
