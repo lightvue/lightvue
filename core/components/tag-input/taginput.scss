@@ -1,12 +1,18 @@
-.lv-tag__input .lv-input__default {
-    padding: 0 !important;
+.lv-tag__input .lv-input__group .lv-input__field .lv-input__default {
+    padding: 0 0 !important;
 }
+
+.lv-tag__input .lv-input__group .lv-input__field {
+  padding: 0 0 !important;
+}
+
+
 
 .lv-tag__input-container{
   display: flex;
   gap: 0.25rem;
-  // padding-left: 4px;
   flex-wrap: wrap;
+  padding: 4px;
 }
 
 .lv-tag{
@@ -19,7 +25,6 @@
   color: white;
   border-radius: 4px;
   white-space: nowrap;
-  height: 100%;
   &.--rounded-tags{
     padding: 0 1rem;
     border-radius: 3rem;
@@ -29,12 +34,14 @@
 .lv-tag__delete{
  cursor: pointer;
 }
+
 .lv-tag__input-field{
  border: none;
  flex-grow: 1;
  background: transparent;
- padding-left: 4px;
+ padding: 6px 8px;
 }
+
 input:focus-within{
  outline: none;
 } 

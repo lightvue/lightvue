@@ -47,14 +47,13 @@ export default{
 <style lang="scss">
 .custom-tag{
   display: flex;
-  gap: 0.25rem;
+  gap: 0.3rem;
   align-items: center;
-  margin: 4px 0;
   justify-content: space-around;
   background: rgb(0, 119, 255);
   color:#fff;
   border-radius: 10px;
-  padding:0 12px ;
+  padding:0 0.5rem ;
   cursor: pointer;
 }
 
