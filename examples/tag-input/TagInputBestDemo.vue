@@ -43,10 +43,10 @@ export default{
         placeholder: 'Add a tag',
         'help-text': 'You can create your Component',
         label: 'This is the best demo',
-        tagColor: '#38b2ac',
-        tagTextColor: '#fff'
+        'tag-color': '#38b2ac',
+        'tag-text-color': '#fff'
       },
-       stringProps: ['label', 'placeholder-color', 'help-text', 'placeholder','tagColor','tagTextColor'],
+       stringProps: ['label', 'placeholder-color', 'help-text', 'placeholder','tag-color','tag-text-color'],
     }
   },
   computed: {
