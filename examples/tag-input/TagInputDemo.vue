@@ -2,13 +2,24 @@
   <div>   
     <lv-tag-input label="Default" placeholder="Add a Tag"/>
     <br>
-    <lv-tag-input label="Rounded" rounded="true"/>
+    <lv-tag-input label="Rounded"  placeholder="Add a tag" rounded="true"/>
+    <br>
+    <lv-tag-input label="Custom tag Component" placeholder="Add a tag">
+    <template #tag="{content,deleteTag}">
+      <div class="custom-tag">
+        {{content}}
+         <i class="light-icon-trash delete-icon" @click="deleteTag"></i>
+
+      </div>
+    </template>
+    </lv-tag-input>
   </div>
 </template>
 
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvTagInput from 'lightvue/tag-input'
+
 export default{
   data() {
     return {
@@ -32,3 +43,24 @@ export default{
   },
 }
 </script>
+
+<style lang="scss">
+.custom-tag{
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  margin: 4px 0;
+  justify-content: space-around;
+  background: rgb(0, 119, 255);
+  color:#fff;
+  border-radius: 10px;
+  padding:0 12px ;
+  cursor: pointer;
+}
+
+.delete-icon {
+  padding: 2px;
+  border-radius:3rem;
+  background:rgb(0, 94, 201) ;
+}
+</style>
