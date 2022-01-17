@@ -17,7 +17,7 @@
 
 .lv-tag{
   background: #38b2ac;
-  padding: 0 0.5rem ;
+  padding: 0.3rem 0.5rem ;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,7 +27,7 @@
   white-space: nowrap;
   cursor: pointer;
   &.--rounded-tags{
-    padding: 0 1rem;
+    padding: 0.3rem 1rem;
     border-radius: 3rem;
    }
  }

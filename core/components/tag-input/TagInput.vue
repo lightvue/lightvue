@@ -6,9 +6,9 @@
       </slot>
       </template>
       <div class="lv-tag__input-container">
-        <slot name="tag" v-for="(tag,index) in tags"  :deleteTag="() => removeTag(index)" :content="tag">
+        <slot name="tag" v-for="(tag,index) in value"  :deleteTag="() => removeTag(index)" :content="tag">
           <div :class="{'--rounded-tags':rounded}" :style="{backgroundColor:tagColor,color:tagTextColor}" class="lv-tag" >
-            {{tag}}
+            {{ getOptionLabel(tag) }}
             <i class="light-icon-x" @click="removeTag(index)"></i>
           </div>
         </slot>
@@ -27,7 +27,7 @@ export default{
   props:{
     dataType:{
       type:String,
-      default: 'string'
+      default: "string"
     },
     value: {
       type:Array,
@@ -76,9 +76,13 @@ export default{
     },
     addNewTag(){
       if(this.newTagValue != '' && (this.limit === -1 || this.tags.length < this.limit)){
-        this.tags.push(this.newTagValue);
+        if(this.dataType.toLowerCase() == "string"){
+          this.tags.push(this.newTagValue); // push the new tag value directly to the array as a STRING
+        }
+        if(this.dataType.toLowerCase() == "object"){
+          this.tags.push({label:this.newTagValue,value:this.newTagValue}); // push the new tag value as an OBJECT
+        }
         this.updateValue(this.tags);
-        // this.value.push(this.newTagValue);
         this.newTagValue = '';
       }
     },

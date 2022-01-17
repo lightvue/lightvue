@@ -1,8 +1,10 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-tag-input v-bind="allOptions">
+      <lv-tag-input v-bind="allOptions" v-model="demoTags">
       </lv-tag-input>
+      <br>
+      <p>{{demoTags}}</p>
       <template #props>
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
@@ -11,7 +13,7 @@
         <lv-input v-model="allOptions.placeholder" label="Placeholder" /> <br />
         <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br />
         <Lv-colorpicker v-model="allOptions['tag-color']" label="Tag color" /> <br><br>
-        <Lv-colorpicker v-model="allOptions['tag-text-color']" label="Tag text color" />
+        <Lv-colorpicker v-model="allOptions['tag-text-color']"  label="Tag text color" />
       </template>
         <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -32,7 +34,7 @@ import LvTagInput from 'lightvue/tag-input';
 import LvToggleSwitch from 'lightvue/toggle-switch';
 import LvInput from 'lightvue/input';
 import LvColorpicker from 'lightvue/color-picker'
-
+import LvDropdown from 'lightvue/dropdown';
 
 export default{
   data(){
@@ -44,11 +46,13 @@ export default{
         'help-text': 'You can create your Component',
         label: 'This is the best demo',
         'tag-color': '#38b2ac',
-        'tag-text-color': '#fff'
+        'tag-text-color': '#fff',
       },
-       stringProps: ['label', 'placeholder-color', 'help-text', 'placeholder','tag-color','tag-text-color'],
+    demoTags: ['Demo','Tags'],  
+    stringProps: ['label', 'placeholder-color', 'help-text', 'placeholder','tag-color','tag-text-color'],
     }
   },
+
   computed: {
     enabledOptions() {
       return Object.entries(this.allOptions).reduce((a, [k, v]) => (v ? ((a[k] = v), a) : a), {});
@@ -59,7 +63,8 @@ export default{
     LvTagInput,
     LvToggleSwitch,
     LvInput,
-    LvColorpicker
+    LvColorpicker,
+    LvDropdown
   }
 }
 

@@ -2,7 +2,7 @@
   <div>   
     <lv-tag-input label="Default" v-model="sampleTags" placeholder="Add a Tag"/>
     <br>
-    <lv-tag-input label="Rounded" v-model="sampleTags"  placeholder="Add a tag" rounded="true"/>
+    <lv-tag-input label="Rounded" v-model="sampleTags"  placeholder="Add a tag" :rounded="true"/>
     <br>
     <lv-tag-input label="Custom tag Component" v-model="sampleTags" placeholder="Add a tag">
     <template #tag="{content,deleteTag}">
@@ -12,6 +12,13 @@
       </div>
     </template>
     </lv-tag-input>
+    <br>
+    <lv-tag-input label="Array of Strings (default)" v-model="sampleTags" placeholder="Add a Tag"/>
+    <p>{{sampleTags}}</p>
+    <br>
+    <lv-tag-input label="Array of Objects with ( data-type='object' )" v-model="objectSampleTags"  data-type="object" option-label="label" option-value="value" placeholder="Add a Tag"/>
+
+    <p>{{objectSampleTags}}</p>
   </div>
 </template>
 
@@ -23,6 +30,7 @@ export default{
   data() {
     return {
      sampleTags : ['Tag 1', 'Tag 2', 'Tag 3'] ,
+     objectSampleTags : [{label:"India",value:"IN"},{label:"United States", value:"US"}]
     }
   },
   components: {
