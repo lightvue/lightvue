@@ -114,21 +114,23 @@ export default {
       // This method will be called when the file gets uploaded
       const files = e.target.files || e.dataTransfer.files;
       // We are checking the size of image or if not valid then calling sizeErrorCallback
-      const imageSize = files[0].size / 1024; // size in KB
+      if (files[0]) {
+        const imageSize = files[0].size / 1024; // size in KB
 
-      if (imageSize > this.maxFileSize) {
-        this.$emit('file-size-error', imageSize);
-        this.$refs.LvFileInput.value = '';
-        return;
-      }
-      // check File extension for normal upload its not necessary but for drop we have to check the extension
-      if (this.checkFileExtensions(files)) {
-        this.$emit('extension-error', files);
-        this.$refs.LvFileInput.value = '';
-        return;
-      }
-      if (files && files[0]) {
-        this.$emit('submit-image', files);
+        if (imageSize > this.maxFileSize) {
+          this.$emit('file-size-error', imageSize);
+          this.$refs.LvFileInput.value = '';
+          return;
+        }
+        // check File extension for normal upload its not necessary but for drop we have to check the extension
+        if (this.checkFileExtensions(files)) {
+          this.$emit('extension-error', files);
+          this.$refs.LvFileInput.value = '';
+          return;
+        }
+        if (files && files[0]) {
+          this.$emit('submit-image', files);
+        }
       }
     },
     handleDrop($event) {
