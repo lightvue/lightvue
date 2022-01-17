@@ -1,13 +1,13 @@
 <template>
   <div>
     <h5>Default</h5>
-    <LvUpload @submit-image="handleFilesChanged($event)" @file-size-error="showError('file-size-error')" :label="fileName" @extension-error="showError('extension-error')"> </LvUpload><br />
+    <LvUpload @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName"> </LvUpload><br />
     <h5>Restriction for file type (.svg,.jpg)</h5>
-    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @file-size-error="showError('file-size-error')" :label="fileName" @extension-error="showError('extension-error')"> </LvUpload><br />
+    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName"> </LvUpload><br />
     <h5>Restriction for file Size 2MB</h5>
-    <LvUpload :maxFileSize="2024" @submit-image="handleFilesChanged($event)" @file-size-error="showError('file-size-error')" :label="fileName" @extension-error="showError('extension-error')"> </LvUpload><br />
+    <LvUpload :maxFileSize="2024" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName"> </LvUpload><br />
     <h5>With Image Preview</h5>
-    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @file-size-error="showError('file-size-error')" :label="fileName" @extension-error="showError('extension-error')"> </LvUpload><br />
+    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName"> </LvUpload><br />
     <div class="page__demo-preview" v-if="filePreviewImage.length > 0">
       <img alt="filePreviewName" class="page__demo-preview-image" :src="filePreviewImage" />
     </div>
@@ -26,12 +26,15 @@ export default {
     };
   },
   methods: {
-    showError(err) {
-      if(err === 'file-size-error'){
-        this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Please select file less than 2mb', duration: 3000 });
+    handleFilesValidated(result, files) {
+      if (result === 'MULTIFILES_ERROR') {
+        this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Multiple files not allowed', duration: 3000 });
       }
-      if(err === 'extension-error'){
+      if (result === 'EXTENSION_ERROR') {
         this.$notification.add({ type: 'error', title: 'Extension error', content: 'Please select right file', duration: 3000 });
+      }
+      if (result === 'FILE_SIZE_ERROR') {
+        this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Please select file less than 2mb', duration: 3000 });
       }
     },
     handleFilesChanged(files) {
