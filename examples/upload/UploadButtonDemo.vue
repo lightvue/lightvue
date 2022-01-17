@@ -1,13 +1,13 @@
 <template>
   <div>
     <h5>Default</h5>
-    <LvUpload @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName"> </LvUpload><br />
+    <LvUpload @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName" button> </LvUpload><br />
     <h5>Restriction for file type (.svg,.jpg)</h5>
-    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName"> </LvUpload><br />
+    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName" button> </LvUpload><br />
     <h5>Restriction for file Size 2MB</h5>
-    <LvUpload :maxFileSize="2024" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName"> </LvUpload><br />
+    <LvUpload :maxFileSize="2024" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName" button> </LvUpload><br />
     <h5>With Image Preview</h5>
-    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName"> </LvUpload><br />
+    <LvUpload extensions=".jpg,.svg" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" :label="fileName" button> </LvUpload><br />
     <div class="page__demo-preview" v-if="filePreviewImage.length > 0">
       <img alt="filePreviewName" class="page__demo-preview-image" :src="filePreviewImage" />
     </div>

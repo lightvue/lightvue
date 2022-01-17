@@ -1,6 +1,6 @@
 <template>
   <label class="Lv__file" :class="{ 'lv-drag-enter': isDragEnter }">
-    <template v-if="!drop && !withButtonInput">
+    <template v-if="!drop && !withButtonInput && button">
       <LvButton :icon="icon" :class="ButtonClass" @click="openPicker" :rounded="rounded" :label="placeholder" />
     </template>
     <template v-else-if="!drop && withButtonInput">
@@ -10,9 +10,13 @@
         </template>
       </lv-input>
     </template>
-    <div v-else class="file--upload__draggable" ref="LvDroppable" @dragenter.prevent="isDragEnter = true" @dragover.prevent="() => {}" @dragleave.prevent="isDragEnter = false" @drop.prevent="handleDrop" :style="computedStyle">
+
+    <div v-else-if="drop" class="file--upload__draggable" ref="LvDroppable" @dragenter.prevent="isDragEnter = true" @dragover.prevent="() => {}" @dragleave.prevent="isDragEnter = false" @drop.prevent="handleDrop" :style="computedStyle">
       <slot></slot>
     </div>
+    <template>
+      <slot></slot>
+    </template>
     <input ref="LvFileInput" type="file" :accept="extensions" :tabindex="tabindex" :multiple="multiple" @change="handleFileChange($event)" />
   </label>
 </template>
@@ -35,6 +39,10 @@ export default {
       default: false,
     },
     withButtonInput: {
+      type: Boolean,
+      default: false,
+    },
+    button: {
       type: Boolean,
       default: false,
     },
