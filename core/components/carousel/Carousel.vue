@@ -32,18 +32,12 @@ export default {
     },
     autoplay: {
       type: Boolean,
-      default: true,
-    },
-    repeat: {
-      type: Boolean,
-      default: true,
+      default: false,
     },
     interval: {
       type: Number,
       default: 5000,
     },
-
-    noPadding: Boolean,
   },
   methods: {
     startTimer() {
@@ -53,14 +47,11 @@ export default {
           this.nextSlide();
         }, this.interval);
       } else return;
-      //     }
-      // }, (this.interval || config.defaultCarouselInterval))
     },
     stopSlideTimer() {
       clearInterval(this.slideInterval);
     },
     nextSlide() {
-
       this.prevScroll = this.$refs.cardWrapper.scrollLeft;
       const wrapperOffsetWidth = this.$refs.cardWrapper.offsetWidth;
       const scrollLeft = this.prevScroll + (wrapperOffsetWidth > 700 ? 0.5 : 1) * wrapperOffsetWidth;
@@ -92,20 +83,10 @@ export default {
         return;
       }
     },
-    checkPause() {
-      // if (this.pauseHover && this.autoplay) {
-      //     this.pauseTimer()
-      // }
-    },
-    //   autoplay(status) {
-    //     status ? this.startTimer() : this.pauseTimer()
-    // },
   },
 
   mounted() {
     this.$nextTick(() => {
-      // console.log(this.$refs.cardWrapper);
-      // console.log(this.$refs.cardWrapper.scrollWidth);
       this.setScroll();
     });
     this.startTimer();
@@ -113,9 +94,6 @@ export default {
   beforeUnmount() {
     this.stopSlideTimer();
   },
-  // beforeDestroy() {
-  //     this.pauseTimer()
-  // }
 };
 </script>
 <style lang="scss">
