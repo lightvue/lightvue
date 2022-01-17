@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LvUpload :max-file-size="2000" extensions=".png" @submit-image="handleFilesChanged($event)" @file-size-error="showError('file-size-error')" @extension-error="showExtensionError('extension-error')" drop height="100%" width="100%">
+    <LvUpload :max-file-size="2 * 1024 * 1024" extensions=".jpg" @submit-image="handleFilesChanged($event)" @validated="handleFilesValidated" drop height="100%" width="100%">
       <div class="upload" v-if="!filePreviewImage.length > 0">
         <i class="light-icon-cloud-upload"></i>
       </div>
@@ -23,12 +23,15 @@ export default {
     };
   },
   methods: {
-    showError(err) {
-      if(err === 'file-size-error'){
-        this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Please select file less than 2mb', duration: 3000 });
+    handleFilesValidated(result, files) {
+      if (result === 'MULTIFILES_ERROR') {
+        this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Multiple files not allowed', duration: 3000 });
       }
-      if(err === 'extension-error'){
+      if (result === 'EXTENSION_ERROR') {
         this.$notification.add({ type: 'error', title: 'Extension error', content: 'Please select right file', duration: 3000 });
+      }
+      if (result === 'FILE_SIZE_ERROR') {
+        this.$notification.add({ type: 'error', title: 'File Size Error', content: 'Please select file less than 2mb', duration: 3000 });
       }
     },
     handleFilesChanged(files) {

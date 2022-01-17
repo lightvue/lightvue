@@ -79,6 +79,10 @@ export default {
       default: '2rem',
     },
     label: String,
+    validateFn: {
+      type: Function,
+      default: () => true,
+    },
   },
 
   data() {
@@ -113,29 +117,14 @@ export default {
     handleFileChange(e) {
       // This method will be called when the file gets uploaded
       const files = e.target.files || e.dataTransfer.files;
-      // We are checking the size of image or if not valid then calling sizeErrorCallback
-      if (files[0]) {
-        const imageSize = files[0].size / 1024; // size in KB
 
-        if (imageSize > this.maxFileSize) {
-          this.$emit('file-size-error', imageSize);
-          this.$refs.LvFileInput.value = '';
-          return;
-        }
-        // check File extension for normal upload its not necessary but for drop we have to check the extension
-        if (this.checkFileExtensions(files)) {
-          this.$emit('extension-error', files);
-          this.$refs.LvFileInput.value = '';
-          return;
-        }
-        if (files && files[0]) {
-          this.$emit('submit-image', files);
-        }
+      if (files[0]) {
+        this.preprocessFiles($event.target.files);
       }
     },
     handleDrop($event) {
       this.isDragEnter = false;
-      this.handleFileChange($event);
+      this.preprocessFiles($event.dataTransfer.files);
     },
 
     checkFileExtensions(files) {
@@ -151,19 +140,48 @@ export default {
       // all exts are valid
       return invalidFileIndex === -1;
     },
+    checkFileSize(files) {
+      if (Number.isNaN(this.maxFileSize)) {
+        return true;
+      }
+
+      const list = Array.from(files);
+
+      // find invalid file size
+
+      const invalidFileIndex = list.findIndex(file => file.size > this.maxFileSize);
+      // all file size are valid
+      return invalidFileIndex === -1;
+    },
 
     validate(files) {
       // file selection
       if (!this.multiple && files.length > 1) {
-        return this.$emit('multiple-file-error');
+        return 'MULTIFILES_ERROR';
       }
+
+      // check File extension for normal upload its not necessary but for drop we have to check the extension
+      if (this.checkFileExtensions(files)) {
+        return 'EXTENSION_ERROR';
+      }
+
+      // file size
+      if (!this.checkFileSize(files)) {
+        return 'FILE_SIZE_ERROR';
+      }
+
+      // custom validation
+      return this.validateFn(files);
     },
-    getImageURL(image) {
-      // here we are dealing with variuos cases
-      // 1: if image is not provided use default image from assets
-      // 2: if image is string use it directly
-      // 3: if image is dataURL object, create image url using data, encoding and data format
-      return image ? (typeof image === 'object' ? `data:image/${image.dataFormat};${image.encoding},${image.data}` : image) : this.defaultImage;
+    preprocessFiles(files) {
+      const result = this.validate(files);
+      this.$emit('validated', result, files);
+      // validation
+      if (result === true) {
+        this.$emit('submit-image', files);
+      }
+      // clear selected files
+      this.$refs.LvFileInput.value = '';
     },
   },
 };
