@@ -1,8 +1,8 @@
 <template>
     <div>
       <docs-card-best title="Playground">
-      <div :class="selectedAnimation">
-        <lv-button class="lv-animate__slide-in" label="Animate Me!" size="xl"/>
+      <div>
+        <lv-button :class="selectedAnimation" class="lv-animate__slide-in" label="Animate Me!" size="xl"/>
       </div>
       <br>
       <div>

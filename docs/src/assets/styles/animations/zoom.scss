@@ -13,12 +13,14 @@
   }
   50% {
     opacity: 1;
+    transform: scale3d(1,1,1);
   }
 }
 
 @keyframes zoomOut {
   from {
     opacity: 1;
+    transform: scale3d(1,1,1);
   }
 
   50% {
