@@ -1,22 +1,22 @@
 // Animation Classes
 .lv-animate__fade-out{
-  animation: fadeOut var(--duration) var(--timing-function);  
+  animation: fadeOut var(--animation-duration) var(--animation-timing-function);  
 }
 
 .lv-animate__fade-out--left{
-  animation: fadeOutLeft var(--duration) var(--timing-function);  
+  animation: fadeOutLeft var(--animation-duration) var(--animation-timing-function);  
 }
 
 .lv-animate__fade-out--right{
-  animation: fadeOutRight var(--duration) var(--timing-function);  
+  animation: fadeOutRight var(--animation-duration) var(--animation-timing-function);  
 }
 
 .lv-animate__fade-out--top{
-  animation: fadeOutTop var(--duration) var(--timing-function);  
+  animation: fadeOutTop var(--animation-duration) var(--animation-timing-function);  
 }
 
 .lv-animate__fade-out--bottom{
-  animation: fadeOutBottom var(--duration) var(--timing-function);  
+  animation: fadeOutBottom var(--animation-duration) var(--animation-timing-function);  
 }
 
 // Keyframes

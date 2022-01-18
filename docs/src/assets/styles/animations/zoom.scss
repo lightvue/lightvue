@@ -1,9 +1,9 @@
 .lv-animate__zoom-in {
-  animation: zoomIn var(--duration) var(--timing-function);
+  animation: zoomIn var(--animation-duration) var(--animation-timing-function);
 }
 
 .lv-animate__zoom-out {
-  animation: zoomOut var(--duration) var(--timing-function);
+  animation: zoomOut var(--animation-duration) var(--animation-timing-function);
 }
 
 @keyframes zoomIn {

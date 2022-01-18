@@ -1,18 +1,18 @@
 // Animation Classes
 .lv-animate__slide-out--left{
-  animation: slideOutLeft var(--duration) ease-in;  
+  animation: slideOutLeft var(--animation-duration) ease-in;  
 }
 
 .lv-animate__slide-out--right{
-  animation: slideOutRight var(--duration) ease-in;  
+  animation: slideOutRight var(--animation-duration) ease-in;  
 }
 
 .lv-animate__slide-out--top{
-  animation: slideOutTop var(--duration) ease-in;  
+  animation: slideOutTop var(--animation-duration) ease-in;  
 }
 
 .lv-animate__slide-out--bottom{
-  animation: slideOutBottom var(--duration) ease-in;  
+  animation: slideOutBottom var(--animation-duration) ease-in;  
 }
 
 // Keyframes
