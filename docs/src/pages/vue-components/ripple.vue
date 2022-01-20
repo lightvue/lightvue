@@ -15,7 +15,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import RippleAPI from 'lightvueDocs/example/ripple/RippleAPI';
+// import RippleAPI from 'lightvueDocs/example/ripple/RippleAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
@@ -49,7 +49,7 @@ export default {
   packageName: 'ripple',
   componentName: 'Ripple',
   status: COMPONENT_STATUS.BETA,
-  apiData: RippleAPI,
-  apiData: {},
+  // apiData: RippleAPI,
+  // apiData: {},
 };
 </script>
