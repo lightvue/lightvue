@@ -1,11 +1,13 @@
+input{
+  color:var(--input-field-text);
+}
 .lv-input__group {
   position: relative;
   &.--with-floating-label {
     .lv-input__label {
       position: absolute;
-      top: 8px;
+      top: 12px;
       font-weight: 300;
-      // color: ;
       z-index: 1;
       left: 12px;
       transition: all 0.2s ease;
@@ -15,7 +17,6 @@
       &::-webkit-input-placeholder {
         color: transparent !important;
       }
-
       &:-moz-placeholder {
         /* Firefox 18- */
         color: transparent !important;
@@ -35,12 +36,12 @@
       .lv-input__label {
         top: -18px;
         font-size: 10px;
-        color: var(--theme-color);
+        color: var(--text-color);
         font-weight: 600;
       }
     }
     .lv-input__field {
-      margin-top: 20px;
+      margin-top: 40px;
     }
   }
   &.--with-bottom-bar {
@@ -65,32 +66,37 @@
         }
       }
     }
+    &.lv-input__label{
+      color: var(--text-color);
+    }
   }
 
   .lv-input__field {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    font-size: 1rem;
-    color: #495057;
-    background: #edf2f7;
+    font-size: var(--input-field-font-size);
+    color: var(--input-field-text-color) !important;
+    background: var(--input-field-background-color);
     // border: 2px solid transparent;
-    padding: 0px 12px;
+    padding: var(--input-field-padding);
     border: none;
     // border-bottom: 2px solid transparent;
-    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, border-radius 0.3s;
+    transition: var(--input-field-transition);
     appearance: none;
-    border-radius: 5px;
+    border-radius: var(--input-field-border-radius);
     &:focus-within {
       outline: 0 none;
       outline-offset: 0;
-      box-shadow: 0 0 0 3px rgba(218, 225, 231, 0.8);
+      // box-shadow: var(--input-field-focus-shadow);
+      background-color: var(--input-field-focus-background);
       // box-shadow: 0 0 0 0.2rem #e1e7ec;
       /* border: 2px solid #e1e7ec; */
     }
+    
     .lv-input__element {
       padding: 10px 0px;
       &::placeholder {
         // color: rgba(0, 0, 0, 0.3);
-        color: var(--placeholder-color);
+        color: var(--input-field-placeholder-color);
       }
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px #edf2f7 inset;
@@ -118,12 +124,6 @@
       padding-left: 12px;
     }
 
-    .lv-input-field:hover {
-      /* border-color: #2196F3; */
-    }
-
-    .lv-input-field:focus-within {
-    }
 
     .lv-input-field.lv-error,
     .lv-input-field.lv-invalid {
@@ -162,4 +162,14 @@
       padding: 0.625rem 0.625rem;
     }
   }
+  
+  .--shadow-border{
+    &:hover{
+      box-shadow: var(--input-field-hover-shadow);
+    }
+    &:focus-within{
+      box-shadow: var(--input-field-focus-shadow);
+    }
+  }
+  
 }

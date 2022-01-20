@@ -86,14 +86,14 @@ export default {
   border-radius: 4px;
   //   overflow: hidden;
   margin-bottom: 30px;
-  background: #ffffff;
+  background: var(--background-color);
 }
 .copy-code {
   position: relative;
   top: 20px;
   left: 95%;
   i {
-    color: #cccccc;
+    color: var(--lightGray);
     padding: 5px;
     font-size: 2rem;
     font-weight: bold;
@@ -110,14 +110,15 @@ export default {
   display: flex;
   width: 100%;
   padding: 10px;
-  border-bottom: 1px solid #edf2f6;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--lightGray);
   .docs-card__title {
     margin: 0px;
     white-space: nowrap;
     margin-left: -22px;
     padding: 8px 16px 8px 24px;
-    background: #dfe7eb;
-    color: #607b89;
+    background: var(--lightGray);
+    color: var(--text-color);
     position: relative;
     cursor: pointer;
     border-radius: 6px 20px 20px 0;
@@ -131,7 +132,7 @@ export default {
     width: 0;
     height: 0;
     border: 0 solid transparent;
-    border-top-color: #bdc7cf;
+    border-top-color: var(--gray);
     border-width: 10px 0 0 12px;
     z-index: -1;
   }
@@ -146,7 +147,7 @@ export default {
       padding: 5px;
       padding-bottom: 0px;
       margin-left: 10px;
-      color: #cccccc;
+      color: var(--text-color);
       cursor: pointer;
       transition: 0.5s all ease-out;
     }
@@ -157,7 +158,7 @@ export default {
   }
 }
 .docs-card__code-tab {
-  background: #edf2f6;
+  /* background: var(--); */
   color: #757575;
   border-bottom: 1px solid #cccccc;
   border-bottom: none;

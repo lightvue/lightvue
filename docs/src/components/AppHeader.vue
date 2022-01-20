@@ -10,6 +10,19 @@
         </div>
       </div>
       <div class="social__row">
+        <!-- <LvToggleswitch @click="switchTheme" name='dark-theme-toggle' v-model="isDarkTheme" /> -->
+          <!-- Version Selector -->
+        
+         <!-- Theme Selector -->
+         <div class="dropdown">
+          <div class="dropdown-btn">
+            {{currentTheme}}
+             <i class="light-icon-chevron-down"></i>
+          </div>
+          <div class="dropdown-content">
+            <div class="dropdown-item" v-for="theme in themeList" @click="setTheme(theme)">{{theme.name}}</div>
+          </div>
+        </div>
         <a href="https://github.com/lightvue/lightvue" target="_blank" class="social-links">
           <i class="header-social light-icon-brand-github"></i>
         </a>
@@ -25,17 +38,78 @@
 </template>
 
 <script>
-export default {};
+import LvToggleswitch from 'lightvue/toggle-switch'
+export default {
+  data(){
+    return{
+      themeList:[ 
+          {name:'🌕 Light',value:'light'},
+          {name:'🌚 Dark', value:'dark'},
+      ],
+      currentTheme: "🌕 Light",  
+    }
+  },
+  methods: {
+    setTheme(theme){
+        this.currentTheme = theme.name;
+        document.documentElement.setAttribute('data-theme',theme.value);
+    }
+  },
+  components: {
+    LvToggleswitch
+  }
+};
 </script>
 
 <style scoped lang="scss">
+
+.dropdown{
+  position:relative;
+  margin: auto;
+}
+.dropdown-btn{
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--lightGray);
+}
+
+.dropdown-content{
+  background: var(--background-color);
+  width: 100%;
+  display: none;
+  position: absolute;
+  left:0%; 
+  overflow: hidden;
+}
+
+.dropdown-item{
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.dropdown-item:hover{
+  background: var(--input-field-bg);
+  }
+
+.dropdown-btn:hover{
+  background: var(--input-field-bg);
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+  border: 1px solid var(--lightGray);
+  border-radius: 4px;
+}
 .logo {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 .app-header {
-  background-color: #ffffff;
+  background-color: var(--background-color);
+  color:var(--text-color);
   padding: 0 24px;
   height: 60px;
   position: fixed;
@@ -68,7 +142,8 @@ export default {};
   border-radius: 50%;
   transition: 0.3s ease-in-out all;
   &:hover {
-    background: #e0e0e0;
+    background: var(--background-color-alt);
+    color: var(--text-color);
   }
 }
 .header__logo-row {
@@ -104,7 +179,7 @@ export default {};
   border: 0px;
   border-radius: 20px;
   transition: all 0.25s ease;
-  background: #f5f8fa;
+  background: var(--input-field-bg);
   &:focus {
     outline: none;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
@@ -133,9 +208,9 @@ export default {};
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     &:hover {
-      color: black;
+      color: var(--text-color);
       padding: 10px;
-      background: #dfdfdf;
+      background: var(--background-color-alt);
     }
   }
 }

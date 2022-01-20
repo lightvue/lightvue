@@ -59,10 +59,11 @@ export default {
 <style lang="scss">
 .best__demo__wrapper {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
-  background: #ffffff;
+  background: var(--background-color);
   margin-bottom: 30px;
   width: 100%;
   position: relative;
+  color: var(--text-color);
 }
 .dy-pg__wrap {
   display: flex;
@@ -85,23 +86,22 @@ export default {
 .dy-props__wrap {
   width: 300px;
   max-height: 60vh;
-  background: #ffffff;
+  background: var(--background-color);
   /* padding: 20px; */
-  transition: all 0.2s ease-in-out;
-  border-left: 2px solid #edf2f6;
+  border-left: 2px solid var(--lightGray);
   .dy-props__header {
     padding: 22px;
-    border-bottom: 1px solid #edf2f6;
+    border-bottom: 1px solid var(--lightGray);
     font-weight: 600;
     font-size: 1em;
-    color: #008080;
+    color: var(--primary);
   }
 
   .dy-props__body {
     padding: 20px;
     overflow-y: scroll;
     height: calc(100% - 62px);
-    background: #ffffff;
+    background: var(--background-color);
     //   height: 350px;
   }
 }
@@ -112,19 +112,19 @@ export default {
   padding: 10px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #edf2f6;
+  border-bottom: 1px solid var(--lightGray);
   .component__header {
     padding: 20px;
-    color: teal;
+    color: var(--primary);
     font-size: 18px;
     font-weight: bold;
-    border: 1px solid #edf2f6;
+    /* border: 1px solid #edf2f6; */
     margin: 0px;
     white-space: nowrap;
     margin-left: -22px;
     padding: 8px 16px 8px 24px;
-    background: #dfe7eb;
-    color: #607b89;
+    background: var(--lightGray);
+    color: var(--text-color);
     position: relative;
     cursor: pointer;
     border-radius: 6px 20px 20px 0;
@@ -138,7 +138,7 @@ export default {
     width: 0;
     height: 0;
     border: 0 solid transparent;
-    border-top-color: #bdc7cf;
+    border-top-color: var(--gray);
     border-width: 10px 0 0 12px;
     z-index: -1;
     margin: 0px;
@@ -153,7 +153,7 @@ export default {
   justify-content: center;
   width: 100%;
   padding: 48px;
-  background: #ffffff;
+  background: var(--background-color);
 }
 
 .dy-props__toggle-drawer {
@@ -167,16 +167,17 @@ export default {
   line-height: 1.5;
   overflow: auto;
   position: relative;
+
   // padding: 5px;
   pre {
-    color: #2f9c0a;
+    color: var(--code-green);
     span {
-      color: #1990b8;
+      color: var(--code-blue);
     }
   }
   .dy-code-row {
     &.--tag-row {
-      color: #c92c2c;
+      color: var(--code-red);
       padding-left: 16px;
     }
     &.--empty-row {
@@ -184,10 +185,10 @@ export default {
       min-height: 4px;
     }
     &:nth-child(even) {
-      background-color: #f6f9fc;
+      background-color: var(--code-row-even);
     }
     &:nth-child(odd) {
-      background-color: #ffffff;
+      background-color: var(--code-row-odd);
     }
   }
 }

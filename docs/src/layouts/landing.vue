@@ -27,7 +27,6 @@ a {
 body,
 #app {
   background-color: #f5f8fa;
-  color: #566d79;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
