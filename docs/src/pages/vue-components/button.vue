@@ -2,7 +2,12 @@
   <docs-page-layout :title="$options.title" :description="$options.description">
     <button-best-demo />
     <docs-card-vue title="Basic Usage" file="button/ButtonDemo_Basic" />
+    <docs-card-vue title="With Icons" file="button/ButtonDemo_Icons" />
+    <docs-card-vue title="Colors" file="button/ButtonDemo_Colors" />
+    <docs-card-vue title="Text Buttons" file="button/ButtonDemo_Text" />
+    <docs-card-vue title="Outlined Buttons" file="button/ButtonDemo_Outlined" />
     <docs-card-vue title="Rounded Buttons" file="button/ButtonDemo_Rounded" />
+    <docs-card-vue title="Sizes" file="button/ButtonDemo_Sizes" />
     <docs-card-vue title="Button Groups" file="button/ButtonDemo_Group" />
     <docs-card-vue title="Push Buttons" file="button/ButtonDemo_Raised" id="push" />
     <docs-card-vue title="Miscellaneous Usage" file="button/ButtonDemo_Misc" />
