@@ -10,7 +10,9 @@
     border: none;
     outline: none;
     font-size: inherit;
+    overflow: hidden;
   }
+  
   .lv-input__default {
     flex-grow: 1;
   }

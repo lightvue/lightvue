@@ -1,8 +1,10 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-button v-bind="allOptions" style="width: 100%" />
+      <lv-button v-bind="allOptions" :style="{padding:boxModelValue}"/>
+      
       <template #props>
+        <lv-box-model v-model="boxModelValue"/><br>
         <lv-toggle-switch v-model="allOptions.outlined" label="outlined" /> <br />
         <lv-toggle-switch v-model="allOptions.push" label="Push" /> <br />
         <lv-toggle-switch v-model="allOptions.raised" label="Raised" /> <br />
@@ -34,6 +36,7 @@ import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input';
 import LvColorpicker from 'lightvue/color-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
+import LvBoxModel from 'lightvue/box-model'
 
 export default {
   data() {
@@ -51,14 +54,21 @@ export default {
         'icon-right': '',
         size: 'xl',
       },
+      boxModelValue: "0 10px 10px 10px",
       stringProps: ['label', 'icon-right', 'size', 'type'],
     };
+  },
+  watch:{
+    boxModelValue(val){
+      console.log(val)
+    }
   },
   components: {
     DocsCardBest,
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
+    LvBoxModel
   },
   computed: {
     enabledOptions() {
