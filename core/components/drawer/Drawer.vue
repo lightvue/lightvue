@@ -7,6 +7,7 @@
       '--mobile': getDrawerPosition,
       '--moving': isMoving,
       '--absolute': absolute,
+      '--no_backdrop': noBackdrop,
     }"
     :style="{
       zIndex: zIndex,
@@ -39,8 +40,8 @@
       @click="drawerClose"
       :style="{
         zIndex: zIndex - 1,
-        backdropFilter: backdropBlur && 'blur(2px)',
-        opacity: backdropOpacity,
+        backdropFilter: backdropBlur && 'blur(5px)',
+        filter: `${backdropBlur ? 'blur(5px) ' : ''}opacity(${backdropOpacity})`,
       }"
     ></div>
   </div>
@@ -82,8 +83,8 @@ export default {
     customStyle: Object,
     headerTitle: String,
     backdropOpacity: {
-      type: String,
-      default: '0.3',
+      type: Number,
+      default: 0.3,
     },
     absolute: {
       type: Boolean,
@@ -190,7 +191,6 @@ export default {
       this.timeOutID = setTimeout(() => {
         this.drawerHeight = this.getHeight; // in px
         this.snap = this.drawerHeight;
-        console.log('changed');
       }, 250);
     },
     handleOnBrowserBack() {
@@ -284,7 +284,11 @@ export default {
     // },
     modelValue(value) {
       // this.drawer = value;
-      value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
+      if (this.noBackdrop) {
+        value == true ? ((document.documentElement.style.overflow = 'scroll'), (document.documentElement.style.scrollBehavior = 'smooth')) : (document.documentElement.style.overflow = 'overlay');
+      } else {
+        value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
+      }
       //
       if (value === true) {
         this.preventPopstate(); // from Mixin
