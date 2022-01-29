@@ -22,8 +22,9 @@
     &:active {
       transition: all 0.2s ease-in-out;
       box-shadow: none;
-      transform: translateY(2px);
+      transform: translateY(3px);
     }
+    
   }
   &.--icon-only {
     justify-content: center;
