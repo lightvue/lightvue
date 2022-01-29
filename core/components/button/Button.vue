@@ -91,7 +91,7 @@ export default {
         '--raised': this.raised,
         '--deep-shadow-hover': this.deepShadowHover,
         '--deep-shadow': this.deepShadow,
-        '--push': this.raised || this.outlined || this.push,
+        '--push': this.raised || this.push,
         '--outlined': this.outlined,
       };
     },
