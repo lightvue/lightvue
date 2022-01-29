@@ -2,7 +2,7 @@
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template #title-right> </template>
     <animation-best-demo />
-    <docs-card-vue title="Basic" file="animations/AnimationDemo" overflow />
+    <!-- <docs-card-vue title="Basic" file="animations/AnimationDemo" overflow /> -->
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-card title="APIs" :responsive="false">

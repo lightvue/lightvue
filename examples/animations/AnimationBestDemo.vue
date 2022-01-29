@@ -1,15 +1,11 @@
 <template>
     <div>
-      <docs-card-best title="Playground">
-      <div>
-        <lv-button :class="selectedAnimation" class="lv-animate__slide-in" label="Animate Me!" size="xl"/>
-      </div>
-      <br>
-      <div>
-        <p>Class Name : {{this.selectedAnimation}} </p>
-      </div>
+      <docs-card-best title="Playground" overflow>
+        <lv-animate :name="selectedAnimation">
+          <lv-button label="Animate Me!" size="xl"/>
+        </lv-animate>
       <template #props>
-        <lv-dropdown label="Select Animation" v-model="selectedAnimation" :options="animationList" option-label="label" option-value="value"></lv-dropdown>
+        <lv-dropdown label="Select Animation" v-model="selectedAnimation" :options="animationList"></lv-dropdown>
       </template>
       </docs-card-best>
     </div>
@@ -19,26 +15,53 @@
 import LvButton from "lightvue/button"
 import LvDropdown from "lightvue/dropdown"
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
+import LvAnimate from 'lightvue/animate'
 export default{
   name:'AnimationBestDemo',
   data(){
     return {
       selectedAnimation: '',
       animationList: [
-        {label:'Fade in', value:"lv-animate__fade-in"},
-        {label:'Fade out', value:"lv-animate__fade-out"},
-        {label:'Slide in', value:"lv-animate__slide-in--left"},
-        {label:'Slide out', value:"lv-animate__slide-out--right"},
-        {label:'Zoom in', value:"lv-animate__zoom-in"},
-        {label:'Zoom out', value:"lv-animate__zoom-out"},
-        
+       // Fade ins
+      'fadeIn',
+      'fadeInLeft',
+      'fadeInRight',
+      'fadeInTop',
+      'fadeInBottom',
+      // Fade outs
+      'fadeOut',
+      'fadeOutLeft',
+      'fadeOutRight',
+      'fadeOutTop',
+      'fadeOutBottom',
+      // Slide ins 
+      'slideInLeft',
+      'slideInRight',
+      'slideInTop',
+      'slideInBottom',
+
+      // Slide outs
+      'slideOutLeft',
+      'slideOutRight', 
+      'slideOutTop',
+      'slideOutBottom',
+      //Zoom
+      'zoomIn',
+      'zoomOut' 
       ]
     }
   },
+  watch:{
+    selectedAnimation(newValue){
+      console.log(newValue)
+    }
+  },
+
   components:{
     LvButton,
     LvDropdown,
-    DocsCardBest
+    DocsCardBest,
+    LvAnimate
   }
 }
 </script>
