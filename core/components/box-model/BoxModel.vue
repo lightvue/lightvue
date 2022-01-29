@@ -5,8 +5,8 @@
         <div class="--center-row">
         {{this.localState.left}}
           <div class="lv-box__model-inner_box">
-            <div class="lv-box__model-controller"></div>
-            <div class="lv-box__model-controller --horizontal"></div>
+            <div @click="setDirection('y-axis')" class="lv-box__model-controller"></div>
+            <div @click="setDirection('x-axis')"  class="lv-box__model-controller --horizontal"></div>
           </div>
         {{this.localState.right}}
         </div>
@@ -14,7 +14,7 @@
     </div>
     <div class="lv-box__model-inputs">
       <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions"/>
-      <lv-input v-model="inputValue" type="number" placeholder="Enter Value">
+      <lv-input v-model="localInputValue" type="number" placeholder="Enter Value">
         <!-- <template #append>
           <lv-dropdown id="units-dropdown" v-model="selectedUnit" :options="units"/>
         </template> -->
@@ -32,7 +32,7 @@ export default {
   mixins: [trueValueMixin],
   data(){
     return{
-      inputValue: 0,
+      localInputValue: 0,
       directions: ['all','x-axis','y-axis','left','right','top','bottom'],
       selectedDirection : 'all',
       units : ['px','rem','em'],
@@ -41,7 +41,7 @@ export default {
     }
   },
   watch:{
-    inputValue(newVal){
+    localInputValue(newVal){
       const d = this.selectedDirection;
       newVal = newVal == '' ? "0px" :  this.appendUnit(newVal);
       if(d==="all"){
@@ -60,7 +60,7 @@ export default {
         this.localState = { ...this.localState , bottom: newVal };
       }
       this.updateValue(this.encodeLocalState(this.localState));
-    }
+    },
   },
   computed:{
     modelValue(){
@@ -85,18 +85,30 @@ export default {
         return { top: y,bottom:y,left:x,right:x};
       } else if(length == 3){
         const [_top,_right,_bottom] = val_array;
-        return { top:_top ,bottom:_bottom,right:_right, left: "0px"};
+        return { top:_top ,bottom:_bottom,right:_right, left: 0};
       } else if(length == 4){
         const [_top,_right,_bottom,_left] = val_array;
         return { top:_top ,bottom:_bottom, right:_right, left: _left };
       }
     },
     encodeLocalState(val){
-      return `${val.top} ${val.right} ${val.bottom} ${val.left}`
+      const {left,right,top,bottom} = val;
+      if( left == right == top == bottom) {
+        return `${left}`;
+      } else if(top == bottom && left == right){
+        return `${top} ${left}`
+      } else if( left == '0px' || left == ''){
+        return `${top} ${right} ${bottom} `
+      } else {
+        return `${top} ${right} ${bottom} ${left}`
+      }
     },
     appendUnit(val){
       return val+this.selectedUnit;
     },
+    setDirection(dir){
+      this.selectedDirection = dir;
+    }
   },
   components: {
     LvInput,
