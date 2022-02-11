@@ -34,12 +34,12 @@
 </template>
 
 <script>
-import LvBadge from 'lightvue/badge';
+// import LvBadge from 'lightvue/badge';
 export default {
   props: ['title', 'description', 'status'],
-  components: {
-    LvBadge,
-  },
+  // components: {
+  //   LvBadge,
+  // },
   data() {
     return {
       selectedTab: 'collection', //'api'
