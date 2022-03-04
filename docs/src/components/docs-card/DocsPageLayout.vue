@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex">
-    <div style="max-width: 80%; flex: 1" id="leftContainer">
+    <div class="leftContainer">
       <div class="content-section introduction">
         <div class="feature-intro">
           <div class="feature-intro__title">
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div style="max-width: 15%" id="rightContainer" class="light-scrollbar right-sidebar --theme-light">
+    <div class="light-scrollbar right-sidebar --theme-light">
       <ul v-for="(item, i) in fakeitems" :key="i">
         <Observer :item="item">
           <li @click="navigate(item.id, $event)" class="list-item">{{ item.title }}</li>
@@ -175,7 +175,7 @@ $primary-color: #38b2ac;
   top: 0;
   height: 100vh;
   overflow: auto;
-
+  max-width: 15%;
   padding-right: 1rem;
   text-align: right;
   padding-right: 2rem;
@@ -196,5 +196,9 @@ $primary-color: #38b2ac;
 }
 .active {
   color: $primary-color;
+}
+.leftContainer {
+  max-width: 80%;
+  flex: 1;
 }
 </style>
