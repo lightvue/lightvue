@@ -35,9 +35,9 @@
 
     <div style="max-width: 15%" id="rightContainer" class="light-scrollbar right-sidebar --theme-light">
       <ul v-for="(item, i) in fakeitems" :key="i">
-        <ListItem :item="item">
+        <Observer :item="item">
           <li @click="navigate(item.id, $event)" class="list-item">{{ item.title }}</li>
-        </ListItem>
+        </Observer>
       </ul>
     </div>
   </div>
@@ -45,12 +45,12 @@
 
 <script>
 import LvBadge from 'lightvue/badge';
-import ListItem from './ListItem.vue';
+import Observer from './Observer.vue';
 export default {
   props: ['title', 'description', 'status'],
   components: {
     LvBadge,
-    ListItem,
+    Observer,
   },
 
   data() {
