@@ -36,7 +36,7 @@
     <div class="light-scrollbar right-sidebar --theme-light">
       <ul v-for="(item, i) in fakeitems" :key="i">
         <Observer :item="item">
-          <li @click="navigate(item.id, $event)" class="list-item">{{ item.title }}</li>
+          <li @click="scrollTo(item.id, $event)" class="list-item">{{ item.title }}</li>
         </Observer>
       </ul>
     </div>
@@ -72,22 +72,14 @@ export default {
       this.selectedTab = newTab;
       this.$router.push({ hash: newTab === 'api' ? '#docs' : '' });
     },
-    navigate(item, e) {
+    scrollTo(item, e) {
       const element = document.getElementById(item);
-      console.log(element);
+
       if (element) {
-        window.scrollTo({ top: element.offsetTop + 1, behavior: 'smooth' });
+        this.$router.push({ hash: `#${item}` });
       }
 
       e.target.classList.add('active');
-    },
-    computedStyle() {
-      // setTimeout(() => {
-      //   console.log(this.$refs.leftContainer.offsetWidth);
-      //   console.log(this.$refs.rightContainer.offsetWidth);
-      //   this.$refs.leftContainer.style.width = this.$refs.leftContainer.offsetWidth - this.$refs.rightContainer.offsetWidth + 'px';
-      // }, 1500);
-      // console.log(document.getElementById('leftContainer'));
     },
   },
   mounted() {
@@ -116,14 +108,7 @@ export default {
             .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
           this.fakeitems.push({ id: id, title: title });
         });
-        // cards.forEach(card => {
-        //   let id = card.id;
-        //   let title = card.id.split('-').join(' ').toUpperCase();
-        //   this.fakeitems.push({ id: id, title: title });
-        // });
       }
-
-      console.log(this.fakeitems);
     }, 1000);
   },
 };
@@ -190,8 +175,9 @@ $primary-color: #38b2ac;
   padding: 10px 3px;
   font-weight: 400;
   &:hover {
-    background: #ddd;
-    border-radius: 10px;
+    /* background: #ddd;
+    border-radius: 10px; */
+    color: $primary-color;
   }
 }
 .active {
