@@ -187,4 +187,12 @@ $primary-color: #38b2ac;
   max-width: 80%;
   flex: 1;
 }
+@media only screen and (max-device-width: 1080px) and (-webkit-min-device-pixel-ratio: 2) {
+  .leftContainer {
+    max-width: 100%;
+  }
+  .right-sidebar {
+    display: none;
+  }
+}
 </style>

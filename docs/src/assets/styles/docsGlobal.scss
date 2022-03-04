@@ -63,3 +63,10 @@ body,
     display: initial;
   }
 }
+@media (max-width: 1080px) {
+  .page-wrap {
+    .page-content {
+      padding: 30px 30px 0px 30px;
+    }
+  }
+}
