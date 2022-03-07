@@ -5,27 +5,29 @@
     </div>
     <div class="dy-pg__wrap">
       <div style="flex: 1" class="dy-pg__left">
-        <div class="dy-comp__wrap light-scrollbar" style="position: relative">
-          <slot></slot>
-          <div class="dy-pg_btn-group">
-            <div class="d-flex">
-              <div class="docs-card__action" @click="openURL(sourceLink)">
-                <i class="docs-card__action-icon light-icon-brand-github"></i>
-              </div>
-              <div class="docs-card__action">
-                <i class="docs-card__action-icon light-icon-devices" title="Responsive preview"></i>
-              </div>
-              <div v-if="$slots['code']" class="docs-card__action">
-                <i class="docs-card__action-icon light-icon-code" title="View code example" @click="showCode = !showCode"></i>
+        <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked">
+          <div class="dy-comp__wrap light-scrollbar" style="position: relative">
+            <slot></slot>
+            <div class="dy-pg_btn-group">
+              <div class="d-flex">
+                <div class="docs-card__action" @click="openURL(sourceLink)">
+                  <i class="docs-card__action-icon light-icon-brand-github"></i>
+                </div>
+                <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
+                  <i class="docs-card__action-icon light-icon-devices" title="Responsive preview"></i>
+                </div>
+                <div v-if="$slots['code']" class="docs-card__action">
+                  <i class="docs-card__action-icon light-icon-code" title="View code example" @click="showCode = !showCode"></i>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="dy-code__wrap light-scrollbar">
-          <CopyButton :text="getMarkup" />
-          <slot name="code"></slot>
-        </div>
+          <div class="dy-code__wrap light-scrollbar">
+            <CopyButton :text="getMarkup" />
+            <slot name="code"></slot>
+          </div>
+        </ResponsiveDemo>
       </div>
 
       <div class="dy-props__wrap" :class="`${showPorpsOptions ? '--mobile-show' : ''}`">
@@ -40,17 +42,27 @@
 
 <script>
 import CopyButton from '@/components/docs-card/CopyButton';
-
+import ResponsiveDemo from './ResponsiveDemo.vue';
 export default {
   data() {
     return {
       showPorpsOptions: false,
+      deviceWidth: 0,
+      toggleDeviceClicked: 0,
     };
   },
   props: {
     title: String,
     id: String,
     file: String,
+    responsive: {
+      default: true,
+      type: Boolean,
+    },
+    overflow: {
+      default: false,
+      type: Boolean,
+    },
   },
   computed: {
     computedId() {
@@ -64,9 +76,17 @@ export default {
     getMarkup() {
       return this.$el.querySelector('.dy-code__wrap').innerText;
     },
+    toggleDevice() {
+      // this.$emit('toggleDevice');
+      // this.bus.$emit('toggleDevice');
+      this.toggleDeviceClicked++;
+
+      this.deviceWidth = 300;
+    },
   },
   components: {
     CopyButton,
+    ResponsiveDemo,
   },
 };
 </script>
