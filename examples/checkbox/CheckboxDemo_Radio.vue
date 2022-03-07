@@ -1,10 +1,10 @@
 <template>
   <div>
-    <lv-checkbox name="check" color="success" v-model="checked" value="Hello">Basic</lv-checkbox>
-    <lv-checkbox name="check" color="warning" v-model="checked" rounded value="World">Rounded </lv-checkbox>
-    <lv-checkbox name="check" color="primary" v-model="checked" rounded filled>Filled </lv-checkbox>
-    <lv-checkbox name="check" color="info" v-model="checked" rounded thick>Thick </lv-checkbox>
-    <lv-checkbox name="check" color="danger" v-model="checked" plain smooth> Plain </lv-checkbox>
+    <lv-checkbox type="radio" name="check" color="success" v-model="radio" value="Hello">Basic</lv-checkbox>
+    <lv-checkbox type="radio" name="check" color="warning" v-model="radio" value="World">Rounded </lv-checkbox>
+    <lv-checkbox type="radio" name="check" color="primary" v-model="radio">Filled </lv-checkbox>
+    <lv-checkbox type="radio" name="check" color="info" v-model="radio" thick>Thick </lv-checkbox>
+    <lv-checkbox type="radio" name="check-3" color="success" v-model="radio"> Plain </lv-checkbox>
   </div>
 </template>
 
