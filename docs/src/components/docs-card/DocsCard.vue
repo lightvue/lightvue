@@ -35,8 +35,9 @@
       </div>
       <CodeHighlight><slot name="code"></slot></CodeHighlight>
     </div>
-     <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"><slot></slot></ResponsiveDemo>
-    <slot v-else></slot>
+    <div class="docs-card__footer--discription">
+      <p v-html="footer" style="opacity: 0.8"></p>
+    </div>
   </div>
 </template>
 
