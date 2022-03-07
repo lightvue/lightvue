@@ -1,6 +1,8 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description">
-    <docs-card-vue title="Basic" file="checkbox/CheckboxDemo_Basic" />
+    <template v-for="demo in demos">
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+    </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -41,6 +43,43 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+  },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Basic',
+          file: 'checkbox/CheckboxDemo_Basic',
+          discription: 'You can use the checkbox with various predefined colors by passing them in <span>color</span> prop, avaliable colors are <span>sucess</span>,<span>warning</span>,<span>primary</span>,<span>info</span>,<span>danger</span>. You can set the corners of checkbox to round by setting <span>rounded</span> prop to true.you can change the appearence of checkbox through <span>thick</span>,<span>filled</span>,<span>plain</span>,<span>smooth</span>',
+        },
+        {
+          title: 'With Animations',
+          file: 'checkbox/CheckboxDemo_Animation',
+          discription: 'You can use the checkbox with various predefined  Transitions by setting <span>smooth</span>,<span>pulse</span> props to true',
+        },
+        {
+          title: 'Radio',
+          file: 'checkbox/CheckboxDemo_Radio',
+          discription: 'You can use the checkbox component as a <span>Radio</span> by setting <span>type</span> prop to <span>radio</span> all the other variations you use with the checkbox you can use them with radio also in the same way ',
+        },
+
+        {
+          title: 'Disabled',
+          file: 'checkbox/CheckboxDemo_Disabled',
+          discription: 'You can use the checkbox to Disable by passing <span>disabled</span> prop to true',
+        },
+        {
+          title: 'With Icons',
+          file: 'checkbox/CheckboxDemo_Icons',
+          discription: 'You can use the icons with checkbox by passing then in the slot and setting <span>icon</span> prop to true',
+        },
+        {
+          title: 'Scalable sizes',
+          file: 'checkbox/CheckboxDemo_Size',
+          discription: 'You can set the checkbox size by wrapping it inside a element',
+        },
+      ],
+    };
   },
   title: 'Checkbox',
   description: `LvCheckbox component can be used in projects where a way is required for user to select or deselect an option.`,
