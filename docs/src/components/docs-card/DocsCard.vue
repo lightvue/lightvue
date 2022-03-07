@@ -1,16 +1,31 @@
 <template>
   <div class="docs-card" :id="computedId">
     <div class="docs-card__header">
-      <h5 class="docs-card__title" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
-      <div class="docs-card__actions">
-        <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
-          <i class="docs-card__action-icon light-icon-devices" title="Responsive preview"></i>
-        </div>
-        <div v-if="sourceLink" class="docs-card__action" @click="openURL(sourceLink)">
-          <i class="docs-card__action-icon light-icon-brand-github"></i>
-        </div>
-        <div v-if="$slots['code']" class="docs-card__action">
-          <i class="docs-card__action-icon light-icon-code" title="View code example" @click="showCode = !showCode"></i>
+      <div class="docs-card__header--title">
+        <h4>
+          {{ title }}
+        </h4>
+      </div>
+      <div class="docs-card__header--discription">
+        <p v-html="discription" style="line-height: 1.7; opacity: 0.8">
+          <!-- {{ discription }} -->
+        </p>
+      </div>
+    </div>
+    <div class="docs-card__body">
+      <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"><slot></slot></ResponsiveDemo>
+      <slot v-else></slot>
+      <div class="docs-card__body_btn-group">
+        <div class="d-flex">
+          <div class="docs-card__action" @click="openURL(sourceLink)">
+            <i class="docs-card__action-icon light-icon-brand-github"></i>
+          </div>
+          <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
+            <i class="docs-card__action-icon light-icon-devices" title="Responsive preview"></i>
+          </div>
+          <div v-if="$slots['code']" class="docs-card__action">
+            <i class="docs-card__action-icon light-icon-code" title="View code example" @click="showCode = !showCode"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -20,7 +35,7 @@
       </div>
       <CodeHighlight><slot name="code"></slot></CodeHighlight>
     </div>
-    <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"><slot></slot></ResponsiveDemo>
+     <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"><slot></slot></ResponsiveDemo>
     <slot v-else></slot>
   </div>
 </template>
@@ -37,6 +52,14 @@ export default {
   props: {
     id: String,
     title: {
+      default: '',
+      type: String,
+    },
+    discription: {
+      default: '',
+      type: String,
+    },
+    footer: {
       default: '',
       type: String,
     },
@@ -79,15 +102,18 @@ export default {
 </script>
 
 <style lang="scss">
+$primary-color: #38b2ac;
 .docs-card {
-  padding: 0px;
+  padding: 20px 20px 30px 20px;
   width: 100%;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* background: transparent; */
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
   border-radius: 4px;
   //   overflow: hidden;
   margin-bottom: 30px;
   background: #ffffff;
 }
+
 .copy-code {
   position: relative;
   top: 20px;
@@ -105,12 +131,53 @@ export default {
     opacity: 0.6;
   }
 }
+.docs-card__body {
+  background: #ffffff;
+  /* border: 2px solid #d8d8d8; */
 
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+  padding: 0rem 0rem 0rem 3rem;
+  /* padding: 3rem; */
+  border-radius: 5px;
+  position: relative;
+  .docs-card__body_btn-group {
+    position: absolute;
+    bottom: 0%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    width: 10rem;
+    padding: 5px 15px;
+    border-radius: 50px;
+    background: #ffffff;
+    /* box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+    .d-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 24px;
+
+      .docs-card__action-icon {
+        font-weight: bold;
+
+        color: #afafaf;
+
+        cursor: pointer;
+        transition: 0.5s all ease-out;
+      }
+      .docs-card__action-icon:hover {
+        /* color: #38b2ac; */
+        opacity: 0.8;
+      }
+    }
+  }
+}
 .docs-card__header {
   display: flex;
+  flex-direction: column;
   width: 100%;
   padding: 10px;
-  border-bottom: 1px solid #edf2f6;
+  /* border-bottom: 1px solid #edf2f6; */
   .docs-card__title {
     margin: 0px;
     white-space: nowrap;
@@ -135,26 +202,6 @@ export default {
     border-width: 10px 0 0 12px;
     z-index: -1;
   }
-  .docs-card__actions {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    .docs-card__action-icon {
-      font-size: 24px;
-      font-weight: bold;
-      padding: 5px;
-      padding-bottom: 0px;
-      margin-left: 10px;
-      color: #cccccc;
-      cursor: pointer;
-      transition: 0.5s all ease-out;
-    }
-    .docs-card__action-icon:hover {
-      color: black;
-      opacity: 0.6;
-    }
-  }
 }
 .docs-card__code-tab {
   background: #edf2f6;
@@ -168,5 +215,22 @@ export default {
   padding: 0.5rem 1rem;
   font-weight: bold;
   cursor: pointer;
+}
+.docs-card__header--title {
+  font-weight: 400;
+}
+.docs-card__header--discription {
+  line-height: 1.7;
+  span {
+    color: $primary-color;
+  }
+}
+.docs-card__footer--discription {
+  padding: 10px;
+  margin-top: 2rem;
+  line-height: 1.7;
+  span {
+    color: $primary-color;
+  }
 }
 </style>
