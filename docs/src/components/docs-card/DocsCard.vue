@@ -35,9 +35,6 @@
       </div>
       <CodeHighlight><slot name="code"></slot></CodeHighlight>
     </div>
-    <div class="docs-card__footer--discription">
-      <p v-html="footer" style="opacity: 0.8"></p>
-    </div>
   </div>
 </template>
 
@@ -107,12 +104,12 @@ $primary-color: #38b2ac;
 .docs-card {
   padding: 20px 20px 30px 20px;
   width: 100%;
-  /* background: transparent; */
+  background: transparent;
   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
   border-radius: 4px;
   //   overflow: hidden;
   margin-bottom: 30px;
-  background: #ffffff;
+  /* background: #ffffff; */
 }
 
 .copy-code {
