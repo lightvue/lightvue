@@ -4,13 +4,19 @@
       <div class="content-section introduction">
         <div class="feature-intro">
           <div class="feature-intro__title">
-            <h1>{{ title }}</h1>
-            <div class="feature-intro__title-right">
-              <LvBadge v-if="status" :color="status.color" :title="status.description">{{ status.label }}</LvBadge>
-              <slot name="title-right"></slot>
+            <div style="display: flex">
+              <h1>{{ title }}</h1>
+              <div class="feature-intro__title-right">
+                <LvBadge v-if="status" :color="status.color" :title="status.description">{{ status.label }}</LvBadge>
+                <slot name="title-right"></slot>
+              </div>
+
+              <slot name="title-below"></slot>
+            </div>
+            <div class="documentation-title" style="opacity: 0.8">
+              <h4>Documentation</h4>
             </div>
           </div>
-          <slot name="title-below"></slot>
 
           <p style="opacity: 0.8">
             {{ description }}
@@ -20,14 +26,10 @@
       </div>
 
       <div class="content-section implementation" style="min-height: calc(100vh - 220px)">
-        <div class="content-header">
-          <div class="demo-tab" :class="{ active: selectedTab === 'collection' }" @click="selectTab('collection')">Collection</div>
-          <div class="demo-tab" :class="{ active: selectedTab === 'api' }" @click="selectTab('api')">Documentation</div>
-        </div>
-        <div v-show="selectedTab === 'collection'">
+        <div>
           <slot></slot>
         </div>
-        <div v-show="selectedTab === 'api'">
+        <div>
           <slot name="api"></slot>
         </div>
       </div>
@@ -77,6 +79,7 @@ export default {
 
       if (element) {
         this.$router.push({ hash: `#${item}` });
+        // window.scrollTo({ top: element.offsetTop + 1, behavior: 'smooth' });
       }
 
       e.target.classList.add('active');
@@ -145,7 +148,7 @@ $primary-color: #38b2ac;
 }
 .feature-intro__title {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   .feature-intro__title-right {
     margin-left: 1rem;
@@ -182,10 +185,15 @@ $primary-color: #38b2ac;
 }
 .active {
   color: $primary-color;
+  font-weight: 600;
 }
 .leftContainer {
   max-width: 80%;
   flex: 1;
+}
+.documentation-title {
+  opacity: 0.8;
+  color: #566d79;
 }
 @media only screen and (max-device-width: 1080px) and (-webkit-min-device-pixel-ratio: 2) {
   .leftContainer {
