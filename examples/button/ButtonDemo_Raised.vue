@@ -20,15 +20,15 @@
         <LvButton label="Danger" raised class="lv--danger " />
         <LvButton label="Plain" raised class="lv--plain" />
 
-        <h5>Text Buttons with push effect </h5>
-        <LvButton label="Primary" raised class="--text-button" />
-        <LvButton label="Secondary" raised class="lv--secondary --text-button" />
-        <LvButton label="Success" raised class=" lv--success --text-button" />
-        <LvButton label="Info" raised class="lv--info --text-button" />
-        <LvButton label="Warning" raised class=" lv--warning --text-button" />
-        <LvButton label="Help" raised class=" lv--help --text-button" />
-        <LvButton label="Danger" raised class=" lv--danger --text-button" />
-        <LvButton label="Plain" raised class="--text-button lv--plain" />
+        <h5>Outlined Buttons with push effect </h5>
+        <LvButton label="Primary" push outlined />
+        <LvButton label="Secondary" push outlined class="lv--secondary" />
+        <LvButton label="Success" push outlined class=" lv--success" />
+        <LvButton label="Info" push outlined class="lv--info" />
+        <LvButton label="Warning" push outlined class=" lv--warning" />
+        <LvButton label="Help" push outlined class=" lv--help" />
+        <LvButton label="Danger" push outlined class=" lv--danger" />
+        <LvButton label="Plain" push outlined class="--text-button" />
     </div>
 </template>
 
