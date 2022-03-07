@@ -1,5 +1,5 @@
 <template>
-  <docs-card title="Getting Started" :responsive="false">
+  <docs-card title="Getting Started" :showMiddleControl="false" :responsive="false">
     <div class="getting-started">
       <div class="docs-step">
         <code-highlight lang="javascript">

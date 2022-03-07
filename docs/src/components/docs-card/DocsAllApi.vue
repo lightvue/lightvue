@@ -1,5 +1,5 @@
 <template>
-  <docs-card title="APIs" :responsive="false" id="docs-api">
+  <docs-card title="APIs" :responsive="false" :showMiddleControl="false" id="docs-api">
     <DocsApiTableProps v-if="apiData.props && apiData.props.length" :props-list="apiData.props" id="docs-props" />
     <DocsApiTableEvents v-if="apiData.events && apiData.events.length" :events-list="apiData.events" id="docs-events" />
     <DocsApiTableSlots v-if="apiData.slots && apiData.slots.length" :slots-list="apiData.slots" id="docs-slots" />
