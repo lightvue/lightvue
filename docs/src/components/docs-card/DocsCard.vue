@@ -15,7 +15,7 @@
     <div class="docs-card__body">
       <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"><slot></slot></ResponsiveDemo>
       <slot v-else></slot>
-      <div class="docs-card__body_btn-group">
+      <div class="docs-card__body_btn-group" v-if="showMiddleControl">
         <div class="d-flex">
           <div class="docs-card__action" @click="openURL(sourceLink)">
             <i class="docs-card__action-icon light-icon-brand-github"></i>
@@ -68,6 +68,10 @@ export default {
     },
     overflow: {
       default: false,
+      type: Boolean,
+    },
+    showMiddleControl: {
+      default: true,
       type: Boolean,
     },
   },
@@ -134,7 +138,7 @@ $primary-color: #38b2ac;
   /* border: 2px solid #d8d8d8; */
 
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
-  padding: 0rem 0rem 0rem 3rem;
+  /* padding: 0rem 0rem 0rem 3rem; */
   /* padding: 3rem; */
   border-radius: 5px;
   position: relative;
