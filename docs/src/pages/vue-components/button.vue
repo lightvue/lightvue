@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :cards="demos">
     <button-best-demo />
 
     <template #api>
@@ -46,7 +46,8 @@ export default {
         {
           title: 'Basic Usage',
           file: 'button/ButtonDemo_Basic',
-          discription: 'You can use the buttons with some basic use cases by simply passing classes or by passing props eg.for link button you can pass <span>--link-button</span> for disable button set the <span>disable</span> prop to true',
+          discription: 'Use the buttons with some basic and complex use cases by passing either classes or props eg. for link button, pass <span>--link-button</span> For disable button, set the <span>disable</span> prop to true.',
+          // discription: 'You can use the buttons with some basic use cases by simply passing classes or by passing props eg.for link button you can pass <span>--link-button</span> for disable button set the <span>disable</span> prop to true',
         },
         {
           title: 'With Icons',
@@ -70,12 +71,12 @@ export default {
         },
         {
           title: 'Rounded Buttons',
-          discription: 'You can set the button style to rounded by setting <span>rounded</span> prop to true',
+          discription: 'The button style in Material Components can be styled to appear as though it’s been rounded off and thus creating a smoother feel. This can be achieved by simply setting the <span>rounded</span> prop to true like so:',
           file: 'button/ButtonDemo_Rounded',
         },
         {
           title: 'Sizes',
-          discription: 'You can set the button size by passing size to <span>size</span> prop. The avaliable sizes are <span>sm</span>,<span>md</span>,<span>lg</span>,<span>xl</span>',
+          discription: 'You can customize size of the button by passing it through <span>size</span> prop. There are 5 different sizes avaliable: small, medium, large, extra large and x-large...You can set them as  <span>sm</span>,<span>md</span>,<span>lg</span>,<span>xl</span>',
           file: 'button/ButtonDemo_Sizes',
         },
         {
@@ -85,7 +86,7 @@ export default {
         },
         {
           title: 'Push Buttons',
-          discription: 'You can set the button style to the push button by passing <span>push</span> prop.You can still use other variation classes on button',
+          discription: 'By setting the style of a button to a <span>push</span> one, you can give it the appearance of a push button. In case there might be a need to provide further variations regarding the look and feel of your buttons (for example, you might want them to appear differently as they are being hovered or focused on), then we would recommend you read through this page',
           file: 'button/ButtonDemo_Raised',
           id: 'push',
         },
@@ -95,7 +96,7 @@ export default {
           file: 'button/ButtonDemo_Shadow',
         },
         {
-          title: 'Miscellaneous Usage',
+          title: 'Miscellaneous v2',
           file: 'button/ButtonDemo_Misc',
           id: 'Miscellaneous Usage v1',
         },
