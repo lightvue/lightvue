@@ -191,7 +191,9 @@ export default {
   border-radius: 50px;
   background: #ffffff;
   /* box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2); */
-  box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15); */
+  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   .d-flex {
     display: flex;
     align-items: center;
