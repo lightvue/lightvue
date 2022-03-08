@@ -13,8 +13,14 @@
       </div>
     </div>
     <div class="docs-card__body">
-      <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"><slot></slot></ResponsiveDemo>
+      <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked">
+        <div style="padding-bottom: 3rem">
+          <slot></slot>
+        </div>
+      </ResponsiveDemo>
+
       <slot v-else></slot>
+
       <div class="docs-card__body_btn-group" v-if="showMiddleControl">
         <div class="d-flex">
           <div class="docs-card__action" @click="openURL(sourceLink)">
@@ -106,7 +112,7 @@ export default {
 <style lang="scss">
 $primary-color: #38b2ac;
 .docs-card {
-  padding: 20px 20px 30px 20px;
+  /* padding: 20px 20px 30px 20px; */
   width: 100%;
   background: transparent;
   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
@@ -137,10 +143,11 @@ $primary-color: #38b2ac;
   background: #ffffff;
   /* border: 2px solid #d8d8d8; */
 
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05); */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   /* padding: 0rem 0rem 0rem 3rem; */
   /* padding: 3rem; */
-  border-radius: 5px;
+  border-radius: 10px;
   position: relative;
   .docs-card__body_btn-group {
     position: absolute;
@@ -152,7 +159,7 @@ $primary-color: #38b2ac;
     border-radius: 50px;
     background: #ffffff;
     /* box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2); */
-    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     .d-flex {
       display: flex;
       align-items: center;
@@ -162,14 +169,14 @@ $primary-color: #38b2ac;
       .docs-card__action-icon {
         font-weight: bold;
 
-        color: #afafaf;
+        color: #b1b1b1;
 
         cursor: pointer;
         transition: 0.5s all ease-out;
       }
       .docs-card__action-icon:hover {
-        /* color: #38b2ac; */
-        opacity: 0.8;
+        color: #6c6c6c;
+        /* opacity: 0.8; */
       }
     }
   }
