@@ -1,11 +1,10 @@
 <template>
-  <div>
+  <div style="display: flex; justify-content: space-between; width: 100%">
     <lv-number placeholder="0" label="Max Value 10" :max="10" />
-    <br />
+
     <lv-number placeholder="0" label="Min Value 0" :min="0" />
-    <br />
+
     <lv-number placeholder="0" label="Value 0 - 20" :min="0" :max="20" />
-    <br />
   </div>
 </template>
 

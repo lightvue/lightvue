@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div style="display: flex; justify-content: space-between; width: 90%">
     <lv-number placeholder="Enter Number" label="Input Number" />
-    <br />
+
     <lv-number placeholder="Enter Number" label="Help Text" help-text="You can add help text also" />
-    <br />
   </div>
 </template>
 

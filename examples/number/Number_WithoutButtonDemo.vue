@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <br />
+  <div style="display: flex; justify-content: space-between; width: 100%">
     <lv-number placeholder="Enter Number" label="Without Buttons" :controls="false" />
-    <br />
+
     <lv-number placeholder="Enter Number" label="Without Buttons" :controls="false" rounded />
-    <br />
+
     <lv-number placeholder="Enter Number" label="Without Buttons" :controls="false" bottom-bar />
-    <br />
   </div>
 </template>
 
