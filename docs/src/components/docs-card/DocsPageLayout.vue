@@ -13,8 +13,8 @@
 
               <slot name="title-below"></slot>
             </div>
-            <div class="documentation-title" style="opacity: 0.8">
-              <h4>Documentation</h4>
+            <div class="documentation-title">
+              <h4>#Documentation</h4>
             </div>
           </div>
 
@@ -49,7 +49,21 @@
 import LvBadge from 'lightvue/badge';
 import Observer from './Observer.vue';
 export default {
-  props: ['title', 'description', 'status'],
+  props: {
+    title: {
+      type: String,
+    },
+    description: {
+      type: String,
+    },
+    cards: {
+      type: Array,
+      default: [],
+    },
+    status: {
+      type: Object,
+    },
+  },
   components: {
     LvBadge,
     Observer,
@@ -58,17 +72,28 @@ export default {
   data() {
     return {
       selectedTab: 'collection', //'api'
+      // fakeitems: [
+      //   {
+      //     title: 'Getting Started',
+      //     discription: 'Initial setup instructions',
+      //   },
+      //   {
+      //     title: 'Docs Api',
+      //     discription: 'Api info',
+      //   },
+      // ],
       fakeitems: [],
     };
   },
 
-  created() {
-    if (this.$route.hash?.includes('docs')) {
-      this.selectedTab = 'api';
-    } else {
-      this.selectedTab = 'collection';
-    }
-  },
+  // created() {
+  //   if (this.$route.hash?.includes('docs')) {
+  //     this.selectedTab = 'api';
+  //   } else {
+  //     this.selectedTab = 'collection';
+  //   }
+  //   // this.fakeitems = [{ title: 'Playground' }, ...this.cards, ...this.fakeitems];
+  // },
   methods: {
     selectTab(newTab) {
       this.selectedTab = newTab;
@@ -82,7 +107,11 @@ export default {
         // window.scrollTo({ top: element.offsetTop + 1, behavior: 'smooth' });
       }
 
-      e.target.classList.add('active');
+      // e.target.classList.add('active');
+    },
+    isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
     },
   },
   mounted() {
@@ -101,7 +130,6 @@ export default {
           title: 'Playground',
         });
       }
-
       if (cards) {
         Array.from(cards).forEach(card => {
           let id = card.id;
@@ -192,10 +220,14 @@ $primary-color: #38b2ac;
   flex: 1;
 }
 .documentation-title {
-  opacity: 0.8;
-  color: #566d79;
+  h4 {
+    opacity: 0.8;
+    font-size: 20px;
+    font-weight: inherit;
+    color: #566d79;
+  }
 }
-@media only screen and (max-device-width: 1080px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-device-width: 1080px) {
   .leftContainer {
     max-width: 100%;
   }
