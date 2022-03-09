@@ -1,8 +1,8 @@
 <template>
   <div>
-    <lv-number placeholder="Enter Number" label="Input Number" />
+    <lv-number placeholder="Enter Number" label="Material Effect" bottom-bar clearable />
     <br />
-    <lv-number placeholder="Enter Number" label="Help Text" help-text="You can add help text also" />
+    <lv-number placeholder="Enter Number" label="Material Effect" bottom-bar rounded />
     <br />
   </div>
 </template>
