@@ -1,5 +1,6 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description">
+  <docs-page-layout :title="$options.title" :description="$options.description" :cards="demos">
+    <checkbox-best-demo></checkbox-best-demo>
     <template v-for="demo in demos">
       <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     </template>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import CheckboxBestDemo from 'lightvueDocs/example/checkbox/CheckboxBestDemo.vue';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
@@ -43,6 +45,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    CheckboxBestDemo,
   },
   data() {
     return {
