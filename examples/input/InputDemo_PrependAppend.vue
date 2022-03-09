@@ -1,20 +1,20 @@
 <template>
-  <div>
+  <div style="display: flex; justify-content: space-between; width: 80%">
     <lv-input type="text" v-model="value1" placeholder="Search" label="Prepend Append" clearable>
       <template #prepend>
         <LvButton icon="light-icon-search" class="lv--secondary" />
       </template>
       <template #append>
-        <LvButton icon="light-icon-arrow-up-right-circle" class="lv--danger" />
+        <LvButton icon="light-icon-arrow-up-right-circle" class="lv--secondary" />
       </template>
     </lv-input>
-    </br>
-        <lv-input type="text" v-model="value1" placeholder="Search" label="Prepend Append" rounded bottom-bar>
+
+    <lv-input type="text" v-model="value1" placeholder="Search" label="Prepend Append" rounded bottom-bar>
       <template #prepend>
         <LvButton icon="light-icon-search" class="lv--secondary" />
       </template>
       <template #append>
-        <LvButton icon="light-icon-arrow-up-right-circle" class="lv--danger" />
+        <LvButton icon="light-icon-arrow-up-right-circle" class="lv--secondary" />
       </template>
     </lv-input>
   </div>

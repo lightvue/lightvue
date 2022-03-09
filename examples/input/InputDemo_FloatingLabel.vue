@@ -1,6 +1,6 @@
 <template>
   <div style="width: 80%">
-    <lv-input type="text" v-model="value1" label="Clearable input" placeholder="Search" clearable />
+    <lv-input id="username" type="text" v-model="value1" label="Floating Label" placeholder="Enter username here..." floating-label />
     <br />
   </div>
 </template>

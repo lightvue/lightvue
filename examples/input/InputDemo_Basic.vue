@@ -1,11 +1,6 @@
 <template>
-  <div>
+  <div style="width: 80%">
     <lv-input type="text" v-model="value1" label="First Name" placeholder="Enter your first name" />
-    <br />
-    <lv-input type="text" v-model="value1" label="Email" help-text="Help text can also be given !!" placeholder="Enter your email" />
-    <br />
-    <lv-input type="text" v-model="value1" label="First Name" placeholder="Enter your first name" />
-    <br />
   </div>
 </template>
 
