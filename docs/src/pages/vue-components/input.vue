@@ -59,6 +59,11 @@ export default {
           discription: 'You can set the bottom bar to input  by setting <span>bottom-bar</span> prop to true . You can also set the floating lable by passing label into <span>label</span> prop and setting <span>floating-label</span> prop true',
         },
         {
+          title: 'Floating Label',
+          file: 'input/InputDemo_FloatingLabel',
+          discription: 'You can also set the floating lable by passing label into <span>label</span> prop and setting <span>floating-label</span> prop true',
+        },
+        {
           title: 'Clearable',
           file: 'input/InputDemo_Clearable',
           discription: 'You can set the clearable input by setting the <span>clearable</span> prop to true.',
