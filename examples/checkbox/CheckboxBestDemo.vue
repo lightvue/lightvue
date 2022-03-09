@@ -1,7 +1,7 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <h2>
+      <h2 style="display: flex; justify-content: center">
         <LvCheckBox v-bind="allOptions"> </LvCheckBox>
       </h2>
       <template #props>
@@ -20,12 +20,11 @@
 
         <lv-input v-model="allOptions['type']" label="type" /> <br />
         <lv-input v-model="allOptions['name']" label="name" /> <br />
-        <lv-input v-model="allOptions['color']" label="color" /> <br />
+        <lv-input v-model="allOptions['color']" label="color class" placeholder="success" /> <br />
+        <lv-input v-model="allOptions['offColor']" label="offColor class" /> <br />
+        <lv-input v-model="allOptions['hoverColor']" label="hoverColor class" /> <br />
+        <lv-input v-model="allOptions['indeterminateColor']" label="indeterminateColor class" /> <br />
         <br />
-
-        <Lv-colorpicker v-model="allOptions['offColor']" label="offColor" />
-        <Lv-colorpicker v-model="allOptions['hoverColor']" label="hoverColor" />
-        <Lv-colorpicker v-model="allOptions['indeterminateColor']" label="indeterminateColor" />
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -51,19 +50,19 @@ export default {
   data() {
     return {
       allOptions: {
-        type: '',
-        name: '',
-        color: '',
+        type: 'checkbox',
+        name: 'demo',
+        color: 'success',
         offColor: '',
         hoverColor: '',
         indeterminateColor: '',
 
         disabled: false,
-        rounded: false,
+        rounded: true,
         filled: false,
-        thick: false,
+        thick: true,
         pulse: false,
-        outline: false,
+        outline: true,
         plain: false,
         icon: false,
         bigger: false,
