@@ -14,7 +14,7 @@
     </div>
     <div class="docs-card__body">
       <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked">
-        <div style="padding-bottom: 3rem">
+        <div class="body-content">
           <slot></slot>
         </div>
       </ResponsiveDemo>
@@ -101,6 +101,9 @@ export default {
       window.open(link, '_blank');
     },
   },
+  // mounted() {
+  //   window.screen.availWidth > 1200 ? (this.showResponsive = false) : (this.hideResponsive = true);
+  // },
   computed: {
     computedId() {
       return this.id ? this.id : this.title.split(' ').join('-').toLowerCase();
@@ -143,12 +146,20 @@ $primary-color: #38b2ac;
   background: #ffffff;
   /* border: 2px solid #d8d8d8; */
 
-  /* box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05); */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
   /* padding: 0rem 0rem 0rem 3rem; */
   /* padding: 3rem; */
   border-radius: 10px;
   position: relative;
+
+  .body-content {
+    display: grid;
+    place-items: center;
+    min-height: 20vh;
+    width: 100%;
+    padding-bottom: 8px;
+  }
   .docs-card__body_btn-group {
     position: absolute;
     bottom: 0%;
@@ -158,8 +169,8 @@ $primary-color: #38b2ac;
     padding: 5px 15px;
     border-radius: 50px;
     background: #ffffff;
-    /* box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
     .d-flex {
       display: flex;
       align-items: center;
