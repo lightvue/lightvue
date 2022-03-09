@@ -56,10 +56,10 @@ export default {
     description: {
       type: String,
     },
-    cards: {
-      type: Array,
-      default: [],
-    },
+    // cards: {
+    //   type: Array,
+    //   default: [],
+    // },
     status: {
       type: Object,
     },
