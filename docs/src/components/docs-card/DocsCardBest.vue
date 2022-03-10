@@ -13,18 +13,17 @@
                 <div class="docs-card__action" @click="openURL(sourceLink)">
                   <i class="docs-card__action-icon light-icon-brand-github"></i>
                 </div>
+                <div v-if="$slots['code']" class="docs-card__action">
+                  <CopyButton :text="getMarkup" />
+                </div>
                 <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
                   <i class="docs-card__action-icon light-icon-devices" title="Responsive preview"></i>
-                </div>
-                <div v-if="$slots['code']" class="docs-card__action">
-                  <i class="docs-card__action-icon light-icon-code" title="View code example" @click="showCode = !showCode"></i>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="dy-code__wrap light-scrollbar">
-            <CopyButton :text="getMarkup" />
             <slot name="code"></slot>
           </div>
         </ResponsiveDemo>
@@ -60,7 +59,7 @@ export default {
       type: Boolean,
     },
     overflow: {
-      default: false,
+      default: true,
       type: Boolean,
     },
   },
@@ -111,8 +110,9 @@ export default {
 .dy-pg__left {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   max-height: 60vh;
+
   align-items: stretch;
   overflow: hidden;
   position: relative;
@@ -208,6 +208,34 @@ export default {
       cursor: pointer;
       transition: 0.5s all ease-out;
     }
+    .docs-card__action {
+      .copy-btn__wrap {
+        position: relative !important;
+        top: auto;
+        right: auto;
+        .copy-btn {
+          font-weight: bold;
+
+          color: #afafaf;
+
+          cursor: pointer;
+          transition: 0.5s all ease-out;
+          i {
+            background-color: transparent;
+            font-weight: bold;
+            padding: 0;
+            opacity: 1;
+            color: #afafaf;
+            transition: 0.5s all ease-out;
+            font-size: 24px;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+
     .docs-card__action-icon:hover {
       /* color: #38b2ac; */
       opacity: 0.8;
@@ -219,7 +247,7 @@ export default {
   flex-grow: 1;
   min-height: 200px;
   // display: flex;
-  /* overflow-y: auto; */
+  /* overflow-y: scroll; */
   justify-content: center;
   width: 100%;
   padding: 48px;
@@ -232,10 +260,12 @@ export default {
 }
 
 .dy-code__wrap {
+  max-height: 25vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
-  overflow: auto;
+  overflow-y: scroll;
   position: relative;
   // padding: 5px;
   pre {
