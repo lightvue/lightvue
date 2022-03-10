@@ -1,5 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+    <dropdown-best-demo></dropdown-best-demo>
     <template v-for="(demo, i) in demos">
       <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     </template>
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import DropdownBestDemo from 'lightvueDocs/example/dropdown/DropdownBestDemo.vue';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
@@ -101,6 +103,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    DropdownBestDemo,
   },
   title: 'Dropdown',
   description: `Dropdown component allows user to choose an option from the provided options.`,
