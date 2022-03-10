@@ -1,6 +1,8 @@
 <template>
   <div>
-    <lv-radio-group v-model="chosenCities1" name="cities" :options="cities" optionLabel="name" pulse color="primary"></lv-radio-group>
+    <lv-radio-group v-model="chosenCities2" name="cities" :options="cities" optionLabel="name" pulse color="primary" optionValue="code"></lv-radio-group>
+    <p style="margin-top: 1rem">Chosen options (using v-model): {{ chosenCities2 }}</p>
+    <br />
   </div>
 </template>
 
@@ -20,7 +22,10 @@ export default {
         { name: 'Paris', code: 'PRS' },
       ],
       countries: ['India', 'USA', 'Japan', 'France'],
-      chosenCities1: { name: 'New York', code: 'NY' },
+      chosenCities1: [{ name: 'Paris', code: 'PRS' }],
+      chosenCities2: ['LDN', 'NY'],
+      chosenCities3: ['USA'],
+      chosenCities4: null,
     };
   },
 };
