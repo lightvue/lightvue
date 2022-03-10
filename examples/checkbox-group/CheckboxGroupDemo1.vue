@@ -1,7 +1,8 @@
 <template>
   <div>
-    <lv-checkbox-group v-model="chosenCities1" name="cities" :options="cities" optionLabel="name" pulse color="primary"></lv-checkbox-group>
-    <p style="margin-top: 1rem">Chosen options (using v-model): {{ chosenCities1 }}</p>
+    <!-- <h4>Options as array of objects (With: optionValue="code")</h4> -->
+    <lv-checkbox-group v-model="chosenCities2" name="cities" :options="cities" optionLabel="name" pulse color="primary" optionValue="code"></lv-checkbox-group>
+    <p style="margin-top: 1rem">Chosen options (using v-model): {{ chosenCities2 }}</p>
     <br />
   </div>
 </template>
