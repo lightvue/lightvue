@@ -1,11 +1,9 @@
 <template>
   <div>
-    <h5>Full Width</h5>
     <div class="lv-fluid">
       <LvButton label="FULL WIDTH" push rounded size="xl" class="lv--primary" />
     </div>
 
-    <h5>Button Set with mixed shape</h5>
     <span class="lv-buttonset">
       <LvButton label="Save" size="xl" icon="light-icon-check" rounded class="lv--primary" />
       <LvButton size="xl" icon="light-icon-copy" class="lv--success" />

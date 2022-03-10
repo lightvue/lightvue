@@ -1,23 +1,27 @@
 <template>
-  <div>
-    <h6>
-      <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Big </lv-checkbox>
-    </h6>
-    <h5>
-      <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
-    </h5>
-    <h4>
-      <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
-    </h4>
-    <h3>
-      <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
-    </h3>
-    <h2>
-      <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
-    </h2>
-    <h1>
-      <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
-    </h1>
+  <div style="display: flex; justify-content: space-between; width: 60%; align-items: center">
+    <span>
+      <h6>
+        <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Big </lv-checkbox>
+      </h6>
+      <h5>
+        <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
+      </h5>
+      <h4>
+        <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
+      </h4>
+    </span>
+    <span>
+      <h3>
+        <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
+      </h3>
+      <h2>
+        <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
+      </h2>
+      <h1>
+        <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Bigger </lv-checkbox>
+      </h1>
+    </span>
   </div>
 </template>
 

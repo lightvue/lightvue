@@ -1,21 +1,16 @@
 <template>
   <div>
 
-    <h5>Shadow on Hover</h5>
     <LvButton label="Primary" deep-shadow-hover class="lv--primary" />
     <LvButton label="Secondary" deep-shadow-hover class="lv--secondary" />
     <LvButton label="Success" deep-shadow-hover class="lv--success" />
     <LvButton label="Info" deep-shadow-hover class="lv--info" />
     <LvButton label="Warning" deep-shadow-hover class="lv--warning" />
-    <LvButton
-      label="Help"
-      deep-shadow-hover
-      class="lv--help --deep-shadow-hover"
-    />
+    <LvButton label="Help" deep-shadow-hover class="lv--help --deep-shadow-hover" />
     <LvButton label="Danger" deep-shadow-hover class="lv--danger" />
     <LvButton label="Plain" deep-shadow-hover class="lv--plain" />
-
-    <h5>Push Buttons With Soft Shadows</h5>
+</br>
+    
     <LvButton label="Primary" deep-shadow push class="lv--primary" />
     <LvButton label="Secondary" push deep-shadow class="lv--secondary" />
     <LvButton label="Success" push deep-shadow class="lv--success" />
