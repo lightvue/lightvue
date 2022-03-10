@@ -1,11 +1,12 @@
 <template>
   <div>
-    <lv-dropdown v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" clearable />
+    <lv-dropdown v-model="selectedCity1" rounded :options="cities" optionLabel="name" placeholder="Select a City" clearable />
   </div>
 </template>
 
 <script>
 import LvDropdown from 'lightvue/dropdown';
+
 export default {
   data() {
     return {
