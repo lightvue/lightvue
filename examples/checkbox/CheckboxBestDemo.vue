@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       allOptions: {
-        type: 'checkbox',
+        type: this.type,
         name: 'demo',
         color: 'success',
         offColor: '',
@@ -58,10 +58,10 @@ export default {
         indeterminateColor: '',
 
         disabled: false,
-        rounded: true,
+        rounded: false,
         filled: false,
         thick: true,
-        pulse: false,
+        pulse: true,
         outline: true,
         plain: false,
         icon: false,
@@ -70,6 +70,11 @@ export default {
       },
       stringProps: ['type', 'name', 'color', 'offColor', 'hoverColor', 'indeterminateColor'],
     };
+  },
+  props: {
+    type: {
+      default: 'checkbox',
+    },
   },
   components: {
     DocsCardBest,
