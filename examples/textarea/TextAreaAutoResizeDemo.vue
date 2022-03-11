@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%; height: 100%"><lv-textarea label="Textarea" placeholder="Enter your text here ..." rows="9" /> <br /></div>
+  <div style="width: 100%"><lv-textarea placeholder="" rows="9" label="Auto Resize" :autoResize="true" /> <br /></div>
 </template>
 
 <script>

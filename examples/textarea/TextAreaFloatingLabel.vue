@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%; height: 100%"><lv-textarea label="Textarea" placeholder="Enter your text here ..." rows="9" /> <br /></div>
+  <div style="width: 100%"><lv-textarea label="Floating Label" rows="9" floating-label /> <br /></div>
 </template>
 
 <script>

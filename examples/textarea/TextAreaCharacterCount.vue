@@ -1,5 +1,7 @@
 <template>
-  <div style="width: 100%; height: 100%"><lv-textarea label="Textarea" placeholder="Enter your text here ..." rows="9" /> <br /></div>
+  <div style="width: 100%">
+    <lv-textarea label="Character Count" placeholder="count no of words.." rows="9" show-limit :max-length="100" clearable />
+  </div>
 </template>
 
 <script>

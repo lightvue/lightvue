@@ -1,5 +1,7 @@
 <template>
-  <div style="width: 100%; height: 100%"><lv-textarea label="Textarea" placeholder="Enter your text here ..." rows="9" /> <br /></div>
+  <div style="width: 100%">
+    <lv-textarea label="Vertical Resize" rows="9" resize="vertical" />
+  </div>
 </template>
 
 <script>

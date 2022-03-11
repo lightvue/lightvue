@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%; height: 100%"><lv-textarea label="Textarea" placeholder="Enter your text here ..." rows="9" /> <br /></div>
+  <div style="width: 100%"><lv-textarea icon-left="light-icon-search" icon-right="light-icon-arrow-up-right-circle" rows="9" label="Left Right Icons" /> <br /></div>
 </template>
 
 <script>
