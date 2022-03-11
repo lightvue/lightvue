@@ -1,8 +1,10 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <TextareaBestDemo />
-    <docs-card-vue title="Basic" file="textarea/TextareaDemo__Basic" overflow />
-    <docs-card-vue title="Customised" file="textarea/TextareaDemo__Customised" overflow />
+
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+    </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -37,6 +39,55 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Basic',
+          file: 'textarea/TextareaDemo__Basic',
+          discription: 'You can use the <span>LvTextarea</span> with some basic and complex use cases by passing either classes or props eg. If you want to set the placeholder you can pass it to <span>placeholder</span>, You can also set the number of visible rows through <span>rows</span> prop, You can set the Label by passing a string into <span>label</span> prop',
+          // discription: 'You can use the buttons with some basic use cases by simply passing classes or by passing props eg.for link button you can pass <span>--link-button</span> for disable button set the <span>disable</span> prop to true',
+        },
+
+        {
+          title: 'Character Count',
+          discription: 'You can also specify the max-character count to the <span>LvTextArea</span> by passing a number <span>max-length</span> prop,You can also set the visible character count at the bottom-right by setting <span>show-limit</span> prop true',
+          file: 'textarea/TextAreaCharacterCount',
+        },
+        {
+          title: 'Auto resize',
+          discription: 'You can define the behaviour of <span>LvTextarea</span> after characters exceed text area height either it will scroll or get resize the scrollable behaviour is default but if you want to auto resize the text area ,You have to set <span>autoResize</span> prop true',
+          file: 'textarea/TextAreaAutoResizeDemo',
+        },
+        {
+          title: 'Vertival Resize',
+          discription: 'You can define the behaviour of <span>LvTextarea</span> after characters exceed text area height either it will scroll or get resize the scrollable behaviour is default but if you want to auto resize the text area vertically ,You have to set <span>resize</span> prop to <span>vertical</span>',
+          file: 'textarea/TextAreaVerticalResize',
+        },
+        {
+          title: 'Material design',
+          discription: 'You can set the animated bottom bar to the <span>Lvtextarea</span> by setting <span>bottomBar</span> prop true',
+          file: 'textarea/TextareaDemo__Customised',
+        },
+
+        {
+          title: 'Floating Label',
+          discription: 'You can set the label as a floating label by setting the <span>floatingLabel</span>',
+          file: 'textarea/TextAreaFloatingLabel',
+        },
+        {
+          title: 'Rounded',
+          file: 'textarea/TextAreaDemo_Rounded',
+          discription: 'You can use the rounded variation of <span>LvTextarea</span> by setting <span>rounded</span> prop true.',
+        },
+        {
+          title: 'Custom Icons',
+          discription: 'You can add left and right icons to the <span>LvTextarea</span> component using the <span> icon-left </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the textarea. ',
+          file: 'textarea/TextAreaIcon',
+        },
+      ],
+    };
   },
   components: {
     DocsCardVue,
