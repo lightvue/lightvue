@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <lv-rating :rating="3.8" :star-size="40" :read-only="true" :increment="0.01"></lv-rating>
+  <div style="width: 30%">
+    <lv-rating :star-size="40" :increment="0.5"></lv-rating>
   </div>
 </template>
 

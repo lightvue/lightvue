@@ -1,7 +1,7 @@
 <template>
   <div class="rating_demo">
-    <lv-rating :star-size="30"></lv-rating>
-    <lv-rating :star-size="50"></lv-rating>
+    <lv-rating></lv-rating>
+    <lv-rating inactive-color="#BCD7E2"></lv-rating>
   </div>
 </template>
 
