@@ -1,6 +1,10 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <docs-card-vue title="Slider demo" file="slider/SliderDemo" />
+    <SliderBestDemo></SliderBestDemo>
+
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+    </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -9,6 +13,7 @@
 </template>
 
 <script>
+import SliderBestDemo from 'lightvueDocs/example/slider/SliderBestDemo.vue';
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
@@ -36,12 +41,50 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Basic Usage',
+          file: 'slider/SliderDemo',
+          discription: 'Use the <span>LvRangeSlider</span> with some basic and complex use cases by passing either classes or props .',
+          // discription: 'You can use the buttons with some basic use cases by simply passing classes or by passing props eg.for link button you can pass <span>--link-button</span> for disable button set the <span>disable</span> prop to true',
+        },
+        {
+          title: 'Custom Range',
+          file: 'slider/SliderDemo_CustomRange',
+          discription: 'You can set the Custom range to the slider by Combining the minimum and maximum values through <span>min</span> & <span>max</span> props.',
+        },
+        {
+          title: 'Floating label',
+          file: 'slider/SliderDemo_Label',
+          discription: 'You can show/hide the floating label which contains the value by setting <span>showValue</span> prop. Default value is true',
+        },
+        {
+          title: 'Set Slider Color',
+          file: 'slider/SliderDemo_CustomColor',
+          discription: 'You can Change the slider color by passing a string in <span>sliderColor</span> prop.Default value is #607c8a',
+        },
+        {
+          title: 'Set Track Color',
+          file: 'slider/SliderDemo_Color',
+          discription: 'You can Change the Track color by passing a string in <span>trackColor</span> prop.Default value is #e2e2e2',
+        },
+        {
+          title: 'Step',
+          file: 'slider/SliderDemo_Step',
+          discription: 'You can Change the step count by passing a number in <span>step</span> prop.',
+        },
+      ],
+    };
+  },
   components: {
     DocsCardVue,
     DocsCard,
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
+    SliderBestDemo,
   },
   title: 'Slider',
   description: `Slider is another basic component from light vue which provide user to have a slider in the web application which can be used to rate or select a range.`,
