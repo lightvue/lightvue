@@ -1,6 +1,8 @@
 <template>
-  <div class="content-section implementation">
-    <LvRangeSlider class="slider" v-model="value" />
+  <div class="content-section implementation slider-example-wrapper">
+    <LvRangeSlider v-model="value" sliderColor="#38b2ac" />
+
+    <LvRangeSlider v-model="valueRange1" sliderColor="#9973ff" />
   </div>
 </template>
 
@@ -11,6 +13,7 @@ export default {
   data() {
     return {
       value: 20,
+      valueRange1: 0,
     };
   },
   components: {
@@ -27,5 +30,11 @@ export default {
 
 .lv-slider-vertical {
   height: 14rem;
+}
+
+.slider-example-wrapper {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
 }
 </style>
