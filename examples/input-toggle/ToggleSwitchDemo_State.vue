@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <LvToggleSwitch v-model="checked1" label="Click to toggle" />
-  </div>
+  <div><LvToggleSwitch v-model="checked2" /> Keep v-model's boolean true by default</div>
 </template>
 
 <script>

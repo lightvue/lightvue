@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <LvToggleSwitch v-model="checked1" label="Click to toggle" />
+  <div style="display: flex; justify-content: space-between; width: 60%">
+    <LvToggleSwitch v-model="checked1" dense label="Click to toggle" />
+
+    <LvToggleSwitch v-model="checked1" dense label="Click to toggle" icon="light-icon-check" />
   </div>
 </template>
 

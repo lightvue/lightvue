@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LvToggleSwitch v-model="checked1" label="Click to toggle" />
+    <LvToggleSwitch v-model="checked1" label="Click to toggle" icon="light-icon-x" />
   </div>
 </template>
 
@@ -11,9 +11,6 @@ export default {
   data() {
     return {
       checked1: false,
-      checked2: true,
-      checked3: false,
-      checked4: false,
     };
   },
   components: {

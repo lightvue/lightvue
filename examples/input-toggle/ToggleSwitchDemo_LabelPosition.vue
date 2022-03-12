@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LvToggleSwitch v-model="checked1" label="Click to toggle" />
+    <LvToggleSwitch labelPosition="left" v-model="checked1" label="Click to toggle" />
   </div>
 </template>
 
