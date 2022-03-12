@@ -69,9 +69,9 @@ export default {
           file: 'input-toggle/ToggleSwitchDemo_State',
         },
         {
-          title: 'Rounded Buttons',
+          title: 'Label Position',
           discription: 'You can change the label position by through <span>labelPosition</span> prop',
-          file: 'input-toggle/ToggleSwitchDemo_labelPosition',
+          file: 'input-toggle/ToggleSwitchDemo_LabelPosition',
         },
         {
           title: 'Disable',
