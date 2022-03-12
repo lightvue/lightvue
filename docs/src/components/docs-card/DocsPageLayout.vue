@@ -190,7 +190,7 @@ $primary-color: #38b2ac;
   right: 0;
   top: 0;
   height: 100vh;
-  overflow: auto;
+  overflow-y: scroll;
   max-width: 15%;
   padding-right: 1rem;
   text-align: right;
