@@ -1,36 +1,8 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <docs-card-vue title="TYPE: ball-scale" file="progressloader/BallTypeDemos/BallScaleDemo" />
-    <docs-card-vue title="TYPE: ball-scale-multiple" file="progressloader/BallTypeDemos/BallScaleMultipleDemo" />
-    <docs-card-vue title="TYPE: ball-scale-random" file="progressloader/BallTypeDemos/BallScaleRandomDemo" />
-    <docs-card-vue title="TYPE: ball-scale-ripple" file="progressloader/BallTypeDemos/BallScaleRippleDemo" />
-    <docs-card-vue title="TYPE: ball-scale-ripple-multiple" file="progressloader/BallTypeDemos/BallScaleRippleMultipleDemo" />
-    <docs-card-vue title="TYPE: ball-beat" file="progressloader/BallTypeDemos/BallBeatDemo" />
-    <docs-card-vue title="TYPE: ball-pulse" file="progressloader/BallTypeDemos/BallPulseDemo" />
-    <docs-card-vue title="TYPE: ball-pulse-sync" file="progressloader/BallTypeDemos/BallPulseSyncDemo" />
-    <docs-card-vue title="TYPE: ball-pulse-rise" file="progressloader/BallTypeDemos/BallPulseRiseDemo" />
-    <docs-card-vue title="TYPE: ball-rotate" file="progressloader/BallTypeDemos/BallRotateDemo" />
-    <docs-card-vue title="TYPE: ball-grid-beat" file="progressloader/BallTypeDemos/BallGridBeatDemo" />
-    <docs-card-vue title="TYPE: ball-grid-pulse" file="progressloader/BallTypeDemos/BallGridPulseDemo" />
-    <docs-card-vue title="TYPE: ball-spin-fade-loader" file="progressloader/BallTypeDemos/BallSpinFadeLoaderDemo" />
-    <docs-card-vue title="TYPE: ball-zig-zag" file="progressloader/BallTypeDemos/BallZigZagDemo" />
-    <docs-card-vue title="TYPE: ball-zig-zag-deflect" file="progressloader/BallTypeDemos/BallZigZagDeflectDemo" />
-    <docs-card-vue title="TYPE: ball-triangle-path" file="progressloader/BallTypeDemos/BallTrianglePathDemo" />
-    <docs-card-vue title="TYPE: ball-clip-rotate" file="progressloader/BallTypeDemos/BallClipRotateDemo" />
-    <docs-card-vue title="TYPE: ball-clip-rotate-multiple" file="progressloader/BallTypeDemos/BallClipRotateMultipleDemo" />
-    <docs-card-vue title="TYPE: line-scale" file="progressloader/LineTypeDemos/LineScaleDemo" />
-    <docs-card-vue title="TYPE: line-scale-party" file="progressloader/LineTypeDemos/LineScalePartyDemo" />
-    <docs-card-vue title="TYPE: line-scale-pulse-out" file="progressloader/LineTypeDemos/LineScalePulseOutDemo" />
-    <docs-card-vue title="TYPE: line-scale-pusle-out-rapid" file="progressloader/LineTypeDemos/LineScalePulseOutRapidDemo" />
-    <docs-card-vue title="TYPE: line-spin-fade-loader" file="progressloader/LineTypeDemos/LineSpinFadeLoaderDemo" />
-    <docs-card-vue title="TYPE: square-spin" file="progressloader/MiscTypeDemos/SquareSpinDemo" />
-    <docs-card-vue title="TYPE: cube-transition" file="progressloader/MiscTypeDemos/CubeTransitionDemo" />
-    <docs-card-vue title="TYPE: semi-circle-spin" file="progressloader/MiscTypeDemos/SemiCircleSpinDemo" />
-    <!-- Needs color fix -->
-    <docs-card-vue title="TYPE: pacman" file="progressloader/MiscTypeDemos/PacmanDemo" />
-    <!-- Needs color fix -->
-    <docs-card-vue title="TYPE: triangle-skew-spin" file="progressloader/MiscTypeDemos/TriangleSkewSpinDemo" />
-    <!-- Needs color fix -->
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+    </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -64,6 +36,152 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Ball Scale',
+          file: 'progressloader/BallTypeDemos/BallScaleDemo',
+          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
+        },
+        {
+          title: 'Ball Scale Multiple',
+          file: 'progressloader/BallTypeDemos/BallScaleMultipleDemo',
+          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
+        },
+        {
+          title: 'Ball Scale Random',
+          discription: 'You can also set the mode to intermidiate by settting <span>mode</span> prop to <span>indeterminate</span>',
+          file: 'progressloader/BallTypeDemos/BallScaleRandomDemo',
+        },
+        {
+          title: 'Ball Scale Ripple',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallScaleRippleDemo',
+        },
+        {
+          title: 'Ball Scale Ripple Multiple',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallScaleRippleMultipleDemo',
+        },
+        {
+          title: 'Ball Beat',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallBeatDemo',
+        },
+        {
+          title: 'Ball Pulse',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallPulseDemo',
+        },
+        {
+          title: 'Ball Pulse Sync',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallPulseSyncDemo',
+        },
+        {
+          title: 'Ball Pulse Rise',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallPulseRiseDemo',
+        },
+        {
+          title: 'Ball Rotate',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallRotateDemo',
+        },
+        {
+          title: 'Ball Grid Beat',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallGridBeatDemo',
+        },
+        {
+          title: 'Ball Grid Pulse',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: '"progressloader/BallTypeDemos/BallGridPulseDemo',
+        },
+        {
+          title: 'Ball Spin Fade Loader',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallSpinFadeLoaderDemo',
+        },
+        {
+          title: 'Ball Zig Zag',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallZigZagDemo',
+        },
+        {
+          title: 'Ball Zig Zag Deflect',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallZigZagDeflectDemo',
+        },
+        {
+          title: 'Ball Triangle Path',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallTrianglePathDemo',
+        },
+        {
+          title: 'Ball Clip Rotate',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallClipRotateDemo',
+        },
+        {
+          title: 'Ball Clip Rotate Multiple',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/BallTypeDemos/BallClipRotateMultipleDemo',
+        },
+        {
+          title: 'Line Scale',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/LineTypeDemos/LineScaleDemo',
+        },
+        {
+          title: 'Line Scale Party',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/LineTypeDemos/LineScalePartyDemo',
+        },
+        {
+          title: 'Line Scale Pulse Out',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/LineTypeDemos/LineScalePulseOutDemo',
+        },
+        {
+          title: 'Line Scale Pusle Out Rapid',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/LineTypeDemos/LineScalePulseOutRapidDemo',
+        },
+        {
+          title: 'Line Spin Fade Loader',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/LineTypeDemos/LineSpinFadeLoaderDemo',
+        },
+        {
+          title: 'Square Spin',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/LineTypeDemos/LineSpinFadeLoaderDemo',
+        },
+        {
+          title: 'Cube Transition',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/MiscTypeDemos/CubeTransitionDemo',
+        },
+        {
+          title: 'Semi Circle Spin',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/MiscTypeDemos/SemiCircleSpinDemo',
+        },
+        {
+          title: 'Triangle Skew Spin',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/MiscTypeDemos/TriangleSkewSpinDemo',
+        },
+        {
+          title: 'Pacman',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressloader/MiscTypeDemos/PacmanDemo',
+        },
+      ],
+    };
   },
   components: {
     DocsCardVue,
