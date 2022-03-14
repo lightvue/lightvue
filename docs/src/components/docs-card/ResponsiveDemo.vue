@@ -79,6 +79,9 @@ export default {
       this.minSize = (widthInPx / this.$el.clientWidth) * 100;
     },
     setPane(widthPercent) {
+      let spitter = this.$el.querySelector('.splitpanes__splitter');
+      widthPercent == 100 ? (spitter.style.display = 'none') : (spitter.style.display = 'block');
+
       this.paneSize = widthPercent;
       this.setPanelSizePixel(widthPercent);
     },
@@ -104,6 +107,7 @@ export default {
           } else {
             // set to mobile modde
             this.setPane((this.minWidth / this.$el.clientWidth) * 100);
+
             this.direction = 'right';
           }
           break;
@@ -147,6 +151,7 @@ export default {
 }
 .splitpanes__splitter {
   width: 16px !important;
+  display: none;
   background-color: #edf2f6 !important;
   cursor: e-resize;
   transition: all 0.1s ease-in-out;
