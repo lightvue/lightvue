@@ -1,9 +1,8 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <docs-card-vue title="Size" file="progressspinner/ProgressSpinnerSizeDemo" />
-    <docs-card-vue title="Color" file="progressspinner/ProgressSpinnerColorDemo" />
-    <docs-card-vue title="Stroke-width" file="progressspinner/ProgressSpinnerStrokeDemo" />
-    <docs-card-vue title="Animation-duration" file="progressspinner/ProgressSpinnerDurationDemo" />
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+    </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -37,6 +36,32 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Size',
+          file: 'progressspinner/ProgressSpinnerSizeDemo',
+          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
+        },
+        {
+          title: 'Color',
+          file: 'progressspinner/ProgressSpinnerColorDemo',
+          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
+        },
+        {
+          title: 'Stroke-width',
+          discription: 'You can also set the mode to intermidiate by settting <span>mode</span> prop to <span>indeterminate</span>',
+          file: 'progressspinner/ProgressSpinnerStrokeDemo',
+        },
+        {
+          title: 'Animation-duration',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          file: 'progressspinner/ProgressSpinnerDurationDemo',
+        },
+      ],
+    };
   },
   components: {
     DocsCardVue,
