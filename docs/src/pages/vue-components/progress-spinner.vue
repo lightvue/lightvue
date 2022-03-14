@@ -43,21 +43,21 @@ export default {
         {
           title: 'Size',
           file: 'progressspinner/ProgressSpinnerSizeDemo',
-          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'You can use the LightVue spinner for various purpose like  loading animations or space-filler etc. LightVue comes with some stunning designs for spinners and it is highly customizable.You can also specify the size of spinner by pasing a value with its unit in <span>size</span> prop.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Color',
           file: 'progressspinner/ProgressSpinnerColorDemo',
-          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'You can also set the color for spinner by passing a string into <span>color</span> prop',
         },
         {
           title: 'Stroke-width',
-          discription: 'You can also set the mode to intermidiate by settting <span>mode</span> prop to <span>indeterminate</span>',
+          discription: 'You can also set the stroke width of spinner by passing a value in <span>strokeWidth</span> prop',
           file: 'progressspinner/ProgressSpinnerStrokeDemo',
         },
         {
           title: 'Animation-duration',
-          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
+          discription: 'You can change The animation duration for spinner by passing a value in <span>animationDuration</span> prop ',
           file: 'progressspinner/ProgressSpinnerDurationDemo',
         },
       ],
