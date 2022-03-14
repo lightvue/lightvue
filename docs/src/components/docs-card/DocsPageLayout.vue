@@ -14,7 +14,7 @@
               <slot name="title-below"></slot>
             </div>
             <div class="documentation-title">
-              <h4>#Documentation</h4>
+              <h4>Documentation</h4>
             </div>
           </div>
 
@@ -189,7 +189,7 @@ $primary-color: #38b2ac;
   position: fixed;
   right: 0;
   top: 0;
-  height: 100vh;
+  height: 90vh;
   overflow-y: scroll;
   max-width: 15%;
   padding-right: 1rem;
@@ -222,7 +222,7 @@ $primary-color: #38b2ac;
 .documentation-title {
   h4 {
     opacity: 0.8;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: inherit;
     color: #566d79;
   }
