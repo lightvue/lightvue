@@ -2,9 +2,9 @@
   <div class="docs-card" :id="computedId">
     <div class="docs-card__header">
       <div class="docs-card__header--title">
-        <h4>
+        <h2>
           {{ title }}
-        </h4>
+        </h2>
       </div>
       <div class="docs-card__header--discription">
         <p v-html="discription" style="line-height: 1.7; opacity: 0.8">
@@ -171,6 +171,7 @@ $primary-color: #38b2ac;
     background: #ffffff;
     box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2);
     /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
+    /* box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); */
     .d-flex {
       display: flex;
       align-items: center;
@@ -238,6 +239,9 @@ $primary-color: #38b2ac;
 }
 .docs-card__header--title {
   font-weight: 400;
+  h2 {
+    font-size: 1.8rem;
+  }
 }
 .docs-card__header--discription {
   line-height: 1.7;
