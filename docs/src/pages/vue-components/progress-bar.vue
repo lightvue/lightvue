@@ -50,22 +50,21 @@ export default {
         {
           title: 'Dynamic',
           file: 'progressbar/ProgressBarDemo_Dynamic',
-          discription: 'Use the buttons with some basic and complex use cases by passing either classes or props eg. for link button, pass <span>--link-button</span> For disable button, set the <span>disable</span> prop to true.',
-          // discription: 'You can use the buttons with some basic use cases by simply passing classes or by passing props eg.for link button you can pass <span>--link-button</span> for disable button set the <span>disable</span> prop to true',
+          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Static',
           file: 'progressbar/ProgressBarDemo_Static',
-          discription: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Indeterminate',
-          discription: 'You can simply change color by changing the class name.You can set the values to suffix to <span>lv--</span>  <span>primary</span> <span>secondary</span> <span>success</span> <span>info</span> <span>warning</span> <span>help</span> <span>danger</span>,<span>complementary</span>',
+          discription: 'You can also set the mode to intermidiate by settting <span>mode</span> prop to <span>indeterminate</span>',
           file: 'progressbar/ProgressBarDemo_Indeterminate',
         },
         {
           title: 'Colored',
-          discription: 'You can set the button style to text by passing <span>--text-button</span> alongside with other variation classes ',
+          discription: 'You can change the colour of progress bar by passing a color string into <span>color</span> prop ',
           file: 'progressbar/ProgressBarDemo_Colored',
         },
       ],
@@ -75,7 +74,6 @@ export default {
   description: `Progress Bar component can be used as a process status indicator for a time-consuming process.`,
   packageName: 'progressbar',
   componentName: 'lv-progressbar',
-  // status: 'Stable',
   apiData: ProgressBarAPI,
 };
 </script>
