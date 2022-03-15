@@ -1,11 +1,8 @@
 <template>
-  <div>
-    <lv-code-loader :width="300" />
-    <lv-code-loader :width="300" primaryColor="#607c8a" secondaryColor="#8aa6b5" />
-    <lv-code-loader :width="300" primaryColor="#38b2ac" secondaryColor="#47d9d1" />
-    <h5>Responsive with max-width</h5>
-    <lv-code-loader style="max-width: 600px" />
-    <!-- REFACTORING -->
+  <div class="skeleton_demo-wrapper">
+    <lv-code-loader :width="250" />
+    <lv-code-loader :width="250" primaryColor="#607c8a" secondaryColor="#8aa6b5" />
+    <lv-code-loader :width="250" primaryColor="#38b2ac" secondaryColor="#47d9d1" />
   </div>
 </template>
 
@@ -17,3 +14,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.skeleton_demo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+</style>
