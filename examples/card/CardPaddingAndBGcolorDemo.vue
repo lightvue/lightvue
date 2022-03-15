@@ -1,13 +1,7 @@
 <template>
   <div class="card-demo-wrapper">
     <div class="card-demo">
-      <LvCard> <div v-html="dummyContent('default (white)')"></div> </LvCard>
-    </div>
-    <div class="card-demo">
       <LvCard backgroundColor="#dfe7eb"> <div v-html="dummyContent('backgroundColor = #dfe7eb')"></div> </LvCard>
-    </div>
-    <div class="card-demo">
-      <LvCard backgroundColor="#38b2ac70"> <div v-html="dummyContent('backgroundColor = #38b2ac70')"></div> </LvCard>
     </div>
     <div class="card-demo">
       <LvCard padding="40px"> <div v-html="dummyContent('padding = 40px')"></div> </LvCard>
@@ -46,7 +40,7 @@ export default {
 }
 
 .card-demo {
-  height: 400px;
+  height: 300px;
   width: 300px;
   margin: 30px;
 }
