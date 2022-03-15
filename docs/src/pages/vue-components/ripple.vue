@@ -1,7 +1,9 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <docs-card-vue title="Basic usage" file="ripple/RippleBasicDemo" />
-    <docs-card-vue title="Modifying color" file="ripple/RippleColorDemo" />
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+    </template>
+
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <!-- <docs-all-api :api-data="$options.apiData" /> -->
@@ -36,6 +38,22 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Basic usage',
+          file: 'ripple/RippleBasicDemo',
+          discription: 'You can use the Tooltip for various purpose like show additional information etc.LightVue comes with some stunning designs for Tooltip.You can use the tooltip in the following way.lightVue Tooltip bar is Both compatible with Vue 2.x and Vue 3.x.',
+        },
+        {
+          title: 'Modifying color',
+          file: 'ripple/RippleColorDemo',
+          discription: 'You can use the Tooltip for various purpose like show additional information etc.LightVue comes with some stunning designs for Tooltip.You can use the tooltip in the following way.lightVue Tooltip bar is Both compatible with Vue 2.x and Vue 3.x.',
+        },
+      ],
+    };
   },
   components: {
     DocsCardVue,
