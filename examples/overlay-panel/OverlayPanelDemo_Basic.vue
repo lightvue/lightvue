@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overlay_panel-wrapper">
     <LvButton class="lv--primary" type="button" icon="light-icon-search" :label="selectedProduct ? selectedProduct.name : 'Select a Product'" @click="toggle" aria:haspopup="true" aria-controls="overlay_panel" />
 
     <LvOverlayPanel ref="op" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 450px">
@@ -18,7 +18,7 @@
         </Column>
       </DataTable> -->
     </LvOverlayPanel>
-    <h5>Auto Width and right-aligned overlay-panel</h5>
+
     <LvButton type="button" label="Image Overlay" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" />
 
     <LvOverlayPanel ref="imageOverlay" append-to="body" :show-close-icon="true" id="image_overlay_panel" align-right>
@@ -72,6 +72,12 @@ export default {
 <style lang="scss" scoped>
 button {
   min-width: 15rem;
+}
+.overlay_panel-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
 }
 
 .product-image {
