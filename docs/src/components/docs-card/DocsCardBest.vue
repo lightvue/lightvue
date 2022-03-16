@@ -2,12 +2,16 @@
   <div class="best__demo__wrapper" :id="computedId">
     <div class="wrapper__header">
       <h5 class="component__header" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
+      <i class="light-icon-adjustments-horizontal dy-props__toggle-drawer" @click="showOptions()"></i>
     </div>
     <div class="dy-pg__wrap">
-      <div style="flex: 1" class="dy-pg__left">
+      <div style="flex: 1; position: relative" class="dy-pg__left">
         <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked">
-          <div class="dy-comp__wrap light-scrollbar" style="position: relative">
-            <slot></slot>
+          <div class="dy-comp__wrap">
+            <div class="demo-sec light-scrollbar">
+              <slot></slot>
+            </div>
+
             <div class="dy-pg_btn-group">
               <div class="d-flex">
                 <div class="docs-card__action" @click="openURL(sourceLink)">
@@ -22,25 +26,30 @@
               </div>
             </div>
           </div>
-
-          <div class="dy-code__wrap light-scrollbar">
-            <slot name="code"></slot>
-          </div>
         </ResponsiveDemo>
+        <div class="dy-code__wrap light-scrollbar">
+          <slot name="code"></slot>
+        </div>
       </div>
 
-      <div class="dy-props__wrap" :class="`${showPorpsOptions ? '--mobile-show' : ''}`">
+      <div class="dy-props__wrap">
         <div class="dy-props__header">All Props</div>
         <div class="dy-props__body light-scrollbar">
           <slot name="props"></slot>
         </div>
       </div>
+      <LvDrawer v-model="showPorpsOptions" headerTitle="All Props" close shadow background="#fff" headerColor="#008080" :zIndex="1000">
+        <div class="dy-props__body light-scrollbar">
+          <slot name="props"></slot>
+        </div>
+      </LvDrawer>
     </div>
   </div>
 </template>
 
 <script>
 import CopyButton from '@/components/docs-card/CopyButton';
+import LvDrawer from 'lightvue/drawer';
 import ResponsiveDemo from './ResponsiveDemo.vue';
 export default {
   data() {
@@ -68,10 +77,12 @@ export default {
       return this.$props.id ? this.$props.id : this.title.split(' ').join('-').toLowerCase();
     },
   },
+
   methods: {
     showOptions() {
       this.showPorpsOptions = !this.showPorpsOptions;
     },
+
     getMarkup() {
       return this.$el.querySelector('.dy-code__wrap').innerText;
     },
@@ -86,6 +97,7 @@ export default {
   components: {
     CopyButton,
     ResponsiveDemo,
+    LvDrawer,
   },
 };
 </script>
@@ -110,7 +122,7 @@ export default {
 .dy-pg__left {
   display: flex;
   flex-direction: column;
-  /* flex-grow: 1; */
+
   max-height: 60vh;
 
   align-items: stretch;
@@ -125,21 +137,21 @@ export default {
   /* padding: 20px; */
   transition: all 0.2s ease-in-out;
   border-left: 2px solid #edf2f6;
-  .dy-props__header {
-    padding: 22px;
-    border-bottom: 1px solid #edf2f6;
-    font-weight: 600;
-    font-size: 1em;
-    color: #008080;
-  }
+}
+.dy-props__header {
+  padding: 22px;
+  border-bottom: 1px solid #edf2f6;
+  font-weight: 600;
+  font-size: 1em;
+  color: #008080;
+}
 
-  .dy-props__body {
-    padding: 20px;
-    overflow-y: scroll;
-    height: calc(100% - 62px);
-    background: #ffffff;
-    //   height: 350px;
-  }
+.dy-props__body {
+  padding: 20px;
+  overflow-y: scroll;
+  height: calc(100% - 62px);
+  background: #ffffff;
+  //   height: 350px;
 }
 
 .wrapper__header {
@@ -186,14 +198,15 @@ export default {
   right: 50%;
   transform: translate(50%, 50%);
   width: 10rem;
-  z-index: 1000;
+  z-index: 1;
   padding: 5px 15px;
   border-radius: 50px;
   background: #ffffff;
   /* box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2); */
   /* box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15); */
   /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   .d-flex {
     display: flex;
     align-items: center;
@@ -245,12 +258,18 @@ export default {
 
 .dy-comp__wrap {
   flex-grow: 1;
-  min-height: 200px;
-  // display: flex;
-  /* overflow-y: scroll; */
+  position: relative;
+  .demo-sec {
+    min-height: 200px;
+    max-height: 200px;
+    width: 100%;
+    padding: 48px;
+    overflow-y: scroll;
+  }
+
   justify-content: center;
   width: 100%;
-  padding: 48px;
+
   background: #ffffff;
 }
 
@@ -260,8 +279,9 @@ export default {
 }
 
 .dy-code__wrap {
-  max-height: 25vh;
-  min-height: 20vh;
+  min-height: 180px;
+  max-height: 180px;
+  width: 80ch;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
