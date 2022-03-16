@@ -44,7 +44,7 @@ export default {
         {
           title: 'Basic',
           file: 'collapsible/AccordianDemo',
-          discription: 'You can hide or show the collapsible container by setting <span>show</span> prop true or false.You can also set the oriantation through <span>orientation</span> prop default value is vertical you can set it to horizontal.lightVue Progress Loaders is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'You can hide or show the collapsible container by setting <span>show</span> prop true or false.You can also set the oriantation through <span>orientation</span> prop default value is vertical you can set it to horizontal.lightVue collapsible is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Nested',
