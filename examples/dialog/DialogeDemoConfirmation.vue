@@ -2,12 +2,15 @@
   <div>
     <div class="content-section implementation">
       <div class="card">
-        <LvButton label="Show" icon="light-icon-external-link" @click="openBasic" class="lv-button" />
-        <LvDialog header="Header" :visible.sync="displayBasic" :style="{ width: '50vw' }">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <LvButton label="Confirm" icon="light-icon-external-link" @click="openConfirmation" />
+        <LvDialog header="Confirmation" :visible.sync="displayConfirmation" :style="{ width: '350px' }" :modal="true">
+          <div class="confirmation-content">
+            <i class="light-icon-alert-triangle p-mr-3" style="font-size: 2rem" />
+            <span>Are you sure you want to proceed?</span>
+          </div>
           <template #footer>
-            <LvButton label="No" icon="light-icon-x" @click="closeBasic" class="lv-button --text-button" />
-            <LvButton label="Yes" icon="light-icon-check" @click="closeBasic" autofocus />
+            <LvButton label="No" icon="light-icon-x" @click="closeConfirmation" class="--text-button" />
+            <LvButton label="Yes" icon="light-icon-check" @click="closeConfirmation" class="--text-button" autofocus />
           </template>
         </LvDialog>
       </div>
