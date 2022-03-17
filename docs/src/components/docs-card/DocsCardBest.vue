@@ -2,7 +2,20 @@
   <div class="best__demo__wrapper" :id="computedId">
     <div class="wrapper__header">
       <h5 class="component__header" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
-      <i class="light-icon-adjustments-horizontal dy-props__toggle-drawer" @click="showOptions()"></i>
+      <div class="flex">
+       <div class="docs-card__action"> 
+      <i class="docs-card__action-icon light-icon-adjustments-horizontal dy-props__toggle-drawer" @click="showOptions()"></i>
+      </div> 
+      <div class="docs-card__action">
+
+       <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
+                </div>
+                          <div class="docs-card__action">
+
+         <i class="docs-card__action-icon docs-card__action-icon light-icon-devices" title="Responsive preview" @click="toggleDevice"></i>
+                          </div>
+        </div>
+     
     </div>
     <div class="dy-pg__wrap">
       <div style="flex: 1; position: relative" class="dy-pg__left">
@@ -12,19 +25,7 @@
               <slot></slot>
             </div>
 
-            <div class="dy-pg_btn-group">
-              <div class="d-flex">
-                <div class="docs-card__action" @click="openURL(sourceLink)">
-                  <i class="docs-card__action-icon light-icon-brand-github"></i>
-                </div>
-                <div v-if="$slots['code']" class="docs-card__action">
-                  <CopyButton :text="getMarkup" />
-                </div>
-                <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
-                  <i class="docs-card__action-icon light-icon-devices" title="Responsive preview"></i>
-                </div>
-              </div>
-            </div>
+           
           </div>
         </ResponsiveDemo>
         <div class="dy-code__wrap light-scrollbar">
@@ -192,69 +193,41 @@ export default {
     margin: 0px;
   } */
 }
-.dy-pg_btn-group {
-  position: absolute;
-  bottom: 0%;
-  right: 50%;
-  transform: translate(50%, 50%);
-  width: 10rem;
-  z-index: 1;
-  padding: 5px 15px;
-  border-radius: 50px;
-  background: #ffffff;
-  /* box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2); */
-  /* box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15); */
-  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  .d-flex {
+  .flex {
+  
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 24px;
-
-    .docs-card__action-icon {
-      font-weight: bold;
-
-      color: #afafaf;
+    width: 10%;
+   
+font-size: 24px;
+    .docs-card__action {
+        .docs-card__action-icon {
 
       cursor: pointer;
       transition: 0.5s all ease-out;
     }
-    .docs-card__action {
-      .copy-btn__wrap {
-        position: relative !important;
-        top: auto;
-        right: auto;
-        .copy-btn {
-          font-weight: bold;
-
-          color: #afafaf;
-
           cursor: pointer;
           transition: 0.5s all ease-out;
           i {
             background-color: transparent;
-            font-weight: bold;
-            padding: 0;
+        
+          
             opacity: 1;
-            color: #afafaf;
+            /* color: #afafaf; */
             transition: 0.5s all ease-out;
-            font-size: 24px;
+            /* font-size: 24px; */
             &:hover {
               opacity: 0.8;
-            }
+            
           }
         }
       }
     }
 
-    .docs-card__action-icon:hover {
-      /* color: #38b2ac; */
-      opacity: 0.8;
-    }
-  }
-}
+   
+  
+
 
 .dy-comp__wrap {
   flex-grow: 1;
@@ -313,6 +286,10 @@ export default {
 }
 
 @media (max-width: 975px) {
+  .flex {
+    font-weight: 15px;
+    width: 30%;
+  }
   .dy-props__wrap {
     display: none;
     &.--mobile-show {
