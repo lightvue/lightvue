@@ -8,10 +8,9 @@
     </div>
     <br />
     <div class="content-section implementation">
-      <docs-card title="Getting Started" :responsive="false">
+      <docs-card title="Installing LightVue" :showMiddleControl="false" :responsive="false" >
         <div class="install__wrapper" style="padding: 1rem">
           <div class="install__container">
-            <h2>Installing LightVue</h2>
             <div class="install__process">
               <CodeHighlight lang="javascript">
                 <pre>
