@@ -45,12 +45,12 @@ export default {
         {
           title: 'Basic usage',
           file: 'ripple/RippleBasicDemo',
-          discription: 'You can use the Tooltip for various purpose like show additional information etc.LightVue comes with some stunning designs for Tooltip.You can use the tooltip in the following way.lightVue Tooltip bar is Both compatible with Vue 2.x and Vue 3.x.',
+          discription: 'You can use the ripple custom directive <span>v-ripple</span> for creating material effect.lightVue Ripple bar is Both compatible with Vue 2.x and Vue 3.x.',
         },
         {
           title: 'Modifying color',
           file: 'ripple/RippleColorDemo',
-          discription: 'You can use the Tooltip for various purpose like show additional information etc.LightVue comes with some stunning designs for Tooltip.You can use the tooltip in the following way.lightVue Tooltip bar is Both compatible with Vue 2.x and Vue 3.x.',
+          discription: 'you can set the color of repple by overwriting a <span>lv-ink</span> class.',
         },
       ],
     };
