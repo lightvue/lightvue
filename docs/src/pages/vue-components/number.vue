@@ -46,7 +46,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'number/Number_BasicDemo',
-          discription: 'You can use the Number Input component with some basic and complex use cases  like setting placeholder through <span>placeholder</span> prop. There is also a prop called <span>helpText</span> to specify a text that will display below the input. You can also specify a label by using the <span>label</span>  prop .',
+          discription: 'You can use the Number Input component with some basic and complex use cases  like setting placeholder through <span>placeholder</span> prop. There is also a prop called <span>helpText</span> to specify a text that will display below the input. You can also specify a label by using the <span>label</span>  prop.LightVue number input is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
         },
         {
           title: 'Customise Icons',

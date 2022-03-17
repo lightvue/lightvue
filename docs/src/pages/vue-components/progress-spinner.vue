@@ -43,7 +43,7 @@ export default {
         {
           title: 'Size',
           file: 'progressspinner/ProgressSpinnerSizeDemo',
-          discription: 'You can use the LightVue spinner for various purpose like  loading animations or space-filler etc. LightVue comes with some stunning designs for spinners and it is highly customizable.You can also specify the size of spinner by pasing a value with its unit in <span>size</span> prop.lightVue Progress bar is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'You can use the LightVue spinner for various purpose like  loading animations or space-filler etc. LightVue comes with some stunning designs for spinners and it is highly customizable.You can also specify the size of spinner by pasing a value with its unit in <span>size</span> prop.LightVue Progress bar is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
         },
         {
           title: 'Color',

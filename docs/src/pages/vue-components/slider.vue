@@ -47,8 +47,8 @@ export default {
         {
           title: 'Basic Usage',
           file: 'slider/SliderDemo',
-          discription: 'Use the <span>LvRangeSlider</span> with some basic and complex use cases by passing either classes or props .',
-          // discription: 'You can use the buttons with some basic use cases by simply passing classes or by passing props eg.for link button you can pass <span>--link-button</span> for disable button set the <span>disable</span> prop to true',
+          discription: 'Use the <span>LvRangeSlider</span> with some basic and complex use cases by passing either classes or props.LightVue slider is Both compatible with Vue 2.x and Vue 3.x',
+         
         },
         {
           title: 'Custom Range',

@@ -45,7 +45,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'input/InputDemo_Basic',
-          discription: 'You can use the input component with some basic and complex use cases  like setting placeholder through <span>placeholder</span> prop. There is also a prop called <span>helpText</span> to specify a text that will display below the input. You can also specify a label by using the <span>label</span>  prop .',
+          discription: 'You can use the input component with some basic and complex use cases  like setting placeholder through <span>placeholder</span> prop. There is also a prop called <span>helpText</span> to specify a text that will display below the input. You can also specify a label by using the <span>label</span> prop.LightVue input is Both compatible with Vue 2.x and Vue 3.x',
           // discription: 'You can use the buttons with some basic use cases by simply passing classes or by passing props eg.for link button you can pass <span>--link-button</span> for disable button set the <span>disable</span> prop to true',
         },
         {

@@ -44,8 +44,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'dialog/DialogDemo',
-          discription: 'Use the buttons with some basic and complex use cases by passing either classes or props eg. for link button, pass <span>--link-button</span> For disable button, set the <span>disable</span> prop to true.',
-          // discription: 'You can use the buttons with some basic use cases by simply passing classes or by passing props eg.for link button you can pass <span>--link-button</span> for disable button set the <span>disable</span> prop to true',
+          discription: 'LightVue comes with some stunning designs for dialog.There are different types of dialog present in lightVue you can go through this page for more info.LightVue dialog is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Model',

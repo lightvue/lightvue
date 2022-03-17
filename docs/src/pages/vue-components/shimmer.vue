@@ -44,7 +44,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'shimmers/examples/ShimmersDemoBasic',
-          discription: 'You can use the shimmers Loader for various purpose like loading animations or space-filler etc.LightVue comes with some stunning designs for shimmers loaders.There are different types of shimmers are present in lightVue you can go through this page for more info.You can customize the LightVue Shimmer in various ways.lightVue Shimmer Loaders is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'You can use the shimmers Loader for various purpose like loading animations or space-filler etc.LightVue comes with some stunning designs for shimmers loaders.There are different types of shimmers are present in lightVue you can go through this page for more info.You can customize the LightVue Shimmer in various ways.LightVue Shimmer Loaders is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Adjusting height & width',

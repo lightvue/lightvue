@@ -45,7 +45,7 @@ export default {
         {
           title: 'Basic',
           file: 'checkbox-group/CheckboxGroupDemo_Basic',
-          discription: 'You can pass the <span>options</span> in <span>lv-checkbox-group</span> as an array of objects. You can still use all the props and variations in the <span>LvCheckbox</span>  .',
+          discription: 'You can pass the <span>options</span> in <span>lv-checkbox-group</span> as an array of objects. You can still use all the props and variations in the <span>LvCheckbox</span>.LightVue checkbox-group is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Set option value',

@@ -45,7 +45,7 @@ export default {
         {
           title: 'Basic usage',
           file: 'ripple/RippleBasicDemo',
-          discription: 'You can use the ripple custom directive <span>v-ripple</span> for creating material effect.lightVue Ripple bar is Both compatible with Vue 2.x and Vue 3.x.',
+          discription: 'You can use the ripple custom directive <span>v-ripple</span> for creating material effect.LightVue Ripple bar is Both compatible with Vue 2.x and Vue 3.x.',
         },
         {
           title: 'Modifying color',
