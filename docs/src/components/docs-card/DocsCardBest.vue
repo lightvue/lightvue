@@ -28,9 +28,13 @@
            
           </div>
         </ResponsiveDemo>
-        <div class="dy-code__wrap light-scrollbar">
+  
+ <div class="dy-code__wrap light-scrollbar">
+           <CopyButton :text="getMarkup" />
           <slot name="code"></slot>
         </div>
+       
+       
       </div>
 
       <div class="dy-props__wrap">
@@ -250,11 +254,13 @@ font-size: 24px;
   display: none;
   cursor: pointer;
 }
-
+.dy-code__wrap.light-scrollbar::-webkit-scrollbar{
+  width: 0 !important;
+}
 .dy-code__wrap {
   min-height: 180px;
   max-height: 180px;
-  width: 80ch;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
