@@ -205,10 +205,11 @@ $primary-color: #38b2ac;
   cursor: pointer;
   padding: 10px 3px;
   font-weight: 400;
+  color: #9badb7;
   &:hover {
     /* background: #ddd;
     border-radius: 10px; */
-    color: $primary-color;
+    color: #79909c;
   }
 }
 .active {
