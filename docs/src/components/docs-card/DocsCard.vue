@@ -253,4 +253,9 @@ $primary-color: #38b2ac;
     color: $primary-color;
   }
 }
+.docs-card__code-wrap {
+  border: 1px solid #e8ebed;
+  border-radius: 0 0 10px 10px;
+  border-top: 0px;
+}
 </style>
