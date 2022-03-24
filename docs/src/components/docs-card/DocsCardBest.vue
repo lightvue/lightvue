@@ -3,38 +3,31 @@
     <div class="wrapper__header">
       <h5 class="component__header" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
       <div class="flex">
-       <div class="docs-card__action"> 
-      <i class="docs-card__action-icon light-icon-adjustments-horizontal dy-props__toggle-drawer" @click="showOptions()"></i>
-      </div> 
-      <div class="docs-card__action">
-
-       <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
-                </div>
-                          <div class="docs-card__action">
-
-         <i class="docs-card__action-icon docs-card__action-icon light-icon-devices" title="Responsive preview" @click="toggleDevice"></i>
-                          </div>
+        <div class="docs-card__action">
+          <i class="docs-card__action-icon light-icon-adjustments-horizontal dy-props__toggle-drawer" @click="showOptions()"></i>
         </div>
-     
+        <div class="docs-card__action">
+          <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
+        </div>
+        <div class="docs-card__action">
+          <i class="docs-card__action-icon docs-card__action-icon light-icon-devices" title="Responsive preview" @click="toggleDevice"></i>
+        </div>
+      </div>
     </div>
     <div class="dy-pg__wrap">
       <div style="flex: 1; position: relative" class="dy-pg__left">
-        <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked">
+        <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked">
           <div class="dy-comp__wrap">
             <div class="demo-sec light-scrollbar">
               <slot></slot>
             </div>
-
-           
           </div>
         </ResponsiveDemo>
-  
- <div class="dy-code__wrap light-scrollbar">
-           <CopyButton :text="getMarkup" />
+
+        <div class="dy-code__wrap light-scrollbar">
+          <CopyButton :text="getMarkup" />
           <slot name="code"></slot>
         </div>
-       
-       
       </div>
 
       <div class="dy-props__wrap">
@@ -92,11 +85,7 @@ export default {
       return this.$el.querySelector('.dy-code__wrap').innerText;
     },
     toggleDevice() {
-      // this.$emit('toggleDevice');
-      // this.bus.$emit('toggleDevice');
       this.toggleDeviceClicked++;
-
-      this.deviceWidth = 300;
     },
   },
   components: {
@@ -197,41 +186,33 @@ export default {
     margin: 0px;
   } */
 }
-  .flex {
-  
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 10%;
-   
-font-size: 24px;
-    .docs-card__action {
-        .docs-card__action-icon {
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 10%;
 
+  font-size: 24px;
+  .docs-card__action {
+    .docs-card__action-icon {
       cursor: pointer;
       transition: 0.5s all ease-out;
     }
-          cursor: pointer;
-          transition: 0.5s all ease-out;
-          i {
-            background-color: transparent;
-        
-          
-            opacity: 1;
-            /* color: #afafaf; */
-            transition: 0.5s all ease-out;
-            /* font-size: 24px; */
-            &:hover {
-              opacity: 0.8;
-            
-          }
-        }
+    cursor: pointer;
+    transition: 0.5s all ease-out;
+    i {
+      background-color: transparent;
+
+      opacity: 1;
+      /* color: #afafaf; */
+      transition: 0.5s all ease-out;
+      /* font-size: 24px; */
+      &:hover {
+        opacity: 0.8;
       }
     }
-
-   
-  
-
+  }
+}
 
 .dy-comp__wrap {
   flex-grow: 1;
@@ -254,7 +235,7 @@ font-size: 24px;
   display: none;
   cursor: pointer;
 }
-.dy-code__wrap.light-scrollbar::-webkit-scrollbar{
+.dy-code__wrap.light-scrollbar::-webkit-scrollbar {
   width: 0 !important;
 }
 .dy-code__wrap {

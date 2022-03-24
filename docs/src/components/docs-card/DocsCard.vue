@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="docs-card__body">
-      <ResponsiveDemo v-if="responsive" :device-width="deviceWidth" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked" :hideResizer="true">
+      <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked" :hideResizer="true">
         <div class="body-content">
           <slot></slot>
         </div>
@@ -91,11 +91,7 @@ export default {
 
   methods: {
     toggleDevice() {
-      // this.$emit('toggleDevice');
-      // this.bus.$emit('toggleDevice');
       this.toggleDeviceClicked++;
-
-      this.deviceWidth = 300;
     },
     openURL(link) {
       window.open(link, '_blank');
