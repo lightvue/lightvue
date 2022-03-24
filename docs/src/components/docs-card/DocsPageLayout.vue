@@ -13,7 +13,7 @@
 
               <slot name="title-below"></slot>
             </div>
-            <div class="documentation-title">
+            <div class="documentation-title" @click="scrollTo('docs-api')">
               <h4>Documentation</h4>
             </div>
           </div>
@@ -36,10 +36,12 @@
     </div>
 
     <aside class="right-sidebar">
-      <ul v-for="(item, i) in fakeitems" :key="i">
-        <Observer :item="item">
-          <li @click="scrollTo(item.id, $event)" class="list-item">{{ item.title }}</li>
-        </Observer>
+      <ul>
+        <li v-for="(item, i) in fakeitems" :key="i">
+          <Observer :item="item">
+            <div @click="scrollTo(item.id, $event)" class="list-item" :class="{ '--active': visibleCardId === item.id }">{{ item.title }}</div>
+          </Observer>
+        </li>
       </ul>
     </aside>
   </div>
@@ -71,6 +73,7 @@ export default {
 
   data() {
     return {
+      visibleCardId: '',
       selectedTab: 'collection', //'api'
       // fakeitems: [
       //   {
@@ -223,6 +226,10 @@ $primary-color: #38b2ac;
     font-size: 15px;
     font-weight: inherit;
     color: #566d79;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 @media only screen and (max-device-width: 1080px) {
