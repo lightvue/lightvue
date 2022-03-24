@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex">
-    <div class="leftContainer">
+    <div class="main-center-area">
       <div class="content-section introduction">
         <div class="feature-intro">
           <div class="feature-intro__title">
@@ -35,13 +35,13 @@
       </div>
     </div>
 
-    <div class="light-scrollbar right-sidebar --theme-light">
+    <aside class="right-sidebar">
       <ul v-for="(item, i) in fakeitems" :key="i">
         <Observer :item="item">
           <li @click="scrollTo(item.id, $event)" class="list-item">{{ item.title }}</li>
         </Observer>
       </ul>
-    </div>
+    </aside>
   </div>
 </template>
 
@@ -187,15 +187,12 @@ $primary-color: #38b2ac;
 }
 .right-sidebar {
   position: fixed;
-  right: 0;
-  top: 0;
-  height: 90vh;
+  right: 30px;
+  top: 6.3rem;
+  max-height: calc(100vh - 6.5rem);
   overflow-y: scroll;
-  max-width: 15%;
-  padding-right: 1rem;
+  max-width: 200px;
   text-align: right;
-  padding-right: 2rem;
-  padding-top: 6.3rem;
 }
 .d-flex {
   display: flex;
@@ -216,8 +213,8 @@ $primary-color: #38b2ac;
   color: $primary-color;
   font-weight: 600;
 }
-.leftContainer {
-  max-width: 80%;
+.main-center-area {
+  max-width: calc(100% - 200px);
   flex: 1;
 }
 .documentation-title {
@@ -229,7 +226,7 @@ $primary-color: #38b2ac;
   }
 }
 @media only screen and (max-device-width: 1080px) {
-  .leftContainer {
+  .main-center-area {
     max-width: 100%;
   }
   .right-sidebar {

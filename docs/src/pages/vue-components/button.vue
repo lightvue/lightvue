@@ -1,13 +1,12 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :cards="demos">
+  <docs-page-layout :title="$options.title" :description="$options.description">
     <button-best-demo />
-
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
     </template>
-    <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+    <template v-for="demo in demos">
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" :key="demo.title" />
     </template>
   </docs-page-layout>
 </template>
@@ -47,7 +46,6 @@ export default {
           title: 'Basic Usage',
           file: 'button/ButtonDemo_Basic',
           discription: 'Use the buttons with some basic and complex use cases by passing either classes or props eg. for link button, pass <span>--link-button</span> For disable button, set the <span>disable</span> prop to true.LightVue Button is Both compatible with Vue 2.x and Vue 3.x',
-         
         },
         {
           title: 'With Icons',
