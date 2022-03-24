@@ -34,15 +34,15 @@
           </div>
         </div>
       </div>
-    </div>
-    <LvCollapsible :show="showCode">
-      <div class="docs-card__code-wrap">
-        <div class="docs-card__code-tab">
-          <div class="docs-card__code-tab-text">Template</div>
+      <LvCollapsible :show="showCode">
+        <div class="docs-card__code-wrap">
+          <div class="docs-card__code-tab">
+            <div class="docs-card__code-tab-text">Template</div>
+          </div>
+          <CodeHighlight><slot name="code"></slot></CodeHighlight>
         </div>
-        <CodeHighlight><slot name="code"></slot></CodeHighlight>
-      </div>
-    </LvCollapsible>
+      </LvCollapsible>
+    </div>
   </div>
 </template>
 
@@ -170,6 +170,7 @@ $primary-color: #38b2ac;
     border-radius: 50px;
     background: #ffffff;
     box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
     /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
     /* box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); */
     .d-flex {
@@ -258,8 +259,6 @@ $primary-color: #38b2ac;
   }
 }
 .docs-card__code-wrap {
-  border: 1px solid #e8ebed;
   border-radius: 0 0 10px 10px;
-  border-top: 0px;
 }
 </style>
