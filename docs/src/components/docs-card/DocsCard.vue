@@ -35,23 +35,27 @@
         </div>
       </div>
     </div>
-    <div v-if="showCode" class="docs-card__code-wrap">
-      <div class="docs-card__code-tab">
-        <div class="docs-card__code-tab-text">Template</div>
+    <LvCollapsible :show="showCode">
+      <div class="docs-card__code-wrap">
+        <div class="docs-card__code-tab">
+          <div class="docs-card__code-tab-text">Template</div>
+        </div>
+        <CodeHighlight><slot name="code"></slot></CodeHighlight>
       </div>
-      <CodeHighlight><slot name="code"></slot></CodeHighlight>
-    </div>
+    </LvCollapsible>
   </div>
 </template>
 
 <script>
 import CodeHighlight from './CodeHighlight.vue';
 import ResponsiveDemo from './ResponsiveDemo.vue';
+import LvCollapsible from 'lightvue/collapsible';
 
 export default {
   components: {
     CodeHighlight,
     ResponsiveDemo,
+    LvCollapsible,
   },
   props: {
     id: String,

@@ -3,24 +3,27 @@
 </template>
 
 <script>
-import Prism from "prismjs";
-import "./prism.css";
+import Prism from 'prismjs';
+import './prism.css';
 // import "./prism-old.css";
 
 export default {
   props: {
     lang: {
       type: String,
-      default: "markup",
+      default: 'markup',
     },
   },
   computed: {
     languageClass() {
-      return "language-" + this.lang;
+      return 'language-' + this.lang;
     },
   },
   mounted() {
     Prism.highlightElement(this.$el.children[0]);
+    setTimeout(() => {
+      Prism.highlightElement(this.$el.children[0]);
+    }, 1000);
   },
 };
 </script>
