@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="responsive-demo__wrap" :class="{ '--full-width': paneSize === 100 && hideResizer }">
     <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
       <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
@@ -45,6 +45,10 @@ export default {
     toggleDeviceClicked: {
       type: Number,
     },
+    hideResizer: {
+      type: Boolean,
+      default: false,
+    },
   },
   data: () => ({
     minSize: 20,
@@ -79,9 +83,6 @@ export default {
       this.minSize = (widthInPx / this.$el.clientWidth) * 100;
     },
     setPane(widthPercent) {
-      let spitter = this.$el.querySelector('.splitpanes__splitter');
-      widthPercent == 100 ? (spitter.style.display = 'none') : (spitter.style.display = 'block');
-
       this.paneSize = widthPercent;
       this.setPanelSizePixel(widthPercent);
     },
@@ -149,15 +150,22 @@ export default {
   pointer-events: none;
   color: #4b5563;
 }
+
 .splitpanes__splitter {
   width: 16px !important;
-  display: none;
   background-color: #edf2f6 !important;
   cursor: e-resize;
   transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: #d6dfe8 !important;
+  }
 }
-.splitpanes__splitter:hover {
-  background-color: #d6dfe8 !important;
+
+.responsive-demo__wrap.--full-width {
+  .splitpanes__splitter,
+  .extra--resize-icon {
+    display: none;
+  }
 }
 .responsive-dimensions {
   color: #ffffff;
