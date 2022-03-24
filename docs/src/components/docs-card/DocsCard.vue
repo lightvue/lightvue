@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="docs-card__body">
-      <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked" :hideResizer="true">
+      <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked" :hideResizer="true" roundedCard>
         <div class="body-content">
           <slot></slot>
         </div>

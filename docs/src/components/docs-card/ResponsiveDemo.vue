@@ -1,5 +1,5 @@
 <template>
-  <div class="responsive-demo__wrap" :class="{ '--full-width': paneSize === 100 && hideResizer }">
+  <div class="responsive-demo__wrap" :class="{ '--full-width': paneSize === 100 && hideResizer, '--rounded': roundedCard }">
     <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
       <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
@@ -46,6 +46,10 @@ export default {
       type: Number,
     },
     hideResizer: {
+      type: Boolean,
+      default: false,
+    },
+    roundedCard: {
       type: Boolean,
       default: false,
     },
@@ -139,6 +143,14 @@ export default {
   overflow: unset !important;
   width: 0px; /* Initial default width */
   box-shadow: inset 0px 0px 20px 2px rgba(0, 0, 0, 0.25);
+}
+.responsive-demo__wrap.--rounded {
+  .responsive-area {
+    border-radius: 10px;
+  }
+  .responsive-area__extra {
+    border-radius: 0px 10px 10px 0px;
+  }
 }
 .extra--resize-icon {
   position: absolute;

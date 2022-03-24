@@ -103,6 +103,7 @@ export default {
   margin-bottom: 30px;
   width: 100%;
   position: relative;
+  border-radius: 10px;
 }
 .dy-pg__wrap {
   display: flex;
@@ -131,6 +132,7 @@ export default {
   /* padding: 20px; */
   transition: all 0.2s ease-in-out;
   border-left: 2px solid #edf2f6;
+  border-radius: 0px 0px 10px 0px;
 }
 .dy-props__header {
   padding: 22px;
@@ -145,6 +147,7 @@ export default {
   overflow-y: scroll;
   height: calc(100% - 62px);
   background: #ffffff;
+  border-radius: 0px 0px 10px 0px;
   //   height: 350px;
 }
 
