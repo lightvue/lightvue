@@ -6,9 +6,9 @@
         <div class="docs-card__action">
           <i class="docs-card__action-icon light-icon-adjustments-horizontal dy-props__toggle-drawer" @click="showOptions()"></i>
         </div>
-        <div class="docs-card__action">
+        <!-- <div class="docs-card__action">
           <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
-        </div>
+        </div> -->
         <div class="docs-card__action">
           <i class="docs-card__action-icon docs-card__action-icon light-icon-devices" title="Responsive preview" @click="toggleDevice"></i>
         </div>
@@ -194,9 +194,9 @@ export default {
 }
 .flex {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
-  width: 10%;
+  gap: 1rem;
 
   font-size: 24px;
   .docs-card__action {
@@ -281,7 +281,6 @@ export default {
 @media (max-width: 975px) {
   .flex {
     font-weight: 15px;
-    width: 30%;
   }
   .dy-props__wrap {
     display: none;
