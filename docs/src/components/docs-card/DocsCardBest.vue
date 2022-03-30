@@ -36,7 +36,7 @@
           <slot name="props"></slot>
         </div>
       </div>
-      <LvDrawer v-model="showPorpsOptions" headerTitle="All Props" close shadow background="#fff" headerColor="#008080" :zIndex="1000">
+      <LvDrawer v-model="showPorpsOptions" :maxSpan="100" :height="500" headerTitle="All Props" close shadow background="#fff" headerColor="#008080" :zIndex="1000">
         <div class="dy-props__body light-scrollbar">
           <slot name="props"></slot>
         </div>
@@ -86,6 +86,9 @@ export default {
     },
     toggleDevice() {
       this.toggleDeviceClicked++;
+    },
+    openURL(link) {
+      window.open(link, '_blank');
     },
   },
   components: {
@@ -292,7 +295,10 @@ export default {
   }
 
   .dy-comp__wrap {
-    padding: 16px;
+    padding: 8px;
+    .demo-sec {
+      padding: 8px;
+    }
   }
 
   .dy-props__toggle-drawer {
