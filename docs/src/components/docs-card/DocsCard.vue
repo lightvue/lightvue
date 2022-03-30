@@ -239,9 +239,10 @@ $primary-color: #38b2ac;
 }
 .docs-card__header--title {
   font-weight: 400;
-  cursor: pointer;
   h2 {
     font-size: 1.8rem;
+    width: max-content;
+    cursor: pointer;
     span {
       display: none;
     }
