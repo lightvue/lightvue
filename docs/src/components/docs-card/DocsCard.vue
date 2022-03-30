@@ -244,12 +244,13 @@ $primary-color: #38b2ac;
     width: max-content;
     cursor: pointer;
     span {
-      display: none;
+      display: inline;
+      opacity: 0.1;
+      margin-right: 8px;
     }
     .active {
-      display: inline;
+      opacity: 1;
       color: inherit;
-      margin-right: 8px;
     }
   }
 }

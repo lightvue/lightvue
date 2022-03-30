@@ -7,13 +7,13 @@
           <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
         </div> -->
         <div class="docs-card__action" @click="showcode = !showcode">
-          <i class="docs-card__action-icon docs-card__action-icon light-icon-code" :class="{ 'active-section': showcode }" title="Responsive preview" @click="toggleDevice"></i>
+          <i class="docs-card__action-icon docs-card__action-icon light-icon-code" :class="{ 'active-section': showcode }" title="Code Preview" @click="toggleDevice"></i>
         </div>
         <div class="docs-card__action">
-          <i class="docs-card__action-icon light-icon-adjustments-horizontal" :class="{ 'active-section': showprops || showPorpsOptions }" @click="showOptions()"></i>
+          <i class="docs-card__action-icon light-icon-adjustments-horizontal" title="Props Preview" :class="{ 'active-section': showprops || showPorpsOptions }" @click="showOptions()"></i>
         </div>
         <div class="docs-card__action">
-          <i class="docs-card__action-icon docs-card__action-icon light-icon-stack active-section" title="Responsive preview" @click="toggleDevice"></i>
+          <i class="docs-card__action-icon docs-card__action-icon light-icon-stack active-section" title="Demo" @click="toggleDevice"></i>
         </div>
       </div>
     </div>
