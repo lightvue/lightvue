@@ -2,7 +2,7 @@
   <div class="docs-card" :id="computedId">
     <div class="docs-card__header">
       <div class="docs-card__header--title">
-        <h2 @mouseover="hover = true" @mouseleave="hover = false"><span :class="{ active: hover }">#</span>{{ title }}</h2>
+        <h2 @click="scrollTo" @mouseover="hover = true" @mouseleave="hover = false"><span :class="{ active: hover }">#</span>{{ title }}</h2>
       </div>
       <div class="docs-card__header--discription">
         <p v-html="discription" style="line-height: 1.7; opacity: 0.8">
@@ -99,10 +99,10 @@ export default {
     openURL(link) {
       window.open(link, '_blank');
     },
+    scrollTo() {
+      this.$router.push({ hash: `#${this.computedId}` });
+    },
   },
-  // mounted() {
-  //   window.screen.availWidth > 1200 ? (this.showResponsive = false) : (this.hideResponsive = true);
-  // },
   computed: {
     computedId() {
       return this.id ? this.id : this.title.split(' ').join('-').toLowerCase();
