@@ -15,6 +15,7 @@
             </div>
             <div class="documentation-title" @click="scrollTo('docs-api')">
               <h4>Documentation</h4>
+              <!-- <i class="light-icon-arrow-narrow-down"></i> -->
             </div>
           </div>
 
@@ -181,6 +182,7 @@ $primary-color: #38b2ac;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   .feature-intro__title-right {
     margin-left: 1rem;
     margin-bottom: 1rem; /** To normatize the default margin below H1 */
