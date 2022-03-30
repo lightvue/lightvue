@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <aside class="right-sidebar">
+    <aside class="right-sidebar light-scrollbar">
       <ul>
         <li v-for="(item, i) in fakeitems" :key="i">
           <Observer :item="item">
