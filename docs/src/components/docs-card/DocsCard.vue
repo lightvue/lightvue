@@ -2,9 +2,7 @@
   <div class="docs-card" :id="computedId">
     <div class="docs-card__header">
       <div class="docs-card__header--title">
-        <h2>
-          {{ title }}
-        </h2>
+        <h2 @mouseover="hover = true" @mouseleave="hover = false"><span :class="{ active: hover }">#</span>{{ title }}</h2>
       </div>
       <div class="docs-card__header--discription">
         <p v-html="discription" style="line-height: 1.7; opacity: 0.8">
@@ -90,6 +88,7 @@ export default {
       showCode: false,
       deviceWidth: 0,
       toggleDeviceClicked: 0,
+      hover: false,
     };
   },
 
@@ -240,8 +239,17 @@ $primary-color: #38b2ac;
 }
 .docs-card__header--title {
   font-weight: 400;
+  cursor: pointer;
   h2 {
     font-size: 1.8rem;
+    span {
+      display: none;
+    }
+    .active {
+      display: inline;
+      color: inherit;
+      margin-right: 8px;
+    }
   }
 }
 .docs-card__header--discription {
