@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 80%">
+  <div style="display: flex; justify-content: space-between; width: 80%; flex-wrap: wrap">
     <lv-input type="text" v-model="value1" placeholder="Search" label="Prepend Append" clearable>
       <template #prepend>
         <LvButton icon="light-icon-search" class="lv--secondary" />

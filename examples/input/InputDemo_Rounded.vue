@@ -1,10 +1,10 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 90%">
+  <div style="display: flex; justify-content: space-between; width: 90%; flex-wrap: wrap">
     <lv-input type="text" v-model="value1" label="First Name" placeholder="Enter your first name" rounded />
 
     <lv-input type="text" v-model="value1" icon-left="light-icon-search" icon-right="light-icon-arrow-up-right-circle" label="Left Right Icons" rounded />
 
-    <lv-input type="text" v-model="value1" placeholder="Search" label="Prepend Append" rounded>
+    <lv-input type="text" v-model="value1" placeholder="Search" label="Prepend Append" rounded style="width: 70%">
       <template #prepend>
         <LvButton icon="light-icon-search" class="lv--secondary" />
       </template>
