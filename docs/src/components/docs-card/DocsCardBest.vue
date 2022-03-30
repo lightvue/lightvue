@@ -3,40 +3,43 @@
     <div class="wrapper__header">
       <h5 class="component__header" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
       <div class="flex">
-        <div class="docs-card__action">
-          <i class="docs-card__action-icon light-icon-adjustments-horizontal dy-props__toggle-drawer" @click="showOptions()"></i>
-        </div>
         <!-- <div class="docs-card__action">
           <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
         </div> -->
+        <div class="docs-card__action" @click="showcode = !showcode">
+          <i class="docs-card__action-icon docs-card__action-icon light-icon-code" :class="{ 'active-section': showcode }" title="Responsive preview" @click="toggleDevice"></i>
+        </div>
         <div class="docs-card__action">
-          <i class="docs-card__action-icon docs-card__action-icon light-icon-devices" title="Responsive preview" @click="toggleDevice"></i>
+          <i class="docs-card__action-icon light-icon-adjustments-horizontal" :class="{ 'active-section': showprops || showPorpsOptions }" @click="showOptions()"></i>
+        </div>
+        <div class="docs-card__action">
+          <i class="docs-card__action-icon docs-card__action-icon light-icon-stack active-section" title="Responsive preview" @click="toggleDevice"></i>
         </div>
       </div>
     </div>
     <div class="dy-pg__wrap">
       <div style="flex: 1; position: relative" class="dy-pg__left">
-        <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked">
-          <div class="dy-comp__wrap">
-            <div class="demo-sec light-scrollbar">
-              <slot></slot>
-            </div>
+        <!-- <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"> -->
+        <div class="dy-comp__wrap">
+          <div class="demo-sec light-scrollbar">
+            <slot></slot>
           </div>
-        </ResponsiveDemo>
+        </div>
+        <!-- </ResponsiveDemo> -->
 
-        <div class="dy-code__wrap light-scrollbar">
+        <div class="dy-code__wrap light-scrollbar" v-if="showcode">
           <CopyButton :text="getMarkup" />
           <slot name="code"></slot>
         </div>
       </div>
 
-      <div class="dy-props__wrap">
+      <div class="dy-props__wrap" v-if="showprops">
         <div class="dy-props__header">All Props</div>
         <div class="dy-props__body light-scrollbar">
           <slot name="props"></slot>
         </div>
       </div>
-      <LvDrawer v-model="showPorpsOptions" :maxSpan="100" :height="500" headerTitle="All Props" close shadow background="#fff" headerColor="#008080" :zIndex="1000">
+      <LvDrawer v-model="showPorpsOptions" :maxSpan="100" :height="500" :width="300" headerTitle="All Props" close shadow background="#fff" headerColor="#008080" :zIndex="1000">
         <div class="dy-props__body light-scrollbar">
           <slot name="props"></slot>
         </div>
@@ -55,6 +58,8 @@ export default {
       showPorpsOptions: false,
       deviceWidth: 0,
       toggleDeviceClicked: 0,
+      showcode: true,
+      showprops: true,
     };
   },
   props: {
@@ -78,7 +83,8 @@ export default {
 
   methods: {
     showOptions() {
-      this.showPorpsOptions = !this.showPorpsOptions;
+      window.innerWidth <= 525 ? (this.showPorpsOptions = !this.showPorpsOptions) : (this.showprops = !this.showprops);
+      // this.showPorpsOptions = !this.showPorpsOptions;
     },
 
     getMarkup() {
@@ -200,12 +206,21 @@ export default {
 
   font-size: 24px;
   .docs-card__action {
+    .active-section {
+      color: #687f8b;
+
+      /* background: #edf2f7; */
+      /* box-shadow: 5px 5px 11px #d5dade, -5px -5px 11px #ffffff; */
+      background: #dfdfdf;
+    }
     .docs-card__action-icon {
       cursor: pointer;
-      transition: 0.5s all ease-out;
+      /* transition: 0.5s all ease-out; */
+      border-radius: 50%;
+      padding: 6px;
     }
     cursor: pointer;
-    transition: 0.5s all ease-out;
+    /* transition: 0.5s all ease-out; */
     i {
       background-color: transparent;
 
@@ -214,7 +229,8 @@ export default {
       transition: 0.5s all ease-out;
       /* font-size: 24px; */
       &:hover {
-        opacity: 0.8;
+        color: #607b89;
+        background: #dfdfdf;
       }
     }
   }
@@ -225,9 +241,12 @@ export default {
   position: relative;
   .demo-sec {
     min-height: 200px;
-    max-height: 200px;
     width: 100%;
     padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     overflow-y: scroll;
   }
 
@@ -246,7 +265,6 @@ export default {
 }
 .dy-code__wrap {
   min-height: 180px;
-  max-height: 180px;
   min-width: 100%;
   display: flex;
   flex-direction: column;
