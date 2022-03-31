@@ -1,5 +1,5 @@
 <template>
-  <div class="rating_demo">
+  <div class="lv-demo_layout">
     <div>
       <p>On mouse click</p>
       <lv-rating :star-size="40" :show-rating="true" @update:rating="rating = $event"></lv-rating>
@@ -52,9 +52,10 @@ export default {
 };
 </script>
 <style>
-.rating_demo {
+.lv-demo_layout {
   display: flex;
-  justify-content: space-between;
-  width: 80%;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

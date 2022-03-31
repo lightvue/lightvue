@@ -1,5 +1,5 @@
 <template>
-  <div class="rating_demo">
+  <div class="lv-demo_layout">
     <lv-rating></lv-rating>
     <lv-rating inactive-color="#BCD7E2"></lv-rating>
   </div>
@@ -14,9 +14,10 @@ export default {
 };
 </script>
 <style>
-.rating_demo {
+.lv-demo_layout {
   display: flex;
-  justify-content: space-between;
-  width: 80%;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

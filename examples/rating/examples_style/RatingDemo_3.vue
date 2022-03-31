@@ -1,5 +1,5 @@
 <template>
-  <div class="rating_demo" style="width: 92%">
+  <div class="lv-demo_layout">
     <lv-rating :border-width="0" :star-size="40"></lv-rating>
 
     <lv-rating :border-width="4" :star-size="35"></lv-rating>
@@ -17,8 +17,10 @@ export default {
 };
 </script>
 <style>
-.rating_demo {
+.lv-demo_layout {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

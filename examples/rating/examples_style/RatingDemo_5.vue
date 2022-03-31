@@ -1,5 +1,5 @@
 <template>
-  <div class="rating_demo">
+  <div class="lv-demo_layout">
     <div>
       <p>Combining props to create custom style</p>
       <lv-rating :star-size="40" :rounded-corners="true" :border-width="4" :star-points="[23, 2, 14, 17, 0, 19, 10, 34, 7, 50, 23, 43, 38, 50, 36, 34, 46, 19, 31, 17]"></lv-rating>
@@ -20,9 +20,10 @@ export default {
 };
 </script>
 <style>
-.rating_demo {
+.lv-demo_layout {
   display: flex;
-  justify-content: space-between;
-  width: 80%;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>
