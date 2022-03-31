@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 100%">
+  <div style="display: flex; justify-content: space-between; width: 100%; flex-wrap: wrap">
     <lv-number placeholder="Enter Number" label="Input Number" rounded />
 
     <lv-number placeholder="Enter Number" label="Help Text" help-text="You can add help text also" rounded />

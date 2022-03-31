@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 90%">
+  <div style="display: flex; justify-content: space-between; width: 90%; flex-wrap: wrap">
     <lv-number placeholder="Enter Number" label="Material Effect" bottom-bar clearable />
 
     <lv-number placeholder="Enter Number" label="Material Effect" bottom-bar rounded />
