@@ -1,22 +1,9 @@
 <template>
-  <div class="overlay_panel-wrapper">
+  <div class="lv-demo_layout">
     <LvButton class="lv--primary" type="button" icon="light-icon-search" :label="selectedProduct ? selectedProduct.name : 'Select a Product'" @click="toggle" aria:haspopup="true" aria-controls="overlay_panel" />
 
     <LvOverlayPanel ref="op" appendTo="body" :showCloseIcon="true" id="overlay_panel" style="width: 450px">
       <img src="@/assets/images/demo/bamboo-watch.jpg" class="product-image --auto" />
-      <!-- <DataTable :value="products" :selection.sync="selectedProduct" selectionMode="single" :paginator="true" :rows="5" @row-select="onProductSelect">
-        <Column field="name" header="Name" sortable></Column>
-        <Column header="Image">
-          <template #body="slotProps">
-            <img :src="'demo/images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="product-image" />
-          </template>
-        </Column>
-        <Column field="price" header="Price" sortable>
-          <template #body="slotProps">
-            {{ formatCurrency(slotProps.data.price) }}
-          </template>
-        </Column>
-      </DataTable> -->
     </LvOverlayPanel>
 
     <LvButton type="button" label="Image Overlay" @click="toggleImageOverlay" aria:haspopup="true" aria-controls="image_overlay_panel" />
@@ -73,11 +60,12 @@ export default {
 button {
   min-width: 15rem;
 }
-.overlay_panel-wrapper {
+.lv-demo_layout {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 80%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .product-image {
