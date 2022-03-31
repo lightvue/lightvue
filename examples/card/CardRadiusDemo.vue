@@ -55,6 +55,10 @@ export default {
   .card-demo h4 > span {
     display: block;
   }
+  .card-demo {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .card-demo p {
