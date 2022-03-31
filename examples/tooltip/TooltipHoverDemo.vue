@@ -1,5 +1,5 @@
 <template>
-  <div class="tooltip-example-wrapper" >
+  <div class="lv-demo_layout" >
     
 
         <LvInput type="text" placeholder="Hover over me!" v-tooltip.right="'Tooltip message'" />
@@ -38,12 +38,12 @@ export default {
 </script>
 
 <style scoped>
-.tooltip-example-wrapper  {
-display: flex;
-align-items: center;
-justify-content: space-between;
-width: 80%;
-
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 
