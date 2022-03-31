@@ -1,5 +1,5 @@
 <template>
-  <div class="tooltip-example-wrapper">
+  <div class="lv-demo_layout">
     <input type="text" placeholder="Click to focus" v-tooltip.bottom.focus="'Tooltip message'" />
 
     <input type="text" placeholder="Click to focus" v-tooltip.top.focus="'Tooltip message'" />
@@ -16,11 +16,12 @@ export default {
 </script>
 
 <style scoped>
-.tooltip-example-wrapper {
+.lv-demo_layout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 80%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 input {
   padding: 8px;
