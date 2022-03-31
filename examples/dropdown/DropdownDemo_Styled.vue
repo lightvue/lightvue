@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 100%">
+  <div style="display: flex; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 1rem">
     <lv-dropdown iconLeft="light-icon-heart" iconRight="light-icon-arrow-down-circle " v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Icon on both sides" rounded bottom-bar clearable />
 
     <lv-dropdown iconRight="light-icon-heart" iconLeft=" " v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Icon on right only" rounded bottom-bar clearable />

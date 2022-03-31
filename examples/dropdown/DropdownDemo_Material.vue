@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 80%">
+  <div style="display: flex; justify-content: space-between; width: 80%; flex-wrap: wrap; gap: 1rem">
     <lv-dropdown bottom-bar v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" clearable />
 
     <lv-dropdown bottom-bar rounded v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" clearable />
