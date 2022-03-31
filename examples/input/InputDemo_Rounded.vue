@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 90%; flex-wrap: wrap">
+  <div style="display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap">
     <lv-input type="text" v-model="value1" label="First Name" placeholder="Enter your first name" rounded />
 
     <lv-input type="text" v-model="value1" icon-left="light-icon-search" icon-right="light-icon-arrow-up-right-circle" label="Left Right Icons" rounded />
