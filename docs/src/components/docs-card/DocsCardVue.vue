@@ -1,5 +1,5 @@
 <template>
-  <DocsCard v-bind="$attrs" v-if="file && component">
+  <DocsCard v-bind="$attrs" v-if="file && component" :file="file">
     <template #code v-if="parts.template">{{ parts.template }}</template>
     <component :is="component" v-if="component" />
   </DocsCard>

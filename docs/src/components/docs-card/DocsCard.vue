@@ -21,9 +21,11 @@
 
       <div class="docs-card__body_btn-group" v-if="showMiddleControl">
         <div class="d-flex">
-          <div class="docs-card__action" @click="openURL(sourceLink)">
-            <i class="docs-card__action-icon light-icon-brand-github"></i>
-          </div>
+          <a :href="`https://github.com/lightvue/lightvue/blob/master/examples/${file}.vue`" target="_blank">
+            <div class="docs-card__action">
+              <i class="docs-card__action-icon light-icon-brand-github"></i>
+            </div>
+          </a>
           <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
             <i class="docs-card__action-icon light-icon-devices" title="Responsive preview"></i>
           </div>
@@ -82,6 +84,7 @@ export default {
       default: true,
       type: Boolean,
     },
+    file: String,
   },
   data() {
     return {
