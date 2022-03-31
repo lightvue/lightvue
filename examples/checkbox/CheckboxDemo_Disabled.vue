@@ -1,4 +1,4 @@
-<template>
+<template class="lv-demo_layout">
   <div>
     <lv-checkbox name="check" color="success" v-model="checked" disabled>Basic</lv-checkbox>
     <lv-checkbox name="check" color="warning" rounded value="World" disabled>Rounded </lv-checkbox>
@@ -31,3 +31,11 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+</style>

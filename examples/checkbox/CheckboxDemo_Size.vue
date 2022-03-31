@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 60%; align-items: center; flex-wrap: wrap">
+  <div style="display: flex; justify-content: space-between; gap: 1rem; align-items: center; flex-wrap: wrap">
     <span>
       <h6>
         <lv-checkbox name="check" color="success" v-model="checked" thick pulse outline rounded> Big </lv-checkbox>

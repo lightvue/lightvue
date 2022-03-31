@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lv-demo_layout">
     <lv-checkbox name="check" color="danger" v-model="checked" smooth> Smooth </lv-checkbox>
     <lv-checkbox name="check" color="danger" v-model="checked" rounded thick pulse> Pulse </lv-checkbox>
     <lv-checkbox name="check" color="danger" v-model="checked" rounded thick pulse outline> Outline </lv-checkbox>
@@ -34,3 +34,11 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+</style>
