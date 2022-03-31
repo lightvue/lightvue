@@ -1,5 +1,5 @@
 <template>
-  <div class="content-section implementation slider-example-wrapper">
+  <div class="lv-demo_layout">
     <LvRangeSlider :min="0" :max="10" v-model="valueRange1" />
     <LvRangeSlider :min="500" :max="550" v-model="valueRange2" />
   </div>
@@ -23,19 +23,12 @@ export default {
 };
 </script>
 
-<style scoped>
-.lv-slider-horizontal,
-.lv-inputtext {
-  width: 14rem;
-}
-
-.lv-slider-vertical {
-  height: 14rem;
-}
-
-.slider-example-wrapper {
-  width: 60%;
+<style lang="scss" scoped>
+.lv-demo_layout {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 </style>

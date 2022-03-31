@@ -1,5 +1,5 @@
 <template>
-  <div class="content-section implementation slider-example-wrapper">
+  <div class="lv-demo_layout">
     <div>
       <p>step size :20</p>
       <LvRangeSlider v-model="valueStep" :step="20" />
@@ -28,19 +28,12 @@ export default {
 };
 </script>
 
-<style scoped>
-.lv-slider-horizontal,
-.lv-inputtext {
-  width: 14rem;
-}
-
-.lv-slider-vertical {
-  height: 14rem;
-}
-
-.slider-example-wrapper {
-  width: 60%;
+<style lang="scss" scoped>
+.lv-demo_layout {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 </style>
