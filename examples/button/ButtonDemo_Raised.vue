@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lv-demo_layout">
     <LvButton label="Primary" push class="lv--primary" />
     <LvButton label="Secondary" push class="lv--secondary" />
     <LvButton label="Success" push class="lv--success" />
@@ -30,15 +30,10 @@
 </template>
 
 <style lang="scss" scoped>
-.lv-button {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.lv-buttonset {
-  .lv-button {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

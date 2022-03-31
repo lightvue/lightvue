@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 90%; flex-wrap: wrap">
+  <div class="lv-demo_layout">
     <span class="lv-buttonset">
       <LvButton label="Save" icon="light-icon-circle-check" class="lv--primary" />
       <LvButton label="Delete" icon="light-icon-trash" class="lv--danger" />
@@ -28,5 +28,12 @@
     margin-right: 0;
     margin-bottom: 0;
   }
+}
+.lv-demo_layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

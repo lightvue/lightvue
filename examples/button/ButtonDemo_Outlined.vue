@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div class="lv-demo_layout">
     <LvButton label="Primary" outlined class="lv--primary" />
     <LvButton label="Secondary" outlined class="lv--secondary" />
     <LvButton label="Success" outlined class="lv--success" />
@@ -14,9 +14,17 @@
 
 <script>
 import LvButton from 'lightvue/button';
-export default{
-  components:{
-    LvButton
-  }
-}
+export default {
+  components: {
+    LvButton,
+  },
+};
 </script>
+<style scoped>
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+</style>

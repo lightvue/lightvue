@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lv-demo_layout">
     <LvButton label="Submit" class="lv--primary" />
     <LvButton label="Disabled" disabled="disabled" class="lv--primary" />
     <LvButton label="Link" class="--link-button lv--primary" />
@@ -8,16 +8,11 @@
 </template>
 
 <style lang="scss" scoped>
-.lv-button {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.lv-buttonset {
-  .lv-button {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>
 <script>
