@@ -1,5 +1,5 @@
 <template>
-  <div class="lv-shimmer__custom-demo__wrap">
+  <div class="lv-demo_layout">
     <lv-skeleton viewBox="0 0 512 512" primaryColor="#607c8a" secondaryColor="#8aa6b5" class="lv-shimmer__custom-demo__item">
       <path
         d="M255.968,5.329C114.624,5.329,0,120.401,0,262.353c0,113.536,73.344,209.856,175.104,243.872
@@ -33,11 +33,11 @@ export default {
 </script>
 
 <style>
-.lv-shimmer__custom-demo__wrap {
+.lv-demo_layout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 80%;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 .lv-shimmer__custom-demo__item {
   max-width: 120px;

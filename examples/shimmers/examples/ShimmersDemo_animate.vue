@@ -1,5 +1,5 @@
 <template>
-  <div class="skeleton_demo-wrapper">
+  <div class="lv-demo_layout">
     <div>
       <lv-skeleton :animate="false" :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
       <lv-skeleton :animate="false" :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
@@ -21,12 +21,11 @@ export default {
 </script>
 
 <style scoped>
-.skeleton_demo-wrapper {
+.lv-demo_layout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  /* width: 80%; */
+  gap: 1rem;
 }
 .mr-1 {
   margin-top: 1rem;

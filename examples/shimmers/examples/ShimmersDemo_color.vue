@@ -1,5 +1,5 @@
 <template>
-  <div class="skeleton_demo-wrapper">
+  <div class="lv-demo_layout">
     <div>
       <lv-skeleton :width="275" :height="10" primaryColor="#38b2ac" /> <br />
       <lv-skeleton :width="275" :height="10" primaryColor="#38b2ac" /> <br />
@@ -27,11 +27,11 @@ export default {
 </script>
 
 <style scoped>
-.skeleton_demo-wrapper {
+.lv-demo_layout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 80%;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 @media (max-width: 500px) {

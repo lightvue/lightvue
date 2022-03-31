@@ -1,5 +1,5 @@
 <template>
-  <div class="skeleton_demo-wrapper">
+  <div class="lv-demo_layout">
     <lv-card-list :width="300" />
 
     <lv-card-list :width="300" primaryColor="#607c8a" secondaryColor="#8aa6b5" />
@@ -15,10 +15,10 @@ export default {
 };
 </script>
 <style scoped>
-.skeleton_demo-wrapper {
+.lv-demo_layout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 90%;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

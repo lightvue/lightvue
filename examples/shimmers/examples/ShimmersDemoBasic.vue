@@ -11,12 +11,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.skeleton_demo-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* width: 80%; */
-}
-</style>
