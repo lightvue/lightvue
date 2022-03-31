@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lv-demo_layout">
     <lv-checkbox-group v-model="chosenCities1" name="cities" :options="cities" optionLabel="name" pulse color="primary"></lv-checkbox-group>
     <p style="margin-top: 1rem">Chosen options (using v-model): {{ chosenCities1 }}</p>
     <br />
@@ -30,3 +30,11 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+</style>

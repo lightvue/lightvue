@@ -2,7 +2,7 @@
   <div>
     <docs-card-best title="Playground">
       <h2 style="display: flex; justify-content: center">
-        <LvCheckBox v-bind="allOptions">Checkbox</LvCheckBox>
+        <LvCheckBox v-bind="allOptions">{{ type }}</LvCheckBox>
       </h2>
       <template #props>
         <lv-toggle-switch v-model="allOptions.disabled" label="disabled" /> <br />
