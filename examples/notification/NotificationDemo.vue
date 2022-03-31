@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lv-demo_layout">
     <LvButton label="Default" class="--mr-4" @click="showSuccess" />
     <LvButton label="Info" class="lv--info --mr-4" @click="showInfo" />
     <LvButton label="Warn" class="lv--warning --mr-4" @click="showWarn" />
@@ -26,8 +26,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.--mr-4 {
-  margin-right: 8px;
-  margin-top: 3px;
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>
