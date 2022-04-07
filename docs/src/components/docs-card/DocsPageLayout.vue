@@ -40,7 +40,7 @@
       <ul>
         <li v-for="(item, i) in fakeitems" :key="i" class="right-sidebar__nav-item">
           <Observer :item="item">
-            <nuxt-link :to="{ hash: `#${item.id}` }" class="list-item" :class="{ '--active': visibleCardId === item.id }">{{ item.title }}</nuxt-link>
+            <nuxt-link :to="{ hash: `#${item.id}` }" :class="{ '--active': visibleCardId === item.id }">{{ item.title }}</nuxt-link>
           </Observer>
         </li>
       </ul>
@@ -134,7 +134,7 @@ export default {
           this.fakeitems.push({ id: id, title: title === 'Docs Api' ? 'Docs API' : title });
         });
       }
-    }, 1000);
+    }, 300);
   },
 };
 </script>
@@ -182,10 +182,12 @@ $primary-color: #38b2ac;
 }
 .right-sidebar {
   position: fixed;
-  right: 30px;
+  right: 16px;
   top: 6.3rem;
-  max-height: calc(100vh - 6.5rem);
-  overflow-y: scroll;
+  max-height: calc(100vh - 6.3rem);
+  padding-right: 16px;
+  padding-bottom: 32px;
+  // overflow-y: scroll;
   max-width: 200px;
   text-align: right;
 }
@@ -195,19 +197,22 @@ $primary-color: #38b2ac;
 }
 .right-sidebar__nav-item {
   cursor: pointer;
-  padding: 10px 3px;
+  padding: 8px 0px;
   font-weight: 400;
   a {
     color: #9badb7;
+    padding: 4px 4px 4px 12px;
+    border-radius: 20px 0px 0px 20px;
+    white-space: nowrap;
     &:hover {
-      /* background: #ddd;
-    border-radius: 10px; */
       color: #79909c;
+      // background-color: #e4f3f4;
     }
     &.active,
     &.--active {
       color: $primary-color;
-      font-weight: 600;
+      // font-weight: 600;
+      background-color: rgba(56, 178, 172, 0.1);
     }
   }
 }
