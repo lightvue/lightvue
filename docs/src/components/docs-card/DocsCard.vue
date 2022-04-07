@@ -1,9 +1,9 @@
 <template>
   <div class="docs-card" :id="computedId">
     <div class="docs-card__header">
-      <div class="docs-card__header--title">
-        <h2 @click="scrollTo" @mouseover="hover = true" @mouseleave="hover = false"><span :class="{ active: hover }">#</span>{{ title }}</h2>
-      </div>
+      <nuxt-link :to="{ hash: `#${computedId}` }" class="docs-card__header--title">
+        <h2 @click="scrollTo"><span>#</span>{{ title }}</h2>
+      </nuxt-link>
       <div class="docs-card__header--discription">
         <p v-html="discription" style="line-height: 1.7; opacity: 0.8">
           <!-- {{ discription }} -->
@@ -123,7 +123,7 @@ $primary-color: #38b2ac;
   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
   border-radius: 4px;
   //   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 56px;
   /* background: #ffffff; */
 }
 
@@ -241,19 +241,20 @@ $primary-color: #38b2ac;
   cursor: pointer;
 }
 .docs-card__header--title {
-  font-weight: 400;
+  color: unset;
   h2 {
+    font-weight: 400;
     font-size: 1.8rem;
     width: max-content;
     cursor: pointer;
     span {
       display: inline;
-      opacity: 0.1;
+      opacity: 0.3;
       margin-right: 8px;
+      transition: opacity 0.3s ease-in-out;
     }
-    .active {
-      opacity: 1;
-      color: inherit;
+    &:hover span {
+      opacity: 0.7;
     }
   }
 }

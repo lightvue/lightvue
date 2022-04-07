@@ -89,14 +89,14 @@ export default {
           id: 'push',
         },
         {
-          title: 'Miscellaneous Usage',
+          title: 'Deep Shadow',
           discription: 'You can use some Miscellaneous button variation by passing <span>deep-shadow</span> prop with other variations like <span>push</span> prop',
           file: 'button/ButtonDemo_Shadow',
         },
         {
-          title: 'Miscellaneous v2',
+          title: 'Miscellaneous',
           file: 'button/ButtonDemo_Misc',
-          id: 'Miscellaneous Usage v1',
+          id: 'miscellaneous',
         },
       ],
     };

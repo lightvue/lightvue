@@ -13,10 +13,10 @@
 
               <slot name="title-below"></slot>
             </div>
-            <div class="documentation-title" @click="scrollTo('docs-api')">
-              <h4>Documentation</h4>
+            <nuxt-link :to="{ hash: '#docs-api' }" class="documentation-title">
+              <h4><span>#</span> Documentation</h4>
               <!-- <i class="light-icon-arrow-narrow-down"></i> -->
-            </div>
+            </nuxt-link>
           </div>
 
           <p style="opacity: 0.8">
@@ -38,9 +38,9 @@
 
     <aside class="right-sidebar light-scrollbar">
       <ul>
-        <li v-for="(item, i) in fakeitems" :key="i">
+        <li v-for="(item, i) in fakeitems" :key="i" class="right-sidebar__nav-item">
           <Observer :item="item">
-            <div @click="scrollTo(item.id, $event)" class="list-item" :class="{ '--active': visibleCardId === item.id }">{{ item.title }}</div>
+            <nuxt-link :to="{ hash: `#${item.id}` }" class="list-item" :class="{ '--active': visibleCardId === item.id }">{{ item.title }}</nuxt-link>
           </Observer>
         </li>
       </ul>
@@ -103,16 +103,6 @@ export default {
       this.selectedTab = newTab;
       this.$router.push({ hash: newTab === 'api' ? '#docs' : '' });
     },
-    scrollTo(item, e) {
-      const element = document.getElementById(item);
-
-      if (element) {
-        this.$router.push({ hash: `#${item}` });
-        // window.scrollTo({ top: element.offsetTop + 1, behavior: 'smooth' });
-      }
-
-      // e.target.classList.add('active');
-    },
     isInViewport(el) {
       const rect = el.getBoundingClientRect();
       return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
@@ -141,7 +131,7 @@ export default {
             .split('-')
             .join(' ')
             .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
-          this.fakeitems.push({ id: id, title: title });
+          this.fakeitems.push({ id: id, title: title === 'Docs Api' ? 'Docs API' : title });
         });
       }
     }, 1000);
@@ -203,20 +193,23 @@ $primary-color: #38b2ac;
   display: flex;
   justify-content: space-between;
 }
-.list-item {
+.right-sidebar__nav-item {
   cursor: pointer;
   padding: 10px 3px;
   font-weight: 400;
-  color: #9badb7;
-  &:hover {
-    /* background: #ddd;
+  a {
+    color: #9badb7;
+    &:hover {
+      /* background: #ddd;
     border-radius: 10px; */
-    color: #79909c;
+      color: #79909c;
+    }
+    &.active,
+    &.--active {
+      color: $primary-color;
+      font-weight: 600;
+    }
   }
-}
-.active {
-  color: $primary-color;
-  font-weight: 600;
 }
 .main-center-area {
   max-width: calc(100% - 200px);
@@ -229,8 +222,15 @@ $primary-color: #38b2ac;
     font-weight: inherit;
     color: #566d79;
     cursor: pointer;
+    span {
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+    }
     &:hover {
       opacity: 1;
+      span {
+        opacity: 0.8;
+      }
     }
   }
 }
