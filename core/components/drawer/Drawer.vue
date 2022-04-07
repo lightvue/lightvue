@@ -284,12 +284,7 @@ export default {
     // },
     modelValue(value) {
       // this.drawer = value;
-      if (this.noBackdrop) {
-        value == true ? ((document.documentElement.style.overflow = 'scroll'), (document.documentElement.style.scrollBehavior = 'smooth')) : (document.documentElement.style.overflow = 'overlay');
-      } else {
-        value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
-      }
-      //
+      value == true ? (document.documentElement.style.overflow = this.noBackdrop ? 'auto' : 'hidden') : (document.documentElement.style.overflow = 'overlay');
       if (value === true) {
         this.preventPopstate(); // from Mixin
       } else {
