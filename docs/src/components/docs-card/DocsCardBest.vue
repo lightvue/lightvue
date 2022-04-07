@@ -6,14 +6,14 @@
         <!-- <div class="docs-card__action">
           <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
         </div> -->
-        <div class="docs-card__action" @click="showcode = !showcode">
-          <i class="docs-card__action-icon docs-card__action-icon light-icon-code" :class="{ 'active-section': showcode }" title="Code Preview" @click="toggleDevice"></i>
+        <div class="docs-card__action --active --disabled" title="Playground Demo">
+          <i class="light-icon-presentation active-section"></i>
         </div>
-        <div class="docs-card__action">
-          <i class="docs-card__action-icon light-icon-adjustments-horizontal" title="Props Preview" :class="{ 'active-section': showprops || showPorpsOptions }" @click="showOptions()"></i>
+        <div class="docs-card__action" :class="{ '--active': showcode }" @click="showcode = !showcode" title="Code Preview">
+          <i class="light-icon-code"></i>
         </div>
-        <div class="docs-card__action">
-          <i class="docs-card__action-icon docs-card__action-icon light-icon-stack active-section" title="Demo" @click="toggleDevice"></i>
+        <div class="docs-card__action --props" :class="{ '--active': showprops, '--active-mobile': showPorpsOptions }" title="Customization Options" @click="showOptions">
+          <i class="light-icon-adjustments-horizontal"></i>
         </div>
       </div>
     </div>
@@ -34,12 +34,12 @@
       </div>
 
       <div class="dy-props__wrap" v-if="showprops">
-        <div class="dy-props__header">All Props</div>
+        <div class="dy-props__header">Realtime Customizations</div>
         <div class="dy-props__body light-scrollbar">
           <slot name="props"></slot>
         </div>
       </div>
-      <LvDrawer v-model="showPorpsOptions" :maxSpan="100" :height="500" :width="300" headerTitle="All Props" close shadow background="#fff" headerColor="#008080" :zIndex="1000">
+      <LvDrawer v-model="showPorpsOptions" :maxSpan="100" :height="500" :width="300" headerTitle="Realtime Customizations" close shadow background="#fff" headerColor="#008080" :zIndex="1000">
         <div class="dy-props__body light-scrollbar">
           <slot name="props"></slot>
         </div>
@@ -108,7 +108,7 @@ export default {
 <style lang="scss">
 .best__demo__wrapper {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
-  background: #edf2f7;
+  background: #ffffff;
   margin-bottom: 30px;
   width: 100%;
   position: relative;
@@ -163,7 +163,7 @@ export default {
 .wrapper__header {
   display: flex;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #edf2f6;
@@ -202,36 +202,30 @@ export default {
   display: flex;
   /* align-items: center; */
   justify-content: space-between;
-  gap: 1rem;
+  gap: 12px;
 
   font-size: 24px;
   .docs-card__action {
-    .active-section {
-      color: #687f8b;
-
-      /* background: #edf2f7; */
-      /* box-shadow: 5px 5px 11px #d5dade, -5px -5px 11px #ffffff; */
-      background: #dfdfdf;
-    }
-    .docs-card__action-icon {
-      cursor: pointer;
-      /* transition: 0.5s all ease-out; */
-      border-radius: 50%;
-      padding: 6px;
-    }
     cursor: pointer;
     /* transition: 0.5s all ease-out; */
-    i {
-      background-color: transparent;
+    border-radius: 50%;
+    padding: 6px;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    transition: 0.5s all ease-out;
+    /* font-size: 24px; */
+    &.--active {
+      color: #687f8b;
+      background-color: #edf2f6;
+    }
+    &.--disabled {
+      cursor: not-allowed;
+    }
 
-      opacity: 1;
-      /* color: #afafaf; */
-      transition: 0.5s all ease-out;
-      /* font-size: 24px; */
-      &:hover {
-        color: #607b89;
-        background: #dfdfdf;
-      }
+    &:hover {
+      color: #607b89;
+      background-color: #dde4e9;
     }
   }
 }
@@ -299,6 +293,20 @@ export default {
 @media (max-width: 975px) {
   .flex {
     font-weight: 15px;
+  }
+  .docs-card__action.--props {
+    background-color: transparent !important;
+    &:hover {
+      color: #607b89;
+      background-color: #dde4e9 !important;
+    }
+    &.--active-mobile {
+      color: #687f8b;
+      background-color: #edf2f6 !important;
+    }
+  }
+  .dy-props__body {
+    height: 100%;
   }
   .dy-props__wrap {
     display: none;
