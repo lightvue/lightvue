@@ -1,7 +1,6 @@
 <template>
   <div class="lv-demo_layout">
     <input type="text" placeholder="Click to focus" v-tooltip.bottom.focus="'Tooltip message'" />
-
     <input type="text" placeholder="Click to focus" v-tooltip.top.focus="'Tooltip message'" />
   </div>
 </template>

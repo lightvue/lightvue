@@ -6,13 +6,13 @@
         <!-- <div class="docs-card__action">
           <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
         </div> -->
-        <div class="docs-card__action --active --disabled" title="Playground Demo">
+        <div class="docs-card__action --active --disabled" title="Playground Demo" v-tooltip.top="'Realtime Demo'">
           <i class="light-icon-presentation active-section"></i>
         </div>
-        <div class="docs-card__action" :class="{ '--active': showCode }" @click="showCode = !showCode" title="Code Preview">
+        <div class="docs-card__action" :class="{ '--active': showCode }" @click="showCode = !showCode" title="Code Preview" v-tooltip.top="'Code Preview'">
           <i class="light-icon-code"></i>
         </div>
-        <div class="docs-card__action --props" :class="{ '--active': showprops, '--active-mobile': showPorpsOptions }" title="Customization Options" @click="showOptions">
+        <div class="docs-card__action --props" :class="{ '--active': showprops, '--active-mobile': showPorpsOptions }" title="Customization Options" v-tooltip.top="'Customization Options'" @click="showOptions">
           <i class="light-icon-adjustments-horizontal"></i>
         </div>
       </div>
@@ -54,6 +54,7 @@ import CopyButton from '@/components/docs-card/CopyButton';
 import LvDrawer from 'lightvue/drawer';
 import ResponsiveDemo from './ResponsiveDemo.vue';
 import LvCollapsible from 'lightvue/collapsible';
+import Tooltip from 'lightvue/tooltip';
 
 export default {
   components: {
@@ -61,6 +62,9 @@ export default {
     ResponsiveDemo,
     LvDrawer,
     LvCollapsible,
+  },
+  directives: {
+    tooltip: Tooltip,
   },
   data() {
     return {
