@@ -1,6 +1,8 @@
 <template>
   <DocsCard v-bind="$attrs" v-if="file && component" :file="file">
-    <template #code v-if="parts.template">{{ parts.template }}</template>
+    <template #templateCode v-if="parts.template">{{ parts.template }}</template>
+    <template #scriptCode v-if="parts.script">{{ parts.script }}</template>
+    <template #styleCode v-if="parts.style">{{ parts.style }}</template>
     <component :is="component" v-if="component" />
   </DocsCard>
 </template>

@@ -26,16 +26,20 @@
         <div v-if="responsive" class="docs-card__action" @click="toggleDevice" title="Responsive preview">
           <i class="light-icon-devices"></i>
         </div>
-        <div v-if="$slots['code']" class="docs-card__action" :class="{ '--active': showCode }" title="View code example" @click="showCode = !showCode">
+        <div v-if="$slots['templateCode'] || $slots['scriptCode'] || $slots['styleCode']" class="docs-card__action" :class="{ '--active': showCode }" title="View code example" @click="showCode = !showCode">
           <i class="light-icon-code"></i>
         </div>
       </div>
       <LvCollapsible :show="showCode">
         <div class="docs-card__code-wrap">
-          <div class="docs-card__code-tab">
-            <div class="docs-card__code-tab-text">Template</div>
+          <div class="docs-card__code-tabs">
+            <div class="docs-card__code-tab" :class="{ '--active': activeTab === 'templateCode' }" v-if="$slots['templateCode']" @click="activeTab = 'templateCode'">Template</div>
+            <div class="docs-card__code-tab" :class="{ '--active': activeTab === 'scriptCode' }" v-if="$slots['scriptCode']" @click="activeTab = 'scriptCode'">Script</div>
+            <div class="docs-card__code-tab" :class="{ '--active': activeTab === 'styleCode' }" v-if="$slots['styleCode']" @click="activeTab = 'styleCode'">Style</div>
           </div>
-          <CodeHighlight><slot name="code"></slot></CodeHighlight>
+          <CodeHighlight v-show="activeTab === 'templateCode'"><slot name="templateCode"></slot></CodeHighlight>
+          <CodeHighlight v-show="activeTab === 'scriptCode'"><slot name="scriptCode"></slot></CodeHighlight>
+          <CodeHighlight v-show="activeTab === 'styleCode'"><slot name="styleCode"></slot></CodeHighlight>
         </div>
       </LvCollapsible>
     </div>
@@ -88,6 +92,7 @@ export default {
       deviceWidth: 0,
       toggleDeviceClicked: 0,
       hover: false,
+      activeTab: 'templateCode',
     };
   },
 
@@ -226,18 +231,26 @@ $primary-color: #38b2ac;
     z-index: -1;
   }
 }
-.docs-card__code-tab {
+.docs-card__code-tabs {
+  display: flex;
+  align-items: center;
+  width: 100%;
   background: #edf2f6;
-  color: #757575;
-  border-bottom: 1px solid #cccccc;
-  border-bottom: none;
 }
-.docs-card__code-tab-text {
-  display: inline-block;
-  border-bottom: 3px solid #38b2ac;
-  padding: 0.5rem 1rem;
+.docs-card__code-tab {
+  color: #757575;
   font-weight: bold;
   cursor: pointer;
+  border-bottom: 3px solid transparent;
+  padding: 10px 20px;
+  background-color: transparent;
+  transition: 0.3s all ease-out;
+  &.--active {
+    border-bottom: 3px solid #38b2ac;
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 }
 .docs-card__header--title {
   color: unset;
