@@ -34,12 +34,12 @@
         </LvCollapsible>
       </div>
 
-      <div class="dy-props__wrap" v-if="showprops">
+      <LvCollapsible :show="showprops" class="dy-props__wrap" orientation="horizontal">
         <div class="dy-props__header">Realtime Customizations</div>
         <div class="dy-props__body light-scrollbar">
           <slot name="props"></slot>
         </div>
-      </div>
+      </LvCollapsible>
       <LvDrawer v-model="showPorpsOptions" :maxSpan="100" :height="500" :width="300" headerTitle="Realtime Customizations" close shadow background="#fff" headerColor="#008080" :zIndex="1000">
         <div class="dy-props__body light-scrollbar">
           <slot name="props"></slot>
@@ -143,7 +143,7 @@ export default {
 }
 
 .dy-props__wrap {
-  width: 300px;
+  max-width: 300px;
   max-height: 60vh;
   background: #ffffff;
   /* padding: 20px; */
@@ -152,17 +152,18 @@ export default {
   border-radius: 0px 0px 10px 0px;
 }
 .dy-props__header {
-  padding: 22px;
+  padding: 16px;
   border-bottom: 1px solid #edf2f6;
   font-weight: 600;
   font-size: 1em;
   color: #008080;
+  white-space: nowrap;
 }
 
 .dy-props__body {
   padding: 20px;
   // overflow-y: scroll;
-  height: calc(100% - 64px);
+  height: calc(100% - 52px);
   background: #ffffff;
   border-radius: 0px 0px 10px 0px;
   //   height: 350px;
