@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: space-between; width: 100%; flex-wrap: wrap">
+  <div style="display: flex; justify-content: space-around; width: 100%; flex-wrap: wrap">
     <lv-number placeholder="0" label="Max Value 10" :max="10" />
 
     <lv-number placeholder="0" label="Min Value 0" :min="0" />
