@@ -9,7 +9,7 @@
         <div class="docs-card__action --active --disabled" title="Playground Demo">
           <i class="light-icon-presentation active-section"></i>
         </div>
-        <div class="docs-card__action" :class="{ '--active': showcode }" @click="showcode = !showcode" title="Code Preview">
+        <div class="docs-card__action" :class="{ '--active': showCode }" @click="showCode = !showCode" title="Code Preview">
           <i class="light-icon-code"></i>
         </div>
         <div class="docs-card__action --props" :class="{ '--active': showprops, '--active-mobile': showPorpsOptions }" title="Customization Options" @click="showOptions">
@@ -26,11 +26,12 @@
           </div>
         </div>
         <!-- </ResponsiveDemo> -->
-
-        <div class="dy-code__wrap light-scrollbar" v-if="showcode">
+        <LvCollapsible :show="showCode" class="dy-code__wrap">
           <CopyButton :text="getMarkup" />
-          <slot name="code"></slot>
-        </div>
+          <div class="dy-code light-scrollbar">
+            <slot name="code"></slot>
+          </div>
+        </LvCollapsible>
       </div>
 
       <div class="dy-props__wrap" v-if="showprops">
@@ -52,13 +53,21 @@
 import CopyButton from '@/components/docs-card/CopyButton';
 import LvDrawer from 'lightvue/drawer';
 import ResponsiveDemo from './ResponsiveDemo.vue';
+import LvCollapsible from 'lightvue/collapsible';
+
 export default {
+  components: {
+    CopyButton,
+    ResponsiveDemo,
+    LvDrawer,
+    LvCollapsible,
+  },
   data() {
     return {
       showPorpsOptions: false,
       deviceWidth: 0,
       toggleDeviceClicked: 0,
-      showcode: true,
+      showCode: true,
       showprops: true,
     };
   },
@@ -88,7 +97,7 @@ export default {
     },
 
     getMarkup() {
-      return this.$el.querySelector('.dy-code__wrap').innerText;
+      return this.$el.querySelector('.dy-code').innerText;
     },
     toggleDevice() {
       this.toggleDeviceClicked++;
@@ -96,11 +105,6 @@ export default {
     openURL(link) {
       window.open(link, '_blank');
     },
-  },
-  components: {
-    CopyButton,
-    ResponsiveDemo,
-    LvDrawer,
   },
 };
 </script>
@@ -153,8 +157,8 @@ export default {
 
 .dy-props__body {
   padding: 20px;
-  overflow-y: scroll;
-  height: calc(100% - 62px);
+  // overflow-y: scroll;
+  height: calc(100% - 64px);
   background: #ffffff;
   border-radius: 0px 0px 10px 0px;
   //   height: 350px;
@@ -254,16 +258,19 @@ export default {
   display: none;
   cursor: pointer;
 }
-.dy-code__wrap.light-scrollbar::-webkit-scrollbar {
-  width: 0 !important;
-}
+// .dy-code__wrap.light-scrollbar::-webkit-scrollbar {
+//   width: 0 !important;
+// }
 .dy-code__wrap {
-  min-height: 180px;
+  position: relative;
+  border-top: 1px solid #edf2f6;
+}
+.dy-code {
+  max-height: 180px;
   min-width: 100%;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
-  overflow-y: scroll;
   position: relative;
   // padding: 5px;
   pre {
