@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="dy-pg__wrap">
-      <div style="flex: 1; position: relative" class="dy-pg__left">
+      <div style="flex: 1; position: relative" class="dy-pg__left" :class="{ '--only-left': !showprops }">
         <!-- <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"> -->
         <div class="dy-comp__wrap">
           <div class="demo-sec light-scrollbar">
@@ -136,6 +136,10 @@ export default {
   align-items: stretch;
   overflow: hidden;
   position: relative;
+  border-radius: 0px 0px 0px 10px;
+  &.--only-left {
+    border-radius: 0px 0px 10px 10px;
+  }
 }
 
 .dy-props__wrap {
@@ -263,7 +267,7 @@ export default {
 // }
 .dy-code__wrap {
   position: relative;
-  border-top: 1px solid #edf2f6;
+  border-top: 2px solid #edf2f6;
 }
 .dy-code {
   max-height: 180px;

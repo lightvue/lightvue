@@ -146,12 +146,8 @@ $primary-color: #38b2ac;
 }
 .docs-card__body {
   background: #ffffff;
-  /* border: 2px solid #d8d8d8; */
 
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
-  /* padding: 0rem 0rem 0rem 3rem; */
-  /* padding: 3rem; */
   border-radius: 10px;
   position: relative;
 
