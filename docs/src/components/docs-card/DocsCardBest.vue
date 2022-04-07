@@ -222,6 +222,7 @@ export default {
     cursor: pointer;
     /* transition: 0.5s all ease-out; */
     border-radius: 50%;
+    // font-weight: bold;
     padding: 6px;
     height: 36px;
     width: 36px;

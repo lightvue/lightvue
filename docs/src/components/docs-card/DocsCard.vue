@@ -20,18 +20,14 @@
       <slot v-else></slot>
 
       <div class="docs-card__body_btn-group" v-if="showMiddleControl">
-        <div class="d-flex">
-          <a :href="`https://github.com/lightvue/lightvue/blob/master/examples/${file}.vue`" target="_blank">
-            <div class="docs-card__action">
-              <i class="docs-card__action-icon light-icon-brand-github"></i>
-            </div>
-          </a>
-          <div v-if="responsive" class="docs-card__action" @click="toggleDevice">
-            <i class="docs-card__action-icon light-icon-devices" title="Responsive preview"></i>
-          </div>
-          <div v-if="$slots['code']" class="docs-card__action">
-            <i class="docs-card__action-icon light-icon-code" title="View code example" @click="showCode = !showCode"></i>
-          </div>
+        <a :href="`https://github.com/lightvue/lightvue/blob/master/examples/${file}.vue`" target="_blank" class="docs-card__action">
+          <i class="light-icon-brand-github"></i>
+        </a>
+        <div v-if="responsive" class="docs-card__action" @click="toggleDevice" title="Responsive preview">
+          <i class="light-icon-devices"></i>
+        </div>
+        <div v-if="$slots['code']" class="docs-card__action" :class="{ '--active': showCode }" title="View code example" @click="showCode = !showCode">
+          <i class="light-icon-code"></i>
         </div>
       </div>
       <LvCollapsible :show="showCode">
@@ -163,31 +159,38 @@ $primary-color: #38b2ac;
     bottom: 0%;
     right: 50%;
     transform: translate(50%, 50%);
-    width: 10rem;
-    padding: 5px 15px;
+    // width: 10rem;
+    padding: 8px;
     border-radius: 50px;
     background: #ffffff;
     box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2);
     z-index: 1;
     /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
     /* box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); */
-    .d-flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 24px;
 
-      .docs-card__action-icon {
-        font-weight: bold;
+    .docs-card__action {
+      font-weight: bold;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      padding: 6px;
+      color: #b1b1b1;
 
-        color: #b1b1b1;
+      cursor: pointer;
+      transition: 0.5s all ease-out;
 
-        cursor: pointer;
-        transition: 0.5s all ease-out;
+      &.--active {
+        color: #687f8b;
+        background-color: #edf2f6;
       }
-      .docs-card__action-icon:hover {
-        color: #6c6c6c;
-        /* opacity: 0.8; */
+      &:hover {
+        color: #687f8b;
+        background-color: #e0e7ed;
       }
     }
   }
