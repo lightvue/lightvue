@@ -1,19 +1,11 @@
 <template>
-  <div>
-    <div class="shimmer-demo-wrapper">
-      <h5>PROP: speed</h5>
-      <lv-skeleton :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
-      <lv-skeleton :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
-      <lv-skeleton :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
-    </div>
-    <div class="shimmer-demo-wrapper">
-      <h5>speed = 1</h5>
+  <div class="lv-demo_layout">
+    <div>
       <lv-skeleton :speed="1" :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
       <lv-skeleton :speed="1" :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
       <lv-skeleton :speed="1" :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
     </div>
-    <div class="shimmer-demo-wrapper">
-      <h5>speed = 4</h5>
+    <div>
       <lv-skeleton :speed="4" :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
       <lv-skeleton :speed="4" :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
       <lv-skeleton :speed="4" :width="275" :height="10" primaryColor="#607c8a" secondaryColor="#8aa6b5" /> <br />
@@ -34,18 +26,10 @@ export default {
 </script>
 
 <style scoped>
-.shimmer-demo-wrapper {
-  margin: 30px;
-  height: max-content;
-  width: 350px;
-  display: inline-block;
-}
-
-@media (max-width: 500px) {
-  .shimmer-demo-wrapper {
-    margin-left: 0;
-    margin-right: 0;
-    width: 280px;
-  }
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

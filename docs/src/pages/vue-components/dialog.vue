@@ -1,6 +1,8 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <docs-card-vue title="Dialog" file="dialog/DialogDemo" />
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+    </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -35,6 +37,37 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Basic Usage',
+          file: 'dialog/DialogDemo',
+          discription: 'LightVue comes with some stunning designs for dialog.There are different types of dialog present in lightVue you can go through this page for more info.LightVue dialog is Both compatible with Vue 2.x and Vue 3.x',
+        },
+        {
+          title: 'Model',
+          file: 'dialog/DialogDemoModel',
+          discription: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+        },
+        {
+          title: 'Confirmation',
+          file: 'dialog/DialogeDemoConfirmation',
+          discription: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+        },
+        {
+          title: 'Maximizable',
+          file: 'dialog/DialogDemoMaximizable',
+          discription: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+        },
+        {
+          title: 'Positions',
+          file: 'dialog/DialogDemo_Position',
+          discription: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+        },
+      ],
+    };
   },
   components: {
     DocsCardVue,

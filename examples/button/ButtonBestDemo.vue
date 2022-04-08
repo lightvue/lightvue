@@ -3,7 +3,7 @@
     <docs-card-best title="Playground">
       <lv-button v-bind="allOptions" style="width: 100%" />
       <template #props>
-        <lv-toggle-switch v-model="allOptions.outlined" label="outlined" /> <br />
+        <lv-toggle-switch v-model="allOptions.outlined" label="Outlined" /> <br />
         <lv-toggle-switch v-model="allOptions.push" label="Push" /> <br />
         <lv-toggle-switch v-model="allOptions.raised" label="Raised" /> <br />
         <lv-toggle-switch v-model="allOptions['deep-shadow']" label="Deep Shadow" /> <br />

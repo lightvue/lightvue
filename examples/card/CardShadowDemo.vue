@@ -1,25 +1,10 @@
 <template>
   <div class="card-demo-wrapper">
     <div class="card-demo">
-      <LvCard> <div v-html="dummyContent('default (style 1)')"></div> </LvCard>
-    </div>
-    <div class="card-demo">
       <LvCard :shadowStyle="1"> <div v-html="dummyContent('shadowStyle = 1')"></div> </LvCard>
     </div>
     <div class="card-demo">
       <LvCard :shadowStyle="2"> <div v-html="dummyContent('shadowStyle = 2')"></div> </LvCard>
-    </div>
-    <div class="card-demo">
-      <LvCard :shadowStyle="3"> <div v-html="dummyContent('shadowStyle = 3')"></div> </LvCard>
-    </div>
-    <div class="card-demo">
-      <LvCard :shadowStyle="4"> <div v-html="dummyContent('shadowStyle = 4')"></div> </LvCard>
-    </div>
-    <div class="card-demo">
-      <LvCard :shadowStyle="5"> <div v-html="dummyContent('shadowStyle = 5')"></div> </LvCard>
-    </div>
-    <div class="card-demo">
-      <LvCard :shadowStyle="0"> <div v-html="dummyContent('shadowStyle = 0')"></div> </LvCard>
     </div>
   </div>
 </template>
@@ -55,7 +40,7 @@ export default {
 }
 
 .card-demo {
-  height: 400px;
+  height: 300px;
   width: 300px;
   margin: 30px;
 }
@@ -69,6 +54,10 @@ export default {
 @media (max-width: 500px) {
   .card-demo h4 > span {
     display: block;
+  }
+  .card-demo {
+    height: 100%;
+    width: 100%;
   }
 }
 

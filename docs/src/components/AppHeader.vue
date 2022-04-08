@@ -101,6 +101,7 @@ export default {
   display: flex;
   margin: auto;
 }
+
 .search-bar {
   position: relative;
   margin: 0 auto;
@@ -112,7 +113,11 @@ export default {
   z-index: 100;
   transition: all 0.5s;
 }
-
+@media (max-width: 900px) {
+  .search-bar {
+    display: none;
+  }
+}
 .search-input {
   outline: none;
   width: 100%;

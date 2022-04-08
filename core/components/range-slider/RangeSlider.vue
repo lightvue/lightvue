@@ -137,8 +137,9 @@ export default {
       }
     },
 
-    emitInput(value) {
-      this.$emit('input', value);
+    emitInput(newValue) {
+      this.$emit('input', newValue);
+      this.$emit('update:modelValue', newValue); // Only for Vue 3
     },
 
     emitChange(value) {

@@ -1,71 +1,18 @@
 <template>
   <div class="drawer-container">
-    <!--  -->
-    <h3>Relative to the window</h3>
-    props: {absolute: false} default
-    <div class="drawer-container__wrapper">
-      <div class="wrapper__card">
-        <div class="card__header">
-          <div
-            class="header__icon --left"
-            @click="drawer1 = !drawer1"
-          >
-            <i class="light-icon-menu-2"></i>
-          </div>
-        </div>
-      </div>
-      <lv-drawer
-        v-model="drawer1"
-        left
-        headerTitle="Title Of Header"
-        headerColor="#607c8a"
-        close
-        shadow
-        background="#fff"
-        :zIndex="1000"
-      >
-        <template>
-          <div class="list">
-            <div
-              class="list-item"
-              v-for="(item, index) in items"
-              :key="index"
-            >{{ item.name }}</div>
-          </div>
-        </template>
-      </lv-drawer>
-    </div>
-    <!--  -->
-    <h3>Relative to the window</h3>
-    props : {absolute = true}
+
     <div class="drawer-container__wrapper --absolute">
       <div class="wrapper__card">
         <div class="card__header">
-          <div
-            class="header__icon --left"
-            @click="drawer2 = !drawer2"
-          >
+          <div class="header__icon --left" @click="drawer2 = !drawer2">
             <i class="light-icon-menu-2"></i>
           </div>
         </div>
         <div class="card__drawer">
-          <lv-drawer
-            v-model="drawer2"
-            left
-            headerTitle="Title Of Header"
-            headerColor="#607c8a"
-            close
-            shadow
-            background="#fff"
-            absolute
-          >
+          <lv-drawer v-model="drawer2" left headerTitle="Title Of Header" headerColor="#607c8a" close shadow background="#fff" absolute>
             <template>
               <div class="list">
-                <div
-                  class="list-item"
-                  v-for="(item, index) in items"
-                  :key="index"
-                >{{ item.name }}</div>
+                <div class="list-item" v-for="(item, index) in items" :key="index">{{ item.name }}</div>
               </div>
             </template>
           </lv-drawer>
@@ -153,7 +100,7 @@ export default {
     }
     &.--absolute {
       .wrapper__card {
-        height: 600px;
+        height: 300px;
         .card__header {
           background-color: #607c8a;
           .header__icon {
