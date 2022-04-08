@@ -5,9 +5,7 @@
         <h2 @click="scrollTo"><span>#</span>{{ title }}</h2>
       </nuxt-link>
       <div class="docs-card__header--discription">
-        <p v-html="discription" style="line-height: 1.7; opacity: 0.8">
-          <!-- {{ discription }} -->
-        </p>
+        <p v-html="discription" style="line-height: 1.7; opacity: 0.8"></p>
       </div>
     </div>
     <div class="docs-card__body">
