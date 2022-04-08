@@ -8,7 +8,7 @@
     </div>
     <br />
     <div class="content-section implementation">
-      <docs-card title="Installing LightVue" :showMiddleControl="false" :responsive="false" >
+      <docs-card title="Installing LightVue" :showCardActions="false" :responsive="false">
         <div class="install__wrapper" style="padding: 1rem">
           <div class="install__container">
             <div class="install__process">

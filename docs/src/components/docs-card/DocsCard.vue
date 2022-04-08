@@ -17,7 +17,7 @@
 
       <slot v-else></slot>
 
-      <div class="docs-card__body_btn-group" v-if="showMiddleControl">
+      <div class="docs-card__body_btn-group" v-if="showCardActions">
         <a :href="`https://github.com/lightvue/lightvue/blob/master/examples/${file}.vue`" target="_blank" class="docs-card__action">
           <i class="light-icon-brand-github"></i>
         </a>
@@ -78,7 +78,7 @@ export default {
       default: false,
       type: Boolean,
     },
-    showMiddleControl: {
+    showCardActions: {
       default: true,
       type: Boolean,
     },
