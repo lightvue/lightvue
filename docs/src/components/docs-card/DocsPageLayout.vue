@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex">
+  <div class="docs-page__wrap">
     <div class="main-center-area">
       <div class="content-section introduction">
         <div class="feature-intro">
@@ -38,10 +38,10 @@
 
     <aside class="right-sidebar light-scrollbar">
       <ul>
-        <li v-for="(item, i) in fakeitems" :key="i" class="right-sidebar__nav-item">
-          <Observer :item="item">
+        <li v-for="(item, i) in pageContents" :key="i" class="right-sidebar__nav-item">
+          <DocsPageCardsObserver :item="item">
             <nuxt-link :to="{ hash: `#${item.id}` }" :class="{ '--active': visibleCardId === item.id }">{{ item.title }}</nuxt-link>
-          </Observer>
+          </DocsPageCardsObserver>
         </li>
       </ul>
     </aside>
@@ -50,7 +50,7 @@
 
 <script>
 import LvBadge from 'lightvue/badge';
-import Observer from './Observer.vue';
+import DocsPageCardsObserver from './DocsPageCardsObserver.vue';
 export default {
   props: {
     title: {
@@ -59,34 +59,20 @@ export default {
     description: {
       type: String,
     },
-    // cards: {
-    //   type: Array,
-    //   default: [],
-    // },
     status: {
       type: Object,
     },
   },
   components: {
     LvBadge,
-    Observer,
+    DocsPageCardsObserver,
   },
 
   data() {
     return {
       visibleCardId: '',
       selectedTab: 'collection', //'api'
-      // fakeitems: [
-      //   {
-      //     title: 'Getting Started',
-      //     discription: 'Initial setup instructions',
-      //   },
-      //   {
-      //     title: 'Docs Api',
-      //     discription: 'Api info',
-      //   },
-      // ],
-      fakeitems: [],
+      pageContents: [],
     };
   },
 
@@ -96,42 +82,37 @@ export default {
   //   } else {
   //     this.selectedTab = 'collection';
   //   }
-  //   // this.fakeitems = [{ title: 'Playground' }, ...this.cards, ...this.fakeitems];
   // },
   methods: {
     selectTab(newTab) {
       this.selectedTab = newTab;
       this.$router.push({ hash: newTab === 'api' ? '#docs' : '' });
     },
-    isInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-    },
   },
   mounted() {
     setTimeout(() => {
-      let cards;
+      let allDocsCards;
       let playground;
       if (document.getElementsByClassName('docs-card')) {
-        cards = document.getElementsByClassName('docs-card');
+        allDocsCards = document.getElementsByClassName('docs-card');
       }
       if (document.getElementsByClassName('best__demo__wrapper')) {
         playground = document.getElementsByClassName('best__demo__wrapper');
       }
       if (playground[0]) {
-        this.fakeitems.push({
+        this.pageContents.push({
           id: playground[0].id,
           title: 'Playground',
         });
       }
-      if (cards) {
-        Array.from(cards).forEach(card => {
+      if (allDocsCards) {
+        Array.from(allDocsCards).forEach(card => {
           let id = card.id;
           let title = card.id
             .split('-')
             .join(' ')
             .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
-          this.fakeitems.push({ id: id, title: title === 'Docs Api' ? 'Docs API' : title });
+          this.pageContents.push({ id: id, title: title === 'Docs Api' ? 'Docs API' : title });
         });
       }
     }, 300);
@@ -191,7 +172,7 @@ $primary-color: #38b2ac;
   max-width: 200px;
   text-align: right;
 }
-.d-flex {
+.docs-page__wrap {
   display: flex;
   justify-content: space-between;
 }

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'observer',
+  name: 'DocsPageCardsObserver',
   data() {
     return {
       observer: null,
@@ -50,7 +50,6 @@ export default {
       });
     }, options);
     setTimeout(() => {
-      // console.log(document.getElementById(this.item.id));
       this.observer.observe(document.getElementById(this.item.id));
     }, 1000);
   },
