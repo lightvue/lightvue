@@ -50,7 +50,7 @@ export default {
       });
     }, options);
     setTimeout(() => {
-      console.log(document.getElementById(this.item.id));
+      // console.log(document.getElementById(this.item.id));
       this.observer.observe(document.getElementById(this.item.id));
     }, 1000);
   },
