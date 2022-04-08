@@ -6,7 +6,7 @@
       <docs-all-api :api-data="$options.apiData" />
     </template>
     <template v-for="demo in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" :key="demo.title" />
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     </template>
   </docs-page-layout>
 </template>

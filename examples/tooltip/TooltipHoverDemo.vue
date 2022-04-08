@@ -1,15 +1,7 @@
 <template>
-  <div class="lv-demo_layout" >
-    
-
-        <LvInput type="text" placeholder="Hover over me!" v-tooltip.right="'Tooltip message'" />
-    
-  
-         <LvButton v-tooltip.left="'Tooltip message'">Hover over me!</LvButton>
-    
-      
-      </div>
-    </div>
+  <div class="lv-demo_layout">
+    <LvInput type="text" placeholder="Hover over me!" v-tooltip.right="'Tooltip message'" />
+    <LvButton v-tooltip.left="'Tooltip message'">Hover over me!</LvButton>
   </div>
 </template>
 
@@ -45,6 +37,4 @@ export default {
   gap: 1rem;
   justify-content: center;
 }
-
-
 </style>

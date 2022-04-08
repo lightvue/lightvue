@@ -1,6 +1,5 @@
 <template>
   <div class="lv-demo_layout">
-
     <LvButton label="Primary" deep-shadow-hover class="lv--primary" />
     <LvButton label="Secondary" deep-shadow-hover class="lv--secondary" />
     <LvButton label="Success" deep-shadow-hover class="lv--success" />
@@ -9,8 +8,8 @@
     <LvButton label="Help" deep-shadow-hover class="lv--help --deep-shadow-hover" />
     <LvButton label="Danger" deep-shadow-hover class="lv--danger" />
     <LvButton label="Plain" deep-shadow-hover class="lv--plain" />
-</br>
-    
+    <br />
+
     <LvButton label="Primary" deep-shadow push class="lv--primary" />
     <LvButton label="Secondary" push deep-shadow class="lv--secondary" />
     <LvButton label="Success" push deep-shadow class="lv--success" />
