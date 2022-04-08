@@ -201,8 +201,8 @@ $primary-color: #38b2ac;
   font-weight: 400;
   a {
     color: #9badb7;
-    padding: 4px 4px 4px 12px;
-    border-radius: 20px 0px 0px 20px;
+    padding: 4px 12px 4px 12px;
+    border-radius: 20px;
     white-space: nowrap;
     &:hover {
       color: #79909c;
