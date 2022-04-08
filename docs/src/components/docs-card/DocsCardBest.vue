@@ -118,7 +118,8 @@ export default {
 .best__demo__wrapper {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
   background: #ffffff;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
+  margin-top: 24px;
   width: 100%;
   position: relative;
   border-radius: 10px;
