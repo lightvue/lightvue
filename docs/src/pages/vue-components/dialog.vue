@@ -53,7 +53,7 @@ export default {
         },
         {
           title: 'Confirmation',
-          file: 'dialog/DialogDemoConfirmation',
+          file: 'dialog/DialogeDemoConfirmation',
           discription: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
         },
         {

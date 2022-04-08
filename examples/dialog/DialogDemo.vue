@@ -3,7 +3,7 @@
     <div class="content-section implementation">
       <div class="card">
         <LvButton label="Show" icon="light-icon-external-link" @click="openBasic" class="lv-button" />
-        <LvDialog header="Header" :visible.sync="displayBasic" :style="{ width: '50vw' }">
+        <LvDialog header="Header" v-model="displayBasic" :style="{ width: '50vw' }">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <template #footer>
             <LvButton label="No" icon="light-icon-x" @click="closeBasic" class="lv-button --text-button" />

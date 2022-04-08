@@ -156,17 +156,20 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  scrollBehavior: to => {
-    // console.log(to);
+  scrollBehavior: (to, from, savedPosition) => {
+    if (to.fullPath === from.fullPath) {
+      // in case of preventBrowserBackMixin
+      return;
+    }
     if (to.hash) {
-      const el = document.getElementById(to.hash.substring(1));
-      if (el) {
-        // a valid id on page.
-        setTimeout(() => {
-          return window.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
-        }, 500); // wait before scrolling, for initial loading delay
-        return;
-      }
+      setTimeout(() => {
+        const el = document.getElementById(to.hash.substring(1));
+        if (el) {
+          // a valid id on page.
+          return window.scrollTo({ top: el.offsetTop - 20, behavior: 'smooth' });
+        }
+      }, 300); // wait before scrolling, for initial loading delay
+      return;
     }
     return window.scrollTo({ top: 0, behavior: 'smooth' });
   },

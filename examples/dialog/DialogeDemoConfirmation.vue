@@ -3,7 +3,7 @@
     <div class="content-section implementation">
       <div class="card">
         <LvButton label="Confirm" icon="light-icon-external-link" @click="openConfirmation" />
-        <LvDialog header="Confirmation" :visible.sync="displayConfirmation" :style="{ width: '350px' }" :modal="true">
+        <LvDialog header="Confirmation" v-model="displayConfirmation" :style="{ width: '350px' }" :modal="true">
           <div class="confirmation-content">
             <i class="light-icon-alert-triangle p-mr-3" style="font-size: 2rem" />
             <span>Are you sure you want to proceed?</span>

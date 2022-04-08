@@ -1,8 +1,11 @@
 export default function (to, from, savedPosition) {
+  if (to.fullPath === from.fullPath) {
+    // in case of preventBrowserBackMixin
+    return;
+  }
   if (to.hash) {
     setTimeout(() => {
       const el = document.getElementById(to.hash.substring(1));
-      console.log(to.hash, el);
       if (el) {
         // a valid id on page.
         return window.scrollTo({ top: el.offsetTop - 20, behavior: 'smooth' });
