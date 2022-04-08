@@ -4,10 +4,10 @@
       <LvColorpicker v-bind="allOptions"> </LvColorpicker>
 
       <template #props>
-        <lv-toggle-switch v-model="allOptions.hidePalette" label="hidePalette" /> <br />
-        <lv-toggle-switch v-model="allOptions.withoutInput" label="withoutInput" /> <br />
-        <lv-toggle-switch v-model="allOptions.clearable" label="clearable" /> <br />
-        <lv-toggle-switch v-model="allOptions.bottomBar" label="bottomBar" /> <br />
+        <lv-toggle-switch v-model="allOptions.hidePalette" label="Hide Palette" /> <br />
+        <lv-toggle-switch v-model="allOptions.withoutInput" label="Without Input" /> <br />
+        <lv-toggle-switch v-model="allOptions.clearable" label="Clearable" /> <br />
+        <lv-toggle-switch v-model="allOptions.bottomBar" label="Bottom Bar" /> <br />
 
         <br />
 
