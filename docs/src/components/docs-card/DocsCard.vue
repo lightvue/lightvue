@@ -2,7 +2,7 @@
   <div class="docs-card" :id="computedId">
     <div class="docs-card__header">
       <nuxt-link :to="{ hash: `#${computedId}` }" class="docs-card__header--title">
-        <h2 @click="scrollTo"><span>#</span>{{ title }}</h2>
+        <h2><span>#</span>{{ title }}</h2>
       </nuxt-link>
       <div class="docs-card__header--discription">
         <p v-html="discription" style="line-height: 1.7; opacity: 0.8"></p>
@@ -17,7 +17,7 @@
 
       <slot v-else></slot>
 
-      <div class="docs-card__body_btn-group" v-if="showCardActions">
+      <div class="docs-card__floating-actions" v-if="showCardActions">
         <a :href="`https://github.com/lightvue/lightvue/blob/master/examples/${file}.vue`" target="_blank" class="docs-card__action">
           <i class="light-icon-brand-github"></i>
         </a>
@@ -101,9 +101,6 @@ export default {
     openURL(link) {
       window.open(link, '_blank');
     },
-    scrollTo() {
-      this.$router.push({ hash: `#${this.computedId}` });
-    },
   },
   computed: {
     computedId() {
@@ -157,7 +154,7 @@ $primary-color: #38b2ac;
     width: 100%;
     padding-bottom: 8px;
   }
-  .docs-card__body_btn-group {
+  .docs-card__floating-actions {
     position: absolute;
     bottom: 0%;
     right: 50%;
