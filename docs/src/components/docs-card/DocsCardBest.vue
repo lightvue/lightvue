@@ -258,7 +258,7 @@ export default {
   .demo-sec {
     min-height: 200px;
     width: 100%;
-    padding: 48px;
+    padding: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
