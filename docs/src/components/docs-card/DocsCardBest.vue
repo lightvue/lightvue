@@ -7,7 +7,10 @@
           <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
         </div> -->
         <div class="docs-card__action --active --disabled" title="Playground Demo" v-tooltip.top="'Realtime Demo'">
-          <i class="light-icon-presentation active-section"></i>
+          <i class="light-icon-presentation"></i>
+        </div>
+        <div class="docs-card__action" title="Responsive View" v-tooltip.top="'Responsive View'" @click="toggleDevice">
+          <i class="light-icon-devices"></i>
         </div>
         <div class="docs-card__action" :class="{ '--active': showCode }" @click="showCode = !showCode" title="Code Preview" v-tooltip.top="'Code Preview'">
           <i class="light-icon-code"></i>
@@ -19,7 +22,7 @@
     </div>
     <div class="dy-pg__wrap">
       <div style="flex: 1; position: relative" class="dy-pg__left" :class="{ '--only-left': !showprops }">
-        <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked" class="dy-comp__wrap">
+        <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked" class="dy-comp__wrap" :hideResizer="true">
           <div class="demo-sec light-scrollbar" :class="{ '--allow-overflow': overflow }">
             <slot></slot>
           </div>
@@ -160,6 +163,7 @@ export default {
   font-size: 1em;
   color: #008080;
   white-space: nowrap;
+  width: 300px;
 }
 
 .dy-props__body {
