@@ -122,6 +122,10 @@ export default {
 
 <style lang="scss">
 $primary-color: #38b2ac;
+.docs-page__wrap {
+  display: flex;
+  justify-content: space-between;
+}
 .content-header {
   display: flex;
   width: 100%;
@@ -171,10 +175,6 @@ $primary-color: #38b2ac;
   // overflow-y: scroll;
   max-width: 200px;
   text-align: right;
-}
-.docs-page__wrap {
-  display: flex;
-  justify-content: space-between;
 }
 .right-sidebar__nav-item {
   cursor: pointer;
