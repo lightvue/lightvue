@@ -1,6 +1,6 @@
 <template>
   <div>
-    <docs-card-best title="Playground">
+    <docs-card-best title="Playground" overflow>
       <LvDropdown v-bind="allOptions" v-model="allOptions.value"> </LvDropdown>
 
       <template #props>
@@ -52,7 +52,7 @@ export default {
         optionValue: 'code',
         placeholder: 'Select Option',
         emptyFilterMessage: 'No result found',
-        'help-text': 'Enter value',
+        'help-text': '',
         'icon-right': 'light-icon-arrow-down-circle',
         filterPlaceholder: 'Search',
         iconLeft: '',
@@ -72,7 +72,7 @@ export default {
         disabled: false,
         editable: false,
         filter: true,
-        'floating-label': true,
+        'floating-label': false,
         rounded: false,
         'bottom-bar': true,
       },
@@ -96,4 +96,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.lv-dropdown {
+  width: 18rem;
+}
+</style>

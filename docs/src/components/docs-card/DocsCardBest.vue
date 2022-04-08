@@ -19,13 +19,11 @@
     </div>
     <div class="dy-pg__wrap">
       <div style="flex: 1; position: relative" class="dy-pg__left" :class="{ '--only-left': !showprops }">
-        <!-- <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked"> -->
-        <div class="dy-comp__wrap">
-          <div class="demo-sec light-scrollbar">
+        <ResponsiveDemo v-if="responsive" :overflow="overflow" :toggle-device-clicked="toggleDeviceClicked" class="dy-comp__wrap">
+          <div class="demo-sec light-scrollbar" :class="{ '--allow-overflow': overflow }">
             <slot></slot>
           </div>
-        </div>
-        <!-- </ResponsiveDemo> -->
+        </ResponsiveDemo>
         <LvCollapsible :show="showCode" class="dy-code__wrap">
           <CopyButton :text="getMarkup" />
           <div class="dy-code light-scrollbar">
@@ -247,6 +245,11 @@ export default {
 .dy-comp__wrap {
   flex-grow: 1;
   position: relative;
+
+  justify-content: center;
+  width: 100%;
+
+  background: #ffffff;
   .demo-sec {
     min-height: 200px;
     width: 100%;
@@ -256,12 +259,10 @@ export default {
     justify-content: center;
     height: 100%;
     overflow-y: scroll;
+    &.--allow-overflow {
+      overflow: initial !important;
+    }
   }
-
-  justify-content: center;
-  width: 100%;
-
-  background: #ffffff;
 }
 
 .dy-props__toggle-drawer {

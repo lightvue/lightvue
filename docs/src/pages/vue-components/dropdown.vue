@@ -2,7 +2,7 @@
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <dropdown-best-demo></dropdown-best-demo>
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" overflow />
     </template>
 
     <template #api>
