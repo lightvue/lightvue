@@ -2,7 +2,7 @@
   <div class="best__demo__wrapper" :id="computedId">
     <div class="wrapper__header">
       <h5 class="component__header" @click="$router.push({ hash: `#${computedId}` })"># {{ title }}</h5>
-      <div class="flex">
+      <div class="docs-card__actions">
         <!-- <div class="docs-card__action">
           <i class="docs-card__action-icon docs-card__action-icon light-icon-brand-github" @click="openURL(sourceLink)"></i>
         </div> -->
@@ -214,9 +214,9 @@ export default {
     margin: 0px;
   } */
 }
-.flex {
+.docs-card__actions {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
 
@@ -314,7 +314,7 @@ export default {
 }
 
 @media (max-width: 975px) {
-  .flex {
+  .docs-card__actions {
     font-weight: 15px;
   }
   .docs-card__action.--props {
