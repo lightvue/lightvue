@@ -6,6 +6,8 @@
       <template #props>
         <lv-toggle-switch v-model="allOptions.hidePalette" label="hidePalette" /> <br />
         <lv-toggle-switch v-model="allOptions.withoutInput" label="withoutInput" /> <br />
+        <lv-toggle-switch v-model="allOptions.clearable" label="clearable" /> <br />
+        <lv-toggle-switch v-model="allOptions.bottomBar" label="bottomBar" /> <br />
 
         <br />
 
@@ -42,6 +44,8 @@ export default {
 
         hidePalette: false,
         withoutInput: false,
+        clearable: true,
+        bottomBar: true,
         colors: ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#795548'],
       },
       stringProps: ['label'],
