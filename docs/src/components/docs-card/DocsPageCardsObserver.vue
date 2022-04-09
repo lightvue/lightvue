@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       observer: null,
+      observed: false,
     };
   },
   props: {
@@ -32,6 +33,13 @@ export default {
     },
   },
   methods: {
+    initObserver() {
+      let cardEl = document.getElementById(this.item.id);
+      if (cardEl && !this.observed) {
+        this.observer.observe(cardEl);
+        this.observed = true;
+      }
+    },
     unobserve() {
       this.observer.unobserve(this.$el);
     },
@@ -49,12 +57,19 @@ export default {
         }
       });
     }, options);
+    this.initObserver();
     setTimeout(() => {
-      let cardEl = document.getElementById(this.item.id);
-      if (cardEl) {
-        this.observer.observe(cardEl);
-      }
+      this.initObserver();
+    }, 300);
+    setTimeout(() => {
+      this.initObserver();
     }, 500);
+    setTimeout(() => {
+      this.initObserver();
+    }, 1000);
+    setTimeout(() => {
+      this.initObserver();
+    }, 2000);
   },
   beforeDestroy() {
     if (this.observer) {
