@@ -50,8 +50,11 @@ export default {
       });
     }, options);
     setTimeout(() => {
-      this.observer.observe(document.getElementById(this.item.id));
-    }, 1000);
+      let cardEl = document.getElementById(this.item.id);
+      if (cardEl) {
+        this.observer.observe(cardEl);
+      }
+    }, 500);
   },
   beforeDestroy() {
     if (this.observer) {

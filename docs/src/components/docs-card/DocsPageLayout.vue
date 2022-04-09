@@ -62,6 +62,17 @@ export default {
     status: {
       type: Object,
     },
+    demoList: {
+      type: Array,
+    },
+    hasPlayground: {
+      type: Boolean,
+      default: false,
+    },
+    hasDocs: {
+      type: Boolean,
+      default: false,
+    },
   },
   components: {
     LvBadge,
@@ -76,23 +87,50 @@ export default {
     };
   },
 
-  // created() {
-  //   if (this.$route.hash?.includes('docs')) {
-  //     this.selectedTab = 'api';
-  //   } else {
-  //     this.selectedTab = 'collection';
-  //   }
-  // },
+  created() {
+    //   if (this.$route.hash?.includes('docs')) {
+    //     this.selectedTab = 'api';
+    //   } else {
+    //     this.selectedTab = 'collection';
+    //   }
+    this.initPageContents();
+  },
+  mounted() {
+    if (!this.demoList) {
+      setTimeout(() => {
+        this.generatePageContents();
+      }, 500);
+    }
+  },
   methods: {
     selectTab(newTab) {
       this.selectedTab = newTab;
       this.$router.push({ hash: newTab === 'api' ? '#docs' : '' });
     },
-  },
-  mounted() {
-    setTimeout(() => {
+    initPageContents() {
+      let pageContents = [];
+      if (this.hasPlayground) {
+        pageContents.push({
+          id: 'playground',
+          title: 'Playground',
+        });
+      }
+      if (this.demoList) {
+        pageContents.push(...this.demoList);
+      }
+      if (this.hasDocs) {
+        pageContents.push({
+          id: 'docs-api',
+          title: 'Docs API',
+        });
+      }
+      this.pageContents = pageContents;
+    },
+    generatePageContents() {
       let allDocsCards;
       let playground;
+
+      let pageContents = [];
       if (document.getElementsByClassName('docs-card')) {
         allDocsCards = document.getElementsByClassName('docs-card');
       }
@@ -100,7 +138,7 @@ export default {
         playground = document.getElementsByClassName('best__demo__wrapper');
       }
       if (playground[0]) {
-        this.pageContents.push({
+        pageContents.push({
           id: playground[0].id,
           title: 'Playground',
         });
@@ -112,10 +150,11 @@ export default {
             .split('-')
             .join(' ')
             .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
-          this.pageContents.push({ id: id, title: title === 'Docs Api' ? 'Docs API' : title });
+          pageContents.push({ id: id, title: title === 'Docs Api' ? 'Docs API' : title });
         });
       }
-    }, 300);
+      this.pageContents = pageContents;
+    },
   },
 };
 </script>
@@ -184,7 +223,7 @@ $primary-color: #38b2ac;
     color: #9badb7;
     padding: 4px 12px 4px 12px;
     border-radius: 20px;
-    white-space: nowrap;
+    // white-space: nowrap;
     &:hover {
       color: #79909c;
       // background-color: #e4f3f4;
