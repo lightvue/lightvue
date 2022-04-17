@@ -120,6 +120,10 @@ export default {
       }
       if (this.hasDocs) {
         pageContents.push({
+          id: 'setup-docs',
+          title: 'Setup',
+        });
+        pageContents.push({
           id: 'docs-api',
           title: 'Docs API',
         });
