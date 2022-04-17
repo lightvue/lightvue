@@ -1,13 +1,9 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :demoList="$options.demoList">
     <template #title-right> </template>
-
-    <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
-    </template>
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-
       <docs-all-api :api-data="$options.apiData" />
     </template>
   </docs-page-layout>
@@ -49,15 +45,7 @@ export default {
     DocsAllApi,
   },
   data() {
-    return {
-      demos: [
-        {
-          title: 'Basic',
-          file: 'badge/BadgeDemo',
-          discription: 'LightVue comes with some stunning designs for badge.There are different types of badge present in lightVue you can go through this page for more info.You can change the color of badge by passing value in <span>color</span> prop.lightVue Badge is Both compatible with Vue 2.x and Vue 3.x',
-        },
-      ],
-    };
+    return {};
   },
 
   title: 'Badge',
@@ -66,5 +54,12 @@ export default {
   componentName: 'LvBadge',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
   apiData: BadgeAPI,
+  demoList: [
+    {
+      title: 'Basic',
+      file: 'badge/BadgeDemo',
+      discription: 'LightVue comes with some stunning designs for badge.There are different types of badge present in lightVue you can go through this page for more info.You can change the color of badge by passing value in <span>color</span> prop.lightVue Badge is Both compatible with Vue 2.x and Vue 3.x',
+    },
+  ],
 };
 </script>

@@ -1,9 +1,7 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasPlayground hasDocs :demoList="$options.demoList">
     <color-picker-best-demo></color-picker-best-demo>
-    <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
-    </template>
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -40,27 +38,6 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  data() {
-    return {
-      demos: [
-        {
-          title: 'Basic Usage',
-          file: 'colorpicker/ColorpickerDemo',
-          discription: 'You can use the <span>LvColorPicker</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can set the label to colour picker through <span>label</span> prop.You can set the pallet colors by passing a array to <span>colors</span> prop.LightVue color-picker is Both compatible with Vue 2.x and Vue 3.x',
-        },
-        {
-          title: 'Without input',
-          file: 'colorpicker/ColorpickerDemo2',
-          discription: 'You can use <span>LvColorPicker</span> without the input. You have to set <span>withoutInput</span> prop true',
-        },
-        {
-          title: 'Without Pallet',
-          file: 'colorpicker/ColorpickerDemo3',
-          discription: 'You can use <span>LvColorPicker</span> without the colour pallet. You have to set <span>hidePalette</span> prop true',
-        },
-      ],
-    };
-  },
   components: {
     DocsCardVue,
     DocsCard,
@@ -75,5 +52,25 @@ export default {
   componentName: 'LvColorpicker',
   status: COMPONENT_STATUS.UPDATED,
   apiData: ColorpickerAPI,
+  demoList: [
+    {
+      id: 'basic-uses',
+      title: 'Basic usage',
+      file: 'colorpicker/ColorpickerDemo',
+      discription: 'You can use the <span>LvColorPicker</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can set the label to colour picker through <span>label</span> prop.You can set the pallet colors by passing a array to <span>colors</span> prop.LightVue color-picker is Both compatible with Vue 2.x and Vue 3.x',
+    },
+    {
+      id: 'without-input',
+      title: 'Without input',
+      file: 'colorpicker/ColorpickerDemo2',
+      discription: 'You can use <span>LvColorPicker</span> without the input. You have to set <span>withoutInput</span> prop true',
+    },
+    {
+      id: 'with-pallet',
+      title: 'Without pallet',
+      file: 'colorpicker/ColorpickerDemo3',
+      discription: 'You can use <span>LvColorPicker</span> without the colour pallet. You have to set <span>hidePalette</span> prop true',
+    },
+  ],
 };
 </script>

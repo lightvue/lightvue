@@ -1,10 +1,7 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasPlayground hasDocs :demoList="$options.demoList">
     <TextEditorBestDemo />
-
-    <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
-    </template>
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -41,17 +38,6 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  data() {
-    return {
-      demos: [
-        {
-          title: 'Basic Usage',
-          file: 'text-editor/TextEditorDemo',
-          discription: 'You can use the <span>LvTextEditor</span> as follows:',
-        },
-      ],
-    };
-  },
   components: {
     TextEditorBestDemo,
     DocsCardVue,
@@ -66,5 +52,13 @@ export default {
   componentName: 'LvTextEditor',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
   apiData: TextEditorAPI,
+  demoList: [
+    {
+      id: 'basic usage',
+      title: 'Basic usage',
+      file: 'text-editor/TextEditorDemo',
+      discription: 'You can use the <span>LvTextEditor</span> as follows:',
+    },
+  ],
 };
 </script>

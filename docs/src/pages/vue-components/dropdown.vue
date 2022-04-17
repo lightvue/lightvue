@@ -1,10 +1,7 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasPlayground hasDocs :demoList="$options.demoList">
     <dropdown-best-demo></dropdown-best-demo>
-    <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" overflow />
-    </template>
-
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -41,62 +38,6 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  data() {
-    return {
-      demos: [
-        {
-          title: 'Basic Usage',
-          file: 'dropdown/DropdownDemo_Basic',
-          discription: 'You can use the <span>LvDropdown</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can get the selected value as a model value.LightVue dropdown is Both compatible with Vue 2.x and Vue 3.x',
-        },
-        {
-          title: 'Disabled',
-          file: 'dropdown/DropdownDemo_Disable',
-          discription: 'You can disable the dropdown by setting <span>disabled</span> prop true',
-        },
-        {
-          title: 'Editable Input',
-          file: 'dropdown/DropdownDemo_EditableInput',
-          discription: 'You can use the editable input for dropdown by setting <span>editable</span> Prop true',
-        },
-        {
-          title: 'Search',
-          file: 'dropdown/DropdownDemo_Search',
-          discription: 'You can also insert the search input inside the dropdown for filtering the result by setting <span>filter</span> true',
-        },
-        {
-          title: 'Help Text',
-          file: 'dropdown/DropdownDemo_HelpText',
-          discription: 'You can add a help text to an <span>dropdown</span> by passing a string into <span>help-text</span> prop ',
-        },
-        {
-          title: 'Set Height',
-          file: 'dropdown/DropdownDemo_ScrollHeight',
-          discription: 'You can set the scroll height of the dropdown by passing height to <span>scrollHeight</span> prop.the dropdown will be scrollable',
-        },
-        {
-          title: 'Floating Label',
-          file: 'dropdown/DropdownDemo_Floating',
-          discription: 'You can add floating label to the dropdown by setting <span>floating-label</span> prop true',
-        },
-        {
-          title: 'Rounded',
-          file: 'dropdown/DropdownDemo_Rounded',
-          discription: 'You can use the rounded variation of the dropdown by setting <span>rounded</span> prop true',
-        },
-        {
-          title: 'Material',
-          file: 'dropdown/DropdownDemo_Material',
-          discription: 'You can add the animated bottom bar to the  the dropdown by setting <span>bottom-bar</span> prop true',
-        },
-        {
-          title: 'Custom icons',
-          file: 'dropdown/DropdownDemo_Styled',
-          discription: 'You can also custmize the right and left icons by passing them into <span>iconLeft</span> & <span>iconRight</span> props respectively',
-        },
-      ],
-    };
-  },
   components: {
     DocsCardVue,
     DocsCard,
@@ -111,5 +52,67 @@ export default {
   componentName: 'LvDropdown',
   status: COMPONENT_STATUS.UPDATED,
   apiData: DropdownAPI,
+  demoList: [
+    {
+      id: 'basic-usage',
+      title: 'Basic usage',
+      file: 'dropdown/DropdownDemo_Basic',
+      discription: 'You can use the <span>LvDropdown</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can get the selected value as a model value.LightVue dropdown is Both compatible with Vue 2.x and Vue 3.x',
+    },
+    {
+      id: 'disabled',
+      title: 'Disabled',
+      file: 'dropdown/DropdownDemo_Disable',
+      discription: 'You can disable the dropdown by setting <span>disabled</span> prop true',
+    },
+    {
+      id: 'editable-input',
+      title: 'Editable input',
+      file: 'dropdown/DropdownDemo_EditableInput',
+      discription: 'You can use the editable input for dropdown by setting <span>editable</span> Prop true',
+    },
+    {
+      id: 'search',
+      title: 'Search',
+      file: 'dropdown/DropdownDemo_Search',
+      discription: 'You can also insert the search input inside the dropdown for filtering the result by setting <span>filter</span> true',
+    },
+    {
+      id: 'help-text',
+      title: 'Help text',
+      file: 'dropdown/DropdownDemo_HelpText',
+      discription: 'You can add a help text to an <span>dropdown</span> by passing a string into <span>help-text</span> prop ',
+    },
+    {
+      id: 'set-height',
+      title: 'Set height',
+      file: 'dropdown/DropdownDemo_ScrollHeight',
+      discription: 'You can set the scroll height of the dropdown by passing height to <span>scrollHeight</span> prop.the dropdown will be scrollable',
+    },
+    {
+      id: 'floating-label',
+      title: 'Floating label',
+      file: 'dropdown/DropdownDemo_Floating',
+      discription: 'You can add floating label to the dropdown by setting <span>floating-label</span> prop true',
+    },
+    {
+      id: 'rounded',
+      title: 'Rounded',
+      file: 'dropdown/DropdownDemo_Rounded',
+      discription: 'You can use the rounded variation of the dropdown by setting <span>rounded</span> prop true',
+    },
+    {
+      id: 'material',
+      title: 'Material',
+      file: 'dropdown/DropdownDemo_Material',
+      discription: 'You can add the animated bottom bar to the  the dropdown by setting <span>bottom-bar</span> prop true',
+    },
+    {
+      id: 'custom-icons',
+      title: 'Custom icons',
+      file: 'dropdown/DropdownDemo_Styled',
+      discription: 'You can also custmize the right and left icons by passing them into <span>iconLeft</span> & <span>iconRight</span> props respectively',
+    },
+  ],
 };
 </script>
