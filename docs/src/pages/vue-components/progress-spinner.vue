@@ -1,8 +1,6 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
-    </template>
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasDocs :demoList="$options.demoList">
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -38,30 +36,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   data() {
-    return {
-      demos: [
-        {
-          title: 'Size',
-          file: 'progressspinner/ProgressSpinnerSizeDemo',
-          discription: 'You can use the LightVue spinner for various purpose like  loading animations or space-filler etc. LightVue comes with some stunning designs for spinners and it is highly customizable.You can also specify the size of spinner by pasing a value with its unit in <span>size</span> prop.LightVue Progress bar is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
-        },
-        {
-          title: 'Color',
-          file: 'progressspinner/ProgressSpinnerColorDemo',
-          discription: 'You can also set the color for spinner by passing a string into <span>color</span> prop',
-        },
-        {
-          title: 'Stroke-width',
-          discription: 'You can also set the stroke width of spinner by passing a value in <span>strokeWidth</span> prop',
-          file: 'progressspinner/ProgressSpinnerStrokeDemo',
-        },
-        {
-          title: 'Animation-duration',
-          discription: 'You can change The animation duration for spinner by passing a value in <span>animationDuration</span> prop ',
-          file: 'progressspinner/ProgressSpinnerDurationDemo',
-        },
-      ],
-    };
+    return {};
   },
   components: {
     DocsCardVue,
@@ -76,5 +51,31 @@ export default {
   componentName: 'lv-progressspinner',
   // status: 'Stable',
   apiData: ProgressSpinnerAPI,
+  demoList: [
+    {
+      id: 'size',
+      title: 'Size',
+      file: 'progressspinner/ProgressSpinnerSizeDemo',
+      discription: 'You can use the LightVue spinner for various purpose like  loading animations or space-filler etc. LightVue comes with some stunning designs for spinners and it is highly customizable.You can also specify the size of spinner by pasing a value with its unit in <span>size</span> prop.LightVue Progress bar is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
+    },
+    {
+      id: 'color',
+      title: 'Color',
+      file: 'progressspinner/ProgressSpinnerColorDemo',
+      discription: 'You can also set the color for spinner by passing a string into <span>color</span> prop',
+    },
+    {
+      id: 'strock-width',
+      title: 'Stroke width',
+      discription: 'You can also set the stroke width of spinner by passing a value in <span>strokeWidth</span> prop',
+      file: 'progressspinner/ProgressSpinnerStrokeDemo',
+    },
+    {
+      id: 'animate-duration',
+      title: 'Animation duration',
+      discription: 'You can change The animation duration for spinner by passing a value in <span>animationDuration</span> prop ',
+      file: 'progressspinner/ProgressSpinnerDurationDemo',
+    },
+  ],
 };
 </script>
