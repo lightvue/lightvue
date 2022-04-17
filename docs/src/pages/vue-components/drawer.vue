@@ -1,9 +1,7 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasPlayground hasDocs :demoList="$options.demoList">
     <drawer-best-demo />
-      <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
-    </template>
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -40,25 +38,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-   data() {
-    return {
-      demos: [
-            {
-          title: 'Basic Usage',
-          file: 'drawer/DrawerDemoRelative',
-          discription: 'LightVue comes with some stunning designs for Drawer.There are different variations and customization of drawer present in lightVue you can go through this page for more info.LightVue Drawer is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
-        },
-        {
-          title: 'Absolute',
-          file: 'drawer/DrawerDemo',
-          discription: 'If you set <span>absolute</span> prop true.The drawer will open relative to the container',
-        },
-    
-       
-      ],
-    };
+  data() {
+    return {};
   },
-  
+
   components: {
     DocsCardVue,
     DocsCard,
@@ -73,5 +56,19 @@ export default {
   componentName: 'LvDrawer',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
   apiData: DrawerAPI,
+  demoList: [
+    {
+      id: 'basic-usage',
+      title: 'Basic usage',
+      file: 'drawer/DrawerDemoRelative',
+      discription: 'LightVue comes with some stunning designs for Drawer.There are different variations and customization of drawer present in lightVue you can go through this page for more info.LightVue Drawer is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
+    },
+    {
+      id: 'absolute',
+      title: 'Absolute',
+      file: 'drawer/DrawerDemo',
+      discription: 'If you set <span>absolute</span> prop true.The drawer will open relative to the container',
+    },
+  ],
 };
 </script>

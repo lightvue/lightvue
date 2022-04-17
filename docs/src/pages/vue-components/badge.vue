@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :demoList="$options.demoList">
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" :demoList="$options.demoList" hasDocs>
     <template #title-right> </template>
     <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
@@ -56,6 +56,7 @@ export default {
   apiData: BadgeAPI,
   demoList: [
     {
+      id: 'basic',
       title: 'Basic',
       file: 'badge/BadgeDemo',
       discription: 'LightVue comes with some stunning designs for badge.There are different types of badge present in lightVue you can go through this page for more info.You can change the color of badge by passing value in <span>color</span> prop.lightVue Badge is Both compatible with Vue 2.x and Vue 3.x',

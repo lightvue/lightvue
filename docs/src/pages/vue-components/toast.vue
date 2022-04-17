@@ -1,8 +1,6 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
-    </template>
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasDocs :demoList="$options.demoList">
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -38,34 +36,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   data() {
-    return {
-      demos: [
-        {
-          title: 'Variants',
-          file: 'toast/ToastDemo',
-          discription: 'You can use the various Variants of toast by passing a variation classes.LightVue comes with some stunning designs for Toast.There are different types of Toast are present in lightVue you can go through this page for more info.LightVue Toast is Both compatible with Vue 2.x and Vue 3.x.You have to render the toast component in your root file (App.vue).',
-        
-        },
-        {
-          title: 'Positions',
-          file: 'toast/ToastDemo_Position',
-          discription: 'You can change the positions of notification in the following way.',
-        
-        },
-        {
-          title: 'Options',
-          file: 'toast/ToastDemo_Options',
-          discription: 'You can use the sticky and multiple if.do not pass any value in duration in order to make it sticky.',
-         
-        },
-        {
-          title: 'Remove All',
-          file: 'toast/ToastDemo_RemoveAll',
-          discription: 'For removing all the notifications on the screen you can use the <span>removeAllGroups()</span> method.',
-         
-        },
-      ],
-    };
+    return {};
   },
   components: {
     DocsCardVue,
@@ -80,5 +51,31 @@ export default {
   componentName: 'LvToast',
   // status: 'Updated',
   apiData: ToastAPI,
+  demoList: [
+    {
+      id: 'variants',
+      title: 'Variants',
+      file: 'toast/ToastDemo',
+      discription: 'You can use the various Variants of toast by passing a variation classes.LightVue comes with some stunning designs for Toast.There are different types of Toast are present in lightVue you can go through this page for more info.LightVue Toast is Both compatible with Vue 2.x and Vue 3.x.You have to render the toast component in your root file (App.vue).',
+    },
+    {
+      id: 'positions',
+      title: 'Positions',
+      file: 'toast/ToastDemo_Position',
+      discription: 'You can change the positions of notification in the following way.',
+    },
+    {
+      id: 'options',
+      title: 'Options',
+      file: 'toast/ToastDemo_Options',
+      discription: 'You can use the sticky and multiple if.do not pass any value in duration in order to make it sticky.',
+    },
+    {
+      id: 'remove-all',
+      title: 'Remove all',
+      file: 'toast/ToastDemo_RemoveAll',
+      discription: 'For removing all the notifications on the screen you can use the <span>removeAllGroups()</span> method.',
+    },
+  ],
 };
 </script>

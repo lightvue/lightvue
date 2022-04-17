@@ -1,8 +1,6 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
-    </template>
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasDocs :demoList="$options.demoList">
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -38,22 +36,6 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  data() {
-    return {
-      demos: [
-        {
-          title: 'Basic',
-          file: 'collapsible/AccordianDemo',
-          discription: 'You can hide or show the collapsible container by setting <span>show</span> prop true or false.You can also set the oriantation through <span>orientation</span> prop default value is vertical you can set it to horizontal.LightVue collapsible is Both compatible with Vue 2.x and Vue 3.x',
-        },
-        {
-          title: 'Nested',
-          file: 'collapsible/CollapsibleDemo',
-          discription: 'You can also nest collapsibe inside collapsibe',
-        },
-      ],
-    };
-  },
   components: {
     DocsCardVue,
     DocsCard,
@@ -67,5 +49,19 @@ export default {
   componentName: 'LvCollapsible',
   status: COMPONENT_STATUS.NEW,
   apiData: CollapsibleAPI,
+  demoList: [
+    {
+      id: 'basic',
+      title: 'Basic',
+      file: 'collapsible/AccordianDemo',
+      discription: 'You can hide or show the collapsible container by setting <span>show</span> prop true or false.You can also set the oriantation through <span>orientation</span> prop default value is vertical you can set it to horizontal.LightVue collapsible is Both compatible with Vue 2.x and Vue 3.x',
+    },
+    {
+      id: 'nested',
+      title: 'Nested',
+      file: 'collapsible/CollapsibleDemo',
+      discription: 'You can also nest collapsibe inside collapsibe',
+    },
+  ],
 };
 </script>
