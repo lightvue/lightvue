@@ -1,9 +1,6 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
-    </template>
-
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasDocs :demoList="$options.demoList">
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <!-- <docs-all-api :api-data="$options.apiData" /> -->
@@ -40,20 +37,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   data() {
-    return {
-      demos: [
-        {
-          title: 'Basic usage',
-          file: 'ripple/RippleBasicDemo',
-          discription: 'You can use the ripple custom directive <span>v-ripple</span> for creating material effect.LightVue Ripple bar is Both compatible with Vue 2.x and Vue 3.x.',
-        },
-        {
-          title: 'Modifying color',
-          file: 'ripple/RippleColorDemo',
-          discription: 'you can set the color of repple by overwriting a <span>lv-ink</span> class.',
-        },
-      ],
-    };
+    return {};
   },
   components: {
     DocsCardVue,
@@ -69,5 +53,19 @@ export default {
   status: COMPONENT_STATUS.BETA,
   // apiData: RippleAPI,
   // apiData: {},
+  demoList: [
+    {
+      id: 'basic-usage',
+      title: 'Basic usage',
+      file: 'ripple/RippleBasicDemo',
+      discription: 'You can use the ripple custom directive <span>v-ripple</span> for creating material effect.LightVue Ripple bar is Both compatible with Vue 2.x and Vue 3.x.',
+    },
+    {
+      id: 'modifying-color',
+      title: 'Modifying color',
+      file: 'ripple/RippleColorDemo',
+      discription: 'you can set the color of repple by overwriting a <span>lv-ink</span> class.',
+    },
+  ],
 };
 </script>
