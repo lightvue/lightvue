@@ -2,7 +2,7 @@
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <dropdown-best-demo></dropdown-best-demo>
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" overflow />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" overflow />
     </template>
 
     <template #api>
@@ -47,52 +47,52 @@ export default {
         {
           title: 'Basic Usage',
           file: 'dropdown/DropdownDemo_Basic',
-          discription: 'You can use the <span>LvDropdown</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can get the selected value as a model value. LightVue dropdown is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can use the <span>LvDropdown</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can get the selected value as a model value. LightVue dropdown is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Disabled',
           file: 'dropdown/DropdownDemo_Disable',
-          discription: 'You can disable the dropdown by setting <span>disabled</span> prop true',
+          description: 'You can disable the dropdown by setting <span>disabled</span> prop true',
         },
         {
           title: 'Editable Input',
           file: 'dropdown/DropdownDemo_EditableInput',
-          discription: 'You can use the editable input for dropdown by setting <span>editable</span> Prop true',
+          description: 'You can use the editable input for dropdown by setting <span>editable</span> Prop true',
         },
         {
           title: 'Search',
           file: 'dropdown/DropdownDemo_Search',
-          discription: 'You can also insert the search input inside the dropdown for filtering the result by setting <span>filter</span> true',
+          description: 'You can also insert the search input inside the dropdown for filtering the result by setting <span>filter</span> true',
         },
         {
           title: 'Help Text',
           file: 'dropdown/DropdownDemo_HelpText',
-          discription: 'You can add a help text to an <span>dropdown</span> by passing a string into <span>help-text</span> prop ',
+          description: 'You can add a help text to an <span>dropdown</span> by passing a string into <span>help-text</span> prop ',
         },
         {
           title: 'Set Height',
           file: 'dropdown/DropdownDemo_ScrollHeight',
-          discription: 'You can set the scroll height of the dropdown by passing height to <span>scrollHeight</span> prop.the dropdown will be scrollable',
+          description: 'You can set the scroll height of the dropdown by passing height to <span>scrollHeight</span> prop.the dropdown will be scrollable',
         },
         {
           title: 'Floating Label',
           file: 'dropdown/DropdownDemo_Floating',
-          discription: 'You can add floating label to the dropdown by setting <span>floating-label</span> prop true',
+          description: 'You can add floating label to the dropdown by setting <span>floating-label</span> prop true',
         },
         {
           title: 'Rounded',
           file: 'dropdown/DropdownDemo_Rounded',
-          discription: 'You can use the rounded variation of the dropdown by setting <span>rounded</span> prop true',
+          description: 'You can use the rounded variation of the dropdown by setting <span>rounded</span> prop true',
         },
         {
           title: 'Material',
           file: 'dropdown/DropdownDemo_Material',
-          discription: 'You can add the animated bottom bar to the  the dropdown by setting <span>bottom-bar</span> prop true',
+          description: 'You can add the animated bottom bar to the  the dropdown by setting <span>bottom-bar</span> prop true',
         },
         {
           title: 'Custom icons',
           file: 'dropdown/DropdownDemo_Styled',
-          discription: 'You can also custmize the right and left icons by passing them into <span>iconLeft</span> & <span>iconRight</span> props respectively',
+          description: 'You can also custmize the right and left icons by passing them into <span>iconLeft</span> & <span>iconRight</span> props respectively',
         },
       ],
     };

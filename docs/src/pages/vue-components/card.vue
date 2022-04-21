@@ -2,7 +2,7 @@
   <docs-page-layout :title="$options.title" :description="$options.description">
     <CardBestDemo />
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
 
     <template #api>
@@ -46,21 +46,21 @@ export default {
         {
           title: 'Shadow',
           file: 'card/CardShadowDemo',
-          discription: 'You can change the shadow style of a card by passing value in <span>shadowStyle</span> there are 5 styles present. LightVue card is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can change the shadow style of a card by passing value in <span>shadowStyle</span> there are 5 styles present. LightVue card is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Border Radius',
           file: 'card/CardRadiusDemo',
-          discription: 'You can set the border radius of card  by passing a value along with unit in <span>borderRadius</span> prop ',
+          description: 'You can set the border radius of card  by passing a value along with unit in <span>borderRadius</span> prop ',
         },
         {
           title: 'Background color and Padding',
-          discription: 'You can change the background color of card by passing a string in <span>backgroundColor</span>.you can  also set the padding for card in native way by passing a string in <span>padding</span> prop',
+          description: 'You can change the background color of card by passing a string in <span>backgroundColor</span>.you can  also set the padding for card in native way by passing a string in <span>padding</span> prop',
           file: 'card/CardPaddingAndBGcolorDemo',
         },
         {
           title: 'Enabling border',
-          discription: 'You can set the border to card by setting <span>showBorder</span> prop true',
+          description: 'You can set the border to card by setting <span>showBorder</span> prop true',
           file: 'card/CardBorderDemo',
         },
       ],

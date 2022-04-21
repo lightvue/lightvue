@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -50,32 +50,32 @@ export default {
         {
           title: 'Basic Usage',
           file: 'input-toggle/ToggleSwitchDemo_Basic',
-          discription: 'Use the <span>LvToggleSwitch</span> with some basic and complex use cases by passing either classes or props eg. for setting label you can pass a string into <span>label</span> prop. LightVue toggle-switch is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'Use the <span>LvToggleSwitch</span> with some basic and complex use cases by passing either classes or props eg. for setting label you can pass a string into <span>label</span> prop. LightVue toggle-switch is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'With Icons',
           file: 'input-toggle/ToggleSwitchDemo_Icon',
-          discription: 'You can set the icon on the <span>LvToggleSwitch</span> by passing a icon string into <span>icon</span> prop.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+          description: 'You can set the icon on the <span>LvToggleSwitch</span> by passing a icon string into <span>icon</span> prop.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
         },
 
         {
           title: 'Dense Switch',
-          discription: 'You can use the dense version of <span>LvToggleSwitch</span> by setting <span>dense</span> prop true.you can also use set the icon to dense toggle switch by passing the icon in <span>icon</span> prop',
+          description: 'You can use the dense version of <span>LvToggleSwitch</span> by setting <span>dense</span> prop true.you can also use set the icon to dense toggle switch by passing the icon in <span>icon</span> prop',
           file: 'input-toggle/ToggleSwitchDemo_Dense',
         },
         {
           title: 'Predefining state',
-          discription: 'You can Predefine the state of  <span>LvToggleSwitch</span> by setting modal-value true.by default the value if false',
+          description: 'You can Predefine the state of  <span>LvToggleSwitch</span> by setting modal-value true.by default the value if false',
           file: 'input-toggle/ToggleSwitchDemo_State',
         },
         {
           title: 'Label Position',
-          discription: 'You can change the label position by through <span>labelPosition</span> prop',
+          description: 'You can change the label position by through <span>labelPosition</span> prop',
           file: 'input-toggle/ToggleSwitchDemo_LabelPosition',
         },
         {
           title: 'Disable',
-          discription: 'You can also disable the  <span>LvToggleSwitch</span>  by setting the <span>disabled</span> prop true',
+          description: 'You can also disable the  <span>LvToggleSwitch</span>  by setting the <span>disabled</span> prop true',
           file: 'input-toggle/ToggleSwitchDemo_Colors',
         },
       ],

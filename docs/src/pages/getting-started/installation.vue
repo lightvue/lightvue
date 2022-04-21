@@ -58,7 +58,7 @@ Vue.component('LvButton', LvButton);
         <docs-card title="Customization" :responsive="false">
           <div class="custom__wrapper" style="padding: 1rem">
             <div class="custom__container">
-              <div class="discription__para">By default, this is the theme that is applied to all the components</div>
+              <div class="description__para">By default, this is the theme that is applied to all the components</div>
               <div class="custom__process">
                 <CodeHighlight lang="css">
                   <pre>
@@ -123,7 +123,7 @@ Vue.component('LvButton', LvButton);
                   >
                 </CodeHighlight>
               </div> -->
-      <!-- <div class="discription__para">This can be easily configured via passing the theme property</div> -->
+      <!-- <div class="description__para">This can be easily configured via passing the theme property</div> -->
       <!-- <div class="custom__process">
                 <CodeHighlight lang="css">
                   <pre>

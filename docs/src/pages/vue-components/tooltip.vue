@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
 
     <template #api>
@@ -51,12 +51,12 @@ export default {
         {
           title: 'With Hover event',
           file: 'tooltip/TooltipHoverDemo',
-          discription: 'You can use the Tooltip for various purpose like show additional information etc. LightVue comes with some stunning designs for Tooltip.You can use the tooltip in the following way. LightVue Tooltip bar is Both compatible with Vue 2.x and Vue 3.x.',
+          description: 'You can use the Tooltip for various purpose like show additional information etc. LightVue comes with some stunning designs for Tooltip.You can use the tooltip in the following way. LightVue Tooltip bar is Both compatible with Vue 2.x and Vue 3.x.',
         },
         {
           title: 'With Focus event',
           file: 'tooltip/TooltipFocusDemo',
-          discription: 'You can use the Tooltip for various purpose like show additional information etc. LightVue comes with some stunning designs for Tooltip.You can use the tooltip in the following way. LightVue Tooltip bar is Both compatible with Vue 2.x and Vue 3.x.',
+          description: 'You can use the Tooltip for various purpose like show additional information etc. LightVue comes with some stunning designs for Tooltip.You can use the tooltip in the following way. LightVue Tooltip bar is Both compatible with Vue 2.x and Vue 3.x.',
         },
       ],
     };

@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -43,21 +43,21 @@ export default {
         {
           title: 'Basic',
           file: 'radio-group/RadioGroupDemo_Basic',
-          discription: 'You can pass the <span>options</span> in <span>lv-checkbox-group</span> as an array of objects. You can still use all the props and variations in the <span>LvCheckbox</span>. LightVue radio-group is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can pass the <span>options</span> in <span>lv-checkbox-group</span> as an array of objects. You can still use all the props and variations in the <span>LvCheckbox</span>. LightVue radio-group is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Set option value',
           file: 'radio-group/RadioGroupDemo1',
-          discription: 'You can set the option value and label through <sapn>optionValue</sapn> and <span>optionLabel</span> respectively',
+          description: 'You can set the option value and label through <sapn>optionValue</sapn> and <span>optionLabel</span> respectively',
         },
         {
           title: 'Array of strings',
-          discription: 'You can also use array of strings for options',
+          description: 'You can also use array of strings for options',
           file: 'radio-group/RadioGroupDemo2',
         },
         {
           title: 'Preselect Value',
-          discription: 'You can set the value selected by default by setting it as an <span>v-model</span> value',
+          description: 'You can set the value selected by default by setting it as an <span>v-model</span> value',
           file: 'radio-group/RadioGroupDemo3',
         },
       ],

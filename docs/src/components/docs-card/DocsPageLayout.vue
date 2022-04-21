@@ -13,8 +13,8 @@
 
               <slot name="title-below"></slot>
             </div>
-            <nuxt-link :to="{ hash: '#docs-api' }" class="documentation-title">
-              <h4><span>#</span> Documentation</h4>
+            <nuxt-link :to="{ hash: '#docs-api' }" class="documentation-link">
+              <span>#</span> Documentation
               <!-- <i class="light-icon-arrow-narrow-down"></i> -->
             </nuxt-link>
           </div>
@@ -240,22 +240,20 @@ $primary-color: #38b2ac;
   max-width: calc(100% - 200px);
   flex: 1;
 }
-.documentation-title {
-  h4 {
-    opacity: 0.8;
-    font-size: 15px;
-    font-weight: inherit;
-    color: #566d79;
-    cursor: pointer;
+.documentation-link {
+  opacity: 0.8;
+  font-size: 15px;
+  font-weight: inherit;
+  color: #566d79;
+  cursor: pointer;
+  span {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &:hover {
+    opacity: 1;
     span {
-      opacity: 0.5;
-      transition: opacity 0.3s ease-in-out;
-    }
-    &:hover {
-      opacity: 1;
-      span {
-        opacity: 0.8;
-      }
+      opacity: 0.8;
     }
   }
 }

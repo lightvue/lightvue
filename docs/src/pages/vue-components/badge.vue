@@ -3,7 +3,7 @@
     <template #title-right> </template>
 
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -54,7 +54,7 @@ export default {
         {
           title: 'Basic',
           file: 'badge/BadgeDemo',
-          discription: 'LightVue comes with some stunning designs for badge.There are different types of badge present in lightVue you can go through this page for more info.You can change the color of badge by passing value in <span>color</span> prop. LightVue Badge is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'LightVue comes with some stunning designs for badge.There are different types of badge present in lightVue you can go through this page for more info.You can change the color of badge by passing value in <span>color</span> prop. LightVue Badge is Both compatible with Vue 2.x and Vue 3.x',
         },
       ],
     };

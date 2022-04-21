@@ -4,8 +4,8 @@
       <nuxt-link :to="{ hash: `#${computedId}` }" class="docs-card__header--title">
         <h2><span>#</span>{{ title }}</h2>
       </nuxt-link>
-      <div class="docs-card__header--discription">
-        <p v-html="discription" style="line-height: 1.7; opacity: 0.8"></p>
+      <div class="docs-card__header--description">
+        <p v-html="description" style="line-height: 1.7; opacity: 0.8"></p>
       </div>
     </div>
     <div class="docs-card__body">
@@ -61,7 +61,7 @@ export default {
       default: '',
       type: String,
     },
-    discription: {
+    description: {
       default: '',
       type: String,
     },
@@ -265,13 +265,13 @@ $primary-color: #38b2ac;
     }
   }
 }
-.docs-card__header--discription {
+.docs-card__header--description {
   line-height: 1.7;
   span {
     color: $primary-color;
   }
 }
-.docs-card__footer--discription {
+.docs-card__footer--description {
   padding: 10px;
   margin-top: 2rem;
   line-height: 1.7;

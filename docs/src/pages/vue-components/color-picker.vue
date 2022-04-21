@@ -2,7 +2,7 @@
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <color-picker-best-demo></color-picker-best-demo>
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -46,17 +46,17 @@ export default {
         {
           title: 'Basic Usage',
           file: 'colorpicker/ColorpickerDemo',
-          discription: 'You can use the <span>LvColorPicker</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can set the label to colour picker through <span>label</span> prop.You can set the pallet colors by passing a array to <span>colors</span> prop. LightVue color-picker is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can use the <span>LvColorPicker</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can set the label to colour picker through <span>label</span> prop.You can set the pallet colors by passing a array to <span>colors</span> prop. LightVue color-picker is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Without input',
           file: 'colorpicker/ColorpickerDemo2',
-          discription: 'You can use <span>LvColorPicker</span> without the input. You have to set <span>withoutInput</span> prop true',
+          description: 'You can use <span>LvColorPicker</span> without the input. You have to set <span>withoutInput</span> prop true',
         },
         {
           title: 'Without Pallet',
           file: 'colorpicker/ColorpickerDemo3',
-          discription: 'You can use <span>LvColorPicker</span> without the colour pallet. You have to set <span>hidePalette</span> prop true',
+          description: 'You can use <span>LvColorPicker</span> without the colour pallet. You have to set <span>hidePalette</span> prop true',
         },
       ],
     };
