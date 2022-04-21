@@ -43,7 +43,7 @@ export default {
         {
           title: 'Ball Scale',
           file: 'progressloader/BallTypeDemos/BallScaleDemo',
-          discription: 'You can use the progress Loader for various purpose like loading animations or space-filler etc.LightVue comes with some stunning designs for progress loaders.There are different types of loaders are present in lightVue you can go through this page for more info.You can change the type of loaders by passing value in <span>type</span> prop.LightVue Progress Loaders is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
+          discription: 'You can use the progress Loader for various purpose like loading animations or space-filler etc. LightVue comes with some stunning designs for progress loaders.There are different types of loaders are present in lightVue you can go through this page for more info.You can change the type of loaders by passing value in <span>type</span> prop. LightVue Progress Loaders is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
         },
         {
           title: 'Ball Scale Multiple',

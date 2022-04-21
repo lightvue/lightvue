@@ -47,7 +47,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'dropdown/DropdownDemo_Basic',
-          discription: 'You can use the <span>LvDropdown</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can get the selected value as a model value.LightVue dropdown is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'You can use the <span>LvDropdown</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can get the selected value as a model value. LightVue dropdown is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Disabled',

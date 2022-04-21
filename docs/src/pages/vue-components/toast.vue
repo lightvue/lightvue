@@ -43,26 +43,22 @@ export default {
         {
           title: 'Variants',
           file: 'toast/ToastDemo',
-          discription: 'You can use the various Variants of toast by passing a variation classes.LightVue comes with some stunning designs for Toast.There are different types of Toast are present in lightVue you can go through this page for more info.LightVue Toast is Both compatible with Vue 2.x and Vue 3.x.You have to render the toast component in your root file (App.vue).',
-        
+          discription: 'You can use the various Variants of toast by passing a variation classes. LightVue comes with some stunning designs for Toast.There are different types of Toast are present in lightVue you can go through this page for more info. LightVue Toast is Both compatible with Vue 2.x and Vue 3.x.You have to render the toast component in your root file (App.vue).',
         },
         {
           title: 'Positions',
           file: 'toast/ToastDemo_Position',
           discription: 'You can change the positions of notification in the following way.',
-        
         },
         {
           title: 'Options',
           file: 'toast/ToastDemo_Options',
           discription: 'You can use the sticky and multiple if.do not pass any value in duration in order to make it sticky.',
-         
         },
         {
           title: 'Remove All',
           file: 'toast/ToastDemo_RemoveAll',
           discription: 'For removing all the notifications on the screen you can use the <span>removeAllGroups()</span> method.',
-         
         },
       ],
     };

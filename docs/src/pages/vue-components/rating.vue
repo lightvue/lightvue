@@ -55,7 +55,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'rating/examples_options/RatingDemo_1',
-          discription: 'You can use the <span>LvRating</span> with some basic and complex use cases by passing either classes or props.LightVue rating is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'You can use the <span>LvRating</span> with some basic and complex use cases by passing either classes or props. LightVue rating is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Custom Increament',

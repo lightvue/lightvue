@@ -46,7 +46,7 @@ export default {
         {
           title: 'Shadow',
           file: 'card/CardShadowDemo',
-          discription: 'You can change the shadow style of a card by passing value in <span>shadowStyle</span> there are 5 styles present.LightVue card is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'You can change the shadow style of a card by passing value in <span>shadowStyle</span> there are 5 styles present. LightVue card is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Border Radius',

@@ -46,7 +46,7 @@ export default {
         {
           title: 'Basic',
           file: 'textarea/TextareaDemo__Basic',
-          discription: 'You can use the <span>LvTextarea</span> with some basic and complex use cases by passing either classes or props eg. If you want to set the placeholder you can pass it to <span>placeholder</span>, You can also set the number of visible rows through <span>rows</span> prop, You can set the Label by passing a string into <span>label</span> prop.LightVue textarea is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'You can use the <span>LvTextarea</span> with some basic and complex use cases by passing either classes or props eg. If you want to set the placeholder you can pass it to <span>placeholder</span>, You can also set the number of visible rows through <span>rows</span> prop, You can set the Label by passing a string into <span>label</span> prop. LightVue textarea is Both compatible with Vue 2.x and Vue 3.x',
         },
 
         {

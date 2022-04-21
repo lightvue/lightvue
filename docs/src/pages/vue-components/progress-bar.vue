@@ -50,12 +50,12 @@ export default {
         {
           title: 'Dynamic',
           file: 'progressbar/ProgressBarDemo_Dynamic',
-          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.LightVue Progress bar is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
+          discription: 'You can use the progress bar for various purpose like showing status,progress etc. LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false. LightVue Progress bar is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
         },
         {
           title: 'Static',
           file: 'progressbar/ProgressBarDemo_Static',
-          discription: 'You can use the progress bar for various purpose like showing status,progress etc.LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false.LightVue Progress bar is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
+          discription: 'You can use the progress bar for various purpose like showing status,progress etc. LightVue comes with some stunning designs for progress bar.You can Update the progerss bar by Updating <span>value</span> prop.You can also hide or show the Value on progerss bar by setting <span>showValue</span> false. LightVue Progress bar is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
         },
         {
           title: 'Indeterminate',

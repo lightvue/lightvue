@@ -44,7 +44,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'dialog/DialogDemo',
-          discription: 'LightVue comes with some stunning designs for dialog.There are different types of dialog present in lightVue you can go through this page for more info.LightVue dialog is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'LightVue comes with some stunning designs for dialog.There are different types of dialog present in lightVue you can go through this page for more info. LightVue dialog is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Model',

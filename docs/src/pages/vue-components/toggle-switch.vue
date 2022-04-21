@@ -50,7 +50,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'input-toggle/ToggleSwitchDemo_Basic',
-          discription: 'Use the <span>LvToggleSwitch</span> with some basic and complex use cases by passing either classes or props eg. for setting label you can pass a string into <span>label</span> prop.LightVue toggle-switch is Both compatible with Vue 2.x and Vue 3.x',
+          discription: 'Use the <span>LvToggleSwitch</span> with some basic and complex use cases by passing either classes or props eg. for setting label you can pass a string into <span>label</span> prop. LightVue toggle-switch is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'With Icons',

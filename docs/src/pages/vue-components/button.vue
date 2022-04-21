@@ -57,7 +57,7 @@ export default {
       id: 'basic-usage',
       title: 'Basic usage',
       file: 'button/ButtonDemo_Basic',
-      discription: 'Use the buttons with some basic and complex use cases by passing either classes or props eg. for link button, pass <span>--link-button</span> For disable button, set the <span>disable</span> prop to true.LightVue Button is Both compatible with Vue 2.x and Vue 3.x',
+      discription: 'Use the buttons with some basic and complex use cases by passing either classes or props eg. for link button, pass <span>--link-button</span> For disable button, set the <span>disable</span> prop to true. LightVue Button is Both compatible with Vue 2.x and Vue 3.x',
     },
     {
       id: 'icon-button',

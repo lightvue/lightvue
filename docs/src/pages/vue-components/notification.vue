@@ -44,7 +44,7 @@ export default {
         {
           title: 'Variants',
           file: 'notification/NotificationDemo',
-          discription: 'You can use the various Variants of notification by passing a variation classes.LightVue comes with some stunning designs for notification.There are different types of notifications are present in lightVue you can go through this page for more info.LightVue Notification is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>.You have to render the notification component in your root file (App.vue)',
+          discription: 'You can use the various Variants of notification by passing a variation classes. LightVue comes with some stunning designs for notification.There are different types of notifications are present in lightVue you can go through this page for more info. LightVue Notification is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>.You have to render the notification component in your root file (App.vue)',
         },
         {
           title: 'Positions',
@@ -55,7 +55,6 @@ export default {
           title: 'Options',
           file: 'notification/NotificationDemo_Option',
           discription: 'You can use the sticky and multiple if.do not pass any value in duration in order to make it sticky.',
-        
         },
         {
           title: 'Remove All',

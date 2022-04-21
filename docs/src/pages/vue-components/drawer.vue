@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <drawer-best-demo />
-      <template v-for="(demo, i) in demos">
+    <template v-for="(demo, i) in demos">
       <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
@@ -40,25 +40,23 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-   data() {
+  data() {
     return {
       demos: [
-            {
+        {
           title: 'Basic Usage',
           file: 'drawer/DrawerDemoRelative',
-          discription: 'LightVue comes with some stunning designs for Drawer.There are different variations and customization of drawer present in lightVue you can go through this page for more info.LightVue Drawer is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
+          discription: 'LightVue comes with some stunning designs for Drawer.There are different variations and customization of drawer present in lightVue you can go through this page for more info. LightVue Drawer is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
         },
         {
           title: 'Absolute',
           file: 'drawer/DrawerDemo',
           discription: 'If you set <span>absolute</span> prop true.The drawer will open relative to the container',
         },
-    
-       
       ],
     };
   },
-  
+
   components: {
     DocsCardVue,
     DocsCard,
