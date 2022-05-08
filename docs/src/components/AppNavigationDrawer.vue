@@ -239,6 +239,10 @@ export default {
           page_name: 'Toast',
           page_path: '/vue-components/toast',
         },
+        {
+          page_name: 'Typer',
+          page_path: '/vue-components/typer',
+        },
       ],
     },
   ],

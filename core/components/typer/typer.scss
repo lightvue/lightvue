@@ -1,0 +1,20 @@
+span.cursor {
+  display: inline-block;
+  width: 4px;
+  background-color: teal;
+  animation: cursorBlink 1s infinite;
+}
+span.cursor.typing {
+  animation: none;
+}
+@keyframes cursorBlink {
+  49% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+}
