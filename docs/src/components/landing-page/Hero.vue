@@ -143,7 +143,8 @@ $text-color-secondary: #eeecec;
         .hero-container__pre {
           position: relative;
           border-radius: 4px;
-          display: inline-flex;
+          display: flex;
+          justify-content: space-between;
           font-size: 20px;
           color: #ffffff;
           background: rgba(255, 255, 255, 0.05);
@@ -190,6 +191,11 @@ $text-color-secondary: #eeecec;
     .bottom__wave {
       display: none;
     }
+  }
+
+  .hero-container__pre {
+    width: 100%;
+    overflow: hidden;
   }
 }
 //--
@@ -266,8 +272,8 @@ $text-color-secondary: #eeecec;
   right: unset;
   background-color: rgba(0, 0, 0, 0.15);
 }
-@media only screen and (max-width: 400px) {
-  .hero-container__pre .copy-btn__wrap {
+@media only screen and (max-width: 450px) {
+  .hero-container__pre .copy-btn__tag {
     display: none;
   }
 }
