@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <lv-check-box @input="refresh($event, option)" v-bind="$attrs" v-for="(option, i) of options" :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" role="option" :aria-selected="isOptionSelected(option)" :disabled="isOptionDisabled(option)" :value="isOptionSelected(option)" :true-value="true">
+  <div class="lv-checkbox-group_wrap">
+    <lv-check-box @input="refresh($event, option)" v-bind="$attrs" v-for="(option, i) of options" :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" role="option" :aria-selected="isOptionSelected(option)" :disabled="isOptionDisabled(option)" :value="isOptionSelected(option)" :true-value="true" style="margin: 4px 2px">
       <slot name="option" :option="option" :index="i">
         {{ getOptionLabel(option) }}
       </slot>
@@ -47,3 +47,8 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.lv-radio-group_wrap .lv-checkbox {
+  margin: 4px 1em 4px 2px;
+}
+</style>
