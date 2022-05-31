@@ -7,7 +7,7 @@
         <span class="lv-range-slider__fill" :style="{ width: valuePercent + '%', backgroundColor: sliderColor }"></span>
         <span class="lv-range-slider__knob" ref="knob" :style="{ left: valuePercent + '%', borderColor: sliderColor }">
           <slot name="knob">
-            <span ref="rangeSliderVal" class="lv-range-slider__knob__val" :style="{ color: sliderColor }"> {{ actualValue }}</span>
+            <span ref="rangeSliderVal" class="lv-range-slider__knob__val" :style="{ color: sliderColor }" v-show="dragging"> {{ actualValue }}</span>
           </slot>
         </span>
       </span>
@@ -57,6 +57,7 @@ export default {
     return {
       actualValue: null,
       dragStartValue: null,
+      dragging: false,
     };
   },
 
@@ -114,6 +115,7 @@ export default {
 
   methods: {
     dragStart(event, offset) {
+      this.dragging = true;
       this.dragStartValue = this.actualValue;
       if (event.target === this.$refs.knob) {
         return;
@@ -129,6 +131,7 @@ export default {
     },
 
     dragEnd(event, offset) {
+      this.dragging = false;
       const { offsetWidth } = this.$refs.inner;
       this.actualValue = this.round(this.valueFromBounds(offset.left, offsetWidth));
 
