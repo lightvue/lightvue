@@ -5,7 +5,7 @@
         <input class="lv-range-slider__hidden" type="text" :name="name" :value="actualValue" :disabled="disabled" />
         <span class="lv-range-slider__rail" :style="{ backgroundColor: trackColor }"></span>
         <span class="lv-range-slider__fill" :style="{ width: valuePercent + '%', backgroundColor: sliderColor }"></span>
-        <span class="lv-range-slider__knob" ref="knob" :style="{ left: valuePercent + '%', backgroundColor: sliderColor }">
+        <span class="lv-range-slider__knob" ref="knob" :style="{ left: valuePercent + '%', borderColor: sliderColor }">
           <slot name="knob">
             <span ref="rangeSliderVal" class="lv-range-slider__knob__val" :style="{ color: sliderColor }"> {{ actualValue }}</span>
           </slot>
@@ -151,7 +151,8 @@ export default {
     },
 
     round(value) {
-      return round(value, this._min, this._max, this._step);
+      const decimalFixed = this.step.toString().split('.')[1]?.length || 0;
+      return round(value, this._min, this._max, this._step).toFixed(decimalFixed);
     },
   },
 
