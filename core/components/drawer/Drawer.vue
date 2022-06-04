@@ -7,7 +7,7 @@
       '--mobile': getDrawerPosition,
       '--moving': isMoving,
       '--absolute': absolute,
-      '--no_backdrop': noBackdrop,
+      '--no-backdrop': noBackdrop,
     }"
     :style="{
       zIndex: zIndex,
@@ -18,7 +18,7 @@
     <aside class="wrapper__drawer-container" :style="getDrawerStyle" ref="drawer">
       <div class="touch-dragger" v-if="getDrawerPosition" @touchstart.prevent="handleTouchStart" @touchmove.prevent="handleTouchMove" @touchend.prevent="handleTouchEnd"></div>
       <!-- Header -->
-      <div class="drawer-container__header" ref="drawerHeader" :style="getHeaderStyle" v-if="headerTitle || close">
+      <div class="drawer-container__header" ref="drawerHeader" :style="getHeaderStyle" v-if="headerTitle || close || $slots.customHeader">
         <div v-if="!$slots.customHeader" class="header__title">
           {{ headerTitle }}
         </div>
