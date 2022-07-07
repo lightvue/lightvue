@@ -15,6 +15,8 @@
         <lv-toggle-switch v-model="allOptions.icon" label="icon" /> <br />
         <lv-toggle-switch v-model="allOptions.bigger" label="bigger" /> <br />
         <lv-toggle-switch v-model="allOptions.locked" label="locked" /> <br />
+        <lv-toggle-switch v-model="allOptions.checkedIcon" label="checkedIcon" /> <br />
+
 
         <br />
 
@@ -67,6 +69,7 @@ export default {
         icon: false,
         bigger: false,
         locked: false,
+        checkedIcon: false,
       },
       stringProps: ['type', 'name', 'color', 'offColor', 'hoverColor', 'indeterminateColor'],
     };

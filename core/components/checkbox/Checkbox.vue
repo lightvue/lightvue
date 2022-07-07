@@ -61,6 +61,7 @@ export default {
     icon: Boolean, //
     bigger: Boolean, //
     locked: Boolean, //
+    checkedIcon: Boolean,
   },
 
   data() {
@@ -145,6 +146,7 @@ export default {
         '--with-icon': this.icon,
         '--bigger': this.bigger,
         '--locked': this.locked,
+        '--checkedIcon': this.checkedIcon,
       };
     },
     onClasses() {
@@ -203,6 +205,10 @@ export default {
     // console.log(this.$el.classList);
     // if (this.$vnode.data && !this.$vnode.data.staticClass && !this.toggle && !this.plain) this.default_mode = true; // REFACTORING
     if (!this.toggle && !this.plain) this.default_mode = true;
+    if (this._indeterminate) this.$refs.input.indeterminate = true;
+    this.$el.setAttribute(`lv-${this._type}`, '');
+
+    if (!this.toggle && !this.checkedIcon) this.default_mode = true;
     if (this._indeterminate) this.$refs.input.indeterminate = true;
     this.$el.setAttribute(`lv-${this._type}`, '');
   },
