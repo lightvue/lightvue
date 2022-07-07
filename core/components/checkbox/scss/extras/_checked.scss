@@ -1,4 +1,4 @@
-.#{$light-checkbox--class-name}.--checkedIcon {
+.#{$light-checkbox--class-name}.--checked-icon {
     input:checked ~ .state label,
     &.--toggle .state label {
       &:before {
@@ -17,7 +17,7 @@
         // -webkit-transform-origin: 100% 100%;
         // transform-origin: 100% 100%;
         // z-index: 1;
-
+        color: #4dc0b5;
         z-index: 1;
         display: flex;
         align-items: center;
@@ -25,13 +25,14 @@
       }
       &:after {
         // border: 1px solid transparent;
-    top: 0px;
-    width: 20px;
-    height: 20px;
+    // top: 0px;
+    // width: 20px;
+    // height: 20px;
     // border: 2px solid #26a69a;
     // background-color: #26a69a;
-    z-index: 0;
-    background-color: transparent !important;
+    // z-index: 0;
+    // background-color: transparent !important;
+    content: none;
     }
     }
         

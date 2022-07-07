@@ -1,10 +1,10 @@
 <template>
   <div class="lv-demo_layout">
-    <lv-checkbox name="check" color="success" v-model="tick" value="Hello">Basic</lv-checkbox>
-    <lv-checkbox name="check" color="warning" v-model="tick" rounded value="World">Teal </lv-checkbox>
-    <lv-checkbox name="check" color="primary" v-model="tick" rounded filled>Filled </lv-checkbox>
-    <lv-checkbox name="check" color="info" v-model="tick" rounded thick>Thick </lv-checkbox>
-    <lv-checkbox name="check" color="danger" v-model="tick" plain smooth> Plain </lv-checkbox>
+    <lv-checkbox name="check" color="success" v-model="checked" >Basic</lv-checkbox>
+    <lv-checkbox name="check" color="warning" v-model="checked" rounded >Teal</lv-checkbox>
+    <lv-checkbox name="check" color="primary" v-model="checked" rounded >Orange </lv-checkbox>
+    <lv-checkbox name="check" color="info" v-model="checked" rounded >White </lv-checkbox>
+    <lv-checkbox name="check" color="danger" v-model="checked"  > Basic </lv-checkbox>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ import LvCheckbox from 'lightvue/checkbox';
 export default {
   data() {
     return {
-      tick: false,
+      checked: false,
       radio: '',
       cities: [],
       categories: [

@@ -69,7 +69,7 @@ export default {
         icon: false,
         bigger: false,
         locked: false,
-        checkedIcon: false,
+        checkedIcon: true,
       },
       stringProps: ['type', 'name', 'color', 'offColor', 'hoverColor', 'indeterminateColor'],
     };

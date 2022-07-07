@@ -146,7 +146,7 @@ export default {
         '--with-icon': this.icon,
         '--bigger': this.bigger,
         '--locked': this.locked,
-        '--checkedIcon': this.checkedIcon,
+        '--checked-icon': this.checkedIcon,
       };
     },
     onClasses() {
