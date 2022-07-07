@@ -2,33 +2,47 @@
     input:checked ~ .state label,
     &.--toggle .state label {
       &:before {
-        top: 5px;
-        left: 6px;
-        width: 8px;
-        height: 13px;
-        border-top: 2px solid transparent;
-        border-left: 2px solid transparent;
-        border-right: 2px solid #fff;
-        border-bottom: 2px solid #fff;
-        -webkit-transform: rotateZ(37deg);
-        transform: rotateZ(37deg);
-        -webkit-transform-origin: 100% 100%;
-        transform-origin: 100% 100%;
+        content: "✔";
+        // top: 5px;
+        // left: 6px;
+        // width: 8px;
+        // height: 13px;
+        // border-top: 2px solid transparent;
+        // border-left: 2px solid transparent;
+        // border-right: 2px solid #fff;
+        // border-bottom: 2px solid #fff;
+        
+        // -webkit-transform: rotateZ(37deg);
+        // transform: rotateZ(37deg);
+        // -webkit-transform-origin: 100% 100%;
+        // transform-origin: 100% 100%;
+        // z-index: 1;
+
         z-index: 1;
-        // border-width: calc(1em / 7);
-        // border: 1px solid transparent;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
       }
-    }
-   
-  
-    &:after {
+      &:after {
         // border: 1px solid transparent;
     top: 0px;
     width: 20px;
     height: 20px;
-    border: 2px solid #26a69a;
-    background-color: #26a69a;
+    // border: 2px solid #26a69a;
+    // background-color: #26a69a;
     z-index: 0;
+    background-color: transparent !important;
     }
+    }
+        
+        // border: 1px solid transparent;
+      
+    
+   &::before{
+    border-width: calc(1em / 7);
+        border-color: #bdc3c7;
+   }
+  
+    
   }
   
