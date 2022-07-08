@@ -45,6 +45,7 @@ export default {
     required: {},
     indeterminate: {},
     color: String,
+    tick: String,
     offColor: String,
     hoverColor: String,
     indeterminateColor: String,
@@ -159,7 +160,11 @@ export default {
         if (this.outline) {
           classes[`lv-${this.color}-o`] = true;
         }
+        if(this.checkedIcon){
+          classes[`lv-${this.color}-t`] = true;
+        }
       }
+      
 
       return classes;
     },

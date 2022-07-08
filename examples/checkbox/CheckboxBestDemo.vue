@@ -23,6 +23,7 @@
         <lv-input v-model="allOptions['type']" label="type" /> <br />
         <lv-input v-model="allOptions['name']" label="name" /> <br />
         <lv-input v-model="allOptions['color']" label="color class" placeholder="success" /> <br />
+        <lv-input v-model="allOptions['tick']" label="tick color class" placeholder="success" /> <br />
         <lv-input v-model="allOptions['offColor']" label="offColor class" /> <br />
         <lv-input v-model="allOptions['hoverColor']" label="hoverColor class" /> <br />
         <lv-input v-model="allOptions['indeterminateColor']" label="indeterminateColor class" /> <br />
@@ -55,6 +56,7 @@ export default {
         type: this.type,
         name: 'demo',
         color: 'success',
+        tick: 'success',
         offColor: '',
         hoverColor: '',
         indeterminateColor: '',
@@ -71,7 +73,7 @@ export default {
         locked: false,
         checkedIcon: true,
       },
-      stringProps: ['type', 'name', 'color', 'offColor', 'hoverColor', 'indeterminateColor'],
+      stringProps: ['type', 'name', 'color', 'offColor', 'hoverColor', 'indeterminateColor', 'tick'],
     };
   },
   props: {

@@ -1,6 +1,8 @@
 .#{$light-checkbox--class-name}.--checked-icon {
-    input:checked ~ .state label,
-    &.--toggle .state label {
+  @each $name,$color in $light-checkbox--colors {
+    input:checked ~ .state.lv-#{$name} label,
+    &.--toggle .state.lv-#{$name} label 
+    {
       &:before {
         content: "✔";
         // top: 5px;
@@ -17,7 +19,7 @@
         // -webkit-transform-origin: 100% 100%;
         // transform-origin: 100% 100%;
         // z-index: 1;
-        color: #4dc0b5;
+        color: $color ;
         z-index: 1;
         display: flex;
         align-items: center;
@@ -35,6 +37,13 @@
     content: none;
     }
     }
+    // input:checked ~ .state.lv-#{$name}-t,
+    // &.--toggle .state.lv-#{$name}-t {
+    //   :before {
+    //     color: $color;
+    //   }
+
+    // }
         
         // border: 1px solid transparent;
       
@@ -44,6 +53,11 @@
         border-color: #bdc3c7;
    }
   
-    
+  //  &.--default:not(.--filled) input:checked ~ .state.lv-#{$name}-o label {
+  //   &:after {
+  //     background-color: $color !important;
+  //   }
+  // }
   }
+}
   
