@@ -64,4 +64,10 @@ export default {
   margin-top: 30px;
   opacity: 0.8;
 }
+@media (max-width: 500px) {
+  .glasscard-demo {
+    height: 100%;
+    width: 100%;
+  }
+}
 </style>

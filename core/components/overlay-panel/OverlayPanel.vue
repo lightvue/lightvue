@@ -80,7 +80,7 @@ export default {
     },
     toggle(event, target) {
       let domTarget = event ? event.currentTarget : target;
-      console.log(domTarget);
+      // console.log(domTarget);
       if (this.visible) this.hide();
       else this.show(domTarget);
     },

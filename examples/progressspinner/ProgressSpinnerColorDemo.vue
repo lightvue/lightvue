@@ -47,5 +47,6 @@ export default {
 .progress-spinner-demo-wrapper {
   display: flex;
   flex-flow: row wrap;
+  width: 80%;
 }
 </style>

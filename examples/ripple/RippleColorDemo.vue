@@ -1,17 +1,10 @@
 <template>
   <div class="ripple-example-wrapper">
-    <div>
-      <LvCard class="teal-ripple" v-ripple> <h3>Click on me!</h3> </LvCard>
-    </div>
-    <div>
-      <LvCard class="blue-ripple" v-ripple> <h3>Click on me!</h3> </LvCard>
-    </div>
-    <div>
-      <LvCard class="red-ripple" v-ripple> <h3>Click on me!</h3> </LvCard>
-    </div>
-    <div>
-      <LvCard class="grey-ripple" v-ripple> <h3>Click on me!</h3> </LvCard>
-    </div>
+    <LvCard class="teal-ripple" v-ripple> <h3>Click on me!</h3> </LvCard>
+
+    <LvCard class="blue-ripple" v-ripple> <h3>Click on me!</h3> </LvCard>
+
+    <LvCard class="red-ripple" v-ripple> <h3>Click on me!</h3> </LvCard>
   </div>
 </template>
 

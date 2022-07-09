@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="accordian-wrapper">
     <div class="nav-list__category-wrap">
       <div class="collapsible_catgory" @click="open1" :class="{ active: isOpenA == true }">
         <div class="nav-list__category-label">
@@ -134,5 +134,8 @@ $primary-color: #38b2ac;
   /* margin-left: 18px; */
   background: #f7fcfc;
   border-left: 3px solid #38b2ac;
+}
+.accordian-wrapper {
+  width: 100%;
 }
 </style>
