@@ -42,7 +42,7 @@ export default {
 }
 
 .card-demo {
-  height: 400px;
+  height: 300px;
   width: 300px;
   margin: 30px;
 }
@@ -56,6 +56,10 @@ export default {
 @media (max-width: 500px) {
   .card-demo h4 > span {
     display: block;
+  }
+  .card-demo {
+    height: 100%;
+    width: 100%;
   }
 }
 

@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <h5>Full Width</h5>
+  <div class="lv-demo_layout">
     <div class="lv-fluid">
       <LvButton label="FULL WIDTH" push rounded size="xl" class="lv--primary" />
     </div>
 
-    <h5>Button Set with mixed shape</h5>
     <span class="lv-buttonset">
       <LvButton label="Save" size="xl" icon="light-icon-check" rounded class="lv--primary" />
       <LvButton size="xl" icon="light-icon-copy" class="lv--success" />
@@ -26,18 +24,10 @@
 </template>
 
 <style lang="scss" scoped>
-.lv-button {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.lv-buttonset {
-  display: inline-block;
-  margin-top: 15px;
-  margin-right: 15px;
-  .lv-button {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

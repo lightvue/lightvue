@@ -63,6 +63,10 @@ export default {
   .glasscard-demo h4 > span {
     display: block;
   }
+  .glasscard-demo {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .glasscard-demo p {

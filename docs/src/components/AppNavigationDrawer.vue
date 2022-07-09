@@ -257,7 +257,7 @@ $primary-color: #38b2ac;
   position: fixed;
   left: 0;
   height: 100vh;
-  overflow: auto;
+  // overflow: auto;
   width: 250px;
   -webkit-user-select: none;
   -moz-user-select: none;

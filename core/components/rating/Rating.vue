@@ -103,7 +103,7 @@ export default {
       default: false,
     },
   },
-  emits: ['update:rating', 'hover:rating'],
+  emits: ['update:modelValue', 'hover:rating'],
   data() {
     return {
       step: 0,

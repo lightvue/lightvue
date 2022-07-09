@@ -1,7 +1,10 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <TextEditorBestDemo />
-    <docs-card-vue title="Demo" file="text-editor/TextEditorDemo" />
+
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
+    </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -37,6 +40,17 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Basic Usage',
+          file: 'text-editor/TextEditorDemo',
+          description: 'You can use the <span>LvTextEditor</span> as follows:',
+        },
+      ],
+    };
   },
   components: {
     TextEditorBestDemo,

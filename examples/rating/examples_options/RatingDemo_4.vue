@@ -1,25 +1,19 @@
 <template>
-  <div>
-    <h3>Capture rating value with events</h3>
-    <h5>On mouse click</h5>
-    <lv-rating :show-rating="true" @update:rating="rating = $event"></lv-rating>
-    <div style="margin-top: 10px; font-weight: bold">
-      {{ currentRatingText }}
+  <div class="lv-demo_layout">
+    <div>
+      <p>On mouse click</p>
+      <lv-rating :star-size="40" :show-rating="true" @update:rating="rating = $event"></lv-rating>
+      <div style="margin-top: 10px; font-weight: bold">
+        {{ currentRatingText }}
+      </div>
     </div>
-
-    <h5>On mouse hover</h5>
-    <div @mouseleave="mouseOverRating = null" style="display: inline-block">
-      <lv-rating :show-rating="true" @hover:rating="mouseOverRating = $event" :increment="0.5"></lv-rating>
-    </div>
-    <div style="margin-top: 10px; font-weight: bold">
-      {{ mouseOverRatingText }}
-    </div>
-
-    <h2>Resetable stars with v-model</h2>
-    <div style="display: inline-block">
-      <!-- <lv-rating v-model:rating="resetableRating"></lv-rating> -->
-      <div style="padding-top: 10px; cursor: pointer; margin-bottom: 20px; color: blue">
-        <a @click="resetableRating = 0">Reset Rating</a>
+    <div style="width: 40%">
+      <p>On mouse hover</p>
+      <div @mouseleave="mouseOverRating = null" style="display: inline-block">
+        <lv-rating :star-size="40" :show-rating="true" @hover:rating="mouseOverRating = $event" :increment="0.5"></lv-rating>
+      </div>
+      <div style="margin-top: 10px; font-weight: bold">
+        {{ mouseOverRatingText }}
       </div>
     </div>
   </div>
@@ -57,3 +51,11 @@ export default {
   },
 };
 </script>
+<style>
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+</style>

@@ -1,6 +1,8 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <docs-card-vue title="Basic" file="radio-group/RadioGroupDemo_Basic" />
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
+    </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -34,6 +36,32 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Basic',
+          file: 'radio-group/RadioGroupDemo_Basic',
+          description: 'You can pass the <span>options</span> in <span>lv-checkbox-group</span> as an array of objects. You can still use all the props and variations in the <span>LvCheckbox</span>. LightVue radio-group is Both compatible with Vue 2.x and Vue 3.x',
+        },
+        {
+          title: 'Set option value',
+          file: 'radio-group/RadioGroupDemo1',
+          description: 'You can set the option value and label through <sapn>optionValue</sapn> and <span>optionLabel</span> respectively',
+        },
+        {
+          title: 'Array of strings',
+          description: 'You can also use array of strings for options',
+          file: 'radio-group/RadioGroupDemo2',
+        },
+        {
+          title: 'Preselect Value',
+          description: 'You can set the value selected by default by setting it as an <span>v-model</span> value',
+          file: 'radio-group/RadioGroupDemo3',
+        },
+      ],
+    };
   },
   components: {
     DocsCardVue,

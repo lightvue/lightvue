@@ -1,7 +1,8 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <docs-card-vue title="Basic" file="collapsible/AccordianDemo" overflow />
-    <docs-card-vue title="Nested" file="collapsible/CollapsibleDemo" overflow />
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
+    </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -36,6 +37,22 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Basic',
+          file: 'collapsible/AccordianDemo',
+          description: 'You can hide or show the collapsible container by setting <span>show</span> prop true or false.You can also set the oriantation through <span>orientation</span> prop default value is vertical you can set it to horizontal. LightVue collapsible is Both compatible with Vue 2.x and Vue 3.x',
+        },
+        {
+          title: 'Nested',
+          file: 'collapsible/CollapsibleDemo',
+          description: 'You can also nest collapsibe inside collapsibe',
+        },
+      ],
+    };
   },
   components: {
     DocsCardVue,
