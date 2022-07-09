@@ -57,7 +57,7 @@ export default {
         },
         {
           title: 'With Different Tick',
-          file: 'checkbox/CheckboxDemo_TickVariants',
+          file: 'checkbox/CheckBoxDemo_TickVariants',
           description: 'You can use the checkbox with various predefined Tick Variants by setting <span>checkboxIcon</span> props to true',
         },
         {
