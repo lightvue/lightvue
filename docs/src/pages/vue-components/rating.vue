@@ -2,7 +2,7 @@
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <rating-best-demo />
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
 
     <template #api>
@@ -55,66 +55,66 @@ export default {
         {
           title: 'Basic Usage',
           file: 'rating/examples_options/RatingDemo_1',
-          discription: 'You can use the <span>LvRating</span> with some basic and complex use cases by passing either classes or props.LightVue rating is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can use the <span>LvRating</span> with some basic and complex use cases by passing either classes or props. LightVue rating is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Custom Increament',
           file: 'rating/examples_options/RatingDemo_5',
-          discription: 'You can specify the increament count of <span>LvRating</span> through <span>increment</span> prop.If you pass 0.5 the increament will be half star.If it is 0.25 increament will be quater star',
+          description: 'You can specify the increament count of <span>LvRating</span> through <span>increment</span> prop.If you pass 0.5 the increament will be half star.If it is 0.25 increament will be quater star',
         },
         {
           title: 'Readonly',
-          discription: 'You can set star to Readonly mode by setting <span>read-only</span> prop true',
+          description: 'You can set star to Readonly mode by setting <span>read-only</span> prop true',
           file: 'rating/examples_options/RatingDemo_2',
         },
         {
           title: 'Show hide rating',
-          discription: 'You can specify if you want to display the star count or not by setting <spna>show-rating</spna> prop.default value is true',
+          description: 'You can specify if you want to display the star count or not by setting <spna>show-rating</spna> prop.default value is true',
           file: 'rating/examples_options/RatingDemo7',
         },
         {
           title: 'Specifying preset value',
-          discription: 'You can Specifying preset value by passing a desire value in the <span>rating</span> prop.',
+          description: 'You can Specifying preset value by passing a desire value in the <span>rating</span> prop.',
           file: 'rating/examples_options/RatingDemo_6',
         },
         {
           title: 'Star Count',
-          discription: 'You can specify the number of stars you want to display by passing a number into <span>max-rating</span> prop.By default 5 stars will be displayed.',
+          description: 'You can specify the number of stars you want to display by passing a number into <span>max-rating</span> prop.By default 5 stars will be displayed.',
           file: 'rating/examples_options/RatingDemo_3',
         },
         {
           title: 'Events',
-          discription: 'You can get the selected rating through various events like hover and click as below',
+          description: 'You can get the selected rating through various events like hover and click as below',
           file: 'rating/examples_options/RatingDemo_4',
         },
         {
           title: 'Specifying Color ',
-          discription: 'You can specify the color of an active star rating through <span>active-color</span> prop',
+          description: 'You can specify the color of an active star rating through <span>active-color</span> prop',
           file: 'rating/examples_style/RatingDemo_1',
         },
         {
           title: 'Inactive Color ',
-          discription: 'You can specify the color of an inactive star rating through <span>inactive-color</span> prop',
+          description: 'You can specify the color of an inactive star rating through <span>inactive-color</span> prop',
           file: 'rating/examples_style/RatingDemo_6',
         },
         {
           title: 'Size',
-          discription: 'You can specify the size if star by passing a value in <span>star-size</span> prop',
+          description: 'You can specify the size if star by passing a value in <span>star-size</span> prop',
           file: 'rating/examples_style/RatingDemo_2',
         },
         {
           title: 'Customising borders',
-          discription: 'You can change the border width of star by passing a value in the <span>border-width</span> prop, you can also use the rounded variation by setting <span>rounded-corners</span> prop true,',
+          description: 'You can change the border width of star by passing a value in the <span>border-width</span> prop, you can also use the rounded variation by setting <span>rounded-corners</span> prop true,',
           file: 'rating/examples_style/RatingDemo_3',
         },
         {
           title: 'Add Glow',
-          discription: 'You can add glow active star by passing a color in the <span>glow-color</span> prop',
+          description: 'You can add glow active star by passing a color in the <span>glow-color</span> prop',
           file: 'rating/examples_style/RatingDemo_4',
         },
         {
           title: 'Advance Styling',
-          discription: 'You can also use the right to left layout for stars by setting the <span>rtl</span> prop true',
+          description: 'You can also use the right to left layout for stars by setting the <span>rtl</span> prop true',
           file: 'rating/examples_style/RatingDemo_5',
         },
       ],

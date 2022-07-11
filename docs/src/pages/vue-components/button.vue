@@ -1,11 +1,11 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :demoList="$options.demoList" hasPlayground hasDocs>
     <button-best-demo />
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
     </template>
-    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
   </docs-page-layout>
 </template>
 
@@ -57,60 +57,60 @@ export default {
       id: 'basic-usage',
       title: 'Basic usage',
       file: 'button/ButtonDemo_Basic',
-      discription: 'Use the buttons with some basic and complex use cases by passing either classes or props eg. for link button, pass <span>--link-button</span> For disable button, set the <span>disable</span> prop to true.LightVue Button is Both compatible with Vue 2.x and Vue 3.x',
+      description: 'Use the buttons with some basic and complex use cases by passing either classes or props eg. for link button, pass <span>--link-button</span> For disable button, set the <span>disable</span> prop to true. LightVue Button is Both compatible with Vue 2.x and Vue 3.x',
     },
     {
       id: 'icon-button',
       title: 'Icon button',
       file: 'button/ButtonDemo_Icons',
-      discription: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+      description: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
     },
     {
       id: 'color',
       title: 'Colors',
-      discription: 'You can simply change color by changing the class name.You can set the values to suffix to <span>lv--</span>  <span>primary</span> <span>secondary</span> <span>success</span> <span>info</span> <span>warning</span> <span>help</span> <span>danger</span>,<span>complementary</span>',
+      description: 'You can simply change color by changing the class name.You can set the values to suffix to <span>lv--</span>  <span>primary</span> <span>secondary</span> <span>success</span> <span>info</span> <span>warning</span> <span>help</span> <span>danger</span>,<span>complementary</span>',
       file: 'button/ButtonDemo_Colors',
     },
     {
       id: 'text-button',
       title: 'Text button',
-      discription: 'You can set the button style to text by passing <span>--text-button</span> alongside with other variation classes ',
+      description: 'You can set the button style to text by passing <span>--text-button</span> alongside with other variation classes ',
       file: 'button/ButtonDemo_Text',
     },
     {
       id: 'outlined-button',
       title: 'Outlined button',
-      discription: 'You can set the button style to outlined by setting <span>outlined</span> prop to true.You can use other variation classes with it.',
+      description: 'You can set the button style to outlined by setting <span>outlined</span> prop to true.You can use other variation classes with it.',
       file: 'button/ButtonDemo_Outlined',
     },
     {
       id: 'rounded-buttons',
       title: 'Rounded button',
-      discription: 'The button style in Material Components can be styled to appear as though it’s been rounded off and thus creating a smoother feel. This can be achieved by simply setting the <span>rounded</span> prop to true like so:',
+      description: 'The button style in Material Components can be styled to appear as though it’s been rounded off and thus creating a smoother feel. This can be achieved by simply setting the <span>rounded</span> prop to true like so:',
       file: 'button/ButtonDemo_Rounded',
     },
     {
       id: 'button-size',
       title: 'Button size',
-      discription: 'You can customize size of the button by passing it through <span>size</span> prop. There are 5 different sizes avaliable: small, medium, large, extra large and x-large...You can set them as  <span>sm</span>,<span>md</span>,<span>lg</span>,<span>xl</span>',
+      description: 'You can customize size of the button by passing it through <span>size</span> prop. There are 5 different sizes avaliable: small, medium, large, extra large and x-large...You can set them as  <span>sm</span>,<span>md</span>,<span>lg</span>,<span>xl</span>',
       file: 'button/ButtonDemo_Sizes',
     },
     {
       id: 'button-group',
       title: 'Button group',
-      discription: 'You can group the buttons by wrapping them in <span>lv-buttonset</span> class. ',
+      description: 'You can group the buttons by wrapping them in <span>lv-buttonset</span> class. ',
       file: 'button/ButtonDemo_Group',
     },
     {
       id: 'push-button',
       title: 'Push button',
-      discription: 'By setting the style of a button to a <span>push</span> one, you can give it the appearance of a push button. In case there might be a need to provide further variations regarding the look and feel of your buttons (for example, you might want them to appear differently as they are being hovered or focused on), then we would recommend you read through this page',
+      description: 'By setting the style of a button to a <span>push</span> one, you can give it the appearance of a push button. In case there might be a need to provide further variations regarding the look and feel of your buttons (for example, you might want them to appear differently as they are being hovered or focused on), then we would recommend you read through this page',
       file: 'button/ButtonDemo_Raised',
     },
     {
       id: 'deep-shadow',
       title: 'Deep shadow',
-      discription: 'You can use some Miscellaneous button variation by passing <span>deep-shadow</span> prop with other variations like <span>push</span> prop',
+      description: 'You can use some Miscellaneous button variation by passing <span>deep-shadow</span> prop with other variations like <span>push</span> prop',
       file: 'button/ButtonDemo_Shadow',
     },
     {

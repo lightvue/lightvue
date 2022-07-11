@@ -3,7 +3,7 @@
     <TextEditorBestDemo />
 
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -47,7 +47,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'text-editor/TextEditorDemo',
-          discription: 'You can use the <span>LvTextEditor</span> as follows:',
+          description: 'You can use the <span>LvTextEditor</span> as follows:',
         },
       ],
     };

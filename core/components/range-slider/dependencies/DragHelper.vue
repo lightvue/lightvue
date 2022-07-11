@@ -7,7 +7,7 @@ import { relativeMouseOffset } from './utils';
 
 export default {
   mixins: [DocumentEventHelper],
-
+  emits: ['drag', 'dragstart', 'dragend'],
   props: {
     disabled: Boolean,
   },

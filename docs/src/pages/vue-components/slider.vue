@@ -3,7 +3,7 @@
     <SliderBestDemo></SliderBestDemo>
 
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -47,33 +47,32 @@ export default {
         {
           title: 'Basic Usage',
           file: 'slider/SliderDemo',
-          discription: 'Use the <span>LvRangeSlider</span> with some basic and complex use cases by passing either classes or props.LightVue slider is Both compatible with Vue 2.x and Vue 3.x',
-         
+          description: 'Use the <span>LvRangeSlider</span> with some basic and complex use cases by passing either classes or props. LightVue slider is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Custom Range',
           file: 'slider/SliderDemo_CustomRange',
-          discription: 'You can set the Custom range to the slider by Combining the minimum and maximum values through <span>min</span> & <span>max</span> props.',
+          description: 'You can set the Custom range to the slider by Combining the minimum and maximum values through <span>min</span> & <span>max</span> props.',
         },
         {
           title: 'Floating label',
           file: 'slider/SliderDemo_Label',
-          discription: 'You can show/hide the floating label which contains the value by setting <span>showValue</span> prop. Default value is true',
+          description: 'You can show/hide the floating label which contains the value by setting <span>showValue</span> prop. Default value is true',
         },
         {
           title: 'Set Slider Color',
           file: 'slider/SliderDemo_CustomColor',
-          discription: 'You can Change the slider color by passing a string in <span>sliderColor</span> prop.Default value is #607c8a',
+          description: 'You can Change the slider color by passing a string in <span>sliderColor</span> prop.Default value is #607c8a',
         },
         {
           title: 'Set Track Color',
           file: 'slider/SliderDemo_Color',
-          discription: 'You can Change the Track color by passing a string in <span>trackColor</span> prop.Default value is #e2e2e2',
+          description: 'You can Change the Track color by passing a string in <span>trackColor</span> prop.Default value is #e2e2e2',
         },
         {
           title: 'Step',
           file: 'slider/SliderDemo_Step',
-          discription: 'You can Change the step count by passing a number in <span>step</span> prop.',
+          description: 'You can Change the step count by passing a number in <span>step</span> prop.',
         },
       ],
     };

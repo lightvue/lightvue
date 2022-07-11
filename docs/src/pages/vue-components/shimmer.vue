@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
 
     <template #api>
@@ -44,51 +44,51 @@ export default {
         {
           title: 'Basic Usage',
           file: 'shimmers/examples/ShimmersDemoBasic',
-          discription: 'You can use the shimmers Loader for various purpose like loading animations or space-filler etc.LightVue comes with some stunning designs for shimmers loaders.There are different types of shimmers are present in lightVue you can go through this page for more info.You can customize the LightVue Shimmer in various ways.LightVue Shimmer Loaders is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can use the shimmers Loader for various purpose like loading animations or space-filler etc. LightVue comes with some stunning designs for shimmers loaders.There are different types of shimmers are present in lightVue you can go through this page for more info.You can customize the LightVue Shimmer in various ways. LightVue Shimmer Loaders is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Adjusting height & width',
           file: 'shimmers/examples/ShimmersDemo_dimension',
-          discription: 'You can change the height and width of shimmer by passing value in <span> height </span> and <span> width </span> props respectively.',
+          description: 'You can change the height and width of shimmer by passing value in <span> height </span> and <span> width </span> props respectively.',
         },
         {
           title: 'Colors',
-          discription: 'You can change the primaryColor and secondaryColor of shimmer by passing value in <span> primaryColor </span> and <span> secondaryColor </span> props respectively.',
+          description: 'You can change the primaryColor and secondaryColor of shimmer by passing value in <span> primaryColor </span> and <span> secondaryColor </span> props respectively.',
           file: 'shimmers/examples/ShimmersDemo_color',
         },
         {
           title: 'Opacity',
-          discription: 'You can change the primaryOpacity and secondaryOpacity of shimmer by passing value in <span> primaryOpacity </span> and <span> secondaryOpacity </span> props respectively',
+          description: 'You can change the primaryOpacity and secondaryOpacity of shimmer by passing value in <span> primaryOpacity </span> and <span> secondaryOpacity </span> props respectively',
           file: 'shimmers/examples/ShimmersDemo_opacity',
         },
         {
           title: 'Speed',
-          discription: 'You can change the speed of animation by passing value in  <span> speed </span> prop.',
+          description: 'You can change the speed of animation by passing value in  <span> speed </span> prop.',
           file: 'shimmers/examples/ShimmersDemo_speed',
         },
         {
           title: 'Disable Animation',
-          discription: 'You can change the disable the animation by setting <span> animate </span> prop false.',
+          description: 'You can change the disable the animation by setting <span> animate </span> prop false.',
           file: 'shimmers/examples/ShimmersDemo_animate',
         },
         {
           title: 'Code Loader',
-          discription: 'LightVue comes with some preset for shimmer loaders.<span>lv-code-loader</span> is one of them you can custmize it in the same way as shimmers',
+          description: 'LightVue comes with some preset for shimmer loaders.<span>lv-code-loader</span> is one of them you can custmize it in the same way as shimmers',
           file: 'shimmers/examples/ShimmersDemo__CodeLoader',
         },
         {
           title: 'List Loader',
-          discription: 'LightVue comes with some preset for shimmer loaders.<span>lv-list-loader</span> is one of them you can custmize it in the same way as shimmers ',
+          description: 'LightVue comes with some preset for shimmer loaders.<span>lv-list-loader</span> is one of them you can custmize it in the same way as shimmers ',
           file: 'shimmers/examples/ShimmersDemo__ListLoader',
         },
         {
           title: 'Card List',
-          discription: 'LightVue comes with some preset for shimmer loaders.<span>lv-card-list</span> is one of them you can custmize it in the same way as shimmers ',
+          description: 'LightVue comes with some preset for shimmer loaders.<span>lv-card-list</span> is one of them you can custmize it in the same way as shimmers ',
           file: 'shimmers/examples/ShimmersDemo__CardList',
         },
         {
           title: 'Custom Loaders',
-          discription: 'LightVue comes with some preset for shimmer loaders.<span>lv-skeleton</span> is one of them you can custmize it in the same way as shimmers ',
+          description: 'LightVue comes with some preset for shimmer loaders.<span>lv-skeleton</span> is one of them you can custmize it in the same way as shimmers ',
           file: 'shimmers/examples/ShimmersDemo__Basic',
         },
       ],

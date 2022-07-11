@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
 
     <template #api>
@@ -45,12 +45,12 @@ export default {
         {
           title: 'Basic usage',
           file: 'ripple/RippleBasicDemo',
-          discription: 'You can use the ripple custom directive <span>v-ripple</span> for creating material effect.LightVue Ripple bar is Both compatible with Vue 2.x and Vue 3.x.',
+          description: 'You can use the ripple custom directive <span>v-ripple</span> for creating material effect. LightVue Ripple bar is Both compatible with Vue 2.x and Vue 3.x.',
         },
         {
           title: 'Modifying color',
           file: 'ripple/RippleColorDemo',
-          discription: 'you can set the color of repple by overwriting a <span>lv-ink</span> class.',
+          description: 'you can set the color of repple by overwriting a <span>lv-ink</span> class.',
         },
       ],
     };

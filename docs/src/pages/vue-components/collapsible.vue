@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -44,12 +44,12 @@ export default {
         {
           title: 'Basic',
           file: 'collapsible/AccordianDemo',
-          discription: 'You can hide or show the collapsible container by setting <span>show</span> prop true or false.You can also set the oriantation through <span>orientation</span> prop default value is vertical you can set it to horizontal.LightVue collapsible is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can hide or show the collapsible container by setting <span>show</span> prop true or false.You can also set the oriantation through <span>orientation</span> prop default value is vertical you can set it to horizontal. LightVue collapsible is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Nested',
           file: 'collapsible/CollapsibleDemo',
-          discription: 'You can also nest collapsibe inside collapsibe',
+          description: 'You can also nest collapsibe inside collapsibe',
         },
       ],
     };

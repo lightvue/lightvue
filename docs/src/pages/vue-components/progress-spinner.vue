@@ -1,7 +1,7 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <template v-for="(demo, i) in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -43,21 +43,21 @@ export default {
         {
           title: 'Size',
           file: 'progressspinner/ProgressSpinnerSizeDemo',
-          discription: 'You can use the LightVue spinner for various purpose like  loading animations or space-filler etc. LightVue comes with some stunning designs for spinners and it is highly customizable.You can also specify the size of spinner by pasing a value with its unit in <span>size</span> prop.LightVue Progress bar is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
+          description: 'You can use the LightVue spinner for various purpose like  loading animations or space-filler etc. LightVue comes with some stunning designs for spinners and it is highly customizable.You can also specify the size of spinner by pasing a value with its unit in <span>size</span> prop. LightVue Progress bar is Both compatible with Vue <span>3.x</span> and Vue <span>2.x</span>',
         },
         {
           title: 'Color',
           file: 'progressspinner/ProgressSpinnerColorDemo',
-          discription: 'You can also set the color for spinner by passing a string into <span>color</span> prop',
+          description: 'You can also set the color for spinner by passing a string into <span>color</span> prop',
         },
         {
           title: 'Stroke-width',
-          discription: 'You can also set the stroke width of spinner by passing a value in <span>strokeWidth</span> prop',
+          description: 'You can also set the stroke width of spinner by passing a value in <span>strokeWidth</span> prop',
           file: 'progressspinner/ProgressSpinnerStrokeDemo',
         },
         {
           title: 'Animation-duration',
-          discription: 'You can change The animation duration for spinner by passing a value in <span>animationDuration</span> prop ',
+          description: 'You can change The animation duration for spinner by passing a value in <span>animationDuration</span> prop ',
           file: 'progressspinner/ProgressSpinnerDurationDemo',
         },
       ],

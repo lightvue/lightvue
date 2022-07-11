@@ -3,7 +3,7 @@
     <!-- <docs-card-vue title="Basic" file="checkbox/CheckboxDemo" /> -->
     <checkbox-best-demo type="radio"></checkbox-best-demo>
     <template v-for="demo in demos">
-      <docs-card-vue :title="demo.title" :discription="demo.discription" :file="demo.file" :id="demo.id" />
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -46,33 +46,33 @@ export default {
         {
           title: 'Basic',
           file: 'checkbox/CheckboxDemo_Basic',
-          discription: 'You can use the checkbox with various predefined colors by passing them in <span>color</span> prop, avaliable colors are <span>sucess</span>,<span>warning</span>,<span>primary</span>,<span>info</span>,<span>danger</span>. You can set the corners of checkbox to round by setting <span>rounded</span> prop to true.you can change the appearence of checkbox through <span>thick</span>,<span>filled</span>,<span>plain</span>,<span>smooth</span>.LightVue radio is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can use the checkbox with various predefined colors by passing them in <span>color</span> prop, avaliable colors are <span>sucess</span>,<span>warning</span>,<span>primary</span>,<span>info</span>,<span>danger</span>. You can set the corners of checkbox to round by setting <span>rounded</span> prop to true.you can change the appearence of checkbox through <span>thick</span>,<span>filled</span>,<span>plain</span>,<span>smooth</span>. LightVue radio is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'With Animations',
           file: 'checkbox/CheckboxDemo_Animation',
-          discription: 'You can use the checkbox with various predefined  Transitions by setting <span>smooth</span>,<span>pulse</span> props to true',
+          description: 'You can use the checkbox with various predefined  Transitions by setting <span>smooth</span>,<span>pulse</span> props to true',
         },
         {
           title: 'Radio',
           file: 'checkbox/CheckboxDemo_Radio',
-          discription: 'You can use the checkbox component as a <span>Radio</span> by setting <span>type</span> prop to <span>radio</span> all the other variations you use with the checkbox you can use them with radio also in the same way ',
+          description: 'You can use the checkbox component as a <span>Radio</span> by setting <span>type</span> prop to <span>radio</span> all the other variations you use with the checkbox you can use them with radio also in the same way ',
         },
 
         {
           title: 'Disabled',
           file: 'checkbox/CheckboxDemo_Disabled',
-          discription: 'You can use the checkbox to Disable by passing <span>disabled</span> prop to true',
+          description: 'You can use the checkbox to Disable by passing <span>disabled</span> prop to true',
         },
         {
           title: 'With Icons',
           file: 'checkbox/CheckboxDemo_Icons',
-          discription: 'You can use the icons with checkbox by passing then in the slot and setting <span>icon</span> prop to true',
+          description: 'You can use the icons with checkbox by passing then in the slot and setting <span>icon</span> prop to true',
         },
         {
           title: 'Scalable sizes',
           file: 'checkbox/CheckboxDemo_Size',
-          discription: 'You can set the checkbox size by wrapping it inside a element',
+          description: 'You can set the checkbox size by wrapping it inside a element',
         },
       ],
     };

@@ -157,7 +157,7 @@ export default {
     &:hover {
       color: black;
       padding: 10px;
-      background: #dfdfdf;
+      background: #edf2f6;
     }
   }
 }
