@@ -35,6 +35,7 @@ import { trueValueMixin, preventBrowserBackMixin } from 'lightvue/mixins';
 export default {
   inheritAttrs: false,
   mixins: [trueValueMixin, preventBrowserBackMixin],
+  emits: ['hide', 'show', 'close'],
   props: {
     header: null,
     footer: null,
