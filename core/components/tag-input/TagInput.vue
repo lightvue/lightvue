@@ -21,7 +21,7 @@
 <script>
 import LvInput from 'lightvue/input';
 import { localValueMixin, optionsMixin } from '../../mixins';
-export default{
+export default {
   name:'LvTagInput',
   mixins: [localValueMixin,optionsMixin],
   props:{

@@ -52,48 +52,47 @@ export default {
     TagInputBestDemo,
   },
   title: 'Tag Input',
-  description: `Take array of inputs  `,
+  description: `Take array of inputs, we can allows you to add, remove, manager, manipulate tags and tokens. `,
   packageName: 'tag-input',
   componentName: 'LvTagInput',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
-  apiData: BadgeAPI, // iska kuch kaam nhi h remove kar sakte h
-  TagInputAPI, // API me hum kya kya use karte h uske liye h
+  apiData: TagInputAPI,
   demoList: [
-    {
-      id: 'Best',
-      title: 'Best',
-      file: 'tag-input/TagInputDemo',
-      description: 'You can use the checkbox with various predefined colors by passing them in <span>color</span> prop, avaliable colors are <span>sucess</span>,<span>warning</span>,<span>primary</span>,<span>info</span>,<span>danger</span>. You can set the corners of checkbox to round by setting <span>rounded</span> prop to true.you can change the appearence of checkbox through <span>thick</span>,<span>filled</span>,<span>plain</span>,<span>smooth</span>. LightVue checkbox is Both compatible with Vue 2.x and Vue 3.x',
-    },
+    // {
+    //   id: 'Best',
+    //   title: 'Best',
+    //   file: 'tag-input/TagInputDemo',
+    //   description: 'Best Usage',
+    // },
     {
       id: 'Basic',
-      title: 'Basic',
+      title: 'Basic Usage',
       file: 'tag-input/TagInputDemo_Basic',
-      description: 'Basic Usage',
+      description: 'Basic Usage of Tag Input',
     },
     {
       id: 'Rounded',
       title: 'Rounded',
       file: 'tag-input/TagInputDemo_Rounded',
-      description: 'Basic Usage TagInputDemo_Rounded',
+      description: 'The tag input style in Material Components can be styled to appear as though it’s been rounded off and thus creating a smoother feel. This can be achieved by simply setting the rounded prop to true like so:',
     },
     {
       id: 'Custom',
       title: 'Custom',
       file: 'tag-input/TagInputDemo_CustomTagInput',
-      description: 'Basic Usage TagInputDemo_CustomTagInput',
+      description: 'You can use CustomTagInput for creating a custom tag input as per your prefrences. You can add any <span>icon</span> or <span>background color</span> and even the <span>text color</span> of the tag input. ',
     },
     {
       id: 'Array-of-Strings',
       title: 'Array of Strings',
       file: 'tag-input/TagInputDemo_ArrayOfStrings',
-      description: 'Basic Usage TagInputDemo_ArrayOfStrings',
+      description: 'By default we pass the <span>tag input</span> as <span>array of strings</span>. ',
     },
     {
       id: 'Array-of-Objects',
       title: 'Array of Objects',
       file: 'tag-input/TagInputDemo_ArrayOfObjects',
-      description: 'Basic Usage TagInputDemo_ArrayOfObjects',
+      description: 'For custom usage we can use <span>tag input</span> as <span>array of objects</span> where we need to define the <span>label</span> and its corresponding <span>value</span> like .',
     },
   ],
 };
