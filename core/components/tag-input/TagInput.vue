@@ -1,6 +1,6 @@
 <template>
   <div class="lv-tag__input">
-  <lv-input v-bind="$attrs" :rounded="rounded" :editable="false">
+  <lv-input v-bind="$attrs" :rounded="rounded" :editable="false" bottomBar>
       <template #prepend>
       <slot name="prepend">
       </slot>

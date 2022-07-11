@@ -41,21 +41,21 @@ export default{
 </script>
 
 <style lang="scss">
-.custom-tag{
-  display: flex;
-  gap: 0.3rem;
-  align-items: center;
-  justify-content: space-around;
-  background: rgb(0, 119, 255);
-  color:#fff;
-  border-radius: 10px;
-  padding:0 0.5rem ;
-  cursor: pointer;
-}
+// .custom-tag{
+//   display: flex;
+//   gap: 0.3rem;
+//   align-items: center;
+//   justify-content: space-around;
+//   background: rgb(0, 119, 255);
+//   color:#fff;
+//   border-radius: 10px;
+//   padding:0 0.5rem ;
+//   cursor: pointer;
+// }
 
-.delete-icon {
-  padding: 0.2rem;
-  border-radius: 1rem;
-  background:rgb(0, 94, 201) ;
-}
+// .delete-icon {
+//   padding: 0.2rem;
+//   border-radius: 1rem;
+//   background:rgb(0, 94, 201) ;
+// }
 </style>
