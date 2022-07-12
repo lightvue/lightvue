@@ -2,7 +2,6 @@
   <div @click="showPopover" @mouseenter="showHover" @mouseleave="hideHover">
     <div :class="wrapperClass" class="popover" ref="parent">
       <slot name="anchor"></slot>
-
       <transition :duration="{ enter: 300, leave: 300 }" name="fade" @enter="enterPopover">
         <div v-if="isShow || modelValue">
           <!-- <div class="popover-overlay" @click.stop="hidePopover" v-if="!hover"></div> -->
@@ -74,7 +73,6 @@ export default {
     },
     popoverClass() {
       this.positionClass = `arrow-position-${this.computedPlacement}`;
-
       return [];
     },
     computedStyle() {
@@ -101,7 +99,7 @@ export default {
       }
     },
     closePopover(e) {
-      if (!this.$refs.popover.contains(e.target)) this.hidePopover();
+      if (this.$refs.popover && !this.$refs.popover.contains(e.target)) this.hidePopover();
     },
 
     hidePopover() {
@@ -157,8 +155,6 @@ export default {
         }
       }
       this.positionClass = `arrow-position-${this.computedPlacement}`;
-
-      console.log(this.positionClass, this.computedPlacement);
     },
     setLeft(contentOffsetTop, contentOffsetLeft, contentHeight) {
       this.computedPlacement = 'left';
