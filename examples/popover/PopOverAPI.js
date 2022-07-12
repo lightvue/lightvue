@@ -30,24 +30,6 @@ const PopOverAPI = {
       default: '70vh',
       description: 'Configures The height of a Popover.',
     },
-    {
-      name: 'ariaCloseLabel',
-      type: 'String',
-      default: 'close',
-      description: 'Configures the close label.',
-    },
-    {
-      name: 'alignRight',
-      type: 'Boolean',
-      default: 'false',
-      description: 'Configures if the overlay panel should be aligned to right or not.',
-    },
-    {
-      name: 'closeOnResize',
-      type: 'Boolean',
-      default: 'false',
-      description: 'Configures if the overlay panel should be closed when resized.',
-    },
   ],
   // events: [
   //   {
