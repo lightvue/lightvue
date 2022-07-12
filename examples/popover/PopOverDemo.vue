@@ -1,14 +1,14 @@
-0
 <template>
-  <div class="test-content">
-    <LvButton label="ToggleVis" @click.stop="toggleVisibility" />
-
-    <LvPopOver :offset="10" placement="top" v-model="visibility" target=".header-logo">
-      <LvButton label="Bottom" class="lv--primary" />
-    </LvPopOver>
+  <div class="lv-demo_layout">
     <LvPopOver :offset="10" placement="top">
       <template #anchor>
         <LvButton label="Top" class="lv--primary" />
+      </template>
+      <LvButton label="Submit" class="lv--primary" />
+    </LvPopOver>
+    <LvPopOver :offset="10" placement="Bottom">
+      <template #anchor>
+        <LvButton label="bottom" class="lv--primary" />
       </template>
       <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
@@ -51,51 +51,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.test-content {
+.lv-demo_layout {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-
 .d-flex {
   width: auto;
   display: flex;
   justify-content: space-between;
-}
-
-.show-from-bottom-enter-active,
-.show-from-bottom-leave-active {
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.show-from-bottom-enter,
-.show-from-bottom-leave-to {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-// Show from left transition
-
-.show-from-left-enter-active,
-.show-from-left-leave-active {
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.show-from-left-enter,
-.show-from-left-leave-to {
-  opacity: 0;
-  transform: translate(-20px);
-}
-
-// Show from right transition
-
-.show-from-right-enter-active,
-.show-from-right-leave-active {
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.show-from-right-enter,
-.show-from-right-leave-to {
-  opacity: 0;
-  transform: translate(20px);
 }
 </style>
