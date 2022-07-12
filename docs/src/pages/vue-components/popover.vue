@@ -1,7 +1,6 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <docs-card-vue title="Basic" file="popover/PopOverDemo" overflow />
-    <docs-card-vue title="Hover" file="popover/PopOverHoverDemo" overflow />
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasDocs>
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <docs-all-api :api-data="$options.apiData" />
@@ -45,10 +44,30 @@ export default {
     DocsAllApi,
   },
   title: 'PopOver',
-  description: `Lv Dialog helps the user to have modal and additional dialog box with their data.`,
+  description: ``,
   packageName: 'popover',
   componentName: 'LvPopOver',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
   apiData: PopOverAPI,
+  demoList: [
+    {
+      id: 'basic-usage',
+      title: 'Basic usage',
+      file: 'popover/PopOverDemo',
+      description: '',
+    },
+    {
+      id: 'popover-hover',
+      title: 'On Hover',
+      file: 'popover/PopOverHoverDemo',
+      description: '',
+    },
+    {
+      id: 'popover-model-value',
+      title: 'External Target',
+      file: 'popover/PopOverVModel',
+      description: '',
+    },
+  ],
 };
 </script>
