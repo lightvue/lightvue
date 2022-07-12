@@ -22,6 +22,24 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import GlassCardAPI from 'lightvueDocs/example/glasscard/GlassCardAPI';
 
 export default {
+  head: {
+    title: ' GlassmorphicCard Documentation | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: ' GlassmorphicCard Documentation | LightVue ',
+      },
+      {
+        property: 'og:description',
+        content: 'Glass Card components can be used as elegant containers/wrappers for placing content over images.',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCardVue,
     DocsCard,

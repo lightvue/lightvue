@@ -4,7 +4,7 @@
       <lv-input v-bind="allOptions" />
       <template #props>
         <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating Label" v-if="!allOptions['icon-left'] && !allOptions['Placeholder']" /> <br />
-        <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
+        <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Bottom Bar" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
         <br />
         <lv-input v-model="allOptions.label" label="Label" /> <br />
@@ -37,11 +37,11 @@ export default {
     return {
       allOptions: {
         'floating-label': false,
-        'bottom-bar': false,
+        'bottom-bar': true,
         rounded: false,
-        placeholder: 'default color rgba(0, 0, 0, 0.3)',
-        'help-text': 'You can create your Component',
-        label: 'This is the best demo',
+        placeholder: 'Acme Corp.',
+        'help-text': 'Place where you work...',
+        label: 'Organization Name',
         'placeholder-color': 'rgba(0, 0, 0, 0.3)',
         'icon-left': 'light-icon-search',
         'icon-right': 'light-icon-arrow-up-right-circle',

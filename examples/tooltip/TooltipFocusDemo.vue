@@ -1,14 +1,7 @@
 <template>
-  <div class="tooltip-example-wrapper">
-    <!-- <div>
-                <LvInput type="text" placeholder="Click to focus" v-tooltip.bottom.focus="'Tooltip message'" />
-            </div> -->
-    <div>
-      <input type="text" placeholder="Click to focus" v-tooltip.bottom.focus="'Tooltip message'" />
-    </div>
-    <div>
-      <input type="text" placeholder="Click to focus" v-tooltip.top.focus="'Tooltip message'" />
-    </div>
+  <div class="lv-demo_layout">
+    <input type="text" placeholder="Click to focus" v-tooltip.bottom.focus="'Tooltip message'" />
+    <input type="text" placeholder="Click to focus" v-tooltip.top.focus="'Tooltip message'" />
   </div>
 </template>
 
@@ -22,38 +15,30 @@ export default {
 </script>
 
 <style scoped>
-.tooltip-example-wrapper > div {
-  display: inline-block;
-  width: 40%;
-  min-width: 300px;
-  margin-left: 100px;
-  margin-bottom: 60px;
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
-
-.tooltip-example-wrapper > div input {
+input {
   padding: 8px;
   background-color: #edf2f7;
   border: none;
-  width: 100%;
+  width: 30%;
   border-radius: 4px;
+
   border: solid 3px rgba(0, 0, 0, 0);
   transition: all 0.2s;
 }
 
-.tooltip-example-wrapper > div input::placeholder {
+.tooltip-example-wrapper > input::placeholder {
   opacity: 0.7;
 }
 
-.tooltip-example-wrapper > div input:focus {
+.tooltip-example-wrapper > input:focus {
   outline: none;
   border: solid 3px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 650px) {
-  .tooltip-example-wrapper > div {
-    margin-left: 0px;
-    width: 100%;
-    min-width: 0;
-  }
 }
 </style>

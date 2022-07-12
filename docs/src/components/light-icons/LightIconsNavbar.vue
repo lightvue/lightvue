@@ -1,12 +1,31 @@
 <template>
   <div class="page-nav__tabs">
-    <nuxt-link :to="{ hash: '' }" class="page-nav__tab"> Icons </nuxt-link>
-    <nuxt-link :to="{ hash: 'docs' }" class="page-nav__tab"> Installation </nuxt-link>
+    <div class="page-nav__tab" :class="{ active: selectedTab === 'icons' }" @click="selectTab('icons')">Icons</div>
+    <div class="page-nav__tab" :class="{ active: selectedTab === 'api' }" @click="selectTab('api')">Installation</div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      selectedTab: 'icons', //'api'
+    };
+  },
+  created() {
+    if (this.$route.hash?.includes('docs')) {
+      this.selectedTab = 'api';
+    } else {
+      this.selectedTab = 'icons';
+    }
+  },
+  methods: {
+    selectTab(newTab) {
+      this.selectedTab = newTab;
+      this.$router.push({ hash: newTab === 'api' ? '#docs' : '' });
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -32,8 +51,7 @@ export default {};
     &:hover {
       background: #edf2f6;
     }
-    &.active,
-    &.nuxt-link-exact-active {
+    &.active {
       background-color: #607c8a !important;
       color: #fff !important;
     }

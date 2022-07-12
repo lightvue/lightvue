@@ -36,7 +36,7 @@ export default {
       allOptions: {
         color: '#000000',
         theme: '#ffffff',
-        menu: ['Bold', 'Italic', 'Strikethrough', 'Heading 1', 'Heading 2', 'Align', 'Link', 'List'],
+        menu: ['Bold', 'Italic', 'Strikethrough', 'Code', 'Link', 'List', 'Image'],
       },
       menu: ['Bold', 'Italic', 'Strikethrough', 'Underline', 'Heading 1', 'Heading 2', 'Align', 'Link', 'Code', 'List', 'Image'],
       stringProps: ['color', 'theme'],

@@ -1,7 +1,7 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-textarea v-bind="allOptions" />
+      <lv-textarea v-bind="allOptions" style="width: 100%" />
       <template #props>
         <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating Label" v-if="!allOptions['icon-left'] && !allOptions['placeholder']" /> <br />
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />

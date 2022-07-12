@@ -1,14 +1,6 @@
 <template>
   <div>
-    <h3>Default</h3>
-    <lv-rating></lv-rating>
-
-    <h5>Increment: 0.5 (half-stars)</h5>
-    <lv-rating :increment="0.5"></lv-rating>
-    <h5>Increment: 0.25 (quarter-stars)</h5>
-    <lv-rating :increment="0.25"></lv-rating>
-    <h5>Increment: 0.01 (fluid-rating)</h5>
-    <lv-rating :increment="0.01"></lv-rating>
+    <lv-rating :star-size="40"></lv-rating>
   </div>
 </template>
 

@@ -7,6 +7,7 @@
       '--mobile': getDrawerPosition,
       '--moving': isMoving,
       '--absolute': absolute,
+      '--no-backdrop': noBackdrop,
     }"
     :style="{
       zIndex: zIndex,
@@ -17,7 +18,7 @@
     <aside class="wrapper__drawer-container" :style="getDrawerStyle" ref="drawer">
       <div class="touch-dragger" v-if="getDrawerPosition" @touchstart.prevent="handleTouchStart" @touchmove.prevent="handleTouchMove" @touchend.prevent="handleTouchEnd"></div>
       <!-- Header -->
-      <div class="drawer-container__header" ref="drawerHeader" :style="getHeaderStyle" v-if="headerTitle || close">
+      <div class="drawer-container__header" ref="drawerHeader" :style="getHeaderStyle" v-if="headerTitle || close || $slots.customHeader">
         <div v-if="!$slots.customHeader" class="header__title">
           {{ headerTitle }}
         </div>
@@ -39,8 +40,8 @@
       @click="drawerClose"
       :style="{
         zIndex: zIndex - 1,
-        backdropFilter: backdropBlur && 'blur(2px)',
-        opacity: backdropOpacity,
+        backdropFilter: backdropBlur && 'blur(5px)',
+        filter: `${backdropBlur ? 'blur(5px) ' : ''}opacity(${backdropOpacity})`,
       }"
     ></div>
   </div>
@@ -82,8 +83,8 @@ export default {
     customStyle: Object,
     headerTitle: String,
     backdropOpacity: {
-      type: String,
-      default: '0.3',
+      type: Number,
+      default: 0.3,
     },
     absolute: {
       type: Boolean,
@@ -190,7 +191,6 @@ export default {
       this.timeOutID = setTimeout(() => {
         this.drawerHeight = this.getHeight; // in px
         this.snap = this.drawerHeight;
-        console.log('changed');
       }, 250);
     },
     handleOnBrowserBack() {
@@ -284,8 +284,7 @@ export default {
     // },
     modelValue(value) {
       // this.drawer = value;
-      value == true ? (document.documentElement.style.overflow = 'hidden') : (document.documentElement.style.overflow = 'overlay');
-      //
+      value == true ? (document.documentElement.style.overflow = this.noBackdrop ? 'auto' : 'hidden') : (document.documentElement.style.overflow = 'overlay');
       if (value === true) {
         this.preventPopstate(); // from Mixin
       } else {

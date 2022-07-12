@@ -1,16 +1,10 @@
 <template>
   <div class="card-demo-wrapper">
     <div class="card-demo">
-      <LvCard> <div v-html="dummyContent('default (4px)')"></div> </LvCard>
-    </div>
-    <div class="card-demo">
       <LvCard borderRadius="0px"> <div v-html="dummyContent('borderRadius = 0px')"></div> </LvCard>
     </div>
     <div class="card-demo">
       <LvCard borderRadius="10px"> <div v-html="dummyContent('borderRadius = 10px')"></div> </LvCard>
-    </div>
-    <div class="card-demo">
-      <LvCard borderRadius="20px"> <div v-html="dummyContent('borderRadius = 20px')"></div> </LvCard>
     </div>
   </div>
 </template>
@@ -46,7 +40,7 @@ export default {
 }
 
 .card-demo {
-  height: 400px;
+  height: 300px;
   width: 300px;
   margin: 30px;
 }
@@ -60,6 +54,10 @@ export default {
 @media (max-width: 500px) {
   .card-demo h4 > span {
     display: block;
+  }
+  .card-demo {
+    height: 100%;
+    width: 100%;
   }
 }
 

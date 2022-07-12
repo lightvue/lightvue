@@ -6,9 +6,9 @@
       </div>
       <!-- <div class="section-lighticons__background"></div> -->
       <div class="section-lighticons__content">
-        <div class="section-lighticons__content-heading">Packed with premium collection of light icons</div>
+        <div class="section-lighticons__content-heading">Packed with Premium Collection of LIGHT ICONS</div>
         <br />
-        <div class="section-lighticons__content-description">Your imagination has no boundaries and so does our handpicked collection of premium &amp; light-weighted icons. Explore and choose icons from the vast landscape of Light-Icons.</div>
+        <div class="section-lighticons__content-description">Your imagination has no boundaries and so does our handpicked collection of premium &amp; light-weighted icons. Explore and choose icons from the vast landscape of <strong>LIGHT ICONS</strong>.</div>
         <br />
         <br />
         <nuxt-link :to="{ hash: 'contact' }" class="page-button --dark">Know More</nuxt-link>
@@ -62,10 +62,14 @@ export default {};
     }
     .section-lighticons__content-description {
       font-size: 20px;
-      line-height: 26px;
+      line-height: 30px;
       opacity: 0.7;
+      font-weight: 300;
       color: #143a56;
-      margin-bottom: 0.78em;
+      margin-bottom: 0.5em;
+      strong {
+        font-weight: 500;
+      }
     }
   }
 }
