@@ -1,6 +1,6 @@
 <template>
   <div class="lv-demo_layout">
-    <LvPopOver :offset="10" placement="top">
+    <LvPopOver v-bind="allOptions" :offset="10" placement="top">
       <template #anchor>
         <LvButton label="Top" class="lv--primary" />
       </template>
@@ -26,17 +26,27 @@
       </template>
       <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
+    <Lv-colorpicker class="backgroundColor" v-model="allOptions['backgroundColor']" label="Background Color" />
+
   </div>
 </template>
 
 <script>
 import LvPopOver from 'lightvue/popover';
+import LvColorpicker from 'lightvue/color-picker';
+
 export default {
   components: {
     LvPopOver,
+    LvColorpicker,
   },
   data() {
     return {
+      allOptions:{
+        backgroundColor: '#FFFFFF',
+      },
+      stringProps: ['backgroundColor'],
+
       visibility: false,
     };
   },
@@ -61,5 +71,9 @@ export default {
   width: auto;
   display: flex;
   justify-content: space-between;
+}
+.backgroundColor{
+      margin-top: -26px;
+    margin-left: 26px;
 }
 </style>

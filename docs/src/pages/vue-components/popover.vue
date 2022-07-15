@@ -1,5 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasDocs>
+    <PopOverDemoBest />
     <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -16,10 +17,11 @@ import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 import PopOverAPI from 'lightvueDocs/example/popover/PopOverAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
+import PopOverDemoBest from 'lightvueDocs/example/popover/PopOverDemoBest.vue';
 
 export default {
   head: {
-    title: 'LightVue | Dialog ',
+    title: 'Pop Over | LightVue',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -37,6 +39,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   components: {
+    PopOverDemoBest,
     DocsCardVue,
     DocsCard,
     GettingStarted,
@@ -44,7 +47,7 @@ export default {
     DocsAllApi,
   },
   title: 'PopOver',
-  description: ``,
+  description: 'The Popover component is similar to tooltips; it is a pop-up box that appears when the user clicks on an element. The difference is that the popover can contain much more content.',
   packageName: 'popover',
   componentName: 'LvPopOver',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
@@ -54,19 +57,19 @@ export default {
       id: 'basic-usage',
       title: 'Basic usage',
       file: 'popover/PopOverDemo',
-      description: '',
+      description: 'Four options are available: <span>top, right, bottom, and left </span> aligned. You can also define the choice of color that you want to the PopOver using <span>Background Color</span> as <span>prop</span>. ',
     },
     {
       id: 'popover-hover',
       title: 'On Hover',
       file: 'popover/PopOverHoverDemo',
-      description: '',
+      description: 'PopOver using <span>hover</span> property.',
     },
     {
       id: 'popover-model-value',
       title: 'External Target',
       file: 'popover/PopOverVModel',
-      description: '',
+      description: 'Using PopOver Model External Target you can target any location on the webpage for showing a PopModel.',
     },
   ],
 };

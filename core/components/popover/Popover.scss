@@ -31,7 +31,7 @@ $pointer-size: 7px;
 
   overflow: initial;
   z-index: $popover-z-index;
-  &.arrow-position-bottom:before {
+  &.arrow-position-Bottom:before {
     content: '';
     position: absolute;
     border-left: $pointer-size solid transparent;

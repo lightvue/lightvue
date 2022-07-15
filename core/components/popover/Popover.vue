@@ -49,6 +49,10 @@ export default {
       type: String,
       default: '#ffffff',
     },
+    buttonColor:{
+      type: String,
+      default: '#38b2ac',
+    },
     isVisible: {
       type: Boolean,
       default: false,
@@ -80,6 +84,7 @@ export default {
         'min-width': this.width,
         'max-height': this.height,
         backgroundColor: this.backgroundColor,
+        buttonColor: this.buttonColor,
         position: this.target ? 'fixed' : 'absolute',
       };
     },
