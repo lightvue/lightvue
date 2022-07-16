@@ -17,9 +17,9 @@
 
 
     <!--------------------- Bottom PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="Bottom" backgroundColor="#C9CDCE">
+    <LvPopOver :offset="10" placement="bottom" backgroundColor="#C9CDCE">
       <template #anchor>
-        <LvButton label="bottom" class="lv--plain" />
+        <LvButton label="Bottom" class="lv--plain" />
       </template>
       <LvButton label="Sign in" class="lv--success" />
       <br/>
