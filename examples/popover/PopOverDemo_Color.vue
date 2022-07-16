@@ -1,7 +1,7 @@
 <template>
   <div class="lv-demo_layout">
     <!--------------------- Top PopOver  ------------------------->
-    <LvPopOver v-bind="allOptions" :offset="10" placement="top">
+    <LvPopOver v-bind="allOptions" :offset="10" placement="top" backgroundColor="#CEC9C9">
       <template #anchor>
         <LvButton label="Top" class="lv--primary" />
       </template>
@@ -17,9 +17,9 @@
 
 
     <!--------------------- Bottom PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="Bottom">
+    <LvPopOver :offset="10" placement="Bottom" backgroundColor="#C9CDCE">
       <template #anchor>
-        <LvButton label="bottom" class="lv--primary" />
+        <LvButton label="bottom" class="lv--plain" />
       </template>
       <LvButton label="Sign in" class="lv--success" />
       <br/>
@@ -29,9 +29,9 @@
 
 
     <!--------------------- Left PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="left" :isVisible="visibility">
+    <LvPopOver :offset="10" placement="left" :isVisible="visibility" backgroundColor="#43627B">
       <template #anchor>
-        <LvButton label="Left" class="lv--primary" />
+        <LvButton label="Left" class="lv--info" />
       </template>
       <div class="d-flex">
         <lv-input type="text" label="First Name" placeholder="Enter your first name" bottomBar/>
@@ -48,9 +48,9 @@
 
 
     <!--------------------- Right PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="right">
+    <LvPopOver :offset="10" placement="right" backgroundColor="#ffb300">
       <template #anchor>
-        <LvButton label="Right" class="lv--primary" />
+        <LvButton label="Right" class="lv--help" />
       </template>
       <div>
       <h6 class="popover-demo--rightpopover">Newsletter Subscription</h6>

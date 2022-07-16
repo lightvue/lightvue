@@ -3,27 +3,30 @@
     <docs-card-best title="Playground">
         <!-- <lv-button v-bind="allOptions" style="width: 100%" /> -->
         <div class="lv-demo_layout">
-            <LvPopOver v-bind="allOptions" :offset="10" placement="top">
+            <LvPopOver v-bind="allOptions" :offset="10">
                 <template #anchor>
-                    <LvButton label="Top" class="lv--primary" />
+                    <LvButton :label='allOptions.label' class="lv--primary" />
                 </template>
-                <LvButton label="Submit" class="lv--primary" />
+                <div style="text-align: center">
+                    <h6>Lightvue</h6>
+                    <!-- <img src="http://localhost:3000/logo_v2.svg" /> -->
+                    <p>Start the tour</p>
+                <LvButton label="Back" class="lv--primary" disabled/>
+                <LvButton label="Next" class="lv--primary" />
+                </div>
+
             </LvPopOver>
         </div>
         <template #props>
             <lv-toggle-switch v-model="allOptions.hover" label="Hover" /> </br>
-            <!-- <lv-toggle-switch v-model="allOptions.outlined" label="Outlined" /> <br />
-        <lv-toggle-switch v-model="allOptions.push" label="Push" /> <br />
-        <lv-toggle-switch v-model="allOptions.raised" label="Raised" /> <br />
-        <lv-toggle-switch v-model="allOptions['deep-shadow']" label="Deep Shadow" /> <br />
-        <lv-toggle-switch v-model="allOptions['deep-shadow-hover']" label="Deep Shadow Hover" /> <br />
-        <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br /> -->
-
             <br />
             <lv-input v-model="allOptions.label" label="Label" /> <br />
-            <!-- <lv-input v-model="allOptions.type" label="Type" /> <br />
-        <lv-input v-model="allOptions['icon-right']" label="Right Icon" /> <br />
-        <lv-input v-model="allOptions.size" label="Size" /> <br /> -->
+            <lv-input v-model="allOptions['borderRadius']" label='Border Radius' /> </br />
+            <lv-input v-model="allOptions['padding']" label='Padding' /> </br />
+
+            <br />
+            <Lv-colorpicker class="backgroundColor" v-model="allOptions['backgroundColor']" label="Background Color" />
+
         </template>
         <template #code>
             <span class="dy-code-row --empty-row"></span>
@@ -50,20 +53,13 @@ export default {
         return {
             allOptions: {
                 hover: false,
-                label: 'This is a PopOver',
-                // outlined: false,
-                // push: false,
-                // raised: false,
-                // 'deep-shadow': false,
-                // 'deep-shadow-hover': false,
-                // rounded: false,
-                // label: 'This is a Button',
-                // type: 'button',
-                // icon: '',
-                // 'icon-right': '',
-                // size: 'xl',
+                label: 'This is a Top PopOver',
+                backgroundColor: '#FFFFFF',
+                borderRadius: '4px',
+                padding: '16px',
+
             },
-            stringProps: ['label', 'icon-right', 'size', 'type'],
+            stringProps: ['label', 'backgroundColor','padding', 'borderRadius'],
         };
     },
     components: {

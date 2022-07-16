@@ -66,6 +66,12 @@ export default {
       description: 'PopOver using <span>hover</span> property.',
     },
     {
+      id: 'popover-different-color',
+      title: 'With different Color',
+      file: 'popover/PopOverDemo_Color',
+      description: 'By passing the <span>backgroundColor</span> as a prop we can change the popover color.',
+    },
+    {
       id: 'popover-model-value',
       title: 'External Target',
       file: 'popover/PopOverVModel',

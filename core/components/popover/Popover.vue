@@ -45,13 +45,21 @@ export default {
       type: String,
       default: '70vh',
     },
+    maxWidth:{
+      type: String,
+      default: '250px',
+    },
     backgroundColor: {
       type: String,
       default: '#ffffff',
     },
-    buttonColor:{
+    borderRadius: {
       type: String,
-      default: '#38b2ac',
+      default: '4px',
+    },
+    padding:{
+      type: String,
+      default: '16px',
     },
     isVisible: {
       type: Boolean,
@@ -83,8 +91,10 @@ export default {
       return {
         'min-width': this.width,
         'max-height': this.height,
+        'max-width' : this.maxWidth,
         backgroundColor: this.backgroundColor,
-        buttonColor: this.buttonColor,
+        borderRadius: this.borderRadius,
+        padding: this.padding,
         position: this.target ? 'fixed' : 'absolute',
       };
     },
@@ -126,7 +136,7 @@ export default {
       const targetEl = this.target ? document.querySelector(this.target) : '';
       const content = targetEl ? targetEl : this.$refs.parent.children[0];
       const popover = this.$refs.popover;
-      const offset = this.offset;
+      // const offset = this.offset;
       const contentWidth = content.offsetWidth;
       const contentHeight = content.offsetHeight;
       const contentOffsetTop = targetEl ? content.getBoundingClientRect().top : 0;
@@ -189,6 +199,7 @@ export default {
       this.positionClass = `arrow-position-${this.computedPlacement}`;
     },
     setBottom(contentWidth, contentOffsetTop, contentOffsetLeft, contentHeight) {
+      
       this.computedPlacement = 'bottom';
       const popover = this.$refs.popover;
       const offset = this.offset;

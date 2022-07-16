@@ -4,11 +4,16 @@
       <template #anchor>
         <LvButton label="test" class="lv--primary" />
       </template>
-      <LvButton label="Submit" class="lv--primary" />
+      <div>The Emerging UI Component Library Designed for Vue 3.x & Vue 2.x</div>
+      <br />
+      <div style="text-align: center;">
+      <a href="https://lightvue.org/" target="_blank" ><LvButton label="Know more" class="lv--primary" /></a>
+      </div>
     </LvPopOver>
     <LvButton label="V-Model" @click.stop="toggleVisibility" />
-    <LvPopOver :offset="10" placement="top" v-model="visibility" target=".header-logo">
-      <LvButton label="Bottom" class="lv--primary" />
+    <LvPopOver :offset="10" placement="right" v-model="visibility" target=".nav-list__category .nav-list__category-label">
+      <p>In order to get started with light vue, you need to install LightVue and its dependency LightIcon (Only required if the icons are getting used).</p>
+      <LvButton label="Next" class="lv--primary" />
     </LvPopOver>
   </div>
 </template>

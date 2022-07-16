@@ -31,15 +31,16 @@ $pointer-size: 7px;
 
   overflow: initial;
   z-index: $popover-z-index;
-  &.arrow-position-Bottom:before {
+  &.arrow-position-bottom:before {
     content: '';
     position: absolute;
     border-left: $pointer-size solid transparent;
     border-right: $pointer-size solid transparent;
     border-bottom: $pointer-size solid #fff;
     top: -($pointer-size);
-    left: calc(50% - #{$pointer-size});
+    left: calc(20% - #{$pointer-size});
     filter: drop-shadow(0px -2px 2px rgba(52, 73, 94, 0.1));
+    
   }
   &.arrow-position-top:before {
     content: '';
@@ -47,6 +48,7 @@ $pointer-size: 7px;
     border-left: $pointer-size solid transparent;
     border-right: $pointer-size solid transparent;
     border-top: $pointer-size solid #fff;
+    // border-top-color: inherit;
     bottom: -($pointer-size);
     left: calc(50% - #{$pointer-size});
     filter: drop-shadow(0px 2px 2px rgba(52, 73, 94, 0.1));
@@ -70,7 +72,7 @@ $pointer-size: 7px;
     border-bottom: $pointer-size solid transparent;
     border-right: $pointer-size solid #fff;
     left: -($pointer-size);
-    top: 19px;
+    top: 70px;
     filter: drop-shadow(-2px 0px 2px rgba(52, 73, 94, 0.1));
   }
 }
