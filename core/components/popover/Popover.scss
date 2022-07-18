@@ -16,6 +16,52 @@ $pointer-size: 7px;
     z-index: $popover-overlay;
   }
 }
+.popover-tip {
+  &.arrow-position-bottom{
+    content: '';
+    position: absolute;
+    border-left: $pointer-size solid transparent;
+    border-right: $pointer-size solid transparent;
+    border-bottom: $pointer-size solid ;
+    top: -($pointer-size);
+    left: calc(50% - #{$pointer-size});
+    filter: drop-shadow(0px -2px 2px rgba(52, 73, 94, 0.1));
+    
+  }
+  &.arrow-position-top {
+    content: '';
+    position: absolute;
+    border-left: $pointer-size solid transparent;
+    border-right: $pointer-size solid transparent;
+    border-top: $pointer-size solid ;
+    // border-top-color: inherit;
+    bottom: -($pointer-size);
+    left: calc(50% - #{$pointer-size});
+    filter: drop-shadow(0px 2px 2px rgba(52, 73, 94, 0.1));
+  }
+
+  &.arrow-position-left {
+    content: '';
+    position: absolute;
+    border-top: $pointer-size solid transparent;
+    border-bottom: $pointer-size solid transparent;
+    border-left: $pointer-size solid ;
+    right: -($pointer-size);
+    top: calc(50% - #{$pointer-size});
+    filter: drop-shadow(2px 0px 2px rgba(52, 73, 94, 0.1));
+  }
+
+  &.arrow-position-right {
+    content: '';
+    position: absolute;
+    border-top: $pointer-size solid transparent;
+    border-bottom: $pointer-size solid transparent;
+    border-right: $pointer-size solid ;
+    left: -($pointer-size);
+    top: calc(50% - #{$pointer-size});
+    filter: drop-shadow(-2px 0px 2px rgba(52, 73, 94, 0.1));
+  }
+}
 
 .popover-item {
   position: absolute;
@@ -31,50 +77,50 @@ $pointer-size: 7px;
 
   overflow: initial;
   z-index: $popover-z-index;
-  &.arrow-position-bottom:before {
-    content: '';
-    position: absolute;
-    border-left: $pointer-size solid transparent;
-    border-right: $pointer-size solid transparent;
-    border-bottom: $pointer-size solid #fff;
-    top: -($pointer-size);
-    left: calc(50% - #{$pointer-size});
-    filter: drop-shadow(0px -2px 2px rgba(52, 73, 94, 0.1));
+  // &.arrow-position-bottom:before {
+  //   content: '';
+  //   position: absolute;
+  //   border-left: $pointer-size solid transparent;
+  //   border-right: $pointer-size solid transparent;
+  //   border-bottom: $pointer-size solid #fff;
+  //   top: -($pointer-size);
+  //   left: calc(50% - #{$pointer-size});
+  //   filter: drop-shadow(0px -2px 2px rgba(52, 73, 94, 0.1));
     
-  }
-  &.arrow-position-top:before {
-    content: '';
-    position: absolute;
-    border-left: $pointer-size solid transparent;
-    border-right: $pointer-size solid transparent;
-    border-top: $pointer-size solid #fff;
-    // border-top-color: inherit;
-    bottom: -($pointer-size);
-    left: calc(50% - #{$pointer-size});
-    filter: drop-shadow(0px 2px 2px rgba(52, 73, 94, 0.1));
-  }
+  // }
+  // &.arrow-position-top:before {
+  //   content: '';
+  //   position: absolute;
+  //   border-left: $pointer-size solid transparent;
+  //   border-right: $pointer-size solid transparent;
+  //   border-top: $pointer-size solid #fff;
+  //   // border-top-color: inherit;
+  //   bottom: -($pointer-size);
+  //   left: calc(50% - #{$pointer-size});
+  //   filter: drop-shadow(0px 2px 2px rgba(52, 73, 94, 0.1));
+  // }
 
-  &.arrow-position-left:before {
-    content: '';
-    position: absolute;
-    border-top: $pointer-size solid transparent;
-    border-bottom: $pointer-size solid transparent;
-    border-left: $pointer-size solid #fff;
-    right: -($pointer-size);
-    top: calc(50% - #{$pointer-size});
-    filter: drop-shadow(2px 0px 2px rgba(52, 73, 94, 0.1));
-  }
+  // &.arrow-position-left:before {
+  //   content: '';
+  //   position: absolute;
+  //   border-top: $pointer-size solid transparent;
+  //   border-bottom: $pointer-size solid transparent;
+  //   border-left: $pointer-size solid #fff;
+  //   right: -($pointer-size);
+  //   top: calc(50% - #{$pointer-size});
+  //   filter: drop-shadow(2px 0px 2px rgba(52, 73, 94, 0.1));
+  // }
 
-  &.arrow-position-right:before {
-    content: '';
-    position: absolute;
-    border-top: $pointer-size solid transparent;
-    border-bottom: $pointer-size solid transparent;
-    border-right: $pointer-size solid #fff;
-    left: -($pointer-size);
-    top: calc(50% - #{$pointer-size});
-    filter: drop-shadow(-2px 0px 2px rgba(52, 73, 94, 0.1));
-  }
+  // &.arrow-position-right:before {
+  //   content: '';
+  //   position: absolute;
+  //   border-top: $pointer-size solid transparent;
+  //   border-bottom: $pointer-size solid transparent;
+  //   border-right: $pointer-size solid #fff;
+  //   left: -($pointer-size);
+  //   top: calc(50% - #{$pointer-size});
+  //   filter: drop-shadow(-2px 0px 2px rgba(52, 73, 94, 0.1));
+  // }
 }
 .pop-arrow {
   background: black;

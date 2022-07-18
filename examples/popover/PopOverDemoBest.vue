@@ -7,14 +7,19 @@
                 <template #anchor>
                     <LvButton :label='allOptions.label' class="lv--primary" />
                 </template>
-                <div style="text-align: center">
-                    <h6>Lightvue</h6>
-                    <!-- <img src="http://localhost:3000/logo_v2.svg" /> -->
-                    <p>Start the tour</p>
-                <LvButton label="Back" class="lv--primary" disabled/>
-                <LvButton label="Next" class="lv--primary" />
+                <div class="header">
+                <div>
+                    <img src="/logo_v2.svg" class="header-logo" />
                 </div>
-
+                </div>
+                <div class="body" style="text-align: center">
+                    <p>Know More about <a href="https://lightvue.org/">Lightvue</a></p>
+                </div>
+                <!-- <br> -->
+                <div class="footer">
+                <LvButton style="width: 80px" label="Back" class="lv--primary" disabled/>
+                <LvButton style="width: 80px" label="Next" class="lv--primary" />
+                </div>
             </LvPopOver>
         </div>
         <template #props>
@@ -29,7 +34,7 @@
             </br />
             <br />
 
-            <Lv-colorpicker class="color" v-model="allOptions['color']" label="Text Color" />
+            <!-- <Lv-colorpicker v-model="allOptions['color']" label="Tooltip Color" /> -->
 
 
         </template>
@@ -62,7 +67,7 @@ export default {
                 backgroundColor: '#FFFFFF',
                 borderRadius: '4px',
                 padding: '16px',
-                color: 'rgba(0, 0, 0, 0.9) '
+                color: '#fff'
 
             },
             stringProps: ['label', 'backgroundColor','padding', 'borderRadius', 'color'],

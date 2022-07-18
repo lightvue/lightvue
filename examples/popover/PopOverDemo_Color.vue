@@ -1,35 +1,54 @@
 <template>
   <div class="lv-demo_layout">
     <!--------------------- Top PopOver  ------------------------->
-    <LvPopOver v-bind="allOptions" :offset="10" placement="top" backgroundColor="#CEC9C9">
+    <LvPopOver v-bind="allOptions" :offset="10" placement="top" backgroundColor="#fff">
       <template #anchor>
         <LvButton label="Top" class="lv--primary" />
       </template>
-      <div style="color:#566d79">
-        <h6 >Top Popover</h6>
-        <hr>
-        <!-- <br/> -->
-        <p>Popover show on top.</p>
+      <div class="header" style="color:#0D2131">
+        <h5>PopOver</h5>
+        </div>
+      <div class="body" style="color:#0D2131">
+        <p>The Popover component is similar to tooltips; it is a pop-up box that appears when the user clicks on an element. The difference is that the popover can contain much more content.
+          </p>
+        </div>
+      <div class="footer">
+      <LvButton label="Back" icon="light-icon-chevrons-left" outlined  class="lv--info " />
+      <LvButton label="Next" icon-right="light-icon-chevrons-right"   class="lv--info " style="height: 32.8px;" />
+
       </div>
-      <!-- <br> -->
-      <LvButton label="Submit" class="lv--primary" />
     </LvPopOver>
 
 
     <!--------------------- Bottom PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="bottom" backgroundColor="#C9CDCE">
+    <LvPopOver :offset="10" placement="bottom" backgroundColor="#263846" padding="0px">
       <template #anchor>
         <LvButton label="Bottom" class="lv--plain" />
       </template>
-      <LvButton label="Sign in" class="lv--success" />
-      <br/>
-      <br>
-      <div>New Customer? <a href="#"> Start here </a></div>
+      <div class="header" style="color:white;padding: 10px;">
+        <h6>Progress Bar</h6>
+        <p>Progress Bar component can be used as a process status indicator for a time-consuming process.</p>
+      </div>
+      <div class="footer" 
+      style="background: #323C45;
+    height: 45px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    ">
+
+      <LvButton label="Back" icon="light-icon-arrow-left-circle" class="lv--success " />
+      <p style="color:white; margin:0;">3/7</p>
+      <LvButton label="Next" icon-right="light-icon-arrow-right-circle" class="lv--success " />
+        
+      </div>
     </LvPopOver>
 
 
     <!--------------------- Left PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="left" :isVisible="visibility" color="#263846">
+    <LvPopOver :offset="10" placement="left" :isVisible="visibility" backgroundColor="#fff">
       <template #anchor>
         <LvButton label="Left" class="lv--info" />
       </template>

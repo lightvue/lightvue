@@ -1,7 +1,7 @@
 <template>
   <div class="lv-demo_layout">
     <!--------------------- Top PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="top" :hover="true" color="#263846">
+    <LvPopOver :offset="10" placement="top" :hover="true" backgroundColor="#F5F8F4">
       <template #anchor>
         <LvButton label="Top" class="lv--primary" />
       </template>
@@ -15,7 +15,7 @@
     </LvPopOver>
 
     <!--------------------- Bottom PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="bottom" :hover="true" color="#263846">
+    <LvPopOver :offset="10" placement="bottom" :hover="true" backgroundColor="#F5F8F4">
       <template #anchor>
         <LvButton label="Bottom" class="lv--primary" />
       </template>
@@ -36,7 +36,7 @@
       </div>
     </LvPopOver>
     <!--------------------- Left PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="left" :hover="true" color="#263846">
+    <LvPopOver :offset="10" placement="left" :hover="true" backgroundColor="#F5F8F4">
       <template #anchor>
         <LvButton label="Left" class="lv--primary" />
       </template>
@@ -51,7 +51,7 @@
       </div>
     </LvPopOver>
     <!--------------------- Right PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="right" :hover="true" color="#263846">
+    <LvPopOver :offset="10" placement="right" :hover="true" backgroundColor="#F5F8F4">
       <template #anchor>
         <LvButton label="Right" class="lv--primary" />
       </template>

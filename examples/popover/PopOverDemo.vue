@@ -1,13 +1,15 @@
 <template>
   <div class="lv-demo_layout">
     <!--------------------- Top PopOver  ------------------------->
-    <LvPopOver v-bind="allOptions" :offset="10" placement="top">
+    <LvPopOver v-bind="allOptions" :offset="10" placement="top" backgroundColor="#F5F8F4">
       <template #anchor>
         <LvButton label="Top" class="lv--primary" />
       </template>
       <div>
         <p>HP Pavilion Laptop</p>
-        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRiCFuvA1fxOBdcbiKZ8ld2NaIub5eaErI6f_6xZJbmoen7HSlEwhhZlj6ThvVG71oTC5_FBkT5D-dS0tqG54xzLnS_y_0LP5XwW2jBEmMITFfNiJ_QV5AwEg&usqp=CAc"/>
+        <div>
+        <img src="@/assets/images/demo/laptop.jpg" alt="laptop" height="150px" />
+        </div>
         
       </div>
       <br>
@@ -20,7 +22,7 @@
 
 
     <!--------------------- Bottom PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="bottom">
+    <LvPopOver :offset="10" placement="bottom" backgroundColor="#C9CDCE">
       <template #anchor>
         <LvButton label="Bottom" class="lv--primary" />
       </template>
