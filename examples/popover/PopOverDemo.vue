@@ -5,14 +5,17 @@
       <template #anchor>
         <LvButton label="Top" class="lv--primary" />
       </template>
-      <div style="color:#566d79">
-        <h6 >Top Popover</h6>
-        <hr>
-        <!-- <br/> -->
-        <p>Popover show on top.</p>
+      <div>
+        <p>HP Pavilion Laptop</p>
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRiCFuvA1fxOBdcbiKZ8ld2NaIub5eaErI6f_6xZJbmoen7HSlEwhhZlj6ThvVG71oTC5_FBkT5D-dS0tqG54xzLnS_y_0LP5XwW2jBEmMITFfNiJ_QV5AwEg&usqp=CAc"/>
+        
       </div>
+      <br>
+      <a href="https://www.hp.com/in-en/shop/hp-pavilion-laptop-14-dv2053tu-6k9c6pa.html?gclid=CjwKCAjwoMSWBhAdEiwAVJ2ndmUy8aFkIq8kmKFP6-dPeZu5SQL873dPL_p8pJZlFkrv4_2MYIWMYxoCumYQAvD_BwE&gclsrc=aw.ds" target="_blank">
+      <LvButton label="Buy" class="lv--primary" />
+      </a> 
       <!-- <br> -->
-      <LvButton label="Submit" class="lv--primary" />
+      <!-- <LvButton label="Submit" class="lv--primary" /> -->
     </LvPopOver>
 
 

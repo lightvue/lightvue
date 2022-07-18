@@ -29,36 +29,24 @@
 
 
     <!--------------------- Left PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="left" :isVisible="visibility" backgroundColor="#43627B">
+    <LvPopOver :offset="10" placement="left" :isVisible="visibility" color="#263846">
       <template #anchor>
         <LvButton label="Left" class="lv--info" />
       </template>
-      <div class="d-flex">
-        <lv-input type="text" label="First Name" placeholder="Enter your first name" bottomBar/>
-        <br>
-        <lv-input type="text" label="Last Name" placeholder="Enter your last name" bottomBar/>
-        <br>
-        <lv-input type="text" label="Email" placeholder="Enter your Email" bottomBar/>
-        <br>
-        <LvButton label="Submit" class="lv--success" />
-
-
-      </div>
+      <strong>LightVue</strong>
+      <iframe src="https://lightvue.org/" title="The Emerging UI Component Library" width="225" height="150" > 
+</iframe>
     </LvPopOver>
 
 
     <!--------------------- Right PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="right" backgroundColor="#ffb300">
+    <LvPopOver :offset="10" placement="right" backgroundColor="#ffb300" color="#fff">
       <template #anchor>
         <LvButton label="Right" class="lv--help" />
       </template>
       <div>
-      <h6 class="popover-demo--rightpopover">Newsletter Subscription</h6>
-      <hr/>
-      <br/>
-      <lv-input type='email' placeholder="Email Address" bottomBar></lv-input>
-      <br/>
-      <LvButton label="Subscribe" class="lv--primary" style="width:-webkit-fill-available" />
+        <h5>HTML Embedded</h5>
+        <p>tooltip content <u>inline HTML, images, iframe, videos, maps Through templates, </u>. A title can be added to the content can be loaded with</p>
       </div>
     </LvPopOver>
 
@@ -105,6 +93,6 @@ export default {
 }
 .popover-demo--rightpopover{
       text-align: center;
-    color: #566d79;
+    // color: #566d79;
 }
 </style>

@@ -72,6 +72,12 @@ export default {
       description: 'By passing the <span>backgroundColor</span> as a prop we can change the popover color.',
     },
     {
+      id: 'popover-different-icons',
+      title: 'With different Icons',
+      file: 'popover/PopOverDemo_Icons',
+      description: '',
+    },
+    {
       id: 'popover-model-value',
       title: 'External Target',
       file: 'popover/PopOverVModel',

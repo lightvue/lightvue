@@ -53,6 +53,10 @@ export default {
       type: String,
       default: '#ffffff',
     },
+    color:{
+      type: String,
+      default: '',
+    },
     borderRadius: {
       type: String,
       default: '4px',
@@ -93,6 +97,7 @@ export default {
         'max-height': this.height,
         'max-width' : this.maxWidth,
         backgroundColor: this.backgroundColor,
+        color: this.color,
         borderRadius: this.borderRadius,
         padding: this.padding,
         position: this.target ? 'fixed' : 'absolute',

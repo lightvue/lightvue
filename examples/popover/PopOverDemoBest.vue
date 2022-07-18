@@ -3,7 +3,7 @@
     <docs-card-best title="Playground">
         <!-- <lv-button v-bind="allOptions" style="width: 100%" /> -->
         <div class="lv-demo_layout">
-            <LvPopOver v-bind="allOptions" :offset="10">
+            <LvPopOver v-bind="allOptions" :offset="10" placement="bottom">
                 <template #anchor>
                     <LvButton :label='allOptions.label' class="lv--primary" />
                 </template>
@@ -26,6 +26,11 @@
 
             <br />
             <Lv-colorpicker class="backgroundColor" v-model="allOptions['backgroundColor']" label="Background Color" />
+            </br />
+            <br />
+
+            <Lv-colorpicker class="color" v-model="allOptions['color']" label="Text Color" />
+
 
         </template>
         <template #code>
@@ -53,13 +58,14 @@ export default {
         return {
             allOptions: {
                 hover: false,
-                label: 'This is a Top PopOver',
+                label: 'This is a Bottom PopOver',
                 backgroundColor: '#FFFFFF',
                 borderRadius: '4px',
                 padding: '16px',
+                color: 'rgba(0, 0, 0, 0.9) '
 
             },
-            stringProps: ['label', 'backgroundColor','padding', 'borderRadius'],
+            stringProps: ['label', 'backgroundColor','padding', 'borderRadius', 'color'],
         };
     },
     components: {
