@@ -9,7 +9,7 @@
             <div class="popover--content">
               <slot></slot>
             </div>
-            <div :class="['popover-tip', this.positionClass]" :style="{'color': this.backgroundColor}"></div>
+            <div :class="['popover-tip', this.positionClass]" :style="{ color: this.backgroundColor }"></div>
           </div>
         </div>
       </transition>
@@ -45,9 +45,9 @@ export default {
       type: String,
       default: '70vh',
     },
-    maxWidth:{
+    maxWidth: {
       type: String,
-      default: '250px',
+      default: '340px',
     },
     backgroundColor: {
       type: String,
@@ -57,7 +57,7 @@ export default {
       type: String,
       default: '4px',
     },
-    padding:{
+    padding: {
       type: String,
       default: '16px',
     },
@@ -91,10 +91,12 @@ export default {
       return {
         'min-width': this.width,
         'max-height': this.height,
-        'max-width' : this.maxWidth,
+        'max-width': this.maxWidth,
         backgroundColor: this.backgroundColor,
         borderRadius: this.borderRadius,
         padding: this.padding,
+        offset: this.offset,
+        placement: this.placement,
         position: this.target ? 'fixed' : 'absolute',
       };
     },
@@ -199,7 +201,6 @@ export default {
       this.positionClass = `arrow-position-${this.computedPlacement}`;
     },
     setBottom(contentWidth, contentOffsetTop, contentOffsetLeft, contentHeight) {
-      
       this.computedPlacement = 'bottom';
       const popover = this.$refs.popover;
       const offset = this.offset;

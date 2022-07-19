@@ -54,29 +54,30 @@ export default {
   apiData: PopOverAPI,
   demoList: [
     {
-      id: 'basic-usage',
-      title: 'Basic usage',
-      file: 'popover/PopOverDemo_Basic',
-      description: 'A <span>LvPopover</span> is a pop-up box that appears when the user clicks on an element. <span>LightVue PopOver</span> is compatible with both <span>Vue 3.x and Vue 2.x</span>',
-    },
-    {
-      id: 'button-usage',
-      title: 'Button usage',
-      file: 'popover/PopOverDemo_Buttons',
-      description: 'LvPopover can be used with <span>LvButtons</span>. Four options are available: <span>top, right, bottom, and left </span> aligned. You can also define the choice of color that you want to the PopOver using <span>Background Color</span> as <span>prop</span>. ',
-    },
-    {
-      id: 'popover-hover',
-      title: 'On Hover',
-      file: 'popover/PopOverHoverDemo',
-      description: 'PopOver using <span>hover</span> property.',
-    },
-    {
       id: 'popover-different-color',
       title: 'With different Color',
       file: 'popover/PopOverDemo_Color',
       description: 'By passing the <span>backgroundColor</span> as a prop we can change the popover color.',
     },
+    {
+      id: 'popover-hover',
+      title: 'On Hover',
+      file: 'popover/PopOverHoverDemo',
+      description: 'PopOver Component using <span>hover</span> property.',
+    },
+    {
+      id: 'basic-usage',
+      title: 'Basic usage',
+      file: 'popover/PopOverDemo_Basic',
+      description: 'A <span>LvPopover Component</span> is a pop-up box that appears when the user clicks on an element. <span>LightVue PopOver Component</span> is compatible with both <span>Vue 3.x and Vue 2.x</span>',
+    },
+    {
+      id: 'interactive-usage',
+      title: 'Interactive usage',
+      file: 'popover/PopOverDemo_Buttons',
+      description: 'Four options are available: <span>top, right, bottom, and left </span> aligned. You can also define the choice of color that you want to the PopOver using <span>Background Color</span> as <span>prop</span>. ',
+    },
+
     // {
     //   id: 'popover-different-icons',
     //   title: 'With different Icons',
@@ -87,7 +88,7 @@ export default {
       id: 'popover-model-value',
       title: 'External Target',
       file: 'popover/PopOverVModel',
-      description: 'Using <span>PopOver external target feature</span> you can target any location on the webpage for showing a PopModel.',
+      description: 'Using <span>PopOver Component external target feature</span> you can target any <span>DOM location</span> on the webpage for showing a PopModel Component using <span> CSS Selectors</span>.',
     },
   ],
 };
