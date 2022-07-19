@@ -7,16 +7,16 @@
                 <template #anchor>
                     <LvButton :label='allOptions.label' class="lv--primary" />
                 </template>
-                <div class="header">
+                <div >
                 <div>
                     <img src="/logo_v2.svg" class="header-logo" />
                 </div>
                 </div>
-                <div class="body" style="text-align: center">
+                <div  style="text-align: center">
                     <p>Know More about <a href="https://lightvue.org/">Lightvue</a></p>
                 </div>
                 <!-- <br> -->
-                <div class="footer">
+                <div >
                 <LvButton style="width: 80px" label="Back" class="lv--primary" disabled/>
                 <LvButton style="width: 80px" label="Next" class="lv--primary" />
                 </div>

@@ -14,7 +14,7 @@
       </div>
       <br>
       <a href="https://www.hp.com/in-en/shop/hp-pavilion-laptop-14-dv2053tu-6k9c6pa.html?gclid=CjwKCAjwoMSWBhAdEiwAVJ2ndmUy8aFkIq8kmKFP6-dPeZu5SQL873dPL_p8pJZlFkrv4_2MYIWMYxoCumYQAvD_BwE&gclsrc=aw.ds" target="_blank">
-      <LvButton label="Buy" class="lv--primary" />
+      <LvButton label="Buy" class="lv--plain" style="width: 100%;" />
       </a> 
       <!-- <br> -->
       <!-- <LvButton label="Submit" class="lv--primary" /> -->
@@ -22,7 +22,7 @@
 
 
     <!--------------------- Bottom PopOver  ------------------------->
-    <LvPopOver :offset="10" placement="bottom" backgroundColor="#C9CDCE">
+    <LvPopOver :offset="10" placement="bottom" backgroundColor="rgb(185 228 228)">
       <template #anchor>
         <LvButton label="Bottom" class="lv--primary" />
       </template>
@@ -45,7 +45,8 @@
         <br>
         <lv-input type="text" label="Email" placeholder="Enter your Email" bottomBar/>
         <br>
-        <LvButton label="Submit" class="lv--success" />
+        <LvButton label="Submit" class="lv--success" style="width: 48%;"/>
+        <LvButton label="Cancel" class="lv--success" style="width: 48%;"/>
 
 
       </div>
@@ -63,7 +64,7 @@
       <br/>
       <lv-input type='email' placeholder="Email Address" bottomBar></lv-input>
       <br/>
-      <LvButton label="Subscribe" class="lv--primary" style="width:-webkit-fill-available" />
+      <LvButton label="Subscribe" class="lv--warning" style="width:-webkit-fill-available" />
       </div>
     </LvPopOver>
 

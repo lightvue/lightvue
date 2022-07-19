@@ -47,7 +47,7 @@ export default {
     DocsAllApi,
   },
   title: 'PopOver',
-  description: 'The Popover component is similar to tooltips; it is a pop-up box that appears when the user clicks on an element. The difference is that the popover can contain much more content.',
+  description: 'The LvPopover component is similar to LvTooltips; it is a pop-up box that appears when the user clicks on an element. The difference is that the popover can contain much more content.',
   packageName: 'popover',
   componentName: 'LvPopOver',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
@@ -56,8 +56,14 @@ export default {
     {
       id: 'basic-usage',
       title: 'Basic usage',
-      file: 'popover/PopOverDemo',
-      description: 'Four options are available: <span>top, right, bottom, and left </span> aligned. You can also define the choice of color that you want to the PopOver using <span>Background Color</span> as <span>prop</span>. ',
+      file: 'popover/PopOverDemo_Basic',
+      description: 'A <span>LvPopover</span> is a pop-up box that appears when the user clicks on an element. <span>LightVue PopOver</span> is compatible with both <span>Vue 3.x and Vue 2.x</span>',
+    },
+    {
+      id: 'button-usage',
+      title: 'Button usage',
+      file: 'popover/PopOverDemo_Buttons',
+      description: 'LvPopover can be used with <span>LvButtons</span>. Four options are available: <span>top, right, bottom, and left </span> aligned. You can also define the choice of color that you want to the PopOver using <span>Background Color</span> as <span>prop</span>. ',
     },
     {
       id: 'popover-hover',
@@ -81,7 +87,7 @@ export default {
       id: 'popover-model-value',
       title: 'External Target',
       file: 'popover/PopOverVModel',
-      description: 'Using PopOver Model External Target you can target any location on the webpage for showing a PopModel.',
+      description: 'Using <span>PopOver external target feature</span> you can target any location on the webpage for showing a PopModel.',
     },
   ],
 };
