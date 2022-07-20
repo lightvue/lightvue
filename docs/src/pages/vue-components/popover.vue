@@ -72,10 +72,10 @@ export default {
       description: 'A <span>LvPopover Component</span> is a pop-up box that appears when the user clicks on an element. <span>LightVue PopOver Component</span> is compatible with both <span>Vue 3.x and Vue 2.x</span>',
     },
     {
-      id: 'interactive-usage',
-      title: 'Interactive usage',
-      file: 'popover/PopOverDemo_Buttons',
-      description: 'Four options are available: <span>top, right, bottom, and left </span> aligned. You can also define the choice of color that you want to the PopOver using <span>Background Color</span> as <span>prop</span>. ',
+      id: 'offset-usage',
+      title: 'Different Offset value',
+      file: 'popover/PopOverDemo_Offset',
+      description: 'You can define offset value by passing the offset prop in popover component, like below.',
     },
 
     // {

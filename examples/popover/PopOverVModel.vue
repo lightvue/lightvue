@@ -1,18 +1,18 @@
 <template>
   <div class="lv-demo_layout">
-    <LvPopOver :offset="10" placement="bottom" target=".header-logo">
+    <LvPopOver :offset="10" placement="bottom" target=".header-logo" backgroundColor="#CEC9C9" maxWidth="200px">
       <template #anchor>
         <LvButton label="test" class="lv--primary" />
       </template>
-      <div style="width: 200px">The Emerging UI Component Library Designed for Vue 3.x & Vue 2.x</div>
+      <div>The Emerging UI Component Library Designed for Vue 3.x & Vue 2.x</div>
       <br />
       <div style="text-align: center">
         <a href="https://lightvue.org/" target="_blank"><LvButton label="Know more" class="lv--primary" /></a>
       </div>
     </LvPopOver>
     <LvButton label="V-Model" @click.stop="toggleVisibility" />
-    <LvPopOver :offset="10" placement="right" v-model="visibility" target=".nav-list__category">
-      <p>In order to get started with light vue, you need to install LightVue and its dependency LightIcon (Only required if the icons are getting used).</p>
+    <LvPopOver :offset="10" placement="bottom" v-model="visibility" target=".light-icon-chevron-down" maxWidth="200px" backgroundColor="#CEC9C9">
+      <p>You can switch between LightVue 3.x & Vue 2.x from here.</p>
       <LvButton label="Next" class="lv--primary" />
     </LvPopOver>
   </div>

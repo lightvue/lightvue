@@ -3,43 +3,39 @@
     <docs-card-best title="Playground">
         <!-- <lv-button v-bind="allOptions" style="width: 100%" /> -->
         <div class="lv-demo_layout">
-            <LvPopOver v-bind="allOptions" :offset="allOptions.offset" :placement="allOptions.selectedPlacement">
+            <LvPopOver v-bind="allOptions" :offset="allOptions.offset" :placement="allOptions.placement">
                 <template #anchor>
-                    <LvButton :label='allOptions.label' class="lv--primary" />
+                    <LvButton class="lv--primary" >This is a Bottom PopOver</LvButton>
                 </template>
-                <div >
                 <div>
-                    <img src="/logo_v2.svg" class="header-logo" />
-                </div>
-                </div>
-                <div  style="text-align: center">
-                    <p>Know More about <a href="https://lightvue.org/">Lightvue</a></p>
-                </div>
-                <!-- <br> -->
-                <div >
-                <LvButton style="width: 80px" label="Back" class="lv--primary" disabled/>
-                <LvButton style="width: 80px" label="Next" class="lv--primary" />
+                    <div>
+                        <a href="https://lightvue.org/">
+                        <img src="/logo_v2.svg" class="header-logo" />
+                        </a>
+                    </div>
+                
+                    <div style="text-align: center; color: #263846; width: 250px; margin-top: 10px;">
+                        <p>The Emerging UI Component Library Designed for Vue 3.x & Vue 2.x</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <LvButton label="Know More" class="lv--success" />
+                    </div>
                 </div>
             </LvPopOver>
-            {{allOptions.selectedPlacement}}
+            <!-- {{selectedPlacement.placement}} -->
         </div>
         <template #props>
             <lv-toggle-switch v-model="allOptions.hover" label="Hover" /> </br>
             <br />
             <!-- <lv-input v-model="allOptions.label" label="Label" /> <br /> -->
+            <Lv-colorpicker class="backgroundColor" v-model="allOptions['backgroundColor']" label="Background Color" /><br/>
+            </br />
             <lv-input v-model="allOptions['borderRadius']" label='PopOver Border Radius' bottomBar/> </br />
             <lv-input v-model="allOptions['padding']" label='PopOver Padding' bottomBar/> </br />
             <lv-number v-model="allOptions['offset']" label='PopOver Offset' /> </br />
-            <br />
-            <lv-dropdown v-model="allOptions.selectedPlacement" :options="allOptions.options" label="PopOver Placement" optionLabel="placement" optionName="code" placeholder="Select Placement" clearable /><br/>
-
-
-            <br />
-            <Lv-colorpicker class="backgroundColor" v-model="allOptions['backgroundColor']" label="Background Color" />
-            </br />
-            <br />
-
-            <!-- <Lv-colorpicker v-model="allOptions['color']" label="Tooltip Color" /> -->
+            <lv-dropdown v-model="selectedPlacement" :options="options" label="PopOver Placement" optionLabel="placement" placeholder="Select Placement" clearable />
+            <br/>
+            
         </template>
         <template #code>
             <span class="dy-code-row --empty-row"></span>
@@ -66,24 +62,23 @@ import LvDropdown from 'lightvue/dropdown';
 export default {
   data() {
     return {
+      selectedPlacement: { placement: 'Bottom', code: 'BT' },
+      options: [
+        { placement: 'Left', code: 'LT' },
+        { placement: 'Right', code: 'RT' },
+        { placement: 'Top', code: 'TT' },
+        { placement: 'Bottom', code: 'BT' },
+      ],
       allOptions: {
         hover: false,
-        label: 'This is a Bottom PopOver',
         backgroundColor: '#FFFFFF',
         borderRadius: '4px',
         padding: '16px',
-        color: '#fff',
         offset: 15,
-        placement: this.selectedPlacement,
-        selectedPlacement: null,
-        options: [
-          { placement: 'Left', code: 'LT' },
-          { placement: 'Right', code: 'RT' },
-          { placement: 'Top', code: 'TT' },
-          { placement: 'Bottom', code: 'BT' },
-        ],
+        placement: 'bottom',
       },
-      stringProps: ['label', 'backgroundColor', 'padding', 'borderRadius', 'color'],
+
+      stringProps: ['label', 'backgroundColor', 'padding', 'borderRadius', 'placement'],
     };
   },
   components: {

@@ -21,7 +21,7 @@
     <!----------------------------------------------------------------------->
     <LvPopOver :offset="10" placement="bottom" backgroundColor="#263846" padding="0px">
       <template #anchor>
-        <LvButton label="Bottom" class="lv--plain" />
+        <LvButton label="Bottom" class="lv--primary" />
       </template>
       <div style="width: 250px">
         <div style="color: white; padding: 10px">
@@ -40,7 +40,7 @@
 
     <LvPopOver :offset="10" placement="left" :isVisible="visibility" backgroundColor="#F5F8F4" padding="0px">
       <template #anchor>
-        <LvButton label="Left" class="lv--info" />
+        <LvButton label="Left" class="lv--primary" />
       </template>
       <div style="width: 250px">
         <div style="color: #566d79; padding: 10px">
@@ -59,7 +59,7 @@
 
     <LvPopOver :offset="10" placement="right" backgroundColor="#C9CDCE" color="#fff">
       <template #anchor>
-        <LvButton label="Right" class="lv--help" />
+        <LvButton label="Right" class="lv--primary" />
       </template>
       <div style="color: #263846">
         <h5>HTML Embedded</h5>
