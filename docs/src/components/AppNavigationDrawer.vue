@@ -243,6 +243,10 @@ export default {
           page_name: 'PopOver',
           page_path: '/vue-components/popover',
         },
+        {
+          page_name: 'Tour',
+          page_path: '/vue-components/tour',
+        },
       ],
     },
   ],

@@ -1,7 +1,7 @@
 <template>
   <div class="lv-demo_layout">
     <!--------------------- Top PopOver  ------------------------->
-    <LvPopOver v-bind="allOptions" :offset="10" placement="top" :hover="true">
+    <LvPopOver :offset="10" placement="top" :hover="true">
       <template #anchor>
         <LvButton label="Top" class="lv--primary" />
       </template>
