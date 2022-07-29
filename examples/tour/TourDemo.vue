@@ -1,19 +1,21 @@
 <template>
-  <div>
-    <!--<div id="v-step-0">A DOM element on your page. The first step will pop on this element because its ID is 'v-step-0'.</div>
-    <div class="v-step-1">A DOM element on your page. The second step will pop on this element because its ID is 'v-step-1'.</div>
-    <div data-v-step="2">A DOM element on your page. The third and final step will pop on this element because its ID is 'v-step-2'.</div>
-    <LvTour :steps="steps">
-      <template v-slot:header>
-        <LvButton label="Second" class="lv--success" icon="light-icon-click" />
-      </template>
-
-      <template v-slot:content>
+  <div class="tourDemo">
+    <LvTour :steps="stepList">
+      <!-- <template #content>
         <div>
-          <p>Switch between vue 2x and vue 3x.</p>
+          {{ listStep }}
+          <p v-html="stepList[listStep].title"></p>
+        </div>
+        <div style="text-align: center; color: #263846; width: 200px; margin-top: 10px">
+          <p v-html="stepList[listStep].description"></p>
+        </div>
+        <br />
+        <!-- <div style="text-align: center">
+          <LvButton @click.stop="previousStep" class="lv--success">previousStep</LvButton>
+          <LvButton @click.stop="nextStep" class="lv--success">nextStep</LvButton>
         </div>
       </template> -->
-    <LvTour></LvTour>
+    </LvTour>
   </div>
 </template>
 
@@ -25,22 +27,62 @@ export default {
     LvPopOver,
     LvTour,
   },
-  props: {},
+  props: [],
   data() {
     return {
-      steps: [
+      listStep: 0,
+
+      stepList: [
         {
-          id: 'first tour',
+          id: '1',
+          background: '#ddd',
+          target: '.header-logo',
+          placement: 'bottom',
           title: `<a href="https://lightvue.org/"><img src="/logo_v2.svg" class="header-logo"/></a>`,
           description: `<p>The Emerging UI Component Library Designed for Vue 3.x & Vue 2.x</p>`,
         },
         {
-          id: 'second tour',
-          title: 'second title',
-          description: 'second description',
+          id: '2',
+          target: '.light-icon-chevron-down',
+          placement: 'bottom',
+          title: '<h6>Progress Bar</h6>',
+          description: '<p>Progress Bar component can be used as a process status indicator for a time-consuming process.</p>',
+        },
+        {
+          id: '3',
+          target: '.right-sidebar',
+          placement: 'left',
+          title: '<h6>Progress Spinners</h6>',
+          description: '<p>Progress spinner components can be used as a loading animations or space-fillers while waiting for the actual content to load.</p>',
+        },
+        {
+          id: '4',
+          target: '.documentation-link',
+          placement: 'bottom',
+          title: '<h5>HTML Embedded</h5>',
+          description: '<p>tooltip content <u>inline HTML, images, iframe, videos, maps Through templates, </u>. A title can be added to the content can be loaded with</p>',
+        },
+        {
+          id: '5',
+          target: '#setup',
+          placement: 'top',
+          title: '<h6>Switch</h6>',
+          description: '<p>You can switch between LightVue 3.x & Vue 2.x from here.</p>',
         },
       ],
     };
+  },
+  methods: {
+    nextStep() {
+      if (this.listStep < this.stepList.length) {
+        this.listStep++;
+        console.log('Demo Next Step', this.listStep);
+      }
+    },
+    previousStep() {
+      this.listStep--;
+      console.log('Demo Previous step', this.listStep);
+    },
   },
 };
 </script>
