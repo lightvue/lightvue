@@ -2,18 +2,19 @@
   <div class="tour_wrapper">
     <LvButton label="Start the Demo" class="lv--secondary" icon="light-icon-click" @click.stop="toggleVisibility"></LvButton>
 
-    <div v-for="step in steps" :key="step.id">
-      <LvPopOver v-if="step.id == currentStep" v-model="visibility" :placement="step.placement" :target="step.target" :backgroundColor="step.background" maxWidth="250px">
+    <!-- <div v-for="(step, stepIndex) in steps" :key="stepIndex"> -->
+      <LvPopOver  v-model="visibility" :placement="activeStep.placement" :target="activeStep.target" :backgroundColor="activeStep.background" maxWidth="250px">
         <div>
-          {{ step.target }}
-          step no-{{ step.id }} {{ currentStep }}-currentStep
-          <p v-html="step.title"></p>
-          <p v-html="step.description"></p>
-          Condition-{{ step.id == currentStep }} target-{{ step.target }} placement-{{ step.placement }}
-          <div style="text-align: center">
+          {{ activeStep.target }}
+          step no-{{ activeStep.id }} {{ currentStep }}-currentStep
+          <p v-html="activeStep.title"></p>
+          <p v-html="activeStep.description"></p>
+          Condition-{{ activeStep.id == currentStep }} target-{{ activeStep.target }} placement-{{ activeStep.placement }}
+          <!-- <div>
             <LvButton @click.stop="previousStep" class="lv--primary">Back</LvButton>
             <LvButton @click.stop="nextStep" class="lv--primary">Next</LvButton>
-          </div>
+          </div> -->
+          <slot name="button" :previousStep="previousStep" :nextStep="nextStep"></slot>
         </div>
       </LvPopOver>
     </div>
@@ -36,9 +37,13 @@ export default {
     //   default: 0,
     // },
   },
+  // created() {
+  //   this.$emit('nextStep');
+  // },
   data() {
     return {
-      currentStep: 1,
+      currentStep: 0,
+      // activeStep: null,
       visibility: false,
     };
   },
@@ -46,8 +51,8 @@ export default {
     numberOfSteps() {
       return this.steps.length;
     },
-    step() {
-      return this.steps[this.currentStep], console.log('pushed in step', this.currentStep);
+    activeStep() {
+      return this.steps[this.currentStep];
     },
   },
   methods: {
@@ -57,6 +62,11 @@ export default {
     nextStep() {
       if (this.currentStep < this.numberOfSteps) {
         this.currentStep++;
+        // this.visibility = false;
+        // setTimeout(() => {
+        //   this.visibility = true;
+        // }, 1000);
+        // this.visibility = true;
         console.log('Component Next Step', this.currentStep);
       } else {
         alert('Last Step');

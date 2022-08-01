@@ -59,6 +59,18 @@ export default {
       file: 'tour/TourDemo',
       description: '',
     },
+    {
+      id: 'tour demo 2',
+      title: 'Demo 2',
+      file: 'tour/TourDemo2',
+      description: '',
+    },
+    {
+      id: 'tour demo 3',
+      title: 'Demo 3',
+      file: 'tour/TourDemo3',
+      description: '',
+    },
   ],
 };
 </script>
