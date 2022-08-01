@@ -54,7 +54,7 @@ export default {
         'icon-right': '',
         size: 'xl',
       },
-      boxModelValue: '0 10px 10px 10px',
+      boxModelValue: '10px 10px 10px 10px',
       stringProps: ['label', 'icon-right', 'size', 'type'],
     };
   },
