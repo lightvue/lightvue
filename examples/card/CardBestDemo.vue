@@ -18,7 +18,7 @@
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
-        <span class="dy-code-row --tag-row">&nbsp;&lt;LvGlassCard</span>
+        <span class="dy-code-row --tag-row">&nbsp;&lt;LvCard</span>
         <span class="dy-code-row --attribute-row" v-for="(option, name) in enabledOptions" :key="name">
           <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
         </span>

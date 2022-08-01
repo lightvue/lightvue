@@ -1,22 +1,9 @@
 <template>
-  <div>
-    <h4>Options as array of objects</h4>
+  <div class="lv-demo_layout">
     <lv-checkbox-group v-model="chosenCities1" name="cities" :options="cities" optionLabel="name" pulse color="primary"></lv-checkbox-group>
-    <h6>Chosen options (using v-model): {{ chosenCities1 }}</h6>
+    <p style="margin-top: 1rem">Chosen options (using v-model): {{ chosenCities1 }}</p>
     <br />
-    <h4>Options as array of objects (With: optionValue="code")</h4>
-    <lv-checkbox-group v-model="chosenCities2" name="cities" :options="cities" optionLabel="name" pulse color="primary" optionValue="code"></lv-checkbox-group>
-    <h6>Chosen options (using v-model): {{ chosenCities2 }}</h6>
-    <br />
-    <h4>Options as array of strings</h4>
-    <lv-checkbox-group v-model="chosenCities3" name="countries" :options="countries" color="primary"></lv-checkbox-group>
-    <h6>Chosen options (using v-model): {{ chosenCities3 }}</h6>
-    <br />
-    <h4>Options as array of strings [No Preselected]</h4>
-    <lv-checkbox-group v-model="chosenCities4" name="countries" :options="countries" color="primary"></lv-checkbox-group>
-    <h6>Chosen options (using v-model): {{ chosenCities4 }}</h6>
   </div>
-  <!-- REFACTORING -->
 </template>
 
 <script>
@@ -43,3 +30,11 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+</style>

@@ -1,7 +1,9 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <docs-card-vue title="Basic usage" file="ripple/RippleBasicDemo" />
-    <docs-card-vue title="Modifying color" file="ripple/RippleColorDemo" />
+    <template v-for="(demo, i) in demos">
+      <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
+    </template>
+
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <!-- <docs-all-api :api-data="$options.apiData" /> -->
@@ -15,7 +17,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import RippleAPI from 'lightvueDocs/example/ripple/RippleAPI';
+// import RippleAPI from 'lightvueDocs/example/ripple/RippleAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
@@ -37,6 +39,22 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  data() {
+    return {
+      demos: [
+        {
+          title: 'Basic usage',
+          file: 'ripple/RippleBasicDemo',
+          description: 'You can use the ripple custom directive <span>v-ripple</span> for creating material effect. LightVue Ripple bar is Both compatible with Vue 2.x and Vue 3.x.',
+        },
+        {
+          title: 'Modifying color',
+          file: 'ripple/RippleColorDemo',
+          description: 'you can set the color of repple by overwriting a <span>lv-ink</span> class.',
+        },
+      ],
+    };
+  },
   components: {
     DocsCardVue,
     DocsCard,
@@ -49,7 +67,7 @@ export default {
   packageName: 'ripple',
   componentName: 'Ripple',
   status: COMPONENT_STATUS.BETA,
-  apiData: RippleAPI,
-  apiData: {},
+  // apiData: RippleAPI,
+  // apiData: {},
 };
 </script>

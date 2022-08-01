@@ -1,8 +1,8 @@
 <template>
   <div>
-    <docs-card-best title="Playground">
+    <docs-card-best title="Playground" id="glassmorphic-best-card">
       <LvGlassCard v-bind="allOptions">
-        <div v-html="dummyContent('Heading')"></div>
+        <div v-html="dummyContent('Heading')" style="color: #ffffff"></div>
       </LvGlassCard>
       <template #props>
         <lv-toggle-switch v-model="allOptions.showBorder" label="showBorder" /> <br />
@@ -41,13 +41,13 @@ export default {
   data() {
     return {
       allOptions: {
-        backgroundBlur: '15px',
-        backgroundOpacity: '70',
+        backgroundBlur: '10px',
+        backgroundOpacity: '80',
         padding: '20px',
-        borderRadius: '4px',
+        borderRadius: '8px',
         showBorder: false,
 
-        backgroundColor: '#556F7B',
+        backgroundColor: '#374D57',
       },
       stringProps: ['backgroundBlur', 'backgroundOpacity', 'padding', 'borderRadius', 'backgroundColor'],
     };
@@ -77,4 +77,9 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#glassmorphic-best-card .responsive-area {
+  background: url('./glasscard-demo-bg.jpg');
+  background-attachment: cover;
+}
+</style>

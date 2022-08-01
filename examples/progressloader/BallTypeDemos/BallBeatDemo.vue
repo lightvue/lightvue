@@ -1,8 +1,8 @@
 <template>
   <div class="demo__wrapper">
-    <div class="demo__item"><lv-loader type="ball-beat" /></div>
-    <div class="demo__item"><lv-loader type="ball-beat" color="#38b2ac" /></div>
-    <div class="demo__item"><lv-loader type="ball-beat" :scale="2" /></div>
+    <lv-loader type="ball-beat" />
+    <lv-loader type="ball-beat" color="#38b2ac" />
+    <lv-loader type="ball-beat" :scale="2" />
   </div>
 </template>
 
@@ -24,11 +24,8 @@ export default {
   display: flex;
   flex-flow: row wrap;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 0px;
-  padding: 0px;
-  height: max-content;
-  border: 0px;
+  justify-content: space-between;
+  width: 80%;
 }
 
 .demo__item {
