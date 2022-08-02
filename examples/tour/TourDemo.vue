@@ -1,6 +1,9 @@
 <template>
   <div class="tourDemo">
     <LvTour :steps="stepList">
+      <template v-slot:header="{ toggleVisibility }">
+        <LvButton label="Start the Demo" class="lv--secondary" icon="light-icon-click" @click="toggleVisibility"></LvButton>
+      </template>
       <!-- <template #content>
         <div>
           {{ listStep }}
@@ -9,10 +12,8 @@
         <div style="text-align: center; color: #263846; width: 200px; margin-top: 10px">
           <p v-html="stepList[listStep].description"></p>
         </div>
-      </template>
-
-      <br /> -->
-      <template #button>
+      </template>-->
+      <template v-slot:button="{ previousStep, nextStep }">
         <div style="text-align: center">
           <LvButton @click.stop="previousStep" class="lv--success">previousStep</LvButton>
           <LvButton @click.stop="nextStep" class="lv--success">nextStep</LvButton>
@@ -33,8 +34,6 @@ export default {
   props: [],
   data() {
     return {
-      listStep: 0,
-
       stepList: [
         {
           id: '1',
@@ -74,18 +73,6 @@ export default {
         },
       ],
     };
-  },
-  methods: {
-    nextStep() {
-      if (this.listStep < this.stepList.length) {
-        this.listStep++;
-        console.log('Demo Next Step', this.listStep);
-      }
-    },
-    previousStep() {
-      this.listStep--;
-      console.log('Demo Previous step', this.listStep);
-    },
   },
 };
 </script>

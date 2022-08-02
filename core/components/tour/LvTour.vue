@@ -1,15 +1,15 @@
 <template>
   <div class="tour_wrapper">
-    <LvButton label="Start the Demo" class="lv--secondary" icon="light-icon-click" @click.stop="toggleVisibility"></LvButton>
-
+    <!-- <LvButton label="Start the Demo" class="lv--secondary" icon="light-icon-click" @click.stop="toggleVisibility"></LvButton> -->
+    <slot name="header" :toggleVisibility="toggleVisibility"></slot>
     <!-- <div v-for="(step, stepIndex) in steps" :key="stepIndex"> -->
       <LvPopOver  v-model="visibility" :placement="activeStep.placement" :target="activeStep.target" :backgroundColor="activeStep.background" maxWidth="250px">
         <div>
-          {{ activeStep.target }}
-          step no-{{ activeStep.id }} {{ currentStep }}-currentStep
+          <!-- {{ activeStep.target }}
+          step no-{{ activeStep.id }} {{ currentStep }}-currentStep -->
           <p v-html="activeStep.title"></p>
           <p v-html="activeStep.description"></p>
-          Condition-{{ activeStep.id == currentStep }} target-{{ activeStep.target }} placement-{{ activeStep.placement }}
+          <!-- Condition-{{ activeStep.id == currentStep }} target-{{ activeStep.target }} placement-{{ activeStep.placement }} -->
           <!-- <div>
             <LvButton @click.stop="previousStep" class="lv--primary">Back</LvButton>
             <LvButton @click.stop="nextStep" class="lv--primary">Next</LvButton>
@@ -32,18 +32,10 @@ export default {
       type: Array,
       default: () => [],
     },
-    // currentStep: {
-    //   type: Number,
-    //   default: 0,
-    // },
   },
-  // created() {
-  //   this.$emit('nextStep');
-  // },
   data() {
     return {
       currentStep: 0,
-      // activeStep: null,
       visibility: false,
     };
   },
@@ -73,7 +65,7 @@ export default {
       }
     },
     previousStep() {
-      if (this.currentStep > 1) {
+      if (this.currentStep > 0) {
         this.currentStep--;
         console.log('Component Previous step', this.currentStep);
       } else {

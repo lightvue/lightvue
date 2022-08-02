@@ -1,16 +1,11 @@
 <template>
   <div class="tourDemo">
     <LvTour :steps="demoList">
-      <template #content>
-        <div>
-          <!-- {{ listStep }} -->
-          <p v-html="demoList[listStep].title"></p>
-        </div>
-        <div style="text-align: center; color: #263846; width: 200px; margin-top: 10px">
-          <p v-html="demoList[listStep].description"></p>
-        </div>
+      <template v-slot:header="{ toggleVisibility }">
+        <LvButton label="Start Tour" class="lv--warning" icon="light-icon-bolt" @click="toggleVisibility"></LvButton>
       </template>
-      <template #button>
+
+      <template v-slot:button="{ previousStep, nextStep }">
         <div class="footer" style="display: flex; justify-content: space-between">
           <LvButton @click.stop="previousStep" label="Back" icon="light-icon-arrow-left-circle" class="lv--secondary" style="width: 40%" />
           <p style="color: black; margin: 0; margin-top: 5px">{{ listStep }}/{{ demoList.length - 1 }}</p>
@@ -32,14 +27,13 @@ export default {
   props: [],
   data() {
     return {
-      listStep: 0,
-
       demoList: [
         {
           id: '1',
           background: '#ddd',
           target: '.header-logo',
           placement: 'bottom',
+          backgroundColor: '#263846',
           title: `<a href="https://lightvue.org/"><img src="/logo_v2.svg" class="header-logo"/></a>`,
           description: `<p>The Emerging UI Component Library Designed for Vue 3.x & Vue 2.x</p>`,
         },
@@ -74,33 +68,7 @@ export default {
       ],
     };
   },
-  methods: {
-    nextStep() {
-      if (this.listStep < this.demoList.length) {
-        this.listStep++;
-        console.log('Demo Next Step', this.listStep);
-      } else {
-        alert('last step');
-      }
-    },
-    previousStep() {
-      if (this.listStep >= 1) {
-        this.listStep--;
-        console.log('Demo Previous step', this.listStep);
-      }
-    },
-  },
 };
 </script>
-<style lang="scss" >
-.popOverDemo_color-progressBarBody {
-  background: #323c45;
-  height: 45px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-}
-</style>
+
 
