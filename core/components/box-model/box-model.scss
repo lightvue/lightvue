@@ -37,14 +37,14 @@
                 place-items: center;
                 position: relative;
                 border: 1px dashed teal;
-                &:hover {
-                    background: #c9cdce;
-                    border: 1px dashed;
-                }
+                // &:hover {
+                //     background: #c9cdce;
+                //     border: 1px dashed;
+                // }
                 .lv-box__model-controller {
                     position: absolute;
                     width: 3px;
-                    background: #008080;
+                    background: rgb(197, 197, 197);
                     height: 100%;
                     cursor: pointer;
                     &:hover {
@@ -54,6 +54,10 @@
                 }
                 .--horizontal {
                     transform: rotate(90deg);
+                }
+                .--active {
+                    background-color: rgb(0, 140, 255);
+                    z-index: 10;
                 }
             }
         }

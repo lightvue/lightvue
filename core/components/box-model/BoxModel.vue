@@ -2,25 +2,17 @@
   <div class="lv-box__model">
     <div class="lv-box__model-controller outside">
       <div class="--row">{{ this.localState.top }}</div>
-      <!-- <div class="--row">
-        <input v-model="localInputValue" type="number" placeholder="Enter Value" bottomBar />
-      </div> -->
 
       <div class="--center-row">
         {{ this.localState.left }}
-        <!-- <input v-model="localInputValue" type="number" placeholder="Enter Value" bottomBar /> -->
 
         <div class="lv-box__model-inner_box">
-          <div @click="setDirection('y-axis')" class="lv-box__model-controller"></div>
-          <div @click="setDirection('x-axis')" class="lv-box__model-controller --horizontal"></div>
+          <div @click="setDirection('y-axis')" class="lv-box__model-controller" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'y-axis' }"></div>
+          <div @click="setDirection('x-axis')" class="lv-box__model-controller --horizontal" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'x-axis' }"></div>
         </div>
         {{ this.localState.right }}
-        <!-- <input v-model="localInputValue" type="number" placeholder="Enter Value" bottomBar /> -->
       </div>
-      <div class="--row">
-        {{ this.localState.bottom }}
-        <!-- <input v-model="localInputValue" type="number" placeholder="Enter Value" bottomBar /> -->
-      </div>
+      <div class="--row">{{ this.localState.bottom }}</div>
     </div>
     <div class="lv-box__model-inputs">
       <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" bottomBar />
