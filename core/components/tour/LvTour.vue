@@ -14,7 +14,7 @@
             <LvButton @click.stop="previousStep" class="lv--primary">Back</LvButton>
             <LvButton @click.stop="nextStep" class="lv--primary">Next</LvButton>
           </div> -->
-          <slot name="button" :previousStep="previousStep" :nextStep="nextStep"></slot>
+          <slot name="button" :previousStep="previousStep" :nextStep="nextStep" :currentStep="currentStep" :numberOfSteps="numberOfSteps"></slot>
         </div>
       </LvPopOver>
     </div>
@@ -52,7 +52,7 @@ export default {
       this.visibility = !this.visibility;
     },
     nextStep() {
-      if (this.currentStep < this.numberOfSteps) {
+      if (this.currentStep < this.numberOfSteps - 1) {
         this.currentStep++;
         // this.visibility = false;
         // setTimeout(() => {

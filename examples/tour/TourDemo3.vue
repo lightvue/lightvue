@@ -5,10 +5,10 @@
         <LvButton label="Start Tour" class="lv--warning" icon="light-icon-bolt" @click="toggleVisibility"></LvButton>
       </template>
 
-      <template v-slot:button="{ previousStep, nextStep }">
+      <template v-slot:button="{ previousStep, nextStep, numberOfSteps, currentStep }">
         <div class="footer" style="display: flex; justify-content: space-between">
           <LvButton @click.stop="previousStep" label="Back" icon="light-icon-arrow-left-circle" class="lv--secondary" style="width: 40%" />
-          <p style="color: black; margin: 0; margin-top: 5px">{{ listStep }}/{{ demoList.length - 1 }}</p>
+          <p style="color: black; margin: 0; margin-top: 5px">{{ currentStep + 1 }}/{{ numberOfSteps }}</p>
           <LvButton @click.stop="nextStep" label="Next" icon-right="light-icon-arrow-right-circle" class="lv--secondary" style="width: 40%" />
         </div>
       </template>

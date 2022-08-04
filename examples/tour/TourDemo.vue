@@ -2,7 +2,9 @@
   <div class="tourDemo">
     <LvTour :steps="stepList">
       <template v-slot:header="{ toggleVisibility }">
-        <LvButton label="Start the Demo" class="lv--secondary" icon="light-icon-click" @click="toggleVisibility"></LvButton>
+        <div class="tourDemo">
+          <LvButton label="Start the Demo" class="lv--secondary" icon="light-icon-click" @click="toggleVisibility"></LvButton>
+        </div>
       </template>
       <!-- <template #content>
         <div>
@@ -36,41 +38,43 @@ export default {
     return {
       stepList: [
         {
-          id: '1',
+          // id: '1',
           background: '#ddd',
-          target: '.header-logo',
+          target: '.tourDemo',
           placement: 'bottom',
-          title: `<a href="https://lightvue.org/"><img src="/logo_v2.svg" class="header-logo"/></a>`,
-          description: `<p>The Emerging UI Component Library Designed for Vue 3.x & Vue 2.x</p>`,
+          title: `<h4 style="text-align: center;">LightVue Tour</h4>`,
+          description: `<p>Introduce LightVue Tour to your product by walking them through it step by step.</p>`,
         },
         {
-          id: '2',
-          target: '.light-icon-chevron-down',
+          // id: '2',
+          background: '#ddd',
+          target: '.nav-list__category',
+          placement: 'right',
+          title: '<h6>A super simple setup</h6>',
+          description: '<p>Easy is better, right? The tour is up and running with just a few options and steps.</p>',
+        },
+        {
+          // id: '3',
+          background: '#ddd',
+          target: '.social__row',
           placement: 'bottom',
-          title: '<h6>Progress Bar</h6>',
-          description: '<p>Progress Bar component can be used as a process status indicator for a time-consuming process.</p>',
+          title: `<h6>Best of all, it's free!</h6>`,
+          description: `<p>Yeah! Free as in beer... or speech. Use and abuse, but don't forget to contribute!</p>`,
         },
-        {
-          id: '3',
-          target: '.right-sidebar',
-          placement: 'left',
-          title: '<h6>Progress Spinners</h6>',
-          description: '<p>Progress spinner components can be used as a loading animations or space-fillers while waiting for the actual content to load.</p>',
-        },
-        {
-          id: '4',
-          target: '.documentation-link',
-          placement: 'bottom',
-          title: '<h5>HTML Embedded</h5>',
-          description: '<p>tooltip content <u>inline HTML, images, iframe, videos, maps Through templates, </u>. A title can be added to the content can be loaded with</p>',
-        },
-        {
-          id: '5',
-          target: '#setup',
-          placement: 'top',
-          title: '<h6>Switch</h6>',
-          description: '<p>You can switch between LightVue 3.x & Vue 2.x from here.</p>',
-        },
+        // {
+        //   id: '4',
+        //   target: '.documentation-link',
+        //   placement: 'bottom',
+        //   title: '<h5>HTML Embedded</h5>',
+        //   description: '<p>tooltip content <u>inline HTML, images, iframe, videos, maps Through templates, </u>. A title can be added to the content can be loaded with</p>',
+        // },
+        // {
+        //   id: '5',
+        //   target: '#setup',
+        //   placement: 'top',
+        //   title: '<h6>Switch</h6>',
+        //   description: '<p>You can switch between LightVue 3.x & Vue 2.x from here.</p>',
+        // },
       ],
     };
   },
