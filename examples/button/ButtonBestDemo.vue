@@ -3,7 +3,9 @@
     <docs-card-best title="Playground">
       <lv-button v-bind="allOptions" style="width: 100%" />
       <template #props>
-        <lv-toggle-switch v-model="allOptions.outlined" label="Outlined" /> <br />
+        <lv-percentage-layout></lv-percentage-layout><br />
+        <lv-toggle-switch v-model="allOptions.outlined" label="Outlined" />
+        <br />
         <lv-toggle-switch v-model="allOptions.push" label="Push" /> <br />
         <lv-toggle-switch v-model="allOptions.raised" label="Raised" /> <br />
         <lv-toggle-switch v-model="allOptions['deep-shadow']" label="Deep Shadow" /> <br />
@@ -34,6 +36,7 @@ import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input';
 import LvColorpicker from 'lightvue/color-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
+import LvPercentageLayout from 'lightvue/percentage-layout';
 
 export default {
   data() {
@@ -59,6 +62,7 @@ export default {
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
+    LvPercentageLayout,
   },
   computed: {
     enabledOptions() {
