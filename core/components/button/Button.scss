@@ -20,7 +20,6 @@
     transition: all 0.2s ease-in-out;
     // box-shadow: none !important;
     &:active {
-      transition: all 0.2s ease-in-out;
       box-shadow: none;
       transform: translateY(3px);
     }

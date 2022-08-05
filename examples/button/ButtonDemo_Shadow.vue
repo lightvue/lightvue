@@ -1,19 +1,15 @@
 <template>
   <div>
-
     <h5>Shadow on Hover</h5>
     <LvButton label="Primary" deep-shadow-hover class="lv--primary" />
     <LvButton label="Secondary" deep-shadow-hover class="lv--secondary" />
     <LvButton label="Success" deep-shadow-hover class="lv--success" />
     <LvButton label="Info" deep-shadow-hover class="lv--info" />
     <LvButton label="Warning" deep-shadow-hover class="lv--warning" />
-    <LvButton
-      label="Help"
-      deep-shadow-hover
-      class="lv--help --deep-shadow-hover"
-    />
+    <LvButton label="Help" deep-shadow-hover class="lv--help --deep-shadow-hover" />
     <LvButton label="Danger" deep-shadow-hover class="lv--danger" />
     <LvButton label="Plain" deep-shadow-hover class="lv--plain" />
+    <br />
 
     <h5>Push Buttons With Soft Shadows</h5>
     <LvButton label="Primary" deep-shadow push class="lv--primary" />
@@ -28,15 +24,10 @@
 </template>
 
 <style lang="scss" scoped>
-.lv-button {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.lv-buttonset {
-  .lv-button {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
+.lv-demo_layout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

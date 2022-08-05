@@ -3,7 +3,7 @@ import DomHandler from './DomHandler';
 import ObjectUtils from './ObjectUtils';
 
 import copyToClipboard from './copyToClipboard.js';
-import uniqueComponentId from './uniqueComponentsId';
+import uniqueComponentId from './uniqueComponentsId.js';
 import pubSub from './pubSub';
 
 export { ConnectedOverlayScrollHandler, DomHandler, ObjectUtils, copyToClipboard, uniqueComponentId, pubSub };

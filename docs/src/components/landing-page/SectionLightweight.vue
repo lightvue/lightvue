@@ -5,7 +5,7 @@
       <div class="light-weight__content">
         <div class="light-weight__content-heading">Fastest, LIGHT UI Elements in the Planet</div>
         <br />
-        <div class="light-weight__content-description">Every element of the LightVue is standalon &amp; designed to ensure Optimal Performance across devices. LightVue web components are even lighter than feather with dead simple responsive layouts. There is so much LightVue does natively to enhance performance and robustness of your web app.</div>
+        <div class="light-weight__content-description">Every element of the LightVue is standalone &amp; designed to ensure <strong>Optimal Performance</strong> across devices. LightVue web components are even lighter than feather with dead simple responsive layouts. There is so much that LightVue does natively to enhance <strong> performance</strong> and <strong>robustness</strong> of your web app.</div>
         <br />
         <br />
         <nuxt-link :to="{ hash: 'light-icons' }" class="page-button --dark">Know More</nuxt-link>
@@ -69,10 +69,14 @@ export default {};
     }
     .light-weight__content-description {
       font-size: 20px;
-      line-height: 26px;
+      line-height: 30px;
       opacity: 0.7;
+      font-weight: 300;
       color: #143a56;
-      margin-bottom: 0.78em;
+      margin-bottom: 0.5em;
+      strong {
+        font-weight: 500;
+      }
     }
   }
 }

@@ -4,25 +4,15 @@
       <div class="drawer-container__wrapper --absolute">
         <div class="wrapper__card">
           <div class="card__header">
-            <div
-              class="header__icon --left"
-              @click="drawer2 = !drawer2"
-            >
+            <div class="header__icon --left" @click="drawer2 = !drawer2">
               <i class="light-icon-menu-2"></i>
             </div>
           </div>
           <div class="card__drawer">
-            <lv-drawer
-              v-model="drawer2"
-              v-bind="allOptions"
-            >
+            <lv-drawer v-model="drawer2" v-bind="allOptions">
               <template>
                 <div class="list">
-                  <div
-                    class="list-item"
-                    v-for="(item, index) in items"
-                    :key="index"
-                  >{{ item.name }}</div>
+                  <div class="list-item" v-for="(item, index) in items" :key="index">{{ item.name }}</div>
                 </div>
               </template>
             </lv-drawer>
@@ -30,96 +20,35 @@
         </div>
       </div>
       <template #props>
-        <lv-toggle-switch
-          v-model="allOptions.top"
-          label="From Top"
-        /> <br />
+        <lv-toggle-switch v-model="allOptions.top" label="From Top" /> <br />
         <!-- <lv-toggle-switch
           v-model="allOptions.bottom"
           label="From Bottom"
         /> <br /> -->
-        <lv-toggle-switch
-          v-model="allOptions.right"
-          label="From Right"
-        /> <br />
-        <lv-toggle-switch
-          v-model="allOptions.left"
-          label="From Left"
-        /> <br />
-        <lv-toggle-switch
-          v-model="allOptions.absolute"
-          label="Absolute to the container"
-        /> <br />
-        <lv-toggle-switch
-          v-model="allOptions.close"
-          label="Show Close"
-        /> <br />
-        <lv-toggle-switch
-          v-model="allOptions.shadow"
-          label="Show Shadow"
-        /> <br />
-        <lv-toggle-switch
-          v-model="allOptions.noBackdrop"
-          label="No Backdrop"
-        /> <br />
-        <lv-toggle-switch
-          v-model="allOptions.backdropBlur"
-          label="Blur the Backdrop"
-        /> <br />
+        <lv-toggle-switch v-model="allOptions.right" label="From Right" /> <br />
+        <lv-toggle-switch v-model="allOptions.left" label="From Left" /> <br />
+        <lv-toggle-switch v-model="allOptions.absolute" label="Absolute to the container" /> <br />
+        <lv-toggle-switch v-model="allOptions.close" label="Show Close" /> <br />
+        <lv-toggle-switch v-model="allOptions.shadow" label="Show Shadow" /> <br />
+        <lv-toggle-switch v-model="allOptions.noBackdrop" label="No Backdrop" /> <br />
+        <lv-toggle-switch v-model="allOptions.backdropBlur" label="Blur the Backdrop" /> <br />
         <br />
-        <lv-input
-          v-model="allOptions.headerTitle"
-          label="Header Title"
-        /> <br />
-        <lv-input
-          v-model="allOptions.maxSpan"
-          label="Max Span at mobile (in %)"
-          type="number"
-        /> <br />
-        <lv-input
-          v-model="allOptions.width"
-          label="Width"
-          type="number"
-        /> <br />
-        <lv-input
-          v-model="allOptions.height"
-          label="Height"
-          type="number"
-        /> <br />
-        <lv-input
-          v-model="allOptions.zIndex"
-          label="z-index"
-          type="number"
-        /> <br />
-        <lv-input
-          v-model="allOptions.headerFontSize"
-          label="Header Font Size"
-        /> <br />
-        <lv-input
-          v-model="allOptions.padding"
-          label="Padding"
-        /> <br />
-        <Lv-colorpicker
-          v-model="allOptions.headerBackground"
-          label="Header Background"
-        />
-        <Lv-colorpicker
-          v-model="allOptions.headerColor"
-          label="Header Color"
-        />
-        <Lv-colorpicker
-          v-model="allOptions.background"
-          label="Background Color"
-        />
+        <lv-input v-model="allOptions.headerTitle" label="Header Title" /> <br />
+        <lv-input v-model="allOptions.maxSpan" label="Max Span at mobile (in %)" type="number" /> <br />
+        <lv-input v-model="allOptions.width" label="Width" type="number" /> <br />
+        <lv-input v-model="allOptions.height" label="Height" type="number" /> <br />
+        <lv-input v-model="allOptions.zIndex" label="z-index" type="number" /> <br />
+        <lv-input v-model="allOptions.backdropOpacity" label="Backdrop Opacity" type="number" /> <br />
+        <lv-input v-model="allOptions.headerFontSize" label="Header Font Size" /> <br />
+        <lv-input v-model="allOptions.padding" label="Padding" /> <br />
+        <Lv-colorpicker v-model="allOptions.headerBackground" label="Header Background" />
+        <Lv-colorpicker v-model="allOptions.headerColor" label="Header Color" />
+        <Lv-colorpicker v-model="allOptions.background" label="Background Color" />
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
         <span class="dy-code-row --tag-row">&nbsp;&lt;lv-drawer</span>
-        <span
-          class="dy-code-row --attribute-row"
-          v-for="(option, name) in enabledOptions"
-          :key="name"
-        >
+        <span class="dy-code-row --attribute-row" v-for="(option, name) in enabledOptions" :key="name">
           <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
         </span>
         <span class="dy-code-row --tag-row">&nbsp;&gt;</span>
@@ -153,6 +82,7 @@ export default {
         height: 250,
         zIndex: 1000,
         maxSpan: 70,
+        backdropOpacity: 0.3,
         headerTitle: 'Any Title',
         background: '#fff',
         headerColor: '#607c8a',

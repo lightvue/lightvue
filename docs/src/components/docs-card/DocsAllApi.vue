@@ -1,5 +1,5 @@
 <template>
-  <docs-card title="APIs" :responsive="false" id="docs-api">
+  <docs-card title="APIs" description="All of the props, events and slots of the component are mentioned below:" :responsive="false" :showCardActions="false" id="docs-api">
     <DocsApiTableProps v-if="apiData.props && apiData.props.length" :props-list="apiData.props" id="docs-props" />
     <DocsApiTableEvents v-if="apiData.events && apiData.events.length" :events-list="apiData.events" id="docs-events" />
     <DocsApiTableSlots v-if="apiData.slots && apiData.slots.length" :slots-list="apiData.slots" id="docs-slots" />
@@ -30,14 +30,21 @@ export default {
 <style lang="scss">
 .api-table__wrap {
   overflow-y: auto;
+  // border-radius: 10px;
+  &:first-child {
+    border-radius: 10px 10px 0px 0px;
+  }
+  &:last-child {
+    border-radius: 0px 0px 10px 10px;
+  }
 }
 .api-table {
   display: table;
   width: 100%;
-  border: 1px solid #e7e7e7;
+  // border: 1px solid #e7e7e7;
   background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  // box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 .api-table__header,
 .api-table__row {
@@ -54,12 +61,18 @@ export default {
   .api-table__cell {
     padding: 12px 12px;
     border-right: 1px solid #6b8897;
+    &:last-child {
+      border-right: none;
+    }
   }
 }
 .api-table__cell {
   display: table-cell;
   border-right: 1px solid #e1e4e7;
   padding: 10px 12px;
+  &:last-child {
+    border-right: none;
+  }
   &.--name {
     background-color: rgba(56, 178, 171, 0.05);
     width: 150px;
