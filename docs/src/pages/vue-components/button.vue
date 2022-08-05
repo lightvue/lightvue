@@ -108,10 +108,16 @@ export default {
       file: 'button/ButtonDemo_Raised',
     },
     {
-      id: 'deep-shadow',
-      title: 'Deep shadow',
-      description: 'You can use some Miscellaneous button variation by passing <span>deep-shadow</span> prop with other variations like <span>push</span> prop',
+      id: 'deep-shadow-hover',
+      title: 'Deep shadow hover',
+      description: 'You can use some deep shadow hover button variation by passing <span>deep-shadow-hover</span> prop',
       file: 'button/ButtonDemo_Shadow',
+    },
+    {
+      id: 'push-buttons-shadow',
+      title: 'Push with soft Shadow',
+      description: 'You can use some Miscellaneous button variation by passing <span>deep-shadow</span> prop with other variations like <span>push</span> prop',
+      file: 'button/ButtonDemo_push-shadow',
     },
     {
       id: 'miscellaneous',
