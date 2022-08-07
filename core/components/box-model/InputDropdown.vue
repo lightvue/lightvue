@@ -1,7 +1,7 @@
 <template>
   <div class="unit_input-wrapper">
     <div class="unit-input">
-      <lv-input v-model="localInputValue" type="number" placeholder="10" bottomBar> </lv-input>
+      <lv-input v-model="localValue" type="number" placeholder="10" bottomBar> </lv-input>
     </div>
     <div class="unit-dropdown">
       <lv-dropdown id="units-dropdown" v-model="selectedUnit" :options="units" bottomBar />
@@ -18,10 +18,20 @@ export default {
   mixins: [trueValueMixin],
   data() {
     return {
-      localInputValue: 0,
+      localValue: '0',
       units: ['px', 'rem', 'em'],
       selectedUnit: 'px',
     };
+  },
+  watch: {
+    localValue() {
+      if (this.localValue !== this.modelValue) {
+        this.updateValue(this.localValue);
+      }
+    },
+  },
+  mounted() {
+    this.localValue = this.modelValue;
   },
   components: {
     LvInput,
