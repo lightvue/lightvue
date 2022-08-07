@@ -16,12 +16,7 @@
     </div>
     <div class="lv-box__model-inputs">
       <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" bottomBar />
-      <lv-input v-model="localInputValue" type="number" placeholder="Enter Value" bottomBar>
-        <!-- <template #prepend>
-          <lv-dropdown id="units-dropdown" v-model="selectedUnit" :options="units" />
-        </template> -->
-      </lv-input>
-      <lv-dropdown id="units-dropdown" v-model="selectedUnit" :options="units" bottomBar />
+      <InputDropdown></InputDropdown>
     </div>
   </div>
 </template>
@@ -30,6 +25,7 @@
 import LvInput from 'lightvue/input';
 import LvDropdown from 'lightvue/dropdown';
 import { trueValueMixin } from 'lightvue/mixins';
+import InputDropdown from './InputDropdown.vue';
 export default {
   name: 'LvBoxModel',
   mixins: [trueValueMixin],
@@ -116,6 +112,7 @@ export default {
   components: {
     LvInput,
     LvDropdown,
+    InputDropdown,
   },
 };
 </script>
