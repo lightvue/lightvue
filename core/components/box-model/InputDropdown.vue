@@ -1,10 +1,10 @@
 <template>
   <div class="unit_input-wrapper">
     <div class="unit-input">
-      <lv-input v-model="localValue" type="number" placeholder="10" bottomBar> </lv-input>
+      <lv-input ref="unitInput" v-model="localValue" type="number" placeholder="10" @focus="inputFocus" @blur="inputBlur" bottomBar> </lv-input>
     </div>
     <div class="unit-dropdown">
-      <lv-dropdown id="units-dropdown" v-model="selectedUnit" :options="units" bottomBar />
+      <lv-dropdown ref="unitDropdown" id="units-dropdown" v-model="selectedUnit" :options="units" bottomBar @focus="dropdownFocus" />
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
   watch: {
     localValue() {
       if (this.localValue !== this.modelValue) {
-        this.updateValue(this.localValue);
+        this.updateValue(this.localValue + this.selectedUnit);
       }
     },
   },
@@ -36,6 +36,18 @@ export default {
   components: {
     LvInput,
     LvDropdown,
+  },
+  methods: {
+    inputFocus(el) {
+      this.$refs.unitDropdown.$children[0].$el.classList.add('--manual-bottom-bar');
+    },
+    inputBlur() {
+      this.$refs.unitDropdown.$children[0].$el.classList.remove('--manual-bottom-bar');
+    },
+    dropdownFocus() {
+      console.log('hellp');
+      console.log(this.$refs.unitInput);
+    },
   },
 };
 </script>
@@ -60,6 +72,14 @@ export default {
     }
     .lv-input__group {
       height: 100%;
+    }
+  }
+}
+.--manual-bottom-bar {
+  .lv-input__field {
+    &::after {
+      left: 0% !important;
+      width: 100% !important;
     }
   }
 }
