@@ -16,7 +16,7 @@
     </div>
     <div class="lv-box__model-inputs">
       <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" bottomBar />
-      <InputDropdown></InputDropdown>
+      <InputDropdown v-model="localInputValue"></InputDropdown>
     </div>
   </div>
 </template>
@@ -103,7 +103,7 @@ export default {
       }
     },
     appendUnit(val) {
-      return val + this.selectedUnit;
+      return val;
     },
     setDirection(dir) {
       this.selectedDirection = dir;
