@@ -1,9 +1,9 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-button v-bind="allOptions" style="width: 100%" />
+      <lv-button v-bind="allOptions" style="width: 100%" :style="{ width: percentagelayout }" />
       <template #props>
-        <lv-percentage-layout></lv-percentage-layout><br />
+        <lv-percentage-layout v-model="percentagelayout"></lv-percentage-layout><br />
         <lv-toggle-switch v-model="allOptions.outlined" label="Outlined" />
         <br />
         <lv-toggle-switch v-model="allOptions.push" label="Push" /> <br />
@@ -55,6 +55,7 @@ export default {
         size: 'xl',
       },
       stringProps: ['label', 'icon-right', 'size', 'type'],
+      percentagelayout: '50%',
     };
   },
   components: {
