@@ -29,6 +29,11 @@ export default {
         this.updateValue(this.localValue + this.selectedUnit);
       }
     },
+    selectedUnit() {
+      if (this.localValue !== this.modelValue) {
+        this.updateValue(this.localValue + this.selectedUnit);
+      }
+    },
   },
   mounted() {
     this.localValue = this.modelValue;
