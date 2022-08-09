@@ -9,6 +9,10 @@
     <!-- <section-pricing /> -->
     <section-enterprise />
     <!-- <index-footer /> -->
+    <LvNotification />
+    <LvNotification position="top-left" />
+    <LvNotification position="bottom-left" />
+    <LvNotification position="bottom-right" />
   </div>
 </template>
 
