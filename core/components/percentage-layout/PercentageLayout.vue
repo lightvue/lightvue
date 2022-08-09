@@ -1,34 +1,49 @@
 <template>
   <div>
-    <div class="split">
+    <!-- <div class="split">
       <div class="split-inner" id="split-0"></div>
       <div class="split-inner" id="split-1"></div>
       <div class="split-inner" id="split-2"></div>
-      <!-- <div class="split-inner" id="split-3"></div>
+      <div class="split-inner" id="split-3"></div>
       <div class="split-inner" id="split-4"></div>
-      <div class="split-inner" id="split-5"></div> -->
-    </div>
+      <div class="split-inner" id="split-5"></div>
+    </div> -->
+
+    <!----------------------------- 2 Method --------------------------------->
+    <lv-button @click="panesNumber++">Add pane</lv-button>
+    <lv-button @click="panesNumber--">Remove pane</lv-button>
+    <br />
+    <br />
+    <splitpanes class="splitpane" style="height: 35px">
+      <pane class="pane" v-for="i in panesNumber" :key="i">
+        <span>{{ i }}</span>
+      </pane>
+    </splitpanes>
   </div>
 </template>
 
 <script>
 import LvRangeSlider from 'lightvue/range-slider';
 import { Splitpanes, Pane } from 'splitpanes';
-import Split from './Split';
+// import Split from './Split';
 
 export default {
   name: 'LvPercentageLayout',
 
   components: { LvRangeSlider, Splitpanes, Pane },
-
-  mounted() {
-    Split(['#split-0', '#split-1', '#split-2'], {
-      minSize: 0,
-      maxSize: 1000,
-      gutterSize: 1,
-    });
-    // console.log('split', Split);
+  data() {
+    return {
+      panesNumber: 3,
+    };
   },
+  // mounted() {
+  //   Split(['#split-0', '#split-1', '#split-2', '#split-3', '#split-4', '#split-5'], {
+  //     minSize: 0,
+  //     maxSize: 1000,
+  //     gutterSize: 1,
+  //   });
+  // },
+
   // methods: {
   //   drag: function (e) {
   //     let dragX = e.clientX;
@@ -100,6 +115,33 @@ export default {
 
 <style lang="scss">
 // @import './PercentageLayout.scss';
+
+.splitpane {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  background: #2b2b2b;
+  border-radius: 5px;
+  padding: 4px;
+}
+.pane {
+  border: 1px solid slategrey;
+  margin-right: 3px;
+  margin-left: 3px;
+  color: white;
+  border-radius: 4px;
+  background: #5e5e5e;
+}
+.splitpanes__splitter {
+  width: 6px !important;
+  border-radius: 1px;
+  background-color: #2496ff !important;
+  cursor: e-resize;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: #d6dfe8 !important;
+  }
+}
 
 .split {
   display: flex;
