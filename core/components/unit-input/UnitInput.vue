@@ -85,6 +85,7 @@ export default {
   background: rgba(0,0,0,0.1);
   padding:0px 1rem;
   position: relative;
+  min-width: 53px;
 }
 .custom-select {
   display: inline-block;
