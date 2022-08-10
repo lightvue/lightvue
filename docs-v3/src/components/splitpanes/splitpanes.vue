@@ -693,7 +693,12 @@ export default {
   },
 
   beforeUnmount() {
+    // Vue 3.x
     // Prevent emitting console warnings on hot reloading.
+    this.ready = false;
+  },
+  beforeDestroy() {
+    // Vue 2.x
     this.ready = false;
   },
 

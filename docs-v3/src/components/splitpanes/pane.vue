@@ -19,7 +19,12 @@ export default {
   mounted() {
     this.onPaneAdd(this);
   },
+  // Vue 3.x
   beforeUnmount() {
+    this.onPaneRemove(this);
+  },
+  // Vue 2.x
+  beforeDestroy() {
     this.onPaneRemove(this);
   },
   methods: {
