@@ -1,6 +1,6 @@
 <template>
   <div class="responsive-demo__wrap" :class="{ '--full-width': paneSize === 100 && hideResizer, '--rounded': roundedCard }">
-    <ResponsivePanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
+    <LvResponsivePanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
       <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
           <loader />
@@ -12,18 +12,18 @@
         </div>
         <div v-if="paneSize <= 90" class="responsive-dimensions" @dblclick="toggleDevice">{{ paneSizePixel }}px</div>
       </Pane>
-    </ResponsivePanes>
+    </LvResponsivePanes>
   </div>
 </template>
 
 <script>
-import { ResponsivePanes, Pane } from 'lightvue/responsive-panes';
+import { LvResponsivePanes, Pane } from 'lightvue/responsive-panes';
 // import './splitpanes.css';
 import Loader from './Loader.vue';
 
 export default {
   components: {
-    ResponsivePanes,
+    LvResponsivePanes,
     Pane,
     Loader,
   },

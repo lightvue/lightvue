@@ -1,4 +1,4 @@
-import ResponsivePanes from './ResponsivePanes.vue';
+import LvResponsivePanes from './ResponsivePanes.vue';
 import Pane from './Pane.vue';
 
-export { ResponsivePanes, Pane };
+export { LvResponsivePanes, Pane };
