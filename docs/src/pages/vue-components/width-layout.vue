@@ -20,7 +20,7 @@ import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 // import TooltipAPI from 'lightvueDocs/example/tooltip/TooltipAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
-import WidthLayout from 'lightvueDocs/example/width-layout/WidthLayout';
+import WidthLayout from 'lightvueDocs/example/width-layout/WidthLayoutDemo';
 
 export default {
   head: {

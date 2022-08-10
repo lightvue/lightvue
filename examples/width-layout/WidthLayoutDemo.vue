@@ -3,8 +3,9 @@
     <docs-card-best title="Playground">
       <lv-percentage-layout v-model="percentagelayout"></lv-percentage-layout><br />
 
-      <!-- <template #props>
-        <br />
+      <template #props>
+        <!-- <lv-button>Add pane</lv-button>
+        <lv-button>Remove pane</lv-button> -->
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -14,7 +15,7 @@
         </span>
         <span class="dy-code-row --tag-row">&nbsp;/&gt;</span>
         <span class="dy-code-row --empty-row"></span>
-      </template> -->
+      </template>
     </docs-card-best>
   </div>
 </template>
@@ -26,20 +27,7 @@ import LvPercentageLayout from 'lightvue/percentage-layout';
 export default {
   data() {
     return {
-      allOptions: {
-        outlined: false,
-        push: false,
-        raised: false,
-        'deep-shadow': false,
-        'deep-shadow-hover': false,
-        rounded: false,
-        label: 'This is a Button',
-        type: 'button',
-        icon: '',
-        'icon-right': '',
-        size: 'xl',
-      },
-      stringProps: ['label', 'icon-right', 'size', 'type'],
+      allOptions: {},
       percentagelayout: '',
     };
   },

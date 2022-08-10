@@ -99,7 +99,7 @@ export default {
         this.calculatePanesSize(this.getCurrentMouseDrag(event));
         this.$emit(
           'resize',
-          this.panes.map(pane => ({ min: pane.min, max: pane.max, size: pane.size }))
+          this.panes.map(pane => ({ min: pane.min, max: pane.max, size: pane.size.toFixed(2) }))
         );
       }
     },
