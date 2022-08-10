@@ -1,0 +1,34 @@
+.lv-animate__zoom-in {
+  animation: zoomIn var(--animation-duration) var(--animation-timing-function);
+}
+
+.lv-animate__zoom-out {
+  animation: zoomOut var(--animation-duration) var(--animation-timing-function);
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale3d(1,1,1);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+    transform: scale3d(1,1,1);
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}

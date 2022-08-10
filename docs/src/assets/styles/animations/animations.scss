@@ -1,0 +1,11 @@
+
+@import './fadeIn.scss';
+@import './fadeOut.scss';
+@import './zoom.scss';
+@import './slideIn.scss';
+@import './slideOut.scss';
+
+:root{
+  --animation-duration: 600ms;
+  --animation-timing-function: linear;
+}

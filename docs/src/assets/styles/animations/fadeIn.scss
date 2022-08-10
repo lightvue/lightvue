@@ -1,0 +1,74 @@
+// Animation Classes
+.lv-animate__fade-in{
+  animation: fadeIn var(--animation-duration) var(--animation-timing-function);  
+}
+
+.lv-animate__fade-in--left{
+  animation: fadeInLeft var(--animation-duration) var(--animation-timing-function);  
+}
+
+.lv-animate__fade-in--right{
+  animation: fadeInRight var(--animation-duration) var(--animation-timing-function);  
+}
+
+.lv-animate__fade-in--top{
+  animation: fadeInTop var(--animation-duration) var(--animation-timing-function);  
+}
+
+.lv-animate__fade-in--bottom{
+  animation: fadeInBottom var(--animation-duration) var(--animation-timing-function);  
+}
+
+// Keyframes
+@keyframes fadeIn {
+  from{
+    opacity: 0%;
+  }  
+  to{
+    opacity: 100%;
+  }  
+}
+
+@keyframes fadeInLeft{
+  from{
+    opacity: 0;
+    transform: translate3d(-100%,0,0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes fadeInRight{
+  from{
+    opacity: 0;
+    transform: translate3d(100%,0,0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes fadeInTop{
+  from{
+    opacity: 0;
+    transform: translate3d(0,-100%,0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0,);
+  }
+}
+
+@keyframes fadeInBottom{
+  from{
+    opacity: 0;
+    transform: translate3d(0,100%,0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0,);
+  }
+}

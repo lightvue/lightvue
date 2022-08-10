@@ -1,0 +1,74 @@
+// Animation Classes
+.lv-animate__fade-out{
+  animation: fadeOut var(--animation-duration) var(--animation-timing-function);  
+}
+
+.lv-animate__fade-out--left{
+  animation: fadeOutLeft var(--animation-duration) var(--animation-timing-function);  
+}
+
+.lv-animate__fade-out--right{
+  animation: fadeOutRight var(--animation-duration) var(--animation-timing-function);  
+}
+
+.lv-animate__fade-out--top{
+  animation: fadeOutTop var(--animation-duration) var(--animation-timing-function);  
+}
+
+.lv-animate__fade-out--bottom{
+  animation: fadeOutBottom var(--animation-duration) var(--animation-timing-function);  
+}
+
+// Keyframes
+@keyframes fadeOut {
+  from{
+    opacity: 100%;
+  }  
+  to{
+    opacity: 0%;
+  }  
+}
+
+@keyframes fadeOutLeft{
+  from{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+  to{
+    opacity: 0;
+    transform: translate3d(-100%,0,0);
+  }
+}
+
+@keyframes fadeOutRight{
+  from{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+  to{
+    opacity: 0;
+    transform: translate3d(100%,0,0);
+  }
+}
+
+@keyframes fadeOutTop{
+  from{
+    opacity: 1;
+    transform: translate3d(0,0,0,);
+  }
+  to{
+    opacity: 0;
+    transform: translate3d(0,-100%,0);
+  }
+}
+
+@keyframes fadeOutBottom{
+  from{
+    opacity: 1;
+    transform: translate3d(0,0,0,);
+  }
+  to{
+    opacity: 0;
+    transform: translate3d(0,100%,0);
+  }
+}

@@ -1,0 +1,53 @@
+// Animation Classes
+.lv-animate__slide-out--left{
+  animation: slideOutLeft var(--animation-duration) ease-in;  
+}
+
+.lv-animate__slide-out--right{
+  animation: slideOutRight var(--animation-duration) ease-in;  
+}
+
+.lv-animate__slide-out--top{
+  animation: slideOutTop var(--animation-duration) ease-in;  
+}
+
+.lv-animate__slide-out--bottom{
+  animation: slideOutBottom var(--animation-duration) ease-in;  
+}
+
+// Keyframes
+@keyframes slideOutLeft{
+  from{
+    transform: translate3d(0,0,0);
+  }
+  to{
+    transform: translate3d(-100%,0,0);
+  }
+}
+
+@keyframes slideOutRight{
+  from{
+    transform: translate3d(0,0,0);
+  }
+  to{
+    transform: translate3d(100%,0,0);
+  }
+}
+
+@keyframes slideOutTop{
+  from{
+    transform: translate3d(0,0,0,);
+  }
+  to{
+    transform: translate3d(0,-100%,0);
+  }
+}
+
+@keyframes slideOutBottom{
+  from{
+    transform: translate3d(0,0,0,);
+  }
+  to{
+    transform: translate3d(0,100%,0);
+  }
+}
