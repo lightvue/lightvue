@@ -90,13 +90,13 @@ export default {
           this.selectedDesignation = null;
           this.comments = null;
           this.newsletterChecked = null;
-          this.$notification.add({ type: 'success', title: 'Thanks', content: 'Your Message has been received', duration: 3000, position: 'top-left' });
+          this.$notification.add({ type: 'success', title: 'Thanks', content: 'Your Message has been received', duration: 3000, position: 'top-right' });
           this.$emit('success');
         })
         .catch(e => {
           console.error(e);
           this.loading = false;
-          this.$notification.add({ type: 'error', title: 'Something went wrong', content: 'Failed to submit your response, please try again later.', duration: 3000, position: 'top-left' });
+          this.$notification.add({ type: 'error', title: 'Something went wrong', content: 'Failed to submit your response, please try again later.', duration: 3000, position: 'top-right' });
         });
       // this.submissionStatus = true;
     },

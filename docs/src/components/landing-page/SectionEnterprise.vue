@@ -19,7 +19,7 @@
             <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="showContactDrawer = !showContactDrawer" aria:haspopup="true" aria-controls="contact_overlay_panel" />
             <div class="enterprise--drawer">
               <lv-drawer v-model="showContactDrawer" right close shadow background="#fff" :zIndex="1000" :width="600" :height="600">
-                <lead-form />
+                <lead-form @success="showContactDrawer = false" />
               </lv-drawer>
             </div>
           </div>
