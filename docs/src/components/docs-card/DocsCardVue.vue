@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { shallowRef } from 'lightvue/utils';
 import DocsCard from './DocsCard.vue';
 export default {
   components: {
@@ -30,8 +31,8 @@ export default {
       // this.component = () => import('lightvueDocs/example/' + this.file + '.vue');
       //
       if (!this.component) {
-        import('lightvueDocs/example/' + this.file + '.vue').then(comp => {
-          this.component = comp.default;
+        import('lightvueDocs/example/' + this.file + '.vue').then(async comp => {
+          this.component = await shallowRef(this, comp.default);
         });
       }
 
@@ -47,18 +48,6 @@ export default {
       });
     }
   },
-  // watch: {
-  //   file: function (newValue) {
-  //     import(`${newValue}.vue`).then(loadedComponent => {
-  //       this.component = loadedComponent;
-  //     });
-  //   },
-  // },
-  // mounted: function () {
-  //   import(`${this.file}.vue`).then(loadedComponent => {
-  //     this.component = loadedComponent;
-  //   });
-  // },
   methods: {
     parseComponent(comp) {
       const template = this.parseTemplate('template', comp),
@@ -80,5 +69,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
