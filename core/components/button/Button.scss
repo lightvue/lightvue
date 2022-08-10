@@ -62,6 +62,7 @@
 }
 
 .lv-buttonset {
+  display: flex;
   /* All the below properties are important! */
   .lv-button {
     /* To prevent accidental margins */
