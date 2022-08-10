@@ -10,7 +10,9 @@
       <span class="dropdown-label"> Subscribe to <b class="--brand-color">LightVue</b> Newsletter </span>
     </lv-checkbox>
     <br /><br />
-    <lv-button :push="true" :deep-shadow="true" label="Submit" class="page-button --dark lead-form__submit-btn" @click="sendLead"><LvProgressSpinner v-if="loading" size="13px" /></lv-button>
+    <lv-button icon-right="light-icon-chevron-right" :push="true" :deep-shadow="true" class="page-button --dark lead-form__submit-btn" @click="sendLead" :disabled="loading">
+      <template #append><LvProgressSpinner v-if="loading" size="13px" color="#ffffff" /></template>Submit
+    </lv-button>
   </div>
 </template>
 
@@ -70,6 +72,7 @@ export default {
       };
       let api_base_url = 'https://api.formstudio.io';
       const url = api_base_url;
+
       fetch(url + '/lightvueLead', {
         method: 'POST',
         headers: {
@@ -87,11 +90,13 @@ export default {
           this.selectedDesignation = null;
           this.comments = null;
           this.newsletterChecked = null;
-          this.$notification.add({ type: 'success', title: 'Thanks', content: 'Your Message has been recieved', duration: 3000, position: 'top-left' });
+          this.$notification.add({ type: 'success', title: 'Thanks', content: 'Your Message has been received', duration: 3000, position: 'top-left' });
           this.$emit('success');
         })
-        .catch(function (e) {
+        .catch(e => {
           console.error(e);
+          this.loading = false;
+          this.$notification.add({ type: 'error', title: 'Something went wrong', content: 'Failed to submit your response, please try again later.', duration: 3000, position: 'top-left' });
         });
       // this.submissionStatus = true;
     },
@@ -127,7 +132,6 @@ export default {
   width: 200px !important;
   padding: 16px !important;
   margin: 20px auto;
-  display: block;
   /* font-size: 20px; */
   text-transform: uppercase;
 }
