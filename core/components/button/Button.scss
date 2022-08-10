@@ -1,6 +1,6 @@
 .lv-button {
   margin: 0;
-  display: inline-flex;
+  display: flex;
   cursor: pointer;
   user-select: none;
   align-items: center;
@@ -12,6 +12,9 @@
   &:disabled {
     opacity: 0.6;
     cursor: default;
+  }
+  &.--inline {
+    display: inline-flex;
   }
   &.--rounded {
     border-radius: 2rem;
