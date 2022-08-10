@@ -145,7 +145,7 @@ export default {
   background: transparent;
   font-size: 1rem;
   color: #495057;
-  width: 56%;
+  width: 100%;
   &:focus {
     outline: none;
   }
