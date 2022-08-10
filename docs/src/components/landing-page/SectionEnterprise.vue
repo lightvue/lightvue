@@ -18,7 +18,7 @@
             <!-- <div class="expertise-feature__item">and many more...</div> -->
             <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="showContactDrawer = !showContactDrawer" aria:haspopup="true" aria-controls="contact_overlay_panel" />
             <div class="enterprise--drawer">
-              <lv-drawer v-model="showContactDrawer" right close shadow background="#fff" :zIndex="9999" :width="600" :height="600">
+              <lv-drawer v-model="showContactDrawer" right close shadow background="#fff" :zIndex="1000" :width="600" :height="600">
                 <lead-form />
               </lv-drawer>
             </div>
@@ -128,10 +128,9 @@ export default {
       border-radius: 20px;
       padding: 50px 50px;
       color: #ffffff;
-      z-index: 1000000;
       margin-top: 60px;
       .expertise-feature__item {
-        z-index: 100;
+        z-index: 1;
         margin-bottom: 30px;
         font-size: 16px;
         i {
