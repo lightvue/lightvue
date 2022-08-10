@@ -8,12 +8,14 @@
 
 <script>
 import LvButton from 'lightvue/button';
-export default{
-  components:{
-    LvButton
-  }
-}
+export default {
+  components: {
+    LvButton,
+  },
+};
 </script>
+<style lang="scss" scoped>
+.lv-demo_layout {
   display: flex;
   justify-content: center;
   align-items: center;
