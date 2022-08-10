@@ -7,7 +7,7 @@
           <div class="selected" :class="{ open: open }" @click="open = !open">
             {{ selectedUnit }}
           </div>
-          <div class="items" :class="{ selectHide: open }">
+          <div class="items" :class="{ selectHide: !open }">
             <div
               v-for="(unit, i) of units"
               :key="unit"
@@ -33,10 +33,15 @@ export default {
   data() {
     return {
       localValue: null,
-      units: ['px', 'rem', 'em'],
       selectedUnit: 'px',
       open: false,
     };
+  },
+  props: {
+    units:{
+      type: Array,
+      default: () => ['px', 'rem', 'em'],
+    }
   },
   watch: {
     localValue() {
