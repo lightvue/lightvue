@@ -118,7 +118,6 @@ export default {
     'lightvue/mixins': path.join(__dirname, '/../core/mixins'),
     'lightvueDocs/example': path.join(__dirname, '/../examples'),
     lightvue: path.join(__dirname, '/../core/components'),
-    splitpanes: path.join(__dirname, '/../docs-v3/src/components/splitpanes'),
     //   // '@@@': path.join(__dirname, '/..'), // this must never be used, resulting infinite loop.
   },
 };
