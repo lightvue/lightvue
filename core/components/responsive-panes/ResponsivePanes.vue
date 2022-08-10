@@ -7,6 +7,7 @@
 <script>
 export default {
   name: 'splitpanes',
+  emits: ['ready', 'resize', 'resized', 'pane-click', 'pane-maximize', 'pane-add', 'pane-remove', 'splitter-click'],
   props: {
     horizontal: { type: Boolean },
     pushOtherPanes: { type: Boolean, default: true },
@@ -154,6 +155,10 @@ export default {
       });
       this.panes[splitterIndex].size -= totalMinSizes;
       this.$emit('pane-maximize', this.panes[splitterIndex]);
+      this.$emit(
+        'resize',
+        this.panes.map(pane => ({ min: pane.min, max: pane.max, size: pane.size }))
+      );
     },
 
     onPaneClick(event, paneId) {
@@ -378,7 +383,7 @@ export default {
 
     // Called by Pane component on programmatic resize.
     requestUpdate({ target, ...args }) {
-      const pane = this.indexedPanes[target._.uid];
+      const pane = target._uid ? this.indexedPanes[target._uid] : this.indexedPanes[target._.uid]; // in Vue3.x target._uid is not defined.
       Object.entries(args).forEach(([key, value]) => (pane[key] = value));
     },
 
@@ -393,7 +398,7 @@ export default {
       const min = parseFloat(pane.minSize);
       const max = parseFloat(pane.maxSize);
       this.panes.splice(index, 0, {
-        id: pane._.uid,
+        id: pane._uid || pane._.uid, // in Vue3.x pane._uid is not defined.
         index,
         min: isNaN(min) ? 0 : min,
         max: isNaN(max) ? 100 : max,
@@ -421,7 +426,7 @@ export default {
 
     onPaneRemove(pane) {
       // 1. Remove the pane from array and redo indexes.
-      const index = this.panes.findIndex(p => p.id === pane._.uid);
+      const index = this.panes.findIndex(p => p.id === pane._uid || p.id === pane._.uid); // in Vue3.x target._uid is not defined.
       const removed = this.panes.splice(index, 1)[0];
       this.panes.forEach((p, i) => (p.index = i));
 
@@ -688,7 +693,12 @@ export default {
   },
 
   beforeUnmount() {
+    // Vue 3.x
     // Prevent emitting console warnings on hot reloading.
+    this.ready = false;
+  },
+  beforeDestroy() {
+    // Vue 2.x
     this.ready = false;
   },
 

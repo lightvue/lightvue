@@ -1,6 +1,6 @@
 <template>
-  <div class="splitpanes__pane" @click="onPaneClick($event, _.uid)" :style="style">
-    <slot></slot>
+  <div class="splitpanes__pane" @click="onPaneClick($event, _uid || _.uid)" :style="style">
+    <slot />
   </div>
 </template>
 
@@ -19,7 +19,12 @@ export default {
   mounted() {
     this.onPaneAdd(this);
   },
+  // Vue 3.x
   beforeUnmount() {
+    this.onPaneRemove(this);
+  },
+  // Vue 2.x
+  beforeDestroy() {
     this.onPaneRemove(this);
   },
   methods: {
