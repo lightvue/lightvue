@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="lv-box__model-inputs">
-      <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" bottomBar />
+      <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" @change="optionSelect($event)" bottomBar />
       <LvUnitInput v-model="localInputValue" :units="units"></LvUnitInput>
     </div>
   </div>
@@ -38,7 +38,7 @@ export default {
   },
   data() {
     return {
-      localInputValue: 10,
+      localInputValue: null,
       directions: ['all', 'x-axis', 'y-axis', 'left', 'right', 'top', 'bottom'],
       selectedDirection: 'all',
       units: ['px', 'rem', 'em', '%'],
@@ -119,10 +119,15 @@ export default {
       let regex = new RegExp('([0-9.]+)|([a-zA-Z%]+)', 'g');
       let seperatUnit = this.localState[direction].match(regex);
       if (seperatUnit.length === 2 && seperatUnit[0].length > 5) {
-        console.log(seperatUnit[0].slice(0, 5) + seperatUnit[1], 'fuck');
         return seperatUnit[0].slice(0, 5) + seperatUnit[1];
       } else {
         return this.localState[direction];
+      }
+    },
+    optionSelect() {
+      if (this.localInputValue) {
+        this.localState = this.decodeModelValue(this.localInputValue);
+        this.updateValue(this.encodeLocalState(this.localState));
       }
     },
   },
