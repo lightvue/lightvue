@@ -2,9 +2,9 @@
   <lv-input class="unit-input-wrapper" type="text" :editable="false" v-bind="$attrs" :value="localValue" @clear="handleClear()" bottomBar>
     <input class="unit-input" type="number" v-bind="$attrs" v-model="localValue" placeholder="10"></input>
   <template #append>
-    <div class="dropdown-wrapper">
+    <div class="dropdown-wrapper" @click="open = !open">
       <div tabindex="0" class="custom-select"  @blur="open = false">
-          <div class="selected" :class="{ open: open }" @click="open = !open">
+          <div class="selected" :class="{ open: open }" >
             {{ selectedUnit }}
           </div>
           <div class="items" :class="{ selectHide: !open }">
@@ -86,6 +86,7 @@ export default {
   padding:0px 1rem;
   position: relative;
   min-width: 53px;
+  cursor: pointer;
 }
 .custom-select {
   display: inline-block;
@@ -156,7 +157,7 @@ export default {
   color: #ffffff !important;
   background: #38b2ac;
   &:hover{
-      color: #ffffff !important;
+    color: #ffffff !important;
     background: #38b2ac !important;
   }
 }
