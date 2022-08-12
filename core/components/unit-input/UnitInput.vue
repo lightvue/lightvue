@@ -2,9 +2,9 @@
   <lv-input class="unit-input-wrapper" type="text" :editable="false" v-bind="$attrs" :value="localValue" @clear="handleClear()" bottomBar>
     <input class="unit-input" type="number" v-bind="$attrs" v-model="localValue" placeholder="10"></input>
   <template #append>
-    <div class="dropdown-wrapper" @click="open = !open">
-      <div tabindex="0" class="custom-select"  @blur="open = false">
-          <div class="selected" :class="{ open: open }" >
+    <div class="dropdown-wrapper">
+      <div tabindex="1" class="custom-select"  @blur="open = false">
+          <div class="selected" :class="{ open: open }" @click="open = !open">
             {{ selectedUnit }}
           </div>
           <div class="items" :class="{ selectHide: !open }">
@@ -46,7 +46,6 @@ export default {
   watch: {
     localValue() {
       if (this.localValue !== this.modelValue) {
-        console.log(this.localValue)
         this.updateValue(this.localValue + this.selectedUnit);
       }
     },

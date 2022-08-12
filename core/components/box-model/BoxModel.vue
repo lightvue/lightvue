@@ -1,22 +1,24 @@
 <template>
   <div class="lv-box__model">
     <div class="lv-box__model-controller outside">
-      <div class="--row">{{ this.localState.top }}</div>
+      <div class="--row">
+        <sub v-tooltip.right="localState.top">{{ getComputedValue('top') }}</sub>
+      </div>
 
       <div class="--center-row">
-        {{ this.localState.left }}
+        {{ getComputedValue('left') }}
 
         <div class="lv-box__model-inner_box">
           <div @click="setDirection('y-axis')" class="lv-box__model-controller" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'y-axis' }"></div>
           <div @click="setDirection('x-axis')" class="lv-box__model-controller --horizontal" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'x-axis' }"></div>
         </div>
-        {{ this.localState.right }}
+        {{ getComputedValue('right') }}
       </div>
-      <div class="--row">{{ this.localState.bottom }}</div>
+      <div class="--row">{{ getComputedValue('bottom') }}</div>
     </div>
     <div class="lv-box__model-inputs">
       <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" bottomBar />
-      <LvUnitInput v-model="localInputValue"></LvUnitInput>
+      <LvUnitInput v-model="localInputValue" :units="units"></LvUnitInput>
     </div>
   </div>
 </template>
@@ -26,15 +28,20 @@ import LvInput from 'lightvue/input';
 import LvDropdown from 'lightvue/dropdown';
 import { trueValueMixin } from 'lightvue/mixins';
 import LvUnitInput from 'lightvue/unit-input';
+import Tooltip from 'lightvue/tooltip';
+
 export default {
   name: 'LvBoxModel',
   mixins: [trueValueMixin],
+  directives: {
+    tooltip: Tooltip,
+  },
   data() {
     return {
-      localInputValue: 0,
+      localInputValue: 10,
       directions: ['all', 'x-axis', 'y-axis', 'left', 'right', 'top', 'bottom'],
       selectedDirection: 'all',
-      units: ['px', 'rem', 'em'],
+      units: ['px', 'rem', 'em', '%'],
       selectedUnit: 'px',
       localState: { left: '0px', right: '0px', top: '0px', bottom: '0px' },
     };
@@ -107,6 +114,16 @@ export default {
     },
     setDirection(dir) {
       this.selectedDirection = dir;
+    },
+    getComputedValue(direction) {
+      let regex = new RegExp('([0-9.]+)|([a-zA-Z%]+)', 'g');
+      let seperatUnit = this.localState[direction].match(regex);
+      if (seperatUnit.length === 2 && seperatUnit[0].length > 5) {
+        console.log(seperatUnit[0].slice(0, 5) + seperatUnit[1], 'fuck');
+        return seperatUnit[0].slice(0, 5) + seperatUnit[1];
+      } else {
+        return this.localState[direction];
+      }
     },
   },
   components: {
