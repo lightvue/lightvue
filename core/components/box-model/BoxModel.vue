@@ -4,17 +4,17 @@
       <div class="--row">
         <sub v-tooltip.right="localState.top">{{ getComputedValue('top') }}</sub>
       </div>
-
       <div class="--center-row">
-        {{ getComputedValue('left') }}
-
+        <sub v-tooltip.left="localState.left">{{ getComputedValue('left') }}</sub>
         <div class="lv-box__model-inner_box">
           <div @click="setDirection('y-axis')" class="lv-box__model-controller" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'y-axis' }"></div>
           <div @click="setDirection('x-axis')" class="lv-box__model-controller --horizontal" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'x-axis' }"></div>
         </div>
-        {{ getComputedValue('right') }}
+        <sub v-tooltip.top="localState.right">{{ getComputedValue('right') }}</sub>
       </div>
-      <div class="--row">{{ getComputedValue('bottom') }}</div>
+      <div class="--row">
+        <sub v-tooltip.left="localState.bottom">{{ getComputedValue('bottom') }}</sub>
+      </div>
     </div>
     <div class="lv-box__model-inputs">
       <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" bottomBar />
