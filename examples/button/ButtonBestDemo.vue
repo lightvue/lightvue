@@ -58,11 +58,6 @@ export default {
       stringProps: ['label', 'icon-right', 'size', 'type'],
     };
   },
-  watch: {
-    boxModelValue(val) {
-      console.log(val);
-    },
-  },
   components: {
     DocsCardBest,
     LvInput,
