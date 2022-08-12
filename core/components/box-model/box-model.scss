@@ -7,13 +7,18 @@
     //     width: 120px;
     // }
     .outside {
-        border: 1px dashed black;
+        border: 1px dashed #0000001a;
         border-radius: 1px !important;
         min-width: 120px;
-        &:hover {
-            background: #c4c4c4;
-            border-radius: 1px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            border-color: black;
         }
+        sub{
+            color:  #5c6b74;
+            cursor: pointer;
+        }
+
     }
     .lv-box__model-controller {
         background: hsl(210, 38%, 98%);
@@ -31,25 +36,25 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
+            sub{ 
+                text-align: center;
+                width: 30%;
+            }
             .lv-box__model-inner_box {
-                // min-width: 40px;
                 width: 40px;
                 height: 40px;
-                background: #edf2f7;
                 display: grid;
                 place-items: center;
                 position: relative;
-                border: 1px dashed teal;
-                // &:hover {
-                //     background: #c9cdce;
-                //     border: 1px dashed;
-                // }
+                border: 1px dashed #0000001a;
+                transition: all 0.3s ease-in-out;
                 .lv-box__model-controller {
                     position: absolute;
                     width: 2.5px;
-                    background: rgb(197, 197, 197);
+                    background-color: rgb(197, 197, 197);
                     height: 100%;
                     cursor: pointer;
+                    transition: all 0.2s ease-in-out;
                     &:hover {
                         background-color: rgb(0, 140, 255);
                         z-index: 10;
@@ -60,7 +65,7 @@
                     transform: rotate(90deg);
                 }
                 .--active {
-                    background-color: rgb(0, 140, 255);
+                    background-color: #607b89;
                     z-index: 10;
                 }
             }
