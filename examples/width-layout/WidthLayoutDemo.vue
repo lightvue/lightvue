@@ -1,13 +1,18 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-percentage-layout v-model="percentagelayout"></lv-percentage-layout><br />
-
+      <div>
+        <div style="border: 1px dashed"></div>
+        <lv-percentage-layout v-bind="allOptions" ></lv-percentage-layout><br />
+      </div>
       <template #props>
-        <!-- <lv-button>Add pane</lv-button>
-        <lv-button>Remove pane</lv-button> -->
+        <lv-button>Add pane</lv-button>
+        <lv-button>Remove pane</lv-button>
+         <lv-input v-model="allOptions['widthLayout']" label='widthLayout' bottomBar/> 
+         {{allOptions['widthLayout']}}
+         </br />
       </template>
-      <template #code>
+      <!-- <template #code>
         <span class="dy-code-row --empty-row"></span>
         <span class="dy-code-row --tag-row">&nbsp;&lt;lv-width</span>
         <span class="dy-code-row --attribute-row" v-for="(option, name) in enabledOptions" :key="name">
@@ -15,7 +20,7 @@
         </span>
         <span class="dy-code-row --tag-row">&nbsp;/&gt;</span>
         <span class="dy-code-row --empty-row"></span>
-      </template>
+      </template> -->
     </docs-card-best>
   </div>
 </template>
@@ -27,8 +32,10 @@ import LvPercentageLayout from 'lightvue/percentage-layout';
 export default {
   data() {
     return {
-      allOptions: {},
-      percentagelayout: '',
+      allOptions: {
+        widthLayout: '25%',
+      },
+      stringProps: ['widthLayout', ],
     };
   },
   components: {

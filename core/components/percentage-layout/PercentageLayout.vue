@@ -4,8 +4,8 @@
     <lv-button @click="panesNumber--">Remove pane</lv-button>
     <br />
     <br />
-    <LvResponsivePanes class="splitpane" style="height: 35px" @resize="onResize" @resized="log('resized', $event)">
-      <Pane class="pane" v-for="i in panesNumber" :key="i">
+    <LvResponsivePanes class="splitpane" style="height: 35px" @resize="onResize">
+      <Pane class="pane" v-for="i in panesNumber" :key="i" :style="dynamicStyle">
         <span>{{ i }}</span>
       </Pane>
     </LvResponsivePanes>
@@ -23,14 +23,42 @@ export default {
   data() {
     return {
       panesNumber: 3,
+      panesArray: [],
     };
   },
+  prop: {
+    widthLayout: {
+      type: String,
+      default: '25%',
+    },
+  },
+  computed: {
+    // modelValue() {
+    //   const value = this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
+    //   return this.onResize(value);
+    // },
+    dynamicStyle() {
+      return {
+        widthLayout: this.widthLayout,
+      };
+    },
+  },
+
   methods: {
     onResize($event) {
-      console.log('resize', $event);
+      this.panesArray = $event;
+      // console.log('resize', $event);
+      // for (var i in this.a) {
+      //   var value = this.a[i].size;
+      //   console.log('single value', value);
+      // }
+      let result = this.panesArray.map(x => x.size);
+      console.log('array value', result);
+      return result;
     },
-    log(a, b) {
-      console.log(a, b);
+    getValue(value) {
+      var value = this.onResize();
+      console.log('getValue', value);
     },
   },
 };
