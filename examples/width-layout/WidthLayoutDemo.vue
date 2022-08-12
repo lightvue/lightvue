@@ -3,11 +3,11 @@
     <docs-card-best title="Playground">
       <div>
         <div style="border: 1px dashed"></div>
-        <lv-percentage-layout v-bind="allOptions" ></lv-percentage-layout><br />
+        <lv-percentage-layout v-bind="allOptions" ref="layout"></lv-percentage-layout><br />
       </div>
       <template #props>
-        <lv-button>Add pane</lv-button>
-        <lv-button>Remove pane</lv-button>
+        <lv-button @click="add">Add pane</lv-button>
+        <lv-button @click="remove">Remove pane</lv-button>
          <lv-input v-model="allOptions['widthLayout']" label='widthLayout' bottomBar/> 
          {{allOptions['widthLayout']}}
          </br />
@@ -48,6 +48,14 @@ export default {
       return Object.entries(this.allOptions).reduce((a, [k, v]) => (v ? ((a[k] = v), a) : a), {});
     },
   },
+  methods:{
+    add(){
+      this.$refs.layout.addPane();
+    },
+    remove(){
+      this.$refs.layout.removePane();
+    }
+  }
 };
 </script>
 

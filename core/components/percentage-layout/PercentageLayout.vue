@@ -1,10 +1,10 @@
 <template>
   <div>
-    <lv-button @click="panesNumber++">Add pane</lv-button>
-    <lv-button @click="panesNumber--">Remove pane</lv-button>
+    <!-- <lv-button @click="addPane">Add pane</lv-button>
+    <lv-button @click="removePane">Remove pane</lv-button>
+    <br /> -->
     <br />
-    <br />
-    <LvResponsivePanes class="splitpane" style="height: 35px" @resize="onResize">
+    <LvResponsivePanes class="splitpane" style="height: 35px; width: 250px" @resize="onResize">
       <Pane class="pane" v-for="i in panesNumber" :key="i" :style="dynamicStyle">
         <span>{{ i }}</span>
       </Pane>
@@ -59,6 +59,12 @@ export default {
     getValue(value) {
       var value = this.onResize();
       console.log('getValue', value);
+    },
+    addPane() {
+      this.panesNumber++;
+    },
+    removePane() {
+      this.panesNumber--;
     },
   },
 };
