@@ -1,26 +1,23 @@
 <template>
-  <lv-input class="unit-input-wrapper" type="text" :editable="false" v-bind="$attrs" :value="localValue" @clear="handleClear()" bottomBar>
-    <input class="unit-input" type="number" v-bind="$attrs" v-model="localValue" placeholder="10"></input>
-  <template #append>
-    <div class="dropdown-wrapper">
-      <div tabindex="1" class="custom-select"  @blur="open = false">
-          <div class="selected" :class="{ open: open }" @click="open = !open">
-            {{ selectedUnit }}
-          </div>
-          <div class="items" :class="{ selectHide: !open }">
-            <div
-              v-for="(unit, i) of units"
-              :key="unit"
-              @click="optionSelect(unit)"
-              :class="{ 'active-option' : selectedUnit === unit }"
-            >
-              {{ unit }}
+  <div class="unit-input-wrapper">
+    <lv-input type="text" :editable="false" v-bind="$attrs" :value="localValue" @clear="handleClear()" bottomBar>
+      <input class="unit-input" type="number" v-bind="$attrs" v-model="localValue" placeholder="10" />
+      <template #append>
+        <div class="dropdown-wrapper">
+          <div tabindex="1" class="custom-select" @blur="open = false">
+            <div class="selected" :class="{ open: open }" @click="open = !open">
+              {{ selectedUnit }}
+            </div>
+            <div class="items" :class="{ selectHide: !open }">
+              <div v-for="(unit, i) of units" :key="unit" @click="optionSelect(unit)" :class="{ 'active-option': selectedUnit === unit }">
+                {{ unit }}
+              </div>
             </div>
           </div>
         </div>
-    </div>
-  </template>
-  </lv-input>
+      </template>
+    </lv-input>
+  </div>
 </template>
 
 <script>
@@ -38,10 +35,10 @@ export default {
     };
   },
   props: {
-    units:{
+    units: {
       type: Array,
       default: () => ['px', 'rem', 'em'],
-    }
+    },
   },
   watch: {
     localValue() {
@@ -69,20 +66,20 @@ export default {
     inputBlur() {
       this.$refs.unitDropdown.$children[0].$el.classList.remove('--manual-bottom-bar');
     },
-    optionSelect(unit){
-      this.open = false
-      this.selectedUnit = unit
-    }
+    optionSelect(unit) {
+      this.open = false;
+      this.selectedUnit = unit;
+    },
   },
 };
 </script>
 
 <style lang="scss">
-.dropdown-wrapper{
+.dropdown-wrapper {
   display: flex;
   align-items: center;
-  background: rgba(0,0,0,0.1);
-  padding:0px 1rem;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0px 1rem;
   position: relative;
   min-width: 53px;
   cursor: pointer;
@@ -104,7 +101,7 @@ export default {
   border-radius: 3px;
 }
 .custom-select .items {
-    font-size: 1rem;
+  font-size: 1rem;
   color: #495057;
   border-radius: 3px;
   overflow: hidden;
@@ -117,8 +114,6 @@ export default {
   z-index: 1;
   box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
 }
-  
-
 
 .custom-select .items div {
   font-size: 1rem;
@@ -129,15 +124,15 @@ export default {
 }
 
 .custom-select .items div:hover {
-    color: #495057;
-    background: #e9ecef;
+  color: #495057;
+  background: #e9ecef;
 }
 
 .selectHide {
   display: none;
 }
-.unit-input-wrapper{
-  .lv-input__field{
+.unit-input-wrapper {
+  .lv-input__field {
     overflow: visible !important;
   }
 }
@@ -150,12 +145,11 @@ export default {
   &:focus {
     outline: none;
   }
-
 }
-.active-option{
+.active-option {
   color: #ffffff !important;
   background: #38b2ac;
-  &:hover{
+  &:hover {
     color: #ffffff !important;
     background: #38b2ac !important;
   }
