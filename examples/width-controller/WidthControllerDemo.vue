@@ -1,17 +1,14 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <div style="display: flex; flex-direction: column; align-items: center">
-        <div style="width: 100%">
-          <div v-for="(width, i) in value" :key="i">
-            <div class="column" :style="`width: ${width}%`">
-              <span class="value">{{ width }}%</span>
-            </div>
+      <div style="width: 100%">
+        <div v-for="(width, i) in value" :key="i">
+          <div class="column" :style="`width: ${width}%`">
+            <span class="value">{{ width }}%</span>
           </div>
         </div>
-        <div>
-          <lv-percentage-controller ref="layout" v-model="value"></lv-percentage-controller>
-        </div>
+
+        <lv-percentage-controller ref="layout" v-model="value"></lv-percentage-controller>
       </div>
       <template #props>
         <lv-button @click="add">Add Block</lv-button>

@@ -1,6 +1,6 @@
 <template>
   <div class="percentageLayout__wrap">
-    <LvResponsivePanes class="splitpane" style="height: 35px; width: 250px" @resize="onResize">
+    <LvResponsivePanes class="splitpane" style="height: 35px; width: 250px; margin: auto" @resize="onResize">
       <Pane class="pane" v-for="(width, i) in modelValue" :key="i" :size="width">
         <span>{{ i + 1 }}</span>
       </Pane>
