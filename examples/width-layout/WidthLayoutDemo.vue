@@ -2,14 +2,13 @@
   <div>
     <docs-card-best title="Playground">
       <div style="display: flex; flex-direction: column; align-items: center">
-        <div style="width: 550px">
-          <div v-for="i in value" :key="i">
-            <div class="column" :style="`width: ${i}%`">
-              <span class="value">{{ i }}</span>
+        <div style="width: 100%">
+          <div v-for="(width, i) in value" :key="i">
+            <div class="column" :style="`width: ${width}%`">
+              <span class="value">{{ width }}%</span>
             </div>
           </div>
         </div>
-        <!-- {{ value }} -->
         <div>
           <lv-percentage-layout ref="layout" v-model="value"></lv-percentage-layout>
         </div>
@@ -17,9 +16,6 @@
       <template #props>
         <lv-button @click="add">Add pane</lv-button>
         <lv-button @click="remove">Remove pane</lv-button>
-        <!-- <lv-input v-model="allOptions['widthLayout']" label='widthLayout' bottomBar/> 
-         {{allOptions['widthLayout']}}
-         </br /> -->
       </template>
       <!-- <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -42,7 +38,7 @@ export default {
   data() {
     return {
       allOptions: {},
-      value: ['50', '50'],
+      value: [20, 80],
       panesNumber: 4,
     };
   },

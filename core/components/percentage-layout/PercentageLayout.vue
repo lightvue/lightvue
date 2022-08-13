@@ -1,20 +1,10 @@
 <template>
-  <div>
-    <!-- <lv-button @click="addPane">Add pane</lv-button>
-    <lv-button @click="removePane">Remove pane</lv-button>
-    <br /> -->
-    <br />
-    <!-- <div v-for="i in panesNumber" :key="i">
-      <div class="column">{{ i }}</div>
-    </div> -->
-
-    <div class="percentageLayout__wrap">
-      <LvResponsivePanes class="splitpane" style="height: 35px; width: 250px" @resize="onResize">
-        <Pane class="pane" v-for="i in panesNumber" :key="i">
-          <span>{{ i }}</span>
-        </Pane>
-      </LvResponsivePanes>
-    </div>
+  <div class="percentageLayout__wrap">
+    <LvResponsivePanes class="splitpane" style="height: 35px; width: 250px" @resize="onResize">
+      <Pane class="pane" v-for="(width, i) in modelValue" :key="i" :size="width">
+        <span>{{ i + 1 }}</span>
+      </Pane>
+    </LvResponsivePanes>
   </div>
 </template>
 
@@ -26,32 +16,13 @@ export default {
   name: 'LvPercentageLayout',
   mixins: [localValueMixin],
   components: { LvResponsivePanes, Pane },
-  data() {
-    return {
-      panesNumber: 2,
-    };
-  },
   prop: {
     widthLayout: {
       type: String,
       default: '25%',
     },
   },
-  mounted() {
-    this.localValue = this.modelValue;
-  },
-  watch: {
-    localValue() {
-      if (this.localValue !== this.modelValue) {
-        this.updateValue(this.localValue);
-      }
-    },
-  },
   computed: {
-    // modelValue() {
-    //   const value = this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
-    //   return this.onResize(value);
-    // },
     dynamicStyle() {
       return {
         widthLayout: this.widthLayout,
@@ -61,22 +32,29 @@ export default {
 
   methods: {
     onResize($event) {
-      this.panesArray = $event;
-      // console.log('resize', $event);
-      // for (var i in this.a) {
-      //   var value = this.a[i].size;
-      //   console.log('single value', value);
-      // }
-      let result = $event.map(x => x.size);
-      console.log('array value', result);
+      let result = $event.map(x => parseFloat(x.size.toFixed(2)));
       this.updateValue(result);
+    },
+    setAutoWidth(count) {
+      if (count === undefined) {
+        count = this.modelValue.length;
+      }
+      const newEqualValues = parseFloat((100 / count).toFixed(2));
+      const newValueArr = Array(count - 1).fill(newEqualValues);
+      const partSum = newValueArr.reduce((partialSum, a) => partialSum + a, 0);
+
+      const lastAdjustedValue = parseFloat((100 - partSum).toFixed(2));
+      newValueArr.push(lastAdjustedValue);
+      this.updateValue(newValueArr);
     },
 
     addPane() {
-      this.panesNumber++;
+      this.setAutoWidth(this.modelValue.length + 1);
     },
     removePane() {
-      this.panesNumber--;
+      if (this.modelValue.length > 1) {
+        this.setAutoWidth(this.modelValue.length - 1);
+      }
     },
   },
 };
