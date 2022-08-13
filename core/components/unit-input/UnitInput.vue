@@ -73,6 +73,7 @@ export default {
 .dropdown-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.1);
   padding: 0px 1rem;
   position: relative;
