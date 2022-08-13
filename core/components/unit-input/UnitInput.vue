@@ -3,13 +3,13 @@
     <lv-input type="text" :editable="false" v-bind="$attrs" :value="localValue" @clear="handleClear()" bottomBar>
       <input class="unit-input" type="number" v-bind="$attrs" v-model="localValue" placeholder="10" />
       <template #append>
-        <div class="dropdown-wrapper">
+        <div class="dropdown-wrapper" @click="open = !open">
           <div tabindex="1" class="custom-select" @blur="open = false">
-            <div class="selected" :class="{ open: open }" @click="open = !open">
+            <div class="selected" :class="{ open: open }">
               {{ selectedUnit }}
             </div>
             <div class="items" :class="{ selectHide: !open }">
-              <div v-for="(unit, i) of units" :key="unit" @click="optionSelect(unit)" :class="{ 'active-option': selectedUnit === unit }">
+              <div v-for="(unit, i) of units" :key="unit" @click="optionSelect($event, unit)" :class="{ 'active-option': selectedUnit === unit }">
                 {{ unit }}
               </div>
             </div>
@@ -60,13 +60,8 @@ export default {
     LvDropdown,
   },
   methods: {
-    inputFocus(el) {
-      this.$refs.unitDropdown.$children[0].$el.classList.add('--manual-bottom-bar');
-    },
-    inputBlur() {
-      this.$refs.unitDropdown.$children[0].$el.classList.remove('--manual-bottom-bar');
-    },
-    optionSelect(unit) {
+    optionSelect(e, unit) {
+      e.stopPropagation();
       this.open = false;
       this.selectedUnit = unit;
     },
