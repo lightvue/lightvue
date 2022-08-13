@@ -4,11 +4,17 @@
     <lv-button @click="removePane">Remove pane</lv-button>
     <br /> -->
     <br />
-    <LvResponsivePanes class="splitpane" style="height: 35px; width: 250px" @resize="onResize">
-      <Pane class="pane" v-for="i in panesNumber" :key="i" :style="dynamicStyle">
-        <span>{{ i }}</span>
-      </Pane>
-    </LvResponsivePanes>
+    <!-- <div v-for="i in panesNumber" :key="i">
+      <div class="column">{{ i }}</div>
+    </div> -->
+
+    <div class="percentageLayout__wrap">
+      <LvResponsivePanes class="splitpane" style="height: 35px; width: 250px" @resize="onResize">
+        <Pane class="pane" v-for="i in panesNumber" :key="i">
+          <span>{{ i }}</span>
+        </Pane>
+      </LvResponsivePanes>
+    </div>
   </div>
 </template>
 
@@ -22,14 +28,23 @@ export default {
   components: { LvResponsivePanes, Pane },
   data() {
     return {
-      panesNumber: 3,
-      panesArray: [],
+      panesNumber: 2,
     };
   },
   prop: {
     widthLayout: {
       type: String,
       default: '25%',
+    },
+  },
+  mounted() {
+    this.localValue = this.modelValue;
+  },
+  watch: {
+    localValue() {
+      if (this.localValue !== this.modelValue) {
+        this.updateValue(this.localValue);
+      }
     },
   },
   computed: {
@@ -52,14 +67,11 @@ export default {
       //   var value = this.a[i].size;
       //   console.log('single value', value);
       // }
-      let result = this.panesArray.map(x => x.size);
+      let result = $event.map(x => x.size);
       console.log('array value', result);
-      return result;
+      this.updateValue(result);
     },
-    getValue(value) {
-      var value = this.onResize();
-      console.log('getValue', value);
-    },
+
     addPane() {
       this.panesNumber++;
     },
@@ -86,14 +98,16 @@ export default {
   display: flex;
   align-items: center;
 }
-.splitpanes__splitter {
-  width: 6px !important;
-  border-radius: 1px;
-  background-color: #c4c4c4 !important;
-  cursor: e-resize;
-  transition: all 0.1s ease-in-out;
-  &:hover {
-    background-color: #008080 !important;
+.percentageLayout__wrap {
+  .splitpanes__splitter {
+    width: 6px !important;
+    border-radius: 1px;
+    background-color: #c4c4c4 !important;
+    cursor: e-resize;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background-color: #008080 !important;
+    }
   }
 }
 </style>

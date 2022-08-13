@@ -1,16 +1,25 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <div>
-        <div style="border: 1px dashed"></div>
-        <lv-percentage-layout v-bind="allOptions" ref="layout"></lv-percentage-layout><br />
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div style="width: 550px">
+          <div v-for="i in value" :key="i">
+            <div class="column" :style="`width: ${i}%`">
+              <span class="value">{{ i }}</span>
+            </div>
+          </div>
+        </div>
+        <!-- {{ value }} -->
+        <div>
+          <lv-percentage-layout ref="layout" v-model="value"></lv-percentage-layout>
+        </div>
       </div>
       <template #props>
         <lv-button @click="add">Add pane</lv-button>
         <lv-button @click="remove">Remove pane</lv-button>
-         <lv-input v-model="allOptions['widthLayout']" label='widthLayout' bottomBar/> 
+        <!-- <lv-input v-model="allOptions['widthLayout']" label='widthLayout' bottomBar/> 
          {{allOptions['widthLayout']}}
-         </br />
+         </br /> -->
       </template>
       <!-- <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -32,15 +41,18 @@ import LvPercentageLayout from 'lightvue/percentage-layout';
 export default {
   data() {
     return {
-      allOptions: {
-        widthLayout: '25%',
-      },
-      stringProps: ['widthLayout', ],
+      allOptions: {},
+      value: ['50', '50'],
+      panesNumber: 4,
     };
+  },
+  watch: {
+    value(val) {
+      console.log('value', val);
+    },
   },
   components: {
     DocsCardBest,
-
     LvPercentageLayout,
   },
   computed: {
@@ -48,15 +60,25 @@ export default {
       return Object.entries(this.allOptions).reduce((a, [k, v]) => (v ? ((a[k] = v), a) : a), {});
     },
   },
-  methods:{
-    add(){
+  methods: {
+    add() {
       this.$refs.layout.addPane();
     },
-    remove(){
+    remove() {
       this.$refs.layout.removePane();
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.column {
+  float: left;
+  width: 50px;
+  height: 150px;
+  border: 1px dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

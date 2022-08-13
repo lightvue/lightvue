@@ -159,14 +159,15 @@ export default {
   pointer-events: none;
   color: #4b5563;
 }
-
-.splitpanes__splitter {
-  width: 16px !important;
-  background-color: #edf2f6 !important;
-  cursor: e-resize;
-  transition: all 0.1s ease-in-out;
-  &:hover {
-    background-color: #d6dfe8 !important;
+.responsive-demo__wrap {
+  .splitpanes__splitter {
+    width: 16px !important;
+    background-color: #edf2f6 !important;
+    cursor: e-resize;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background-color: #d6dfe8 !important;
+    }
   }
 }
 
