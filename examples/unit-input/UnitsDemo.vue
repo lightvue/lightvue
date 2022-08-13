@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LvUnitInput v-model="localValue"></LvUnitInput>
+    <LvUnitInput v-model="localValue" :units="units"></LvUnitInput>
     <strong> Final Value: {{ localValue }} </strong>
   </div>
 </template>
@@ -13,6 +13,7 @@ export default {
   data() {
     return {
       localValue: null,
+      units: ['inch', 'cm', 'mm', '%'],
     };
   },
 };

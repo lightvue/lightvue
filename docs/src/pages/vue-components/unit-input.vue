@@ -16,7 +16,7 @@ import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 import UnitInputApi from 'lightvueDocs/example/unit-input/UnitInputApi';
 
-const pageDescription = 'Button is an extension to standard button element with an option to add icons and your custom theming.';
+const pageDescription = 'UnitInput is a controller to get the units entered by the user';
 
 export default {
   components: {
@@ -27,7 +27,7 @@ export default {
     DocsAllApi,
   },
   head: {
-    title: ' Buttons Documentation | LightVue',
+    title: ' UnitInput Documentation | LightVue',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -35,7 +35,7 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/icon.png' },
       {
         property: 'og:site_name',
-        content: ' Buttons Documentation | LightVue',
+        content: ' UnitInput Documentation | LightVue',
       },
       {
         property: 'og:description',
@@ -46,7 +46,7 @@ export default {
   },
   title: 'Unit Input',
   description: pageDescription,
-  packageName: 'ubit-input',
+  packageName: 'unit-input',
   componentName: 'LvUnitInput',
   apiData: UnitInputApi,
   demoList: [
@@ -55,6 +55,12 @@ export default {
       title: 'Basic usage',
       file: 'unit-input/UnitInputDemo',
       description: 'UnitInput is a controller used by Lightvue to get the units entered by the user. This tool is helpful for ensuring that users enter the correct units when working with various tasks',
+    },
+    {
+      id: 'Units',
+      title: 'Unit configurations',
+      file: 'unit-input/UnitsDemo',
+      description: 'The units in the LvUnitInput controller are configurable. You can pass an array of strings as a prop to <span>units</span> to modify them.',
     },
   ],
 };
