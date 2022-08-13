@@ -43,12 +43,12 @@ export default {
   watch: {
     localValue() {
       if (this.localValue !== this.modelValue) {
-        this.updateValue(this.localValue + this.selectedUnit);
+        this.updateLocalUnitValue();
       }
     },
     selectedUnit() {
       if (this.localValue !== this.modelValue) {
-        this.updateValue(this.localValue + this.selectedUnit);
+        this.updateLocalUnitValue();
       }
     },
   },
@@ -64,6 +64,9 @@ export default {
       e.stopPropagation();
       this.open = false;
       this.selectedUnit = unit;
+    },
+    updateLocalUnitValue() {
+      this.localValue === '' ? this.updateValue(0 + this.selectedUnit) : this.updateValue(this.localValue + this.selectedUnit);
     },
   },
 };
