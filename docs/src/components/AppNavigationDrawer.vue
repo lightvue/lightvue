@@ -163,6 +163,10 @@ export default {
           page_name: 'Width Controller',
           page_path: '/vue-components/width-layout',
         },
+        {
+          page_name: 'Unit Input',
+          page_path: '/vue-components/unit-input',
+        },
       ],
     },
 
