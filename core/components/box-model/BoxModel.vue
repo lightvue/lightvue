@@ -41,7 +41,7 @@ export default {
       localInputValue: null,
       directions: ['all', 'x-axis', 'y-axis', 'left', 'right', 'top', 'bottom'],
       selectedDirection: 'all',
-      units: ['px', 'rem', 'em', '%'],
+      units: ['px', 'rem', 'em'],
       selectedUnit: 'px',
       localState: { left: '0px', right: '0px', top: '0px', bottom: '0px' },
     };
