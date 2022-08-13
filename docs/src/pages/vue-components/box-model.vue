@@ -15,7 +15,7 @@ import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 
-const pageDescription = 'UnitInput is a controller to get the units entered by the user';
+const pageDescription = 'The LvBoxModel is an spectacular controller that introduced by lightvue to  set the padding or margin of an HTML element. This makes it easier for developers to visualize  consistent and responsive layouts without having to worry about manually setting these values.';
 
 export default {
   components: {
@@ -53,7 +53,7 @@ export default {
       id: 'basic-usage',
       title: 'Basic usage',
       file: 'box-model/BoxModelDemo',
-      description: 'UnitInput is a controller used by Lightvue to get the units entered by the user. This tool is helpful for ensuring that users enter the correct units when working with various tasks',
+      description: "LvBoxModel's <span>v-model</span> is really helpful because it returns a string with all four side values. This makes it easier to work with the values and helps make sure that you don't miss anything.",
     },
   ],
 };
