@@ -171,8 +171,8 @@ export default {
   }
 }
 
-.responsive-demo__wrap.--full-width {
-  .splitpanes__splitter,
+.responsive-demo__wrap.--full-width > .splitpanes {
+  > .splitpanes__splitter,
   .extra--resize-icon {
     display: none;
   }

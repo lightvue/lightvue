@@ -427,7 +427,7 @@ export default {
     onPaneRemove(pane) {
       // 1. Remove the pane from array and redo indexes.
       const paneUid = pane._uid || pane._.uid; // in Vue3.x pane._uid is not defined.
-      const index = this.panes.findIndex(p => p.id === paneUid); // in Vue3.x target._uid is not defined.
+      const index = this.panes.findIndex(p => p.id === paneUid);
       const removed = this.panes.splice(index, 1)[0];
       this.panes.forEach((p, i) => (p.index = i));
 
