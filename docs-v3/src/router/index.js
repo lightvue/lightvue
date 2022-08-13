@@ -170,7 +170,7 @@ const routes = [{
             {
                 path: 'width',
                 component: () =>
-                    import ('@/pages/vue-components/width-layout.vue'),
+                    import ('@/pages/vue-components/width-controller.vue'),
             },
         ],
     },

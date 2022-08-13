@@ -161,7 +161,7 @@ export default {
       pages: [
         {
           page_name: 'Width Controller',
-          page_path: '/vue-components/width-layout',
+          page_path: '/vue-components/width-controller',
         },
       ],
     },

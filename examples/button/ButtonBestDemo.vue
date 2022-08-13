@@ -3,7 +3,6 @@
     <docs-card-best title="Playground">
       <lv-button v-bind="allOptions" style="width: 100%" :style="`width: ${percentagelayout[0]}%`" />
       <template #props>
-        <lv-percentage-layout v-model="percentagelayout"></lv-percentage-layout><br />
         <lv-toggle-switch v-model="allOptions.outlined" label="Outlined" />
         <br />
         <lv-toggle-switch v-model="allOptions.push" label="Push" /> <br />
@@ -36,7 +35,6 @@ import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input';
 import LvColorpicker from 'lightvue/color-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
-import LvPercentageLayout from 'lightvue/percentage-layout';
 
 export default {
   data() {
@@ -55,20 +53,14 @@ export default {
         size: 'xl',
       },
       stringProps: ['label', 'icon-right', 'size', 'type'],
-      percentagelayout: ['50px'],
     };
-  },
-  watch: {
-    percentagelayout(val) {
-      console.log('width', val);
-    },
   },
   components: {
     DocsCardBest,
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
-    LvPercentageLayout,
+    LvPercentageController,
   },
   computed: {
     enabledOptions() {

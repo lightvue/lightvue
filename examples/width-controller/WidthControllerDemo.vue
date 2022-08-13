@@ -10,12 +10,13 @@
           </div>
         </div>
         <div>
-          <lv-percentage-layout ref="layout" v-model="value"></lv-percentage-layout>
+          <lv-percentage-controller ref="layout" v-model="value"></lv-percentage-controller>
         </div>
       </div>
       <template #props>
-        <lv-button @click="add">Add pane</lv-button>
-        <lv-button @click="remove">Remove pane</lv-button>
+        <lv-button @click="add">Add Block</lv-button>
+        <lv-button @click="remove">Remove Block</lv-button>
+        <lv-button @click="autoWidth">Equal Width</lv-button>
       </template>
       <!-- <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -32,7 +33,7 @@
 
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
-import LvPercentageLayout from 'lightvue/percentage-layout';
+import LvPercentageController from 'lightvue/percentage-controller';
 
 export default {
   data() {
@@ -42,14 +43,14 @@ export default {
       panesNumber: 4,
     };
   },
-  watch: {
-    value(val) {
-      console.log('value', val);
-    },
-  },
+  // watch: {
+  //   value(val) {
+  //     console.log('value', val);
+  //   },
+  // },
   components: {
     DocsCardBest,
-    LvPercentageLayout,
+    LvPercentageController,
   },
   computed: {
     enabledOptions() {
@@ -62,6 +63,9 @@ export default {
     },
     remove() {
       this.$refs.layout.removePane();
+    },
+    autoWidth() {
+      this.$refs.layout.setAutoWidth();
     },
   },
 };

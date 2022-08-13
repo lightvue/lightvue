@@ -13,7 +13,7 @@ import { LvResponsivePanes, Pane } from 'lightvue/responsive-panes';
 import { localValueMixin } from 'lightvue/mixins';
 
 export default {
-  name: 'LvPercentageLayout',
+  name: 'LvPercentageController',
   mixins: [localValueMixin],
   components: { LvResponsivePanes, Pane },
   prop: {
