@@ -1,6 +1,6 @@
 <template>
   <div class="responsive-demo__wrap" :class="{ '--full-width': paneSize === 100 && hideResizer, '--rounded': roundedCard }">
-    <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
+    <LvResponsivePanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
       <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
           <loader />
@@ -12,22 +12,20 @@
         </div>
         <div v-if="paneSize <= 90" class="responsive-dimensions" @dblclick="toggleDevice">{{ paneSizePixel }}px</div>
       </Pane>
-    </Splitpanes>
+    </LvResponsivePanes>
   </div>
 </template>
 
 <script>
-import { Splitpanes, Pane } from 'splitpanes';
-import './splitpanes.css';
+import { LvResponsivePanes, Pane } from 'lightvue/responsive-panes';
+// import './splitpanes.css';
 import Loader from './Loader.vue';
-// import BallScaleMultiple from 'lightvue/loaders/BallComponents/BallScaleMultiple.vue';
 
 export default {
   components: {
-    Splitpanes,
+    LvResponsivePanes,
     Pane,
     Loader,
-    // BallScaleMultiple,
   },
   props: {
     minWidth: {
@@ -110,9 +108,8 @@ export default {
             // set to tablet mode
             this.setPane((this.tabletWidth / this.$el.clientWidth) * 100);
           } else {
-            // set to mobile modde
+            // set to mobile mode
             this.setPane((this.minWidth / this.$el.clientWidth) * 100);
-
             this.direction = 'right';
           }
           break;
@@ -162,14 +159,15 @@ export default {
   pointer-events: none;
   color: #4b5563;
 }
-
-.splitpanes__splitter {
-  width: 16px !important;
-  background-color: #edf2f6 !important;
-  cursor: e-resize;
-  transition: all 0.1s ease-in-out;
-  &:hover {
-    background-color: #d6dfe8 !important;
+.responsive-demo__wrap {
+  .splitpanes__splitter {
+    width: 16px !important;
+    background-color: #edf2f6 !important;
+    cursor: e-resize;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      background-color: #d6dfe8 !important;
+    }
   }
 }
 

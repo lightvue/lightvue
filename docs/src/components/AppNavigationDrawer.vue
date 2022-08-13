@@ -155,6 +155,18 @@ export default {
       ],
     },
     {
+      category_name: 'Controller',
+      category_icon: 'light-icon-disc',
+
+      pages: [
+        {
+          page_name: 'Width Controller',
+          page_path: '/vue-components/width-layout',
+        },
+      ],
+    },
+
+    {
       category_name: 'Loaders',
       category_icon: 'light-icon-rotate-clockwise',
 
