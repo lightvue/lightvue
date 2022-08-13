@@ -167,6 +167,10 @@ export default {
           page_name: 'Unit Input',
           page_path: '/vue-components/unit-input',
         },
+        {
+          page_name: 'Box Model',
+          page_path: '/vue-components/box-model',
+        },
       ],
     },
 
