@@ -55,4 +55,21 @@ export default {
   border-radius: 8px;
   background-color: #607c8a;
 }
+@media (max-width: 768px) {
+  .box-model-wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: unset;
+    flex-wrap: wrap;
+  }
+  .output-wrapper {
+    height: 100px;
+    width: 100%;
+  }
+  .seperator {
+    height: 3px;
+    width: 100%;
+    margin: 10px 0px;
+  }
+}
 </style>
