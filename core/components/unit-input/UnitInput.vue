@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       localValue: null,
-      selectedUnit: 'px',
+      selectedUnit: this.units[0],
       open: false,
     };
   },
