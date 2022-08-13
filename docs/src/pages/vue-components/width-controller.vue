@@ -55,18 +55,13 @@ export default {
         {
           title: 'Button Width',
           file: 'width-controller/WidthControllerDemo2',
-          description: '',
+          description: 'You can also adjust the width between two <span>LvButtons</span> using the <span>LvPercentageController</span>.',
         },
-        // {
-        //   title: 'With Focus event',
-        //   file: 'tooltip/TooltipFocusDemo',
-        //   description: 'You can use the Tooltip for various purpose like show additional information etc. LightVue comes with some stunning designs for Tooltip.You can use the tooltip in the following way. LightVue Tooltip bar is Both compatible with Vue 2.x and Vue 3.x.',
-        // },
       ],
     };
   },
   title: 'Width-Controller',
-  description: ``,
+  description: 'LvPercentageController allows you to adjust the width using LvPercentageController in percentage . You can manually set the width (in percentage) smoothly using the LvPercentageController just by sliding the slider of that particular section or block.',
   packageName: 'WidthController',
   componentName: 'LvWidthController',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,

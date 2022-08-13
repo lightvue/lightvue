@@ -2,13 +2,16 @@
   <div>
     <docs-card-best title="Playground">
       <div style="width: 100%">
-        <div v-for="(width, i) in value" :key="i">
-          <div class="column" :style="`width: ${width}%`">
-            <span class="value">{{ width }}%</span>
+        <div style="display: flex">
+          <div v-for="(width, i) in value" :key="i" :style="`width: ${width}%`">
+            <div class="width-controller__column">
+              <div>{{ width }}%</div>
+            </div>
           </div>
         </div>
-
-        <lv-percentage-controller ref="layout" v-model="value"></lv-percentage-controller>
+        <br />
+        <br />
+        <lv-percentage-controller ref="percentageController" v-model="value"></lv-percentage-controller>
       </div>
       <template #props>
         <lv-button @click="add">Add Block</lv-button>
@@ -40,7 +43,6 @@ export default {
     return {
       allOptions: {},
       value: [20, 80],
-      panesNumber: 4,
     };
   },
   // watch: {
@@ -59,22 +61,20 @@ export default {
   },
   methods: {
     add() {
-      this.$refs.layout.addPane();
+      this.$refs.percentageController.addPane();
     },
     remove() {
-      this.$refs.layout.removePane();
+      this.$refs.percentageController.removePane();
     },
     autoWidth() {
-      this.$refs.layout.setAutoWidth();
+      this.$refs.percentageController.setAutoWidth();
     },
   },
 };
 </script>
 
 <style lang="scss">
-.column {
-  float: left;
-  width: 50px;
+.width-controller__column {
   height: 150px;
   border: 1px dashed;
   display: flex;

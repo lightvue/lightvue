@@ -1,7 +1,7 @@
 <template>
-  <div class="percentageLayout__wrap">
-    <LvResponsivePanes class="splitpane" style="height: 35px; width: 250px; margin: auto" @resize="onResize">
-      <Pane class="pane" v-for="(width, i) in modelValue" :key="i" :size="width">
+  <div class="percentage-Controller__wrap">
+    <LvResponsivePanes class="percentage-Controller__splitpane" style="height: 35px; width: 250px; margin: auto" @resize="onResize">
+      <Pane class="percentage-Controller__pane" v-for="(width, i) in modelValue" :key="i" :size="width">
         <span>{{ i + 1 }}</span>
       </Pane>
     </LvResponsivePanes>
@@ -16,20 +16,6 @@ export default {
   name: 'LvPercentageController',
   mixins: [localValueMixin],
   components: { LvResponsivePanes, Pane },
-  prop: {
-    widthLayout: {
-      type: String,
-      default: '25%',
-    },
-  },
-  computed: {
-    dynamicStyle() {
-      return {
-        widthLayout: this.widthLayout,
-      };
-    },
-  },
-
   methods: {
     onResize($event) {
       let result = $event.map(x => parseFloat(x.size.toFixed(2)));
@@ -61,12 +47,12 @@ export default {
 </script>
 
 <style lang="scss">
-.splitpane {
+.percentage-Controller__splitpane {
   background: #edf2f7;
   border-radius: 2px;
   padding: 4px;
 }
-.pane {
+.percentage-Controller__pane {
   border-radius: 2px;
   margin-right: 3px;
   margin-left: 3px;
@@ -76,7 +62,7 @@ export default {
   display: flex;
   align-items: center;
 }
-.percentageLayout__wrap {
+.percentage-Controller__wrap {
   .splitpanes__splitter {
     width: 6px !important;
     border-radius: 1px;
