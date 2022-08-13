@@ -19,7 +19,7 @@ import LvPercentageController from 'lightvue/percentage-controller';
 export default {
   data() {
     return {
-      percentagelayout: ['50', '50'],
+      percentagelayout: [60, 40],
     };
   },
   components: {

@@ -16,6 +16,9 @@
       <template #props>
         <lv-button @click="add">Add Block</lv-button>
         <lv-button @click="remove">Remove Block</lv-button>
+        <br />
+        <br />
+
         <lv-button @click="autoWidth">Equal Width</lv-button>
       </template>
       <!-- <template #code>

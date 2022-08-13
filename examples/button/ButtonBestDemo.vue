@@ -1,7 +1,7 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-button v-bind="allOptions" style="width: 100%" :style="`width: ${percentagelayout[0]}%`" />
+      <lv-button v-bind="allOptions" />
       <template #props>
         <lv-toggle-switch v-model="allOptions.outlined" label="Outlined" />
         <br />
@@ -60,7 +60,6 @@ export default {
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
-    LvPercentageController,
   },
   computed: {
     enabledOptions() {
