@@ -16,7 +16,7 @@ import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 import UnitInputApi from 'lightvueDocs/example/unit-input/UnitInputApi';
 
-const pageDescription = 'UnitInput is a controller to get the units entered by the user';
+const pageDescription = 'UnitInput is a controller that helps you get information from the user in terms of units. This is a great tool to use if you need to gather data from people who measure things or use units regularly.';
 
 export default {
   components: {
@@ -27,7 +27,7 @@ export default {
     DocsAllApi,
   },
   head: {
-    title: ' UnitInput Documentation | LightVue',
+    title: 'UnitInput Documentation | LightVue',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
