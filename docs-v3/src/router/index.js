@@ -144,6 +144,10 @@ const routes = [
         path: 'unit-input',
         component: () => import('@/pages/vue-components/unit-input.vue'),
       },
+      {
+        path: 'box-model',
+        component: () => import('@/pages/vue-components/box-model.vue'),
+      },
     ],
   },
   {
