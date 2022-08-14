@@ -13,18 +13,18 @@
     </LvInput>
 
     <LvOverlayPanel class="icon-picker__overlay" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
-      <IconpickerCore v-model="localValue" v-bind="$props" @close="close" />
+      <IconPickerCore v-model="localValue" v-bind="$props" @close="close" />
     </LvOverlayPanel>
   </div>
 </template>
 
 <script>
-import IconpickerCore from './IconpickerCore.vue';
+import IconPickerCore from './IconPickerCore.vue';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvInput from 'lightvue/input';
 import { trueValueMixin } from 'lightvue/mixins';
 export default {
-  name: 'LvIconpicker',
+  name: 'LvIconPicker',
   props: {
     label: {
       type: String,
@@ -61,7 +61,7 @@ export default {
   },
   components: {
     LvOverlayPanel,
-    IconpickerCore,
+    IconPickerCore,
     LvInput,
   },
   methods: {
