@@ -1,12 +1,15 @@
 <template>
   <div class="icons__wrap">
     <lv-input bottom-bar clearable icon-right="light-icon-search" placeholder="Search Icon" v-model="query" />
-    <ul class="icons__list --all-icons light-scrollbar">
+    <div class="icons-loader" v-if="loadingIcons">
+      <lv-progress-spinner size="40px" />
+    </div>
+    <ul v-if="!loadingIcons" class="icons__list --all-icons light-scrollbar">
       <li @click="selectIcons(`light-icon-${iconName}`)" class="icons__list-item" v-for="iconName in filteredList" :key="iconName" :title="iconName">
         <i :class="`light-icon-${iconName}`"></i>
       </li>
     </ul>
-    <ul class="icons__list --suggested-icons" v-if="!$attrs.hidePalette">
+    <ul class="icons__list --suggested-icons" v-if="!$attrs.hidePalette && !loadingIcons">
       <div class="suggested-icons__label">Suggested icons</div>
       <li @click="selectIcons(iconName)" class="icons__list-item" v-for="iconName in $attrs.icons" :key="iconName" :title="iconName">
         <i :class="iconName"></i>
@@ -18,17 +21,20 @@
 <script>
 import { trueValueMixin } from 'lightvue/mixins';
 import LvInput from 'lightvue/input';
+import LvProgressSpinner from 'lightvue/progress-spinner';
+
 export default {
   data() {
     return {
       // apiPath: '/light-icon_list.json',
       query: '',
       allIcons: [],
-      loadingIcons: true,
+      loadingIcons: false,
     };
   },
   components: {
     LvInput,
+    LvProgressSpinner,
   },
   mixins: [trueValueMixin],
   computed: {
@@ -43,6 +49,7 @@ export default {
   },
   methods: {
     async fetchAPI() {
+      this.loadingIcons = true;
       fetch('https://unpkg.com/light-icons/dist/light-icon_list.json')
         .then(_ => {
           return _.json();
@@ -61,6 +68,12 @@ export default {
 </script>
 
 <style lang="scss">
+.icons-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
 .icons__wrap {
   width: 300px;
 }
