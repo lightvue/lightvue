@@ -7,6 +7,7 @@
       </li>
     </ul>
     <ul class="icons__list --suggested-icons" v-if="!$attrs.hidePalette">
+      <div class="suggested-icons__label">Suggested icons</div>
       <li @click="selectIcons(iconName)" class="icons__list-item" v-for="iconName in $attrs.icons" :key="iconName" :title="iconName">
         <i :class="iconName"></i>
       </li>
@@ -80,6 +81,14 @@ export default {
     border-top: 1px solid rgba(100, 100, 100, 0.1);
     margin-top: 12px;
     padding-top: 12px;
+    .suggested-icons__label {
+      background-color: #f5f8fa;
+      font-size: 12px;
+      margin-top: -20px;
+      position: absolute;
+      padding: 0px 8px;
+      color: #afb2b3;
+    }
   }
 }
 .icons__list .icons__list-item {
