@@ -15,8 +15,8 @@ const IconpickerAPI = {
     {
       name: 'icons',
       type: 'Array',
-      default: "['light-icon-accessible', 'light-icon-ad', 'light-icon-activity', 'light-icon-ban', 'light-icon-bandage', 'light-icon-basket', 'light-icon-bike', 'light-icon-bell', 'light-icon-bed', 'light-icon-bolt', 'light-icon-book', 'light-icon-bold', 'light-icon-cloud', 'light-icon-code', 'light-icon-clock', 'light-icon-copy']",
-      description: 'Array of 16 icons for the icon palette',
+      default: "['light-icon-brand-twitter', 'light-icon-brand-linkedin', 'light-icon-brand-facebook', 'light-icon-brand-instagram', 'light-icon-brand-telegram', 'light-icon-brand-github', 'light-icon-brand-whatsapp', 'light-icon-brand-youtube', 'light-icon-settings', 'light-icon-download', 'light-icon-bell', 'light-icon-book', 'light-icon-copy', 'light-icon-code']",
+      description: 'Array of 14 icons for the icon palette',
     },
     {
       name: 'withoutInput',

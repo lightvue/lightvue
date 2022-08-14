@@ -1,10 +1,10 @@
 <template>
-  <div class="lv-colorpicker-wrapper">
+  <div class="lv__iconpicker-wrapper">
     <div class="icon-picker__selected-icon" v-if="withoutInput" @click="toggleIconBlockOverlay">
       <i :class="localValue"></i>
     </div>
 
-    <LvInput v-else :label="label" ref="colorPickerInput" v-model="localValue" v-bind="$attrs" @focus="toggleIconpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
+    <LvInput v-else :label="label" ref="iconPickerInput" v-model="localValue" v-bind="$attrs" @focus="toggleIconpickerOverlay" aria:haspopup="true" aria-controls="iconpicker_overlay_panel">
       <template #append>
         <div class="icon-picker__selected-icon" @click="toggleIconpickerOverlay">
           <i :class="localValue"></i>
@@ -12,7 +12,7 @@
       </template>
     </LvInput>
 
-    <LvOverlayPanel class="icon-picker__overlay" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
+    <LvOverlayPanel class="icon-picker__overlay" ref="IconpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
       <IconPickerCore v-model="localValue" v-bind="$props" @close="close" />
     </LvOverlayPanel>
   </div>
@@ -40,7 +40,7 @@ export default {
     },
     icons: {
       type: Array,
-      default: () => ['light-icon-accessible', 'light-icon-ad', 'light-icon-activity', 'light-icon-ban', 'light-icon-bandage', 'light-icon-basket', 'light-icon-bike', 'light-icon-bell', 'light-icon-bed', 'light-icon-bolt', 'light-icon-book', 'light-icon-bold', 'light-icon-cloud', 'light-icon-code', 'light-icon-clock', 'light-icon-copy'],
+      default: () => ['light-icon-brand-twitter', 'light-icon-brand-linkedin', 'light-icon-brand-facebook', 'light-icon-brand-instagram', 'light-icon-brand-telegram', 'light-icon-brand-github', 'light-icon-brand-whatsapp', 'light-icon-brand-youtube', 'light-icon-settings', 'light-icon-download', 'light-icon-bell', 'light-icon-book', 'light-icon-copy', 'light-icon-code'],
     },
   },
   mixins: [trueValueMixin],
@@ -66,13 +66,13 @@ export default {
   },
   methods: {
     toggleIconpickerOverlay(event) {
-      this.$refs.ColorpickerOverlay.toggle(null, this.$refs.colorPickerInput.$el);
+      this.$refs.IconpickerOverlay.toggle(null, this.$refs.iconPickerInput.$el);
     },
     toggleIconBlockOverlay(event) {
-      this.$refs.ColorpickerOverlay.toggle(event);
+      this.$refs.IconpickerOverlay.toggle(event);
     },
     close() {
-      this.$refs.ColorpickerOverlay.hide();
+      this.$refs.IconpickerOverlay.hide();
     },
   },
 };
@@ -83,7 +83,7 @@ export default {
   background-color: #f5f8fa;
 }
 
-.lv-colorpicker-wrapper {
+.lv__iconpicker-wrapper {
   display: inline-block;
   vertical-align: middle;
 }
