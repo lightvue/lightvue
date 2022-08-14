@@ -1,7 +1,7 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <LvColorpicker v-bind="allOptions"> </LvColorpicker>
+      <LvIconpicker v-bind="allOptions"> </LvIconpicker>
 
       <template #props>
         <lv-toggle-switch v-model="allOptions.hidePalette" label="Hide Palette" /> <br />
@@ -17,7 +17,7 @@
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
-        <span class="dy-code-row --tag-row">&nbsp;&lt;LvColorPicker</span>
+        <span class="dy-code-row --tag-row">&nbsp;&lt;LvIconPicker</span>
         <span class="dy-code-row --attribute-row" v-for="(option, name) in enabledOptions" :key="name">
           <pre v-if="option">&nbsp; &nbsp; &nbsp;<span v-if="!stringProps.includes(name)">:</span>{{ name }}=<span>"{{ option }}"</span></pre>
         </span>
@@ -31,21 +31,20 @@
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input';
-import LvColorpicker from 'lightvue/color-picker';
+import LvIconpicker from 'lightvue/icon-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
 
 export default {
   data() {
     return {
       allOptions: {
-        label: 'Choose Color',
-        value: '#38b2ac',
-
+        label: 'Choose Icon',
+        value: 'light-icon-search',
         hidePalette: false,
         withoutInput: false,
         clearable: true,
         bottomBar: true,
-        colors: ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#795548'],
+        icons: ['light-icon-accessible', 'light-icon-ad', 'light-icon-activity', 'light-icon-ban', 'light-icon-bandage', 'light-icon-basket', 'light-icon-bike', 'light-icon-bell', 'light-icon-bed', 'light-icon-bolt', 'light-icon-book', 'light-icon-bold', 'light-icon-cloud', 'light-icon-code', 'light-icon-clock', 'light-icon-copy'],
       },
       stringProps: ['label'],
     };
@@ -54,7 +53,7 @@ export default {
     DocsCardBest,
     LvInput,
     LvToggleSwitch,
-    LvColorpicker,
+    LvIconpicker,
   },
   computed: {
     enabledOptions() {
