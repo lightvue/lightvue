@@ -1,25 +1,25 @@
 <template>
   <div class="lv-colorpicker-wrapper">
-    <div class="lv-colorpicker__colorblock-wrap" v-if="withoutInput" @click="toggleIconBlockOverlay">
+    <div class="icon-picker__selected-icon" v-if="withoutInput" @click="toggleIconBlockOverlay">
       <i :class="localValue"></i>
     </div>
 
     <LvInput v-else :label="label" ref="colorPickerInput" v-model="localValue" v-bind="$attrs" @focus="toggleIconpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template #append>
-        <div class="lv-colorpicker__colorblock-wrap" @click="toggleIconpickerOverlay">
+        <div class="icon-picker__selected-icon" @click="toggleIconpickerOverlay">
           <i :class="localValue"></i>
         </div>
       </template>
     </LvInput>
 
-    <LvOverlayPanel class="overlayPanel" style="max-content" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
+    <LvOverlayPanel class="icon-picker__overlay" ref="ColorpickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
       <IconpickerCore v-model="localValue" v-bind="$props" @close="close" />
     </LvOverlayPanel>
   </div>
 </template>
 
 <script>
-import IconpickerCore from './core/IconpickerCore.vue';
+import IconpickerCore from './IconpickerCore.vue';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvInput from 'lightvue/input';
 import { trueValueMixin } from 'lightvue/mixins';
@@ -60,15 +60,9 @@ export default {
     this.localValue = this.modelValue;
   },
   components: {
-    LvOverlayPanel: LvOverlayPanel,
-    IconpickerCore: IconpickerCore,
-    LvInput: LvInput,
-    // Checkboard,
-  },
-  computed: {
-    // modelValue() {
-    //   return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
-    // },
+    LvOverlayPanel,
+    IconpickerCore,
+    LvInput,
   },
   methods: {
     toggleIconpickerOverlay(event) {
@@ -80,16 +74,12 @@ export default {
     close() {
       this.$refs.ColorpickerOverlay.hide();
     },
-    // updateValue(newValue) {
-    //   this.$emit('input', newValue); // Only for Vue 2
-    //   this.$emit('update:modelValue', newValue); // Only for Vue 3
-    // },
   },
 };
 </script>
 
-<style>
-.overlayPanel {
+<style lang="scss">
+.icon-picker__overlay {
   background-color: #f5f8fa;
 }
 
@@ -98,28 +88,22 @@ export default {
   vertical-align: middle;
 }
 
-.lv-colorpicker__colorblock-wrap {
+.icon-picker__selected-icon {
   position: relative;
   width: 30px;
   height: 30px;
-  top: calc(50% - 16px);
-  right: 2px;
-  border-radius: 5px !important;
-  transform: scale(0.9);
+  top: 3px;
+  right: 3px;
+  border-radius: 3px !important;
   cursor: pointer;
-  overflow: hidden;
   display: inline-block;
-}
-.lv-colorpicker__colorblock-wrap i {
-  position: absolute;
-  top: 5px;
-  font-size: 20px;
-}
-.lv-colorpicker__colorblock {
-  /* border-radius: 4px !important; */
-  position: relative;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    font-size: 24px;
+  }
 }
 </style>
