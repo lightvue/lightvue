@@ -71,7 +71,7 @@ export default {
   },
   title: 'Colorpicker',
   description: `LvColorpicker can be used when a user needs to pick a color. Additionally, a customized color palette can also be passed as an array.`,
-  packageName: 'colorpicker',
+  packageName: 'color-picker',
   componentName: 'LvColorpicker',
   status: COMPONENT_STATUS.UPDATED,
   apiData: ColorpickerAPI,

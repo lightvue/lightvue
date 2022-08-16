@@ -71,7 +71,7 @@ export default {
   },
   title: 'Icon Picker',
   description: `LvIconpicker can be used when a user needs to pick a icon. Additionally, a customized icon palette can also be passed as an array.`,
-  packageName: 'iconpicker',
+  packageName: 'icon-picker',
   componentName: 'LvIconpicker',
   status: COMPONENT_STATUS.UPDATED,
   apiData: IconpickerAPI,
