@@ -13,8 +13,8 @@
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.placeholder" label="Placeholder" /> <br />
         <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br />
-        <lv-icon-picker style="width: 100%; margin-bottom: 16px" v-model="allOptions.iconLeft" label="Left Icons" /> <br />
-        <lv-icon-picker style="width: 100%; margin-bottom: 16px" v-model="allOptions.iconRight" label="Right Icons" /> <br />
+        <div style="margin-bottom: 16px"><lv-icon-picker style="width: 100%" v-model="allOptions.iconLeft" label="Left Icons" /> <br /></div>
+        <div style="margin-bottom: 16px"><lv-icon-picker style="width: 100%" v-model="allOptions.iconRight" label="Right Icons" /> <br /></div>
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>

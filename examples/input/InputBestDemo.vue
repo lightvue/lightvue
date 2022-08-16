@@ -10,8 +10,8 @@
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.placeholder" label="Placeholder" /> <br />
         <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br />
-        <lv-icon-picker style="width: 100%; margin-bottom: 16px" v-model="allOptions['icon-left']" label="Left Icons" /> <br />
-        <lv-icon-picker style="width: 100%; margin-bottom: 16px" v-model="allOptions['icon-right']" label="Right Icons" /> <br />
+        <div style="margin-bottom: 16px"><lv-icon-picker style="width: 100%" v-model="allOptions['icon-left']" label="Left Icons" /> <br /></div>
+        <div style="margin-bottom: 16px"><lv-icon-picker style="width: 100%" v-model="allOptions['icon-right']" label="Right Icons" /> <br /></div>
         <Lv-colorpicker v-model="allOptions['placeholder-color']" label="Placeholder Color" />
       </template>
       <template #code>

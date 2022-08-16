@@ -18,8 +18,8 @@
         <lv-input v-model="allOptions['optionsValue']" label="optionsValue" /> <br />
         <lv-input v-model="allOptions['scrollHeight']" label="scrollHeight" placeholder="success" /> <br />
         <lv-input v-model="allOptions['filterPlaceholder']" label="filterPlaceholder" /> <br />
-        <lv-icon-picker style="width: 100%; margin-bottom: 16px" v-model="allOptions['icon-right']" label="Right icon" /> <br />
-        <lv-icon-picker style="width: 100%; margin-bottom: 16px" v-model="allOptions['iconLeft']" label="left icon" /> <br />
+        <div style="margin-bottom: 16px"><lv-icon-picker style="width: 100%" v-model="allOptions['icon-right']" label="Right icon" /> <br /></div>
+        <div style="margin-bottom: 16px"><lv-icon-picker style="width: 100%" v-model="allOptions['iconLeft']" label="left icon" /> <br /></div>
         <lv-input v-model="allOptions['emptyFilterMessage']" label="emptyFilterMessage" /> <br />
         <lv-input v-model="allOptions['label']" label="label" /> <br />
         <br />
