@@ -1,17 +1,17 @@
 <template>
-  <div class="icons__wrap">
+  <div class="lv-icons__wrap">
     <lv-input bottom-bar clearable icon-right="light-icon-search" placeholder="Search Icon" v-model="query" />
     <div class="icons-loader" v-if="loadingIcons">
       <lv-progress-spinner size="40px" />
     </div>
-    <ul v-if="!loadingIcons" class="icons__list --all-icons light-scrollbar">
-      <li @click="selectIcons(`light-icon-${iconName}`)" class="icons__list-item" v-for="iconName in filteredList" :key="iconName" :title="iconName">
+    <ul v-if="!loadingIcons" class="lv-icons__list --all-icons light-scrollbar">
+      <li @click="selectIcons(`light-icon-${iconName}`)" class="lv-icons__list-item" v-for="iconName in filteredList" :key="iconName" :title="iconName">
         <i :class="`light-icon-${iconName}`"></i>
       </li>
     </ul>
-    <ul class="icons__list --suggested-icons" v-if="!$attrs.hidePalette && !loadingIcons">
+    <ul class="lv-icons__list --suggested-icons" v-if="!$attrs.hidePalette && !loadingIcons">
       <div class="suggested-icons__label">Suggested icons</div>
-      <li @click="selectIcons(iconName)" class="icons__list-item" v-for="iconName in $attrs.icons" :key="iconName" :title="iconName">
+      <li @click="selectIcons(iconName)" class="lv-icons__list-item" v-for="iconName in $attrs.icons" :key="iconName" :title="iconName">
         <i :class="iconName"></i>
       </li>
     </ul>
@@ -74,10 +74,10 @@ export default {
   align-items: center;
   margin: 50px 0;
 }
-.icons__wrap {
+.lv-icons__wrap {
   width: 300px;
 }
-.icons__wrap .icons__list {
+.lv-icons__wrap .lv-icons__list {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -104,7 +104,7 @@ export default {
     }
   }
 }
-.icons__list .icons__list-item {
+.lv-icons__list .lv-icons__list-item {
   vertical-align: top;
   width: 36px;
   height: 36px;
