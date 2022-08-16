@@ -4,11 +4,11 @@
       <LvButton label="Save" icon="light-icon-circle-check" class="lv--primary" :style="`width: ${percentagelayout[0]}%`" />
       <LvButton label="Delete" icon="light-icon-trash" class="lv--danger" :style="`width: ${percentagelayout[1]}%`" />
     </div>
-    <LvPercentageController v-model="percentagelayout" />
+    <LvWidthController v-model="percentagelayout" />
   </div>
 </template>
 <script>
-import LvPercentageController from 'lightvue/percentage-controller';
+import LvWidthController from 'lightvue/width-controller';
 
 export default {
   data() {
@@ -17,7 +17,7 @@ export default {
     };
   },
   components: {
-    LvPercentageController,
+    LvWidthController,
   },
 };
 </script>

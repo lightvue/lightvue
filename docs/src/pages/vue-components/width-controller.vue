@@ -1,6 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <WidthController></WidthController>'
+    <WidthControllerDemo></WidthControllerDemo>
     <template v-for="(demo, i) in demos">
       <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
@@ -20,7 +20,7 @@ import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 // import TooltipAPI from 'lightvueDocs/example/tooltip/TooltipAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
-import WidthController from 'lightvueDocs/example/width-controller/WidthControllerDemo';
+import WidthControllerDemo from 'lightvueDocs/example/width-controller/WidthControllerDemo';
 
 export default {
   head: {
@@ -47,14 +47,14 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
-    WidthController,
+    WidthControllerDemo,
   },
   data() {
     return {
       demos: [
         {
           title: 'Button Width',
-          file: 'width-controller/WidthControllerDemo2',
+          file: 'width-controller/WidthControllerDemo_Button',
           description: 'You can also adjust the width between two <span>LvButtons</span> using the <span>LvPercentageController</span>.',
         },
       ],

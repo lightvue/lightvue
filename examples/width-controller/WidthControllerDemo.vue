@@ -11,7 +11,7 @@
         </div>
         <br />
         <br />
-        <lv-percentage-controller ref="percentageController" v-model="value"></lv-percentage-controller>
+        <LvWidthController ref="widthController" v-model="value"></LvWidthController>
       </div>
       <template #props>
         <lv-button @click="add">Add Block</lv-button>
@@ -36,7 +36,7 @@
 
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
-import LvPercentageController from 'lightvue/percentage-controller';
+import LvWidthController from 'lightvue/width-controller';
 
 export default {
   data() {
@@ -52,7 +52,7 @@ export default {
   // },
   components: {
     DocsCardBest,
-    LvPercentageController,
+    LvWidthController,
   },
   computed: {
     enabledOptions() {
@@ -61,13 +61,13 @@ export default {
   },
   methods: {
     add() {
-      this.$refs.percentageController.addPane();
+      this.$refs.widthController.addPane();
     },
     remove() {
-      this.$refs.percentageController.removePane();
+      this.$refs.widthController.removePane();
     },
     autoWidth() {
-      this.$refs.percentageController.setAutoWidth();
+      this.$refs.widthController.setAutoWidth();
     },
   },
 };

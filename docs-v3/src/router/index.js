@@ -168,7 +168,7 @@ const routes = [{
                     import ('@/pages/vue-components/tooltip.vue'),
             },
             {
-                path: 'width',
+                path: 'width-controller',
                 component: () =>
                     import ('@/pages/vue-components/width-controller.vue'),
             },

@@ -1,7 +1,7 @@
 <template>
-  <div class="percentage-Controller__wrap">
-    <LvResponsivePanes class="percentage-Controller__splitpane" style="height: 35px; width: 250px; margin: auto" @resize="onResize">
-      <Pane class="percentage-Controller__pane" v-for="(width, i) in modelValue" :key="i" :size="width">
+  <div class="width-controller__wrap">
+    <LvResponsivePanes class="width-controller__splitpane" style="height: 35px; width: 250px; margin: auto" @resize="onResize">
+      <Pane class="width-controller__pane" v-for="(width, i) in modelValue" :key="i" :size="width">
         <span>{{ i + 1 }}</span>
       </Pane>
     </LvResponsivePanes>
@@ -13,7 +13,7 @@ import { LvResponsivePanes, Pane } from 'lightvue/responsive-panes';
 import { localValueMixin } from 'lightvue/mixins';
 
 export default {
-  name: 'LvPercentageController',
+  name: 'LvWidthController',
   mixins: [localValueMixin],
   components: { LvResponsivePanes, Pane },
   methods: {
@@ -47,12 +47,12 @@ export default {
 </script>
 
 <style lang="scss">
-.percentage-Controller__splitpane {
+.width-controller__splitpane {
   background: #edf2f7;
   border-radius: 2px;
   padding: 4px;
 }
-.percentage-Controller__pane {
+.width-controller__pane {
   border-radius: 2px;
   margin-right: 3px;
   margin-left: 3px;
@@ -62,7 +62,7 @@ export default {
   display: flex;
   align-items: center;
 }
-.percentage-Controller__wrap {
+.width-controller__wrap {
   .splitpanes__splitter {
     width: 6px !important;
     border-radius: 1px;
