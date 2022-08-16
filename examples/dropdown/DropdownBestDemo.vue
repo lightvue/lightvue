@@ -18,8 +18,8 @@
         <lv-input v-model="allOptions['optionsValue']" label="optionsValue" /> <br />
         <lv-input v-model="allOptions['scrollHeight']" label="scrollHeight" placeholder="success" /> <br />
         <lv-input v-model="allOptions['filterPlaceholder']" label="filterPlaceholder" /> <br />
-        <lv-input v-model="allOptions['icon-right']" label="Right icon" /> <br />
-        <lv-input v-model="allOptions['iconLeft']" label="left icon" /> <br />
+        <lv-icon-picker style="width: 100%; margin-bottom: 16px" v-model="allOptions['icon-right']" label="Right icon" /> <br />
+        <lv-icon-picker style="width: 100%; margin-bottom: 16px" v-model="allOptions['iconLeft']" label="left icon" /> <br />
         <lv-input v-model="allOptions['emptyFilterMessage']" label="emptyFilterMessage" /> <br />
         <lv-input v-model="allOptions['label']" label="label" /> <br />
         <br />
@@ -43,6 +43,7 @@ import LvDropdown from 'lightvue/dropdown';
 import LvInput from 'lightvue/input';
 import LvNumber from 'lightvue/number';
 import LvColorpicker from 'lightvue/color-picker';
+import LvIconPicker from 'lightvue/icon-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
 export default {
   data() {
@@ -87,6 +88,7 @@ export default {
     LvColorpicker,
     LvDropdown,
     LvNumber,
+    LvIconPicker,
   },
   computed: {
     enabledOptions() {
