@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :demoList="$options.demoList" hasDocs>
+  <docs-page-layout :title="$options.title" :description="$options.description" :demoList="$options.demoList" hasDocs :status="$options.status">
     <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -15,6 +15,7 @@ import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 import BoxModelApi from 'lightvueDocs/example/box-model/BoxModelApi';
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 const pageDescription = 'The LvBoxModel is an spectacular controller that introduced by lightvue to  set the padding or margin of an HTML element. This makes it easier for developers to visualize  consistent and responsive layouts without having to worry about manually setting these values.';
 
 export default {
@@ -47,6 +48,7 @@ export default {
   description: pageDescription,
   packageName: 'box-model',
   componentName: 'LvBoxModel',
+  status: COMPONENT_STATUS.NEW,
   apiData: BoxModelApi,
   demoList: [
     {

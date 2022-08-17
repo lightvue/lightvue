@@ -1,5 +1,5 @@
 <template>
-  <docs-page-layout :title="$options.title" :description="$options.description" :demoList="$options.demoList" hasDocs>
+  <docs-page-layout :title="$options.title" :description="$options.description" :demoList="$options.demoList" hasDocs :status="$options.status">
     <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
@@ -15,7 +15,7 @@ import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 import UnitInputApi from 'lightvueDocs/example/unit-input/UnitInputApi';
-
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 const pageDescription = 'UnitInput is a controller that helps you get information from the user in terms of units. This is a great tool to use if you need to gather data from people who measure things or use units regularly.';
 
 export default {
@@ -48,6 +48,7 @@ export default {
   description: pageDescription,
   packageName: 'unit-input',
   componentName: 'LvUnitInput',
+  status: COMPONENT_STATUS.NEW,
   apiData: UnitInputApi,
   demoList: [
     {
