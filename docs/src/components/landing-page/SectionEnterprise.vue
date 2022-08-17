@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="enterprise-footer__text">Copyright {{ currentYear() }} © LightVue. all rights reserved.</div>
+      <div class="enterprise-footer__text">Copyright {{ currentYear }} © LightVue. all rights reserved.</div>
     </section>
   </div>
 </template>
@@ -46,13 +46,8 @@ export default {
   data() {
     return {
       showContactDrawer: false,
+      currentYear: DateUtils.getCurrentYear(),
     };
-  },
-  methods: {
-    currentYear() {
-      console.log('hello from enter');
-      return DateUtils.getCurrentYear();
-    },
   },
 };
 </script>

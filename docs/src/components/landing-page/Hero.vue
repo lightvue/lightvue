@@ -127,7 +127,7 @@ $text-color-secondary: #eeecec;
       .hero-container__buttons {
         display: flex;
         justify-content: center;
-        /* flex-wrap: wrap; */
+        flex-wrap: wrap;
         z-index: 200;
         .hero-button {
           width: 180px;
@@ -177,6 +177,13 @@ $text-color-secondary: #eeecec;
     .hero-wrapper {
       .hero-container__row {
         padding: 0;
+        .hero-container__pre-wrap {
+          .hero-container__pre {
+            padding: 18px;
+            font-size: 16px;
+            justify-content: center;
+          }
+        }
         .hero-container__content {
           .hero-container__subtext {
             font-size: 1.5em;
@@ -223,7 +230,7 @@ $text-color-secondary: #eeecec;
 @media only screen and (max-width: 600px) {
   .hero-button {
     /* padding: 0.6rem 1.2rem !important; */
-    margin: 6px 5px !important;
+    margin: 6px 0px !important;
     width: 100vw !important;
   }
   .hero-section {
