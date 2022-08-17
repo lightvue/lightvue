@@ -1,12 +1,12 @@
 <template>
   <div class="box-model-wrapper">
     <div class="output-wrapper">
-      <div class="dummy-output" :style="getComputedStyle"><span>Set padding or margin</span></div>
+      <div class="dummy-output" :style="{ padding: paddingModel, margin: marginModel }"><span>Set padding or margin</span></div>
     </div>
     <div class="seperator"></div>
     <div class="controls">
       <lv-dropdown v-model="selectedOrientation" :options="orientation" optionLabel="name" optionsValue="code" placeholder="Select control" bottom-bar />
-      <lv-box-model v-model="boxModelValue" />
+      <lv-box-model v-model="computedModelValue" />
     </div>
   </div>
 </template>
@@ -19,7 +19,8 @@ export default {
   data() {
     return {
       allOptions: {},
-      boxModelValue: '10px 10px 10px 10px',
+      paddingModel: '10px 10px 10px 10px',
+      marginModel: '10px 10px 10px 10px',
       selectedOrientation: { name: 'Padding', code: 'padding' },
       orientation: [
         { name: 'Padding', code: 'padding' },
@@ -33,8 +34,13 @@ export default {
     LvDropdown,
   },
   computed: {
-    getComputedStyle() {
-      return this.selectedOrientation.code === 'padding' ? { padding: this.boxModelValue } : { margin: this.boxModelValue };
+    computedModelValue: {
+      get: function () {
+        return this.selectedOrientation.code === 'padding' ? this.paddingModel : this.marginModel;
+      },
+      set: function (newValue) {
+        this.selectedOrientation.code === 'padding' ? (this.paddingModel = newValue) : (this.marginModel = newValue);
+      },
     },
   },
 };
