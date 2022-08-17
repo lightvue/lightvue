@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="enterprise-footer__text">Copyright 2021 © LightVue. all rights reserved.</div>
+      <div class="enterprise-footer__text">Copyright {{ currentYear() }} © LightVue. all rights reserved.</div>
     </section>
   </div>
 </template>
@@ -37,6 +37,7 @@
 <script>
 import LeadForm from './LeadForm.vue';
 import LvDrawer from 'lightvue/drawer';
+import { DateUtils } from 'lightvue/utils';
 export default {
   components: {
     LeadForm,
@@ -46,6 +47,12 @@ export default {
     return {
       showContactDrawer: false,
     };
+  },
+  methods: {
+    currentYear() {
+      console.log('hello from enter');
+      return DateUtils.getCurrentYear();
+    },
   },
 };
 </script>
