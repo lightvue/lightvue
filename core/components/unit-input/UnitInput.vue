@@ -3,15 +3,17 @@
     <lv-input type="text" :editable="false" v-bind="$attrs" :value="localValue" @clear="handleClear()" bottomBar>
       <input class="unit-input" type="number" v-bind="$attrs" v-model="localValue" placeholder="10" />
       <template #append>
-        <div class="dropdown-wrapper" @click="open = !open">
-          <div tabindex="1" class="custom-select" @blur="open = false">
+        <div class="dropdown-wrapper" @click="openDropdown">
+          <div ref="selectedTag" tabindex="1" class="custom-select" @blur="open = false">
             <div class="selected" :class="{ open: open }">
               {{ selectedUnit }}
             </div>
             <div class="items" :class="{ selectHide: !open }">
-              <div v-for="(unit, i) of units" :key="unit" @click="optionSelect($event, unit)" :class="{ 'active-option': selectedUnit === unit }">
+              <!-- <LvCollapsible :show="open"> -->
+              <div class="option" v-for="(unit, i) of units" :key="unit" @click="optionSelect($event, unit)" :class="{ 'active-option': selectedUnit === unit }">
                 {{ unit }}
               </div>
+              <!-- </LvCollapsible> -->
             </div>
           </div>
         </div>
@@ -22,8 +24,9 @@
 
 <script>
 import LvInput from 'lightvue/input';
-import LvDropdown from 'lightvue/dropdown';
+// import LvDropdown from 'lightvue/dropdown';
 import { trueValueMixin } from 'lightvue/mixins';
+// import LvCollapsible from 'lightvue/collapsible';
 export default {
   name: 'InputDropdown',
   mixins: [trueValueMixin],
@@ -57,7 +60,8 @@ export default {
   },
   components: {
     LvInput,
-    LvDropdown,
+    // LvDropdown,
+    // LvCollapsible,
   },
   methods: {
     optionSelect(e, unit) {
@@ -67,6 +71,10 @@ export default {
     },
     updateLocalUnitValue() {
       this.localValue === '' ? this.updateValue(0 + this.selectedUnit) : this.updateValue(this.localValue + this.selectedUnit);
+    },
+    openDropdown() {
+      this.open = !this.open;
+      this.$refs.selectedTag.focus();
     },
   },
 };
@@ -114,7 +122,7 @@ export default {
   box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
 }
 
-.custom-select .items div {
+.custom-select .items .option {
   font-size: 1rem;
   color: #495057;
   padding: 0.5rem 1rem;
@@ -122,7 +130,7 @@ export default {
   user-select: none;
 }
 
-.custom-select .items div:hover {
+.custom-select .items .option:hover {
   color: #495057;
   background: #e9ecef;
 }
