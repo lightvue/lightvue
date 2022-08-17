@@ -1,11 +1,11 @@
 <template>
   <div class="box-model-wrapper">
     <div class="output-wrapper">
-      <div class="dummy-output" :style="getComputedStyle"><span>Set padding or marging</span></div>
+      <div class="dummy-output" :style="getComputedStyle"><span>Set padding or margin</span></div>
     </div>
     <div class="seperator"></div>
     <div class="controls">
-      <lv-dropdown style="margin-bottom: 9px" v-model="selectedOrientation" :options="orientation" optionLabel="name" optionsValue="code" placeholder="Select control" bottom-bar />
+      <lv-dropdown v-model="selectedOrientation" :options="orientation" optionLabel="name" optionsValue="code" placeholder="Select control" bottom-bar />
       <lv-box-model v-model="boxModelValue" />
     </div>
   </div>
@@ -78,6 +78,11 @@ export default {
     margin: auto;
     /* padding: 8px; */
   }
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 @media (max-width: 768px) {
   .box-model-wrapper {
