@@ -1,13 +1,13 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <WidthControllerDemo></WidthControllerDemo>
+    <WidthControllerBestDemo />
     <template v-for="(demo, i) in demos">
       <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
 
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
-      <!-- <docs-all-api :api-data="$options.apiData" /> -->
+      <docs-all-api :api-data="$options.apiData" />
     </template>
   </docs-page-layout>
 </template>
@@ -18,9 +18,9 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-// import TooltipAPI from 'lightvueDocs/example/tooltip/TooltipAPI';
+import WidthControllerAPI from 'lightvueDocs/example/width-controller/WidthControllerAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
-import WidthControllerDemo from 'lightvueDocs/example/width-controller/WidthControllerDemo';
+import WidthControllerBestDemo from 'lightvueDocs/example/width-controller/WidthControllerBestDemo';
 
 export default {
   head: {
@@ -47,25 +47,25 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
-    WidthControllerDemo,
+    WidthControllerAPI,
+    WidthControllerBestDemo,
   },
   data() {
     return {
       demos: [
         {
-          title: 'Button Width',
+          title: 'Button-Width',
           file: 'width-controller/WidthControllerDemo_Button',
-          description: 'You can also adjust the width between two <span>LvButtons</span> using the <span>LvPercentageController</span>.',
+          description: 'You can also adjust the width between two <span>LvButtons</span> using the <span>LvWidthController</span>.',
         },
       ],
     };
   },
   title: 'Width-Controller',
-  description: 'LvPercentageController allows you to adjust the width using LvPercentageController in percentage . You can manually set the width (in percentage) smoothly using the LvPercentageController just by sliding the slider of that particular section or block.',
+  description: 'LvWidthController allows you to adjust the width using LvWidthController in percentage . You can manually set the width (in percentage) smoothly by sliding the slider of that particular section or block.',
   packageName: 'WidthController',
   componentName: 'LvWidthController',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
-  //   apiData: TooltipAPI,
-  apiData: {},
+  apiData: WidthControllerAPI,
 };
 </script>

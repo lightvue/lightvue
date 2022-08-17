@@ -1,10 +1,10 @@
 <template>
   <div>
     <div style="display: flex">
-      <LvButton label="Save" icon="light-icon-circle-check" class="lv--primary" :style="`width: ${percentagelayout[0]}%`" />
-      <LvButton label="Delete" icon="light-icon-trash" class="lv--danger" :style="`width: ${percentagelayout[1]}%`" />
+      <LvButton label="Save" icon="light-icon-circle-check" class="lv--primary" :style="`width: ${width[0]}%`" />
+      <LvButton label="Delete" icon="light-icon-trash" class="lv--danger" :style="`width: ${width[1]}%`" />
     </div>
-    <LvWidthController v-model="percentagelayout" />
+    <LvWidthController v-model="width" />
   </div>
 </template>
 <script>
@@ -13,7 +13,7 @@ import LvWidthController from 'lightvue/width-controller';
 export default {
   data() {
     return {
-      percentagelayout: [60, 40],
+      width: [60, 40],
     };
   },
   components: {
