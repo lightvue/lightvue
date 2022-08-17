@@ -8,7 +8,7 @@
       </a>
     </div> -->
     <div class="app-footer__text">
-      Copyright {{ currentYear() }} © LightVue. All rights reserved. <br /><br />
+      Copyright {{ currentYear }} © LightVue. All rights reserved. <br /><br />
       <!-- <b>Improve this page on <i class="light-icon-brand-github"></i> GitHub</b> <br /> -->
     </div>
   </div>
@@ -16,10 +16,10 @@
 <script>
 import { DateUtils } from 'lightvue/utils';
 export default {
-  methods: {
-    currentYear() {
-      return DateUtils.getCurrentYear();
-    },
+  data() {
+    return {
+      currentYear: DateUtils.getCurrentYear(),
+    };
   },
 };
 </script>
