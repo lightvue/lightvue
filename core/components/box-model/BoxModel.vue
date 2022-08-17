@@ -7,8 +7,8 @@
       <div class="--center-row">
         <sub v-tooltip.left="localState.left">{{ getComputedValue('left') }}</sub>
         <div class="lv-box__model-inner_box">
-          <div @click="setDirection('y-axis')" v-tooltip.left="'Y axis'" class="lv-box__model-controller" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'y-axis' }"></div>
-          <div @click="setDirection('x-axis')" v-tooltip.top="'X axis'" class="lv-box__model-controller --horizontal" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'x-axis' }"></div>
+          <div @click="setDirection('y-axis')" class="lv-box__model-controller" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'y-axis' }"></div>
+          <div @click="setDirection('x-axis')" class="lv-box__model-controller --horizontal" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'x-axis' }"></div>
         </div>
         <sub v-tooltip.top="localState.right">{{ getComputedValue('right') }}</sub>
       </div>
