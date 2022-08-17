@@ -60,7 +60,6 @@ export default {
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
-    LvBoxModel,
   },
   computed: {
     enabledOptions() {
