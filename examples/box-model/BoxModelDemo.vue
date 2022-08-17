@@ -1,27 +1,41 @@
 <template>
   <div class="box-model-wrapper">
-    <div class="output-wrapper" :style="{ padding: boxModelValue }">
-      <div class="dummy-output"></div>
+    <div class="output-wrapper">
+      <div class="dummy-output" :style="getComputedStyle"><span>Set padding or marging</span></div>
     </div>
     <div class="seperator"></div>
-    <lv-box-model v-model="boxModelValue" />
+    <div class="controls">
+      <lv-dropdown style="margin-bottom: 9px" v-model="selectedOrientation" :options="orientation" optionLabel="name" optionsValue="code" placeholder="Select control" bottom-bar />
+      <lv-box-model v-model="boxModelValue" />
+    </div>
   </div>
 </template>
 
 <script>
 import LvBoxModel from 'lightvue/box-model';
 import LvSkeleton from 'lightvue/skeleton';
-
+import LvDropdown from 'lightvue/dropdown';
 export default {
   data() {
     return {
       allOptions: {},
       boxModelValue: '10px 10px 10px 10px',
+      selectedOrientation: { name: 'Padding', code: 'padding' },
+      orientation: [
+        { name: 'Padding', code: 'padding' },
+        { name: 'Margin', code: 'margin' },
+      ],
     };
   },
   components: {
     LvBoxModel,
     LvSkeleton,
+    LvDropdown,
+  },
+  computed: {
+    getComputedStyle() {
+      return this.selectedOrientation.code === 'padding' ? { padding: this.boxModelValue } : { margin: this.boxModelValue };
+    },
   },
 };
 </script>
@@ -41,19 +55,29 @@ export default {
   margin: 0px 20px;
 }
 .output-wrapper {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   width: 50%;
-  height: 100%;
-  border: 1px solid #607c8a;
-  border-radius: 8px;
+  /* height: 100%; */
+  border: 3px solid #dfe7eb;
+  background-color: rgba(55, 179, 171, 0.04);
+  /* border-radius: 8px; */
+  overflow: hidden;
 }
 .dummy-output {
-  height: 100%;
-  width: 100%;
-  border-radius: 8px;
-  background-color: #607c8a;
+  /* border-radius: 8px; */
+  /* background-color: #607c8a; */
+  border: 2px solid #dfe7eb;
+  text-align: center;
+  display: flex;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  span {
+    margin: auto;
+    /* padding: 8px; */
+  }
 }
 @media (max-width: 768px) {
   .box-model-wrapper {
