@@ -10,7 +10,7 @@
       <span class="dropdown-label"> Subscribe to <b class="--brand-color">LightVue</b> Newsletter </span>
     </lv-checkbox>
     <br /><br />
-    <lv-button icon-right="light-icon-chevron-right" :push="true" :deep-shadow="true" class="page-button --dark lead-form__submit-btn" @click="sendLead" :disabled="loading">
+    <lv-button icon-right="light-icon-chevron-right" class="page-button --dark lead-form__submit-btn" @click="sendLead" :disabled="loading">
       <template #append><LvProgressSpinner v-if="loading" size="13px" color="#ffffff" /></template>Submit
     </lv-button>
   </div>

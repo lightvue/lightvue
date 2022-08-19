@@ -88,7 +88,7 @@ export default {};
 }
 @media (max-width: 768px) {
   .vue-migrate__wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0px;
     padding: 0px 20px;
     .vue-migrate__image-wrapper {
