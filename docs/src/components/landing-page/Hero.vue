@@ -173,6 +173,9 @@ $text-color-secondary: #eeecec;
 }
 
 @media (max-width: 768px) {
+  .hero-container__pre .copy-btn__wrap {
+    display: none;
+  }
   .hero-section {
     .hero-wrapper {
       .hero-container__row {
@@ -271,16 +274,13 @@ $text-color-secondary: #eeecec;
 <style>
 .hero-container__pre .copy-btn__tag {
   left: 150%;
-  right: unset;
+  right: unset !important;
   background-color: rgba(0, 0, 0, 0.15);
 }
 @media only screen and (max-width: 400px) {
   .hero-container__pre {
     padding: 24px 24px;
     width: 100%;
-  }
-  .hero-container__pre .copy-btn__wrap {
-    display: none;
   }
   .hero-container .hero-container__row {
     padding-left: 0;
