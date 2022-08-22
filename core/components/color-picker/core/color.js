@@ -19,6 +19,11 @@ function _colorChange(data, oldHue) {
     color = tinycolor(data);
   }
 
+  if (!data) {
+    data = color;
+    // color.setAlpha(0.5);
+  }
+
   if (color && (color._a === undefined || color._a === null)) {
     color.setAlpha(alpha || 1);
   }
@@ -58,14 +63,9 @@ function _colorChange(data, oldHue) {
 }
 
 export default {
-  props: {
-    value: {
-      default: '#607c8a',
-    },
-  },
   data() {
     return {
-      val: _colorChange(this.value),
+      val: _colorChange(this.modelValue),
     };
   },
   computed: {
@@ -80,7 +80,7 @@ export default {
     },
   },
   watch: {
-    value(newVal) {
+    modelValue(newVal) {
       this.val = _colorChange(newVal);
     },
   },

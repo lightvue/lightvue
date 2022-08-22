@@ -1,15 +1,15 @@
 <template>
-  <div class="lv-colorpicker-wrapper">
-    <div class="lv-colorpicker__colorblock-wrap" v-if="withoutInput" @click="toggleColorBlockOverlay">
+  <div class="lv-colorpicker-wrapper" :class="{ '--inline': withoutInput }">
+    <div class="lv-colorpicker__colorblock-wrap --inline" v-if="withoutInput" @click="toggleColorBlockOverlay">
       <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: localValue }"></div>
-      <checkboard grey="#607c8a" />
+      <checkboard grey="#cbd5e0" />
     </div>
 
-    <LvInput v-else :label="label" ref="colorPickerInput" v-model="localValue" v-bind="$attrs" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
+    <LvInput v-else :label="label" ref="colorPickerInput" v-model="localValue" v-bind="$attrs" :placeholder="placeholder" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template #append>
         <div class="lv-colorpicker__colorblock-wrap" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: localValue }"></div>
-          <checkboard grey="#607c8a" />
+          <checkboard grey="#cbd5e0" />
         </div>
       </template>
     </LvInput>
@@ -31,7 +31,15 @@ export default {
   props: {
     label: {
       type: String,
+      default: 'Select Color',
+    },
+    defaultValue: {
+      type: String,
       default: '',
+    },
+    placeholder: {
+      type: String,
+      default: 'Select Color',
     },
     hidePalette: {
       type: Boolean,
@@ -49,7 +57,7 @@ export default {
   mixins: [trueValueMixin],
   data() {
     return {
-      localValue: '#607C8A',
+      localValue: this.modelValue || this.defaultValue,
     };
   },
   watch: {
@@ -58,10 +66,11 @@ export default {
         this.updateValue(this.localValue);
       }
     },
+    modelValue(newValue) {
+      this.updateLocalValue(newValue);
+    },
   },
-  mounted() {
-    this.localValue = this.modelValue;
-  },
+
   components: {
     LvOverlayPanel: LvOverlayPanel,
     ColorpickerCore: ColorpickerCore,
@@ -74,6 +83,11 @@ export default {
     // },
   },
   methods: {
+    updateLocalValue() {
+      if (this.localValue !== this.modelValue) {
+        this.localValue = this.modelValue;
+      }
+    },
     toggleColorpickerOverlay(event) {
       this.$refs.ColorpickerOverlay.toggle(null, this.$refs.colorPickerInput.$el);
     },
@@ -91,12 +105,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .lv-colorpicker-wrapper {
-  display: inline-block;
-  vertical-align: middle;
+  &.--inline {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
-
 .lv-colorpicker__colorblock-wrap {
   position: relative;
   width: 30px;
@@ -107,7 +122,6 @@ export default {
   transform: scale(0.9);
   cursor: pointer;
   overflow: hidden;
-  display: inline-block;
 }
 .lv-colorpicker__colorblock {
   /* border-radius: 4px !important; */
@@ -115,5 +129,8 @@ export default {
   height: 100%;
   width: 100%;
   z-index: 1;
+
+  /* border-radius: 5px;
+  border: 2px inset rgba(0, 0, 0, 0.2); */
 }
 </style>
