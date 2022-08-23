@@ -30,5 +30,8 @@
     "rollup-plugin-vue": "^5.1.9",
     "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.12"
+  },
+  "engines": {
+    "node": ">=6 <15.0.0"
   }
 }

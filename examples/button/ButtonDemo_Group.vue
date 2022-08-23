@@ -21,7 +21,6 @@
 }
 
 .lv-buttonset {
-  display: inline-block;
   margin-right: 15px;
   margin-bottom: 15px;
   .lv-button {

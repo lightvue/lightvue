@@ -35,6 +35,7 @@ import { trueValueMixin, preventBrowserBackMixin } from 'lightvue/mixins';
 export default {
   inheritAttrs: false,
   mixins: [trueValueMixin, preventBrowserBackMixin],
+  emits: ['hide', 'show', 'close'],
   props: {
     header: null,
     footer: null,
@@ -210,14 +211,14 @@ export default {
     },
     removeStylesFromMask() {
       if (this.$refs.mask) {
-        this.dialogStyles = this.$attrs.style;
+        this.dialogStyles = this.$attrs.style ? this.$attrs.style : this.$vnode.data ? this.$vnode.data.style : '';
         if (this.dialogStyles) {
           Object.keys(this.dialogStyles).forEach(key => {
             this.$refs.mask.style[key] = '';
           });
         }
 
-        this.dialogClasses = this.$attrs.class || this.$attrs.staticClass;
+        this.dialogClasses = this.$attrs.class ? this.$attrs.class : this.$vnode ? this.$vnode.data.class : '' || this.$attrs.staticClass ? this.$attrs.staticClass : this.$vnode ? this.$vnode.data.staticClass : '';
         if (this.dialogClasses) {
           this.$refs.mask.classList = 'lv-dialog-mask' + (this.modal && ' lv-component-overlay ') + this.getPositionClass();
         }

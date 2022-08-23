@@ -18,8 +18,8 @@
             <!-- <div class="expertise-feature__item">and many more...</div> -->
             <lv-button :push="true" :deep-shadow="true" label="Contact Us" class="enterprise-button" @click="showContactDrawer = !showContactDrawer" aria:haspopup="true" aria-controls="contact_overlay_panel" />
             <div class="enterprise--drawer">
-              <lv-drawer v-model="showContactDrawer" right close shadow background="#fff" :zIndex="9999" :width="600" :height="600">
-                <lead-form />
+              <lv-drawer v-model="showContactDrawer" right close shadow background="#fff" :zIndex="1000" :width="600" :height="600">
+                <lead-form @success="showContactDrawer = false" />
               </lv-drawer>
             </div>
           </div>
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="enterprise-footer__text">Copyright 2021 © LightVue. all rights reserved.</div>
+      <div class="enterprise-footer__text">Copyright {{ currentYear }} © LightVue. all rights reserved.</div>
     </section>
   </div>
 </template>
@@ -37,6 +37,7 @@
 <script>
 import LeadForm from './LeadForm.vue';
 import LvDrawer from 'lightvue/drawer';
+import { DateUtils } from 'lightvue/utils';
 export default {
   components: {
     LeadForm,
@@ -45,6 +46,7 @@ export default {
   data() {
     return {
       showContactDrawer: false,
+      currentYear: DateUtils.getCurrentYear(),
     };
   },
 };
@@ -128,10 +130,9 @@ export default {
       border-radius: 20px;
       padding: 50px 50px;
       color: #ffffff;
-      z-index: 1000000;
       margin-top: 60px;
       .expertise-feature__item {
-        z-index: 100;
+        z-index: 1;
         margin-bottom: 30px;
         font-size: 16px;
         i {
