@@ -90,7 +90,7 @@ export default {
       }
     },
     decodeModelValue(value) {
-      const val_array = value.split(' ');
+      const val_array = value ? value.split(' ') : [];
       const length = val_array.length;
       if (length == 1) {
         const [all] = val_array;
