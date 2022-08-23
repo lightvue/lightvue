@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="lv-box-model__inputs">
-      <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" @change="optionSelect($event)" bottom-bar />
+      <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" bottom-bar />
       <LvUnitInput v-model="localInputValue" :units="units" bottom-bar></LvUnitInput>
     </div>
   </div>
@@ -48,7 +48,7 @@ export default {
   props: {
     units: {
       type: Array,
-      default: () => ['px', 'rem', 'em'],
+      default: () => ['px', 'em', 'rem', '%'],
     },
   },
   watch: {
@@ -127,12 +127,6 @@ export default {
         return seperatUnit[0].slice(0, 5) + seperatUnit[1];
       } else {
         return this.localState[direction];
-      }
-    },
-    optionSelect() {
-      if (this.localInputValue) {
-        this.localState = this.decodeModelValue(this.localInputValue);
-        this.updateValue(this.encodeLocalState(this.localState));
       }
     },
   },
