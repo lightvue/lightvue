@@ -1,9 +1,13 @@
 <template>
   <div class="box-model-wrapper">
     <div class="output-wrapper">
-      <div class="dummy-output" :style="{ padding: paddingValue, margin: marginValue }"><span>Set padding or margin</span></div>
+      <div class="dummy-output" :style="{ padding: paddingValue, margin: marginValue }">
+        <!-- <span>Set padding or margin</span><br /> -->
+        <div><b>Margin:</b> {{ marginValue }};</div>
+        <div><b>Padding:</b> {{ paddingValue }};</div>
+      </div>
     </div>
-    <div class="seperator"></div>
+    <div class="separator"></div>
     <div class="controls">
       <lv-dropdown v-model="selectedProperty" :options="properties" optionLabel="name" optionValue="code" placeholder="Select control" bottom-bar />
       <lv-box-model v-model="computedModelValue" :units="units" />
@@ -19,8 +23,8 @@ export default {
   data() {
     return {
       allOptions: {},
-      paddingValue: '10px 10px 10px 10px',
-      marginValue: '10px 10px 10px 10px',
+      paddingValue: '12px',
+      marginValue: '16px',
       selectedProperty: 'padding',
       properties: [
         { name: 'Padding', code: 'padding' },
@@ -57,7 +61,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.seperator {
+.separator {
   background: #edf2f6;
   height: 100%;
   width: 3px;
@@ -79,10 +83,8 @@ export default {
   /* background-color: #607c8a; */
   border: 2px solid #dfe7eb;
   text-align: center;
-  display: flex;
+  // display: flex;
   background-color: white;
-  margin: 10px;
-  padding: 10px;
   span {
     margin: auto;
     /* padding: 8px; */
@@ -104,7 +106,7 @@ export default {
     height: 100px;
     width: 100%;
   }
-  .seperator {
+  .separator {
     height: 3px;
     width: 100%;
     margin: 10px 0px;
