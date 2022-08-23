@@ -18,7 +18,6 @@
 
 <script>
 import LvBoxModel from 'lightvue/box-model';
-import LvSkeleton from 'lightvue/skeleton';
 import LvDropdown from 'lightvue/dropdown';
 export default {
   data() {
@@ -35,7 +34,6 @@ export default {
   },
   components: {
     LvBoxModel,
-    LvSkeleton,
     LvDropdown,
   },
   computed: {
