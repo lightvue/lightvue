@@ -2,9 +2,10 @@
   <div class="box-model-wrapper">
     <div class="output-wrapper">
       <div class="dummy-output" :style="{ padding: paddingValue, margin: marginValue }">
-        <!-- <span>Set padding or margin</span><br /> -->
-        <div><b>Margin:</b> {{ marginValue }};</div>
-        <div><b>Padding:</b> {{ paddingValue }};</div>
+        <div class="internal-block">
+          <div><b>Margin:</b> {{ marginValue }};</div>
+          <div><b>Padding:</b> {{ paddingValue }};</div>
+        </div>
       </div>
     </div>
     <div class="separator"></div>
@@ -79,15 +80,14 @@ export default {
   overflow: hidden;
 }
 .dummy-output {
-  /* border-radius: 8px; */
-  /* background-color: #607c8a; */
   border: 2px solid #dfe7eb;
   text-align: center;
-  // display: flex;
   background-color: white;
   span {
     margin: auto;
-    /* padding: 8px; */
+  }
+  .internal-block {
+    background-color: #dee7ea;
   }
 }
 .controls {
