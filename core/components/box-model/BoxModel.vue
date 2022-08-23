@@ -47,7 +47,6 @@ export default {
   props: {
     units: {
       type: Array,
-      default: () => ['px', 'em', 'rem', '%'],
     },
   },
   watch: {
