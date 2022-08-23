@@ -5,7 +5,7 @@
     </div>
     <div class="seperator"></div>
     <div class="controls">
-      <lv-dropdown v-model="selectedOrientation" :options="orientation" optionLabel="name" optionsValue="code" placeholder="Select control" bottom-bar />
+      <lv-dropdown v-model="selectedOrientation" :options="orientation" optionLabel="name" optionValue="code" placeholder="Select control" bottom-bar />
       <lv-box-model v-model="computedModelValue" />
     </div>
   </div>
@@ -21,7 +21,7 @@ export default {
       allOptions: {},
       paddingModel: '10px 10px 10px 10px',
       marginModel: '10px 10px 10px 10px',
-      selectedOrientation: { name: 'Padding', code: 'padding' },
+      selectedOrientation: 'padding',
       orientation: [
         { name: 'Padding', code: 'padding' },
         { name: 'Margin', code: 'margin' },
@@ -36,10 +36,10 @@ export default {
   computed: {
     computedModelValue: {
       get: function () {
-        return this.selectedOrientation.code === 'padding' ? this.paddingModel : this.marginModel;
+        return this.selectedOrientation === 'padding' ? this.paddingModel : this.marginModel;
       },
       set: function (newValue) {
-        this.selectedOrientation.code === 'padding' ? (this.paddingModel = newValue) : (this.marginModel = newValue);
+        this.selectedOrientation === 'padding' ? (this.paddingModel = newValue) : (this.marginModel = newValue);
       },
     },
   },

@@ -17,8 +17,8 @@
       </div>
     </div>
     <div class="lv-box-model__inputs">
-      <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" bottom-bar />
-      <LvUnitInput v-model="localInputValue" :units="units" bottom-bar></LvUnitInput>
+      <lv-dropdown :value="selectedDirection" @input="setDirection" placeholder="Select direction" :options="directions" bottom-bar />
+      <LvUnitInput :value="localInputValue" @input="setLocalInputValue" :units="units" bottom-bar></LvUnitInput>
     </div>
   </div>
 </template>
@@ -41,7 +41,6 @@ export default {
       localInputValue: null,
       directions: ['all', 'x-axis', 'y-axis', 'top', 'right', 'bottom', 'left'],
       selectedDirection: 'all',
-      selectedUnit: 'px',
       localState: { left: '0px', right: '0px', top: '0px', bottom: '0px' },
     };
   },
@@ -52,39 +51,44 @@ export default {
     },
   },
   watch: {
-    localInputValue(newVal) {
-      const d = this.selectedDirection;
-      newVal = newVal == '' ? '0px' : this.appendUnit(newVal);
-      if (d === 'all') {
-        this.localState = { left: newVal, right: newVal, top: newVal, bottom: newVal };
-      } else if (d === 'x-axis') {
-        this.localState = { ...this.localState, left: newVal, right: newVal };
-      } else if (d === 'y-axis') {
-        this.localState = { ...this.localState, top: newVal, bottom: newVal };
-      } else if (d === 'left') {
-        this.localState = { ...this.localState, left: newVal };
-      } else if (d === 'right') {
-        this.localState = { ...this.localState, right: newVal };
-      } else if (d === 'top') {
-        this.localState = { ...this.localState, top: newVal };
-      } else if (d === 'bottom') {
-        this.localState = { ...this.localState, bottom: newVal };
-      }
-      this.updateValue(this.encodeLocalState(this.localState));
+    modelValue: {
+      handler(newValue) {
+        if (newValue !== this.encodeLocalState(this.localState)) {
+          this.localState = this.decodeModelValue(newValue);
+          this.setDirection(this.decodeDirection());
+        }
+      },
+      immediate: true,
     },
-  },
-  computed: {
-    modelValue() {
-      const value = this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
-      return this.decodeModelValue(value);
-    },
-  },
-  mounted() {
-    this.$nextTick(function () {
-      this.localState = this.modelValue;
-    });
   },
   methods: {
+    decodeDirection() {
+      const { top, right, bottom, left } = this.localState;
+      if (left === right && left === top && top === bottom) {
+        return 'all';
+      } else if (left === right) {
+        return 'x-axis';
+      } else if (top === bottom) {
+        return 'y-axis';
+      } else {
+        return 'top';
+      }
+    },
+    decodeDirectionValue(direction) {
+      switch (direction) {
+        case 'all':
+        case 'y-axis':
+        case 'top':
+          return this.localState.top;
+        case 'x-axis':
+        case 'left':
+          return this.localState.left;
+        case 'right':
+          return this.localState.right;
+        case 'bottom':
+          return this.localState.bottom;
+      }
+    },
     decodeModelValue(value) {
       const val_array = value.split(' ');
       const length = val_array.length;
@@ -104,7 +108,7 @@ export default {
     },
     encodeLocalState(val) {
       const { left, right, top, bottom } = val;
-      if (((left == right) == top) == bottom) {
+      if (left === right && left === top && top === bottom) {
         return `${left}`;
       } else if (top == bottom && left == right) {
         return `${top} ${left}`;
@@ -114,17 +118,43 @@ export default {
         return `${top} ${right} ${bottom} ${left}`;
       }
     },
-    appendUnit(val) {
-      return val;
-    },
     setDirection(dir) {
       this.selectedDirection = dir;
+      this.localInputValue = this.decodeDirectionValue(this.selectedDirection);
+    },
+    setLocalInputValue(newValue) {
+      newValue = newValue == '' ? '0px' : newValue;
+      this.localInputValue = newValue;
+      switch (this.selectedDirection) {
+        case 'all':
+          this.localState = { left: newValue, right: newValue, top: newValue, bottom: newValue };
+          break;
+        case 'x-axis':
+          this.localState = { ...this.localState, left: newValue, right: newValue };
+          break;
+        case 'y-axis':
+          this.localState = { ...this.localState, top: newValue, bottom: newValue };
+          break;
+        case 'left':
+          this.localState = { ...this.localState, left: newValue };
+          break;
+        case 'right':
+          this.localState = { ...this.localState, right: newValue };
+          break;
+        case 'top':
+          this.localState = { ...this.localState, top: newValue };
+          break;
+        case 'bottom':
+          this.localState = { ...this.localState, bottom: newValue };
+          break;
+      }
+      this.updateValue(this.encodeLocalState(this.localState));
     },
     getComputedValue(direction) {
       let regex = new RegExp('([0-9.]+)|([a-zA-Z%]+)', 'g');
-      let seperatUnit = this.localState[direction].match(regex);
-      if (seperatUnit.length === 2 && seperatUnit[0].length > 5) {
-        return seperatUnit[0].slice(0, 5) + seperatUnit[1];
+      let separateUnit = this.localState[direction].match(regex);
+      if (separateUnit.length === 2 && separateUnit[0].length > 5) {
+        return separateUnit[0].slice(0, 5) + separateUnit[1];
       } else {
         return this.localState[direction];
       }
