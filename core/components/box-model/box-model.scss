@@ -1,72 +1,70 @@
-.lv-box__model {
+.lv-box-model {
     display: flex;
-    gap: 1rem;
+    gap: 12px;
     align-items: center;
     justify-content: center;
-    // .lv-input__group {
-    //     width: 120px;
-    // }
     .outside {
-        border: 1px dashed #0000001a;
-        border-radius: 1px !important;
+        border: 2px solid #dee7ea;
         min-width: 120px;
         transition: all 0.3s ease-in-out;
-        &:hover{
-            border-color: black;
-        }
-        sub{
+        .sub{
             color:  #5c6b74;
             cursor: pointer;
+            &.--active {
+              font-weight: 600;
+            }
         }
 
     }
-    .lv-box__model-controller {
+    .lv-box-model__controller {
         background: hsl(210, 38%, 98%);
         // min-width: 120px;
         width: 120px;
-        height: 100px;
+        height: 86px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-size: 10px;
-        border-radius: 8px;
+        font-size: 12px;
+        border-radius: 6px;
         .--center-row {
             width: 100%;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             align-items: center;
-            sub{ 
+            .sub{
                 text-align: center;
                 width: 30%;
             }
-            .lv-box__model-inner_box {
-                width: 40px;
-                height: 40px;
+            .lv-box-model__inner_box {
+                width: 36px;
+                height: 36px;
                 display: grid;
                 place-items: center;
                 position: relative;
-                border: 1px dashed #0000001a;
+                border-radius: 4px;
+                border: 1px solid #dee7ea;
+                background-color: #ffffff;
                 transition: all 0.3s ease-in-out;
-                .lv-box__model-controller {
+                .lv-box-model__direction-controller {
                     position: absolute;
-                    width: 2.5px;
-                    background-color: rgb(197, 197, 197);
-                    height: 100%;
+                    width: 3px;
+                    background-color: #dee7ea;
+                    height: 90%;
                     cursor: pointer;
-                    transition: all 0.2s ease-in-out;
-                    &:hover {
-                        background-color: rgb(0, 140, 255);
+                    border-radius: 4px;
+                    transition: background-color 0.2s ease-in-out;
+                    &.--horizontal {
+                      transform: rotate(90deg);
+                    }
+                    &.--active {
+                        background-color: #607b89;
                         z-index: 10;
                     }
-                }
-                .--horizontal {
-                    width: 3px;
-                    transform: rotate(90deg);
-                }
-                .--active {
-                    background-color: #607b89;
-                    z-index: 10;
+                    &:hover {
+                      background-color:#38b2ab;
+                      z-index: 11;
+                    }
                 }
             }
         }
@@ -78,11 +76,11 @@
             align-items: center;
         }
     }
-    .lv-box__model-inputs {
+    .lv-box-model__inputs {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 1rem;
-        width: 100%;
+        gap: 12px;
+        width: calc(100% - 132px);
     }
 }

@@ -1,24 +1,24 @@
 <template>
-  <div class="lv-box__model">
-    <div class="lv-box__model-controller outside">
+  <div class="lv-box-model">
+    <div class="lv-box-model__controller outside">
       <div class="--row">
-        <sub v-tooltip.right="localState.top">{{ getComputedValue('top') }}</sub>
+        <div v-tooltip.right="localState.top" class="sub" :class="{ '--active': ['top', 'y-axis', 'all'].includes(selectedDirection) }" @click="setDirection('top')">{{ getComputedValue('top') }}</div>
       </div>
       <div class="--center-row">
-        <sub v-tooltip.left="localState.left">{{ getComputedValue('left') }}</sub>
-        <div class="lv-box__model-inner_box">
-          <div @click="setDirection('y-axis')" class="lv-box__model-controller" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'y-axis' }"></div>
-          <div @click="setDirection('x-axis')" class="lv-box__model-controller --horizontal" :class="{ 'lv-box__model-controller --active': this.selectedDirection == 'x-axis' }"></div>
+        <div v-tooltip.left="localState.left" class="sub" :class="{ '--active': ['left', 'x-axis', 'all'].includes(selectedDirection) }" @click="setDirection('left')">{{ getComputedValue('left') }}</div>
+        <div class="lv-box-model__inner_box">
+          <div @click="setDirection('y-axis')" class="lv-box-model__direction-controller" :class="{ '--active': ['y-axis', 'all'].includes(selectedDirection) }"></div>
+          <div @click="setDirection('x-axis')" class="lv-box-model__direction-controller --horizontal" :class="{ '--active': ['x-axis', 'all'].includes(selectedDirection) }"></div>
         </div>
-        <sub v-tooltip.top="localState.right">{{ getComputedValue('right') }}</sub>
+        <div v-tooltip.top="localState.right" class="sub" :class="{ '--active': ['right', 'x-axis', 'all'].includes(selectedDirection) }" @click="setDirection('right')">{{ getComputedValue('right') }}</div>
       </div>
       <div class="--row">
-        <sub v-tooltip.left="localState.bottom">{{ getComputedValue('bottom') }}</sub>
+        <div v-tooltip.left="localState.bottom" class="sub" :class="{ '--active': ['bottom', 'y-axis', 'all'].includes(selectedDirection) }" @click="setDirection('bottom')">{{ getComputedValue('bottom') }}</div>
       </div>
     </div>
-    <div class="lv-box__model-inputs">
-      <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" @change="optionSelect($event)" bottomBar />
-      <LvUnitInput v-model="localInputValue" :units="units"></LvUnitInput>
+    <div class="lv-box-model__inputs">
+      <lv-dropdown v-model="selectedDirection" placeholder="Select direction" :options="directions" @change="optionSelect($event)" bottom-bar />
+      <LvUnitInput v-model="localInputValue" :units="units" bottom-bar></LvUnitInput>
     </div>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       localInputValue: null,
-      directions: ['all', 'x-axis', 'y-axis', 'left', 'right', 'top', 'bottom'],
+      directions: ['all', 'x-axis', 'y-axis', 'top', 'right', 'bottom', 'left'],
       selectedDirection: 'all',
       selectedUnit: 'px',
       localState: { left: '0px', right: '0px', top: '0px', bottom: '0px' },
@@ -146,7 +146,4 @@ export default {
 
 <style lang="scss">
 @import './box-model.scss';
-input {
-  width: 25px;
-}
 </style>
