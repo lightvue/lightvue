@@ -1,2 +1,2 @@
-import LvUnitInput from './UnitInput.vue';
+import LvUnitInput from './UnitPicker.vue';
 export default LvUnitInput;

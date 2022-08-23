@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LvUnitInput v-model="localValue"></LvUnitInput>
+    <LvUnitInput v-model="localValue" bottom-bar clearable></LvUnitInput>
     <strong> Final Value: {{ localValue }} </strong>
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      localValue: null,
+      localValue: '50%',
     };
   },
 };

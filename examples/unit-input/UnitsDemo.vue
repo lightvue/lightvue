@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LvUnitInput v-model="localValue" :units="units"></LvUnitInput>
+    <LvUnitInput v-model="localValue" :units="units" bottom-bar></LvUnitInput>
     <strong> Final Value: {{ localValue }} </strong>
   </div>
 </template>
