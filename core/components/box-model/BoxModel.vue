@@ -47,6 +47,7 @@ export default {
   props: {
     units: {
       type: Array,
+      default: () => ['px', 'em', 'rem', '%', 'auto'],
     },
   },
   watch: {
@@ -122,7 +123,7 @@ export default {
       this.localInputValue = this.decodeDirectionValue(this.selectedDirection);
     },
     setLocalInputValue(newValue) {
-      newValue = newValue == '' ? '0px' : newValue;
+      newValue = newValue == '' ? '0px' : newValue.includes('auto') ? 'auto' : newValue;
       this.localInputValue = newValue;
       switch (this.selectedDirection) {
         case 'all':

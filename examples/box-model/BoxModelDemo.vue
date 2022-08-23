@@ -1,12 +1,12 @@
 <template>
   <div class="box-model-wrapper">
     <div class="output-wrapper">
-      <div class="dummy-output" :style="{ padding: paddingModel, margin: marginModel }"><span>Set padding or margin</span></div>
+      <div class="dummy-output" :style="{ padding: paddingValue, margin: marginValue }"><span>Set padding or margin</span></div>
     </div>
     <div class="seperator"></div>
     <div class="controls">
-      <lv-dropdown v-model="selectedOrientation" :options="orientation" optionLabel="name" optionValue="code" placeholder="Select control" bottom-bar />
-      <lv-box-model v-model="computedModelValue" />
+      <lv-dropdown v-model="selectedProperty" :options="properties" optionLabel="name" optionValue="code" placeholder="Select control" bottom-bar />
+      <lv-box-model v-model="computedModelValue" :units="units" />
     </div>
   </div>
 </template>
@@ -19,10 +19,10 @@ export default {
   data() {
     return {
       allOptions: {},
-      paddingModel: '10px 10px 10px 10px',
-      marginModel: '10px 10px 10px 10px',
-      selectedOrientation: 'padding',
-      orientation: [
+      paddingValue: '10px 10px 10px 10px',
+      marginValue: '10px 10px 10px 10px',
+      selectedProperty: 'padding',
+      properties: [
         { name: 'Padding', code: 'padding' },
         { name: 'Margin', code: 'margin' },
       ],
@@ -36,11 +36,14 @@ export default {
   computed: {
     computedModelValue: {
       get: function () {
-        return this.selectedOrientation === 'padding' ? this.paddingModel : this.marginModel;
+        return this.selectedProperty === 'padding' ? this.paddingValue : this.marginValue;
       },
       set: function (newValue) {
-        this.selectedOrientation === 'padding' ? (this.paddingModel = newValue) : (this.marginModel = newValue);
+        this.selectedProperty === 'padding' ? (this.paddingValue = newValue) : (this.marginValue = newValue);
       },
+    },
+    units() {
+      return this.selectedProperty === 'padding' ? ['px', 'em', 'rem', '%'] : ['px', 'em', 'rem', '%', 'auto'];
     },
   },
 };
