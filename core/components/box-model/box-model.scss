@@ -1,86 +1,77 @@
 .lv-box-model {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  .lv-box-model__controller {
+    background: hsl(210, 38%, 98%);
+    width: 120px;
+    min-width: 120px;
+    height: 86px;
     display: flex;
-    gap: 12px;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    .outside {
-        border: 2px solid #dee7ea;
-        min-width: 120px;
-        transition: all 0.3s ease-in-out;
-        .sub{
-            color:  #5c6b74;
-            cursor: pointer;
-            &.--active {
-              font-weight: 600;
-            }
-        }
-
+    font-size: 10px;
+    border-radius: 6px;
+    border: 2px solid #dee7ea;
+    transition: all 0.3s ease-in-out;
+    .dir-value {
+      color: #5c6b74;
+      cursor: pointer;
+      &.--active {
+        font-weight: 600;
+      }
     }
-    .lv-box-model__controller {
-        background: hsl(210, 38%, 98%);
-        // min-width: 120px;
-        width: 120px;
-        height: 86px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 10px;
-        border-radius: 6px;
-        .--center-row {
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            .sub{
-                text-align: center;
-                width: 30%;
-            }
-            .lv-box-model__inner_box {
-                width: 36px;
-                height: 36px;
-                display: grid;
-                place-items: center;
-                position: relative;
-                border-radius: 4px;
-                border: 1px solid #dee7ea;
-                background-color: #ffffff;
-                transition: all 0.3s ease-in-out;
-                .lv-box-model__direction-controller {
-                    position: absolute;
-                    width: 3px;
-                    background-color: #dee7ea;
-                    height: 90%;
-                    cursor: pointer;
-                    border-radius: 4px;
-                    transition: background-color 0.2s ease-in-out;
-                    &.--horizontal {
-                      transform: rotate(90deg);
-                    }
-                    &.--active {
-                        background-color: #607b89;
-                        z-index: 10;
-                    }
-                    &:hover {
-                      background-color:#38b2ab;
-                      z-index: 11;
-                    }
-                }
-            }
-        }
-        .--row {
-            width: 100%;
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  }
+  .lv-box-model__controller-row {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.--center-row {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
     }
-    .lv-box-model__inputs {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 12px;
-        width: calc(100% - 132px);
+  }
+  .lv-box-model__inner_box {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid #dee7ea;
+    background-color: #ffffff;
+  }
+  .lv-box-model__direction-controller {
+    position: absolute;
+    width: 3px;
+    background-color: #dee7ea;
+    height: 90%;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+    &.--horizontal {
+      transform: rotate(90deg);
     }
+    &.--active {
+      background-color: #607b89;
+      z-index: 10;
+    }
+    &:hover {
+      background-color: #38b2ab;
+      z-index: 11;
+    }
+  }
+  .lv-box-model__inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    width: calc(100% - 132px);
+  }
 }

@@ -1,19 +1,19 @@
 <template>
   <div class="lv-box-model">
-    <div class="lv-box-model__controller outside">
-      <div class="--row">
-        <div v-tooltip.right="localState.top" class="sub" :class="{ '--active': ['top', 'y-axis', 'all'].includes(selectedDirection) }" @click="setDirection('top')">{{ getComputedValue('top') }}</div>
+    <div class="lv-box-model__controller">
+      <div class="lv-box-model__controller-row">
+        <div v-tooltip.right="localState.top" class="dir-value" :class="{ '--active': ['top', 'y-axis', 'all'].includes(selectedDirection) }" @click="setDirection('top')">{{ displayDirectionValue('top') }}</div>
       </div>
-      <div class="--center-row">
-        <div v-tooltip.left="localState.left" class="sub" :class="{ '--active': ['left', 'x-axis', 'all'].includes(selectedDirection) }" @click="setDirection('left')">{{ getComputedValue('left') }}</div>
+      <div class="lv-box-model__controller-row --center-row">
+        <div v-tooltip.left="localState.left" class="dir-value" :class="{ '--active': ['left', 'x-axis', 'all'].includes(selectedDirection) }" @click="setDirection('left')">{{ displayDirectionValue('left') }}</div>
         <div class="lv-box-model__inner_box">
           <div @click="setDirection('y-axis')" class="lv-box-model__direction-controller" :class="{ '--active': ['y-axis', 'all'].includes(selectedDirection) }"></div>
           <div @click="setDirection('x-axis')" class="lv-box-model__direction-controller --horizontal" :class="{ '--active': ['x-axis', 'all'].includes(selectedDirection) }"></div>
         </div>
-        <div v-tooltip.top="localState.right" class="sub" :class="{ '--active': ['right', 'x-axis', 'all'].includes(selectedDirection) }" @click="setDirection('right')">{{ getComputedValue('right') }}</div>
+        <div v-tooltip.top="localState.right" class="dir-value" :class="{ '--active': ['right', 'x-axis', 'all'].includes(selectedDirection) }" @click="setDirection('right')">{{ displayDirectionValue('right') }}</div>
       </div>
-      <div class="--row">
-        <div v-tooltip.left="localState.bottom" class="sub" :class="{ '--active': ['bottom', 'y-axis', 'all'].includes(selectedDirection) }" @click="setDirection('bottom')">{{ getComputedValue('bottom') }}</div>
+      <div class="lv-box-model__controller-row">
+        <div v-tooltip.left="localState.bottom" class="dir-value" :class="{ '--active': ['bottom', 'y-axis', 'all'].includes(selectedDirection) }" @click="setDirection('bottom')">{{ displayDirectionValue('bottom') }}</div>
       </div>
     </div>
     <div class="lv-box-model__inputs">
@@ -149,7 +149,7 @@ export default {
       }
       this.updateValue(this.encodeLocalState(this.localState));
     },
-    getComputedValue(direction) {
+    displayDirectionValue(direction) {
       let regex = new RegExp('([0-9.]+)|([a-zA-Z%]+)', 'g');
       let separateUnit = this.localState[direction].match(regex);
       if (separateUnit.length === 2 && separateUnit[0].length > 5) {
