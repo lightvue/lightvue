@@ -10,7 +10,7 @@
     </div>
     <div class="separator"></div>
     <div class="controls">
-      <lv-dropdown v-model="selectedProperty" :options="properties" optionLabel="name" optionValue="code" placeholder="Select control" bottom-bar />
+      <lv-dropdown v-model="selectedProperty" :options="properties" optionLabel="label" optionValue="value" placeholder="Select control" bottom-bar />
       <lv-box-model v-model="computedModelValue" :units="units" />
     </div>
   </div>
@@ -22,13 +22,12 @@ import LvDropdown from 'lightvue/dropdown';
 export default {
   data() {
     return {
-      allOptions: {},
       paddingValue: '12px',
       marginValue: '16px',
       selectedProperty: 'padding',
       properties: [
-        { name: 'Padding', code: 'padding' },
-        { name: 'Margin', code: 'margin' },
+        { label: 'Padding', value: 'padding' },
+        { label: 'Margin', value: 'margin' },
       ],
     };
   },
