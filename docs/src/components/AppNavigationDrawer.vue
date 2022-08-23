@@ -156,20 +156,20 @@ export default {
 
       pages: [
         {
+          page_name: 'Unit Input',
+          page_path: '/vue-components/unit-input',
+        },
+        {
+          page_name: 'Box Model Controller',
+          page_path: '/vue-components/box-model',
+        },
+        {
           page_name: 'Color Picker',
           page_path: '/vue-components/color-picker',
         },
         {
           page_name: 'Width Controller',
           page_path: '/vue-components/width-layout',
-        },
-        {
-          page_name: 'Unit Input',
-          page_path: '/vue-components/unit-input',
-        },
-        {
-          page_name: 'Box Model',
-          page_path: '/vue-components/box-model',
         },
       ],
     },
