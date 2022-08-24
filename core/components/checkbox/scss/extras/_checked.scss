@@ -1,64 +1,24 @@
 .#{$light-checkbox--class-name}.--checked-icon {
-  @each $name,$color in $light-checkbox--colors {
-    input:checked ~ .state.lv-#{$name} label,
-    &.--toggle .state.lv-#{$name} label 
-    {
-      &:before {
-        content: '🗸';
-        // top: 5px;
-        // left: 6px;
-        // width: 8px;
-        // height: 13px;
-        // border-top: 2px solid transparent;
-        // border-left: 2px solid transparent;
-        // border-right: 2px solid #fff;
-        // border-bottom: 2px solid #fff;
-        
-        // -webkit-transform: rotateZ(37deg);
-        // transform: rotateZ(37deg);
-        // -webkit-transform-origin: 100% 100%;
-        // transform-origin: 100% 100%;
-        // z-index: 1;
-        color: $color ;
-        z-index: 1;
-        display: flex;
-        // align-items: center;
-        justify-content: flex-end;
-        font-weight: bolder;
-      }
-      &:after {
-        // border: 1px solid transparent;
-    // top: 0px;
-    // width: 20px;
-    // height: 20px;
-    // border: 2px solid #26a69a;
-    // background-color: #26a69a;
-    // z-index: 0;
-    // background-color: transparent !important;
-    content: none;
+    @each $name,
+    $color in $light-checkbox--colors {
+        input:checked~.state.lv-#{$name} label,
+        &.--toggle .state.lv-#{$name} label {
+            &:before {
+                content: '🗸';
+                padding: 1px;
+                color: $color;
+                z-index: 1;
+                display: flex;
+                justify-content: flex-end;
+                font-weight: bolder;
+            }
+            &:after {
+                content: none;
+            }
+        }
+        &::before {
+            border-width: calc(1em / 7);
+            border-color: #bdc3c7;
+        }
     }
-    }
-    // input:checked ~ .state.lv-#{$name}-t,
-    // &.--toggle .state.lv-#{$name}-t {
-    //   :before {
-    //     color: $color;
-    //   }
-
-    // }
-        
-        // border: 1px solid transparent;
-      
-    
-   &::before{
-    border-width: calc(1em / 7);
-        border-color: #bdc3c7;
-   }
-  
-  //  &.--default:not(.--filled) input:checked ~ .state.lv-#{$name}-o label {
-  //   &:after {
-  //     background-color: $color !important;
-  //   }
-  // }
-  }
 }
-  
