@@ -66,8 +66,11 @@ export default {
         this.updateValue(this.localValue);
       }
     },
-    modelValue(newValue) {
-      this.updateLocalValue(newValue);
+    modelValue: {
+      handler(newValue) {
+        this.updateLocalValue(newValue);
+      },
+      immediate: true,
     },
   },
 
