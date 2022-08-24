@@ -136,6 +136,18 @@ const routes = [
         path: 'tooltip',
         component: () => import('@/pages/vue-components/tooltip.vue'),
       },
+      {
+        path: 'width-layout',
+        component: () => import('@/pages/vue-components/width-layout.vue'),
+      },
+      {
+        path: 'unit-input',
+        component: () => import('@/pages/vue-components/unit-input.vue'),
+      },
+      {
+        path: 'box-model',
+        component: () => import('@/pages/vue-components/box-model.vue'),
+      },
     ],
   },
   {

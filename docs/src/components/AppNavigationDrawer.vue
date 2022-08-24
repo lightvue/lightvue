@@ -105,10 +105,6 @@ export default {
           // REFACTORING,
         },
         {
-          page_name: 'Color Picker',
-          page_path: '/vue-components/color-picker',
-        },
-        {
           page_name: 'Dropdown',
           page_path: '/vue-components/dropdown',
         },
@@ -154,6 +150,30 @@ export default {
         },
       ],
     },
+    {
+      category_name: 'Advance Controllers',
+      category_icon: 'light-icon-disc',
+
+      pages: [
+        {
+          page_name: 'Unit Input',
+          page_path: '/vue-components/unit-input',
+        },
+        {
+          page_name: 'Box Model Controller',
+          page_path: '/vue-components/box-model',
+        },
+        {
+          page_name: 'Color Picker',
+          page_path: '/vue-components/color-picker',
+        },
+        {
+          page_name: 'Width Controller',
+          page_path: '/vue-components/width-layout',
+        },
+      ],
+    },
+
     {
       category_name: 'Loaders',
       category_icon: 'light-icon-rotate-clockwise',
@@ -303,7 +323,7 @@ $primary-color: #38b2ac;
 
   color: #fafbff;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 17px;
 }
 .nav-list {
   .nav-list__category-items {
