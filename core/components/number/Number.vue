@@ -4,6 +4,12 @@
       <LvButton :icon="iconLeft" :class="buttonColor" @click="LocalDecrement($event)" v-if="controls" />
     </template>
     <template #append>
+      <div v-if="spinner" class="spinnerInputWrapper">
+        <div class="spinnerIcons">
+          <i class="light-icon-caret-up" @click="LocalIncrement($event)"></i>
+          <i class="light-icon-caret-down" @click="LocalDecrement($event)"></i>
+        </div>
+      </div>
       <LvButton :icon="iconRight" :class="buttonColor" @click="LocalIncrement($event)" v-if="controls" />
     </template>
   </lv-input>
@@ -56,6 +62,10 @@ export default {
       type: Number,
       default: 0,
     },
+    spinner: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     updateValue(eventValue) {
@@ -81,6 +91,46 @@ export default {
     modelValue() {
       return this.$attrs.modelValue ? this.$attrs.modelValue : this.value ? this.value : this.localValue;
     },
+    spinnerClass() {
+      return {
+        enableSpinner: this.spinner,
+      };
+    },
   },
 };
 </script>
+<style lang="scss">
+.spinnerInputWrapper {
+  display: flex;
+  z-index: 10;
+  // background: white;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  width: 20px;
+  border-radius: 0px !important;
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
+}
+.spinnerIcons {
+  display: flex;
+  flex-direction: column;
+  color: #0d2131;
+  i {
+    background: #c4c4c4;
+    border-radius: 1px;
+    &:hover {
+      background: #a8a5a5;
+    }
+  }
+  .light-icon-caret-up {
+    margin-bottom: 2px;
+    margin-top: 2px;
+  }
+  .light-icon-caret-down {
+    margin-bottom: 2px;
+  }
+}
+</style>
