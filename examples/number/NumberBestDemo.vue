@@ -6,7 +6,7 @@
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
         <lv-toggle-switch v-model="allOptions.controls" label="Show Controls" /> <br />
-        <lv-toggle-switch v-model="allOptions.showInputSpinner" label="Show spinner" /> <br />
+        <lv-toggle-switch v-model="allOptions.showInputSpinner" label="Show Input Spinner" /> <br />
 
         <br />
         <lv-number v-model="allOptions.max" label="Max Value" /> <br />
