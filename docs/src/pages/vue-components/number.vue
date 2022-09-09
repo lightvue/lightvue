@@ -74,6 +74,11 @@ export default {
           file: 'number/Number_RoundedDemo',
           description: 'You can use the rounded variation of <span>lv-number</span> by setting <span>rounded</span> prop to true.',
         },
+        {
+          title: 'Input Spinner Buttons',
+          file: 'number/Number_InputSpinnerDemo',
+          description: 'You can show the default input spinner buttons by setting <span>hideInputSpinner</span> prop to false.',
+        },
       ],
     };
   },

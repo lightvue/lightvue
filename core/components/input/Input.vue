@@ -95,7 +95,7 @@ export default {
     },
     hideInputSpinner: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   computed: {

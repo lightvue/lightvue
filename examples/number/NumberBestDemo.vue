@@ -6,7 +6,6 @@
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
         <lv-toggle-switch v-model="allOptions.controls" label="Show Controls" /> <br />
-        <lv-toggle-switch v-model="allOptions.spinner" label="Show Spinner" /> <br />
 
         <br />
         <lv-number v-model="allOptions.max" label="Max Value" /> <br />
@@ -55,7 +54,6 @@ export default {
         'placeholder-color': 'rgba(0, 0, 0, 0.3)',
         iconLeft: 'light-icon-minus',
         iconRight: 'light-icon-plus',
-        spinner: false,
       },
       stringProps: ['label', 'placeholder-color', 'icon-left', 'icon-right', 'help-text', 'placeholder'],
     };
