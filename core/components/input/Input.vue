@@ -1,5 +1,5 @@
 <template>
-  <div :class="['lv-input__group', { '--with-floating-label': floatingLabel }, { '--not-empty': filled }, { '--with-bottom-bar': floatingLabel || bottomBar }]">
+  <div :class="['lv-input__group', { '--with-floating-label': floatingLabel }, { '--not-empty': filled }, { '--with-bottom-bar': floatingLabel || bottomBar }, { '--hide-input-spinner': hideInputSpinner }]">
     <label :for="name">
       <div class="lv-input__label" v-if="label" :for="name">{{ label }}</div>
     </label>
@@ -90,6 +90,10 @@ export default {
       default: '',
     },
     clearable: {
+      type: Boolean,
+      default: false,
+    },
+    hideInputSpinner: {
       type: Boolean,
       default: false,
     },
