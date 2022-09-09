@@ -1,5 +1,5 @@
 <template>
-  <lv-input type="number" :editable="true" ref="mainInput" @input="updateValue" :value="modelValue" v-bind="$attrs">
+  <lv-input type="number" :editable="true" ref="mainInput" @input="updateValue" :value="modelValue" v-bind="$attrs" :hideInputSpinner="!showInputSpinner">
     <template #prepend>
       <LvButton :icon="iconLeft" :class="buttonColor" @click="LocalDecrement($event)" v-if="controls" />
     </template>
@@ -55,6 +55,10 @@ export default {
     min: {
       type: Number,
       default: 0,
+    },
+    showInputSpinner: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {

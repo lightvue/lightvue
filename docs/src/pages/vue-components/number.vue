@@ -77,7 +77,7 @@ export default {
         {
           title: 'Input Spinner Buttons',
           file: 'number/Number_InputSpinnerDemo',
-          description: 'You can show the default input spinner buttons by setting <span>hideInputSpinner</span> prop to false.',
+          description: 'You can show the default input spinner buttons by setting <span>showInputSpinner</span> prop to true.',
         },
       ],
     };
