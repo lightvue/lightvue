@@ -21,6 +21,7 @@
     "core-js": "^3.6.5",
     "instantsearch.css": "^7.4.5",
     "light-icons": "^1.0.10",
+    "lightvue": "^0.4.8",
     "nuxt": "^2.15.2",
     "prismjs": "^1.23.0",
     "split.js": "^1.6.2",
@@ -29,8 +30,10 @@
     "vue-instantsearch": "^3.4.3"
   },
   "devDependencies": {
+    "@nuxt/vite-builder": "^3.0.0-rc.8",
     "@nuxtjs/google-analytics": "^2.4.0",
     "node-sass": "^5.0.0",
+    "nuxt-vite": "^0.3.5",
     "prettier": "^2.2.1",
     "raw-loader": "^4.0.2",
     "sass-loader": "^10.1.1"
