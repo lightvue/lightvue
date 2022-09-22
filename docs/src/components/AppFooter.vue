@@ -18,7 +18,7 @@ import { DateUtils } from 'lightvue/utils';
 export default {
   data() {
     return {
-      currentYear: DateUtils.getCurrentYear(),
+      currentYear: DateUtils?.getCurrentYear() || 2022,
     };
   },
 };

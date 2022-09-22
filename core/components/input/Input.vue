@@ -3,7 +3,7 @@
     <label :for="name">
       <div class="lv-input__label" v-if="label" :for="name">{{ label }}</div>
     </label>
-    <div :class="['lv-input__field', { '--rounded': rounded }]" :style="`--placeholder-color: ${placeholderColor}`">
+    <div :class="['lv-input__field', { '--rounded': rounded }, { '--show-input-spinner': showInputSpinner }]" :style="`--placeholder-color: ${placeholderColor}`">
       <div class="lv-input__prepend" v-if="$slots['prepend'] || iconLeft">
         <slot name="prepend">
           <div class="lv-input__icon" v-if="iconLeft">
@@ -90,6 +90,10 @@ export default {
       default: '',
     },
     clearable: {
+      type: Boolean,
+      default: false,
+    },
+    showInputSpinner: {
       type: Boolean,
       default: false,
     },
