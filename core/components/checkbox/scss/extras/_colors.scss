@@ -2,7 +2,7 @@
   @each $name, $color in $light-checkbox--colors {
     input:checked ~ .state.lv-#{$name},
     &.--toggle .state.lv-#{$name} {
-      label:after {
+      .box:after {
         background-color: $color !important;
       }
 
@@ -15,11 +15,11 @@
 
     input:checked ~ .state.lv-#{$name}-o,
     &.--toggle .state.lv-#{$name}-o {
-      label:before {
+      .box:before {
         border-color: $color;
       }
 
-      label:after {
+      .box:after {
         background-color: transparent;
       }
 
@@ -31,7 +31,7 @@
       }
     }
 
-    &.--default:not(.--filled) input:checked ~ .state.lv-#{$name}-o label {
+    &.--default:not(.--filled) input:checked ~ .state.lv-#{$name}-o .box {
       &:after {
         background-color: $color !important;
       }

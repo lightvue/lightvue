@@ -4,6 +4,9 @@
     <div :class="onClasses">
       <slot name="extra"></slot>
       <label>
+        <span class="box">
+          <span class="check-icon"></span>
+        </span>
         <slot></slot>
       </label>
     </div>

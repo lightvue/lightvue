@@ -1,5 +1,5 @@
 .#{$light-checkbox--class-name}.--rounded {
-  .state label {
+  .state .box {
     &:before,
     &:after {
       border-radius: $light-checkbox--rounded-radius;
