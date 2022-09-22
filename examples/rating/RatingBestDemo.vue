@@ -8,7 +8,7 @@
         <lv-toggle-switch v-model="allOptions.roundedCorners" label="Rounded corners" /><br />
         <lv-toggle-switch v-model="allOptions.rtl" label="Right to left layout" /><br />
         <br />
-        <lv-number v-model="allOptions.increment" label="Increment" step="0.1" /> <br />
+        <lv-number v-model="allOptions.increment" label="Increment" :step="0.1" /> <br />
         <lv-number v-model="allOptions.fixedPoints" label="Fixed point" /> <br />
         <lv-number v-model="allOptions.maxRating" label="Max rating" /> <br />
 
@@ -29,7 +29,7 @@
         <lv-colorpicker v-model="allOptions.activeColor" label="Active color" /> <br />
         <lv-colorpicker v-model="allOptions.inactiveColor" label="Inactive color" /> <br />
 
-        <lv-number v-model="allOptions.glow" label="Glow" step="1" :min="0" :max="20" /> <br />
+        <lv-number v-model="allOptions.glow" label="Glow" :step="1" :min="0" :max="20" /> <br />
         <lv-colorpicker v-model="allOptions.glowColor" label="Glow color" /> <br />
       </template>
       <template #code>

@@ -1,9 +1,9 @@
 <template>
-  <div :class="['lv-input__group', { '--with-floating-label': floatingLabel }, { '--not-empty': filled }, { '--with-bottom-bar': floatingLabel || bottomBar }, { '--hide-input-spinner': hideInputSpinner }]">
+  <div :class="['lv-input__group', { '--with-floating-label': floatingLabel }, { '--not-empty': filled }, { '--with-bottom-bar': floatingLabel || bottomBar }]">
     <label :for="name">
       <div class="lv-input__label" v-if="label" :for="name">{{ label }}</div>
     </label>
-    <div :class="['lv-input__field', { '--rounded': rounded }]" :style="`--placeholder-color: ${placeholderColor}`">
+    <div :class="['lv-input__field', { '--rounded': rounded }, { '--show-input-spinner': showInputSpinner }]" :style="`--placeholder-color: ${placeholderColor}`">
       <div class="lv-input__prepend" v-if="$slots['prepend'] || iconLeft">
         <slot name="prepend">
           <div class="lv-input__icon" v-if="iconLeft">
@@ -93,9 +93,9 @@ export default {
       type: Boolean,
       default: false,
     },
-    hideInputSpinner: {
+    showInputSpinner: {
       type: Boolean,
-      // default: null,
+      default: false,
     },
   },
   computed: {
