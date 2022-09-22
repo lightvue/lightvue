@@ -1,13 +1,13 @@
 .#{$light-checkbox--class-name}.--default {
   .state label {
     &:after {
-      transform: scale(0.6);
+      // transform: scale(0.6);
     }
   }
 
   input:checked ~ .state label {
     &:after {
-      background-color: $light-checkbox--color-default !important;
+      // background-color: $light-checkbox--color-default !important;
     }
   }
 }

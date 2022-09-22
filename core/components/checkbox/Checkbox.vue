@@ -3,7 +3,7 @@
     <input ref="input" :type="_type" :name="name" :checked="shouldBeChecked" :value="value" @change="updateInput" :disabled="_disabled" :required="_required" />
     <div :class="onClasses">
       <slot name="extra"></slot>
-      <label>
+      <label class="--check-icon">
         <slot></slot>
       </label>
     </div>

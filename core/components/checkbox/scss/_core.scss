@@ -76,11 +76,49 @@
       &:before {
         border-color: $light-checkbox--color-default;
       }
+      &.--check-icon {
+        &::after {
+          top: 0.6em;
+          left: 0.2em;
+          border-left: 0px solid transparent !important;
+          border-top: 0px solid transparent !important;
+          border-right: 3px solid transparent;
+          border-bottom: 3px solid transparent;
+          background-color: transparent !important;
+          transform: rotate(45deg);
+          transform-origin: 0% 100%;
+          width: 0.2em !important;
+          height: 0.5em !important;
+          border-color: #008080;
+          transform: translate3d(0, -0.5em, 0) rotate(45deg) scale(1) !important;
+        }
+      }
     }
 
     &.--is-hover,
     &.--is-indeterminate {
       display: none;
     }
+  }
+}
+
+@keyframes checkbox-check {
+  0% {
+    width: 0;
+    height: 0;
+    border-color: red;
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  33% {
+    width: 0.2em;
+    height: 0;
+    border-color: red;
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  100% {
+    width: 0.2em;
+    height: 0.5em;
+    border-color: red;
+    transform: translate3d(0, -0.5em, 0) rotate(45deg);
   }
 }

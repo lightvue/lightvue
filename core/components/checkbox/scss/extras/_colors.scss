@@ -3,7 +3,7 @@
     input:checked ~ .state.lv-#{$name},
     &.--toggle .state.lv-#{$name} {
       label:after {
-        background-color: $color !important;
+        // background-color: $color !important;
       }
 
       .icon,
@@ -20,7 +20,7 @@
       }
 
       label:after {
-        background-color: transparent;
+        // background-color: transparent;
       }
 
       .icon,
