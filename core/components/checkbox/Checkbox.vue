@@ -3,7 +3,7 @@
     <input ref="input" :type="_type" :name="name" :checked="shouldBeChecked" :value="value" @change="updateInput" :disabled="_disabled" :required="_required" />
     <div :class="onClasses">
       <slot name="extra"></slot>
-      <label>
+      <label class="check-icon">
         <slot></slot>
       </label>
     </div>
@@ -129,6 +129,7 @@ export default {
     classes() {
       return {
         'lv-checkbox': true,
+        '--check-icon': this._type === 'radio' ? false : true,
         '--default': this.default_mode,
         '--radio': this._type === 'radio' ? this.default_mode : false,
         '--toggle': this._toggle,
