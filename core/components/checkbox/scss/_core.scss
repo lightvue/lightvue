@@ -93,16 +93,28 @@
                 background-color: transparent !important;
                 transform: rotate(45deg);
                 transform-origin: 0% 100%;
-                // width: 0.3em !important;
-                // height: 0.5em !important;
+                width: 0.3em !important;
+                height: 0.5em !important;
                 border-color: $color;
                 transform: translate3d(0, -0.5em, 0) rotate(45deg) scale(1) !important;
-                animation: checkbox-check 125ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
+                animation: checkbox-check 200ms 200ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
             }
         }
         &.--check-icon:not(.--filled) input:checked~.state.lv-#{$name}-o label {
             &:after {
                 background-color: transparent !important;
+            }
+        }
+        &.--check-icon:not(.--filled).--bigger input:checked~.state.lv-#{$name}-o label {
+            &:after {
+                background-color: transparent !important;
+                top: calc((0% - (100% - 1.6em)) - 35%) !important;
+            }
+        }
+        &.--check-icon.--filled.--bigger input:checked~.state.lv-#{$name}-o label {
+            &:after {
+                background-color: transparent !important;
+                top: calc((0% - (100% - 1.6em)) - 35%) !important;
             }
         }
     }
@@ -122,7 +134,7 @@
         transform: translate3d(0, 0, 0) rotate(45deg);
     }
     100% {
-        width: 0.2em;
+        width: 0.3em;
         height: 0.5em;
         border-color: #008080;
         transform: translate3d(0, -0.5em, 0) rotate(45deg);
