@@ -219,6 +219,7 @@ $primary-color: #38b2ac;
   cursor: pointer;
   padding: 8px 0px;
   font-weight: 400;
+  list-style-type: none;
   a {
     color: #9badb7;
     padding: 4px 12px 4px 12px;
