@@ -33,7 +33,6 @@
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvRangeSlider from 'lightvue/range-slider';
-import LvInput from 'lightvue/input';
 import LvNumber from 'lightvue/number';
 import LvColorpicker from 'lightvue/color-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
@@ -58,7 +57,6 @@ export default {
 
   components: {
     DocsCardBest,
-    LvInput,
     LvToggleSwitch,
     LvColorpicker,
     LvRangeSlider,
