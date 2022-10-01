@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       showContactDrawer: false,
-      currentYear: DateUtils.getCurrentYear(),
+      currentYear: DateUtils?.getCurrentYear() || 2022,
     };
   },
 };
