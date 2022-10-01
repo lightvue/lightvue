@@ -12,8 +12,8 @@
         <lv-number v-model="allOptions.min" label="Min Value" /> <br />
         <lv-number v-model="allOptions.step" label="Step" /> <br />
 
-        <lv-input v-model="allOptions['sliderColor']" label="sliderColor" /> <br />
-        <lv-input v-model="allOptions['trackColor']" label="trackColor" placeholder="success" /> <br />
+        <lv-colorpicker v-model="allOptions.sliderColor" label="sliderColor" /> <br />
+        <lv-colorpicker v-model="allOptions.trackColor" label="trackColor" placeholder="success" /> <br />
 
         <br />
       </template>
