@@ -11,7 +11,7 @@
           </div>
         </slot>
       </div>
-      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @input="this.inputEventHandler" :name="name" :id="name" v-if="editable" />
+      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @keypress="handleKeyPress" @input="this.inputEventHandler" :name="name" :id="name" v-if="editable" />
       <div v-else class="lv-input__default">
         <slot>{{ modelValue || $attrs.placeholder }}</slot>
         <div class="lv-hidden-accessible">
@@ -117,6 +117,9 @@ export default {
     },
   },
   methods: {
+    handleKeyPress(event){
+      this.$emit('key-press', event)
+    },
     inputEventHandler(event) {
       this.$emit('input-native', event);
       this.updateValue(event.target.value);
