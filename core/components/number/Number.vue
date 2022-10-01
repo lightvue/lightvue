@@ -1,5 +1,5 @@
 <template>
-  <lv-input type="number" :editable="true" ref="mainInput" @input="updateValue" :value="modelValue" v-bind="$attrs">
+  <lv-input type="number" :editable="true" ref="mainInput" @input="updateValue" :value="modelValue" v-bind="$attrs" @keypress.native="checkInput">
     <template #prepend>
       <LvButton :icon="iconLeft" :class="buttonColor" @click="LocalDecrement($event)" v-if="controls" />
     </template>
@@ -58,6 +58,11 @@ export default {
     },
   },
   methods: {
+    checkInput(event) {
+      const regex = new RegExp(/(^\d*$)|(Backspace|Tab|Delete|ArrowLeft|ArrowRight)/);
+
+      return !event.key.match(regex) && event.preventDefault();
+    },
     updateValue(eventValue) {
       if (eventValue === '') {
         // Handling clear functionality
