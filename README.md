@@ -73,7 +73,7 @@ npm install lightvue@next
 
 ## Contribution
 
-Thank you for considering contributing to LightVue. Please read the [contribution guide](https://github.com/lightvue/lightvue/blob/master/CONTRIBUTING.md) before making a pull request or raising an issue.
+Thank you for considering contributing to LightVue. Please read the [contribution guide](https://github.com/lightvue/lightvue/blob/master/CONTRIBUTING.md) before making a pull request or raising an issue.  
 [Click here](https://join.slack.com/t/slack-qgs9925/shared_invite/zt-1g6falep2-9v3887ttNrjrcPdxi1if_A) to Join our slack community
 
 ## Connect with us:
