@@ -2,7 +2,7 @@
   <div :class="['lv-rating', { '--rtl': rtl }, { '--inline': inline }]">
     <div class="lv-rating" @mouseleave="resetRating">
       <span v-for="n in maxRating" :key="n" :class="[{ '--read-only': readOnly }, 'lv-rating__star']" :style="{ 'margin-right': margin + 'px' }">
-        <star :fill="fillLevel[n - 1]" :size="starSize" :points="starPoints" :star-id="n" :step="step" :active-color="activeColor" :inactive-color="inactiveColor" :border-color="borderColor" :border-width="borderWidth" :rounded-corners="roundedCorners" :rtl="rtl" :glow="glow" :glow-color="glowColor" @star-selected="setRating($event, true)" @star-mouse-move="setRating" />
+        <star :key="currentRating" :fill="fillLevel[n - 1]" :size="starSize" :points="starPoints" :star-id="n" :step="step" :active-color="activeColor" :inactive-color="inactiveColor" :border-color="borderColor" :border-width="borderWidth" :rounded-corners="roundedCorners" :rtl="rtl" :glow="glow" :glow-color="glowColor" @star-selected="setRating($event, true)" @star-mouse-move="setRating" />
       </span>
       <span v-if="showRating" :class="['lv-rating__value', textClass]"> {{ formattedRating }}</span>
     </div>
