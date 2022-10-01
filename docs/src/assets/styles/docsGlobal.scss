@@ -63,3 +63,8 @@ body,
     display: initial;
   }
 }
+
+ul {
+  // Fixed Firefox Issue of list style getting rendered as disc.
+  list-style: none;
+}
