@@ -74,3 +74,7 @@ npm install lightvue@next
 ## Contribution
 
 Thank you for considering contributing to LightVue. Please read the [contribution guide](https://github.com/lightvue/lightvue/blob/master/CONTRIBUTING.md) before making a pull request or raising an issue.
+
+## Connect with us:
+<a href = "https://join.slack.com/t/slack-qgs9925/shared_invite/zt-1g6falep2-9v3887ttNrjrcPdxi1if_A"><img height ="54px" width="54px" title="Slack" src="https://img.icons8.com/color/452/slack-new.png"/></a>
+<a href = "https://twitter.com/lightvue"><img height ="54px" width="54px" title="twitter" src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
