@@ -1,6 +1,6 @@
 <template>
   <div class="lv-tag__input">
-    <lv-input v-bind="$attrs" :rounded="rounded" :editable="false" bottomBar>
+    <lv-input v-bind="$attrs" :rounded="rounded" :editable="false">
       <template #prepend>
         <slot name="prepend"> </slot>
       </template>
@@ -22,16 +22,13 @@ import LvInput from 'lightvue/input';
 import { localValueMixin, optionsMixin } from '../../mixins';
 export default {
   name: 'LvTagInput',
+  inheritAttrs: false,
   mixins: [localValueMixin, optionsMixin],
   props: {
     dataType: {
       type: String,
       default: 'string',
     },
-    // value: {
-    //   type:Array,
-    //   default: () => []
-    // },
     limit: {
       type: Number,
       default: -1,
@@ -46,7 +43,7 @@ export default {
     },
     tagTextColor: {
       type: String,
-      default: '#fff',
+      default: '#ffffff',
     },
   },
   data() {
@@ -55,11 +52,6 @@ export default {
       tags: [],
     };
   },
-  // watch: {
-  //   value(){
-  //     this.tags = [...this.value];
-  //   },
-  // },
   methods: {
     keyEvents(e) {
       const key = e.keyCode;
