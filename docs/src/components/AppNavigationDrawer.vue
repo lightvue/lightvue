@@ -225,16 +225,14 @@ export default {
           page_name: 'Notifications',
           page_path: '/vue-components/notification',
         },
-
+        {
+          page_name: 'Carousel',
+          page_path: '/vue-components/carousel',
+        },
         {
           page_name: 'Overlay Panel',
           page_path: '/vue-components/overlay-panel',
         },
-        // {
-        //   page_name: 'Light Icons',
-        //   page_path: '/icons/light-icons',
-        // },
-
         {
           page_name: 'Toast',
           page_path: '/vue-components/toast',

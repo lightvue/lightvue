@@ -3,6 +3,8 @@
     <hero />
     <hero-cover />
     <index-features />
+    <!-- <SectionComponent /> -->
+    <!-- <SectionVideo /> -->
     <section-vue-migrate />
     <section-lightweight />
     <section-lighticon />
@@ -14,6 +16,8 @@
 
 <script>
 import Hero from '../components/landing-page/Hero.vue';
+// import SectionComponent from '../components/landing-page/SectionComponent.vue';
+// import SectionVideo from '../components/landing-page/SectionVideo.vue';
 import HeroCover from '../components/landing-page/HeroCover.vue';
 import IndexFeatures from '../components/landing-page/SectionFeatures.vue';
 // import IndexFeatures from '../components/landing-page/IndexFeatures.vue';
@@ -58,6 +62,8 @@ export default {
     SectionLighticon,
     SectionPricing,
     SectionEnterprise,
+    // SectionComponent,
+    // SectionVideo,
   },
 };
 </script>
