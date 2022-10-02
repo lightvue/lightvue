@@ -5,7 +5,7 @@
         <slot name="prepend"> </slot>
       </template>
       <div class="lv-tag__input-container">
-        <slot name="tag" v-for="(tag, index) in modelValue" :deleteTag="() => removeTag(index)" :content="tag">
+        <slot name="tag" v-for="(tag, index) in modelValue" :deleteTag="() => removeTag(index)" :content="tag" :key="index">
           <div :class="{ '--rounded-tags': rounded }" :style="{ backgroundColor: tagColor, color: tagTextColor }" class="lv-tag">
             {{ getOptionLabel(tag) }}
             <i class="light-icon-x" @click="removeTag(index)"></i>
