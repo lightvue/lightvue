@@ -11,7 +11,6 @@
 <script>
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
-import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import TagInputAPI from 'lightvueDocs/example/tag-input/TagInputAPI';
@@ -39,7 +38,6 @@ export default {
   },
   components: {
     DocsCardVue,
-    DocsCard,
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
