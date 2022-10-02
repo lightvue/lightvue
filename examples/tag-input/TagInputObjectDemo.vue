@@ -1,6 +1,7 @@
 <template>
   <div>
-    <lv-tag-input label="Default" v-model="sampleTags" placeholder="Add a Tag" />
+    <lv-tag-input label="Array of Objects with ( data-type='object' )" v-model="objectSampleTags" data-type="object" option-label="label" option-value="value" placeholder="Add a Tag" />
+    <p>{{ objectSampleTags }}</p>
   </div>
 </template>
 

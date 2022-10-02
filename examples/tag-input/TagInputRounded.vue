@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lv-tag-input label="Default" v-model="sampleTags" placeholder="Add a Tag" />
+    <lv-tag-input label="Rounded" v-model="sampleTags" placeholder="Add a tag" :rounded="true" />
   </div>
 </template>
 
