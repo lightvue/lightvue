@@ -1,10 +1,8 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <lv-tag-input v-bind="allOptions" v-model="demoTags">
-      </lv-tag-input>
-      <br>
-      <p>{{demoTags}}</p>
+      <lv-tag-input v-bind="allOptions" v-model="demoTags"> </lv-tag-input>
+      <br />
       <template #props>
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Material Design" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
@@ -12,10 +10,10 @@
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.placeholder" label="Placeholder" /> <br />
         <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br />
-        <Lv-colorpicker v-model="allOptions['tag-color']" label="Tag color" /> <br><br>
-        <Lv-colorpicker v-model="allOptions['tag-text-color']"  label="Tag text color" />
+        <Lv-colorpicker v-model="allOptions['tag-color']" label="Tag color" /> <br /><br />
+        <Lv-colorpicker v-model="allOptions['tag-text-color']" label="Tag text color" />
       </template>
-        <template #code>
+      <template #code>
         <span class="dy-code-row --empty-row"></span>
         <span class="dy-code-row --tag-row">&nbsp;&lt;lv-tag-input</span>
         <span class="dy-code-row --attribute-row" v-for="(option, name) in enabledOptions" :key="name">
@@ -28,29 +26,28 @@
   </div>
 </template>
 
-<script> 
+<script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvTagInput from 'lightvue/tag-input';
 import LvToggleSwitch from 'lightvue/toggle-switch';
 import LvInput from 'lightvue/input';
-import LvColorpicker from 'lightvue/color-picker'
-import LvDropdown from 'lightvue/dropdown';
+import LvColorpicker from 'lightvue/color-picker';
 
-export default{
-  data(){
-    return{
-    allOptions: {
+export default {
+  data() {
+    return {
+      allOptions: {
         'bottom-bar': false,
         rounded: false,
         placeholder: 'Add a tag',
-        'help-text': 'You can create your Component',
+        'help-text': 'You can add tags',
         label: 'This is the best demo',
         'tag-color': '#38b2ac',
         'tag-text-color': '#fff',
       },
-    demoTags: ['Demo','Tags'],  
-    stringProps: ['label', 'placeholder-color', 'help-text', 'placeholder','tag-color','tag-text-color'],
-    }
+      demoTags: ['Demo', 'Tags'],
+      stringProps: ['label', 'placeholder-color', 'help-text', 'placeholder', 'tag-color', 'tag-text-color'],
+    };
   },
 
   computed: {
@@ -64,9 +61,6 @@ export default{
     LvToggleSwitch,
     LvInput,
     LvColorpicker,
-    LvDropdown
-  }
-}
-
+  },
+};
 </script>
-
