@@ -219,7 +219,6 @@ $primary-color: #38b2ac;
   cursor: pointer;
   padding: 8px 0px;
   font-weight: 400;
-  list-style-type: none;
   a {
     color: #9badb7;
     padding: 4px 12px 4px 12px;
@@ -257,6 +256,9 @@ $primary-color: #38b2ac;
       opacity: 0.8;
     }
   }
+}
+ul {
+  list-style-type: none;
 }
 @media only screen and (max-device-width: 1080px) {
   .main-center-area {
