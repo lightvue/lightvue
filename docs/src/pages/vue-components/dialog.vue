@@ -47,24 +47,24 @@ export default {
           description: 'LightVue comes with some stunning designs for dialog.There are different types of dialog present in lightVue you can go through this page for more info. LightVue dialog is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
-          title: 'Model',
+          title: 'Modal',
           file: 'dialog/DialogDemoModel',
-          description: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+          description: 'LvDialog modal is a dialog box/popup window that is displayed on top of the current page: They are a user experience convention to direct a user’s attention to a piece of content that they need to read or interact with.',
         },
         {
           title: 'Confirmation',
           file: 'dialog/DialogeDemoConfirmation',
-          description: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+          description: 'Confirmation dialogs require users to confirm a choice before the dialog is dismissed.',
         },
         {
           title: 'Maximizable',
           file: 'dialog/DialogDemoMaximizable',
-          description: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+          description: 'Maximizable(Full-screen) dialogs fill the entire screen, containing actions that require a series of tasks to complete.',
         },
         {
           title: 'Positions',
           file: 'dialog/DialogDemo_Position',
-          description: 'You can add left and right icons to the Button component using the <span> icon </span> and <span> icon-right </span> props respectively.(The icons can be String) </br>You can also use <span> Light Icons </span> from <span> LightVue</span> and pass it into the button.',
+          description: 'You can open LvDialog from any direction left, right, top, bottom as shown below.',
         },
       ],
     };
@@ -77,7 +77,7 @@ export default {
     DocsAllApi,
   },
   title: 'Dialog',
-  description: `Lv Dialog helps the user to have modal and additional dialog box with their data.`,
+    description: `Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks. LvDialog helps the user to have modal and additional dialog box with their data.`,
   packageName: 'dialog',
   componentName: 'LvDialog',
   status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
