@@ -12,8 +12,8 @@
         <lv-number v-model="allOptions.min" label="Min Value" /> <br />
         <lv-number v-model="allOptions.step" label="Step" /> <br />
 
-        <lv-input v-model="allOptions['sliderColor']" label="sliderColor" /> <br />
-        <lv-input v-model="allOptions['trackColor']" label="trackColor" placeholder="success" /> <br />
+        <lv-colorpicker v-model="allOptions.sliderColor" label="sliderColor" /> <br />
+        <lv-colorpicker v-model="allOptions.trackColor" label="trackColor" placeholder="success" /> <br />
 
         <br />
       </template>
@@ -33,7 +33,6 @@
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvRangeSlider from 'lightvue/range-slider';
-import LvInput from 'lightvue/input';
 import LvNumber from 'lightvue/number';
 import LvColorpicker from 'lightvue/color-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
@@ -58,7 +57,6 @@ export default {
 
   components: {
     DocsCardBest,
-    LvInput,
     LvToggleSwitch,
     LvColorpicker,
     LvRangeSlider,
