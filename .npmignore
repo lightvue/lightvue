@@ -1,3 +1,4 @@
+.github
 .vscode
 build
 core
@@ -5,6 +6,7 @@ docs
 docs-v3
 examples
 node_modules
+.deepsource.toml
 .editorconfig
 .env
 .gitignore
