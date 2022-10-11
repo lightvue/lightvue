@@ -3,7 +3,6 @@
   display: flex;
   align-items: stretch; // to set equal height
   position: relative;
-
   .lv-input__element {
     flex-grow: 1;
     background-color: transparent;
@@ -20,7 +19,6 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-
     color: #495057;
   }
   .lv-input__append {
@@ -42,11 +40,13 @@
     }
   }
 }
+
 .lv-input__label {
   margin-bottom: 8px;
   font-weight: 500;
   // text-transform: uppercase;
 }
+
 .lv-input__help {
   margin-top: 4px;
   // margin-left: 8px;

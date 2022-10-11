@@ -22,7 +22,7 @@ const NotificationAPI = {
       name: 'autoZindex',
       type: 'Boolean',
       default: 'true',
-      description: 'Configures if the z indexing of notificaion will be auto or not.',
+      description: 'Configures if the z indexing of notification will be auto or not.',
     },
     // {
     //   name: 'disabled',

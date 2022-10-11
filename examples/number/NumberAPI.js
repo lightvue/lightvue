@@ -10,7 +10,7 @@ const NumberAPI = {
       name: 'controls',
       type: 'Boolean',
       default: '',
-      description: 'Allows user to confugure with the control of number component if the value is true.',
+      description: 'Allows user to configure with the control of number component if the value is true.',
     },
     {
       name: 'iconRight',
@@ -47,6 +47,12 @@ const NumberAPI = {
       type: 'Number',
       default: '0',
       description: 'Defines the step to go up or down in the number component.',
+    },
+    {
+      name: 'showInputSpinner',
+      type: 'boolean',
+      default: 'false',
+      description: 'Allows user to configure default input spinner buttons when input type is set to number.',
     },
   ],
   events: [

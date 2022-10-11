@@ -1,7 +1,7 @@
 <template>
-  <div ref="mask" :class="maskClass" v-if="maskVisible">
+  <div ref="mask" :class="maskClass" v-if="maskVisible" @click="closable ? close() : ''">
     <transition name="lv-dialog" @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave" @after-leave="onAfterLeave" @appear="onAppear">
-      <div ref="dialog" :class="dialogClass" :style="dialogStyle" v-if="visible" v-bind="$attrs" v-on="listeners" role="dialog" :aria-labelledby="ariaLabelledById" :aria-modal="modal">
+      <div ref="dialog" :class="dialogClass" :style="dialogStyle" v-if="modelValue" v-bind="$attrs" v-on="listeners" role="dialog" :aria-labelledby="ariaLabelledById" :aria-modal="modal" @click.stop>
         <div class="lv-dialog-header" v-if="showHeader">
           <slot name="header">
             <span :id="ariaLabelledById" class="lv-dialog-title" v-if="header">{{ header }}</span>
@@ -30,14 +30,20 @@ import { uniqueComponentId } from 'lightvue/utils';
 import { DomHandler } from 'lightvue/utils';
 
 import Ripple from 'lightvue/ripple';
+import { trueValueMixin, preventBrowserBackMixin } from 'lightvue/mixins';
 
 export default {
   inheritAttrs: false,
+  mixins: [trueValueMixin, preventBrowserBackMixin],
+  emits: ['hide', 'show', 'close'],
   props: {
     header: null,
     footer: null,
-    visible: Boolean,
-    modal: Boolean,
+    // visible: Boolean,
+    modal: {
+      type: Boolean,
+      default: true,
+    },
     contentStyle: null,
     rtl: Boolean,
     maximizable: Boolean,
@@ -51,7 +57,7 @@ export default {
     },
     baseZIndex: {
       type: Number,
-      default: 0,
+      default: 1000,
     },
     autoZIndex: {
       type: Boolean,
@@ -70,7 +76,7 @@ export default {
     return {
       dialogClasses: null,
       dialogStyles: null,
-      maskVisible: this.visible,
+      maskVisible: this.modelValue,
       maximized: false,
     };
   },
@@ -78,7 +84,7 @@ export default {
   updated() {
     this.removeStylesFromMask();
 
-    if (this.visible && !this.maskVisible) {
+    if (this.modelValue && !this.maskVisible) {
       this.maskVisible = true;
     }
 
@@ -92,9 +98,21 @@ export default {
   beforeDestroy() {
     this.disableDocumentSettings();
   },
+  watch: {
+    modelValue(value) {
+      if (value === true) {
+        this.preventPopstate(); // from Mixin
+      } else {
+        this.manuallyClosePopstate(); // From Mixin
+      }
+    },
+  },
+
   methods: {
     close() {
-      this.$emit('update:visible', false);
+      // this.$emit('update:visible', false);
+      this.$emit('close');
+      this.updateValue(false);
     },
     onBeforeEnter(el) {
       if (this.autoZIndex) {
@@ -119,7 +137,7 @@ export default {
       this.disableDocumentSettings();
     },
     onAppear() {
-      if (this.visible) {
+      if (this.modelValue) {
         this.onEnter();
       }
     },
@@ -193,14 +211,14 @@ export default {
     },
     removeStylesFromMask() {
       if (this.$refs.mask) {
-        this.dialogStyles = this.$vnode.data.style;
+        this.dialogStyles = this.$attrs.style ? this.$attrs.style : this.$vnode.data ? this.$vnode.data.style : '';
         if (this.dialogStyles) {
           Object.keys(this.dialogStyles).forEach(key => {
             this.$refs.mask.style[key] = '';
           });
         }
 
-        this.dialogClasses = this.$vnode.data.class || this.$vnode.data.staticClass;
+        this.dialogClasses = this.$attrs.class ? this.$attrs.class : this.$vnode ? this.$vnode.data.class : '' || this.$attrs.staticClass ? this.$attrs.staticClass : this.$vnode ? this.$vnode.data.staticClass : '';
         if (this.dialogClasses) {
           this.$refs.mask.classList = 'lv-dialog-mask' + (this.modal && ' lv-component-overlay ') + this.getPositionClass();
         }
@@ -265,6 +283,7 @@ export default {
   pointer-events: none;
   background-color: transparent;
   transition-property: background-color;
+  z-index: 1000;
 }
 
 .lv-dialog-mask.lv-component-overlay {

@@ -1,6 +1,5 @@
 $linkColor: #2196f3;
 $focusBorderColor: #bbdefb;
-
 html {
   font-size: 14px;
 }
@@ -33,7 +32,6 @@ h6 {
   font-weight: 600;
   line-height: 1.2;
   color: inherit;
-
   &:first-child {
     margin-top: 0;
   }
@@ -68,16 +66,6 @@ p {
   margin: 0 0 1rem 0;
 }
 
-input[type='number'] {
-  -moz-appearance: textfield;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
-
 @keyframes pulse {
   0% {
     background-color: rgba(165, 165, 165, 0.1);
@@ -98,7 +86,6 @@ input[type='number'] {
   padding: 10px 24px 9px 24px;
   border-radius: 3px;
   transition: background-color 0.2s;
-
   &:hover {
     background-color: #708ea5;
     color: #ffffff;

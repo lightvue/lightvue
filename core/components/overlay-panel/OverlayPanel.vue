@@ -52,6 +52,7 @@ export default {
       default: false,
     },
   },
+
   data() {
     return {
       visible: false,
@@ -69,6 +70,7 @@ export default {
   beforeUnmount() {
     this.onBeforeUnmount();
   },
+
   methods: {
     handleOnBrowserBack() {
       // Called from Mixin
@@ -78,7 +80,7 @@ export default {
     },
     toggle(event, target) {
       let domTarget = event ? event.currentTarget : target;
-      console.log(domTarget);
+      // console.log(domTarget);
       if (this.visible) this.hide();
       else this.show(domTarget);
     },
@@ -94,6 +96,7 @@ export default {
     onContentClick() {
       this.selfClick = true;
     },
+
     onEnter() {
       this.appendContainer();
       this.alignOverlay();
@@ -108,6 +111,7 @@ export default {
         this.$refs.overlayRef.style.zIndex = String(this.baseZIndex + DomHandler.generateZIndex());
       }
     },
+
     onLeave() {
       this.unbindOutsideClickListener();
       this.unbindScrollListener();
@@ -156,6 +160,7 @@ export default {
         this.selfClick = false;
       }
     },
+
     bindScrollListener() {
       if (!this.scrollHandler) {
         this.scrollHandler = new ConnectedOverlayScrollHandler(this.target, () => {

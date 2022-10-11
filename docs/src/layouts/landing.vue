@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <Nuxt />
+    <LvNotification />
+    <LvNotification position="top-left" />
+    <LvNotification position="bottom-left" />
+    <LvNotification position="bottom-right" />
   </div>
 </template>
 
 <script>
-
-
-export default {
-  
-};
+export default {};
 </script>
 
 <style>
-@import "./overwrite.scss";
-@import "./examples.scss";
+@import './overwrite.scss';
+@import './examples.scss';
 * {
   padding: 0px;
   margin: 0px;
@@ -32,6 +32,4 @@ body,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
 </style>

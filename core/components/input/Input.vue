@@ -3,7 +3,7 @@
     <label :for="name">
       <div class="lv-input__label" v-if="label" :for="name">{{ label }}</div>
     </label>
-    <div :class="['lv-input__field', { '--rounded': rounded }]" :style="`--placeholder-color: ${placeholderColor}`">
+    <div :class="['lv-input__field', { '--rounded': rounded }, { '--show-input-spinner': showInputSpinner }]" :style="`--placeholder-color: ${placeholderColor}`">
       <div class="lv-input__prepend" v-if="$slots['prepend'] || iconLeft">
         <slot name="prepend">
           <div class="lv-input__icon" v-if="iconLeft">
@@ -11,7 +11,7 @@
           </div>
         </slot>
       </div>
-      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @input="this.updateValue" :name="name" :id="name" v-if="editable" />
+      <input class="lv-input__element" :value="modelValue" v-bind="$attrs" v-on="listeners" @input="this.inputEventHandler" :name="name" :id="name" v-if="editable" />
       <div v-else class="lv-input__default">
         <slot>{{ modelValue || $attrs.placeholder }}</slot>
         <div class="lv-hidden-accessible">
@@ -93,6 +93,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    showInputSpinner: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     modelValue() {
@@ -104,7 +108,7 @@ export default {
         ? {
             // Depreciated in Vue 3
             ...this.$listeners,
-            input: event => this.updateModel(event),
+            input: event => this.inputEventHandler(event),
           }
         : {};
     },
@@ -113,7 +117,7 @@ export default {
     },
   },
   methods: {
-    updateModel(event) {
+    inputEventHandler(event) {
       this.$emit('input-native', event);
       this.updateValue(event.target.value);
     },
