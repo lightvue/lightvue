@@ -13,7 +13,7 @@
     "dev": "cd docs && npm run dev",
     "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js && node build/build-meta.js",
     "post-build": "cp package.json dist && cp README.md dist",
-    "release": "release-it --no-git.requireCleanWorkingDir --npm.publishPath dist"
+    "release": "release-it --no-git.requireCleanWorkingDir --npm.publishPath dist --npm.tag next"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.7",
