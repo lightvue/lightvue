@@ -1,5 +1,5 @@
 <template>
-  <lv-input type="number" :editable="true" ref="mainInput" @input="updateValue" :value="modelValue" v-bind="$attrs">
+  <lv-input type="number" :editable="true" ref="mainInput" @input="updateValue" @key-press="handleKeyPress" :value="modelValue" v-bind="$attrs">
     <template #prepend>
       <LvButton :icon="iconLeft" :class="buttonColor" @click="LocalDecrement($event)" v-if="controls" />
     </template>
@@ -58,6 +58,12 @@ export default {
     },
   },
   methods: {
+    handleKeyPress(e){
+      if (((e.charCode < 48 || e.charCode > 57) && (e.charCode !== 46 && e.charCode !== 44))
+            || (e.charCode === 46 || e.charCode === 44) && (e.target.value.indexOf('.') > 0 || e.target.value.indexOf(',') > 0)) {
+        e.preventDefault();
+      }
+    },
     updateValue(eventValue) {
       if (eventValue === '') {
         // Handling clear functionality
