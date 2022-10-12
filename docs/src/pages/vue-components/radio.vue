@@ -19,7 +19,7 @@ import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
-import CheckboxAPI from 'lightvueDocs/example/checkbox/CheckboxAPI';
+import RadioAPI from 'lightvueDocs/example/radio/RadioAPI';
 
 export default {
   head: {
@@ -91,6 +91,6 @@ export default {
   packageName: 'radio',
   componentName: 'LvRadio',
   // status: 'Stable',
-  apiData: CheckboxAPI,
+  apiData: RadioAPI,
 };
 </script>
