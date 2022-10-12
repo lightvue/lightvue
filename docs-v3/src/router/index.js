@@ -17,6 +17,10 @@ const routes = [
         component: () => import('@/pages/vue-components/input.vue'),
       },
       {
+        path: 'tag-input',
+        component: () => import('@/pages/vue-components/tag-input.vue'),
+      },
+      {
         path: 'button',
         component: () => import('@/pages/vue-components/button.vue'),
       },

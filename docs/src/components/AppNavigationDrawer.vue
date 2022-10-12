@@ -116,6 +116,10 @@ export default {
           page_name: 'Input',
           page_path: '/vue-components/input',
         },
+          {
+            page_name: 'Tag Input',
+            page_path: '/vue-components/tag-input',
+          },
         {
           page_name: 'Number',
           page_path: '/vue-components/number',
