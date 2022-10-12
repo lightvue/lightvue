@@ -20,9 +20,11 @@ export default {
     },
     padding: {
       type: String,
+      default: '4px 8px',
     },
     margin: {
       type: String,
+      default: '-4px -8px',
     },
     borderRadius: {
       type: String,
