@@ -109,6 +109,10 @@ export default {
           page_path: '/vue-components/color-picker',
         },
         {
+          page_name: 'Date Picker',
+          page_path: '/vue-components/date-picker',
+        },
+        {
           page_name: 'Dropdown',
           page_path: '/vue-components/dropdown',
         },
