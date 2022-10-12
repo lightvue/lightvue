@@ -22,7 +22,7 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi';
 
 export default {
   head: {
-    title: ' Input Documentation | LightVue ',
+    title: ' Inline-Input Documentation | LightVue ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,11 +30,11 @@ export default {
       { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
       {
         property: 'og:site_name',
-        content: ' Input Documentation | LightVue ',
+        content: ' Inline-Input Documentation | LightVue ',
       },
       {
         property: 'og:description',
-        content: 'Light-input provides with a variety of input fields with various available customizations which helps it to fulfil the need of almost every web application/project',
+        content: 'Lv-Inline-input provides with a variety of input fields with various available customizations which helps it to fulfil the need of almost every web application/project',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
