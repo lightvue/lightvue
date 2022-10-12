@@ -43,3 +43,10 @@
 input:focus-within{
  outline: none;
 } 
+.lv-tags-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap; 
+  padding: 3px
+}

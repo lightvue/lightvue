@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lv-tag-input label="Default" v-model="sampleTags" placeholder="Add a Tag" :limit="5" />
+    <lv-tag-input label="Default" v-model="sampleTags" placeholder="Add a Tag" :limit="2" />
   </div>
 </template>
 

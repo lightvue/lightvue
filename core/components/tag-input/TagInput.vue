@@ -5,12 +5,16 @@
         <slot name="prepend"> </slot>
       </template>
       <div class="lv-tag__input-container">
-        <slot name="tag" v-for="(tag, index) in modelValue" :deleteTag="() => removeTag(index)" :content="tag" :key="index">
-          <div :class="{ '--rounded-tags': rounded }" :style="{ backgroundColor: tagColor, color: tagTextColor }" class="lv-tag">
-            {{ getOptionLabel(tag) }}
-            <i class="light-icon-x" @click="removeTag(index)"></i>
+        <div class="lv-tags-wrapper" v-if="tags.length > 0">
+          <div v-for="(tag, index) in modelValue" :key="index">
+            <slot name="tag" :content="tag" :deleteTag="() => removeTag(index)">
+              <div :class="{ '--rounded-tags': rounded }" :style="{ backgroundColor: tagColor, color: tagTextColor }" class="lv-tag">
+                {{ getOptionLabel(tag) }}
+                <i class="light-icon-x" @click="removeTag(index)"></i>
+              </div>
+            </slot>
           </div>
-        </slot>
+        </div>
         <input class="lv-tag__input-field" v-bind="$attrs" type="text" @keydown="keyEvents" v-model="newTagValue" />
       </div>
     </lv-input>
@@ -87,13 +91,19 @@ export default {
       this.tags = this.tags.filter((item, idx) => index != idx);
       this.updateValue(this.tags);
     },
+    assignTags(val) {
+      if (this.limit > 0) {
+        this[val].splice(this.limit);
+      }
+      this.tags = [...this[val]];
+    },
   },
   mounted() {
     if (this.value) {
-      this.tags = [...this.value];
+      this.assignTags('value');
     }
     if (this.modelValue) {
-      this.tags = [...this.modelValue];
+      this.assignTags('modelValue');
     }
   },
   components: {
