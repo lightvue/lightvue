@@ -1,5 +1,5 @@
 <template>
-  <div ref="editable" class="inline-input__wrapper" contenteditable v-on="listeners" @focus="onTextFocus" @focusout="removeTextFocus"></div>
+  <div ref="editable" class="inline-input__wrapper" contenteditable @input="updateValue" @focus="onTextFocus" @focusout="removeTextFocus"></div>
 </template>
 
 <script>
@@ -11,12 +11,9 @@ export default {
       type: String,
       default: '',
     },
-    color: {
-      type: String,
-    },
     background: {
       type: String,
-      default: '',
+      default: 'rgba(0, 0, 0, 0.02)',
     },
     padding: {
       type: String,
@@ -30,27 +27,21 @@ export default {
     },
   },
 
-  computed: {
-    listeners() {
-      return { ...this.$listeners, input: this.onInput };
-    },
-  },
   mounted() {
     this.$refs.editable.innerText = this.value;
   },
   methods: {
-    onInput(e) {
-      this.$emit('input', e.target.innerText);
+    updateValue(event) {
+      this.$emit('input', event.target.innerText);
     },
     onTextFocus(e) {
       e.target.style.color = this.color;
       e.target.style.background = this.background;
-      e.target.style.padding = this.padding + 'px';
-      e.target.style.margin = this.margin + 'px';
-      e.target.style.borderRadius = this.borderRadius + 'px';
+      e.target.style.padding = this.padding;
+      e.target.style.margin = '-' + this.padding;
+      e.target.style.borderRadius = this.borderRadius;
     },
     removeTextFocus(e) {
-      e.target.style.color = '';
       e.target.style.background = '';
       e.target.style.padding = '';
       e.target.style.margin = '';

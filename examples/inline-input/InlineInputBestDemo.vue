@@ -2,10 +2,8 @@
   <div>
     <docs-card-best title="Playground">
       <LvInlineInput v-model="allOptions.content" v-bind="allOptions" />
-
       <template #props>
         <lv-input v-model="allOptions.content" label="Content" /> <br />
-        <Lv-colorpicker v-model="allOptions.color" label="Text Color" /> <br /><br />
         <Lv-colorpicker v-model="allOptions.background" label="Background Color" /> <br /><br />
         <lv-input v-model="allOptions.padding" label="Padding (in px)" /> <br />
         <lv-input v-model="allOptions.borderRadius" label="Border Radius (in px)" /> <br />
@@ -33,12 +31,12 @@ export default {
   data() {
     return {
       allOptions: {
-        padding: '16',
-        margin: '-16',
-        content: 'Inline Input',
-        background: '#0000001a',
+        padding: '16px',
+        margin: '-16px',
+        content: 'Click to edit this',
+        background: 'rgba(0, 0, 0, 0.02)',
         color: '#566d79',
-        borderRadius: '4',
+        borderRadius: '4px',
       },
       stringProps: ['borderRadius', 'content', 'background', 'padding', 'margin', 'color'],
     };

@@ -52,7 +52,7 @@ export default {
     DocsAllApi,
     InlineInputBestDemo,
   },
-  title: 'Light-Inline-input',
+  title: 'Inline Input',
   description: ``,
   packageName: 'inline-input',
   componentName: 'LvInlineInput',
