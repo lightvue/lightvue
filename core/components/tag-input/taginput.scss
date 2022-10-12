@@ -1,0 +1,45 @@
+.lv-tag__input .lv-input__group .lv-input__field .lv-input__default {
+    padding: 0 0 !important;
+}
+
+.lv-tag__input .lv-input__group .lv-input__field {
+  padding: 0 0 !important;
+}
+
+
+
+.lv-tag__input-container{
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  padding: 4px;
+}
+
+.lv-tag{
+  background: #38b2ac;
+  padding: 0.3rem 0.5rem ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+  color: white;
+  border-radius: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+  &.--rounded-tags{
+    padding: 0.3rem 1rem;
+    border-radius: 3rem;
+   }
+ }
+ 
+
+.lv-tag__input-field{
+ border: none;
+ flex-grow: 1;
+ background: transparent;
+ padding: 6px 8px;
+}
+
+input:focus-within{
+ outline: none;
+} 
