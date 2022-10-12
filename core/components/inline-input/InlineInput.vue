@@ -1,10 +1,13 @@
 <template>
-  <div ref="editable" class="inline-input__wrapper" contenteditable @input="updateValue" @focus="onTextFocus" @focusout="removeTextFocus"></div>
+  <div ref="editable" class="inline-input__wrapper" contenteditable @input="onUpdateValue($event.target.innerText)" @focus="onTextFocus" @focusout="removeTextFocus"></div>
 </template>
 
 <script>
+import { trueValueMixin } from 'lightvue/mixins';
+
 export default {
   name: 'LvInlineInput',
+  mixins: [trueValueMixin],
 
   props: {
     value: {
@@ -31,8 +34,8 @@ export default {
     this.$refs.editable.innerText = this.value;
   },
   methods: {
-    updateValue(event) {
-      this.$emit('input', event.target.innerText);
+    onUpdateValue(newValue) {
+      this.updateValue(newValue);
     },
     onTextFocus(e) {
       e.target.style.color = this.color;
