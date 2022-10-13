@@ -1,5 +1,7 @@
 <template>
-  <div ref="editable" class="inline-input__wrapper" contenteditable @input="onUpdateValue($event.target.innerText)" @focus="onTextFocus" @focusout="removeTextFocus"></div>
+  <div ref="editable" :value="modelValue" class="inline-input__wrapper" contenteditable @input="onUpdateValue($event.target.innerText)" @focus="onTextFocus" @blur="removeTextFocus">
+    {{ modelValue }}
+  </div>
 </template>
 
 <script>
@@ -31,10 +33,9 @@ export default {
       default: '4px',
     },
   },
-
-  mounted() {
-    this.$refs.editable.innerText = this.value;
-  },
+  // mounted() {
+  //   this.$refs.editable.innerText = this.value;
+  // },
   methods: {
     onUpdateValue(newValue) {
       this.updateValue(newValue);
@@ -59,5 +60,6 @@ export default {
 <style lang="scss">
 .inline-input__wrapper {
   outline: none !important;
+  cursor: text;
 }
 </style>

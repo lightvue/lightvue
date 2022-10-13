@@ -3,11 +3,11 @@
     <docs-card-best title="Playground">
       <LvInlineInput v-model="allOptions.content" v-bind="allOptions" />
       <template #props>
-        <lv-input v-model="allOptions.content" label="Content" /> <br />
-        <Lv-colorpicker v-model="allOptions.background" label="Background Color" /> <br /><br />
-        <lv-input v-model="allOptions.padding" label="Padding (in px)" /> <br />
-        <lv-input v-model="allOptions.borderRadius" label="Border Radius (in px)" /> <br />
-        <lv-input v-model="allOptions.margin" label="Margin (in px)" /> <br />
+        <lv-input bottomBar v-model="allOptions.content" label="Content" /> <br />
+        <Lv-colorpicker bottomBar v-model="allOptions.background" label="Background Color" /> <br /><br />
+        <lv-input bottomBar v-model="allOptions.padding" label="Padding (in px)" /> <br />
+        <lv-input bottomBar v-model="allOptions.borderRadius" label="Border Radius (in px)" /> <br />
+        <lv-input bottomBar v-model="allOptions.margin" label="Margin (in px)" /> <br />
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
