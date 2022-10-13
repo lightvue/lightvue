@@ -4,19 +4,28 @@
       <slot name="afterDateInput" slot="afterDateInput"></slot>
     </date-input>
 
-    <LvOverlayPanel style="width: 280px" ref="DatepickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" alignRight>
-      <!-- Day View -->
-      <picker-day v-if="allowedToShowView('day') && showDayView" :pageDate="pageDate" :selectedDate="selectedDate" :showDayView="showDayView" :fullMonthName="fullMonthName" :allowedToShowView="allowedToShowView" :disabledDates="disabledDates" :highlighted="highlighted" :calendarClass="calendarClass" :calendarStyle="calendarStyle" :translation="translation" :pageTimestamp="pageTimestamp" :isRtl="isRtl" :mondayFirst="mondayFirst" :dayCellContent="dayCellContent" :use-utc="useUtc" @changedMonth="handleChangedMonthFromDayPicker" @selectDate="selectDate" @showMonthCalendar="showMonthCalendar" @selectedDisabled="selectDisabledDate">
-        <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
-      </picker-day>
-      <!-- Month View -->
-      <picker-month v-if="allowedToShowView('month') && showMonthView" :pageDate="pageDate" :selectedDate="selectedDate" :showMonthView="showMonthView" :allowedToShowView="allowedToShowView" :disabledDates="disabledDates" :calendarClass="calendarClass" :calendarStyle="calendarStyle" :translation="translation" :isRtl="isRtl" :use-utc="useUtc" @selectMonth="selectMonth" @showYearCalendar="showYearCalendar" @changedYear="setPageDate">
-        <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
-      </picker-month>
-      <!-- Year View -->
-      <picker-year v-if="allowedToShowView('year') && showYearView" :pageDate="pageDate" :selectedDate="selectedDate" :showYearView="showYearView" :allowedToShowView="allowedToShowView" :disabledDates="disabledDates" :calendarClass="calendarClass" :calendarStyle="calendarStyle" :translation="translation" :isRtl="isRtl" :use-utc="useUtc" @selectYear="selectYear" @changedDecade="setPageDate">
-        <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
-      </picker-year>
+    <LvOverlayPanel style="width: 280px" ref="DatepickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" :class="{ '--panel-active': activeTab === 'time' }" alignRight>
+      <div class="date-time-tabs">
+        <div :class="['tab calendar', { '--active': activeTab === 'calendar' }]" @click="switchTab('calendar')">Date</div>
+        <div :class="['tab time', { '--active': activeTab === 'time' }]" @click="switchTab('time')">Time</div>
+      </div>
+      <div class="lv-date-controls" v-if="activeTab === 'calendar'">
+        <!-- Day View -->
+        <picker-day v-if="allowedToShowView('day') && showDayView" :pageDate="pageDate" :selectedDate="selectedDate" :showDayView="showDayView" :fullMonthName="fullMonthName" :allowedToShowView="allowedToShowView" :disabledDates="disabledDates" :highlighted="highlighted" :calendarClass="calendarClass" :calendarStyle="calendarStyle" :translation="translation" :pageTimestamp="pageTimestamp" :isRtl="isRtl" :mondayFirst="mondayFirst" :dayCellContent="dayCellContent" :use-utc="useUtc" @changedMonth="handleChangedMonthFromDayPicker" @selectDate="selectDate" @showMonthCalendar="showMonthCalendar" @selectedDisabled="selectDisabledDate">
+          <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+        </picker-day>
+        <!-- Month View -->
+        <picker-month v-if="allowedToShowView('month') && showMonthView" :pageDate="pageDate" :selectedDate="selectedDate" :showMonthView="showMonthView" :allowedToShowView="allowedToShowView" :disabledDates="disabledDates" :calendarClass="calendarClass" :calendarStyle="calendarStyle" :translation="translation" :isRtl="isRtl" :use-utc="useUtc" @selectMonth="selectMonth" @showYearCalendar="showYearCalendar" @changedYear="setPageDate">
+          <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+        </picker-month>
+        <!-- Year View -->
+        <picker-year v-if="allowedToShowView('year') && showYearView" :pageDate="pageDate" :selectedDate="selectedDate" :showYearView="showYearView" :allowedToShowView="allowedToShowView" :disabledDates="disabledDates" :calendarClass="calendarClass" :calendarStyle="calendarStyle" :translation="translation" :isRtl="isRtl" :use-utc="useUtc" @selectYear="selectYear" @changedDecade="setPageDate">
+          <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+        </picker-year>
+      </div>
+      <div class="lv-time-controls" v-else>
+        <TimePicker></TimePicker>
+      </div>
     </LvOverlayPanel>
   </div>
 </template>
@@ -26,6 +35,7 @@ import DateInput from './DateInput.vue';
 import PickerDay from './PickerDay.vue';
 import PickerMonth from './PickerMonth.vue';
 import PickerYear from './PickerYear.vue';
+import TimePicker from './TimePicker.vue';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import utils, { makeDateUtils } from './DateUtils';
 export default {
@@ -34,6 +44,7 @@ export default {
     PickerDay,
     PickerMonth,
     PickerYear,
+    TimePicker,
     LvOverlayPanel,
   },
   props: {
@@ -113,6 +124,7 @@ export default {
       calendarHeight: 0,
       resetTypedDate: new Date(),
       utils: constructedDateUtils,
+      activeTab: 'calendar',
     };
   },
   watch: {
@@ -279,6 +291,7 @@ export default {
       this.setPageDate(date);
       this.$emit('selected', date);
       this.$emit('input', date);
+      this.$emit('update:modelValue', date);
     },
     /**
      * Clear the selected date
@@ -400,6 +413,9 @@ export default {
       if (this.isInline) {
         this.setInitialView();
       }
+    },
+    switchTab(tab) {
+      this.activeTab = tab;
     },
   },
   mounted() {

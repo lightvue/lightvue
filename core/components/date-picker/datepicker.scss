@@ -59,3 +59,54 @@
     cursor: initial;
     user-select: none;
 }
+.lv-date-input-trigger{
+    font-size: 14px;
+    color: #79909c;
+    cursor: pointer;
+}
+.date-time-tabs{
+    width: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    .tab{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        &.calendar{
+            border-radius: 7px 0px 0px 0px;
+        }
+        &.time{
+            border-radius: 0px 7px 0px 0px;
+        }
+        &.--active{
+            background-color: #79909c;
+            color: #FFFFFF;
+        }
+    }
+}
+#image_overlay_panel{
+    border-radius: 7px;
+    // overflow: hidden;
+    .lv-date-controls{
+        margin-top: 1.8rem;
+    }
+    .lv-time-controls{
+        margin-top: 2rem;
+    }
+    &.--panel-active{
+        &::before{
+            border-bottom-color: #79909c;
+        }
+        &::after{
+            border-bottom-color: #79909c;
+        }
+    }
+}

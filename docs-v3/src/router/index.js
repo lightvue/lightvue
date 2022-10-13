@@ -53,6 +53,10 @@ const routes = [
         component: () => import('@/pages/vue-components/color-picker.vue'),
       },
       {
+        path: 'date-picker',
+        component: () => import('@/pages/vue-components/date-picker.vue'),
+      },
+      {
         path: 'dialog',
         component: () => import('@/pages/vue-components/dialog.vue'),
       },

@@ -1,6 +1,6 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
-    <!-- <color-picker-best-demo></color-picker-best-demo> -->
+    <date-picker-best-demo></date-picker-best-demo>
     <template v-for="(demo, i) in demos">
       <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
     </template>
@@ -13,7 +13,7 @@
 
 <script>
 import DocsPageLayout from '@/components/docs-card/DocsPageLayout.vue';
-//   import ColorPickerBestDemo from 'lightvueDocs/example/colorpicker/ColorPickerBestDemo.vue';
+import DatePickerBestDemo from 'lightvueDocs/example/date-picker/DatePickerBestDemo.vue';
 import DocsCardVue from '@/components/docs-card/DocsCardVue.vue';
 import DocsCard from '@/components/docs-card/DocsCard.vue';
 import GettingStarted from '@/components/docs-card/GettingStarted.vue';
@@ -67,7 +67,7 @@ export default {
     GettingStarted,
     DocsPageLayout,
     DocsAllApi,
-    //   ColorPickerBestDemo,
+    DatePickerBestDemo,
   },
   title: 'Datepicker',
   description: `DatePicker can be used when a user needs to pick a date.`,

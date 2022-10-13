@@ -1,13 +1,15 @@
 <template>
-  <div :class="{ 'input-group': bootstrapStyling }">
+  <div class="lv-date-input-trigger">
     <!-- Calendar Button -->
-    <span v-if="calendarButton" class="lv-datepicker__calendar-button" :class="{ 'input-group-prepend': bootstrapStyling }" @click="showCalendar" v-bind:style="{ 'cursor:not-allowed;': disabled }">
+    <span v-if="calendarButton" @click="showCalendar">
       <i class="light-icon-calendar"></i>
       <!-- {{ calendarButtonIconContent }} -->
       <!-- <span v-if="!calendarButtonIcon">&hellip;</span> -->
     </span>
     <!-- Input -->
-    <LvInput v-else ref="colorPickerInput" @click="toggleCalendar" v-model="formattedValue" v-bind="$attrs" @focus="showCalendar" aria:haspopup="true" aria-controls="dateinput_overlay_panel" :type="inline ? 'hidden' : 'text'" :class="computedInputClass" :name="name" :ref="refName" :id="id" @keyup="parseTypedDate" autocomplete="off" @blur="inputBlurred"></LvInput>
+    <LvInput v-else :bottom-bar="true" :placeholder="placeholder" ref="colorPickerInput" @click="toggleCalendar" v-model="formattedValue" v-bind="$attrs" @focus="showCalendar" aria:haspopup="true" aria-controls="dateinput_overlay_panel" :type="inline ? 'hidden' : 'text'" :readonly="!typeable" :class="computedInputClass" :name="name" :ref="refName" :id="id" @keyup="parseTypedDate" autocomplete="off" @blur="inputBlurred" :disabled="disabled">
+      <template #append> <LvButton @click="toggleCalendar" @focus="showCalendar" icon="light-icon-calendar" class="lv--primary" /> </template>
+    </LvInput>
     <!-- <input :type="inline ? 'hidden' : 'text'" :class="computedInputClass" :name="name" :ref="refName" :id="id" :value="formattedValue" :open-date="openDate" :placeholder="placeholder" :clear-button="clearButton" :disabled="disabled" :required="required" :readonly="!typeable" @click="showCalendar" @keyup="parseTypedDate" @blur="inputBlurred" autocomplete="off" /> -->
     <!-- Clear Button -->
     <!-- <span v-if="clearButton && selectedDate" class="vdp-datepicker__clear-button" :class="{ 'input-group-append': bootstrapStyling }" @click="clearDate()">
@@ -24,6 +26,7 @@
 import { makeDateUtils } from './DateUtils';
 import LvInput from 'lightvue/input';
 export default {
+  inheritAttrs: false,
   props: {
     selectedDate: Date,
     resetTypedDate: [Date],
@@ -59,16 +62,22 @@ export default {
     };
   },
   computed: {
-    formattedValue() {
-      if (!this.selectedDate) {
-        return null;
-      }
-      if (this.typedDate) {
-        return this.typedDate;
-      }
-      return typeof this.format === 'function' ? this.format(this.selectedDate) : this.utils.formatDate(new Date(this.selectedDate), this.format, this.translation);
+    formattedValue: {
+      get() {
+        if (!this.selectedDate) {
+          return null;
+        }
+        if (this.typedDate) {
+          return this.typedDate;
+        }
+        return typeof this.format === 'function' ? this.format(this.selectedDate) : this.utils.formatDate(new Date(this.selectedDate), this.format, this.translation);
+      },
+      // setter
+      set(newValue) {
+        // Note: we are using destructuring assignment syntax here.
+        newValue;
+      },
     },
-
     computedInputClass() {
       if (this.bootstrapStyling) {
         if (typeof this.inputClass === 'string') {
