@@ -1,28 +1,28 @@
-const CheckBoxGroup = {
+const CheckboxGroupAPI = {
   props: [
     {
       name: 'options',
       type: 'Array',
       default: '',
-      description: 'Specifies the options in the checkbox',
+      description: 'Specifies the options in the checkbox group',
     },
     {
       name: 'optionLabel',
       type: 'String',
       default: '',
-      description: 'Specifies the options label in the checkbox',
+      description: 'Specifies the options label in the checkbox group',
     },
     {
       name: 'optionsValue',
       type: 'String',
       default: '',
-      description: 'Specifies the options value of the checkbox',
+      description: 'Specifies the options value of the checkbox group',
     },
     {
       name: 'name',
       type: 'String',
       default: '',
-      description: 'Configures the name of the checbox option',
+      description: 'Configures the name of the checkbox group option',
     },
   ],
 
@@ -45,4 +45,4 @@ const CheckBoxGroup = {
     },
   ],
 };
-export default CheckBoxGroup;
+export default CheckboxGroupAPI;
