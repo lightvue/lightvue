@@ -1,0 +1,61 @@
+.lv-datepicker-header{
+    display: block;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+    color: #9badb7;
+    transition: all 0.3s ease;
+    .prev,.next{
+        cursor: pointer;
+    }
+    .lv_day-month-btn,.lv-month__year_btn{
+        text-align: center;
+        cursor: pointer;
+        &:hover{
+            color: #79909c;
+        }
+    }
+}
+// .lv-day-row{
+
+// }
+.cell {
+    display: inline-block;
+    padding: 0 5px;
+    width: 14.285714285714286%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    vertical-align: middle;
+    &.day,&.year,&.month{
+        &.selected{
+            color: #FFFFFF;
+            background-color: rgba(56,178,172,1);
+        }
+        &:not(.blank){
+            cursor: pointer;
+        }
+    }
+    border: 1px solid transparent;
+    border-radius: 8px;
+    &.day,&.year,&.month{
+        &:not(.blank,.selected){
+            &:hover{
+                color: #38b2ac;
+                background-color: rgba(56,178,172,.1);
+            }
+        }
+    }
+    &.year,&.month {
+        width: 33.333%;
+    }
+}
+.cell.day-header {
+    font-size: 75%;
+    white-space: nowrap;
+    cursor: initial;
+    user-select: none;
+}

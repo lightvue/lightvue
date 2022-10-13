@@ -69,11 +69,11 @@ export default {
     DocsAllApi,
     //   ColorPickerBestDemo,
   },
-  title: 'Colorpicker',
+  title: 'Datepicker',
   description: `DatePicker can be used when a user needs to pick a date.`,
-  packageName: 'colorpicker',
-  componentName: 'LvColorpicker',
-  status: COMPONENT_STATUS.UPDATED,
+  packageName: 'date-picker',
+  componentName: 'LvDatepicker',
+  status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
   apiData: ColorpickerAPI,
 };
 </script>
