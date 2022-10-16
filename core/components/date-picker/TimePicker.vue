@@ -18,20 +18,23 @@
     </div>
     <div>
       <span>Hours</span>
-      <LvRangeSlider name="Hour" @update:modelValue="change('hour')" :min="0" :max="24" class="slider" v-model="hour" />
+      <LvRangeSlider name="Hour" @update:modelValue="change('hour')" :min="0" :max="23" class="slider" v-model="hour" />
     </div>
     <div>
       <span>Minutes</span>
-      <LvRangeSlider name="Minute" @update:modelValue="change('minute')" :min="0" :max="60" class="slider" v-model="minutes" />
+      <LvRangeSlider name="Minute" @update:modelValue="change('minute')" :min="0" :max="59" class="slider" v-model="minutes" />
     </div>
   </div>
 </template>
 <script>
 //   import { makeDateUtils } from './DateUtils';
 import LvRangeSlider from 'lightvue/range-slider';
+import { makeDateUtils } from './DateUtils';
 export default {
   data() {
+    const constructedDateUtils = makeDateUtils(this.useUtc);
     return {
+      utils: constructedDateUtils,
       hour: 1,
       minutes: 3,
       active: 'am',
@@ -39,6 +42,11 @@ export default {
       activeHour: false,
       setTime: null,
     };
+  },
+  props: {
+    pageDate: Date,
+    pageTimestamp: Number,
+    useUtc: Boolean,
   },
   components: {
     LvRangeSlider, // REFACTORING
@@ -49,7 +57,22 @@ export default {
     },
     change(stamp) {
       this.setTime = stamp;
+      this.$emit('update-time', { hours: this.hour, minutes: this.minutes });
     },
+  },
+  mounted() {
+    const d = this.pageDate;
+    let dObj = this.useUtc ? new Date(Date.UTC(d.getUTCFullYear(), 0, d.getUTCDate())) : new Date(d.getFullYear(), 0, d.getDate(), d.getHours(), d.getMinutes());
+    console.log(d);
+    dObj.setHours(12);
+    dObj.setMinutes(59);
+    let time = [];
+    time.push({
+      date: this.utils.getDate(dObj),
+      timestamp: dObj.getTime(),
+    });
+    console.log(time);
+    console.log(dObj);
   },
 };
 // eslint-disable-next-line
