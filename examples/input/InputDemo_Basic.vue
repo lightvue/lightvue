@@ -1,21 +1,40 @@
 <template>
-  <div style="width: 80%">
-    <lv-input type="text" v-model="value1" label="First Name" placeholder="Enter your first name" />
+  <div class="masked-wrapper">
+    <the-mask type="tel" v-model="input" :mask="masks" :masked="masked" @input="log"></the-mask>
+
+    <the-mask :mask="['##/##/####']" v-model="date" placeholder="date" />
   </div>
 </template>
 
 <script>
-import LvInput from 'lightvue/input';
+import TheMask from './MaskDemo';
+
 export default {
+  components: { TheMask },
   data() {
     return {
-      value1: '',
+      input: '7757828621',
+      date: null,
+      masked: true,
+      mask: '+91 (##########)',
     };
   },
-  components: {
-    LvInput,
+  computed: {
+    masks() {
+      return this.mask.split('|');
+    },
+  },
+  methods: {
+    log(e) {
+      // console.log('input', e)
+    },
   },
 };
 </script>
-
-<style></style>
+<style>
+.masked-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+</style>
