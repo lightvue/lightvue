@@ -54,6 +54,7 @@ export default {
       })(window, document, "clarity", "script", "e3r36e72m1");`,
       },
     ],
+    __dangerouslyDisableSanitizers: ['script', 'innerHTML'],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
