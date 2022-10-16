@@ -124,6 +124,7 @@ export default {
   alias: {
     'lightvue/tooltip': path.join(__dirname, '/../core/directives/tooltip'),
     'lightvue/ripple': path.join(__dirname, '/../core/directives/ripple'),
+    'lightvue/mask': path.join(__dirname, '/../core/directives/mask'),
     'lightvue/utils': path.join(__dirname, '/../core/utils'),
     'lightvue/mixins': path.join(__dirname, '/../core/mixins'),
     'lightvueDocs/example': path.join(__dirname, '/../examples'),

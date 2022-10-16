@@ -18,6 +18,7 @@ let globalDependencies = {
   vue: 'Vue',
   'lightvue/ripple': 'lightvue.ripple',
   'lightvue/tooltip': 'lightvue.tooltip',
+  'lightvue/mask': 'lightvue.mask',
   'lightvue/utils': 'lightvue.utils',
   'lightvue/mixins': 'lightvue.mixins',
   'lightvue/button': 'lightvue.button',
@@ -192,6 +193,7 @@ function addDirectives() {
   // directives
   addEntry('directives/tooltip', 'index.js', 'tooltip', 'index'); // CSS isn't being injected.
   addEntry('directives/ripple', 'index.js', 'ripple', 'index');
+  addEntry('directives/mask', 'index.js', 'mask', 'index');
 }
 
 // function addConfig() {

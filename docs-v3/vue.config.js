@@ -8,6 +8,7 @@ module.exports = {
         '@': path.join(__dirname, '/../docs/src'),
         'lightvue/tooltip': path.join(__dirname, '/../core/directives/tooltip'),
         'lightvue/ripple': path.join(__dirname, '/../core/directives/ripple'),
+        'lightvue/mask': path.join(__dirname, '/../core/directives/mask'),
         'lightvue/utils': path.join(__dirname, '/../core/utils'),
         'lightvueDocs/example': path.join(__dirname, '/../examples'),
         'lightvue/mixins': path.join(__dirname, '/../core/mixins'),
