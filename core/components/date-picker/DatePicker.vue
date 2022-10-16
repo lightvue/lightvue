@@ -5,11 +5,11 @@
     </date-input>
 
     <LvOverlayPanel style="width: 280px" ref="DatepickerOverlay" append-to="body" :show-close-icon="false" id="image_overlay_panel" :class="{ '--panel-active': activeTab === 'time' }" alignRight>
-      <div class="date-time-tabs">
+      <!-- <div class="date-time-tabs">
         <div :class="['tab calendar', { '--active': activeTab === 'calendar' }]" @click="switchTab('calendar')">Date</div>
         <div :class="['tab time', { '--active': activeTab === 'time' }]" @click="switchTab('time')">Time</div>
-      </div>
-      <div class="lv-date-controls" v-if="activeTab === 'calendar'">
+      </div> -->
+      <div class="lv-date-controls">
         <!-- Day View -->
         <picker-day v-if="allowedToShowView('day') && showDayView" :pageDate="pageDate" :selectedDate="selectedDate" :showDayView="showDayView" :fullMonthName="fullMonthName" :allowedToShowView="allowedToShowView" :disabledDates="disabledDates" :highlighted="highlighted" :calendarClass="calendarClass" :calendarStyle="calendarStyle" :translation="translation" :pageTimestamp="pageTimestamp" :isRtl="isRtl" :mondayFirst="mondayFirst" :dayCellContent="dayCellContent" :use-utc="useUtc" @changedMonth="handleChangedMonthFromDayPicker" @selectDate="selectDate" @showMonthCalendar="showMonthCalendar" @selectedDisabled="selectDisabledDate">
           <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
@@ -23,9 +23,9 @@
           <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
         </picker-year>
       </div>
-      <div class="lv-time-controls" v-else>
-        <TimePicker></TimePicker>
-      </div>
+      <!-- <div class="lv-time-controls" v-else>
+        <TimePicker :pageDate="pageDate" @update-time="timeChange"></TimePicker>
+      </div> -->
     </LvOverlayPanel>
   </div>
 </template>
@@ -35,7 +35,7 @@ import DateInput from './DateInput.vue';
 import PickerDay from './PickerDay.vue';
 import PickerMonth from './PickerMonth.vue';
 import PickerYear from './PickerYear.vue';
-import TimePicker from './TimePicker.vue';
+// import TimePicker from './TimePicker.vue';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import utils, { makeDateUtils } from './DateUtils';
 export default {
@@ -44,7 +44,7 @@ export default {
     PickerDay,
     PickerMonth,
     PickerYear,
-    TimePicker,
+    // TimePicker,
     LvOverlayPanel,
   },
   props: {
@@ -388,6 +388,9 @@ export default {
      */
     setTypedDate(date) {
       this.setDate(date.getTime());
+    },
+    timeChange(obj) {
+      console.log(obj);
     },
     /**
      * Close all calendar layers
