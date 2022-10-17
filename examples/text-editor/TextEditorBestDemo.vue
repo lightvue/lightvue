@@ -3,12 +3,12 @@
     <docs-card-best title="Playground">
       <lv-text-editor v-bind="allOptions" />
       <template #props>
-        <Lv-colorpicker v-model="allOptions['theme']" label="Theme Color" />
-        <br />
-        <Lv-colorpicker v-model="allOptions['color']" label="Icon Color" />
-        <br />
+        <Lv-colorpicker v-model="allOptions['theme']" label="Theme Color" bottomBar />
+        <br /><br />
+        <Lv-colorpicker v-model="allOptions['color']" label="Icon Color" bottomBar />
+        <br /><br />
         <label for="menu">Menu</label>
-        <lv-checkbox-group id="menu" v-model="allOptions['menu']" name="menu" :options="menu" color="primary"></lv-checkbox-group>
+        <lv-checkbox-group id="menu" class="text-editor_demo-menu" v-model="allOptions['menu']" name="menu" :options="menu" color="primary"></lv-checkbox-group>
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -34,8 +34,8 @@ export default {
   data() {
     return {
       allOptions: {
-        color: '#000000',
-        theme: '#ffffff',
+        color: '#0D2131',
+        theme: '#F5F8F4',
         menu: ['Bold', 'Italic', 'Strikethrough', 'Code', 'Link', 'List', 'Image'],
       },
       menu: ['Bold', 'Italic', 'Strikethrough', 'Underline', 'Heading 1', 'Heading 2', 'Align', 'Link', 'Code', 'List', 'Image'],
@@ -56,3 +56,9 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.text-editor_demo-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+</style>

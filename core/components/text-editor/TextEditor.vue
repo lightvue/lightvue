@@ -390,11 +390,11 @@ export default {
     },
     theme: {
       type: String,
-      default: '#ffffff',
+      default: '#F5F8F4',
     },
     color: {
       type: String,
-      default: '#333333',
+      default: '#0D2131',
     },
   },
 };
