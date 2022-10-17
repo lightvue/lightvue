@@ -7,7 +7,7 @@
         <Lv-colorpicker bottomBar v-model="allOptions.background" label="Background Color" /> <br /><br />
         <lv-input bottomBar v-model="allOptions.padding" label="Padding (in px)" /> <br />
         <lv-input bottomBar v-model="allOptions.borderRadius" label="Border Radius (in px)" /> <br />
-        <lv-input bottomBar v-model="allOptions.margin" label="Margin (in px)" /> <br />
+        <!-- <lv-input bottomBar v-model="allOptions.margin" label="Margin (in px)" /> <br /> -->
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -32,7 +32,7 @@ export default {
     return {
       allOptions: {
         padding: '16px',
-        margin: '-16px',
+        // margin: '-16px',
         content: 'Click to edit this',
         background: 'rgba(0, 0, 0, 0.02)',
         color: '#566d79',

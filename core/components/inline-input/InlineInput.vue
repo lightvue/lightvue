@@ -1,5 +1,5 @@
 <template>
-  <div ref="editable" :value="modelValue" class="inline-input__wrapper" contenteditable @input="onUpdateValue($event.target.innerText)" @focus="onTextFocus" @blur="removeTextFocus">
+  <div class="inline-input__wrapper" contenteditable @input="onUpdateValue($event.target.innerText)" @focus="onTextFocus" @blur="removeTextFocus">
     {{ modelValue }}
   </div>
 </template>
@@ -36,6 +36,15 @@ export default {
   // mounted() {
   //   this.$refs.editable.innerText = this.value;
   // },
+  computed: {
+    calculateMargin() {
+      var newPadding = this.padding.split(' ');
+      var arrayPadding = newPadding.map(function (x) {
+        return '-' + x;
+      });
+      return arrayPadding.join(' ');
+    },
+  },
   methods: {
     onUpdateValue(newValue) {
       this.updateValue(newValue);
@@ -44,7 +53,7 @@ export default {
       e.target.style.color = this.color;
       e.target.style.background = this.background;
       e.target.style.padding = this.padding;
-      e.target.style.margin = '-' + this.padding;
+      e.target.style.margin = this.calculateMargin;
       e.target.style.borderRadius = this.borderRadius;
     },
     removeTextFocus(e) {
