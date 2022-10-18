@@ -3,9 +3,16 @@
     <docs-card-best title="Playground">
       <lv-text-editor v-bind="allOptions" />
       <template #props>
-        <Lv-colorpicker v-model="allOptions['theme']" label="Theme Color" bottomBar />
+        <lv-toggle-switch v-model="allOptions['bottomBar']" label="Material Design" /> <br />
+        <!-- <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br /> -->
+        <lv-toggle-switch v-model="allOptions.showCharacterCount" label="Show Character Count" /> <br /><br />
+        <lv-input v-model="allOptions.buttonSize" label="Toolbar Icon Size" /> <br />
+
+        <Lv-colorpicker v-model="allOptions['theme']" label="Theme Color" bottomBar clearable />
         <br /><br />
-        <Lv-colorpicker v-model="allOptions['color']" label="Icon Color" bottomBar />
+        <Lv-colorpicker v-model="allOptions['color']" label="Icon Color" bottomBar clearable />
+        <br /><br />
+        <Lv-colorpicker v-model="allOptions['editorBgColor']" label="Editor Bg Color" bottomBar clearable />
         <br /><br />
         <label for="menu">Menu</label>
         <lv-checkbox-group id="menu" class="text-editor_demo-menu" v-model="allOptions['menu']" name="menu" :options="menu" color="primary"></lv-checkbox-group>
@@ -30,16 +37,23 @@ import LvTextEditor from 'lightvue/text-editor';
 import LvInput from 'lightvue/input';
 import LvColorpicker from 'lightvue/color-picker';
 import LvCheckboxGroup from 'lightvue/checkbox-group';
+import LvToggleSwitch from 'lightvue/toggle-switch';
+
 export default {
   data() {
     return {
       allOptions: {
         color: '#0D2131',
-        theme: '#F5F8F4',
+        theme: '#f9f9f9',
+        editorBgColor: '#edf2f7',
+        showCharacterCount: false,
+        bottomBar: false,
+        rounded: false,
+        buttonSize: 'lg',
         menu: ['Bold', 'Italic', 'Strikethrough', 'Code', 'Link', 'List', 'Image'],
       },
       menu: ['Bold', 'Italic', 'Strikethrough', 'Underline', 'Heading 1', 'Heading 2', 'Align', 'Link', 'Code', 'List', 'Image'],
-      stringProps: ['color', 'theme'],
+      stringProps: ['color', 'theme', 'editorBgColor'],
     };
   },
   computed: {
@@ -53,6 +67,7 @@ export default {
     LvInput,
     LvCheckboxGroup,
     LvColorpicker,
+    LvToggleSwitch,
   },
 };
 </script>
