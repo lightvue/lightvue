@@ -9,7 +9,7 @@
         <lv-toggle-switch v-model="allOptions['deep-shadow']" label="Deep Shadow" /> <br />
         <lv-toggle-switch v-model="allOptions['deep-shadow-hover']" label="Deep Shadow Hover" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br /><br />
-        <LvTextEditor buttonSize="md" bottomBar />
+        <LvTextEditor buttonSize="xl" bottomBar />
         <br />
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.type" label="Type" /> <br />

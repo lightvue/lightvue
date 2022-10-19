@@ -394,7 +394,7 @@ export default {
     },
     theme: {
       type: String,
-      default: '#f9f9f9',
+      default: '#ffffff',
     },
     color: {
       type: String,
@@ -423,6 +423,12 @@ export default {
   .lv-input__group,
   .lv-input__default {
     padding: 0px !important;
+  }
+}
+.lv-text-editor__toolbar {
+  .lv-button.--icon-only {
+    width: 30px !important;
+    padding: 4px 8px;
   }
 }
 </style>
