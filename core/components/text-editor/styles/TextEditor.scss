@@ -43,13 +43,23 @@ $main-editor-bg: rgb(255, 255, 255);
   }
 }
 
-// @media screen and (min-width: 300px) {
-//   .lv-text-editor {
-//     &__toolbar {
-//       display: inline-flex;
-//       overflow-y: scroll;
-//         max-width: 256px;
-//       flex-wrap: nowrap;
-//     }
-//   }
-// }
+@media screen and (min-width: 300px) {
+  .lv-text-editor {
+    &__toolbar {
+      display: inline-flex;
+      overflow-y: scroll;
+      max-width: 256px;
+      flex-wrap: nowrap;
+    }
+  }
+}
+@media screen and (min-width: 400px) {
+  .lv-text-editor {
+    &__toolbar {
+      display: flex;
+      // overflow-y: scroll;
+      max-width: 100%;
+      // flex-wrap: nowrap;
+    }
+  }
+}

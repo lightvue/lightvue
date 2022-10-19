@@ -14,8 +14,10 @@
         <br />
         <LvInput label="Link text" type="text" v-model.trim="linkText" />
         <br />
-        <LvButton label="Set" @click.prevent="save" />
-        <LvButton label="Cancel" @click.prevent="close" />
+        <div style="display: flex; justify-content: space-between">
+          <LvButton label="Cancel" @click.prevent="close" />
+          <LvButton label="Set" @click.prevent="save" />
+        </div>
       </LvOverlayPanel>
 
       <LvOverlayPanel ref="linkVisitOP" appendTo="body" style="max-width: 500px" :style="{ boxShadow: '1px 1px 2px 2px silver' }">
