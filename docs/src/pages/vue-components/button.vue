@@ -115,7 +115,7 @@ export default {
     },
     {
       id: 'push-buttons-shadow',
-      title: 'Push with soft Shadow',
+      title: 'Push with soft shadow',
       description: 'You can use some Miscellaneous button variation by passing <span>deep-shadow</span> prop with other variations like <span>push</span> prop',
       file: 'button/ButtonDemo_push-shadow',
     },
