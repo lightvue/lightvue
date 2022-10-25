@@ -9,7 +9,7 @@ const path = require('path');
 //   });
 // });
 
-// fs.copySync(path.resolve(__dirname, './package-build.json'), 'dist/package.json');
+// fs.copySync(path.resolve(__dirname, './package.json'), 'dist/package.json');
 // fs.copySync(path.resolve(__dirname, './README.md'), 'dist/README.md');
 // fs.copySync(path.resolve(__dirname, './LICENSE.md'), 'dist/LICENSE.md');
 

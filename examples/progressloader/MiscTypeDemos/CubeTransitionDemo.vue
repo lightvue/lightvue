@@ -1,8 +1,8 @@
 <template>
   <div class="demo__wrapper">
-    <div class="demo__item"><lv-loader type="cube-transition" /></div>
-    <div class="demo__item"><lv-loader type="cube-transition" color="#38b2ac" /></div>
-    <div class="demo__item push-up"><lv-loader type="cube-transition" :scale="2" /></div>
+    <lv-loader type="cube-transition" />
+    <lv-loader type="cube-transition" color="#38b2ac" />
+    <div class="push-up"><lv-loader type="cube-transition" :scale="2" /></div>
   </div>
 </template>
 
@@ -29,23 +29,7 @@ export default {
   display: flex;
   flex-flow: row wrap;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 0px;
-  padding: 0px;
-  height: max-content;
-  border: 0px;
-}
-
-.demo__item {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  border: 0px;
-  height: 200px;
-  min-height: max-content;
-  margin: 0px;
-  padding: 0px;
-  width: max-content;
+  justify-content: space-between;
+  width: 70%;
 }
 </style>

@@ -1,93 +1,97 @@
 .lv-button {
-    margin: 0;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  vertical-align: bottom;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  &.--inline {
     display: inline-flex;
-    cursor: pointer;
-    user-select: none;
-    align-items: center;
-    vertical-align: bottom;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-    &:disabled{
-        opacity: 0.6;
-        cursor: default;
+  }
+  &.--rounded {
+    border-radius: 2rem;
+  }
+  &.--push {
+    transition: all 0.2s ease-in-out;
+    // box-shadow: none !important;
+    &:active {
+      box-shadow: none;
+      transform: translateY(2px);
     }
+  }
+  &.--icon-only {
+    justify-content: center;
     &.--rounded {
-        border-radius: 2rem;
-    }
-    &.--push{
-        transition: all .2s ease-in-out;
-        // box-shadow: none !important;
-        &:active {
-            box-shadow: none;
-            transform: translateY(2px);
-        }
-    }
-    &.--icon-only {
-        justify-content: center;
-        &.--rounded {
-            border-radius: 50%;
-        }
-        .lv-button__prepend {
-            margin: 0;
-        }
-        .lv-button__append {
-            margin: 0;
-        }
-        .lv-button__label {
-            visibility: hidden;
-            width: 0;
-            flex: 0 0 auto;
-        }
+      border-radius: 50%;
     }
     .lv-button__prepend {
-		margin-right: 0.5rem;
-	}
-	.lv-button__append {
-		margin-left: 0.5rem;
+      margin: 0;
+    }
+    .lv-button__append {
+      margin: 0;
     }
     .lv-button__label {
-        flex: 1 1 auto;
+      visibility: hidden;
+      width: 0;
+      flex: 0 0 auto;
     }
-    .lv-button__icon{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
+  }
+  .lv-button__prepend {
+    margin-right: 0.5rem;
+  }
+  .lv-button__append {
+    margin-left: 0.5rem;
+  }
+  .lv-button__label {
+    flex: 1 1 auto;
+  }
+  .lv-button__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
 }
 
 .lv-buttonset {
-    /* All the below properties are important! */
-	.lv-button {
-        /* To prevent accidental margins */
-		margin: 0 !important;
-		&:not(:last-child) {
-			border-right: 0 none;
-        }
-        &:not(:first-child) {
-			border-left: 0 none;
-        }
-        /* all the middle buttons. */
-		&:not(:first-of-type) {
-			&:not(:last-of-type) {
-				border-radius: 0;
-			}
-        }
-        /* For only first button */
-		&:first-of-type {
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-        }
-        /* For only last button */
-		&:last-of-type {
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
-		}
-		&:focus {
-			// position: relative;
-			z-index: 1;
-		}
-	}
+  display: flex;
+  /* All the below properties are important! */
+  .lv-button {
+    /* To prevent accidental margins */
+    margin: 0 !important;
+    &:not(:last-child) {
+      border-right: 0 none;
+    }
+    &:not(:first-child) {
+      border-left: 0 none;
+    }
+    /* all the middle buttons. */
+    &:not(:first-of-type) {
+      &:not(:last-of-type) {
+        border-radius: 0;
+      }
+    }
+    /* For only first button */
+    &:first-of-type {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    /* For only last button */
+    &:last-of-type {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &:focus {
+      // position: relative;
+      z-index: 1;
+    }
+  }
 }
-

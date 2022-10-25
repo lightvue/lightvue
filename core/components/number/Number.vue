@@ -25,8 +25,8 @@ export default {
   },
   props: {
     value: {
-      type: String,
-      default: '',
+      type: Number,
+      default: 0,
     },
     controls: {
       type: Boolean,

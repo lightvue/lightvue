@@ -8,45 +8,27 @@
     </div>
     <br />
     <div class="content-section implementation">
-      <docs-card title="Getting Started" :responsive="false">
+      <docs-card title="Installing LightVue" :showCardActions="false" :responsive="false">
         <div class="install__wrapper" style="padding: 1rem">
           <div class="install__container">
-            <h2>1. Installing LightVue</h2>
             <div class="install__process">
               <CodeHighlight lang="javascript">
                 <pre>
 
-   npm install lightvue
+// For Vue 2.x
+npm install lightvue
 
+// For Vue 3.x
+npm install lightvue@next
+
+// OR:
+yarn add lightvue
+yarn add lightvue@next
           </pre
                 >
               </CodeHighlight>
             </div>
-            <div class="discription__para">OR</div>
-            <div class="install__process">
-              <CodeHighlight lang="javascript">
-                <pre>
-
-   yarn add lightvue
-
-          </pre
-                >
-              </CodeHighlight>
-            </div>
-            <!-- <h3>With Vue CLI Plugin</h3>
-            <div class="discription__para">While using Vue CLI, LighgVue can be installed using the LightVue plugin</div>
-            <div class="install__process">
-              <CodeHighlight lang="javascript">
-                <pre>
-
-    vue add lightVue
-
-          </pre
-                >
-              </CodeHighlight>
-            </div> -->
-
-            <h3>Injecting the required components</h3>
+            <h3>Register Components, as per need</h3>
             <div class="install__process">
               <CodeHighlight lang="javascript">
                 <pre>
@@ -76,7 +58,7 @@ Vue.component('LvButton', LvButton);
         <docs-card title="Customization" :responsive="false">
           <div class="custom__wrapper" style="padding: 1rem">
             <div class="custom__container">
-              <div class="discription__para">By default, this is the theme that is applied to all the components</div>
+              <div class="description__para">By default, this is the theme that is applied to all the components</div>
               <div class="custom__process">
                 <CodeHighlight lang="css">
                   <pre>
@@ -141,7 +123,7 @@ Vue.component('LvButton', LvButton);
                   >
                 </CodeHighlight>
               </div> -->
-      <!-- <div class="discription__para">This can be easily configured via passing the theme property</div> -->
+      <!-- <div class="description__para">This can be easily configured via passing the theme property</div> -->
       <!-- <div class="custom__process">
                 <CodeHighlight lang="css">
                   <pre>
@@ -203,6 +185,24 @@ Vue.component('LvButton', LvButton);
 import DocsCard from '@/components/docs-card/DocsCard';
 import CodeHighlight from '@/components/docs-card/CodeHighlight.vue';
 export default {
+  head: {
+    title: ' Installation Docs | LightVue ',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: 'Installation Docs | LightVue',
+      },
+      {
+        property: 'og:description',
+        content: ' ',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   components: {
     DocsCard,
     CodeHighlight,

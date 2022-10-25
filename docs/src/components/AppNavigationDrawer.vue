@@ -92,18 +92,6 @@ export default {
 
       pages: [
         {
-          page_name: 'Input',
-          page_path: '/vue-components/input',
-        },
-        {
-          page_name: 'Number',
-          page_path: '/vue-components/number',
-        },
-        {
-          page_name: 'Text Area',
-          page_path: '/vue-components/textarea',
-        },
-        {
           page_name: 'Button',
           page_path: '/vue-components/button',
         },
@@ -116,6 +104,27 @@ export default {
           page_path: '/vue-components/checkbox-group',
           // REFACTORING,
         },
+        {
+          page_name: 'Color Picker',
+          page_path: '/vue-components/color-picker',
+        },
+        {
+          page_name: 'Dropdown',
+          page_path: '/vue-components/dropdown',
+        },
+        {
+          page_name: 'Input',
+          page_path: '/vue-components/input',
+        },
+        {
+          page_name: 'Number',
+          page_path: '/vue-components/number',
+        },
+
+        {
+          page_name: 'Rating',
+          page_path: '/vue-components/rating',
+        },
 
         {
           page_name: 'Radio',
@@ -127,28 +136,21 @@ export default {
           // REFACTORING,
         },
         {
-          page_name: 'Toggle Switch',
-          page_path: '/vue-components/toggle-switch',
-        },
-        {
           page_name: 'Slider',
           page_path: '/vue-components/slider',
         },
         {
-          page_name: 'Color Picker',
-          page_path: '/vue-components/color-picker',
-        },
-        {
-          page_name: 'Dropdown',
-          page_path: '/vue-components/dropdown',
-        },
-        {
-          page_name: 'Rating',
-          page_path: '/vue-components/rating',
+          page_name: 'Text Area',
+          page_path: '/vue-components/textarea',
         },
         {
           page_name: 'Text Editor',
           page_path: '/vue-components/text-editor',
+        },
+
+        {
+          page_name: 'Toggle Switch',
+          page_path: '/vue-components/toggle-switch',
         },
       ],
     },
@@ -196,13 +198,34 @@ export default {
 
       pages: [
         {
+          page_name: 'Badge',
+          page_path: '/vue-components/badge',
+        },
+        {
           page_name: 'Cards',
           page_path: '/vue-components/card',
+        },
+        {
+          page_name: 'Collapsible',
+          page_path: '/vue-components/collapsible',
+        },
+        {
+          page_name: 'Dialog',
+          page_path: '/vue-components/dialog',
         },
         {
           page_name: 'Glassmorphic Card',
           page_path: '/vue-components/glassmorphic-card',
         },
+        {
+          page_name: 'Navigation Drawer',
+          page_path: '/vue-components/drawer',
+        },
+        {
+          page_name: 'Notifications',
+          page_path: '/vue-components/notification',
+        },
+
         {
           page_name: 'Overlay Panel',
           page_path: '/vue-components/overlay-panel',
@@ -211,30 +234,10 @@ export default {
         //   page_name: 'Light Icons',
         //   page_path: '/icons/light-icons',
         // },
-        {
-          page_name: 'Dialog',
-          page_path: '/vue-components/dialog',
-        },
+
         {
           page_name: 'Toast',
           page_path: '/vue-components/toast',
-        },
-        {
-          page_name: 'Notifications',
-          page_path: '/vue-components/notification',
-        },
-        {
-          page_name: 'Navigation Drawer',
-          page_path: '/vue-components/drawer',
-          // REFACTORING,
-        },
-        {
-          page_name: 'Collapsible',
-          page_path: '/vue-components/collapsible',
-        },
-        {
-          page_name: 'Badge',
-          page_path: '/vue-components/badge',
         },
       ],
     },
@@ -250,7 +253,7 @@ $primary-color: #38b2ac;
   position: fixed;
   left: 0;
   height: 100vh;
-  overflow: auto;
+  // overflow: auto;
   width: 250px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -339,7 +342,8 @@ $primary-color: #38b2ac;
         color: #ffffff;
         font-weight: 500;
       }
-      &.nuxt-link-active {
+      &.nuxt-link-active,
+      &.router-link-active {
         color: $primary-color;
         // border-left: 1px dotted #38b2ac;
         .nav-list__item-line {
@@ -380,7 +384,8 @@ $primary-color: #38b2ac;
     &:focus {
       color: #79909c;
     }
-    &.nuxt-link-active {
+    &.nuxt-link-active,
+    &.router-link-active {
       color: $primary-color;
     }
   }

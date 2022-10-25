@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "before:npm:release": ["npm run post-build"],
+    "after:release": "git push --tags"
+  }
+}
