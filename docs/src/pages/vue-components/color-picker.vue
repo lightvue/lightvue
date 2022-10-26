@@ -46,7 +46,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'colorpicker/ColorpickerDemo',
-          description: 'You can use the <span>LvColorPicker</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can set the label to colour picker through <span>label</span> prop.You can set the pallet colors by passing a array to <span>colors</span> prop. LightVue color-picker is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can use the <span>LvColorPicker</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can set the label to colour picker through <span>label</span> prop.You can set the palette colors by passing a array to <span>colors</span> prop. LightVue color-picker is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Without input',
@@ -54,9 +54,9 @@ export default {
           description: 'You can use <span>LvColorPicker</span> without the input. You have to set <span>withoutInput</span> prop true',
         },
         {
-          title: 'Without Pallet',
+          title: 'Without palette',
           file: 'colorpicker/ColorpickerDemo3',
-          description: 'You can use <span>LvColorPicker</span> without the colour pallet. You have to set <span>hidePalette</span> prop true',
+          description: 'You can use <span>LvColorPicker</span> without the colour palette. You have to set <span>hidePalette</span> prop true',
         },
       ],
     };
