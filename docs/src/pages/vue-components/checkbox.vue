@@ -53,7 +53,7 @@ export default {
         {
           title: 'Basic',
           file: 'checkbox/CheckboxDemo_Basic',
-          description: 'You can use the checkbox with various predefined colors by passing them in <span>color</span> prop, avaliable colors are <span>sucess</span>,<span>warning</span>,<span>primary</span>,<span>info</span>,<span>danger</span>. You can set the corners of checkbox to round by setting <span>rounded</span> prop to true.you can change the appearence of checkbox through <span>thick</span>,<span>filled</span>,<span>plain</span>,<span>smooth</span>. LightVue checkbox is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can use the checkbox with various predefined colors by passing them in <span>color</span> prop, avaliable colors are <span>sucess</span>,<span>warning</span>,<span>primary</span>,<span>info</span>,<span>danger</span>. You can set the corners of checkbox to round by setting <span>rounded</span> prop to true.You can change the appearance of checkbox through <span>thick</span>,<span>filled</span>,<span>plain</span>,<span>smooth</span>. LightVue checkbox is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'With Animations',
