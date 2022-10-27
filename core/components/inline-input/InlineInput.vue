@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-input__wrapper" :contenteditable="!readOnly" @input="onUpdateValue($event)" @focus="onTextFocus" @blur="removeTextFocus" v-html="localValue" @keydown.stop=""></div>
+  <div class="inline-input__wrapper" :contenteditable="!readOnly" @input="onUpdateValue($event)" @focus="onTextFocus" @blur="removeTextFocus" v-html="localValue" @keydown="$emit('keydown', $event)"></div>
 </template>
 
 <script>
