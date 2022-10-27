@@ -13,8 +13,8 @@
       <br />
       <LvInput label="Link text" type="text" v-model.trim="linkText" />
       <br />
-      <div style="display: flex; justify-content: space-between">
-        <LvButton label="Cancel" @click.prevent="close" />
+      <div style="display: flex; justify-content: flex-end; gap: 8px">
+        <LvButton label="Cancel" class="lv--secondary" @click.prevent="close" />
         <LvButton label="Set" @click.prevent="save" />
       </div>
     </LvOverlayPanel>
