@@ -1,9 +1,9 @@
 <template>
   <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status">
     <InlineInputBestDemo />
-    <template v-for="(demo, i) in demos">
+    <!-- <template v-for="(demo, i) in demos">
       <docs-card-vue :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
-    </template>
+    </template> -->
     <template #api>
       <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
       <!-- <docs-all-api :api-data="$options.apiData" /> -->
