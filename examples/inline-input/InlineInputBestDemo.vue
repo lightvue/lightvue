@@ -1,9 +1,9 @@
 <template>
   <div>
     <docs-card-best title="Playground">
-      <LvInlineInput v-model="allOptions.content" v-bind="allOptions" />
+      <LvInlineInput v-model="allOptions.value" v-bind="allOptions" />
       <template #props>
-        <lv-input bottomBar v-model="allOptions.content" label="Content" /> <br />
+        <lv-input bottomBar v-model="allOptions.value" label="Content" /> <br />
         <Lv-colorpicker bottomBar v-model="allOptions.background" label="Background Color" /> <br /><br />
         <lv-input bottomBar v-model="allOptions.padding" label="Padding (in px)" /> <br />
         <lv-input bottomBar v-model="allOptions.borderRadius" label="Border Radius (in px)" /> <br />
@@ -33,12 +33,12 @@ export default {
       allOptions: {
         padding: '16px',
         // margin: '-16px',
-        content: 'Click to edit this',
+        value: 'Click to edit this',
         background: 'rgba(0, 0, 0, 0.02)',
         color: '#566d79',
         borderRadius: '4px',
       },
-      stringProps: ['borderRadius', 'content', 'background', 'padding', 'margin', 'color'],
+      stringProps: ['borderRadius', 'value', 'background', 'padding', 'margin', 'color'],
     };
   },
   computed: {

@@ -1,7 +1,5 @@
 <template>
-  <div class="inline-input__wrapper" contenteditable @input="onUpdateValue($event.target.innerText)" @focus="onTextFocus" @blur="removeTextFocus">
-    {{ modelValue }}
-  </div>
+  <div class="inline-input__wrapper" contenteditable @input="onUpdateValue($event)" @focus="onTextFocus" @blur="removeTextFocus">{{ modelValue }}</div>
 </template>
 
 <script>
@@ -33,8 +31,8 @@ export default {
       default: '4px',
     },
   },
-  // mounted() {
-  //   this.$refs.editable.innerText = this.value;
+  // created() {
+  //   this.$refs.editable.innerText = this.modelValue;
   // },
   computed: {
     calculateMargin() {
@@ -46,8 +44,20 @@ export default {
     },
   },
   methods: {
-    onUpdateValue(newValue) {
+    onUpdateValue(evt) {
+      const newValue = evt.target.innerText;
+      const range = document.getSelection().getRangeAt(0);
+      const pos = range.endOffset;
       this.updateValue(newValue);
+      this.$nextTick(() => {
+        const newRange = document.createRange();
+        const selection = window.getSelection();
+        const node = this.$el.childNodes[0];
+        newRange.setStart(node, node && pos > node.length ? 0 : pos);
+        newRange.collapse(true);
+        selection.removeAllRanges();
+        selection.addRange(newRange);
+      });
     },
     onTextFocus(e) {
       e.target.style.color = this.color;
