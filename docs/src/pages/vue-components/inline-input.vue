@@ -19,6 +19,7 @@ import DocsCard from '@/components/docs-card/DocsCard';
 import GettingStarted from '@/components/docs-card/GettingStarted';
 import DocsAllApi from '@/components/docs-card/DocsAllApi';
 // import InputAPI from 'lightvueDocs/example/input/InputAPI';
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
 export default {
   head: {
@@ -56,7 +57,7 @@ export default {
   description: ``,
   packageName: 'inline-input',
   componentName: 'LvInlineInput',
-  // status: 'Rc',
+  status: COMPONENT_STATUS.NEW,
   // apiData: InlineInputAPI,
 };
 </script>

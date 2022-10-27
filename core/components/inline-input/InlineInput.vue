@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-input__wrapper" contenteditable @input="onUpdateValue($event)" @focus="onTextFocus" @blur="removeTextFocus">{{ modelValue }}</div>
+  <div class="inline-input__wrapper" contenteditable @input="onUpdateValue($event)" @focus="onTextFocus" @blur="removeTextFocus" v-html="localValue"></div>
 </template>
 
 <script>
@@ -34,6 +34,22 @@ export default {
   // created() {
   //   this.$refs.editable.innerText = this.modelValue;
   // },
+  data() {
+    return {
+      localValue: '',
+    };
+  },
+  watch: {
+    modelValue: {
+      handler: function (newValue) {
+        console.log(newValue, this.localValue);
+        if (newValue !== this.localValue) {
+          this.localValue = newValue;
+        }
+      },
+      immediate: true,
+    },
+  },
   computed: {
     calculateMargin() {
       var newPadding = this.padding.split(' ');
@@ -48,15 +64,18 @@ export default {
       const newValue = evt.target.innerText;
       const range = document.getSelection().getRangeAt(0);
       const pos = range.endOffset;
+      this.localValue = newValue;
       this.updateValue(newValue);
       this.$nextTick(() => {
         const newRange = document.createRange();
         const selection = window.getSelection();
         const node = this.$el.childNodes[0];
-        newRange.setStart(node, node && pos > node.length ? 0 : pos);
-        newRange.collapse(true);
-        selection.removeAllRanges();
-        selection.addRange(newRange);
+        if (node) {
+          newRange.setStart(node, node && pos > node.length ? 0 : pos);
+          newRange.collapse(true);
+          selection.removeAllRanges();
+          selection.addRange(newRange);
+        }
       });
     },
     onTextFocus(e) {
