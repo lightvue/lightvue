@@ -17,6 +17,10 @@ const routes = [
         component: () => import('@/pages/vue-components/input.vue'),
       },
       {
+        path: 'inline-input',
+        component: () => import('@/pages/vue-components/inline-input.vue'),
+      },
+      {
         path: 'button',
         component: () => import('@/pages/vue-components/button.vue'),
       },
