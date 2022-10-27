@@ -9,7 +9,6 @@
         <lv-toggle-switch v-model="allOptions['deep-shadow']" label="Deep Shadow" /> <br />
         <lv-toggle-switch v-model="allOptions['deep-shadow-hover']" label="Deep Shadow Hover" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br /><br />
-        <LvTextEditor buttonSize="md" bottomBar />
         <br />
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.type" label="Type" /> <br />
@@ -34,7 +33,6 @@ import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input';
 import LvColorpicker from 'lightvue/color-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
-import LvTextEditor from 'lightvue/text-editor';
 
 export default {
   data() {
@@ -60,7 +58,6 @@ export default {
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
-    LvTextEditor,
   },
   computed: {
     enabledOptions() {

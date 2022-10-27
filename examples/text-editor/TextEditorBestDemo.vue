@@ -47,7 +47,7 @@ export default {
         theme: '#ffffff',
         editorBgColor: '#edf2f7',
         showCharacterCount: false,
-        bottomBar: false,
+        bottomBar: true,
         rounded: false,
         buttonSize: 'lg',
         menu: ['Bold', 'Italic', 'Strikethrough', 'Code', 'Link', 'List', 'Image'],
