@@ -2,7 +2,7 @@
   <div>
     <div class="lv-text-editor light-scrollbar--none">
       <div class="lv-text-editor__toolbar light-scrollbar--none" :style="{ backgroundColor: theme }">
-        <LvButton v-for="(tool, i) in editorTools" :key="i" :icon="tool.icon" :style="{ backgroundColor: theme, color }" :size="buttonSize" :class="['lv-text-editor__toolbar__btn', { 'lv-text-editor__toolbar__btn--active': tool.active }]" v-tooltip.top="`${tool.tooltipText}`" @mousedown.prevent.stop="action(tool)" />
+        <LvButton v-for="(tool, i) in editorTools" :key="i" :icon="tool.icon" :style="{ backgroundColor: theme, color }" :size="buttonSize" class="lv-text-editor__toolbar__btn" :class="{ 'lv-text-editor__toolbar__btn--active': tool.active }" v-tooltip.top="`${tool.tooltipText}`" @mousedown.prevent.stop="action(tool)" />
       </div>
       <lv-input class="lv-text-editor__input-wrapper" type="text" :editable="false" v-bind="$attrs">
         <div class="lv-text-editor__content light-scrollbar" ref="content" v-bind="$attrs" :style="{ backgroundColor: editorBgColor }" contenteditable @keydown="handleKeyControls" v-html="content" @input="handleInput" @click.prevent="toggleButtons"></div>

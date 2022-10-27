@@ -14,13 +14,17 @@ $main-editor-bg: rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
     padding: 4px;
-    border-bottom: 1px solid #edf2f6;
+    // border-bottom: 1px solid #edf2f6;
+    gap: 4px;
     &__btn {
+      border: 1px solid #edf2f6;
       &:hover {
-        filter: brightness(85%);
+        border: 1px solid #cbd5e0;
       }
       &--active {
         font-weight: bolder;
+        background-color: #edf2f6 !important;
+        border: 1px solid #cbd5e0;
         // background-color: rgba(0, 0, 0, 0.06) !important;
       }
     }
