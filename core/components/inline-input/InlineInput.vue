@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-input__wrapper" contenteditable @input="onUpdateValue($event)" @focus="onTextFocus" @blur="removeTextFocus" v-html="localValue"></div>
+  <div class="inline-input__wrapper" :contenteditable="!readOnly" @input="onUpdateValue($event)" @focus="onTextFocus" @blur="removeTextFocus" v-html="localValue" @keydown.stop=""></div>
 </template>
 
 <script>
@@ -29,6 +29,10 @@ export default {
     borderRadius: {
       type: String,
       default: '4px',
+    },
+    readOnly: {
+      type: Boolean,
+      default: false,
     },
   },
   // created() {
@@ -96,7 +100,7 @@ export default {
 </script>
 
 <style lang="scss">
-.inline-input__wrapper {
+.inline-input__wrapper[contenteditable='true'] {
   outline: none !important;
   cursor: text;
 }
