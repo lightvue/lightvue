@@ -90,13 +90,13 @@
         border-right: 2px solid transparent;
         border-bottom: 2px solid transparent;
         background-color: transparent !important;
-        transform: rotate(45deg);
+        // transform: rotate(45deg);
         transform-origin: 0% 100%;
-        width: 0.3em !important;
-        height: 0.5em !important;
+        width: 0.3em;
+        height: 0.5em;
         border-color: $color;
-        transform: translate3d(0, -0.5em, 0) rotate(45deg) scale(1) !important;
-        animation: checkbox-check 200ms 200ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
+        transform: translate3d(0, -0.5em, 0) rotate(45deg) scale(1);
+        animation: checkbox-check 500ms 0ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
       }
     }
     &.--check-icon:not(.--filled) input:checked ~ .state.lv-#{$name}-o label {
@@ -130,6 +130,7 @@
     width: 0.2em;
     height: 0;
     border-color: #008080;
+    // border-color: red;
     transform: translate3d(0, 0, 0) rotate(45deg);
   }
   100% {
