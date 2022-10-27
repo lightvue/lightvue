@@ -3,8 +3,8 @@ $editor-bg: rgb(255, 255, 255);
 $main-editor-bg: rgb(255, 255, 255);
 .lv-text-editor {
   //   border: 1px solid $editor-shade;
-  border: 2px solid #edf2f6;
-  border-radius: 4px;
+  // border: 2px solid #edf2f6;
+  border-radius: 5px;
   overflow: auto;
   // resize: both;
   //   box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.1);
@@ -16,6 +16,8 @@ $main-editor-bg: rgb(255, 255, 255);
     padding: 4px;
     // border-bottom: 1px solid #edf2f6;
     gap: 4px;
+    margin: 1px;
+    border-radius: 3px;
     &__btn {
       border: 1px solid #edf2f6;
       &:hover {

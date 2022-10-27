@@ -1,34 +1,32 @@
 <template>
-  <div>
-    <div class="lv-text-editor light-scrollbar--none">
+  <div class="lv-text-editor light-scrollbar--none">
+    <lv-input class="lv-text-editor__input-wrapper" type="text" :editable="false" v-bind="$attrs">
       <div class="lv-text-editor__toolbar light-scrollbar--none" :style="{ backgroundColor: theme }">
         <LvButton v-for="(tool, i) in editorTools" :key="i" :icon="tool.icon" :style="{ backgroundColor: theme, color }" :size="buttonSize" class="lv-text-editor__toolbar__btn" :class="{ 'lv-text-editor__toolbar__btn--active': tool.active }" v-tooltip.top="`${tool.tooltipText}`" @mousedown.prevent.stop="action(tool)" />
       </div>
-      <lv-input class="lv-text-editor__input-wrapper" type="text" :editable="false" v-bind="$attrs">
-        <div class="lv-text-editor__content light-scrollbar" ref="content" v-bind="$attrs" :style="{ backgroundColor: editorBgColor }" contenteditable @keydown="handleKeyControls" v-html="content" @input="handleInput" @click.prevent="toggleButtons"></div>
-        <div class="lv-text-editor__footer" v-if="showCharacterCount" :style="{ backgroundColor: editorBgColor }">Characters: {{ characterCount }}</div>
-      </lv-input>
+      <div class="lv-text-editor__content light-scrollbar" ref="content" v-bind="$attrs" :style="{ backgroundColor: editorBgColor }" contenteditable @keydown="handleKeyControls" v-html="content" @input="handleInput" @click.prevent="toggleButtons"></div>
+      <div class="lv-text-editor__footer" v-if="showCharacterCount" :style="{ backgroundColor: editorBgColor }">Characters: {{ characterCount }}</div>
+    </lv-input>
 
-      <LvOverlayPanel ref="linkOP" appendTo="body" style="max-width: 300px" :dismissable="false">
-        <LvInput label="URL" type="url" v-model.trim="linkURL" />
-        <br />
-        <LvInput label="Link text" type="text" v-model.trim="linkText" />
-        <br />
-        <div style="display: flex; justify-content: space-between">
-          <LvButton label="Cancel" @click.prevent="close" />
-          <LvButton label="Set" @click.prevent="save" />
-        </div>
-      </LvOverlayPanel>
+    <LvOverlayPanel ref="linkOP" appendTo="body" style="max-width: 300px" :dismissable="false">
+      <LvInput label="URL" type="url" v-model.trim="linkURL" />
+      <br />
+      <LvInput label="Link text" type="text" v-model.trim="linkText" />
+      <br />
+      <div style="display: flex; justify-content: space-between">
+        <LvButton label="Cancel" @click.prevent="close" />
+        <LvButton label="Set" @click.prevent="save" />
+      </div>
+    </LvOverlayPanel>
 
-      <LvOverlayPanel ref="linkVisitOP" appendTo="body" style="max-width: 500px" :style="{ boxShadow: '1px 1px 2px 2px silver' }">
-        <i class="light-icon-link"></i>
-        <a :href="linkURL" :dismissable="false" target="_blank">
-          {{ linkURL }}
-        </a>
-      </LvOverlayPanel>
+    <LvOverlayPanel ref="linkVisitOP" appendTo="body" style="max-width: 500px" :style="{ boxShadow: '1px 1px 2px 2px silver' }">
+      <i class="light-icon-link"></i>
+      <a :href="linkURL" :dismissable="false" target="_blank">
+        {{ linkURL }}
+      </a>
+    </LvOverlayPanel>
 
-      <input type="file" ref="imageInput" hidden accept="image/*" @change="onFileChange" />
-    </div>
+    <input type="file" ref="imageInput" hidden accept="image/*" @change="onFileChange" />
   </div>
 </template>
 
