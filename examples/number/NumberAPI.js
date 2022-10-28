@@ -48,6 +48,12 @@ const NumberAPI = {
       default: '0',
       description: 'Defines the step to go up or down in the number component.',
     },
+    {
+      name: 'showInputSpinner',
+      type: 'boolean',
+      default: 'false',
+      description: 'Allows user to configure default input spinner buttons when input type is set to number.',
+    },
   ],
   events: [
     // {

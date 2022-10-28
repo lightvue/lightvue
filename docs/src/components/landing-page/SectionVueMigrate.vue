@@ -1,16 +1,16 @@
 <template>
   <section class="vue-migrate" id="vue-migrate">
     <div class="vue-migrate__wrapper">
+      <div class="vue-migrate__image-wrapper">
+        <img src="../../assets/images/migrate-vue.svg" alt="migrate-vue" class="vue-migrate__image" />
+      </div>
       <div class="vue-migrate__content">
-        <div class="vue-migrate__content-heading">Swift migration from Vue 2.x to Vue 3.x</div>
+        <div class="vue-migrate__content-heading">Swift Migration from Vue 2.x to Vue 3.x</div>
         <br />
-        <div class="vue-migrate__content-description">Developing cut edge projects just got easier. With just one step upgradation, 100% backward compatibility and identical APIs in both the environments, LightVue offers a hassle free migration from your Vue 2.x to Vue 3.x projects in just two ticks.</div>
+        <div class="vue-migrate__content-description">Developing modern cutting-edge projects, just got simpler. With just <strong>one step upgradation</strong>, <strong>100% backward compatibility</strong> and <strong>identical APIs in both the environments</strong>. LightVue offers a hassle free migration from your Vue 2.x to Vue 3.x projects in just two ticks.</div>
         <br /><br />
         <nuxt-link :to="{ hash: 'light-weight' }" class="page-button --dark">Know More</nuxt-link>
         <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
-      </div>
-      <div class="vue-migrate__image-wrapper">
-        <img src="../../assets/images/migrate-vue.svg" alt="migrate-vue" class="vue-migrate__image" />
       </div>
       <!-- <div class="vue-migrate__background"></div> -->
     </div>
@@ -65,10 +65,14 @@ export default {};
     }
     .vue-migrate__content-description {
       font-size: 20px;
-      line-height: 26px;
+      line-height: 30px;
       opacity: 0.7;
+      font-weight: 300;
       color: #143a56;
-      margin-bottom: 0.78em;
+      margin-bottom: 0.5em;
+      strong {
+        font-weight: 500;
+      }
     }
   }
 }
@@ -84,7 +88,7 @@ export default {};
 }
 @media (max-width: 768px) {
   .vue-migrate__wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0px;
     padding: 0px 20px;
     .vue-migrate__image-wrapper {

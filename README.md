@@ -1,13 +1,33 @@
 <div align="center">
   <br/>
   <a href="https://lightvue.org">
-    <img src="https://lightvue.org/logo_v2.svg" width="250">
+    <img src="https://lightvue.org/logo_v2.svg" alt="LightVue logo" width="250">
   </a>
  
   <br/>
   <br/>
   
   <p>The Emerging UI Component library for <b>Vue 2.x</b> & <b>Vue 3.x</b></p>
+ 
+  <a href="https://github.com/lightvue/lightvue/graphs/contributors">
+    <img alt="Contributors" src="https://img.shields.io/github/contributors/lightvue/lightvue?color=269286" />
+  </a> 
+  
+  <a href="https://github.com/lightvue/lightvue/pulls">
+    <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/lightvue/lightvue?color=ffeeee" />
+  </a>
+ 
+  <br/>
+  <br/>
+  
+  <a href="https://vuejs.org/">
+    <img alt="Vue" src="https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D" />
+   </a>
+  
+  <a href="https://nuxtjs.org/">
+    <img alt="Nuxt" src="https://img.shields.io/badge/nuxt.js-00C58E?style=for-the-badge&logo=nuxtdotjs&logoColor=white" /> 
+  </a>
+ 
 </div>
 
 ## About LightVue
@@ -36,7 +56,7 @@ npm install lightvue@next
 
 ### Form Elements:
 
-- Input:  [[Vue2.x](https://lightvue.org/vue-components/input 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/input 'Vue3.x DEMO')]
+- Input: [[Vue2.x](https://lightvue.org/vue-components/input 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/input 'Vue3.x DEMO')]
 - Number: [[Vue2.x](https://lightvue.org/vue-components/number 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/number 'Vue3.x DEMO')]
 - TextArea: [[Vue2.x](https://lightvue.org/vue-components/textarea 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/textarea 'Vue3.x DEMO')]
 - Dropdown: [[Vue2.x](https://lightvue.org/vue-components/dropdown 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/dropdown 'Vue3.x DEMO')]
@@ -51,13 +71,11 @@ npm install lightvue@next
 - Rating: [[Vue2.x](https://lightvue.org/vue-components/rating 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/rating 'Vue3.x DEMO')]
 - TextEditor: [[Vue2.x](https://lightvue.org/vue-components/text-editor 'Vue2.x DEMO'), [Vue3.x](https://vue3.lightvue.org/vue-components/text-editor 'Vue3.x DEMO')]
 
-
-
-
-
-
-
-
 ## Contribution
 
-Thank you for considering contributing to LightVue. Please read the [contribution guide](https://github.com/lightvue/lightvue/blob/master/CONTRIBUTING.md) before making a pull request.
+Thank you for considering contributing to LightVue. Please read the [contribution guide](https://github.com/lightvue/lightvue/blob/master/CONTRIBUTING.md) before making a pull request or raising an issue.  
+[Click here](https://join.slack.com/t/slack-qgs9925/shared_invite/zt-1g6falep2-9v3887ttNrjrcPdxi1if_A) to Join our slack community
+
+## Connect with us:
+<a href = "https://join.slack.com/t/slack-qgs9925/shared_invite/zt-1g6falep2-9v3887ttNrjrcPdxi1if_A"><img height ="54px" width="54px" title="Slack" src="https://img.icons8.com/color/452/slack-new.png"/></a>
+<a href = "https://twitter.com/lightvue"><img height ="54px" width="54px" title="twitter" src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>

@@ -8,10 +8,9 @@
     </div>
     <br />
     <div class="content-section implementation">
-      <docs-card title="Getting Started" :responsive="false">
+      <docs-card title="Installing LightVue" :showCardActions="false" :responsive="false">
         <div class="install__wrapper" style="padding: 1rem">
           <div class="install__container">
-            <h2>Installing LightVue</h2>
             <div class="install__process">
               <CodeHighlight lang="javascript">
                 <pre>
@@ -51,7 +50,7 @@ Vue.component('LvButton', LvButton);
         <h1>Customization</h1>
         <p style="opacity: 0.8">
           In order to get started with light vue, you need to install LightVue and its dependency LightIcon (Only required if the icons are getting used). <br />
-          For Detailed Customisation <nuxt-link :to="{ path: '/', hash: 'contact' }" style="color: #38b2ac">Contact Us</nuxt-link>
+          For Detailed Customization <nuxt-link :to="{ path: '/', hash: 'contact' }" style="color: #38b2ac">Contact Us</nuxt-link>
         </p>
       </div>
       <br />
@@ -59,7 +58,7 @@ Vue.component('LvButton', LvButton);
         <docs-card title="Customization" :responsive="false">
           <div class="custom__wrapper" style="padding: 1rem">
             <div class="custom__container">
-              <div class="discription__para">By default, this is the theme that is applied to all the components</div>
+              <div class="description__para">By default, this is the theme that is applied to all the components</div>
               <div class="custom__process">
                 <CodeHighlight lang="css">
                   <pre>
@@ -124,7 +123,7 @@ Vue.component('LvButton', LvButton);
                   >
                 </CodeHighlight>
               </div> -->
-      <!-- <div class="discription__para">This can be easily configured via passing the theme property</div> -->
+      <!-- <div class="description__para">This can be easily configured via passing the theme property</div> -->
       <!-- <div class="custom__process">
                 <CodeHighlight lang="css">
                   <pre>

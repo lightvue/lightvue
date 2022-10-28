@@ -1,18 +1,22 @@
 <template>
-  <div class="lv-text-editor">
-    <div class="lv-text-editor__toolbar" :style="{ backgroundColor: theme }">
-      <LvButton v-for="(tool, i) in editorTools" :key="i" :icon="tool.icon" :style="{ backgroundColor: theme, color }" size="xl" :class="['lv-text-editor__toolbar__btn', { 'lv-text-editor__toolbar__btn--active': tool.active }]" v-tooltip.top="`${tool.tooltipText}`" @mousedown.prevent.stop="action(tool)" />
-    </div>
-    <div class="lv-text-editor__content light-scrollbar" ref="content" contenteditable @keydown="handleKeyControls" v-html="content" @input="handleInput" @click.prevent="toggleButtons"></div>
-    <div class="lv-text-editor__footer">Characters: {{ characterCount }}</div>
+  <div class="lv-text-editor light-scrollbar--none">
+    <lv-input class="lv-text-editor__input-wrapper" type="text" :editable="false" v-bind="$attrs">
+      <div class="lv-text-editor__toolbar light-scrollbar--none" :style="{ backgroundColor: theme }">
+        <LvButton v-for="(tool, i) in editorTools" :key="i" :icon="tool.icon" :style="{ backgroundColor: theme, color }" :size="buttonSize" class="lv-text-editor__toolbar__btn" :class="{ 'lv-text-editor__toolbar__btn--active': tool.active }" v-tooltip.top="`${tool.tooltipText}`" @mousedown.prevent.stop="action(tool)" />
+      </div>
+      <div class="lv-text-editor__content light-scrollbar" ref="content" v-bind="$attrs" :style="{ backgroundColor: editorBgColor }" contenteditable @keydown="handleKeyControls" v-html="content" @input="handleInput" @click.prevent="toggleButtons"></div>
+      <div class="lv-text-editor__footer" v-if="showCharacterCount" :style="{ backgroundColor: editorBgColor }">Characters: {{ characterCount }}</div>
+    </lv-input>
 
     <LvOverlayPanel ref="linkOP" appendTo="body" style="max-width: 300px" :dismissable="false">
       <LvInput label="URL" type="url" v-model.trim="linkURL" />
       <br />
       <LvInput label="Link text" type="text" v-model.trim="linkText" />
       <br />
-      <LvButton label="Set" @click.prevent="save" />
-      <LvButton label="Cancel" @click.prevent="close" />
+      <div style="display: flex; justify-content: flex-end; gap: 8px">
+        <LvButton label="Cancel" class="lv--secondary" @click.prevent="close" />
+        <LvButton label="Set" @click.prevent="save" />
+      </div>
     </LvOverlayPanel>
 
     <LvOverlayPanel ref="linkVisitOP" appendTo="body" style="max-width: 500px" :style="{ boxShadow: '1px 1px 2px 2px silver' }">
@@ -394,7 +398,19 @@ export default {
     },
     color: {
       type: String,
-      default: '#333333',
+      default: '#0D2131',
+    },
+    editorBgColor: {
+      type: String,
+      default: '#edf2f7',
+    },
+    showCharacterCount: {
+      type: Boolean,
+      default: false,
+    },
+    buttonSize: {
+      type: String,
+      default: 'xl',
     },
   },
 };
@@ -402,6 +418,19 @@ export default {
 
 <style lang="scss">
 @import './styles/TextEditor.scss';
+.lv-text-editor__input-wrapper {
+  .lv-input__field,
+  .lv-input__group,
+  .lv-input__default {
+    padding: 0px !important;
+  }
+}
+.lv-text-editor__toolbar {
+  .lv-button.--icon-only {
+    width: 30px !important;
+    padding: 4px 8px;
+  }
+}
 </style>
 
 <style scoped>

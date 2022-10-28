@@ -1,10 +1,5 @@
 <template>
-  <div>
-    <lv-textarea label="Material Design" rows="3" bottom-bar /><br />
-    <lv-textarea label="Floating Label" rows="3" floating-label /> <br />
-    <lv-textarea icon-left="light-icon-search" icon-right="light-icon-arrow-up-right-circle" rows="3" label="Left Right Icons" /> <br />
-    <lv-textarea label="Rounded" placeholder="Enter your text here ..." rows="3" rounded /> <br />
-  </div>
+  <div style="width: 100%"><lv-textarea label="Material Design" rows="9" bottom-bar /><br /></div>
 </template>
 
 <script>

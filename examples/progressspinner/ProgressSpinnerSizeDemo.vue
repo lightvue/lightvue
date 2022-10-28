@@ -48,7 +48,9 @@ export default {
 .progress-spinner-demo-wrapper {
   display: flex;
   flex-flow: row wrap;
-  height: 150px;
+  /* height: 150px; */
+  align-items: center;
+  width: 80%;
 }
 
 @media (max-width: 450px) {
