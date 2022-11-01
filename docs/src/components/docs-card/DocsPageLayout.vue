@@ -257,6 +257,9 @@ $primary-color: #38b2ac;
     }
   }
 }
+ul {
+  list-style-type: none;
+}
 @media only screen and (max-device-width: 1080px) {
   .main-center-area {
     max-width: 100%;
