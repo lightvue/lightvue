@@ -92,10 +92,6 @@ export default {
 </script>
 
 <style>
-.lv-colorpicker-wrapper {
-  display: inline-block;
-  vertical-align: middle;
-}
 
 .lv-colorpicker__colorblock-wrap {
   position: relative;

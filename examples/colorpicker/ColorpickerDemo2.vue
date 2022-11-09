@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lv-colorpicker-wrapper">
     <h6>Chosen color: {{ hexCode }} : <LvColorpicker v-model="hexCode" withoutInput /></h6>
   </div>
 </template>
@@ -18,4 +18,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+.lv-colorpicker-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+</style>
