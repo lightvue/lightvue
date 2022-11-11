@@ -57,6 +57,10 @@ const routes = [
         component: () => import('@/pages/vue-components/color-picker.vue'),
       },
       {
+        path: 'icon-picker',
+        component: () => import('@/pages/vue-components/icon-picker.vue'),
+      },
+      {
         path: 'dialog',
         component: () => import('@/pages/vue-components/dialog.vue'),
       },

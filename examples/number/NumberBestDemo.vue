@@ -15,8 +15,8 @@
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.placeholder" label="Placeholder" /> <br />
         <lv-input v-model="allOptions['help-text']" label="Help Text" /> <br />
-        <lv-input v-model="allOptions.iconLeft" label="Left Icons" /> <br />
-        <lv-input v-model="allOptions.iconRight" label="Right Icons" /> <br />
+        <div style="margin-bottom: 16px"><lv-icon-picker style="width: 100%" v-model="allOptions.iconLeft" label="Left Icons" /> <br /></div>
+        <div style="margin-bottom: 16px"><lv-icon-picker style="width: 100%" v-model="allOptions.iconRight" label="Right Icons" /> <br /></div>
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -35,6 +35,7 @@
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input';
 import LvNumber from 'lightvue/number';
+import LvIconPicker from 'lightvue/icon-picker';
 // import LvColorpicker from 'lightvue/color-picker/ColorPicker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
 
@@ -65,6 +66,7 @@ export default {
     LvInput,
     LvNumber,
     LvToggleSwitch,
+    LvIconPicker,
   },
   computed: {
     enabledOptions() {

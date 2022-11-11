@@ -12,7 +12,7 @@
         <br />
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.type" label="Type" /> <br />
-        <lv-input v-model="allOptions['icon-right']" label="Right Icon" /> <br />
+        <div style="margin-bottom: 16px"><lv-icon-picker style="width: 100%" v-model="allOptions['icon-right']" label="Right Icon" /> <br /></div>
         <lv-input v-model="allOptions.size" label="Size" /> <br />
       </template>
       <template #code>
@@ -31,6 +31,7 @@
 <script>
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input';
+import LvIconPicker from 'lightvue/icon-picker';
 import LvColorpicker from 'lightvue/color-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
 
@@ -58,6 +59,7 @@ export default {
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
+    LvIconPicker,
   },
   computed: {
     enabledOptions() {

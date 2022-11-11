@@ -113,6 +113,10 @@ export default {
           page_path: '/vue-components/dropdown',
         },
         {
+          page_name: 'Icon Picker',
+          page_path: '/vue-components/icon-picker',
+        },
+        {
           page_name: 'Input',
           page_path: '/vue-components/input',
         },
