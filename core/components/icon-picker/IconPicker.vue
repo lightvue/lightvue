@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import IconPickerCore from './IconPickerOverlay.vue';
+import IconPickerCore from './IconPickerCore.vue';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvInput from 'lightvue/input';
 import { trueValueMixin } from 'lightvue/mixins';
