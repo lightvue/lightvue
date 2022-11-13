@@ -32,4 +32,5 @@ export default {
 @import './overwrite.scss';
 @import './examples.scss';
 @import '@/assets/styles/docsGlobal.scss';
+@import url('https://unpkg.com/light-icons/dist/light-icon.css');
 </style>

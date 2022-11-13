@@ -11,8 +11,11 @@
   </div>
 </template>
 
+<style>
+@import url('https://unpkg.com/light-icons/dist/light-icon.css');
+</style>
+
 <script>
-import 'light-icons/dist/light-icon.css';
 import '@/assets/styles/lightvue.scss';
 
 export default {
