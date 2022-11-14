@@ -69,7 +69,10 @@ export default {
     fullMonthName: Boolean,
     disabledDates: Object,
     highlighted: Object,
-    placeholder: String,
+    placeholder: {
+      type: String,
+      default: 'Select a date',
+    },
     inline: Boolean,
     calendarClass: [String, Object, Array],
     inputClass: [String, Object, Array],
