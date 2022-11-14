@@ -11,7 +11,7 @@
         <lv-toggle-switch v-model="allOptions.disabled" label="Disable" /> <br />
         <lv-toggle-switch v-model="allOptions.calendarButton" label="calendar button" /> <br />
         <lv-toggle-switch v-model="allOptions.mondayFirst" label="monday first" /> <br />
-        <lv-toggle-switch v-model="allOptions.inline" label="inline" /> <br />
+        <!-- <lv-toggle-switch v-model="allOptions.inline" label="inline" /> <br /> -->
         <lv-toggle-switch v-model="allOptions.typeable" label="typeable" /> <br />
 
         <br />
