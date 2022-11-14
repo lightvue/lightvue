@@ -46,7 +46,12 @@ export default {
         {
           title: 'Basic Usage',
           file: 'date-picker/DatePickerDemo',
-          description: 'Date Picker',
+          description: 'The lightvue datepicker is both compatible with vue 2 and vue3',
+        },
+        {
+          title: 'With Different Format',
+          file: 'date-picker/InlineDatePickerDemo',
+          description: 'The formats for <span>LvDatePicker</span> can be customizable through <span>format</span> prop in the following way:',
         },
         //   {
         //     title: 'Without input',
