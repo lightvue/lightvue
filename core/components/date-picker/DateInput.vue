@@ -7,8 +7,8 @@
       <!-- <span v-if="!calendarButtonIcon">&hellip;</span> -->
     </span>
     <!-- Input -->
-    <LvInput v-else :bottom-bar="true" :placeholder="placeholder" ref="colorPickerInput" @click="toggleCalendar" v-model="formattedValue" v-bind="$attrs" @focus="showCalendar" aria:haspopup="true" aria-controls="dateinput_overlay_panel" :type="inline ? 'hidden' : 'text'" :readonly="!typeable" :class="computedInputClass" :name="name" :ref="refName" :id="id" @keyup="parseTypedDate" autocomplete="off" @blur="inputBlurred" :disabled="disabled">
-      <template #append> <LvButton @click="toggleCalendar" @focus="showCalendar" icon="light-icon-calendar" class="lv--primary" /> </template>
+    <LvInput v-if="!calendarButton && !inline" icon-right="light-icon-calendar" :bottom-bar="true" :placeholder="placeholder" ref="colorPickerInput" @click="toggleCalendar" v-model="formattedValue" v-bind="$attrs" @focus="showCalendar" aria:haspopup="true" aria-controls="dateinput_overlay_panel" :type="inline ? 'hidden' : 'text'" :readonly="!typeable" :class="computedInputClass" :name="name" :ref="refName" :id="id" @keyup="parseTypedDate" autocomplete="off" @blur="inputBlurred" :disabled="disabled">
+      <!-- <template #append><i class="light-icon-calendar" @click="toggleCalendar" @focus="showCalendar"></i></template> -->
     </LvInput>
     <!-- <input :type="inline ? 'hidden' : 'text'" :class="computedInputClass" :name="name" :ref="refName" :id="id" :value="formattedValue" :open-date="openDate" :placeholder="placeholder" :clear-button="clearButton" :disabled="disabled" :required="required" :readonly="!typeable" @click="showCalendar" @keyup="parseTypedDate" @blur="inputBlurred" autocomplete="off" /> -->
     <!-- Clear Button -->
@@ -47,7 +47,7 @@ export default {
     disabled: Boolean,
     required: Boolean,
     typeable: Boolean,
-    bootstrapStyling: Boolean,
+    // bootstrapStyling: Boolean,
     useUtc: Boolean,
   },
   components: {
@@ -79,12 +79,12 @@ export default {
       },
     },
     computedInputClass() {
-      if (this.bootstrapStyling) {
-        if (typeof this.inputClass === 'string') {
-          return [this.inputClass, 'form-control'].join(' ');
-        }
-        return { 'form-control': true, ...this.inputClass };
-      }
+      // if (this.bootstrapStyling) {
+      //   if (typeof this.inputClass === 'string') {
+      //     return [this.inputClass, 'form-control'].join(' ');
+      //   }
+      //   return { 'form-control': true, ...this.inputClass };
+      // }
       return this.inputClass;
     },
   },
