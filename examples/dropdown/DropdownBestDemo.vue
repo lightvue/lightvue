@@ -11,6 +11,7 @@
         <lv-toggle-switch v-model="allOptions['floating-label']" label="Floating label" /> <br />
         <lv-toggle-switch v-model="allOptions.rounded" label="rounded" /> <br />
         <lv-toggle-switch v-model="allOptions['bottom-bar']" label="Bottom bar" /> <br />
+        <lv-toggle-switch v-model="allOptions.multiSelect" label="Multi Select" /> <br />
 
         <br />
 
@@ -72,6 +73,7 @@ export default {
         disabled: false,
         editable: false,
         filter: true,
+        multiSelect: false,
         'floating-label': false,
         rounded: false,
         'bottom-bar': true,
