@@ -50,6 +50,10 @@ export default {
       type: String,
       default: '200px',
     },
+    multiSelect: {
+      type: Boolean,
+      default: false,
+    },
     filter: Boolean,
     filterPlaceholder: String,
     filterLocale: String,
@@ -103,7 +107,8 @@ export default {
 
       if (this.modelValue != null && this.options) {
         for (let option of this.options) {
-          if (ObjectUtils.equals(this.modelValue, this.getOptionValue(option), this.equalityKey)) {
+          let dval = this.multiSelect ? this.modelValue[this.modelValue.length - 1] : this.modelValue;
+          if (ObjectUtils.equals(dval, this.getOptionValue(option), this.equalityKey)) {
             selectedOption = option;
             break;
           }
@@ -116,7 +121,8 @@ export default {
       let selectedOptionIndex = -1;
       if (this.modelValue != null && this.visibleOptions) {
         for (let i = 0; i < this.visibleOptions.length; i++) {
-          if (ObjectUtils.equals(this.modelValue, this.getOptionValue(this.visibleOptions[i]), this.equalityKey)) {
+          let dval = this.multiSelect ? this.modelValue[this.modelValue.length - 1] : this.modelValue;
+          if (ObjectUtils.equals(dval, this.getOptionValue(this.visibleOptions[i]), this.equalityKey)) {
             selectedOptionIndex = i;
             break;
           }
@@ -268,7 +274,30 @@ export default {
     },
     onOptionSelect(event, option) {
       let value = this.getOptionValue(option);
-      this.updateModel(event, value);
+      // let newValue = ;
+      let newValue = this.modelValue instanceof Array ? [...this.modelValue] : [];
+      if (this.multiSelect) {
+        if (!this.isOptionSelected(option)) {
+          newValue.push(value);
+          // return;
+          // console.log({ newValue });
+        } else {
+          console.log({ newValue });
+          // remove from array
+          // if (option instanceof Object && !this.optionValue) {
+          let oldIndex = newValue.findIndex(item => {
+            // console.log({ item, value });
+            return ObjectUtils.equals(item, value);
+          });
+          newValue.splice(oldIndex, 1);
+          console.log({ newValue });
+          // } else {
+          //   newValue.splice(newValue.indexOf(value), 1);
+          // }
+        }
+        // console.log({ newValue, modeal: this.value });
+      }
+      this.updateModel(event, this.multiSelect ? newValue : value);
       this.$refs.focusInput.focus();
       if (this.$refs.mainInput) {
         this.$refs.mainInput.$el.querySelector('input').focus();
@@ -461,9 +490,9 @@ export default {
     // }
   },
   computed: {
-    modelValue() {
-      return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
-    },
+    // modelValue() {
+    //   return this.$attrs.modelValue ? this.$attrs.modelValue : this.value;
+    // },
     visibleOptions() {
       if (this.filterValue && this.filterValue.trim().length > 0) return this.options.filter(option => this.getOptionLabel(option).toLocaleLowerCase(this.filterLocale).indexOf(this.filterValue.toLocaleLowerCase(this.filterLocale)) > -1);
       else return this.options;
@@ -496,7 +525,13 @@ export default {
     editableInputValue() {
       let selectedOption = this.getSelectedOption();
       if (selectedOption) return this.getOptionLabel(selectedOption);
-      else return this.modelValue;
+      else {
+        if (this.multiSelect) {
+          console.log(this.modelValue);
+          return '';
+        }
+        return this.modelValue;
+      }
     },
   },
   directives: {
