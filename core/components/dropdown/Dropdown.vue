@@ -107,7 +107,8 @@ export default {
 
       if (this.modelValue != null && this.options) {
         for (let option of this.options) {
-          let dval = this.multiSelect ? this.modelValue[this.modelValue.length - 1] : this.modelValue;
+          let dval = Array.isArray(this.modelValue) ? this.modelValue[this.modelValue.length - 1] : this.modelValue;
+          // let dval = this.multiSelect ? this.modelValue[this.modelValue.length - 1] : this.modelValue;
           if (ObjectUtils.equals(dval, this.getOptionValue(option), this.equalityKey)) {
             selectedOption = option;
             break;
@@ -121,7 +122,8 @@ export default {
       let selectedOptionIndex = -1;
       if (this.modelValue != null && this.visibleOptions) {
         for (let i = 0; i < this.visibleOptions.length; i++) {
-          let dval = this.multiSelect ? this.modelValue[this.modelValue.length - 1] : this.modelValue;
+          let dval = Array.isArray(this.modelValue) ? this.modelValue[this.modelValue.length - 1] : this.modelValue;
+          // let dval = this.multiSelect ? this.modelValue[this.modelValue.length - 1] : this.modelValue;
           if (ObjectUtils.equals(dval, this.getOptionValue(this.visibleOptions[i]), this.equalityKey)) {
             selectedOptionIndex = i;
             break;
@@ -282,7 +284,6 @@ export default {
           // return;
           // console.log({ newValue });
         } else {
-          console.log({ newValue });
           // remove from array
           // if (option instanceof Object && !this.optionValue) {
           let oldIndex = newValue.findIndex(item => {
@@ -290,7 +291,6 @@ export default {
             return ObjectUtils.equals(item, value);
           });
           newValue.splice(oldIndex, 1);
-          console.log({ newValue });
           // } else {
           //   newValue.splice(newValue.indexOf(value), 1);
           // }
