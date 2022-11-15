@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lv-dropdown v-model="selectedCity1" :options="cities" optionLabel="name" placeholder="Select a City" clearable />
+    <lv-dropdown v-model="selectedCity1" :multiSelect="true" :options="cities" optionLabel="name" placeholder="Select a City" clearable />
   </div>
 </template>
 
