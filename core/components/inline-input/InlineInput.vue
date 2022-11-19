@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-input__wrapper" :contenteditable="!readOnly" @input="onUpdateValue($event)" @focus="onTextFocus" @blur="removeTextFocus" v-html="localValue" @keydown="$emit('keydown', $event)"></div>
+  <div class="inline-input__wrapper" :contenteditable="!readOnly" @input="onUpdateValue($event)" @focus="onTextFocus" @blur="removeTextFocus" v-html="localValue" @keydown.stop="" :placeholder="placeholder"></div>
 </template>
 
 <script>
@@ -34,6 +34,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    placeholder: {
+      type: String,
+      default: '',
+    },
   },
   // created() {
   //   this.$refs.editable.innerText = this.modelValue;
@@ -46,7 +50,7 @@ export default {
   watch: {
     modelValue: {
       handler: function (newValue) {
-        console.log(newValue, this.localValue);
+        // console.log(newValue, this.localValue);
         if (newValue !== this.localValue) {
           this.localValue = newValue;
         }
@@ -103,5 +107,13 @@ export default {
 .inline-input__wrapper[contenteditable='true'] {
   outline: none !important;
   cursor: text;
+  display: inline-block;
+  &:empty {
+    &:before {
+      content: attr(placeholder);
+      color: rgba(0, 0, 0, 0.3);
+      font-style: italic;
+    }
+  }
 }
 </style>

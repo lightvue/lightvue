@@ -7,7 +7,7 @@
         <Lv-colorpicker bottomBar v-model="allOptions.background" label="Background Color" /> <br /><br />
         <lv-input bottomBar v-model="allOptions.padding" label="Padding (in px)" /> <br />
         <lv-input bottomBar v-model="allOptions.borderRadius" label="Border Radius (in px)" /> <br />
-        <!-- <lv-input bottomBar v-model="allOptions.margin" label="Margin (in px)" /> <br /> -->
+        <lv-input bottomBar v-model="allOptions.placeholder" label="Placeholder" /> <br />
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -37,8 +37,9 @@ export default {
         background: 'rgba(0, 0, 0, 0.02)',
         color: '#566d79',
         borderRadius: '4px',
+        placeholder: 'Type here',
       },
-      stringProps: ['borderRadius', 'value', 'background', 'padding', 'margin', 'color'],
+      stringProps: ['borderRadius', 'value', 'background', 'padding', 'margin', 'color', 'placeholder'],
     };
   },
   computed: {
