@@ -1,5 +1,5 @@
 .#{$light-checkbox--class-name}.--default.--thick-outline {
-  .state label {
+  .state .checkbox-label {
     &:before,
     &:after {
       border-width: calc(1em / 7);

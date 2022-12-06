@@ -49,7 +49,7 @@
   }
 
   .state {
-    label {
+    .checkbox-label {
       position: initial;
       display: inline-block;
       font-weight: normal;
@@ -69,7 +69,7 @@
         z-index: $light-checkbox--z-index-back;
         position: absolute;
         left: 0;
-        top: $light-checkbox-top-offset;
+        // top: $light-checkbox-top-offset;
         background-color: transparent;
       }
 

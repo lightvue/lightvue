@@ -1,5 +1,5 @@
 .#{$light-checkbox--class-name}.--radio {
-  .state label {
+  .state .checkbox-label {
     &:before,
     &:after {
       border-radius: 100%;

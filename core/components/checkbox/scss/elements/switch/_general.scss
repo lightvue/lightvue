@@ -1,6 +1,6 @@
 .#{$light-checkbox--class-name}.p-switch {
-  input{
-    min-width:2em;
+  input {
+    min-width: 2em;
   }
   .state {
     position: relative;
@@ -19,7 +19,7 @@
       transition: all 0.5s ease;
     }
 
-    label {
+    .checkbox-label {
       text-indent: $light-checkbox--label-text-offset-switch;
 
       &:before,
@@ -42,11 +42,11 @@
       border-color: $light-checkbox--color-dark;
     }
 
-    label:before {
+    .checkbox-label:before {
       opacity: 0;
     }
 
-    label:after {
+    .checkbox-label:after {
       background-color: $light-checkbox--color-dark !important;
       left: 1em;
     }

@@ -1,6 +1,9 @@
 <template>
   <div class="lv-demo_layout">
-    <lv-checkbox name="check" color="success" v-model="checked" value="Hello">Basic</lv-checkbox>
+    <lv-checkbox name="check" color="success" v-model="checked" value="Hello"
+      >Basic I'm smart I'm smart I'm smart <br />
+      I'm smartI'm smartI'm smartI'm smart</lv-checkbox
+    >
     <lv-checkbox name="check" color="warning" v-model="checked" rounded value="World">Rounded </lv-checkbox>
     <lv-checkbox name="check" color="primary" v-model="checked" rounded filled>Filled </lv-checkbox>
     <lv-checkbox name="check" color="info" v-model="checked" rounded thick>Thick </lv-checkbox>

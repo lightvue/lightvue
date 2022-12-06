@@ -3,9 +3,18 @@
     <input ref="input" :type="_type" :name="name" :checked="shouldBeChecked" :value="value" @change="updateInput" :disabled="_disabled" :required="_required" />
     <div :class="onClasses">
       <slot name="extra"></slot>
-      <label>
-        <slot></slot>
+      <!-- <div> -->
+      <!-- <span class="span-checkbox">{}</span> -->
+      <label style="display: flex; gap: 8px">
+        <div class="checkbox-label"></div>
+        <div style="font-weight: 400">
+          <slot></slot>
+        </div>
       </label>
+      <!-- </div> -->
+      <!-- <label>
+        <slot></slot>
+      </label> -->
     </div>
     <div v-if="_toggle" :class="offClasses">
       <slot name="off-extra"></slot>

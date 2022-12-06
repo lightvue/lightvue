@@ -1,6 +1,6 @@
 .#{$light-checkbox--class-name}.--no-outline {
-  input:checked ~ .state label,
-  &.--toggle .state label {
+  input:checked ~ .state .checkbox-label,
+  &.--toggle .state .checkbox-label {
     &:before {
       content: none;
     }

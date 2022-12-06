@@ -1,13 +1,13 @@
 .#{$light-checkbox--class-name}.--animate-smooth {
-  label:before,
-  label:after,
+  .checkbox-label:before,
+  .checkbox-label:after,
   .icon,
   .svg {
     transition: all 0.5s ease;
   }
 
   input:checked + .state {
-    label:after {
+    .checkbox-label:after {
       transition: all 0.3s ease;
     }
 
@@ -19,13 +19,13 @@
   }
 
   &.--default input:checked + .state {
-    label:after {
+    .checkbox-label:after {
       animation: zoom 0.2s ease;
     }
   }
 
   &.--no-outline input:checked + .state {
-    label:before {
+    .checkbox-label:before {
       content: '';
       transform: scale(0);
       transition: all 0.5s ease;
@@ -68,13 +68,13 @@
     .icon,
     .svg,
     img,
-    label:before,
-    label:after {
-      animation: rotate 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    .checkbox-label:before,
+    .checkbox-label:after {
+      animation: rotate 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       opacity: 1;
     }
 
-    label:before {
+    .checkbox-label:before {
       border-color: transparent;
     }
   }
@@ -82,7 +82,7 @@
 
 .#{$light-checkbox--class-name}.--animate-pulse:not(.p-switch) {
   input:checked ~ .state {
-    label:before {
+    .checkbox-label:before {
       animation: pulse 1s;
     }
   }
