@@ -1,8 +1,8 @@
 @media print {
   .#{$light-checkbox--class-name} {
     .state:before,
-    .state .checkbox-label:before,
-    .state .checkbox-label:after,
+    .state .checkbox-symbol:before,
+    .state .checkbox-symbol:after,
     .state .icon {
       color-adjust: exact;
       /* stylelint-disable */

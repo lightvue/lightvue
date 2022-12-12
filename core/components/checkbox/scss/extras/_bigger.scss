@@ -1,6 +1,6 @@
 .#{$light-checkbox--class-name}.--bigger {
-  .checkbox-label:before,
-  .checkbox-label:after,
+  .checkbox-symbol:before,
+  .checkbox-symbol:after,
   .icon,
   .svg,
   .img {
@@ -8,7 +8,7 @@
     top: calc((0% - (100% - 1em)) - 35%) !important;
   }
 
-  .checkbox-label {
+  .checkbox-symbol {
     text-indent: 1.7em;
   }
 }

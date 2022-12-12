@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lv-checkbox type="radio" name="check" color="success" v-model="radio" value="Hello">Basic checkbox-label checkbox-labelcheckbox-labelcheckbox-labelcheckbox-labelcheckbox-label</lv-checkbox>
+    <lv-checkbox type="radio" name="check" color="success" v-model="radio" value="Hello">Basic checkbox-symbol checkbox-symbolcheckbox-symbolcheckbox-symbolcheckbox-symbolcheckbox-symbol</lv-checkbox>
     <lv-checkbox type="radio" name="check" color="warning" v-model="radio" value="World">Rounded </lv-checkbox>
     <lv-checkbox type="radio" name="check" color="primary" v-model="radio">Filled </lv-checkbox>
     <lv-checkbox type="radio" name="check" color="info" v-model="radio" thick>Thick </lv-checkbox>

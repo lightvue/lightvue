@@ -19,7 +19,7 @@
       transition: all 0.5s ease;
     }
 
-    .checkbox-label {
+    .checkbox-symbol {
       text-indent: $light-checkbox--label-text-offset-switch;
 
       &:before,
@@ -42,11 +42,11 @@
       border-color: $light-checkbox--color-dark;
     }
 
-    .checkbox-label:before {
+    .checkbox-symbol:before {
       opacity: 0;
     }
 
-    .checkbox-label:after {
+    .checkbox-symbol:after {
       background-color: $light-checkbox--color-dark !important;
       left: 1em;
     }

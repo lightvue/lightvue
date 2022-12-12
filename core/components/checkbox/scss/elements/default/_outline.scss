@@ -1,11 +1,11 @@
 .#{$light-checkbox--class-name}.--default {
-  .state .checkbox-label {
+  .state .checkbox-symbol {
     &:after {
       transform: scale(0.6);
     }
   }
 
-  input:checked ~ .state .checkbox-label {
+  input:checked ~ .state .checkbox-symbol {
     &:after {
       background-color: $light-checkbox--color-default !important;
     }
