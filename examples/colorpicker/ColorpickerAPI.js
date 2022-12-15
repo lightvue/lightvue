@@ -24,6 +24,12 @@ const ColorpickerAPI = {
       default: 'false',
       description: 'Displays color picker without input',
     },
+    {
+      name: 'eyeDropper',
+      type: 'Boolean',
+      default: 'true',
+      description: 'It can be opened and used by the user to select colors from the screen.',
+    },
     //     {
     //         name: 'inputId',
     //         type: 'String',

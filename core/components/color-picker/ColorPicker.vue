@@ -1,15 +1,25 @@
 <template>
   <div class="lv-colorpicker-wrapper">
-    <div class="lv-colorpicker__colorblock-wrap" v-if="withoutInput" @click="toggleColorBlockOverlay">
-      <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: localValue }"></div>
-      <checkboard grey="#607c8a" />
-    </div>
+    <template v-if="withoutInput">
+      <div class="lv-colorpicker__colorblock-wrap" @click="toggleColorBlockOverlay">
+        <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: localValue }"></div>
+        <checkboard grey="#607c8a" />
+      </div>
+
+      <div class="lv-colorpicker__colorblock-wrap" v-if="eyeDropper">
+        <EyeDropper icon-size="30px" @color-selected="localValue = $event" />
+      </div>
+    </template>
 
     <LvInput v-else :label="label" ref="colorPickerInput" v-model="localValue" v-bind="$attrs" @focus="toggleColorpickerOverlay" aria:haspopup="true" aria-controls="colorpicker_overlay_panel">
       <template #append>
         <div class="lv-colorpicker__colorblock-wrap" @click="toggleColorpickerOverlay">
           <div class="lv-colorpicker__colorblock" :style="{ backgroundColor: localValue }"></div>
           <checkboard grey="#607c8a" />
+        </div>
+
+        <div class="lv-colorpicker__colorblock-wrap" v-if="eyeDropper">
+          <EyeDropper icon-size="30px" @color-selected="localValue = $event" />
         </div>
       </template>
     </LvInput>
@@ -25,6 +35,7 @@ import ColorpickerCore from './core/ColorpickerCore.vue';
 import Checkboard from './core/Checkboard.vue';
 import LvOverlayPanel from 'lightvue/overlay-panel';
 import LvInput from 'lightvue/input';
+import EyeDropper from './core/EyeDropper.vue';
 import { trueValueMixin } from 'lightvue/mixins';
 export default {
   name: 'LvColorpicker',
@@ -44,6 +55,10 @@ export default {
     colors: {
       type: Array,
       default: () => ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#795548'],
+    },
+    eyeDropper: {
+      type: Boolean,
+      default: true,
     },
   },
   mixins: [trueValueMixin],
@@ -67,6 +82,7 @@ export default {
     ColorpickerCore: ColorpickerCore,
     LvInput: LvInput,
     Checkboard,
+    EyeDropper,
   },
   computed: {
     // modelValue() {

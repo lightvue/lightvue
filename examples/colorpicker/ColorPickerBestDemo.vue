@@ -5,6 +5,7 @@
 
       <template #props>
         <lv-toggle-switch v-model="allOptions.hidePalette" label="Hide Palette" /> <br />
+        <lv-toggle-switch v-model="allOptions.eyeDropper" label="Toggle EyeDropper" /> <br />
         <lv-toggle-switch v-model="allOptions.withoutInput" label="Without Input" /> <br />
         <lv-toggle-switch v-model="allOptions.clearable" label="Clearable" /> <br />
         <lv-toggle-switch v-model="allOptions.bottomBar" label="Bottom Bar" /> <br />
@@ -43,6 +44,7 @@ export default {
         value: '#38b2ac',
 
         hidePalette: false,
+        eyeDropper: true,
         withoutInput: false,
         clearable: true,
         bottomBar: true,
