@@ -1,28 +1,28 @@
-const CheckBoxGroup = {
+const RadioGroupAPI = {
   props: [
     {
       name: 'options',
       type: 'Array',
       default: '',
-      description: 'Specifies the options in the checkbox',
+      description: 'Specifies the options in the radio group',
     },
     {
       name: 'optionLabel',
       type: 'String',
       default: '',
-      description: 'Specifies the options label in the checkbox',
+      description: 'Specifies the options label in the radio group',
     },
     {
       name: 'optionsValue',
       type: 'String',
       default: '',
-      description: 'Specifies the options value of the checkbox',
+      description: 'Specifies the options value of the radio group',
     },
     {
       name: 'name',
       type: 'String',
       default: '',
-      description: 'Configures the name of the checbox option',
+      description: 'Configures the name of the radio option group',
     },
   ],
 
@@ -45,4 +45,4 @@ const CheckBoxGroup = {
     },
   ],
 };
-export default CheckBoxGroup;
+export default RadioGroupAPI;
