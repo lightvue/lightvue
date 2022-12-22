@@ -144,7 +144,7 @@ pre[class*="language-"]:after {
 .token.url,
 .token.variable {
 	color: #a67f59;
-	background: rgba(255, 255, 255, 0.5);
+	/* background: rgba(255, 255, 255, 0.5); */
 }
 
 .token.atrule,
@@ -162,7 +162,7 @@ pre[class*="language-"]:after {
 .language-css .token.string,
 .style .token.string {
 	color: #a67f59;
-	background: rgba(255, 255, 255, 0.5);
+	/* background: rgba(255, 255, 255, 0.5); */
 }
 
 .token.important {
