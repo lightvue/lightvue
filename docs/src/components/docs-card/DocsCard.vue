@@ -141,7 +141,7 @@ $primary-color: #38b2ac;
   }
 }
 .docs-card__body {
-  background: #ffffff;
+  background: var(--background-color);
 
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
