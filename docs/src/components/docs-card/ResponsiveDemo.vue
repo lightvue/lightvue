@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="responsive-demo__wrap" :class="{ '--full-width': paneSize === 100 && hideResizer, '--rounded': roundedCard }">
     <Splitpanes @resize="setPane($event[0].size)" @pane-maximize="setPane(100 - $event.size)">
       <Pane :size="paneSize" :min-size="minSize" class="responsive-area" :class="{ '--allow-overflow': overflow }">
         <slot>
@@ -44,6 +44,14 @@ export default {
     },
     toggleDeviceClicked: {
       type: Number,
+    },
+    hideResizer: {
+      type: Boolean,
+      default: false,
+    },
+    roundedCard: {
+      type: Boolean,
+      default: false,
     },
   },
   data: () => ({
@@ -104,6 +112,7 @@ export default {
           } else {
             // set to mobile modde
             this.setPane((this.minWidth / this.$el.clientWidth) * 100);
+
             this.direction = 'right';
           }
           break;
@@ -135,6 +144,14 @@ export default {
   width: 0px; /* Initial default width */
   box-shadow: inset 0px 0px 20px 2px rgba(0, 0, 0, 0.25);
 }
+.responsive-demo__wrap.--rounded {
+  .responsive-area {
+    border-radius: 10px;
+  }
+  .responsive-area__extra {
+    border-radius: 0px 10px 10px 0px;
+  }
+}
 .extra--resize-icon {
   position: absolute;
   top: 50%;
@@ -145,14 +162,22 @@ export default {
   pointer-events: none;
   color: #4b5563;
 }
+
 .splitpanes__splitter {
   width: 16px !important;
   background-color: #edf2f6 !important;
   cursor: e-resize;
   transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: #d6dfe8 !important;
+  }
 }
-.splitpanes__splitter:hover {
-  background-color: #d6dfe8 !important;
+
+.responsive-demo__wrap.--full-width {
+  .splitpanes__splitter,
+  .extra--resize-icon {
+    display: none;
+  }
 }
 .responsive-dimensions {
   color: #ffffff;

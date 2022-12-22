@@ -10,7 +10,7 @@ const ButtonAPI = {
       name: 'iconRight',
       type: 'String',
       default: '',
-      description: 'Allows users to have an icon on right.',
+      description: 'Allows user to have an icon on right.',
     },
     {
       name: 'label',

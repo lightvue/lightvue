@@ -42,6 +42,13 @@ export default {
   position: absolute;
   top: 16px;
   right: 16px;
+  z-index: 2;
+
+  // position: sticky;
+  // top: 16px;
+  // display: flex;
+  // justify-content: flex-end;
+  // padding-right: 16px;
 }
 
 .copy-btn i {

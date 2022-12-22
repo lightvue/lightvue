@@ -8,32 +8,28 @@
         <lv-toggle-switch v-model="allOptions.roundedCorners" label="Rounded corners" /><br />
         <lv-toggle-switch v-model="allOptions.rtl" label="Right to left layout" /><br />
         <br />
-        <lv-number v-model="allOptions.increment" label="Increment" step="0.5" /> <br />
+        <lv-number v-model="allOptions.increment" label="Increment" :step="0.1" /> <br />
         <lv-number v-model="allOptions.fixedPoints" label="Fixed point" /> <br />
         <lv-number v-model="allOptions.maxRating" label="Max rating" /> <br />
 
-        <span>Star size</span>
-        <br />
-        <br />
+        <div>Star size</div>
+
         <LvSlider v-model="allOptions.starSize" :min="0" :max="100" sliderColor="#607C8A" />
-        <br />
+        <br /><br />
 
-        <span>Padding</span>
-        <br />
-        <br />
+        <div>Padding</div>
+
         <LvSlider v-model="allOptions.padding" :min="0" :max="25" sliderColor="#607C8A" />
-        <br />
+        <br /><br />
 
-        <span>Border width</span>
-        <br />
-        <br />
+        <div>Border width</div>
         <LvSlider v-model="allOptions.borderWidth" :min="0" :max="10" sliderColor="#607C8A" />
-        <br />
+        <br /><br />
 
         <lv-colorpicker v-model="allOptions.activeColor" label="Active color" /> <br />
         <lv-colorpicker v-model="allOptions.inactiveColor" label="Inactive color" /> <br />
 
-        <lv-number v-model="allOptions.glow" label="Glow" step="5" :min="0" :max="20" /> <br />
+        <lv-number v-model="allOptions.glow" label="Glow" :step="1" :min="0" :max="20" /> <br />
         <lv-colorpicker v-model="allOptions.glowColor" label="Glow color" /> <br />
       </template>
       <template #code>
@@ -55,7 +51,7 @@ import LvRating from 'lightvue/rating';
 import LvToggleSwitch from 'lightvue/toggle-switch';
 import LvNumber from 'lightvue/number';
 import LvColorpicker from 'lightvue/color-picker';
-import LvSlider from 'lightvue/slider';
+import LvSlider from 'lightvue/range-slider';
 
 export default {
   components: {
@@ -76,11 +72,11 @@ export default {
       allOptions: {
         activeColor: '#38b2ac',
         borderWidth: 0,
-        fixedPoints: 0,
+        fixedPoints: 2,
         glow: 0,
         glowColor: '#39b1ac',
         inactiveColor: '#d8d8d8',
-        increment: 1,
+        increment: 0.1,
         maxRating: 5,
         padding: 0,
         readOnly: false,

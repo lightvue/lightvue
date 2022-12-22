@@ -25,6 +25,8 @@ export default {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 .--mr {
   margin-left: 4px;

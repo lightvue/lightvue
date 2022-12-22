@@ -8,12 +8,21 @@
       </a>
     </div> -->
     <div class="app-footer__text">
-      Copyright 2021 © LightVue. All rights reserved. <br /><br />
+      Copyright {{ currentYear }} © LightVue. All rights reserved. <br /><br />
       <!-- <b>Improve this page on <i class="light-icon-brand-github"></i> GitHub</b> <br /> -->
     </div>
   </div>
 </template>
-
+<script>
+import { DateUtils } from 'lightvue/utils';
+export default {
+  data() {
+    return {
+      currentYear: DateUtils?.getCurrentYear() || 2022,
+    };
+  },
+};
+</script>
 <style lang="scss">
 .app-footer {
   padding: 0px 30px;

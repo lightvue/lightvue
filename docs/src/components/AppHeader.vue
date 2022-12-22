@@ -3,6 +3,20 @@
     <div class="header-items">
       <div class="header__logo-row">
         <i class="light-icon-align-left menu-icon" @click="$emit('toggle-drawer')"></i>
+        <AppDropdown>
+          <div class="dropdown-btn">
+            Vue {{ $lightvue && $lightvue.version === 3 ? '3.x' : '2.x' }}
+            <i class="light-icon-chevron-down"></i>
+          </div>
+          <div class="dropdown-content">
+            <a :href="`https://vue3.lightvue.org${$route.fullPath}`" :target="$lightvue && $lightvue.version === 3 ? '_self' : '_blank'">
+              <div class="dropdown-item">Vue 3.x</div>
+            </a>
+            <a :href="`https://lightvue.org${$route.fullPath}`" :target="$lightvue && $lightvue.version === 3 ? '_blank' : '_self'">
+              <div class="dropdown-item">Vue 2.x</div>
+            </a>
+          </div>
+        </AppDropdown>
       </div>
       <div class="search-row">
         <div class="search-bar">
@@ -159,6 +173,7 @@ export default {
   display: flex;
   margin: auto;
 }
+
 .search-bar {
   position: relative;
   margin: 0 auto;
@@ -170,7 +185,11 @@ export default {
   z-index: 100;
   transition: all 0.5s;
 }
-
+@media (max-width: 900px) {
+  .search-bar {
+    display: none;
+  }
+}
 .search-input {
   outline: none;
   width: 100%;
@@ -237,5 +256,9 @@ export default {
     width: calc(100% - 90px);
     left: 80px;
   }
+}
+
+.dropdown-content a {
+  color: #566d79;
 }
 </style>

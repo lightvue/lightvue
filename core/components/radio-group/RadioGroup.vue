@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lv-radio-group_wrap">
     <lv-check-box type="radio" @change="refresh($event, option)" v-bind="$attrs" v-for="(option, i) of options" :aria-label="getOptionLabel(option)" :key="getOptionRenderKey(option)" role="option" :aria-selected="isOptionSelected(option)" :checked="isOptionSelected(option)" :disabled="isOptionDisabled(option)" :value="getOptionValue(option)">
       <slot name="option" :option="option" :index="i">
         {{ getOptionLabel(option) }}
@@ -31,3 +31,8 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.lv-radio-group_wrap .lv-checkbox {
+  margin: 4px 1em 4px 2px;
+}
+</style>

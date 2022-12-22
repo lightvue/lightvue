@@ -117,6 +117,10 @@ export default {
           page_path: '/vue-components/input',
         },
         {
+          page_name: 'Inline Input',
+          page_path: '/vue-components/inline-input',
+        },
+        {
           page_name: 'Number',
           page_path: '/vue-components/number',
         },
@@ -253,7 +257,7 @@ $primary-color: #38b2ac;
   position: fixed;
   left: 0;
   height: 100vh;
-  overflow: auto;
+  // overflow: auto;
   width: 250px;
   -webkit-user-select: none;
   -moz-user-select: none;

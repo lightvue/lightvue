@@ -8,7 +8,7 @@
         <div class="hero-container__row">
           <div class="hero-container__content">
             <div class="hero-container__subtext">
-              The Emerging UI Component library<br />
+              The Emerging UI Component Library<br />
               <span style="font-size: 0.8em"> Designed for <span class="subtext-highlight">Vue 3.x</span> &amp; <span class="subtext-highlight">Vue 2.x </span> </span>
             </div>
           </div>
@@ -173,9 +173,20 @@ $text-color-secondary: #eeecec;
 }
 
 @media (max-width: 768px) {
+  .hero-container__pre .copy-btn__wrap {
+    display: none;
+  }
   .hero-section {
     .hero-wrapper {
       .hero-container__row {
+        padding: 0;
+        .hero-container__pre-wrap {
+          .hero-container__pre {
+            padding: 18px;
+            font-size: 16px;
+            justify-content: center;
+          }
+        }
         .hero-container__content {
           .hero-container__subtext {
             font-size: 1.5em;
@@ -221,8 +232,8 @@ $text-color-secondary: #eeecec;
 //--
 @media only screen and (max-width: 600px) {
   .hero-button {
-    padding: 0.6rem 1.2rem !important;
-    margin: 6px 5px !important;
+    /* padding: 0.6rem 1.2rem !important; */
+    margin: 6px 0px !important;
     width: 100vw !important;
   }
   .hero-section {
@@ -263,12 +274,17 @@ $text-color-secondary: #eeecec;
 <style>
 .hero-container__pre .copy-btn__tag {
   left: 150%;
-  right: unset;
+  right: unset !important;
   background-color: rgba(0, 0, 0, 0.15);
 }
 @media only screen and (max-width: 400px) {
-  .hero-container__pre .copy-btn__wrap {
-    display: none;
+  .hero-container__pre {
+    padding: 24px 24px;
+    width: 100%;
+  }
+  .hero-container .hero-container__row {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 </style>

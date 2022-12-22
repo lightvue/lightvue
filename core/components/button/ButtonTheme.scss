@@ -1,4 +1,3 @@
-
 .lv-button {
   // color: #ffffff;
   // background: var(--primary-color);
@@ -6,69 +5,88 @@
   background-color: var(--theme-color);
   // border: 1px solid var(--primary-color);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 12px 20px;
   font-size: 1rem;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, border-radius 0.3s;
   border-radius: 4px;
+
   &:enabled {
     &:hover {
       // background: #319795;
       background-color: var(--theme-color-dark);
-      color: #ffffff;
+      color: var(--theme-color-inverse);
       // border-color: #319795;
     }
+
     &:active {
       // background: var(--primary-color);
       background-color: var(--theme-color);
-      color: #ffffff;
+      color: var(--theme-color-inverse);
       // border-color: var(--primary-color);
     }
   }
+
   &:focus {
     outline: 0 none;
     outline-offset: 0;
     // box-shadow: 0 0 0 0.2rem var(--theme-color-light);
   }
+
   &.--size-sm {
     font-size: 0.875rem;
     padding: 0.4375rem 0.875rem;
+
     .lv-button__icon i {
       font-size: 0.875rem;
     }
   }
+
   &.--size-md {
     font-size: 1rem;
     padding: 0.5rem 1rem;
+
     .lv-button__icon i {
       font-size: 1rem;
     }
   }
+
   &.--size-lg {
     font-size: 1.25rem;
     padding: 0.625rem 1.25rem;
+
     .lv-button__icon i {
       font-size: 1.25rem;
     }
   }
+
   &.--size-xl {
     font-size: 1.5rem;
     padding: 0.75rem 1.5rem;
+
     .lv-button__icon i {
       font-size: 1.5rem;
     }
   }
+
   /* Raised Buttons */
   &.--raised {
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    // box-shadow: 0 2px 0px 0px var(--theme-color-dark); // need more finishing.
+    // &:hover {
+    //   background: var(--theme-color);
+    // }
   }
+
   // Buttons Hover Shadow
   &.--deep-shadow-hover:hover {
     box-shadow: 0 6px 16px -1px var(--theme-color);
   }
-  // Deep Shodow
+
+  // Deep Shadow
   &.--deep-shadow {
     box-shadow: 0 6px 16px -1px var(--theme-color);
   }
+
   // Raised buttons
   &.--raised.--deep-shadow-hover:hover {
     background-color: var(--theme-color) !important;
@@ -79,49 +97,96 @@
 
   &.--icon-only {
     width: 2.357rem;
+
     // padding: 0.5rem 0;
     &.--rounded {
       height: 2.357rem;
     }
   }
+
   &.--outlined {
     background-color: transparent;
     color: var(--theme-color);
     border: 1px solid;
+
     &:enabled {
       &:hover {
         background-color: var(--theme-color);
         border: 1px solid var(--theme-color);
       }
+
       &:active {
         background-color: var(--theme-color);
         border: 1px solid var(--theme-color);
       }
     }
+
+    &.lv--complementary {
+      color: var(--theme-color-inverse);
+
+      &:enabled {
+        &:hover {
+          background: rgba(33, 150, 243, 0.04);
+          color: var(--theme-color-inverse);
+          border-color: var(--theme-color-inverse);
+        }
+
+        &:active {
+          background: rgba(33, 150, 243, 0.04);
+          color: var(--theme-color-inverse);
+          border-color: var(--theme-color-inverse);
+        }
+      }
+    }
+
   }
+
   &.--text-button {
     background-color: transparent;
     color: var(--theme-color);
     border-color: transparent;
+
     &:enabled {
       &:hover {
         background: rgba(33, 150, 243, 0.04);
         color: var(--theme-color);
         border-color: transparent;
       }
+
       &:active {
         background: rgba(33, 150, 243, 0.04);
         color: var(--theme-color);
         border-color: var(--theme-color);
       }
     }
+
+    //Different behavior for complementary variant
+    &.lv--complementary {
+      color: var(--theme-color-inverse);
+
+      &:enabled {
+        &:hover {
+          background: rgba(33, 150, 243, 0.04);
+          color: var(--theme-color-inverse);
+          border-color: var(--theme-color-inverse);
+        }
+
+        &:active {
+          background: rgba(33, 150, 243, 0.04);
+          color: var(--theme-color-inverse);
+          border-color: var(--theme-color-inverse);
+        }
+      }
+    }
   }
+
   &.--link-button {
     color: var(--theme-color);
     background: transparent;
     border: transparent;
     text-decoration: none;
     font-weight: 500;
+
     &:enabled {
       &:hover {
         background: rgba(0, 0, 0, 0.05);
@@ -131,12 +196,14 @@
         // 	text-decoration: underline;
         // }
       }
+
       &:focus {
         background: rgba(0, 0, 0, 0.05);
         box-shadow: none;
         // box-shadow: 0 0 0 0.2rem #a6d5fa;
         border-color: transparent;
       }
+
       &:active {
         background: transparent;
         color: var(--theme-color);
@@ -147,15 +214,19 @@
 }
 
 .lv-fluid {
+
   /* can be provided in parent, to give 100% width */
   .lv-button {
     width: 100%;
   }
+
   .--icon-only {
     width: 2.357rem;
   }
+
   .lv-buttonset {
     display: flex;
+
     .lv-button {
       flex: 1;
     }

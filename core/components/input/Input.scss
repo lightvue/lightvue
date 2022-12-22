@@ -3,6 +3,7 @@
   display: flex;
   align-items: stretch; // to set equal height
   position: relative;
+
   .lv-input__element {
     flex-grow: 1;
     background-color: transparent;
@@ -11,9 +12,11 @@
     font-size: inherit;
     overflow: hidden;
   }
+
   .lv-input__default {
     flex-grow: 1;
   }
+
   .lv-input__icon {
     // padding: 0px 12px;
     display: flex;
@@ -23,32 +26,38 @@
     color: var(--input-field-text-color);
 
   }
+
   .lv-input__append {
     padding-left: var(--input-prepend-append-padding);
     margin-right: var(--input-prepend-append-margin);
     display: flex; // Streching the slot, but keeping center-aligned
+
     // align-items: center;
     .lv-input__icon {
       padding-right: var(--input-prepend-append-padding);
     }
   }
+
   .lv-input__prepend {
     padding-right: var(--input-prepend-append-padding);
     margin-left: var(--input-prepend-append-margin);
     display: flex; // Streching the slot, but keeping center-aligned
+
     // align-items: center;
     .lv-input__icon {
       padding-left: var(--input-prepend-append-padding);
     }
   }
 }
+
 .lv-input__label {
   margin-bottom: var(--input-label-margin-bottom);
   font-weight: 500;
   // text-transform: uppercase;
 }
+
 .lv-input__help {
-  margin-top:var(--input-help-margin-top);
+  margin-top: var(--input-help-margin-top);
   // margin-left: 8px;
   font-size: var(--input-help-font-size);
   opacity: var(--input-help-opacity);

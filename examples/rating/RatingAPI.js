@@ -73,12 +73,6 @@ const RatingAPI = {
       description: 'Configures if the rating is inline or not.',
     },
     {
-      name: 'textClass',
-      type: 'String',
-      default: '#999',
-      description: 'Configures the border color of the rating.',
-    },
-    {
       name: 'borderWidth',
       type: 'String',
       default: '0',

@@ -1,7 +1,7 @@
 <template>
-  <docs-card title="Getting Started" :responsive="false">
+  <docs-card title="Setup" description="You can  import a component and register it as a local and global vue component as follows:" :showCardActions="false" :responsive="false">
     <div class="getting-started">
-      <div class="docs-step">
+      <div style="padding-top: 8px">
         <code-highlight lang="javascript">
           <pre>
 // import the component
