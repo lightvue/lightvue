@@ -209,13 +209,12 @@ export default {
 
 <style>
 .vc-chrome {
-  background: #fff;
   border-radius: 2px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.3);
   box-sizing: initial;
   width: 225px;
   font-family: Menlo;
-  background-color: #fff;
+  background-color: var(--input-field-background-color);;
 }
 .vc-chrome-controls {
   display: flex;
@@ -310,7 +309,7 @@ export default {
 }
 .vc-chrome-body {
   padding: 16px 16px 12px;
-  background-color: #fff;
+  background-color: var(--input-field-background-color);
 }
 .vc-chrome-saturation-wrap {
   width: 100%;
@@ -325,19 +324,20 @@ export default {
 }
 .vc-chrome-fields .vc-input__input {
   font-size: 11px;
-  color: #333;
+  color: var(--text-color);
   width: 100%;
   border-radius: 2px;
   border: none;
   box-shadow: inset 0 0 0 1px #dadada;
   height: 21px;
   text-align: center;
+  background-color: var(--background-color);
 }
 .vc-chrome-fields .vc-input__label {
   text-transform: uppercase;
   font-size: 11px;
   line-height: 11px;
-  color: #969696;
+  color: var(--text-color);
   text-align: center;
   display: block;
   margin-top: 12px;
@@ -354,10 +354,11 @@ export default {
   margin-bottom: 4px;
 }
 .palette-container {
-  border-top: 1px solid rgba(100, 100, 100, 0.4);
+  border-top: 1px solid var(--input-field-background-color);
   padding: 8px 4px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  background-color: var(--input-field-background-color);
 }
 </style>

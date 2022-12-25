@@ -154,7 +154,6 @@ export default {
   max-height: 60vh;
   background: var(--background-color);
   /* padding: 20px; */
-  transition: all 0.2s ease-in-out;
   border-left: 2px solid var(--lightGray);
   border-radius: 0px 0px 10px 0px;
 }
@@ -231,7 +230,6 @@ export default {
     height: 36px;
     width: 36px;
     cursor: pointer;
-    transition: 0.5s all ease-out;
     /* font-size: 24px; */
     &.--active {
       color: #687f8b;

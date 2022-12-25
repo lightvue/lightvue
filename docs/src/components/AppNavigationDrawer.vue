@@ -251,7 +251,7 @@ export default {
 
 <style scoped lang="scss">
 $bg-color: #133a56;
-$primary-color: #38b2ac;
+$primary-color: var(--primary);
 
 .sidebar {
   position: fixed;
