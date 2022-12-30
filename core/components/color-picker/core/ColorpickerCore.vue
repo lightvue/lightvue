@@ -62,8 +62,9 @@
         <div class="vc-chrome-toggle-btn" role="button" aria-label="Change another color definition" @click="toggleViews">
           <div class="vc-chrome-toggle-icon">
             <svg style="width: 24px; height: 24px" viewBox="0 0 24 24" @mouseover="showHighlight" @mouseenter="showHighlight" @mouseout="hideHighlight">
-              <path fill="#333" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" />
+              <path fill="var(--text-color)" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" />
             </svg>
+            <!-- fill="#fff" -->
           </div>
           <div class="vc-chrome-toggle-icon-highlight" v-show="highlight"></div>
         </div>
@@ -269,7 +270,7 @@ export default {
   position: absolute;
   width: 24px;
   height: 28px;
-  background: #eee;
+  background: var(--background-color);
   border-radius: 4px;
   top: 10px;
   left: 12px;

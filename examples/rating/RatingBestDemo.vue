@@ -75,7 +75,7 @@ export default {
         fixedPoints: 2,
         glow: 0,
         glowColor: '#39b1ac',
-        inactiveColor: '#d8d8d8',
+        inactiveColor: 'var(--input-field-background-color)',
         increment: 0.1,
         maxRating: 5,
         padding: 0,

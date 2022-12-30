@@ -114,7 +114,7 @@ export default {
     },
     background: {
       type: String,
-      default: '#ffffff',
+      default: '',
     },
     headerColor: {
       type: String,
@@ -122,7 +122,7 @@ export default {
     },
     headerBackground: {
       type: String,
-      default: '#fff',
+      default: '',
     },
     headerFontSize: {
       type: String,
