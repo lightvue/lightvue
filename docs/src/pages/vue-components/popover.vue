@@ -1,0 +1,95 @@
+<template>
+  <docs-page-layout :title="$options.title" :description="$options.description" :status="$options.status" hasDocs>
+    <PopOverDemoBest />
+    <docs-card-vue v-for="demo in $options.demoList" :key="demo.id" :title="demo.title" :description="demo.description" :file="demo.file" :id="demo.id" />
+    <template #api>
+      <getting-started :package-name="$options.packageName" :component-name="$options.componentName" />
+      <docs-all-api :api-data="$options.apiData" />
+    </template>
+  </docs-page-layout>
+</template>
+
+<script>
+import DocsPageLayout from '@/components/docs-card/DocsPageLayout';
+import DocsCardVue from '@/components/docs-card/DocsCardVue';
+import DocsCard from '@/components/docs-card/DocsCard';
+import GettingStarted from '@/components/docs-card/GettingStarted';
+import DocsAllApi from '@/components/docs-card/DocsAllApi';
+import PopOverAPI from 'lightvueDocs/example/popover/PopOverAPI';
+import { COMPONENT_STATUS } from '@/static/data/constant.ts';
+import PopOverDemoBest from 'lightvueDocs/example/popover/PopOverDemoBest.vue';
+
+export default {
+  head: {
+    title: 'Pop Over | LightVue',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'LightVue' },
+      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+      {
+        property: 'og:site_name',
+        content: 'LightVue | Dialog',
+      },
+      {
+        property: 'og:description',
+        content: 'LightVue Dialog helps the user to have modal and additional dialog box with their data.',
+      },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+  components: {
+    PopOverDemoBest,
+    DocsCardVue,
+    DocsCard,
+    GettingStarted,
+    DocsPageLayout,
+    DocsAllApi,
+  },
+  title: 'PopOver',
+  description: 'The LvPopover component is similar to LvTooltips; it is a pop-up box that appears when the user clicks on an element. The difference is that the popover can contain much more content.',
+  packageName: 'popover',
+  componentName: 'LvPopOver',
+  status: COMPONENT_STATUS.UNDER_DEVELOPMENT,
+  apiData: PopOverAPI,
+  demoList: [
+    {
+      id: 'popover-different-color',
+      title: 'With different Color',
+      file: 'popover/PopOverDemo_Color',
+      description: 'By passing the <span>backgroundColor</span> as a prop we can change the popover color.',
+    },
+    {
+      id: 'popover-hover',
+      title: 'On Hover',
+      file: 'popover/PopOverHoverDemo',
+      description: 'PopOver Component using <span>hover</span> property.',
+    },
+    {
+      id: 'basic-usage',
+      title: 'Basic usage',
+      file: 'popover/PopOverDemo_Basic',
+      description: 'A <span>LvPopover Component</span> is a pop-up box that appears when the user clicks on an element. <span>LightVue PopOver Component</span> is compatible with both <span>Vue 3.x and Vue 2.x</span>',
+    },
+    {
+      id: 'offset-usage',
+      title: 'Different Offset value',
+      file: 'popover/PopOverDemo_Offset',
+      description: 'You can define offset value by passing the offset prop in popover component, like below.',
+    },
+
+    // {
+    //   id: 'popover-different-icons',
+    //   title: 'With different Icons',
+    //   file: 'popover/PopOverDemo_Icons',
+    //   description: '',
+    // },
+    {
+      id: 'popover-model-value',
+      title: 'External Target',
+      file: 'popover/PopOverVModel',
+      description: 'Using <span>PopOver Component external target feature</span> you can target any <span>DOM location</span> on the webpage for showing a PopModel Component using <span> CSS Selectors</span>.',
+    },
+  ],
+};
+</script>

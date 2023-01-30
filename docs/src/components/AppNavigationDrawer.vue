@@ -243,6 +243,10 @@ export default {
           page_name: 'Toast',
           page_path: '/vue-components/toast',
         },
+        {
+          page_name: 'PopOver',
+          page_path: '/vue-components/popover',
+        },
       ],
     },
   ],
