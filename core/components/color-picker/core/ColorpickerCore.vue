@@ -18,6 +18,10 @@
             <alpha v-model="colors" @change="childChange"></alpha>
           </div>
         </div>
+
+        <div class="vc-chrome-eye-color-dropper" v-if="!$attrs.hideEyeDropper">
+          <EyeDropper @change="setPickedColor"></EyeDropper>
+        </div>
       </div>
 
       <div class="vc-chrome-fields-wrap" v-if="!disableFields">
@@ -88,6 +92,7 @@ import alpha from './Alpha.vue';
 import checkboard from './Checkboard.vue';
 import editableInput from './EditInput.vue';
 import { trueValueMixin } from 'lightvue/mixins';
+import EyeDropper from './EyeDropper.vue';
 
 export default {
   name: 'Chrome',
@@ -105,6 +110,7 @@ export default {
   components: {
     saturation,
     hue,
+    EyeDropper,
     alpha,
     'ed-in': editableInput,
     checkboard,
@@ -203,6 +209,9 @@ export default {
         return `hsla(${Math.floor(color.hsl.h)}, ${Math.floor(color.hsl.s * 100)}%, ${Math.floor(color.hsl.l * 100)}%, ${color.hsl.a})`;
       }
     },
+    setPickedColor(e) {
+      this.colors = e;
+    },
   },
 };
 </script>
@@ -217,12 +226,20 @@ export default {
   font-family: Menlo;
   background-color: #fff;
 }
+.vc-chrome-body {
+  justify-content: space-between;
+}
 .vc-chrome-controls {
   display: flex;
 }
 .vc-chrome-color-wrap {
   position: relative;
   width: 36px;
+}
+.vc-chrome-eye-color-dropper {
+  align-self: center;
+  justify-self: center;
+  margin-left: 6px;
 }
 .vc-chrome-active-color {
   position: relative;

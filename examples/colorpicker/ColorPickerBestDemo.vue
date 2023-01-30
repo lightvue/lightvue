@@ -8,6 +8,7 @@
         <lv-toggle-switch v-model="allOptions.withoutInput" label="Without Input" /> <br />
         <lv-toggle-switch v-model="allOptions.clearable" label="Clearable" /> <br />
         <lv-toggle-switch v-model="allOptions.bottomBar" label="Bottom Bar" /> <br />
+        <lv-toggle-switch v-model="allOptions.hideEyeDropper" label="Hide Eye-dropper" /> <br />
 
         <br />
 
@@ -41,10 +42,10 @@ export default {
       allOptions: {
         label: 'Choose Color',
         value: '#38b2ac',
-
         hidePalette: false,
         withoutInput: false,
         clearable: true,
+        hideEyeDropper: false,
         bottomBar: true,
         colors: ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#795548'],
       },
