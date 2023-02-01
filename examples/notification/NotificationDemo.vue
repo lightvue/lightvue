@@ -11,16 +11,16 @@
 export default {
   methods: {
     showSuccess() {
-      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 3000 });
+      this.$notification.add({ variant: 'light', type: 'success', title: 'Success Message', content: 'Message Content', duration: 3000 });
     },
     showInfo() {
-      this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
+      this.$notification.add({ variant: 'light-left-border', type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
     showWarn() {
-      this.$notification.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
+      this.$notification.add({ variant: 'dark', type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
     },
     showError() {
-      this.$notification.add({ type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
+      this.$notification.add({ variant: 'dark-left-border', type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
     },
   },
 };
