@@ -11,15 +11,19 @@
 export default {
   methods: {
     showSuccess() {
+      this.$notification.set({ position: 'top-right' });
       this.$notification.add({ variant: 'light', type: 'success', title: 'Success Message', content: 'Message Content', duration: 3000 });
     },
     showInfo() {
+      this.$notification.set({ position: 'top-right' });
       this.$notification.add({ variant: 'light-left-border', type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
     showWarn() {
+      this.$notification.set({ position: 'bottom-left' });
       this.$notification.add({ variant: 'dark', type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
     },
     showError() {
+      this.$notification.set({ position: 'bottom-right' });
       this.$notification.add({ variant: 'dark-left-border', type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
     },
   },

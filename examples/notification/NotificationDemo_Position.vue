@@ -1,8 +1,8 @@
 <template>
   <div class="lv-demo_layout">
-    <LvButton label="Top Left" class="--mr-4" @click="showTopLeft" />
+    <LvButton label="Top Left" class="lv--info --mr-4" @click="showTopLeft" />
     <LvButton label="Bottom Left" class="lv--warning --mr-4" @click="showBottomLeft" />
-    <LvButton label="Bottom Right" class="lv--danger --mr-4" @click="showBottomRight" />
+    <LvButton label="Bottom Right" class="lv--success --mr-4" @click="showBottomRight" />
   </div>
 </template>
 

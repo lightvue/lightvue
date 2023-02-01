@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="button-align">
     <LvButton @click="showMultiple" label="Multiple" class="lv--warning --mr-4" />
-    <LvButton @click="showSticky" label="Sticky" />
+    <LvButton @click="showSticky" label=" Sticky " class="lv-error --mr-4" />
   </div>
 </template>
 
@@ -20,6 +20,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.button-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
 .--mr-4 {
   margin-right: 8px;
   margin-top: 3px;

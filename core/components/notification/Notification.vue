@@ -19,10 +19,10 @@ export default {
       type: String,
       default: null,
     },
-    position: {
-      type: String,
-      default: 'top-right',
-    },
+    // position: {
+    //   type: String,
+    //   default: 'top-right',
+    // },
     autoZIndex: {
       type: Boolean,
       default: true,
@@ -35,16 +35,19 @@ export default {
   data() {
     return {
       messages: [],
+      position: 'top-right',
     };
   },
   mounted() {
     NotificationEventBus.$on('add', message => {
       if (!message.position) {
         message.position = 'top-right';
+      } else {
+        this.position = message.position;
       }
-      if (this.position == message.position) {
-        this.add(message);
-      }
+      // if (this.position == message.position) {
+      this.add(message);
+      // }
     });
     NotificationEventBus.$on('remove-group', position => {
       if (!message.position) {
@@ -58,6 +61,11 @@ export default {
       this.messages = [];
     });
 
+    console.log(this.position);
+    NotificationEventBus.$on('set', defaultConfig => {
+      this.position = defaultConfig.position;
+      console.log(defaultConfig.position);
+    });
     this.updateZIndex();
   },
   beforeUpdate() {
