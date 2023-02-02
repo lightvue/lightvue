@@ -136,22 +136,62 @@
             }
             &.--success {
                 --notification-color: var(--success-color);
-                border-left: 10px solid var(--success-fill-border);
+                border-left: 6px solid var(--success-fill-border);
             }
             &.--info {
                 --notification-color: var(--info-color);
-                border-left: 10px solid var(--info-fill-border);
+                border-left: 6px solid var(--info-fill-border);
             }
             &.--warn {
                 --notification-color: var(--warn-color);
-                border-left: 10px solid var(--warn-fill-border);
+                border-left: 6px solid var(--warn-fill-border);
             }
             &.--error {
                 --notification-color: var(--error-color);
-                border-left: 10px solid var(--error-fill-border);
+                border-left: 6px solid var(--error-fill-border);
             }
         }
         &.--light-left-border {
+            background: white;
+            color: black !important;
+            border-left: 6px solid var(--notification-color);
+            .lv-notification__message-icon,
+            .lv-notification__icon-close {
+                color: var(--notification-color) !important;
+                align-self: center;
+                justify-self: center;
+            }
+            .lv-notification__icon-close {
+                font-weight: 900;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                border-color: transparent;
+                background-color: hsla(0, 0%, 4%, 0.2);
+                transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+                &:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                }
+                &:focus {
+                    outline: 0 none;
+                    outline-offset: 0;
+                    // box-shadow: 0 0 0 0.2rem #a6d5fa;
+                }
+            }
+            &.--success {
+                --notification-color: var(--success-color);
+            }
+            &.--info {
+                --notification-color: var(--info-color);
+            }
+            &.--warn {
+                --notification-color: var(--warn-color);
+            }
+            &.--error {
+                --notification-color: var(--error-color)
+            }
+        }
+        &.--light-icon-left-border {
             background: white;
             color: black !important;
             .lv-notification__message-icon {

@@ -28,9 +28,7 @@ export default {
 
   closeTimeout: null,
   mounted() {
-    if (this.variant === 'light') {
-      this.calculatePercentage();
-    }
+    this.calculatePercentage();
     if (this.message.duration) {
       this.closeTimeout = setTimeout(() => {
         this.close();
