@@ -1,6 +1,6 @@
 <template>
   <div class="lv-demo_layout">
-    <LvButton label="Default" class="--mr-4" @click="showSuccess" />
+    <LvButton label="Success" class="--lv-success --mr-4" @click="showSuccess" />
     <LvButton label="Info" class="lv--info --mr-4" @click="showInfo" />
     <LvButton label="Warn" class="lv--warning --mr-4" @click="showWarn" />
     <LvButton label="Error" class="lv--danger --mr-4" @click="showError" />
@@ -11,19 +11,19 @@
 export default {
   methods: {
     showSuccess() {
-      this.$notification.set({ position: 'top-right', variant: 'fill' });
-      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 30000 });
+      this.$notification.set({ position: 'top-right', variant: 'light' });
+      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 3000 });
     },
     showInfo() {
-      this.$notification.set({ position: 'top-left', variant: 'light' });
+      this.$notification.set({ position: 'top-right', variant: 'light' });
       this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
     showWarn() {
-      this.$notification.set({ position: 'bottom-left', variant: 'fill-left-border' });
-      this.$notification.add({ variant: 'dark', type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
+      this.$notification.set({ position: 'top-right', variant: 'light' });
+      this.$notification.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
     },
     showError() {
-      this.$notification.set({ position: 'bottom-right', variant: 'light-left-border' });
+      this.$notification.set({ position: 'top-right', variant: 'light' });
       this.$notification.add({ type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
     },
   },

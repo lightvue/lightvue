@@ -5,9 +5,6 @@
     <LvToast position="center" />
     <LvToast position="bottom" />
     <LvNotification />
-    <LvNotification position="top-left" />
-    <LvNotification position="bottom-left" />
-    <LvNotification position="bottom-right" />
   </div>
 </template>
 

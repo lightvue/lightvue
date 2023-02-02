@@ -42,373 +42,145 @@
             }
         }
         &.--fill {
-            &.--info {
-                background: var(--info-color);
-                color: white !important;
-                .lv-notification__message-icon,
-                .lv-notification__icon-close {
-                    color: rgba(255, 255, 255, 0.7) !important;
-                    align-self: center;
-                    justify-self: center;
+            background: var(--notification-color);
+            color: white !important;
+            .lv-notification__message-icon,
+            .lv-notification__icon-close {
+                color: rgba(255, 255, 255, 0.7) !important;
+                align-self: center;
+                justify-self: center;
+            }
+            .lv-notification__icon-close {
+                font-weight: 900;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                border-color: transparent;
+                background-color: hsla(0, 0%, 4%, 0.2);
+                transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+                &:hover {
+                    background: rgba(255, 255, 255, 0.3);
                 }
-                .lv-notification__icon-close {
-                    font-weight: 900;
-                    width: 2rem;
-                    height: 2rem;
-                    border-radius: 50%;
-                    border-color: transparent;
-                    background-color: hsla(0, 0%, 4%, 0.2);
-                    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.3);
-                    }
-                    &:focus {
-                        outline: 0 none;
-                        outline-offset: 0;
-                    }
+                &:focus {
+                    outline: 0 none;
+                    outline-offset: 0;
                 }
             }
             &.--success {
-                background: var(--success-color);
-                color: white !important;
-                .lv-notification__message-icon,
-                .lv-notification__icon-close {
-                    color: rgba(255, 255, 255, 0.7) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
-                .lv-notification__icon-close {
-                    font-weight: 900;
-                    width: 2rem;
-                    height: 2rem;
-                    border-radius: 50%;
-                    border-color: transparent;
-                    background-color: hsla(0, 0%, 4%, 0.2);
-                    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.3);
-                    }
-                    &:focus {
-                        outline: 0 none;
-                        outline-offset: 0;
-                    }
-                }
+                --notification-color: var(--success-color);
+            }
+            &.--info {
+                --notification-color: var(--info-color);
             }
             &.--warn {
-                background: var(--warn-color);
-                color: white !important;
-                .lv-notification__message-icon,
-                .lv-notification__icon-close {
-                    color: rgba(255, 255, 255, 0.7) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
-                .lv-notification__icon-close {
-                    font-weight: 900;
-                    width: 2rem;
-                    height: 2rem;
-                    border-radius: 50%;
-                    border-color: transparent;
-                    background-color: hsla(0, 0%, 4%, 0.2);
-                    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.3);
-                    }
-                    &:focus {
-                        outline: 0 none;
-                        outline-offset: 0;
-                    }
-                }
+                --notification-color: var(--warn-color);
             }
             &.--error {
-                background: var(--error-color);
-                color: white !important;
-                .lv-notification__message-icon,
-                .lv-notification__icon-close {
-                    color: rgba(255, 255, 255, 0.7) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
-                .lv-notification__icon-close {
-                    font-weight: 900;
-                    width: 2rem;
-                    height: 2rem;
-                    border-radius: 50%;
-                    border-color: transparent;
-                    background-color: hsla(0, 0%, 4%, 0.2);
-                    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.3);
-                    }
-                    &:focus {
-                        outline: 0 none;
-                        outline-offset: 0;
-                    }
-                }
+                --notification-color: var(--error-color)
             }
         }
         &.--light {
+            background: white;
+            color: black !important;
+            .lv-notification__message-icon,
+            .lv-notification__icon-close,
+            .lv-notification__icon-close-icon {
+                color: var(--notification-color) !important;
+                align-self: center;
+                justify-self: center;
+            }
+            .lv-notification__progress {
+                width: 0%;
+                height: 4px;
+                background: var(--notification-color);
+                transition: width 0.3s ease;
+            }
             &.--success {
-                background: white;
-                color: black !important;
-                .lv-notification__message-icon,
-                .lv-notification__icon-close,
-                .lv-notification__icon-close-icon {
-                    color: var(--success-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
-                .lv-notification__progress {
-                    width: 0%;
-                    height: 4px;
-                    background: var(--success-color);
-                    transition: width 0.3s ease;
-                }
+                --notification-color: var(--success-color);
             }
             &.--info {
-                background: white;
-                color: black !important;
-                .lv-notification__message-icon,
-                .lv-notification__icon-close,
-                .lv-notification__icon-close-icon {
-                    color: var(--info-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
-                .lv-notification__progress {
-                    width: 0%;
-                    height: 4px;
-                    background: var(--info-color);
-                    transition: width 0.3s ease;
-                }
+                --notification-color: var(--info-color);
             }
             &.--warn {
-                background: white;
-                color: black !important;
-                .lv-notification__message-icon,
-                .lv-notification__icon-close,
-                .lv-notification__icon-close-icon {
-                    color: var(--warn-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
-                .lv-notification__progress {
-                    width: 0%;
-                    height: 4px;
-                    background: var(--warn-color);
-                    transition: width 0.3s ease;
-                }
+                --notification-color: var(--warn-color);
             }
             &.--error {
-                background: white;
-                color: black !important;
-                .lv-notification__message-icon,
-                .lv-notification__icon-close,
-                .lv-notification__icon-close-icon {
-                    color: var(--error-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
-                .lv-notification__progress {
-                    width: 0%;
-                    height: 4px;
-                    background: var(--error-color);
-                    transition: width 0.3s ease;
-                }
+                --notification-color: var(--error-color)
             }
         }
         &.--fill-left-border {
-            &.--info {
-                background: var(--info-color);
-                color: white !important;
-                border-left: 10px solid var(--info-fill-border);
-                .lv-notification__message-icon,
-                .lv-notification__icon-close {
-                    color: rgba(255, 255, 255, 0.7) !important;
-                    align-self: center;
-                    justify-self: center;
+            background: var(--notification-color);
+            color: white !important;
+            .lv-notification__message-icon,
+            .lv-notification__icon-close {
+                color: rgba(255, 255, 255, 0.7) !important;
+                align-self: center;
+                justify-self: center;
+            }
+            .lv-notification__icon-close {
+                font-weight: 900;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                border-color: transparent;
+                background-color: hsla(0, 0%, 4%, 0.2);
+                transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+                &:hover {
+                    background: rgba(255, 255, 255, 0.3);
                 }
-                .lv-notification__icon-close {
-                    font-weight: 900;
-                    width: 2rem;
-                    height: 2rem;
-                    border-radius: 50%;
-                    border-color: transparent;
-                    background-color: hsla(0, 0%, 4%, 0.2);
-                    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.3);
-                    }
-                    &:focus {
-                        outline: 0 none;
-                        outline-offset: 0;
-                        // box-shadow: 0 0 0 0.2rem #a6d5fa;
-                    }
+                &:focus {
+                    outline: 0 none;
+                    outline-offset: 0;
+                    // box-shadow: 0 0 0 0.2rem #a6d5fa;
                 }
-                @if(--info-dark-left-border) {}
             }
             &.--success {
-                background: var(--success-color);
-                color: white !important;
+                --notification-color: var(--success-color);
                 border-left: 10px solid var(--success-fill-border);
-                .lv-notification__message-icon,
-                .lv-notification__icon-close {
-                    color: rgba(255, 255, 255, 0.7) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
-                .lv-notification__icon-close {
-                    font-weight: 900;
-                    width: 2rem;
-                    height: 2rem;
-                    border-radius: 50%;
-                    border-color: transparent;
-                    background-color: hsla(0, 0%, 4%, 0.2);
-                    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.3);
-                    }
-                    &:focus {
-                        outline: 0 none;
-                        outline-offset: 0;
-                    }
-                }
-                @if(--sucess-dark-left-border) {}
+            }
+            &.--info {
+                --notification-color: var(--info-color);
+                border-left: 10px solid var(--info-fill-border);
             }
             &.--warn {
-                background: var(--warn-color);
-                color: white !important;
+                --notification-color: var(--warn-color);
                 border-left: 10px solid var(--warn-fill-border);
-                .lv-notification__message-icon,
-                .lv-notification__icon-close {
-                    color: rgba(255, 255, 255, 0.7) !important;
-                }
-                .lv-notification__icon-close {
-                    font-weight: 900;
-                    width: 2rem;
-                    height: 2rem;
-                    border-radius: 50%;
-                    border-color: transparent;
-                    background-color: hsla(0, 0%, 4%, 0.2);
-                    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.3);
-                    }
-                    &:focus {
-                        outline: 0 none;
-                        outline-offset: 0;
-                        // box-shadow: 0 0 0 0.2rem #a6d5fa;
-                    }
-                }
             }
             &.--error {
-                background: var(--error-color);
-                color: white !important;
+                --notification-color: var(--error-color);
                 border-left: 10px solid var(--error-fill-border);
-                .lv-notification__message-icon,
-                .lv-notification__icon-close {
-                    color: rgba(255, 255, 255, 0.7) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
-                .lv-notification__icon-close {
-                    font-weight: 900;
-                    width: 2rem;
-                    height: 2rem;
-                    border-radius: 50%;
-                    border-color: transparent;
-                    background-color: hsla(0, 0%, 4%, 0.2);
-                    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-                    &:hover {
-                        background: rgba(255, 255, 255, 0.3);
-                    }
-                    &:focus {
-                        outline: 0 none;
-                        outline-offset: 0;
-                    }
-                }
             }
         }
         &.--light-left-border {
-            &.--info {
-                background: white;
-                color: black !important;
-                .lv-notification__message-icon {
-                    color: var(--info-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                    border-radius: 0 !important;
-                    border-left: 4px solid #3298dc;
-                    background: #f5f5f5 !important;
-                    padding-top: 3px;
-                    padding-bottom: 3px;
-                }
-                .lv-notification__icon-close,
-                .lv-notification__icon-close-icon {
-                    color: var(--info-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
+            background: white;
+            color: black !important;
+            .lv-notification__message-icon {
+                color: var(--notification-color) !important;
+                align-self: center;
+                justify-self: center;
+                border-radius: 0 !important;
+                border-left: 4px solid var(--notification-color);
+                background: #f5f5f5 !important;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+            .lv-notification__icon-close,
+            .lv-notification__icon-close-icon {
+                color: var(--notification-color) !important;
+                align-self: center;
+                justify-self: center;
             }
             &.--success {
-                background: white;
-                color: black !important;
-                .lv-notification__message-icon {
-                    color: var(--success-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                    border-radius: 0 !important;
-                    border-left: 4px solid #1ab14f;
-                    background: #f5f5f5 !important;
-                    padding-top: 3px;
-                    padding-bottom: 3px;
-                }
-                .lv-notification__icon-close,
-                .lv-notification__icon-close-icon {
-                    color: var(--success-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
+                --notification-color: var(--success-color);
+            }
+            &.--info {
+                --notification-color: var(--info-color);
             }
             &.--warn {
-                background: white;
-                color: black !important;
-                .lv-notification__message-icon {
-                    color: var(--warn-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                    border-radius: 0 !important;
-                    border-left: 4px solid var(--warn-color);
-                    background: #f5f5f5 !important;
-                    padding-top: 3px;
-                    padding-bottom: 3px;
-                }
-                .lv-notification__icon-close,
-                .lv-notification__icon-close-icon {
-                    color: var(--warn-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
+                --notification-color: var(--warn-color);
             }
             &.--error {
-                background: white;
-                color: black !important;
-                .lv-notification__message-icon {
-                    color: var(--error-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                    border-radius: 0 !important;
-                    border-left: 4px solid #b24444;
-                    background: #f5f5f5 !important;
-                    padding-top: 3px;
-                    padding-bottom: 3px;
-                }
-                .lv-notification__icon-close,
-                .lv-notification__icon-close-icon {
-                    color: var(--error-color) !important;
-                    align-self: center;
-                    justify-self: center;
-                }
+                --notification-color: var(--error-color)
             }
         }
     }

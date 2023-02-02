@@ -9,7 +9,7 @@
 export default {
   methods: {
     showSticky() {
-      this.$notification.add({ title: 'Sticky Message', content: 'Message Content' });
+      this.$notification.add({ type: 'success', title: 'Sticky Message', content: 'Message Content' });
     },
     showMultiple() {
       this.$notification.add({ type: 'info', title: 'Message 1', content: 'Message 1 Content', duration: 3000 });

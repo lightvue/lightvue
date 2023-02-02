@@ -10,7 +10,7 @@
         <span class="lv-notification__icon-close-icon light-icon-x"></span>
       </button>
     </div>
-    <div class="lv-notification__progress" v-if="this.variant === 'light'" ref="progress"></div>
+    <div class="lv-notification__progress" ref="progress"></div>
   </div>
 </template>
 
@@ -28,8 +28,10 @@ export default {
 
   closeTimeout: null,
   mounted() {
-    if (this.message.duration) {
+    if (this.variant === 'light') {
       this.calculatePercentage();
+    }
+    if (this.message.duration) {
       this.closeTimeout = setTimeout(() => {
         this.close();
       }, this.message.duration);
