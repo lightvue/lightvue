@@ -1,7 +1,7 @@
 <template>
   <div ref="container" :class="containerClass">
     <transition-group name="lv-notification__message" tag="div">
-      <NotificationMessage v-for="msg of messages" :key="msg.id" :message="msg" @close="remove($event)" />
+      <NotificationMessage v-for="msg of messages" :key="msg.id" :message="msg" :variant="variant" @close="remove($event)" />
     </transition-group>
   </div>
 </template>
@@ -32,10 +32,12 @@ export default {
       default: 0,
     },
   },
+
   data() {
     return {
       messages: [],
       position: 'top-right',
+      variant: 'light',
     };
   },
   mounted() {
@@ -60,11 +62,11 @@ export default {
     NotificationEventBus.$on('remove-all-groups', () => {
       this.messages = [];
     });
-
-    console.log(this.position);
     NotificationEventBus.$on('set', defaultConfig => {
       this.position = defaultConfig.position;
-      console.log(defaultConfig.position);
+      if (defaultConfig.variant) {
+        this.variant = defaultConfig.variant;
+      }
     });
     this.updateZIndex();
   },
@@ -76,7 +78,6 @@ export default {
       if (message.id == null) {
         message.id = messageIdx++;
       }
-
       this.messages = [...this.messages, message];
     },
     remove(message) {

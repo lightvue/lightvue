@@ -11,20 +11,20 @@
 export default {
   methods: {
     showSuccess() {
-      this.$notification.set({ position: 'top-right' });
-      this.$notification.add({ variant: 'light', type: 'success', title: 'Success Message', content: 'Message Content', duration: 3000 });
+      this.$notification.set({ position: 'top-right', variant: 'fill' });
+      this.$notification.add({ type: 'success', title: 'Success Message', content: 'Message Content', duration: 30000 });
     },
     showInfo() {
-      this.$notification.set({ position: 'top-right' });
-      this.$notification.add({ variant: 'light-left-border', type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
+      this.$notification.set({ position: 'top-left', variant: 'light' });
+      this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
     showWarn() {
-      this.$notification.set({ position: 'bottom-left' });
+      this.$notification.set({ position: 'bottom-left', variant: 'fill-left-border' });
       this.$notification.add({ variant: 'dark', type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
     },
     showError() {
-      this.$notification.set({ position: 'bottom-right' });
-      this.$notification.add({ variant: 'dark-left-border', type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
+      this.$notification.set({ position: 'bottom-right', variant: 'light-left-border' });
+      this.$notification.add({ type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
     },
   },
 };

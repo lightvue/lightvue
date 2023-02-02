@@ -10,7 +10,7 @@
         <span class="lv-notification__icon-close-icon light-icon-x"></span>
       </button>
     </div>
-    <div class="lv-notification__progress" ref="progress"></div>
+    <div class="lv-notification__progress" v-if="this.variant === 'light'" ref="progress"></div>
   </div>
 </template>
 
@@ -20,7 +20,12 @@ import Ripple from 'lightvue/ripple';
 export default {
   props: {
     message: null,
+    variant: {
+      type: String,
+      default: 'light',
+    },
   },
+
   closeTimeout: null,
   mounted() {
     if (this.message.duration) {
@@ -52,64 +57,21 @@ export default {
         } else {
           width += increment;
           el.style.width = width + '%';
-          console.log(el.style.width);
         }
       }, interval);
     },
   },
   computed: {
     containerClass() {
-      if (this.message.variant === 'light') {
-        return [
-          'lv-notification__message',
-          {
-            '--info-light': this.message.type === 'info',
-            '--warn-light': this.message.type === 'warn',
-            '--error-light': this.message.type === 'error',
-            '--success-light': this.message.type === 'success',
-          },
-        ];
-      } else if (this.message.variant === 'dark') {
-        return [
-          'lv-notification__message',
-          {
-            '--info-dark': this.message.type === 'info',
-            '--warn-dark': this.message.type === 'warn',
-            '--error-dark': this.message.type === 'error',
-            '--success-dark': this.message.type === 'success',
-          },
-        ];
-      } else if (this.message.variant === 'dark-left-border') {
-        return [
-          'lv-notification__message',
-          {
-            '--info-dark-left-border': this.message.type === 'info',
-            '--warn-dark-left-border': this.message.type === 'warn',
-            '--error-dark-left-border': this.message.type === 'error',
-            '--success-dark-left-border': this.message.type === 'success',
-          },
-        ];
-      } else if (this.message.variant === 'light-left-border') {
-        return [
-          'lv-notification__message',
-          {
-            '--info-light-left-border': this.message.type === 'info',
-            '--warn-light-left-border': this.message.type === 'warn',
-            '--error-light-left-border': this.message.type === 'error',
-            '--success-light-left-border': this.message.type === 'success',
-          },
-        ];
-      } else {
-        return [
-          'lv-notification__message',
-          {
-            '--info-light': this.message.type === 'info',
-            '--warn-light': this.message.type === 'warn',
-            '--error-light': this.message.type === 'error',
-            '--success-light': this.message.type === 'success',
-          },
-        ];
-      }
+      return [
+        `lv-notification__message  --${this.variant}`,
+        {
+          '--info': this.message.type === 'info',
+          '--warn': this.message.type === 'warn',
+          '--error': this.message.type === 'error',
+          '--success': this.message.type === 'success',
+        },
+      ];
     },
     iconClass() {
       return [
