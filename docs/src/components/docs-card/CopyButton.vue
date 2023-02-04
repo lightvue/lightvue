@@ -52,15 +52,15 @@ export default {
 }
 
 .copy-btn i {
-  color: #566d79;
+  color: var(--text-color);
   padding: 5px;
   font-size: 32px;
-  font-weight: bold;
+  font-weight: normal;
   border-radius: 50%;
-  background-color: #d6dfe8;
+  background-color: var(--);
   transition: all 0.5s ease-out;
   cursor: pointer;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 .copy-btn:hover i {
   opacity: 0.8;

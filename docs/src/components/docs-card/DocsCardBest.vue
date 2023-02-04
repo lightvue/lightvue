@@ -154,8 +154,7 @@ export default {
   max-height: 60vh;
   background: var(--background-color);
   /* padding: 20px; */
-  transition: all 0.2s ease-in-out;
-  border-left: 2px solid var(--lightGray);
+  border-left: 1px solid var(--lightGray);
   border-radius: 0px 0px 10px 0px;
 }
 .dy-props__header {
@@ -188,7 +187,7 @@ export default {
     /* padding: 20px; */
     color: var(--primary);
     font-size: 18px;
-    font-weight: bold;
+    font-weight: normal;
     /* border: 1px solid #edf2f6; */
     margin: 0px;
     white-space: nowrap;
@@ -220,30 +219,28 @@ export default {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-
   font-size: 24px;
+
   .docs-card__action {
     cursor: pointer;
     /* transition: 0.5s all ease-out; */
     border-radius: 50%;
-    // font-weight: bold;
     padding: 6px;
     height: 36px;
     width: 36px;
     cursor: pointer;
-    transition: 0.5s all ease-out;
-    /* font-size: 24px; */
+
     &.--active {
-      color: #687f8b;
-      background-color: #edf2f6;
+      color: var(--text-color);
+      background-color: var(--background-color-alt);
     }
     &.--disabled {
       cursor: not-allowed;
+      opacity: 0.6;
     }
-
     &:hover {
-      color: #607b89;
-      background-color: #dde4e9;
+      color: var(--primary);
+      background-color: var(--api-table-odd-row);
     }
   }
 }
@@ -279,7 +276,7 @@ export default {
 // }
 .dy-code__wrap {
   position: relative;
-  border-top: 2px solid #edf2f6;
+  border-top: 2px solid var(--lightGray);
 }
 .dy-code {
   max-height: 180px;

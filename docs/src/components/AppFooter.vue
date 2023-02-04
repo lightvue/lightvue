@@ -33,7 +33,6 @@ export default {
     font-size: 13px;
     opacity: 0.6;
     text-align: center;
-    border-top: 1px dotted #81a8bb;
     i {
       font-size: 12px;
       font-weight: bold;

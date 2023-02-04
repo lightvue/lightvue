@@ -1,6 +1,6 @@
 $editor-shade: rgba(75, 75, 75, 0.307);
-$editor-bg: rgb(255, 255, 255);
-$main-editor-bg: rgb(255, 255, 255);
+$editor-bg: var(--input-field-background-color);
+$main-editor-bg: var(--input-field-background-color);
 .lv-text-editor {
   //   border: 1px solid $editor-shade;
   // border: 2px solid #edf2f6;
@@ -14,10 +14,10 @@ $main-editor-bg: rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
     padding: 4px;
-    // border-bottom: 1px solid #edf2f6;
+    border-bottom: 1px solid var(--input-field-focus-background);
     gap: 4px;
-    margin: 1px;
-    border-radius: 3px;
+    border-radius: 3px 3px 0 0;
+
     &__btn {
       border: 1px solid #edf2f6;
       &:hover {

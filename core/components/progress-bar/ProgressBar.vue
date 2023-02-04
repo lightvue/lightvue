@@ -72,7 +72,7 @@ export default {
 .lv-progressbar {
   border: 0 none;
   height: 1.5rem;
-  background: #dee2e6;
+  background: var(--input-field-background-color);
   border-radius: 3px;
 }
 

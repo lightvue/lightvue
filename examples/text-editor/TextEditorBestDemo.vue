@@ -44,8 +44,8 @@ export default {
     return {
       allOptions: {
         color: '#0D2131',
-        theme: '#ffffff',
-        editorBgColor: '#edf2f7',
+        theme: '',
+        editorBgColor: '',
         showCharacterCount: false,
         bottomBar: true,
         rounded: false,

@@ -165,7 +165,7 @@ export default {
 
 .splitpanes__splitter {
   width: 16px !important;
-  background-color: #edf2f6 !important;
+  background-color: #838e8dcc !important;
   cursor: e-resize;
   transition: all 0.1s ease-in-out;
   &:hover {
