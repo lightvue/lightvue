@@ -1,12 +1,12 @@
 <template>
   <div class="lv-demo_layout">
     <div>
-      <p>step size :20</p>
-      <LvRangeSlider v-model="valueStep" :step="20" />
+      <p>step size :10</p>
+      <LvRangeSlider v-model="valueStep" :step="10" />
     </div>
     <div>
       <p>step size :20</p>
-      <LvRangeSlider v-model="valueRange1" :step="10" />
+      <LvRangeSlider v-model="valueRange1" :step="20" />
     </div>
   </div>
 </template>
@@ -18,8 +18,7 @@ export default {
   data() {
     return {
       valueRange1: 0,
-
-      valueStep: 20,
+      valueStep: 0,
     };
   },
   components: {
@@ -33,7 +32,7 @@ export default {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
 }
 </style>
