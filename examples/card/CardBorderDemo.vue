@@ -45,6 +45,7 @@ export default {
   height: 300px;
   width: 300px;
   margin: 30px;
+  background-color: #a1b2b9;
 }
 
 .card-demo h4 > span {

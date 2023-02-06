@@ -72,7 +72,7 @@ button {
   width: 50px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   &.--large {
-    width: 300px;
+    width: 425px;
   }
   &.--auto {
     width: 100%;

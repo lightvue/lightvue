@@ -182,7 +182,7 @@ $primary-color: #38b2ac;
       color: #b1b1b1;
 
       cursor: pointer;
-      transition: 0.5s all ease-out;
+      // transition: 0.5s all ease-out;
 
       &.--active {
         color: var(--text-color);
@@ -231,7 +231,8 @@ $primary-color: #38b2ac;
   display: flex;
   align-items: center;
   width: 100%;
-  background: #edf2f6;
+  background: var(--background-color-alt);
+  color: var(--text-color);
 }
 .docs-card__code-tab {
   color: #757575;
