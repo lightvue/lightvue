@@ -7,7 +7,7 @@
       <LvGlassCard backgroundColor="#ff0000"> <div style="color: #fff" v-html="dummyContent('backgroundColor = #ff0000')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
-      <LvGlassCard backgroundColor="#000000"> <div style="color: #fff" v-html="dummyContent('backgroundColor = #000000')"></div> </LvGlassCard>
+      <LvGlassCard backgroundColor="#CDDC39"> <div style="color: #fff" v-html="dummyContent('backgroundColor = #CDDC39')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
       <LvGlassCard backgroundColor="#00bab1" padding="10px"> <div style="color: #fff" v-html="dummyContent('backgroundColor = #00bab1, padding = 10px')"></div> </LvGlassCard>

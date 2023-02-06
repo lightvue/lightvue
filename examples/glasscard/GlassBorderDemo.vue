@@ -10,7 +10,7 @@
       <LvGlassCard :showBorder="true"> <div v-html="dummyContent('showBorder = true')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
-      <LvGlassCard :showBorder="true" backgroundColor="#000000"> <div style="color: #fff" v-html="dummyContent('showBorder = true')"></div> </LvGlassCard>
+      <LvGlassCard :showBorder="true"> <div style="color: #fff" v-html="dummyContent('showBorder = true')"></div> </LvGlassCard>
     </div>
   </div>
 </template>

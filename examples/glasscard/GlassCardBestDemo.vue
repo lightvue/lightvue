@@ -34,7 +34,6 @@
 import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvGlassCard from 'lightvue/glass-card';
 import LvInput from 'lightvue/input';
-
 import LvColorpicker from 'lightvue/color-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
 export default {
@@ -46,8 +45,7 @@ export default {
         padding: '20px',
         borderRadius: '8px',
         showBorder: false,
-
-        backgroundColor: '#374D57',
+        backgroundColor: '#E7E7E7',
       },
       stringProps: ['backgroundBlur', 'backgroundOpacity', 'padding', 'borderRadius', 'backgroundColor'],
     };
