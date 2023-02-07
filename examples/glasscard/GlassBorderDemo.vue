@@ -1,23 +1,22 @@
 <template>
   <div class="glasscard-demo-wrapper">
-    <div class="glasscard-demo">
-      <LvGlassCard> <div v-html="dummyContent('default (false, 4px)')"></div> </LvGlassCard>
+    <div class="glasscard-demo" :style="{ borderRadius: '4px' }">
+      <LvGlassCard backgroundOpacity="100" backgroundColor="#ffffff" backgroundBlur="100px"> <div v-html="dummyContent('default (false, 4px)')"></div> </LvGlassCard>
+    </div>
+    <div class="glasscard-demo" :style="{ borderRadius: '20px' }">
+      <LvGlassCard backgroundOpacity="100" backgroundColor="#ffffff" backgroundBlur="100px" borderRadius="20px"> <div v-html="dummyContent('borderRadius = 20px')"></div> </LvGlassCard>
+    </div>
+    <div class="glasscard-demo" :style="{ borderRadius: '15px' }">
+      <LvGlassCard backgroundOpacity="100" backgroundColor="#ffffff" backgroundBlur="100px" borderRadius="15px" :showBorder="true"> <div v-html="dummyContent('showBorder = true, borderRadius = 15px')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
-      <LvGlassCard borderRadius="20px"> <div v-html="dummyContent('borderRadius = 20px')"></div> </LvGlassCard>
-    </div>
-    <div class="glasscard-demo">
-      <LvGlassCard :showBorder="true"> <div v-html="dummyContent('showBorder = true')"></div> </LvGlassCard>
-    </div>
-    <div class="glasscard-demo">
-      <LvGlassCard :showBorder="true"> <div style="color: #fff" v-html="dummyContent('showBorder = true')"></div> </LvGlassCard>
+      <LvGlassCard backgroundOpacity="100" backgroundColor="#ffffff" backgroundBlur="100px" :showBorder="true"> <div v-html="dummyContent('showBorder = true')"></div> </LvGlassCard>
     </div>
   </div>
 </template>
 
 <script>
 import LvGlassCard from 'lightvue/glass-card';
-
 export default {
   data() {
     return {};
@@ -25,7 +24,7 @@ export default {
   methods: {
     dummyContent(propValue) {
       return `<div>
-                <h4><span>PROP: </span>${propValue}</h4>
+                <h4><span>PROP: </span><span>${propValue}</span></h4>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
@@ -56,7 +55,15 @@ export default {
 .glasscard-demo h4 > span {
   font-size: 0.9em;
   opacity: 0.8;
+  display: block;
   font-weight: lighter;
+  color: black;
+}
+
+.glasscard-demo p {
+  margin-top: 30px;
+  opacity: 0.8;
+  color: black;
 }
 
 @media (max-width: 500px) {

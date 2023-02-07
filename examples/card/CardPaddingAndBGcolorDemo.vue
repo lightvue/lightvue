@@ -1,9 +1,9 @@
 <template>
   <div class="card-demo-wrapper">
-    <div class="card-demo">
+    <div class="card-demo" :style="{ borderRadius: '11px' }">
       <LvCard backgroundColor="#B9ABAB"> <div v-html="dummyContent('bgColor = #b9abab')"></div> </LvCard>
     </div>
-    <div class="card-demo">
+    <div class="card-demo" :style="{ borderRadius: '11px' }">
       <LvCard padding="20px"> <div v-html="dummyContent('padding = 20px')"></div> </LvCard>
     </div>
   </div>

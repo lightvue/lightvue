@@ -1,9 +1,9 @@
 <template>
   <div class="card-demo-wrapper">
-    <div class="card-demo">
+    <div class="card-demo" :style="{ borderRadius: '11px' }">
       <lv-card> <div v-html="dummyContent('default (false)')"></div> </lv-card>
     </div>
-    <div class="card-demo">
+    <div class="card-demo" :style="{ borderRadius: '11px' }">
       <lv-card :showBorder="true"> <div v-html="dummyContent('showBorder = true')"></div> </lv-card>
     </div>
   </div>

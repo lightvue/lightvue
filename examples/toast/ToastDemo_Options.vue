@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div :style="{ display: 'flex', alignItems: 'center', justifyContent: 'center' }">
     <LvButton @click="showMultiple" label="Multiple" class="lv--warning --mr-4" />
-    <LvButton @click="showSticky" label="Sticky" />
+    <LvButton @click="showSticky" label="Sticky" class="lv--default" />
   </div>
 </template>
 

@@ -9,8 +9,8 @@
             <span>Are you sure you want to proceed?</span>
           </div>
           <template #footer>
-            <LvButton label="No" icon="light-icon-x" @click="closeConfirmation" class="--text-button" />
-            <LvButton label="Yes" icon="light-icon-check" @click="closeConfirmation" class="--text-button" autofocus />
+            <LvButton label="Yes" icon="light-icon-check" @click="closeConfirmation" class="--text-button-dialog" autofocus />
+            <LvButton label="No" icon="light-icon-x" @click="closeConfirmation" class="--text-button-dialog" />
           </template>
         </LvDialog>
       </div>
@@ -92,6 +92,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
 }
 
 .p-LvDialog .lv-button {

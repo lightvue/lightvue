@@ -1,10 +1,10 @@
 <template>
   <div class="lv-demo_layout">
     <lv-checkbox name="check" color="danger" v-model="checked" smooth> Smooth </lv-checkbox>
-    <lv-checkbox name="check" color="danger" v-model="checked" rounded thick pulse> rounded thick pulse </lv-checkbox>
-    <lv-checkbox name="check" color="danger" v-model="checked" rounded thick pulse outline> rounded thick pulse outline </lv-checkbox>
-    <lv-checkbox name="check" color="danger" v-model="checked" thick pulse outline> thick pulse outline </lv-checkbox>
-    <lv-checkbox name="check" color="danger" v-model="checked" filled pulse> filled pulse </lv-checkbox>
+    <lv-checkbox name="check" color="danger" v-model="checked" rounded thick pulse> Rounded thick with pulse </lv-checkbox>
+    <lv-checkbox name="check" color="danger" v-model="checked" rounded thick pulse outline> Rounded thick outline with pulse</lv-checkbox>
+    <lv-checkbox name="check" color="danger" v-model="checked" thick pulse outline> Thick outline with pulse </lv-checkbox>
+    <lv-checkbox name="check" color="danger" v-model="checked" filled pulse> Filled with pulse </lv-checkbox>
   </div>
 </template>
 

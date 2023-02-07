@@ -44,7 +44,7 @@ export default {
         padding: '20px',
         borderRadius: '4px',
         showBorder: false,
-        backgroundColor: 'var(--input-field-background-color)',
+
         // backgroundColor: '#DBE8EB',
       },
       stringProps: ['padding', 'borderRadius', 'backgroundColor'],
