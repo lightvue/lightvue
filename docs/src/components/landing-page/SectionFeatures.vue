@@ -100,8 +100,8 @@ export default {};
         align-items: center;
         flex-direction: column;
         border-radius: 8px;
-        background: #ffffff;
-        color: #143a56;
+        background: var(--background-color);
+        color: var(--theme-color-inverse);
 
         cursor: pointer;
         box-shadow: 0px 0px 16px 0px rgba(19, 58, 86, 0.1);
@@ -166,7 +166,7 @@ export default {};
       font-size: 32px;
       line-height: 48px;
       font-weight: 600;
-      color: #143a56;
+      color: var(--theme-color-inverse);
       margin-bottom: 0.5em;
     }
     .section-features__content-description {
@@ -174,7 +174,7 @@ export default {};
       line-height: 30px;
       opacity: 0.7;
       font-weight: 300;
-      color: #143a56;
+      color: var(--theme-color-inverse);
       margin-bottom: 0.5em;
       strong {
         font-weight: 500;

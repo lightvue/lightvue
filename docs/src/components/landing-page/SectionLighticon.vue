@@ -57,7 +57,7 @@ export default {};
       font-size: 32px;
       line-height: 48px;
       font-weight: 600;
-      color: #143a56;
+      color: var(--theme-color-inverse);
       margin-bottom: 0.78em;
     }
     .section-lighticons__content-description {
@@ -65,7 +65,7 @@ export default {};
       line-height: 30px;
       opacity: 0.7;
       font-weight: 300;
-      color: #143a56;
+      color: var(--theme-color-inverse);
       margin-bottom: 0.5em;
       strong {
         font-weight: 500;

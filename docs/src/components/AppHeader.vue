@@ -25,16 +25,15 @@
       </div>
       <div class="social__row">
         <!-- <LvToggleswitch @click="switchTheme" name='dark-theme-toggle' v-model="isDarkTheme" /> -->
-          <!-- Version Selector -->
-        
-         <!-- Theme Selector -->
-         <div class="dropdown">
+        <!-- Version Selector -->
+        <!-- Theme Selector -->
+        <div class="dropdown">
           <div class="dropdown-btn">
-            {{currentTheme}}
-             <i class="light-icon-chevron-down"></i>
+            {{ currentTheme }}
+            <i class="light-icon-chevron-down"></i>
           </div>
           <div class="dropdown-content">
-            <div class="dropdown-item" v-for="theme in themeList" @click="setTheme(theme)">{{theme.name}}</div>
+            <div class="dropdown-item" v-for="theme in themeList" @click="setTheme(theme)">{{ theme.name }}</div>
           </div>
         </div>
         <a href="https://github.com/lightvue/lightvue" target="_blank" class="social-links">
@@ -52,36 +51,35 @@
 </template>
 
 <script>
-import LvToggleswitch from 'lightvue/toggle-switch'
+import LvToggleswitch from 'lightvue/toggle-switch';
 export default {
-  data(){
-    return{
-      themeList:[ 
-          {name:'🌕 Light',value:'light'},
-          {name:'🌚 Dark', value:'dark'},
+  data() {
+    return {
+      themeList: [
+        { name: '🌕 Light', value: 'light' },
+        { name: '🌚 Dark', value: 'dark' },
       ],
-      currentTheme: "🌕 Light",  
-    }
+      currentTheme: '🌕 Light',
+    };
   },
   methods: {
-    setTheme(theme){
-        this.currentTheme = theme.name;
-        document.documentElement.setAttribute('data-theme',theme.value);
-    }
+    setTheme(theme) {
+      this.currentTheme = theme.name;
+      document.documentElement.setAttribute('data-theme', theme.value);
+    },
   },
   components: {
-    LvToggleswitch
-  }
+    LvToggleswitch,
+  },
 };
 </script>
 
 <style scoped lang="scss">
-
-.dropdown{
-  position:relative;
+.dropdown {
+  position: relative;
   margin: auto;
 }
-.dropdown-btn{
+.dropdown-btn {
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -91,27 +89,27 @@ export default {
   border: 1px solid var(--lightGray);
 }
 
-.dropdown-content{
+.dropdown-content {
   background: var(--background-color);
   width: 100%;
   display: none;
   position: absolute;
-  left:0%; 
+  left: 0%;
   overflow: hidden;
 }
 
-.dropdown-item{
+.dropdown-item {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-.dropdown-item:hover{
-  background: var(--input-field-bg);
-  }
-
-.dropdown-btn:hover{
+.dropdown-item:hover {
   background: var(--input-field-bg);
 }
-.dropdown:hover .dropdown-content{
+
+.dropdown-btn:hover {
+  background: var(--input-field-bg);
+}
+.dropdown:hover .dropdown-content {
   display: block;
   border: 1px solid var(--lightGray);
   border-radius: 4px;
@@ -123,7 +121,7 @@ export default {
 }
 .app-header {
   background-color: var(--background-color);
-  color:var(--text-color);
+  color: var(--text-color);
   padding: 0 24px;
   height: 60px;
   position: fixed;
