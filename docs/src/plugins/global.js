@@ -14,7 +14,6 @@ Vue.use(VueGtag, {
 
 Vue.use(LvToast);
 Vue.use(LvNotification);
-
 Vue.component('LvInput', LvInput);
 Vue.component('LvButton', LvButton);
 Vue.component('LvCard', LvCard);

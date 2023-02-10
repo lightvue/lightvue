@@ -18,15 +18,18 @@
 
 <script>
 import LvCheckbox from 'lightvue/checkbox';
+import LvInput from 'lightvue/input';
 import LvTextarea from 'lightvue/textarea';
 import LvDropdown from 'lightvue/dropdown';
 import LvProgressSpinner from 'lightvue/progress-spinner';
+
 export default {
   components: {
     LvTextarea,
     LvDropdown,
     LvCheckbox,
     LvProgressSpinner,
+    LvInput,
   },
   data() {
     return {

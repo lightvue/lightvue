@@ -50,7 +50,7 @@ Vue.component('LvButton', LvButton);
         <h1>Customization</h1>
         <p style="opacity: 0.8">
           In order to get started with light vue, you need to install LightVue and its dependency LightIcon (Only required if the icons are getting used). <br />
-          For Detailed Customization <nuxt-link :to="{ path: '/', hash: 'contact' }" style="color: #38b2ac">Contact Us</nuxt-link>
+          For Detailed Customization <nuxt-link :to="{ path: '/', hash: '#contact' }" style="color: #38b2ac">Contact Us</nuxt-link>
         </p>
       </div>
       <br />

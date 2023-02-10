@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "nuxt": "^3.1.2",
+    "sass": "^1.58.0",
+    "sass-loader": "^10.4.1"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "light-icons": "^1.0.10",
+    "prismjs": "^1.29.0",
+    "raw-loader": "^4.0.2",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0"
+  }
+}

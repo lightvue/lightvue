@@ -96,7 +96,6 @@ export default {
   display: inline-block;
   vertical-align: middle;
 }
-
 .lv-colorpicker__colorblock-wrap {
   position: relative;
   width: 30px;

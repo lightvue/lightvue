@@ -10,7 +10,8 @@
     <div class="page-wrap">
       <div class="page-content">
         <slot name="page-content">
-          <component :is="$lightvue && $lightvue.version === 3 ? 'router-view' : 'nuxt-child'" />
+          <!-- <component :is="$lightvue && $lightvue.version === 3 ? 'router-view' : 'nuxt-child'" /> -->
+          <NuxtPage />
         </slot>
       </div>
       <app-footer />
