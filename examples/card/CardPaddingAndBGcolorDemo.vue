@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .card-demo-wrapper {
   display: flex;
   flex-flow: row wrap;
@@ -40,7 +40,7 @@ export default {
 }
 
 .card-demo {
-  height: 300px;
+  height: max-content;
   width: 300px;
   margin: 30px;
 }
