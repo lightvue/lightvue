@@ -1,9 +1,7 @@
 <template>
   <div>
     <router-view />
-    <LvToast position="top" />
-    <LvToast position="center" />
-    <LvToast position="bottom" />
+    <LvToast />
     <LvNotification />
   </div>
 </template>

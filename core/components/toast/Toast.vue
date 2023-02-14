@@ -18,10 +18,6 @@ export default {
       type: String,
       default: null,
     },
-    position: {
-      type: String,
-      default: 'top',
-    },
     autoZIndex: {
       type: Boolean,
       default: true,
@@ -34,16 +30,17 @@ export default {
   data() {
     return {
       messages: [],
+      position: 'top',
     };
   },
   mounted() {
     ToastEventBus.$on('add', message => {
       if (!message.position) {
         message.position = 'top';
+      } else {
+        this.position = message.position;
       }
-      if (this.position == message.position) {
-        this.add(message);
-      }
+      this.add(message);
     });
     ToastEventBus.$on('remove-group', position => {
       if (!position) {
@@ -56,7 +53,9 @@ export default {
     ToastEventBus.$on('remove-all-groups', () => {
       this.messages = [];
     });
-
+    ToastEventBus.$on('set', defaultConfig => {
+      this.position = defaultConfig.position;
+    });
     this.updateZIndex();
   },
   beforeUpdate() {
@@ -67,7 +66,6 @@ export default {
       if (message.id == null) {
         message.id = messageIdx++;
       }
-
       this.messages = [...this.messages, message];
     },
     remove(message) {
@@ -78,7 +76,6 @@ export default {
           break;
         }
       }
-
       this.messages.splice(index, 1);
     },
     updateZIndex() {

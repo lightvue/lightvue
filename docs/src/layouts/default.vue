@@ -5,9 +5,7 @@
         <app-search v-if="$lightvue && $lightvue.version !== 3" />
       </template>
     </docs-layout>
-    <LvToast position="top" />
-    <LvToast position="center" />
-    <LvToast position="bottom" />
+    <LvToast />
     <LvNotification />
   </div>
 </template>

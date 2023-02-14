@@ -19,10 +19,6 @@ export default {
       type: String,
       default: null,
     },
-    // position: {
-    //   type: String,
-    //   default: 'top-right',
-    // },
     autoZIndex: {
       type: Boolean,
       default: true,
@@ -47,9 +43,7 @@ export default {
       } else {
         this.position = message.position;
       }
-      // if (this.position == message.position) {
       this.add(message);
-      // }
     });
     NotificationEventBus.$on('remove-group', position => {
       if (!message.position) {
@@ -88,7 +82,6 @@ export default {
           break;
         }
       }
-
       this.messages.splice(index, 1);
     },
     updateZIndex() {

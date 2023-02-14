@@ -1,6 +1,6 @@
-import NotificationEventBus from './NotificationEventBus';
+import ToastEventBus from './ToastEventBus';
 
-const NotificationService = {
+const ToastService = {
   add: message => {
     NotificationEventBus.$emit('add', message);
   },
@@ -15,4 +15,4 @@ const NotificationService = {
   },
 };
 
-export default NotificationService;
+export default ToastService;

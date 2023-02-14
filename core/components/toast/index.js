@@ -13,6 +13,9 @@ const lightToast = {
       removeAllGroups: () => {
         ToastEventBus.$emit('remove-all-groups');
       },
+      set: defaultConfig => {
+        ToastEventBus.$emit('set', defaultConfig);
+      },
     };
     if (Vue.prototype) {
       Vue.prototype.$toast = plugin; // Vue 2.x only
