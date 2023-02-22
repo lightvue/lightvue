@@ -42,4 +42,7 @@
   --lv-docs-code-row-odd: hsla(0, 0%, 0%, 0.2);
   --lv-docs-code-stripes: linear-gradient(transparent 50%, hsla(0, 0%, 0%, 0.2) 50%);
   --lv-docs-code-bg-color: #161b22;
+  .light-weight__bg {
+    display: none;
+  }
 }
