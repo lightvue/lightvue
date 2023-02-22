@@ -57,7 +57,7 @@ export default {
   font-size: 32px;
   font-weight: normal;
   border-radius: 50%;
-  background-color: var(--);
+  // background-color: var(--);
   transition: all 0.5s ease-out;
   cursor: pointer;
   opacity: 0.6;
