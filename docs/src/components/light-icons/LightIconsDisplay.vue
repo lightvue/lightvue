@@ -120,7 +120,7 @@ export default {
   transition: all 0.25s ease;
   background: var(--background-color);
   color: var(--text-color);
-  /* background: var(--theme-color); */
+  /* background: var(--lv-theme-color); */
   &:focus {
     outline: none;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);

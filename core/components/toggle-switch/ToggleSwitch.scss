@@ -1,124 +1,121 @@
-.d-toggle__wrapper{
-    display: inline-flex;
-    align-items: center;
-    &.--reverse{
-        flex-direction: row-reverse;
+.d-toggle__wrapper {
+  display: inline-flex;
+  align-items: center;
+  &.--reverse {
+    flex-direction: row-reverse;
+  }
+  &:hover {
+    .d-toggle__thumb {
+      &::before {
+        transform: scale3d(1.5, 1.5, 1) !important;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: rgba($color: #000000, $alpha: 0.18);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
     }
-    &:hover{
-        .d-toggle__thumb{
-            &::before{
-                transform: scale3d(1.5,1.5,1) !important;
-            }
-            &::after{
-                content: '';
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                background-color: rgba($color: #000000, $alpha: 0.18);
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-            }
-        }
-    }
-    .d-toggle__inner {
-        height: 1.5rem;
-        min-width: 2.5rem;
-        position: relative;
-        cursor: pointer;
-        .d-toggle__input{
-            display: none;
-        }
-
-
-        .d-toggle__track{
-            background: var(--input-field-background-color);
-            transition: border-color 0.2s, box-shadow 0.2s;
-            border-radius: 30px;
-            width: 100%;
-            height: 100%;
-        }
-        .d-toggle__thumb{
-            position: absolute;
-            left: 0px;
-            top: 0px;
-
-            height: 1.25rem;
-            width: 1.25rem;
-            background-color: var(--toggle-thumb-unchecked);
-            color: #ffffff;
-            margin: .125rem;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            border-radius: 50%;
-            transition: all .28s ease;
-            i{
-                font-size: 10px;
-                z-index: 1;
-            }
-        }
-        &.--checked{
-            .d-toggle__track{
-                background: var(--toggle-track-checked);
-            }
-            .d-toggle__thumb{
-                left: 1rem;
-                background: var(--theme-color);
-            }
-        }
-        &.--dense{
-            .d-toggle__track{
-                height: 14px;
-                width: 32px;
-                margin-top: 3px;
-            }
-            .d-toggle__thumb{
-                margin: 0px;
-                height: 20px;
-                width: 20px;
-                &::before{
-                    content:"";
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    border-radius: 50%;
-                    background: var(--theme-color);
-                    opacity: .12;
-                    transform: scale3d(0,0,1);
-                    transition: transform 0.22s cubic-bezier(0,0,0.2,1);
-                }
-            }
-        }
-    }
-    .d-toggle__label{
-        cursor: pointer;
-        padding-left: 12px;
-        user-select: none;
+  }
+  .d-toggle__inner {
+    height: 1.5rem;
+    min-width: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    .d-toggle__input {
+      display: none;
     }
 
-    .d-toggle__label--left {
-        cursor: pointer;
-        padding-right: 12px;
-        user-select: none;
+    .d-toggle__track {
+      background: var(--input-field-background-color);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      border-radius: 30px;
+      width: 100%;
+      height: 100%;
     }
+    .d-toggle__thumb {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+
+      height: 1.25rem;
+      width: 1.25rem;
+      background-color: var(--toggle-thumb-unchecked);
+      color: #ffffff;
+      margin: 0.125rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+      transition: all 0.28s ease;
+      i {
+        font-size: 10px;
+        z-index: 1;
+      }
+    }
+    &.--checked {
+      .d-toggle__track {
+        background: var(--toggle-track-checked);
+      }
+      .d-toggle__thumb {
+        left: 1rem;
+        background: var(--lv-theme-color);
+      }
+    }
+    &.--dense {
+      .d-toggle__track {
+        height: 14px;
+        width: 32px;
+        margin-top: 3px;
+      }
+      .d-toggle__thumb {
+        margin: 0px;
+        height: 20px;
+        width: 20px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border-radius: 50%;
+          background: var(--lv-theme-color);
+          opacity: 0.12;
+          transform: scale3d(0, 0, 1);
+          transition: transform 0.22s cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+    }
+  }
+  .d-toggle__label {
+    cursor: pointer;
+    padding-left: 12px;
+    user-select: none;
+  }
+
+  .d-toggle__label--left {
+    cursor: pointer;
+    padding-right: 12px;
+    user-select: none;
+  }
 }
-
 
 .d-inputswitch:not(.d-disabled):hover .d-inputswitch-slider {
-    /* background: #b6bfc8; */
+  /* background: #b6bfc8; */
 }
 
-
 .d-inputswitch.d-inputswitch-checked:not(.d-disabled):hover .d-inputswitch-slider {
-    /* background: #0d89ec; */
+  /* background: #0d89ec; */
 }
 
 .d-inputswitch.d-error,
 .d-inputswitch.d-invalid {
-    border-color: var(--danger);
+  border-color: var(--danger);
 }

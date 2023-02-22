@@ -56,57 +56,57 @@
 }
 
 .lv--primary {
-  --theme-color: var(--primary);
-  --theme-color-light: var(--primary-light);
-  --theme-color-dark: var(--primary-dark);
-  --theme-color-inverse: var(--primary-inverse);
+  --lv-theme-color: var(--primary);
+  --lv-theme-color-light: var(--primary-light);
+  --lv-theme-color-dark: var(--primary-dark);
+  --lv-theme-color-inverse: var(--primary-inverse);
 }
 
 .lv--secondary {
-  --theme-color: var(--secondary);
-  --theme-color-light: var(--secondary-light);
-  --theme-color-dark: var(--secondary-dark);
-  --theme-color-inverse: var(--secondary-inverse);
+  --lv-theme-color: var(--secondary);
+  --lv-theme-color-light: var(--secondary-light);
+  --lv-theme-color-dark: var(--secondary-dark);
+  --lv-theme-color-inverse: var(--secondary-inverse);
 }
 
 .lv--success {
-  --theme-color: var(--success);
-  --theme-color-light: var(--success-light);
-  --theme-color-dark: var(--success-dark);
-  --theme-color-inverse: var(--success-inverse);
+  --lv-theme-color: var(--success);
+  --lv-theme-color-light: var(--success-light);
+  --lv-theme-color-dark: var(--success-dark);
+  --lv-theme-color-inverse: var(--success-inverse);
 }
 
 .lv--info {
-  --theme-color: var(--info);
-  --theme-color-light: var(--info-light);
-  --theme-color-dark: var(--info-dark);
-  --theme-color-inverse: var(--info-inverse);
+  --lv-theme-color: var(--info);
+  --lv-theme-color-light: var(--info-light);
+  --lv-theme-color-dark: var(--info-dark);
+  --lv-theme-color-inverse: var(--info-inverse);
 }
 
 .lv--warning {
-  --theme-color: var(--warning);
-  --theme-color-light: var(--warning-light);
-  --theme-color-dark: var(--warning-dark);
-  --theme-color-inverse: var(--warning-inverse);
+  --lv-theme-color: var(--warning);
+  --lv-theme-color-light: var(--warning-light);
+  --lv-theme-color-dark: var(--warning-dark);
+  --lv-theme-color-inverse: var(--warning-inverse);
 }
 
 .lv--help {
-  --theme-color: var(--help);
-  --theme-color-light: var(--help-light);
-  --theme-color-dark: var(--help-dark);
-  --theme-color-inverse: var(--help-inverse);
+  --lv-theme-color: var(--help);
+  --lv-theme-color-light: var(--help-light);
+  --lv-theme-color-dark: var(--help-dark);
+  --lv-theme-color-inverse: var(--help-inverse);
 }
 
 .lv--danger {
-  --theme-color: var(--danger);
-  --theme-color-light: var(--danger-light);
-  --theme-color-dark: var(--danger-dark);
-  --theme-color-inverse: var(--danger-inverse);
+  --lv-theme-color: var(--danger);
+  --lv-theme-color-light: var(--danger-light);
+  --lv-theme-color-dark: var(--danger-dark);
+  --lv-theme-color-inverse: var(--danger-inverse);
 }
 
 .lv--plain {
-  --theme-color: var(--plain);
-  --theme-color-light: var(--plain-light);
-  --theme-color-dark: var(--plain-dark);
-  --theme-color-inverse: var(--plain-inverse);
+  --lv-theme-color: var(--plain);
+  --lv-theme-color-light: var(--plain-light);
+  --lv-theme-color-dark: var(--plain-dark);
+  --lv-theme-color-inverse: var(--plain-inverse);
 }

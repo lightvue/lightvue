@@ -1,4 +1,3 @@
-
 .--topbadge {
   position: relative;
   padding: 0.25em 0.4em;
@@ -7,15 +6,15 @@
 }
 
 .lv-badge {
-  color: var(--theme-color-inverse);
-  background-color: var(--theme-color);
+  color: var(--lv-theme-color-inverse);
+  background-color: var(--lv-theme-color);
   border: none;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, border-radius 0.3s;
   border-radius: 32px;
   &:hover {
-    background-color: var(--theme-color-dark);
+    background-color: var(--lv-theme-color-dark);
     color: #ffffff;
   }
   &.--size-sm {

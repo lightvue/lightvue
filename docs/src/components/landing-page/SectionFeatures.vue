@@ -5,7 +5,7 @@
         <br />
         <div class="section-features__content-description">UI Library hands out everything you need to create contemporary, engaging, and responsive web applications. A platform set to offer unlimited light customizable UI variants and an implementation playground to define how your components would like to and fro.</div>
         <br /><br />
-        <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" />
+        <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--lv-theme-color: #143a56; --lv-theme-color-dark: #194a70" />
       </div> -->
     <div class="section-features__wrapper">
       <div class="section-features__content-wrapper">
@@ -15,7 +15,7 @@
           <div class="section-features__content-description">LightVue is one of the most emerging UI Component Library that hands out everything you need to create <strong>modern</strong>, <strong>engaging</strong> and <strong>responsive</strong> web applications. LightVue is specifically designed for both <strong>Vue3.x</strong> and <strong>Vue2.x</strong> and offers unlimited customizations natively.</div>
           <br /><br />
           <nuxt-link :to="{ hash: 'vue-migrate' }" class="page-button --dark">Know More</nuxt-link>
-          <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
+          <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--lv-theme-color: #143a56; --lv-theme-color-dark: #194a70" /> -->
         </div>
       </div>
       <div class="section-features__box-wrapper">
@@ -101,7 +101,7 @@ export default {};
         flex-direction: column;
         border-radius: 8px;
         background: var(--background-color);
-        color: var(--theme-color-inverse);
+        color: var(--lv-theme-color-inverse);
 
         cursor: pointer;
         box-shadow: 0px 0px 16px 0px rgba(19, 58, 86, 0.1);
@@ -166,7 +166,7 @@ export default {};
       font-size: 32px;
       line-height: 48px;
       font-weight: 600;
-      color: var(--theme-color-inverse);
+      color: var(--lv-theme-color-inverse);
       margin-bottom: 0.5em;
     }
     .section-features__content-description {
@@ -174,7 +174,7 @@ export default {};
       line-height: 30px;
       opacity: 0.7;
       font-weight: 300;
-      color: var(--theme-color-inverse);
+      color: var(--lv-theme-color-inverse);
       margin-bottom: 0.5em;
       strong {
         font-weight: 500;

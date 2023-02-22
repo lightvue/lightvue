@@ -9,7 +9,7 @@
         <br />
         <br />
         <nuxt-link :to="{ hash: 'light-icons' }" class="page-button --dark">Know More</nuxt-link>
-        <!-- <lv-button :push="true" :deep-shadow="true" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70">Know More</lv-button> -->
+        <!-- <lv-button :push="true" :deep-shadow="true" type="button" size="xl" class="section-button__customise" style="--lv-theme-color: #143a56; --lv-theme-color-dark: #194a70">Know More</lv-button> -->
       </div>
       <div class="light-weight__image-wrapper">
         <img src="../../assets/images/light-weight.svg" alt="Light weight UI" class="light-weight__image" />
@@ -64,7 +64,7 @@ export default {};
       font-size: 32px;
       line-height: 48px;
       font-weight: 600;
-      color: var(--theme-color-inverse);
+      color: var(--lv-theme-color-inverse);
       margin-bottom: 0.78em;
     }
     .light-weight__content-description {
@@ -72,7 +72,7 @@ export default {};
       line-height: 30px;
       opacity: 0.7;
       font-weight: 300;
-      color: var(--theme-color-inverse);
+      color: var(--lv-theme-color-inverse);
       margin-bottom: 0.5em;
       strong {
         font-weight: 500;
