@@ -180,8 +180,8 @@ $primary-color: #38b2ac;
     padding: 0.8rem 0;
     cursor: pointer;
     user-select: none;
-    color:var(--text-color);
-    background-color: var(--background-color);
+    color: var(--text-color);
+    background-color: var(--lv-background-color);
     &:hover {
       background: var(--lightGray);
     }

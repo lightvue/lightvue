@@ -1,112 +1,112 @@
 :root {
-  --background-color: #fff;
-  --background-color-alt: #f5f8fa;
-  --text-color: #566d79;
+  --lv-background-color: #fff;
+  --lv-background-color-alt: #f5f8fa;
+  --lv-text-color: #566d79;
   //Toggle Switch
-  --toggle-thumb-unchecked: #9facbb;
-  --toggle-track-checked: hsla(0, 0%, 0%, 0.08);
+  --lv-toggle-thumb-unchecked: #9facbb;
+  --lv-toggle-track-checked: hsla(0, 0%, 0%, 0.08);
   // Primary
-  --primary: #38b2ac;
-  --primary-light: #8ed8d6;
-  --primary-dark: #319795;
-  --primary-inverse: #ffffff;
+  --lv-color-primary: #38b2ac;
+  --lv-color-primary-light: #8ed8d6;
+  --lv-color-primary-dark: #319795;
+  --lv-color-primary-inverse: #ffffff;
   // Secondary
-  --secondary: #607d8b;
-  --secondary-light: #beccd2;
-  --secondary-dark: #56717d;
-  --secondary-inverse: #ffffff;
+  --lv-color-secondary: #607d8b;
+  --lv-color-secondary-light: #beccd2;
+  --lv-color-secondary-dark: #56717d;
+  --lv-color-secondary-inverse: #ffffff;
   //Success
-  --success: #008c7f;
-  --success-light: #95e8df;
-  --success-dark: #03655b;
-  --success-inverse: #ffffff;
+  --lv-color-success: #008c7f;
+  --lv-color-success-light: #95e8df;
+  --lv-color-success-dark: #03655b;
+  --lv-color-success-inverse: #ffffff;
   //Info
-  --info: #0288d1;
-  --info-light: #89d4fe;
-  --info-dark: #027abc;
-  --info-inverse: #ffffff;
+  --lv-color-info: #0288d1;
+  --lv-color-info-light: #89d4fe;
+  --lv-color-info-dark: #027abc;
+  --lv-color-info-inverse: #ffffff;
   //Warning
-  --warning: #ffb300;
-  --warning-light: #ffd36d;
-  --warning-dark: #df9c00;
-  --warning-inverse: #ffffff;
+  --lv-color-warning: #ffb300;
+  --lv-color-warning-light: #ffd36d;
+  --lv-color-warning-dark: #df9c00;
+  --lv-color-warning-inverse: #ffffff;
   //Help
-  --help: #795548;
-  --help-light: #baafac;
-  --help-dark: #795548;
-  --help-inverse: #ffffff;
+  --lv-color-help: #795548;
+  --lv-color-help-light: #baafac;
+  --lv-color-help-dark: #795548;
+  --lv-color-help-inverse: #ffffff;
   //Danger
-  --danger: #bb2727;
-  --danger-light: #e9a5a5;
-  --danger-dark: #9b2222;
-  --danger-inverse: #ffffff;
+  --lv-color-danger: #bb2727;
+  --lv-color-danger-light: #e9a5a5;
+  --lv-color-danger-dark: #9b2222;
+  --lv-color-danger-inverse: #ffffff;
   //Plain
-  --plain: #3f51b5;
-  --plain-light: #acb7f7;
-  --plain-dark: #2e3fa2;
-  --plain-inverse: #ffffff;
+  --lv-color-plain: #3f51b5;
+  --lv-color-plain-light: #acb7f7;
+  --lv-color-plain-dark: #2e3fa2;
+  --lv-color-plain-inverse: #ffffff;
 }
 
 [data-theme='dark'] {
-  --background-color: hsl(215, 21%, 11%);
-  --background-color-alt: hsl(215, 28%, 7%);
-  --text-color: rgb(255, 255, 255, 0.8);
+  --lv-background-color: hsl(215, 21%, 11%);
+  --lv-background-color-alt: hsl(215, 28%, 7%);
+  --lv-text-color: rgb(255, 255, 255, 0.8);
   //Toggle Switch
-  --toggle-track-checked: hsla(0, 0%, 100%, 0.15);
+  --lv-toggle-track-checked: hsla(0, 0%, 100%, 0.15);
 }
 
 .lv--primary {
-  --lv-theme-color: var(--primary);
-  --lv-theme-color-light: var(--primary-light);
-  --lv-theme-color-dark: var(--primary-dark);
-  --lv-theme-color-inverse: var(--primary-inverse);
+  --lv-theme-color: var(--lv-color-primary);
+  --lv-theme-color-light: var(--lv-color-primary-light);
+  --lv-theme-color-dark: var(--lv-color-primary-dark);
+  --lv-theme-color-inverse: var(--lv-color-primary-inverse);
 }
 
 .lv--secondary {
-  --lv-theme-color: var(--secondary);
-  --lv-theme-color-light: var(--secondary-light);
-  --lv-theme-color-dark: var(--secondary-dark);
-  --lv-theme-color-inverse: var(--secondary-inverse);
+  --lv-theme-color: var(--lv-color-secondary);
+  --lv-theme-color-light: var(--lv-color-secondary-light);
+  --lv-theme-color-dark: var(--lv-color-secondary-dark);
+  --lv-theme-color-inverse: var(--lv-color-secondary-inverse);
 }
 
 .lv--success {
-  --lv-theme-color: var(--success);
-  --lv-theme-color-light: var(--success-light);
-  --lv-theme-color-dark: var(--success-dark);
-  --lv-theme-color-inverse: var(--success-inverse);
+  --lv-theme-color: var(--lv-color-success);
+  --lv-theme-color-light: var(--lv-color-success-light);
+  --lv-theme-color-dark: var(--lv-color-success-dark);
+  --lv-theme-color-inverse: var(--lv-color-success-inverse);
 }
 
 .lv--info {
-  --lv-theme-color: var(--info);
-  --lv-theme-color-light: var(--info-light);
-  --lv-theme-color-dark: var(--info-dark);
-  --lv-theme-color-inverse: var(--info-inverse);
+  --lv-theme-color: var(--lv-color-info);
+  --lv-theme-color-light: var(--lv-color-info-light);
+  --lv-theme-color-dark: var(--lv-color-info-dark);
+  --lv-theme-color-inverse: var(--lv-color-info-inverse);
 }
 
 .lv--warning {
-  --lv-theme-color: var(--warning);
-  --lv-theme-color-light: var(--warning-light);
-  --lv-theme-color-dark: var(--warning-dark);
-  --lv-theme-color-inverse: var(--warning-inverse);
+  --lv-theme-color: var(--lv-color-warning);
+  --lv-theme-color-light: var(--lv-color-warning-light);
+  --lv-theme-color-dark: var(--lv-color-warning-dark);
+  --lv-theme-color-inverse: var(--lv-color-warning-inverse);
 }
 
 .lv--help {
-  --lv-theme-color: var(--help);
-  --lv-theme-color-light: var(--help-light);
-  --lv-theme-color-dark: var(--help-dark);
-  --lv-theme-color-inverse: var(--help-inverse);
+  --lv-theme-color: var(--lv-color-help);
+  --lv-theme-color-light: var(--lv-color-help-light);
+  --lv-theme-color-dark: var(--lv-color-help-dark);
+  --lv-theme-color-inverse: var(--lv-color-help-inverse);
 }
 
 .lv--danger {
-  --lv-theme-color: var(--danger);
-  --lv-theme-color-light: var(--danger-light);
-  --lv-theme-color-dark: var(--danger-dark);
-  --lv-theme-color-inverse: var(--danger-inverse);
+  --lv-theme-color: var(--lv-color-danger);
+  --lv-theme-color-light: var(--lv-color-danger-light);
+  --lv-theme-color-dark: var(--lv-color-danger-dark);
+  --lv-theme-color-inverse: var(--lv-color-danger-inverse);
 }
 
 .lv--plain {
-  --lv-theme-color: var(--plain);
-  --lv-theme-color-light: var(--plain-light);
-  --lv-theme-color-dark: var(--plain-dark);
-  --lv-theme-color-inverse: var(--plain-inverse);
+  --lv-theme-color: var(--lv-color-plain);
+  --lv-theme-color-light: var(--lv-color-plain-light);
+  --lv-theme-color-dark: var(--lv-color-plain-dark);
+  --lv-theme-color-inverse: var(--lv-color-plain-inverse);
 }

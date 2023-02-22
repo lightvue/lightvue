@@ -100,7 +100,7 @@ export default {};
         align-items: center;
         flex-direction: column;
         border-radius: 8px;
-        background: var(--background-color);
+        background: var(--lv-background-color);
         color: var(--lv-theme-color-inverse);
 
         cursor: pointer;

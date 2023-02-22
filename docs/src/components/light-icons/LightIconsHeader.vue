@@ -32,7 +32,7 @@ export default {
 .page-header {
   color: var(--text-color);
   text-align: center;
-  background: var(--background-color-alt);
+  background: var(--lv-background-color-alt);
   .logo {
     svg {
       height: 104px;

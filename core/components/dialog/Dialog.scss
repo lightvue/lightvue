@@ -6,8 +6,8 @@
 
 .lv-dialog .lv-dialog-header {
   border-bottom: 0 none;
-  background: var(--background-color);
-  color: var(--text-color);
+  background: var(--lv-background-color);
+  color: var(--lv-text-color);
   padding: 1.5rem;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
@@ -21,7 +21,7 @@
 .lv-dialog .lv-dialog-header .lv-dialog-header-icon {
   width: 2rem;
   height: 2rem;
-  color: var(--text-color);
+  color: var(--lv-text-color);
   border: 0 none;
   background: transparent;
   border-radius: 50%;
@@ -30,7 +30,7 @@
 }
 
 .lv-dialog .lv-dialog-header .lv-dialog-header-icon:enabled:hover {
-  color: var(--text-color);
+  color: var(--lv-text-color);
   border-color: transparent;
   background: #e9ecef;
 }
@@ -46,15 +46,15 @@
 }
 
 .lv-dialog .lv-dialog-content {
-  background: var(--background-color);
-  color: var(--text-color);
+  background: var(--lv-background-color);
+  color: var(--lv-text-color);
   padding: 0 1.5rem 2rem 1.5rem;
 }
 
 .lv-dialog .lv-dialog-footer {
   border-top: 0 none;
-  background: var(--background-color);
-  color: var(--text-color);
+  background: var(--lv-background-color);
+  color: var(--lv-text-color);
   padding: 0 1.5rem 1.5rem 1.5rem;
   text-align: right;
   border-bottom-right-radius: 3px;

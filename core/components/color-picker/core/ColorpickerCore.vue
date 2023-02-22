@@ -215,7 +215,7 @@ export default {
   box-sizing: initial;
   width: 225px;
   font-family: Menlo;
-  background-color: var(--input-field-background-color);;
+  background-color: var(--input-field-background-color);
 }
 .vc-chrome-controls {
   display: flex;
@@ -270,7 +270,7 @@ export default {
   position: absolute;
   width: 24px;
   height: 28px;
-  background: var(--background-color);
+  background: var(--lv-background-color);
   border-radius: 4px;
   top: 10px;
   left: 12px;
@@ -332,7 +332,7 @@ export default {
   box-shadow: inset 0 0 0 1px #dadada;
   height: 21px;
   text-align: center;
-  background-color: var(--background-color);
+  background-color: var(--lv-background-color);
 }
 .vc-chrome-fields .vc-input__label {
   text-transform: uppercase;

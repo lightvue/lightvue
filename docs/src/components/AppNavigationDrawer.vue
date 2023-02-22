@@ -251,7 +251,7 @@ export default {
 
 <style scoped lang="scss">
 $bg-color: #133a56;
-$primary-color: var(--primary);
+$primary-color: var(--lv-color-primary);
 
 .sidebar {
   position: fixed;
@@ -269,8 +269,8 @@ $primary-color: var(--primary);
   transition: transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99), -webkit-transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   // background: #405364;
-  background-color: var(--background-color) !important;
-  color:var(--text-color) !important;
+  background-color: var(--lv-background-color) !important;
+  color: var(--text-color) !important;
   // border: 1px solid #1f2a35;
   z-index: 1000;
 }
@@ -403,7 +403,7 @@ $primary-color: var(--primary);
       height: 60px;
       top: 0;
       width: 8px;
-      background-color: var(--background-color);
+      background-color: var(--lv-background-color);
       position: fixed;
       left: 250px;
     }

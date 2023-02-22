@@ -99,7 +99,7 @@ $primary-color: #38b2ac;
   padding: 0px 16px 8px;
   margin-left: 8px;
 
-  background: var(--background-color-alt);
+  background: var(--lv-background-color-alt);
 }
 
 .nav-list__item-line {
@@ -132,7 +132,7 @@ $primary-color: #38b2ac;
 .collapisible--answer {
   padding: 4px 15px 10px 22px;
   /* margin-left: 18px; */
-  background-color: var(--background-color-alt);
+  background-color: var(--lv-background-color-alt);
   border-left: 3px solid #38b2ac;
 }
 .accordian-wrapper {

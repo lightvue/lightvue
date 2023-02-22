@@ -90,7 +90,7 @@ export default {
 }
 
 .dropdown-content {
-  background: var(--background-color);
+  background: var(--lv-background-color);
   width: 100%;
   display: none;
   position: absolute;
@@ -120,7 +120,7 @@ export default {
   cursor: pointer;
 }
 .app-header {
-  background-color: var(--background-color);
+  background-color: var(--lv-background-color);
   color: var(--text-color);
   padding: 0 24px;
   height: 60px;
@@ -154,7 +154,7 @@ export default {
   border-radius: 50%;
   transition: 0.3s ease-in-out all;
   &:hover {
-    background: var(--background-color-alt);
+    background: var(--lv-background-color-alt);
     color: var(--text-color);
   }
 }
@@ -227,7 +227,7 @@ export default {
     &:hover {
       color: var(--text-color);
       padding: 10px;
-      background: var(--background-color-alt);
+      background: var(--lv-background-color-alt);
     }
   }
 }

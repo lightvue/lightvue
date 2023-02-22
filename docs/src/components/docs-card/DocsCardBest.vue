@@ -117,7 +117,7 @@ export default {
 <style lang="scss">
 .best__demo__wrapper {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
-  background: var(--background-color);
+  background: var(--lv-background-color);
   color: var(--text-color);
   margin-bottom: 32px;
   margin-top: 24px;
@@ -152,7 +152,7 @@ export default {
 .dy-props__wrap {
   max-width: 300px;
   max-height: 60vh;
-  background: var(--background-color);
+  background: var(--lv-background-color);
   /* padding: 20px; */
   border-left: 1px solid var(--lightGray);
   border-radius: 0px 0px 10px 0px;
@@ -171,7 +171,7 @@ export default {
   padding: 20px;
   // overflow-y: scroll;
   height: calc(100% - 52px);
-  background: var(--background-color);
+  background: var(--lv-background-color);
   border-radius: 0px 0px 10px 0px;
   //   height: 350px;
 }
@@ -185,7 +185,7 @@ export default {
   border-bottom: 1px solid var(--lightGray);
   .component__header {
     /* padding: 20px; */
-    color: var(--primary);
+    color: var(--lv-color-primary);
     font-size: 18px;
     font-weight: normal;
     /* border: 1px solid #edf2f6; */
@@ -232,14 +232,14 @@ export default {
 
     &.--active {
       color: var(--text-color);
-      background-color: var(--background-color-alt);
+      background-color: var(--lv-background-color-alt);
     }
     &.--disabled {
       cursor: not-allowed;
       opacity: 0.6;
     }
     &:hover {
-      color: var(--primary);
+      color: var(--lv-color-primary);
       background-color: var(--api-table-odd-row);
     }
   }
@@ -251,7 +251,7 @@ export default {
 
   justify-content: center;
   width: 100%;
-  background: var(--background-color);
+  background: var(--lv-background-color);
   .demo-sec {
     min-height: 200px;
     width: 100%;

@@ -79,7 +79,7 @@ export default {
 .lv-progressbar .lv-progressbar-value {
   border: 0 none;
   margin: 0;
-  background: var(--primary-color);
+  background: var(--lv-color-primary);
 }
 
 .lv-progressbar .lv-progressbar-label {

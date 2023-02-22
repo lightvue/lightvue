@@ -44,7 +44,7 @@
 
       height: 1.25rem;
       width: 1.25rem;
-      background-color: var(--toggle-thumb-unchecked);
+      background-color: var(--lv-toggle-thumb-unchecked);
       color: #ffffff;
       margin: 0.125rem;
 
@@ -61,7 +61,7 @@
     }
     &.--checked {
       .d-toggle__track {
-        background: var(--toggle-track-checked);
+        background: var(--lv-toggle-track-checked);
       }
       .d-toggle__thumb {
         left: 1rem;
@@ -117,5 +117,5 @@
 
 .d-inputswitch.d-error,
 .d-inputswitch.d-invalid {
-  border-color: var(--danger);
+  border-color: var(--lv-color-danger);
 }

@@ -26,7 +26,7 @@ export default {
 <style lang="scss">
 .app-footer {
   padding: 0px 30px;
-  background: var(--background-color) !important;
+  background: var(--lv-background-color) !important;
   color: var(--text-color) !important;
   .app-footer__text {
     padding: 12px 0px;

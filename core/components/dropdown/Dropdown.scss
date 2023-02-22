@@ -112,7 +112,7 @@
     // }
 
     .lv-input__field {
-      background-color: var(--background-color)
+      background-color: var(--lv-background-color);
     }
   }
   .lv-dropdown__items-wrap {
@@ -143,7 +143,7 @@
       border-radius: 0;
       &.--selected {
         color: var(--text-color);
-        background: var(--primary);
+        background: var(--lv-color-primary);
       }
       &.--disabled {
         opacity: 0.6;
@@ -164,10 +164,10 @@
 .lv-input-filled .lv-dropdown {
   background: var(--input-field-background-color);
   &:not(.--disabled):hover {
-    background-color: var(--background-color-alt);
+    background-color: var(--lv-background-color-alt);
   }
   &:not(.--disabled).--focused {
-    background-color: var(--background-color);
+    background-color: var(--lv-background-color);
   }
 }
 

@@ -18,18 +18,18 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: var(--background-color-alt) !important;
+  background-color: var(--lv-background-color-alt) !important;
   font-family: var(--font-family);
   font-weight: normal;
-  color: var(--text-color) !important;
+  color: var(--lv-text-color) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body,
 #app {
-  background-color: var(--background-color-alt);
-  color: var(--text-color);
+  background-color: var(--lv-background-color-alt);
+  color: var(--lv-text-color);
   font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

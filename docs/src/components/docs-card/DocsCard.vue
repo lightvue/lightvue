@@ -141,7 +141,7 @@ $primary-color: #38b2ac;
   }
 }
 .docs-card__body {
-  background: var(--background-color);
+  background: var(--lv-background-color);
 
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
@@ -162,7 +162,7 @@ $primary-color: #38b2ac;
     // width: 10rem;
     padding: 8px;
     border-radius: 50px;
-    background: var(--background-color);
+    background: var(--lv-background-color);
     box-shadow: 0px 0px 2px 0px var(--text-color);
     z-index: 1;
     /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
@@ -186,10 +186,10 @@ $primary-color: #38b2ac;
 
       &.--active {
         color: var(--text-color);
-        background-color: var(--background-color-alt);
+        background-color: var(--lv-background-color-alt);
       }
       &:hover {
-        color: var(--primary);
+        color: var(--lv-color-primary);
         background-color: var(--api-table-odd-row);
       }
     }
@@ -231,7 +231,7 @@ $primary-color: #38b2ac;
   display: flex;
   align-items: center;
   width: 100%;
-  background: var(--background-color-alt);
+  background: var(--lv-background-color-alt);
   color: var(--text-color);
 }
 .docs-card__code-tab {

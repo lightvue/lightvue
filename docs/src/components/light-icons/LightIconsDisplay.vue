@@ -90,7 +90,7 @@ export default {
   top: 0px;
   // margin: px -30px;
   padding: 16px 0;
-  background: var(--background-color-alt);
+  background: var(--lv-background-color-alt);
   z-index: 10;
   &.--sticky {
     box-shadow: -4px 4px 25px -4px rgba(0, 0, 0, 0.15);
@@ -118,7 +118,7 @@ export default {
   border: 0px;
   border-radius: 20px;
   transition: all 0.25s ease;
-  background: var(--background-color);
+  background: var(--lv-background-color);
   color: var(--text-color);
   /* background: var(--lv-theme-color); */
   &:focus {
@@ -138,7 +138,7 @@ export default {
   max-width: 1290px;
   margin: 0 auto;
   color: var(--text-color);
-  background: var(--background-color-alt);
+  background: var(--lv-background-color-alt);
   font: 12px/1.5 roboto, arial, \5b8b\4f53, sans-serif;
 }
 .icons__wrap .icons__list {
@@ -156,7 +156,7 @@ export default {
   min-width: 100px;
   box-sizing: border-box;
   text-align: center;
-  background: var(--background-color);
+  background: var(--lv-background-color);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 12px;
   padding: 8px;

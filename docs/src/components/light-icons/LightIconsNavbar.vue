@@ -46,7 +46,7 @@ export default {
     text-decoration: none;
     color: var(--text-color);
 
-    background-color: var(--background-color);
+    background-color: var(--lv-background-color);
     transition: all 0.2s ease-in-out;
     &:hover {
       background: var(--lightGray);
