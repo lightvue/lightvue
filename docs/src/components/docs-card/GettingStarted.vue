@@ -68,6 +68,6 @@ export default {
 
 <style scoped>
 .docs-step {
-  border-top: 2px dashed var(--gray);
+  border-top: 2px dashed var(--lv-docs-color-gray);
 }
 </style>

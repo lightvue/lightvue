@@ -128,7 +128,7 @@ $primary-color: #38b2ac;
   top: 20px;
   left: 95%;
   i {
-    color: var(--lightGray);
+    color: var(--lv-docs-color-border);
     padding: 5px;
     font-size: 2rem;
     font-weight: bold;
@@ -190,7 +190,7 @@ $primary-color: #38b2ac;
       }
       &:hover {
         color: var(--lv-color-primary);
-        background-color: var(--api-table-odd-row);
+        background-color: var(--lv-docs-api-odd-row);
       }
     }
   }
@@ -201,13 +201,13 @@ $primary-color: #38b2ac;
   width: 100%;
   padding: 10px;
   color: var(--text-color);
-  /* border-bottom: 1px solid var(--lightGray); */
+  /* border-bottom: 1px solid var(--lv-docs-color-border); */
   .docs-card__title {
     margin: 0px;
     white-space: nowrap;
     margin-left: -22px;
     padding: 8px 16px 8px 24px;
-    background: var(--lightGray);
+    background: var(--lv-docs-color-border);
     color: var(--text-color);
     position: relative;
     cursor: pointer;
@@ -222,7 +222,7 @@ $primary-color: #38b2ac;
     width: 0;
     height: 0;
     border: 0 solid transparent;
-    border-top-color: var(--gray);
+    border-top-color: var(--lv-docs-color-gray);
     border-width: 10px 0 0 12px;
     z-index: -1;
   }

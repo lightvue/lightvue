@@ -86,7 +86,7 @@ export default {
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 4px;
-  border: 1px solid var(--lightGray);
+  border: 1px solid var(--lv-docs-color-border);
 }
 
 .dropdown-content {
@@ -111,7 +111,7 @@ export default {
 }
 .dropdown:hover .dropdown-content {
   display: block;
-  border: 1px solid var(--lightGray);
+  border: 1px solid var(--lv-docs-color-border);
   border-radius: 4px;
 }
 .logo {

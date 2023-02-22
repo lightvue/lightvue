@@ -49,7 +49,7 @@ export default {
     background-color: var(--lv-background-color);
     transition: all 0.2s ease-in-out;
     &:hover {
-      background: var(--lightGray);
+      background: var(--lv-docs-color-border);
     }
     &.active {
       background-color: #607c8a !important;

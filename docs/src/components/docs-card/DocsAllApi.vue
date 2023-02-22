@@ -43,7 +43,7 @@ export default {
   width: 100%;
   // border: 1px solid #e7e7e7;
   color: var(--text-color);
-  background-color: var(--api-table-bg-color);
+  background-color: var(--lv-docs-api-bg-color);
   border-radius: 10px;
   // box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
@@ -51,17 +51,17 @@ export default {
 .api-table__row {
   display: table-row;
   &:nth-child(odd) {
-    background-color: var(--api-table-odd-row);
+    background-color: var(--lv-docs-api-odd-row);
   }
 }
 .api-table__header {
-  background-color: var(--api-table-header-bg) !important;
+  background-color: var(--lv-docs-api-header-bg) !important;
   font-weight: 600;
   color: #fff;
   text-transform: capitalize;
   .api-table__cell {
     padding: 12px 12px;
-    border-right: 1px solid var(--api-table-border-color);
+    border-right: 1px solid var(--lv-docs-api-border-color);
     &:last-child {
       border-right: none;
     }
@@ -69,7 +69,7 @@ export default {
 }
 .api-table__cell {
   display: table-cell;
-  border-right: 1px solid var(--api-table-border-color);
+  border-right: 1px solid var(--lv-docs-api-border-color);
   padding: 10px 12px;
   &:last-child {
     border-right: none;
@@ -80,7 +80,7 @@ export default {
     font-weight: 600;
   }
   &.--type {
-    color: var(--api-table-highlight-text);
+    color: var(--lv-docs-api-highlight-text);
     font-weight: 100;
     font-family: monospace;
     white-space: nowrap;

@@ -42,7 +42,7 @@ pre[class*='language-']>code {
 	/* border-left: 2px solid #358ccb; */
 	/* box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf; */
 	background-color: var(--lv-background-color);
-	background-image: var(--code-stripes);
+	background-image: var(--lv-docs-code-stripes);
 	background-size: 3em 3em;
 	background-origin: content-box;
 	background-attachment: local;
@@ -59,7 +59,7 @@ code[class*='language-'] {
 /* Margin bottom to accommodate shadow */
 :not(pre)>code[class*='language-'],
 pre[class*='language-'] {
-	background-color: var(--code-bg-color);
+	background-color: var(--lv-docs-code-bg-color);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -71,7 +71,7 @@ pre[class*='language-'] {
 	position: relative;
 	padding: 0.2em;
 	border-radius: 0.3em;
-	color: var(--code-tag);
+	color: var(--lv-docs-code-tag);
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	display: inline;
 	white-space: normal;
@@ -126,7 +126,7 @@ pre[class*="language-"]:after {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: var(--code-red);
+	color: var(--lv-docs-code-red);
 }
 
 .token.selector,
@@ -136,7 +136,7 @@ pre[class*="language-"]:after {
 .token.function,
 .token.builtin,
 .token.inserted {
-	color: var(--code-green);
+	color: var(--lv-docs-code-green);
 }
 
 .token.operator,
@@ -151,7 +151,7 @@ pre[class*="language-"]:after {
 .token.attr-value,
 .token.keyword,
 .token.class-name {
-	color: var(--code-blue);
+	color: var(--lv-docs-code-blue);
 }
 
 .token.regex,

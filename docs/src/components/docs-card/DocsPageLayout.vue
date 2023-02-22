@@ -183,10 +183,10 @@ $primary-color: #38b2ac;
     color: var(--text-color);
     background-color: var(--lv-background-color);
     &:hover {
-      background: var(--lightGray);
+      background: var(--lv-docs-color-border);
     }
     &.active {
-      background-color: var(--gray);
+      background-color: var(--lv-docs-color-gray);
       color: #fff;
     }
   }

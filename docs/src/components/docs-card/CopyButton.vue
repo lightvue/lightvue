@@ -71,7 +71,7 @@ export default {
   right: 52px;
   font-size: 14px;
   white-space: nowrap;
-  background-color: var(--gray);
+  background-color: var(--lv-docs-color-gray);
   color: #fff;
   border-radius: 24px;
   padding: 6px 12px 6px 6px;

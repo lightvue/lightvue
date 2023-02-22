@@ -1,45 +1,45 @@
 :root {
-  --gray: #566d79;
-  --lightGray: #dfe7eb;
+  --lv-docs-color-gray: #566d79;
+  --lv-docs-color-border: #dfe7eb;
 
   // Api Table
-  --api-table-border-color: #e7e7e7;
-  --api-table-bg-color: var(--lv-background-color);
-  --api-table-header-bg: #607b89;
-  --api-table-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --api-table-odd-row: #edf2f7;
-  --api-table-header-bg: var(--gray);
-  --api-table-highlight-text: #1c587a;
-  --api-table-text-color: var(--lv-text-color);
+  --lv-docs-api-border-color: #e7e7e7;
+  --lv-docs-api-bg-color: var(--lv-background-color);
+  --lv-docs-api-header-bg: #607b89;
+  --lv-docs-api-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --lv-docs-api-odd-row: #edf2f7;
+  --lv-docs-api-header-bg: var(--lv-docs-color-gray);
+  --lv-docs-api-highlight-text: #1c587a;
+  --lv-docs-api-text-color: var(--lv-text-color);
 
   // Code Wrap
-  --code-red: hsl(0, 64%, 48%);
-  --code-green: hsl(105, 88%, 33%);
-  --code-blue: #1990b8;
-  --code-row-even: var(--lv-background-color);
-  --code-row-odd: hsl(210, 50%, 98%);
-  --code-stripes: linear-gradient(transparent 50%, hsl(210, 50%, 98%) 50%);
-  --code-bg-color: #fdfdfd;
+  --lv-docs-code-red: hsl(0, 64%, 48%);
+  --lv-docs-code-green: hsl(105, 88%, 33%);
+  --lv-docs-code-blue: #1990b8;
+  --lv-docs-code-row-even: var(--lv-background-color);
+  --lv-docs-code-row-odd: hsl(210, 50%, 98%);
+  --lv-docs-code-stripes: linear-gradient(transparent 50%, hsl(210, 50%, 98%) 50%);
+  --lv-docs-code-bg-color: #fdfdfd;
 }
 
 [data-theme='dark'] {
-  --lightGray: #4c5768;
-  --gray: #364146;
+  --lv-docs-color-gray: #364146;
+  --lv-docs-color-border: #4c5768;
   // Api Table
-  --api-table-border-color: var(--lightGray);
-  --api-table-bg-color: var(--lv-background-color);
-  --api-table-header-bg: #313e52;
-  --api-table-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --api-table-odd-row: hsla(0, 0%, 0%, 0.2);
-  --api-table-highlight-text: #58b7eb;
-  --api-table-text-color: var(--lv-text-color);
+  --lv-docs-api-border-color: var(--lv-docs-color-border);
+  --lv-docs-api-bg-color: var(--lv-background-color);
+  --lv-docs-api-header-bg: #313e52;
+  --lv-docs-api-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --lv-docs-api-odd-row: hsla(0, 0%, 0%, 0.2);
+  --lv-docs-api-highlight-text: #58b7eb;
+  --lv-docs-api-text-color: var(--lv-text-color);
 
   // Code Wrap
-  --code-red: hsl(0, 86%, 66%);
-  --code-green: hsl(105, 64%, 61%);
-  --code-blue: hsl(189, 93%, 62%);
-  --code-row-even: var(--lv-background-color);
-  --code-row-odd: hsla(0, 0%, 0%, 0.2);
-  --code-stripes: linear-gradient(transparent 50%, hsla(0, 0%, 0%, 0.2) 50%);
-  --code-bg-color: #161b22;
+  --lv-docs-code-red: hsl(0, 86%, 66%);
+  --lv-docs-code-green: hsl(105, 64%, 61%);
+  --lv-docs-code-blue: hsl(189, 93%, 62%);
+  --lv-docs-code-row-even: var(--lv-background-color);
+  --lv-docs-code-row-odd: hsla(0, 0%, 0%, 0.2);
+  --lv-docs-code-stripes: linear-gradient(transparent 50%, hsla(0, 0%, 0%, 0.2) 50%);
+  --lv-docs-code-bg-color: #161b22;
 }

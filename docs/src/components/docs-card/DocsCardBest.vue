@@ -154,12 +154,12 @@ export default {
   max-height: 60vh;
   background: var(--lv-background-color);
   /* padding: 20px; */
-  border-left: 1px solid var(--lightGray);
+  border-left: 1px solid var(--lv-docs-color-border);
   border-radius: 0px 0px 10px 0px;
 }
 .dy-props__header {
   padding: 16px;
-  border-bottom: 1px solid var(--lightGray);
+  border-bottom: 1px solid var(--lv-docs-color-border);
   font-weight: 600;
   font-size: 1em;
   color: #008080;
@@ -182,7 +182,7 @@ export default {
   padding: 12px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--lightGray);
+  border-bottom: 1px solid var(--lv-docs-color-border);
   .component__header {
     /* padding: 20px; */
     color: var(--lv-color-primary);
@@ -193,7 +193,7 @@ export default {
     white-space: nowrap;
     /* margin-left: -22px;
     padding: 8px 16px 8px 24px;
-    background: var(--lightGray); */
+    background: var(--lv-docs-color-border); */
     color: var(--text-color);
     position: relative;
     cursor: pointer;
@@ -208,7 +208,7 @@ export default {
     width: 0;
     height: 0;
     border: 0 solid transparent;
-    border-top-color: var(--gray);
+    border-top-color: var(--lv-docs-color-gray);
     border-width: 10px 0 0 12px;
     z-index: -1;
     margin: 0px;
@@ -240,7 +240,7 @@ export default {
     }
     &:hover {
       color: var(--lv-color-primary);
-      background-color: var(--api-table-odd-row);
+      background-color: var(--lv-docs-api-odd-row);
     }
   }
 }
@@ -276,7 +276,7 @@ export default {
 // }
 .dy-code__wrap {
   position: relative;
-  border-top: 2px solid var(--lightGray);
+  border-top: 2px solid var(--lv-docs-color-border);
 }
 .dy-code {
   max-height: 180px;
@@ -288,14 +288,14 @@ export default {
 
   // padding: 5px;
   pre {
-    color: var(--code-green);
+    color: var(--lv-docs-code-green);
     span {
-      color: var(--code-blue);
+      color: var(--lv-docs-code-blue);
     }
   }
   .dy-code-row {
     &.--tag-row {
-      color: var(--code-red);
+      color: var(--lv-docs-code-red);
       padding-left: 16px;
     }
     &.--empty-row {
@@ -303,10 +303,10 @@ export default {
       min-height: 4px;
     }
     &:nth-child(even) {
-      background-color: var(--code-row-even);
+      background-color: var(--lv-docs-code-row-even);
     }
     &:nth-child(odd) {
-      background-color: var(--code-row-odd);
+      background-color: var(--lv-docs-code-row-odd);
     }
   }
 }
