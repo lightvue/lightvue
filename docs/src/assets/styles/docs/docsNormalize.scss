@@ -1,0 +1,36 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 0px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--background-color-alt) !important;
+  font-family: var(--font-family);
+  font-weight: normal;
+  color: var(--text-color) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+#app {
+  background-color: var(--background-color-alt);
+  color: var(--text-color);
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

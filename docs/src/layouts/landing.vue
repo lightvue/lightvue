@@ -14,7 +14,6 @@ export default {};
 
 <style>
 @import './overwrite.scss';
-@import './examples.scss';
 * {
   padding: 0px;
   margin: 0px;

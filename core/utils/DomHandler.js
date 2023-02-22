@@ -382,20 +382,20 @@ export default class DomHandler {
     }
   }
 
-  static calculateScrollbarWidth() {
-    if (this.calculatedScrollbarWidth != null) return this.calculatedScrollbarWidth;
+  // static calculateScrollbarWidth() {
+  //   if (this.calculatedScrollbarWidth != null) return this.calculatedScrollbarWidth;
 
-    let scrollDiv = document.createElement('div');
-    scrollDiv.className = 'lv-scrollbar-measure';
-    document.body.appendChild(scrollDiv);
+  //   let scrollDiv = document.createElement('div');
+  //   scrollDiv.className = 'lv-scrollbar-measure';
+  //   document.body.appendChild(scrollDiv);
 
-    let scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-    document.body.removeChild(scrollDiv);
+  //   let scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+  //   document.body.removeChild(scrollDiv);
 
-    this.calculatedScrollbarWidth = scrollbarWidth;
+  //   this.calculatedScrollbarWidth = scrollbarWidth;
 
-    return scrollbarWidth;
-  }
+  //   return scrollbarWidth;
+  // }
 
   static getBrowser() {
     if (!this.browser) {

@@ -65,4 +65,13 @@ export default {
     width: 17px;
   }
 }
+.country-item {
+  display: flex;
+  align-items: center;
+
+  img.flag {
+    width: 18px;
+    margin-right: 0.5rem;
+  }
+}
 </style>

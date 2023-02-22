@@ -78,9 +78,9 @@ export default {
       type: String,
       default: 'button',
     },
-     variant: {
+    variant: {
       type: String,
-      default: 'primary'
+      default: 'primary',
     },
     inline: {
       type: Boolean,
@@ -120,7 +120,6 @@ export default {
 };
 </script>
 <style lang="scss">
-/* @import '../GlobalTheme.scss'; */
 @import './Button.scss';
 @import './ButtonTheme.scss';
 </style>
