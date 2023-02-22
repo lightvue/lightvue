@@ -1,6 +1,6 @@
 $editor-shade: rgba(75, 75, 75, 0.307);
-$editor-bg: var(--input-field-background-color);
-$main-editor-bg: var(--input-field-background-color);
+$editor-bg: var(--lv-input-background-color);
+$main-editor-bg: var(--lv-input-background-color);
 .lv-text-editor {
   //   border: 1px solid $editor-shade;
   // border: 2px solid #edf2f6;
@@ -14,7 +14,7 @@ $main-editor-bg: var(--input-field-background-color);
     display: flex;
     flex-wrap: wrap;
     padding: 4px;
-    border-bottom: 1px solid var(--input-field-focus-background);
+    border-bottom: 1px solid var(--lv-input-focus-background);
     gap: 4px;
     border-radius: 3px 3px 0 0;
 

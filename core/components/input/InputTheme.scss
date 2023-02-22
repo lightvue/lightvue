@@ -1,5 +1,5 @@
 input {
-  color: var(--input-field-text);
+  color: var(--lv-input-text);
 }
 .lv-input__group {
   position: relative;
@@ -73,21 +73,21 @@ input {
 
   .lv-input__field {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    font-size: var(--input-field-font-size);
-    color: var(--input-field-text-color) !important;
-    background: var(--input-field-background-color);
+    font-size: var(--lv-input-font-size);
+    color: var(--lv-input-text-color) !important;
+    background: var(--lv-input-background-color);
     // border: 2px solid transparent;
-    padding: var(--input-field-padding);
+    padding: var(--lv-input-padding);
     border: none;
     // border-bottom: 2px solid transparent;
-    transition: var(--input-field-transition);
+    transition: var(--lv-input-transition);
     appearance: none;
-    border-radius: var(--input-field-border-radius);
+    border-radius: var(--lv-input-border-radius);
     &:focus-within {
       outline: 0 none;
       outline-offset: 0;
-      // box-shadow: var(--input-field-focus-shadow);
-      background-color: var(--input-field-focus-background);
+      // box-shadow: var(--lv-input-focus-shadow);
+      background-color: var(--lv-input-focus-background);
       // box-shadow: 0 0 0 0.2rem #e1e7ec;
       /* border: 2px solid #e1e7ec; */
     }
@@ -96,7 +96,7 @@ input {
       padding: 10px 0px;
       &::placeholder {
         // color: rgba(0, 0, 0, 0.3);
-        color: var(--input-field-placeholder-color);
+        color: var(--lv-input-placeholder-color);
       }
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px #edf2f7 inset;

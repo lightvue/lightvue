@@ -26,7 +26,7 @@ export default {
     },
     backgroundColor: {
       type: String,
-      default: 'var(--input-field-background-color)',
+      default: 'var(--lv-input-background-color)',
     },
   },
   computed: {

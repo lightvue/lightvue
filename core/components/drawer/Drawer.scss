@@ -23,7 +23,7 @@
     // overflow-y: auto;
     margin: 0 !important;
     max-width: 100vw !important;
-    background-color: var(--input-field-background-color);
+    background-color: var(--lv-input-background-color);
     &::-webkit-scrollbar {
       display: none;
     }
@@ -55,7 +55,7 @@
       justify-content: space-between;
       align-items: center;
       touch-action: none;
-      background-color: var(--input-field-background-color);
+      background-color: var(--lv-input-background-color);
       // overflow: hidden;
       min-height: max-content;
       .header__title {
@@ -88,7 +88,7 @@
         display: none;
       }
       .list-item {
-        color: var(--input-field-text-color);
+        color: var(--lv-input-text-color);
       }
     }
   }

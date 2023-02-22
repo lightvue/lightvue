@@ -1,31 +1,31 @@
 :root {
   // Input Field
-  --input-field-transition: box-shadow 0.2s, border-radius 0.3s;
-  --input-field-fontSize: 1rem;
-  --input-field-padding: 0 12px;
-  --input-field-border-radius: 5px;
-  --input-field-placeholder-color: rgba(0, 0, 0, 0.3);
-  --input-field-background-color: #edf2f7;
-  --input-field-text-color: #495057;
-  --input-field-focus-background: hsl(210, 38%, 90%);
-  --input-field-focus-shadow: 0 0 0 0;
-  --input-field-hover-shadow: 0 0 0 0;
+  --lv-input-transition: box-shadow 0.2s, border-radius 0.3s;
+  --lv-input-fontSize: 1rem;
+  --lv-input-padding: 0 12px;
+  --lv-input-border-radius: 5px;
+  --lv-input-placeholder-color: rgba(0, 0, 0, 0.3);
+  --lv-input-background-color: #edf2f7;
+  --lv-input-text-color: #495057;
+  --lv-input-focus-background: hsl(210, 38%, 90%);
+  --lv-input-focus-shadow: 0 0 0 0;
+  --lv-input-hover-shadow: 0 0 0 0;
   // Prepend Append
-  --input-prepend-append-padding: 12px;
-  --input-prepend-append-margin: -12px;
+  --lv-input-slot-padding: 12px;
+  --lv-input-slot-margin: -12px;
   // input Help Text
-  --input-help-font-size: 12px;
-  --input-help-opacity: 0.8;
-  --input-help-margin-top: 4px;
+  --lv-input-help-font-size: 12px;
+  --lv-input-help-opacity: 0.8;
+  --lv-input-help-margin-top: 4px;
   //Input Label
-  --input-label-margin-bottom: 8px;
-  --input-label-color: ;
+  --lv-input-label-margin-bottom: 8px;
+  --lv-input-label-color: ;
 }
 
 [data-theme='dark'] {
-  --input-field-placeholder-color: rgba(255, 255, 255, 0.3);
-  --input-field-background-color: hsl(215, 21%, 20%);
-  --input-field-focus-background: hsl(215, 21%, 30%);
-  // --input-field-textColor: var(--lv-text-color);
-  --input-field-text-color: hsl(210, 9%, 90%);
+  --lv-input-placeholder-color: rgba(255, 255, 255, 0.3);
+  --lv-input-background-color: hsl(215, 21%, 20%);
+  --lv-input-focus-background: hsl(215, 21%, 30%);
+  // --lv-input-textColor: var(--lv-text-color);
+  --lv-input-text-color: hsl(210, 9%, 90%);
 }

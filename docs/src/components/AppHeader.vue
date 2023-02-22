@@ -103,11 +103,11 @@ export default {
   cursor: pointer;
 }
 .dropdown-item:hover {
-  background: var(--input-field-bg);
+  background: var(--lv-input-bg);
 }
 
 .dropdown-btn:hover {
-  background: var(--input-field-bg);
+  background: var(--lv-input-bg);
 }
 .dropdown:hover .dropdown-content {
   display: block;
@@ -196,7 +196,7 @@ export default {
   border: 0px;
   border-radius: 20px;
   transition: all 0.25s ease;
-  background: var(--input-field-bg);
+  background: var(--lv-input-bg);
   &:focus {
     outline: none;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);

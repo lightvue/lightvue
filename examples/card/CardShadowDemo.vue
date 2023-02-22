@@ -43,8 +43,8 @@ export default {
   height: 300px;
   width: 300px;
   margin: 30px;
-  background-color: var(--input-field-background-color);
-  color: var(--input-field-text-color);
+  background-color: var(--lv-input-background-color);
+  color: var(--lv-input-text-color);
 }
 
 .card-demo h4 > span {

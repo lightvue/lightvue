@@ -73,7 +73,7 @@ export default {
   top: -20px;
   padding: 5px;
   padding-top: 0;
-  background-color: var(--input-field-background-color);
+  background-color: var(--lv-input-background-color);
   background-color: transparent;
 }
 

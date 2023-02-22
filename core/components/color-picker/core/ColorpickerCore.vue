@@ -215,7 +215,7 @@ export default {
   box-sizing: initial;
   width: 225px;
   font-family: Menlo;
-  background-color: var(--input-field-background-color);
+  background-color: var(--lv-input-background-color);
 }
 .vc-chrome-controls {
   display: flex;
@@ -310,7 +310,7 @@ export default {
 }
 .vc-chrome-body {
   padding: 16px 16px 12px;
-  background-color: var(--input-field-background-color);
+  background-color: var(--lv-input-background-color);
 }
 .vc-chrome-saturation-wrap {
   width: 100%;
@@ -355,11 +355,11 @@ export default {
   margin-bottom: 4px;
 }
 .palette-container {
-  border-top: 1px solid var(--input-field-background-color);
+  border-top: 1px solid var(--lv-input-background-color);
   padding: 8px 4px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  background-color: var(--input-field-background-color);
+  background-color: var(--lv-input-background-color);
 }
 </style>
