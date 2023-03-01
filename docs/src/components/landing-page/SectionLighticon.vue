@@ -12,7 +12,7 @@
         <br />
         <br />
         <nuxt-link :to="{ hash: 'contact' }" class="page-button --dark">Know More</nuxt-link>
-        <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
+        <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--lv-theme-color: #143a56; --lv-theme-color-dark: #194a70" /> -->
       </div>
     </div>
   </section>
@@ -57,7 +57,7 @@ export default {};
       font-size: 32px;
       line-height: 48px;
       font-weight: 600;
-      color: #143a56;
+      color: var(--lv-theme-color-inverse);
       margin-bottom: 0.78em;
     }
     .section-lighticons__content-description {
@@ -65,7 +65,7 @@ export default {};
       line-height: 30px;
       opacity: 0.7;
       font-weight: 300;
-      color: #143a56;
+      color: var(--lv-theme-color-inverse);
       margin-bottom: 0.5em;
       strong {
         font-weight: 500;

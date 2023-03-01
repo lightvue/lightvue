@@ -117,7 +117,8 @@ export default {
 <style lang="scss">
 .best__demo__wrapper {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
-  background: #ffffff;
+  background: var(--lv-background-color);
+  color: var(--text-color);
   margin-bottom: 32px;
   margin-top: 24px;
   width: 100%;
@@ -151,15 +152,14 @@ export default {
 .dy-props__wrap {
   max-width: 300px;
   max-height: 60vh;
-  background: #ffffff;
+  background: var(--lv-background-color);
   /* padding: 20px; */
-  transition: all 0.2s ease-in-out;
-  border-left: 2px solid #edf2f6;
+  border-left: 1px solid var(--lv-docs-color-border);
   border-radius: 0px 0px 10px 0px;
 }
 .dy-props__header {
   padding: 16px;
-  border-bottom: 1px solid #edf2f6;
+  border-bottom: 1px solid var(--lv-docs-color-border);
   font-weight: 600;
   font-size: 1em;
   color: #008080;
@@ -171,7 +171,7 @@ export default {
   padding: 20px;
   // overflow-y: scroll;
   height: calc(100% - 52px);
-  background: #ffffff;
+  background: var(--lv-background-color);
   border-radius: 0px 0px 10px 0px;
   //   height: 350px;
 }
@@ -182,19 +182,19 @@ export default {
   padding: 12px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #edf2f6;
+  border-bottom: 1px solid var(--lv-docs-color-border);
   .component__header {
     /* padding: 20px; */
-
+    color: var(--lv-color-primary);
     font-size: 18px;
-    font-weight: bold;
+    font-weight: normal;
     /* border: 1px solid #edf2f6; */
     margin: 0px;
     white-space: nowrap;
-    /* margin-left: -22px; */
-    /* padding: 8px 16px 8px 24px; */
-    /* background: #dfe7eb; */
-    color: #607b89;
+    /* margin-left: -22px;
+    padding: 8px 16px 8px 24px;
+    background: var(--lv-docs-color-border); */
+    color: var(--text-color);
     position: relative;
     cursor: pointer;
     /* border-radius: 6px 20px 20px 0;
@@ -208,7 +208,7 @@ export default {
     width: 0;
     height: 0;
     border: 0 solid transparent;
-    border-top-color: #bdc7cf;
+    border-top-color: var(--lv-docs-color-gray);
     border-width: 10px 0 0 12px;
     z-index: -1;
     margin: 0px;
@@ -219,30 +219,28 @@ export default {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-
   font-size: 24px;
+
   .docs-card__action {
     cursor: pointer;
     /* transition: 0.5s all ease-out; */
     border-radius: 50%;
-    // font-weight: bold;
     padding: 6px;
     height: 36px;
     width: 36px;
     cursor: pointer;
-    transition: 0.5s all ease-out;
-    /* font-size: 24px; */
+
     &.--active {
-      color: #687f8b;
-      background-color: #edf2f6;
+      color: var(--text-color);
+      background-color: var(--lv-background-color-alt);
     }
     &.--disabled {
       cursor: not-allowed;
+      opacity: 0.6;
     }
-
     &:hover {
-      color: #607b89;
-      background-color: #dde4e9;
+      color: var(--lv-color-primary);
+      background-color: var(--lv-docs-api-odd-row);
     }
   }
 }
@@ -253,8 +251,7 @@ export default {
 
   justify-content: center;
   width: 100%;
-
-  background: #ffffff;
+  background: var(--lv-background-color);
   .demo-sec {
     min-height: 200px;
     width: 100%;
@@ -279,7 +276,7 @@ export default {
 // }
 .dy-code__wrap {
   position: relative;
-  border-top: 2px solid #edf2f6;
+  border-top: 2px solid var(--lv-docs-color-border);
 }
 .dy-code {
   max-height: 180px;
@@ -288,16 +285,17 @@ export default {
   flex-direction: column;
   line-height: 1.5;
   position: relative;
+
   // padding: 5px;
   pre {
-    color: #2f9c0a;
+    color: var(--lv-docs-code-green);
     span {
-      color: #1990b8;
+      color: var(--lv-docs-code-blue);
     }
   }
   .dy-code-row {
     &.--tag-row {
-      color: #c92c2c;
+      color: var(--lv-docs-code-red);
       padding-left: 16px;
     }
     &.--empty-row {
@@ -305,10 +303,10 @@ export default {
       min-height: 4px;
     }
     &:nth-child(even) {
-      background-color: #f6f9fc;
+      background-color: var(--lv-docs-code-row-even);
     }
     &:nth-child(odd) {
-      background-color: #ffffff;
+      background-color: var(--lv-docs-code-row-odd);
     }
   }
 }

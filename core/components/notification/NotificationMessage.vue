@@ -36,7 +36,6 @@ export default {
       if (this.closeTimeout) {
         clearTimeout(this.closeTimeout);
       }
-
       this.close();
     },
   },
@@ -44,12 +43,14 @@ export default {
     containerClass() {
       return [
         'lv-notification__message',
-        {
-          '--info': this.message.type === 'info',
-          '--warn': this.message.type === 'warn',
-          '--error': this.message.type === 'error',
-          '--success': this.message.type === 'success',
-        },
+        'lv--primary',
+        `lv--${this.message.type}`
+        // {
+        //   '--info': this.message.type === 'info',
+        //   '--warn': this.message.type === 'warn',
+        //   '--error': this.message.type === 'error',
+        //   '--success': this.message.type === 'success',
+        // },
       ];
     },
     iconClass() {

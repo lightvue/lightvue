@@ -72,14 +72,14 @@ export default {
 .lv-progressbar {
   border: 0 none;
   height: 1.5rem;
-  background: #dee2e6;
+  background: var(--lv-input-background-color);
   border-radius: 3px;
 }
 
 .lv-progressbar .lv-progressbar-value {
   border: 0 none;
   margin: 0;
-  background: var(--primary-color);
+  background: var(--lv-color-primary);
 }
 
 .lv-progressbar .lv-progressbar-label {

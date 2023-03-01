@@ -12,8 +12,11 @@
         <br />
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.type" label="Type" /> <br />
+        <lv-dropdown v-model="allOptions.variant" optionsLabel='variants' placeholder="Select a variant" :options="variants" label="Variants" clearable>
         <lv-input v-model="allOptions['icon-right']" label="Right Icon" /> <br />
         <lv-input v-model="allOptions.size" label="Size" /> <br />
+          
+        </lv-dropdown>
       </template>
       <template #code>
         <span class="dy-code-row --empty-row"></span>
@@ -33,7 +36,7 @@ import DocsCardBest from '@/components/docs-card/DocsCardBest';
 import LvInput from 'lightvue/input';
 import LvColorpicker from 'lightvue/color-picker';
 import LvToggleSwitch from 'lightvue/toggle-switch';
-
+import LvDropdown from '../../core/components/dropdown';
 export default {
   data() {
     return {
@@ -49,8 +52,10 @@ export default {
         icon: '',
         'icon-right': '',
         size: 'xl',
+        variant: 'primary'
       },
       stringProps: ['label', 'icon-right', 'size', 'type'],
+      variants: ['primary','secondary','success','info','danger','help','plain'] ,
     };
   },
   components: {
@@ -58,6 +63,7 @@ export default {
     LvInput,
     LvToggleSwitch,
     LvColorpicker,
+    LvDropdown
   },
   computed: {
     enabledOptions() {

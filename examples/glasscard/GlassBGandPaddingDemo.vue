@@ -1,16 +1,16 @@
 <template>
   <div class="glasscard-demo-wrapper">
     <div class="glasscard-demo">
-      <LvGlassCard> <div v-html="dummyContent('default (#ffffff, 20px)')"></div> </LvGlassCard>
+      <LvGlassCard backgroundOpacity="100" backgroundBlur="100px"> <div v-html="dummyContent('default (#ffffff, 20px)')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
-      <LvGlassCard backgroundColor="#ff0000"> <div style="color: #fff" v-html="dummyContent('backgroundColor = #ff0000')"></div> </LvGlassCard>
+      <LvGlassCard backgroundOpacity="100" backgroundBlur="100px" backgroundColor="#47B7DE"> <div v-html="dummyContent('backgroundColor = #47B7DE')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
-      <LvGlassCard backgroundColor="#000000"> <div style="color: #fff" v-html="dummyContent('backgroundColor = #000000')"></div> </LvGlassCard>
+      <LvGlassCard backgroundOpacity="100" backgroundBlur="100px" backgroundColor="#CDDC39"> <div v-html="dummyContent('backgroundColor = #CDDC39')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
-      <LvGlassCard backgroundColor="#00bab1" padding="10px"> <div style="color: #fff" v-html="dummyContent('backgroundColor = #00bab1, padding = 10px')"></div> </LvGlassCard>
+      <LvGlassCard backgroundOpacity="100" backgroundBlur="100px" backgroundColor="#00bab1" padding="10px"> <div v-html="dummyContent('backgroundColor = #00bab1, padding = 10px')"></div> </LvGlassCard>
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
   methods: {
     dummyContent(propValue) {
       return `<div>
-                <h4><span>PROP: </span>${propValue}</h4>
+                <h4><span>PROP: </span><span>${propValue}</span></h4>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
@@ -58,11 +58,13 @@ export default {
   opacity: 0.8;
   display: block;
   font-weight: lighter;
+  color: black;
 }
 
 .glasscard-demo p {
   margin-top: 30px;
   opacity: 0.8;
+  color: black;
 }
 @media (max-width: 500px) {
   .glasscard-demo {

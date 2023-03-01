@@ -64,59 +64,59 @@ Vue.component('LvButton', LvButton);
                   <pre>
 
    .lv--primary {
-      --theme-color: #38b2ac;
-      --theme-color-light: #8ed8d6;
-      --theme-color-dark: #319795;
-      --theme-color-inverse: #ffffff;
+      --lv-theme-color: #38b2ac;
+      --lv-theme-color-light: #8ed8d6;
+      --lv-theme-color-dark: #319795;
+      --lv-theme-color-inverse: #ffffff;
     }
 
    .lv--secondary {
-      --theme-color: #607d8b;
-      --theme-color-light: #beccd2;
-      --theme-color-dark: #56717d;
-      --theme-color-inverse: #ffffff;
+      --lv-theme-color: #607d8b;
+      --lv-theme-color-light: #beccd2;
+      --lv-theme-color-dark: #56717d;
+      --lv-theme-color-inverse: #ffffff;
     }
 
    .lv--success {
-      --theme-color: #008c7f;
-      --theme-color-light: #95e8df;
-      --theme-color-dark: #03655b;
-      --theme-color-inverse: #ffffff;
+      --lv-theme-color: #008c7f;
+      --lv-theme-color-light: #95e8df;
+      --lv-theme-color-dark: #03655b;
+      --lv-theme-color-inverse: #ffffff;
     }
 
    .lv--info {
-      --theme-color: #0288d1;
-      --theme-color-light: #89d4fe;
-      --theme-color-dark: #027abc;
-      --theme-color-inverse: #ffffff;
+      --lv-theme-color: #0288d1;
+      --lv-theme-color-light: #89d4fe;
+      --lv-theme-color-dark: #027abc;
+      --lv-theme-color-inverse: #ffffff;
     }
 
    .lv--warning {
-      --theme-color: #ffb300;
-      --theme-color-light: #ffd36d;
-      --theme-color-dark: #df9c00;
-      --theme-color-inverse: #ffffff;
+      --lv-theme-color: #ffb300;
+      --lv-theme-color-light: #ffd36d;
+      --lv-theme-color-dark: #df9c00;
+      --lv-theme-color-inverse: #ffffff;
     }
 
    .lv--help {
-      --theme-color: #795548;
-      --theme-color-light: #baafac;
-      --theme-color-dark: #795548;
-      --theme-color-inverse: #ffffff;
+      --lv-theme-color: #795548;
+      --lv-theme-color-light: #baafac;
+      --lv-theme-color-dark: #795548;
+      --lv-theme-color-inverse: #ffffff;
     }
 
    .lv--danger {
-      --theme-color: #bb2727;
-      --theme-color-light: #e9a5a5;
-      --theme-color-dark: #9b2222;
-      --theme-color-inverse: #ffffff;
+      --lv-theme-color: #bb2727;
+      --lv-theme-color-light: #e9a5a5;
+      --lv-theme-color-dark: #9b2222;
+      --lv-theme-color-inverse: #ffffff;
     }
 
    .lv--plain {
-      --theme-color: #3f51b5;
-      --theme-color-light: #acb7f7;
-      --theme-color-dark: #2e3fa2;
-      --theme-color-inverse: #ffffff;
+      --lv-theme-color: #3f51b5;
+      --lv-theme-color-light: #acb7f7;
+      --lv-theme-color-dark: #2e3fa2;
+      --lv-theme-color-inverse: #ffffff;
     }
 
           </pre

@@ -21,6 +21,9 @@
 }
 
 .lv-buttonset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 15px;
   margin-bottom: 15px;
   .lv-button {

@@ -180,14 +180,13 @@ $primary-color: #38b2ac;
     padding: 0.8rem 0;
     cursor: pointer;
     user-select: none;
-
-    background-color: #ffffff;
-    transition: all 0.2s ease-in-out;
+    color: var(--text-color);
+    background-color: var(--lv-background-color);
     &:hover {
-      background: #edf2f6;
+      background: var(--lv-docs-color-border);
     }
     &.active {
-      background-color: #607c8a;
+      background-color: var(--lv-docs-color-gray);
       color: #fff;
     }
   }

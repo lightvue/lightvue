@@ -82,7 +82,7 @@
   min-width: 100%;
   position: absolute;
 
-  background: #ffffff;
+  background: var(--lv-input-background-color);
   color: #495057;
   border: 0 none;
   border-radius: 3px;
@@ -90,8 +90,8 @@
   .lv-dropdown__panel-header {
     padding: 1rem;
     border-bottom: 0 none;
-    color: #495057;
-    background: #f8f9fa;
+    color: var(--text-color);
+    background: var(--lv-input-background-color);
     margin: 0;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
@@ -110,6 +110,10 @@
     //     top: 50%;
     //     margin-top: -.5rem;
     // }
+
+    .lv-input__field {
+      background-color: var(--lv-background-color);
+    }
   }
   .lv-dropdown__items-wrap {
     overflow: auto;
@@ -118,8 +122,11 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-
+    background-color: var(--lv-input-background-color);
     padding: 0.5rem 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+
     .lv-dropdown__item {
       cursor: pointer;
       font-weight: normal;
@@ -130,37 +137,37 @@
       margin: 0;
       padding: 0.5rem 1rem;
       border: 0 none;
-      color: #495057;
+      color: var(--text-color);
       background: transparent;
       transition: box-shadow 0.2s;
       border-radius: 0;
       &.--selected {
-        color: #ffffff;
-        background: #38b2ac;
+        color: var(--text-color);
+        background: var(--lv-color-primary);
       }
       &.--disabled {
         opacity: 0.6;
       }
       &:not(.--selected):not(.--disabled):hover {
-        color: #495057;
-        background: #e9ecef;
+        color: var(--text-color);
+        background-color: var(--lv-input-focus-background);
       }
     }
     .lv-dropdown__empty-message {
       padding: 0.429rem 0.857rem;
-      color: #5b5b5b;
+      color: var(--text-color);
       background: transparent;
     }
   }
 }
 
 .lv-input-filled .lv-dropdown {
-  background: #edf2f7;
+  background: var(--lv-input-background-color);
   &:not(.--disabled):hover {
-    background-color: #f8f9fa;
+    background-color: var(--lv-background-color-alt);
   }
   &:not(.--disabled).--focused {
-    background-color: #ffffff;
+    background-color: var(--lv-background-color);
   }
 }
 

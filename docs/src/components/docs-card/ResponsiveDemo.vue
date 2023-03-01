@@ -125,7 +125,7 @@ export default {
 <style lang="scss">
 .responsive-area {
   flex-grow: 1;
-  background-color: #ffffff !important;
+  background-color: var(--lv-background-color) !important;
   padding: 20px !important;
   border-radius: 0px 0px 0px 4px;
   width: 100%; /* Initial default width */
@@ -165,7 +165,7 @@ export default {
 
 .splitpanes__splitter {
   width: 16px !important;
-  background-color: #edf2f6 !important;
+  background-color: #838e8dcc !important;
   cursor: e-resize;
   transition: all 0.1s ease-in-out;
   &:hover {

@@ -45,7 +45,7 @@ export default {
     },
     trackColor: {
       type: String,
-      default: '#e2e2e2',
+      default: '#c4c3c3',
     },
     showValue: {
       type: Boolean,

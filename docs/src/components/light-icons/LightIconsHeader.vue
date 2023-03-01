@@ -30,9 +30,9 @@ export default {
 
 <style scoped lang="scss">
 .page-header {
-  color: #566d79;
+  color: var(--text-color);
   text-align: center;
-  background-color: #f5f8fa;
+  background: var(--lv-background-color-alt);
   .logo {
     svg {
       height: 104px;

@@ -1,5 +1,5 @@
 <template>
-  <div :style="`backdrop-filter: blur(${backgroundBlur}); width: 100%; height: 100%;`">
+  <div :style="`backdrop-filter: blur(${backgroundBlur}); width: 100%; height: 100%; border-radius:${borderRadius};`">
     <div class="lv-glasscard" :class="computedClass" :style="computedStyle">
       <slot></slot>
     </div>
@@ -63,7 +63,7 @@ export default {
 }
 
 .lv-glasscard--border {
-  border: 3px solid #ffffff70;
+  border: 3px solid #67676770;
 }
 
 .lv-glasscard--shadow {

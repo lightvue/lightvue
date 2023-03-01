@@ -21,10 +21,10 @@ export default {
       this.$toast.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
     showWarn() {
-      this.$toast.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
+      this.$toast.add({ type: 'warning', title: 'Warn Message', content: 'Message Content', duration: 3000 });
     },
     showError() {
-      this.$toast.add({ type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
+      this.$toast.add({ type: 'danger', title: 'Error Message', content: 'Message Content', duration: 3000 });
     },
   },
 };

@@ -1,64 +1,8 @@
-.lv--primary {
-  --theme-color: #38b2ac;
-  --theme-color-light: #8ed8d6;
-  --theme-color-dark: #319795;
-  --theme-color-inverse: #ffffff;
-}
-.lv--secondary {
-  --theme-color: #607d8b;
-  --theme-color-light: #beccd2;
-  --theme-color-dark: #56717d;
-  --theme-color-inverse: #ffffff;
-}
-.lv--success {
-  --theme-color: #008c7f;
-  --theme-color-light: #95e8df;
-  --theme-color-dark: #03655b;
-  --theme-color-inverse: #ffffff;
-}
-.lv--info {
-  --theme-color: #0288d1;
-  --theme-color-light: #89d4fe;
-  --theme-color-dark: #027abc;
-  --theme-color-inverse: #ffffff;
-}
-.lv--warning {
-  --theme-color: #ffb300;
-  --theme-color-light: #ffd36d;
-  --theme-color-dark: #df9c00;
-  --theme-color-inverse: #ffffff;
-}
-.lv--help {
-  --theme-color: #795548;
-  --theme-color-light: #baafac;
-  --theme-color-dark: #795548;
-  --theme-color-inverse: #ffffff;
-}
-.lv--danger {
-  --theme-color: #bb2727;
-  --theme-color-light: #e9a5a5;
-  --theme-color-dark: #9b2222;
-  --theme-color-inverse: #ffffff;
-}
-.lv--plain {
-  --theme-color: #3f51b5;
-  --theme-color-light: #acb7f7;
-  --theme-color-dark: #2e3fa2;
-  --theme-color-inverse: #ffffff;
-}
-
-.lv--complementary{
-  --theme-color: #edf1f5 !important;
-  --theme-color-light: #8ed8d6 !important;
-  --theme-color-dark: #dfe5ea !important;
-  --theme-color-inverse: #718096 !important;
-}
-
 .lv-button {
   // color: #ffffff;
   // background: var(--primary-color);
-  color: var(--theme-color-inverse);
-  background-color: var(--theme-color);
+  color: var(--lv-theme-color-inverse);
+  background-color: var(--lv-theme-color);
   // border: 1px solid var(--primary-color);
   border: none;
   padding: 12px 20px;
@@ -68,21 +12,21 @@
   &:enabled {
     &:hover {
       // background: #319795;
-      background-color: var(--theme-color-dark);
-      color: var(--theme-color-inverse);
+      background-color: var(--lv-theme-color-dark);
+      color: var(--lv-theme-color-inverse);
       // border-color: #319795;
     }
     &:active {
       // background: var(--primary-color);
-      background-color: var(--theme-color);
-      color: var(--theme-color-inverse);
+      background-color: var(--lv-theme-color);
+      color: var(--lv-theme-color-inverse);
       // border-color: var(--primary-color);
     }
   }
   &:focus {
     outline: 0 none;
     outline-offset: 0;
-    // box-shadow: 0 0 0 0.2rem var(--theme-color-light);
+    // box-shadow: 0 0 0 0.2rem var(--lv-theme-color-light);
   }
   &.--size-sm {
     font-size: 0.875rem;
@@ -115,27 +59,26 @@
   /* Raised Buttons */
   &.--raised {
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    // box-shadow: 0 2px 0px 0px var(--theme-color-dark); // need more finishing.
+    // box-shadow: 0 2px 0px 0px var(--lv-theme-color-dark); // need more finishing.
     // &:hover {
-    //   background: var(--theme-color);
+    //   background: var(--lv-theme-color);
     // }
   }
   // Buttons Hover Shadow
   &.--deep-shadow-hover:hover {
-    box-shadow: 0 6px 16px -1px var(--theme-color);
+    box-shadow: 0 6px 16px -1px var(--lv-theme-color);
   }
   // Deep Shadow
   &.--deep-shadow {
-    box-shadow: 0 6px 16px -1px var(--theme-color);
+    box-shadow: 0 6px 16px -1px var(--lv-theme-color);
   }
   // Raised buttons
   &.--raised.--deep-shadow-hover:hover {
-    background-color: var(--theme-color) !important;
+    background-color: var(--lv-theme-color) !important;
     color: #ffffff !important;
-    box-shadow: 0px 7px 10px var(--theme-color);
+    box-shadow: 0px 7px 10px var(--lv-theme-color);
     transform: translateY(-3px);
   }
-
   &.--icon-only {
     width: 2.357rem;
     // padding: 0.5rem 0;
@@ -145,70 +88,85 @@
   }
   &.--outlined {
     background-color: transparent;
-    color: var(--theme-color);
+    color: var(--lv-theme-color);
     border: 1px solid;
     &:enabled {
       &:hover {
-        background-color: var(--theme-color);
-        border: 1px solid var(--theme-color);
+        background-color: var(--lv-theme-color);
+        border: 1px solid var(--lv-theme-color);
       }
       &:active {
-        background-color: var(--theme-color);
-        border: 1px solid var(--theme-color);
+        background-color: var(--lv-theme-color);
+        border: 1px solid var(--lv-theme-color);
       }
     }
-    &.lv--complementary{
-      color: var(--theme-color-inverse);
+    &.lv--complementary {
+      color: var(--text-color);
       &:enabled {
         &:hover {
           background: rgba(33, 150, 243, 0.04);
-          color: var(--theme-color-inverse);
-          border-color: var(--theme-color-inverse);
+          color: var(--text-color);
+          border-color: var(--text-color);
         }
         &:active {
           background: rgba(33, 150, 243, 0.04);
-          color: var(--theme-color-inverse);
-          border-color: var(--theme-color-inverse);
+          color: var(--text-color);
+          border-color: var(--text-color);
         }
       }
     }
-
   }
   &.--text-button {
     background-color: transparent;
-    color: var(--theme-color);
+    color: var(--lv-theme-color);
     border-color: transparent;
     &:enabled {
       &:hover {
         background: rgba(33, 150, 243, 0.04);
-        color: var(--theme-color);
+        color: var(--lv-theme-color);
         border-color: transparent;
       }
       &:active {
         background: rgba(33, 150, 243, 0.04);
-        color: var(--theme-color);
-        border-color: var(--theme-color);
+        color: var(--lv-theme-color);
+        border-color: var(--lv-theme-color);
       }
     }
-    //Different behavior for complementary variant
-    &.lv--complementary{
-      color: var(--theme-color-inverse);
+    &.lv--complementary {
+      color: var(--text-color);
       &:enabled {
         &:hover {
           background: rgba(33, 150, 243, 0.04);
-          color: var(--theme-color-inverse);
-          border-color: var(--theme-color-inverse);
+          color: var(--text-color);
+          border-color: var(--text-color);
         }
         &:active {
           background: rgba(33, 150, 243, 0.04);
-          color: var(--theme-color-inverse);
-          border-color: var(--theme-color-inverse);
+          color: var(--text-color);
+          border-color: var(--text-color);
         }
       }
     }
   }
+  &.--text-button-dialog {
+    background-color: var(--lv-background-color-alt);
+    color: var(--lv-theme-color);
+    border-color: transparent;
+    &:enabled {
+      &:hover {
+        background: rgba(33, 150, 243, 0.04);
+        color: var(--lv-theme-color);
+        border-color: transparent;
+      }
+      &:active {
+        background: rgba(33, 150, 243, 0.04);
+        color: var(--lv-theme-color);
+        border-color: var(--lv-theme-color);
+      }
+    }
+  }
   &.--link-button {
-    color: var(--theme-color);
+    color: var(--lv-theme-color);
     background: transparent;
     border: transparent;
     text-decoration: none;
@@ -216,7 +174,7 @@
     &:enabled {
       &:hover {
         background: rgba(0, 0, 0, 0.05);
-        color: var(--theme-color);
+        color: var(--lv-theme-color);
         border-color: transparent;
         // .lv-button__label {
         // 	text-decoration: underline;
@@ -230,7 +188,7 @@
       }
       &:active {
         background: transparent;
-        color: var(--theme-color);
+        color: var(--lv-theme-color);
         border-color: transparent;
       }
     }

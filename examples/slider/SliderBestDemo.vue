@@ -41,12 +41,11 @@ export default {
     return {
       allOptions: {
         sliderColor: '#607c8a',
-        trackColor: '#e2e2e2',
+        trackColor: '#c4c3c3',
         min: 10,
         max: 100,
         step: 5,
         orientation: '',
-
         disabled: false,
         showValue: true,
       },

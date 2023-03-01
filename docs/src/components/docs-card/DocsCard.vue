@@ -5,7 +5,7 @@
         <h2><span>#</span>{{ title }}</h2>
       </nuxt-link>
       <div class="docs-card__header--description">
-        <p v-html="description" style="line-height: 1.7; opacity: 0.8"></p>
+        <p v-html="description"></p>
       </div>
     </div>
     <div class="docs-card__body">
@@ -128,7 +128,7 @@ $primary-color: #38b2ac;
   top: 20px;
   left: 95%;
   i {
-    color: #cccccc;
+    color: var(--lv-docs-color-border);
     padding: 5px;
     font-size: 2rem;
     font-weight: bold;
@@ -141,7 +141,7 @@ $primary-color: #38b2ac;
   }
 }
 .docs-card__body {
-  background: #ffffff;
+  background: var(--lv-background-color);
 
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
@@ -162,8 +162,8 @@ $primary-color: #38b2ac;
     // width: 10rem;
     padding: 8px;
     border-radius: 50px;
-    background: #ffffff;
-    box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.2);
+    background: var(--lv-background-color);
+    box-shadow: 0px 0px 2px 0px var(--text-color);
     z-index: 1;
     /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
     /* box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); */
@@ -182,15 +182,15 @@ $primary-color: #38b2ac;
       color: #b1b1b1;
 
       cursor: pointer;
-      transition: 0.5s all ease-out;
+      // transition: 0.5s all ease-out;
 
       &.--active {
-        color: #687f8b;
-        background-color: #edf2f6;
+        color: var(--text-color);
+        background-color: var(--lv-background-color-alt);
       }
       &:hover {
-        color: #687f8b;
-        background-color: #e0e7ed;
+        color: var(--lv-color-primary);
+        background-color: var(--lv-docs-api-odd-row);
       }
     }
   }
@@ -200,14 +200,15 @@ $primary-color: #38b2ac;
   flex-direction: column;
   width: 100%;
   padding: 10px;
-  /* border-bottom: 1px solid #edf2f6; */
+  color: var(--text-color);
+  /* border-bottom: 1px solid var(--lv-docs-color-border); */
   .docs-card__title {
     margin: 0px;
     white-space: nowrap;
     margin-left: -22px;
     padding: 8px 16px 8px 24px;
-    background: #dfe7eb;
-    color: #607b89;
+    background: var(--lv-docs-color-border);
+    color: var(--text-color);
     position: relative;
     cursor: pointer;
     border-radius: 6px 20px 20px 0;
@@ -221,7 +222,7 @@ $primary-color: #38b2ac;
     width: 0;
     height: 0;
     border: 0 solid transparent;
-    border-top-color: #bdc7cf;
+    border-top-color: var(--lv-docs-color-gray);
     border-width: 10px 0 0 12px;
     z-index: -1;
   }
@@ -230,7 +231,8 @@ $primary-color: #38b2ac;
   display: flex;
   align-items: center;
   width: 100%;
-  background: #edf2f6;
+  background: var(--lv-background-color-alt);
+  color: var(--text-color);
 }
 .docs-card__code-tab {
   color: #757575;
@@ -267,8 +269,9 @@ $primary-color: #38b2ac;
 }
 .docs-card__header--description {
   line-height: 1.7;
-  span {
-    color: $primary-color;
+  p {
+    opacity: 0.7;
+    line-height: 1.7;
   }
 }
 .docs-card__footer--description {

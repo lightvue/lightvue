@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-   <div class="enterprise-footer__text">©{{ currentYear }}, LightVue. All Rights Reserved.</div>
+      <div class="enterprise-footer__text">©{{ currentYear }}, LightVue. All Rights Reserved.</div>
     </section>
   </div>
 </template>
@@ -145,8 +145,8 @@ export default {
         }
       }
       .enterprise-button {
-        --theme-color-dark: #194a70;
-        --theme-color: #143a56;
+        --lv-theme-color-dark: #194a70;
+        --lv-theme-color: #143a56;
         margin-top: 30px;
         height: 40px;
         width: 250px;
@@ -164,8 +164,8 @@ export default {
 .overlay-leadform {
   padding: 12px;
   .leadform__button {
-    --theme-color-dark: #194a70;
-    --theme-color: #143a56;
+    --lv-theme-color-dark: #194a70;
+    --lv-theme-color: #143a56;
     margin-top: 15px;
     height: 40px;
     width: 250px;

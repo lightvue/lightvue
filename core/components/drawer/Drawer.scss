@@ -21,8 +21,9 @@
     flex-direction: column;
     width: 100%;
     // overflow-y: auto;
-    margin: 0 !important ;
+    margin: 0 !important;
     max-width: 100vw !important;
+    background-color: var(--lv-input-background-color);
     &::-webkit-scrollbar {
       display: none;
     }
@@ -54,10 +55,12 @@
       justify-content: space-between;
       align-items: center;
       touch-action: none;
+      background-color: var(--lv-input-background-color);
       // overflow: hidden;
       min-height: max-content;
       .header__title {
         padding: 10px;
+        color: var(--text-color);
       }
       .header__close {
         cursor: pointer;
@@ -66,6 +69,7 @@
         i {
           font-size: 20px;
           font-weight: 700;
+          color: var(--text-color);
           &::before,
           &::after {
             vertical-align: initial;
@@ -79,8 +83,12 @@
     .drawer-container__slot-content {
       height: 100%;
       overflow-y: auto;
+      background-color: var(--lv-background-color);
       &::-webkit-scrollbar {
         display: none;
+      }
+      .list-item {
+        color: var(--lv-input-text-color);
       }
     }
   }
@@ -111,17 +119,14 @@
   }
   .wrapper__backdrop {
     position: absolute;
-
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: rgb(0, 0, 0);
-
+    background-color: var(--lv-background-color);
     /* /backdrop-filter: blur(2px); */
-
     /*  */
     // opacity: 0.3;
     // backdrop-filter: blur(3px);

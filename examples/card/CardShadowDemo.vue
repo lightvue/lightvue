@@ -1,9 +1,9 @@
 <template>
   <div class="card-demo-wrapper">
-    <div class="card-demo">
+    <div class="card-demo" :style="{ borderRadius: '11px' }">
       <LvCard :shadowStyle="1"> <div v-html="dummyContent('shadowStyle = 1')"></div> </LvCard>
     </div>
-    <div class="card-demo">
+    <div class="card-demo" :style="{ borderRadius: '11px' }">
       <LvCard :shadowStyle="2"> <div v-html="dummyContent('shadowStyle = 2')"></div> </LvCard>
     </div>
   </div>
@@ -43,6 +43,8 @@ export default {
   height: 300px;
   width: 300px;
   margin: 30px;
+  background-color: var(--lv-input-background-color);
+  color: var(--lv-input-text-color);
 }
 
 .card-demo h4 > span {

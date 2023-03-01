@@ -17,10 +17,10 @@ export default {
       this.$notification.add({ type: 'info', title: 'Info Message', content: 'Message Content', duration: 3000 });
     },
     showWarn() {
-      this.$notification.add({ type: 'warn', title: 'Warn Message', content: 'Message Content', duration: 3000 });
+      this.$notification.add({ type: 'warning', title: 'Warn Message', content: 'Message Content', duration: 3000 });
     },
     showError() {
-      this.$notification.add({ type: 'error', title: 'Error Message', content: 'Message Content', duration: 3000 });
+      this.$notification.add({ type: 'danger', title: 'Error Message', content: 'Message Content', duration: 3000 });
     },
   },
 };

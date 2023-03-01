@@ -1,16 +1,16 @@
 <template>
   <div class="glasscard-demo-wrapper">
     <div class="glasscard-demo">
-      <LvGlassCard> <div v-html="dummyContent('default (15px)')"></div> </LvGlassCard>
+      <LvGlassCard backgroundOpacity="100" backgroundColor="#ffffff"> <div v-html="dummyContent('default (15px)')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
-      <LvGlassCard backgroundBlur="3px"> <div v-html="dummyContent('backgroundBlur = 3px')"></div> </LvGlassCard>
+      <LvGlassCard backgroundOpacity="100" backgroundColor="#ffffff" backgroundBlur="3px"> <div v-html="dummyContent('backgroundBlur = 3px')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
-      <LvGlassCard backgroundBlur="20px"> <div v-html="dummyContent('backgroundBlur = 20px')"></div> </LvGlassCard>
+      <LvGlassCard backgroundOpacity="100" backgroundColor="#ffffff" backgroundBlur="20px"> <div v-html="dummyContent('backgroundBlur = 20px')"></div> </LvGlassCard>
     </div>
     <div class="glasscard-demo">
-      <LvGlassCard backgroundBlur="40px"> <div v-html="dummyContent('backgroundBlur = 40px')"></div> </LvGlassCard>
+      <LvGlassCard backgroundOpacity="100" backgroundColor="#ffffff" backgroundBlur="40px"> <div v-html="dummyContent('backgroundBlur = 40px')"></div> </LvGlassCard>
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
   methods: {
     dummyContent(propValue) {
       return `<div>
-                <h4><span>PROP: </span>${propValue}</h4>
+                <h4><span>PROP: </span><span>${propValue}</span></h4>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
@@ -56,14 +56,17 @@ export default {
 .glasscard-demo h4 > span {
   font-size: 0.9em;
   opacity: 0.8;
-  font-weight: lighter;
   display: block;
+  font-weight: lighter;
+  color: black;
 }
 
 .glasscard-demo p {
   margin-top: 30px;
   opacity: 0.8;
+  color: black;
 }
+
 @media (max-width: 500px) {
   .glasscard-demo {
     height: 100%;

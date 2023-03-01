@@ -7,10 +7,10 @@
   </div>
 </template>
 <script>
-import CodePrism from "./CodePrism.vue";
-import CopyButton from "./CopyButton.vue";
+import CodePrism from './CodePrism.vue';
+import CopyButton from './CopyButton.vue';
 export default {
-  name: "DocCode",
+  name: 'DocCode',
   components: {
     CodePrism,
     CopyButton,
@@ -18,12 +18,12 @@ export default {
   props: {
     lang: {
       type: String,
-      default: "html",
+      default: 'html',
     },
   },
   methods: {
     getMarkup() {
-      return this.$el.querySelector("pre").innerText;
+      return this.$el.querySelector('pre').innerText;
     },
   },
 };
@@ -32,6 +32,6 @@ export default {
 <style>
 .code-wrap {
   position: relative;
-  border-bottom: 1px solid #edf2f6;
+  border-bottom: 1px solid var(--lv-docs-color-border);
 }
 </style>

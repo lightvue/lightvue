@@ -1,51 +1,3 @@
-.lv--primary {
-  --theme-color: #38b2ac;
-  --theme-color-light: #8ed8d6;
-  --theme-color-dark: #319795;
-  --theme-color-inverse: #ffffff;
-}
-.lv--secondary {
-  --theme-color: #607d8b;
-  --theme-color-light: #beccd2;
-  --theme-color-dark: #56717d;
-  --theme-color-inverse: #ffffff;
-}
-.lv--success {
-  --theme-color: #008c7f;
-  --theme-color-light: #95e8df;
-  --theme-color-dark: #03655b;
-  --theme-color-inverse: #ffffff;
-}
-.lv--info {
-  --theme-color: #0288d1;
-  --theme-color-light: #89d4fe;
-  --theme-color-dark: #027abc;
-  --theme-color-inverse: #ffffff;
-}
-.lv--warning {
-  --theme-color: #ffb300;
-  --theme-color-light: #ffd36d;
-  --theme-color-dark: #df9c00;
-  --theme-color-inverse: #ffffff;
-}
-.lv--help {
-  --theme-color: #795548;
-  --theme-color-light: #baafac;
-  --theme-color-dark: #795548;
-  --theme-color-inverse: #ffffff;
-}
-.lv--danger {
-  --theme-color: #bb2727;
-  --theme-color-light: #e9a5a5;
-  --theme-color-dark: #9b2222;
-  --theme-color-inverse: #ffffff;
-}
-.lv--plain {
-  --theme-color: #3f51b5;
-  --theme-color-light: #acb7f7;
-  --theme-color-dark: #2e3fa2;
-  --theme-color-inverse: #ffffff;
-}
 .--topbadge {
   position: relative;
   padding: 0.25em 0.4em;
@@ -54,15 +6,15 @@
 }
 
 .lv-badge {
-  color: var(--theme-color-inverse);
-  background-color: var(--theme-color);
+  color: var(--lv-theme-color-inverse);
+  background-color: var(--lv-theme-color);
   border: none;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, border-radius 0.3s;
   border-radius: 32px;
   &:hover {
-    background-color: var(--theme-color-dark);
+    background-color: var(--lv-theme-color-dark);
     color: #ffffff;
   }
   &.--size-sm {

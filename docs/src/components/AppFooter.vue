@@ -26,12 +26,13 @@ export default {
 <style lang="scss">
 .app-footer {
   padding: 0px 30px;
+  background: var(--lv-background-color) !important;
+  color: var(--text-color) !important;
   .app-footer__text {
     padding: 12px 0px;
     font-size: 13px;
     opacity: 0.6;
     text-align: center;
-    border-top: 1px dotted #81a8bb;
     i {
       font-size: 12px;
       font-weight: bold;

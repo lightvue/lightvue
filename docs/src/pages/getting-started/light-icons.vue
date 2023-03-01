@@ -38,7 +38,7 @@ export default {
 </script>
 <style>
 .icons-docs-page {
-  background: #f5f8fa;
+  background: var(--lv-background-color-alt);
   padding: 100px 0 0;
 }
 .content-wrapper {

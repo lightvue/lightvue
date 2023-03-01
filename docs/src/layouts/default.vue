@@ -30,6 +30,5 @@ export default {
 
 <style lang="scss">
 @import './overwrite.scss';
-@import './examples.scss';
-@import '@/assets/styles/docsGlobal.scss';
+@import '@/assets/styles/docs/docsGlobal.scss';
 </style>

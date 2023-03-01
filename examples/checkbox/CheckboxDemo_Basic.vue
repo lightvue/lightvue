@@ -3,7 +3,7 @@
     <lv-checkbox name="check" color="success" v-model="checked" value="Hello">Basic</lv-checkbox>
     <lv-checkbox name="check" color="warning" v-model="checked" rounded value="World">Rounded </lv-checkbox>
     <lv-checkbox name="check" color="primary" v-model="checked" rounded filled>Filled </lv-checkbox>
-    <lv-checkbox name="check" color="info" v-model="checked" rounded thick>Thick </lv-checkbox>
+    <lv-checkbox name="check" color="info" v-model="checked" rounded thick>Thick Outline</lv-checkbox>
     <lv-checkbox name="check" color="danger" v-model="checked" plain smooth> Plain </lv-checkbox>
   </div>
 </template>

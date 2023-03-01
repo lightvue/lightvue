@@ -24,11 +24,11 @@ export default {
 }
 input {
   padding: 8px;
-  background-color: #edf2f7;
+  background-color: var(--lv-input-background-color);
   border: none;
   width: 30%;
   border-radius: 4px;
-
+  color: var(--lv-input-text-color);
   border: solid 3px rgba(0, 0, 0, 0);
   transition: all 0.2s;
 }

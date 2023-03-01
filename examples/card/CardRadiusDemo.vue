@@ -3,7 +3,7 @@
     <div class="card-demo">
       <LvCard borderRadius="0px"> <div v-html="dummyContent('borderRadius = 0px')"></div> </LvCard>
     </div>
-    <div class="card-demo">
+    <div class="card-demo" :style="{ borderRadius: '11px' }">
       <LvCard borderRadius="10px"> <div v-html="dummyContent('borderRadius = 10px')"></div> </LvCard>
     </div>
   </div>

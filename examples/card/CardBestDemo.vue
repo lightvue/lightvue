@@ -41,12 +41,11 @@ export default {
     return {
       allOptions: {
         shadowStyle: 1,
-
         padding: '20px',
         borderRadius: '4px',
         showBorder: false,
 
-        backgroundColor: '#DBE8EB',
+        // backgroundColor: '#DBE8EB',
       },
       stringProps: ['padding', 'borderRadius', 'backgroundColor'],
     };

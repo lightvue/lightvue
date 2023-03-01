@@ -1,11 +1,14 @@
 /* Customize website's scrollbar like Mac OS
 Not supports in Firefox and IE */
+
 .light-scrollbar {
   overflow: overlay;
+  color: var(--lv-input-text-color);
   /* total width */
   &::-webkit-scrollbar {
     background-color: transparent;
-    width: 12px; /* 3px + 6px + 3px*/
+    width: 12px;
+    /* 3px + 6px + 3px*/
   }
   /* background of the scrollbar except button or resizer */
   &::-webkit-scrollbar-track {
@@ -34,9 +37,12 @@ Not supports in Firefox and IE */
     display: none;
   }
 }
+
 .light-scrollbar--none {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
   &::-webkit-scrollbar {
     display: none;
   }

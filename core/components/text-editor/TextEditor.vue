@@ -394,15 +394,15 @@ export default {
     },
     theme: {
       type: String,
-      default: '#ffffff',
+      default: '',
     },
     color: {
       type: String,
-      default: '#0D2131',
+      default: 'var(--text-color)',
     },
     editorBgColor: {
       type: String,
-      default: '#edf2f7',
+      default: '',
     },
     showCharacterCount: {
       type: Boolean,

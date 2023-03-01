@@ -49,7 +49,7 @@
           <div class="lightvue-pricing__column-heading --dark">Enterprise</div>
           <div class="lightvue-pricing__column-price">
             <!-- $50<span class="column-price__value">/month</span> -->
-            <lv-button :push="true" :deep-shadow="true" class="pricing-button__styles" label="Contact us" size="l" type="button" style="--theme-color: #143a56; --theme-color-dark: #194a70" />
+            <lv-button :push="true" :deep-shadow="true" class="pricing-button__styles" label="Contact us" size="l" type="button" style="--lv-theme-color: #143a56; --lv-theme-color-dark: #194a70" />
           </div>
         </div>
         <div class="lightvue-pricing__list-item"><i class="light-icon-check --green"></i></div>

@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="badge__wrapper">
-      <LvBadge class="--mr" color="primary">primary</LvBadge>
-      <LvBadge class="--mr" color="secondary">secondary</LvBadge>
-      <LvBadge class="--mr" color="success">sucess</LvBadge>
-      <LvBadge class="--mr" color="info">info</LvBadge>
-      <LvBadge class="--mr" color="warning">warning</LvBadge>
-      <LvBadge class="--mr" color="help">help</LvBadge>
-      <LvBadge class="--mr" color="danger">danger</LvBadge>
-      <LvBadge class="--mr" color="plain">Plain</LvBadge>
+      <LvBadge class="--mr" variant="primary">primary</LvBadge>
+      <LvBadge class="--mr" variant="secondary">secondary</LvBadge>
+      <LvBadge class="--mr" variant="success">sucess</LvBadge>
+      <LvBadge class="--mr" variant="info">info</LvBadge>
+      <LvBadge class="--mr" variant="warning">warning</LvBadge>
+      <LvBadge class="--mr" variant="help">help</LvBadge>
+      <LvBadge class="--mr" variant="danger">danger</LvBadge>
+      <LvBadge class="--mr" variant="plain">Plain</LvBadge>
     </div>
   </div>
 </template>

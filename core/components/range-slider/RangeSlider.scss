@@ -42,7 +42,7 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2) !default;
 
 .lv-range-slider__rail {
   width: 100%;
-  background-color: var(--rail-color);
+  background-color: var(--lv-input-background-color);
 }
 
 .lv-range-slider__fill {

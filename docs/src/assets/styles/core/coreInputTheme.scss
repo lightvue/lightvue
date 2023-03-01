@@ -1,0 +1,31 @@
+:root {
+  // Input Field
+  --lv-input-transition: box-shadow 0.2s, border-radius 0.3s;
+  --lv-input-fontSize: 1rem;
+  --lv-input-padding: 0 12px;
+  --lv-input-border-radius: 5px;
+  --lv-input-placeholder-color: rgba(0, 0, 0, 0.3);
+  --lv-input-background-color: #edf2f7;
+  --lv-input-text-color: #495057;
+  --lv-input-focus-background: hsl(210, 38%, 90%);
+  --lv-input-focus-shadow: 0 0 0 0;
+  --lv-input-hover-shadow: 0 0 0 0;
+  // Prepend Append
+  --lv-input-slot-padding: 12px;
+  --lv-input-slot-margin: -12px;
+  // input Help Text
+  --lv-input-help-font-size: 12px;
+  --lv-input-help-opacity: 0.8;
+  --lv-input-help-margin-top: 4px;
+  //Input Label
+  --lv-input-label-margin-bottom: 8px;
+  --lv-input-label-color: ;
+}
+
+[data-theme='dark'] {
+  --lv-input-placeholder-color: rgba(255, 255, 255, 0.3);
+  --lv-input-background-color: hsl(215, 21%, 20%);
+  --lv-input-focus-background: hsl(215, 21%, 30%);
+  // --lv-input-textColor: var(--lv-text-color);
+  --lv-input-text-color: hsl(210, 9%, 90%);
+}

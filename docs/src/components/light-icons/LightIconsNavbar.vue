@@ -44,12 +44,12 @@ export default {
     cursor: pointer;
     user-select: none;
     text-decoration: none;
-    color: #607c8a;
+    color: var(--text-color);
 
-    background-color: #ffffff;
+    background-color: var(--lv-background-color);
     transition: all 0.2s ease-in-out;
     &:hover {
-      background: #edf2f6;
+      background: var(--lv-docs-color-border);
     }
     &.active {
       background-color: #607c8a !important;

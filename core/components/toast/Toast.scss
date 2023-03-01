@@ -3,28 +3,29 @@
     margin: 0 0 1rem 0;
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 25px;
-    background: #38b2ac;
+    // background: #38b2ac;
+    background: var(--lv-theme-color) !important;
     .lv-toast__message-content {
       padding: 1rem;
       border-width: 0 0 0 0;
       text-align: center;
-      color: white !important;
+      color: var(--lv-theme-color-inverse) !important;
       width: 100%;
       .lv-toast__message-text {
-        color: white !important;
+        color: var(--lv-theme-color-inverse) !important;
       }
     }
-    &.--info {
-      background: #3298dc;
-    }
-    &.--success {
-      background: #48c774;
-    }
-    &.--warn {
-      background: #f4c430;
-    }
-    &.--error {
-      background: #bb2727;
-    }
+    // &.--info {
+    //   background: var(--info);
+    // }
+    // &.--success {
+    //   background: var(--success);
+    // }
+    // &.--warn {
+    //   background: var(--warning);
+    // }
+    // &.--error {
+    //   background: var(--danger);
+    // }
   }
 }
