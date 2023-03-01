@@ -32,14 +32,14 @@
 
 <script>
 import { ConnectedOverlayScrollHandler, ObjectUtils, DomHandler } from 'lightvue/utils';
-import { trueValueMixin, optionsMixin } from 'lightvue/mixins';
+import { trueValueMixin, optionsMixin, preventBrowserBackMixin } from 'lightvue/mixins';
 import Ripple from 'lightvue/ripple';
 import LvInput from 'lightvue/input';
 
 export default {
   name: 'LvDropdown',
   inheritAttrs: false,
-  mixins: [trueValueMixin, optionsMixin],
+  mixins: [trueValueMixin, optionsMixin, preventBrowserBackMixin],
   emits: ['before-show', 'before-hide', 'show', 'hide', 'change', 'filter'],
   components: {
     LvInput,
@@ -459,6 +459,10 @@ export default {
     //     this.overlay = el;
     //     return 'overlayRef';
     // }
+    handleOnBrowserBack() {
+      // Called from Mixin
+      this.hide();
+    },
   },
   computed: {
     modelValue() {
