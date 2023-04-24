@@ -156,6 +156,10 @@ export default {
           page_name: 'Toggle Switch',
           page_path: '/vue-components/toggle-switch',
         },
+        {
+          page_name: 'Upload',
+          page_path: '/vue-components/upload',
+        },
       ],
     },
     {
