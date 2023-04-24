@@ -19,7 +19,7 @@
       transition: all 0.5s ease;
     }
 
-    label {
+    .box {
       text-indent: $light-checkbox--label-text-offset-switch;
 
       &:before,
@@ -42,11 +42,11 @@
       border-color: $light-checkbox--color-dark;
     }
 
-    label:before {
+    .box:before {
       opacity: 0;
     }
 
-    label:after {
+    .box:after {
       background-color: $light-checkbox--color-dark !important;
       left: 1em;
     }

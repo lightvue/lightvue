@@ -1,5 +1,5 @@
 .#{$light-checkbox--class-name}.--default.--filled {
-  .state label {
+  .state .box {
     &:after {
       transform: scale(1);
     }

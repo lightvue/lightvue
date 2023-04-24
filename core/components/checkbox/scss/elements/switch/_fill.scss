@@ -4,10 +4,10 @@
             border-color: $light-checkbox--color-dark;
             background-color: $light-checkbox--color-dark !important;
         }
-        label:before {
+        .box:before {
             opacity: 0;
         }
-        label:after {
+        .box:after {
             background-color: #fff !important;
             left: 1em;
         }
