@@ -1,0 +1,24 @@
+.#{$light-checkbox--class-name}.--checked-icon {
+    @each $name,
+    $color in $light-checkbox--colors {
+        input:checked~.state.lv-#{$name} label,
+        &.--toggle .state.lv-#{$name} label {
+            &:before {
+                content: '🗸';
+                padding: 1px;
+                color: $color;
+                z-index: 1;
+                display: flex;
+                justify-content: flex-end;
+                font-weight: bolder;
+            }
+            &:after {
+                content: none;
+            }
+        }
+        &::before {
+            border-width: calc(1em / 7);
+            border-color: #bdc3c7;
+        }
+    }
+}
