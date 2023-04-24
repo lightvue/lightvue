@@ -1,5 +1,5 @@
 import vue from 'rollup-plugin-vue';
-// import postcss from 'rollup-plugin-postcss';
+import postcss from 'rollup-plugin-postcss';
 import scss from 'rollup-plugin-scss';
 import filesize from 'rollup-plugin-filesize';
 // import commonjs from 'rollup-plugin-commonjs';
@@ -44,10 +44,7 @@ let globalDependencies = {
 const baseConfig = {
   plugins: {
     preVue: [
-      scss({
-        output: 'dist/lightvue.css',
-        outputStyle: 'compressed',
-      }),
+      // scss(),
       // postcss({
       //   extract: true,
       //   // Or with custom file name, it will generate file relative to bundle.js in v3
@@ -55,6 +52,13 @@ const baseConfig = {
       // }),
     ],
     postVue: [
+      // scss(),
+      // postcss({
+      //   extract: true,
+      //   // Or with custom file name, it will generate file relative to bundle.js in v3
+      //   // extract: 'dist/my-custom-file-name.css'
+      // }),
+      postcss(),
       terser(),
       filesize({
         // This method will be helpful to generate size file.
@@ -97,7 +101,8 @@ function addEntry(inFolder, inFile, outFolder, outFile) {
           isProduction: true,
           optimizeSSR: true,
         },
-        // css: false,
+        // css: true,
+        // preprocessStyles: true,
       }),
       ...baseConfig.plugins.postVue,
     ],
@@ -118,7 +123,8 @@ function addEntry(inFolder, inFile, outFolder, outFile) {
         template: {
           isProduction: true,
         },
-        // css: false,
+        // css: true,
+        // preprocessStyles: true,
       }),
       ...baseConfig.plugins.postVue,
     ],
@@ -142,7 +148,8 @@ function addEntry(inFolder, inFile, outFolder, outFile) {
         template: {
           isProduction: true,
         },
-        // css: false,
+        // css: true,
+        // preprocessStyles: true,
       }),
       // terser(),
       ...baseConfig.plugins.postVue,

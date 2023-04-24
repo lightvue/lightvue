@@ -245,5 +245,5 @@ export default {
 };
 </script>
 <style lang="sass">
-@import './Checkbox.scss'
+@import './Checkbox.scss';
 </style>
