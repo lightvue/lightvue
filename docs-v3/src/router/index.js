@@ -140,6 +140,10 @@ const routes = [
         path: 'tooltip',
         component: () => import('@/pages/vue-components/tooltip.vue'),
       },
+      {
+        path: 'maskedinput',
+        component: () => import('@/pages/vue-components/maskedinput.vue'),
+      },
     ],
   },
   {
