@@ -13,7 +13,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "light-icons": "^1.0.12",
+    "lightvue": "^1.5.1",
     "nuxt": "^3.13.0",
+    "prismjs": "^1.29.0",
     "vue": "latest",
     "vue-router": "latest"
   }

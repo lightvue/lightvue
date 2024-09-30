@@ -7,7 +7,7 @@
     <section-lightweight />
     <section-lighticon />
     <!-- <section-pricing /> -->
-    <section-enterprise />
+    <!-- <section-enterprise /> -->
     <!-- <index-footer /> -->
   </div>
 </template>
@@ -21,7 +21,7 @@ import SectionLightweight from '../components/landing-page/SectionLightweight.vu
 import SectionVueMigrate from '../components/landing-page/SectionVueMigrate.vue';
 import SectionLighticon from '../components/landing-page/SectionLighticon.vue';
 import SectionPricing from '../components/landing-page/SectionPricing.vue';
-import SectionEnterprise from '../components/landing-page/SectionEnterprise.vue';
+// import SectionEnterprise from '../components/landing-page/SectionEnterprise.vue';
 import IndexFooter from '../components/landing-page/IndexFooter.vue';
 export default {
   head: {
@@ -57,7 +57,7 @@ export default {
     SectionVueMigrate,
     SectionLighticon,
     SectionPricing,
-    SectionEnterprise,
+    // SectionEnterprise,
   },
 };
 </script>

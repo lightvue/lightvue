@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import CopyButton from '@/components/docs-card/CopyButton';
+import CopyButton from '../docs-card/CopyButton.vue';
 
 export default {
   components: {
