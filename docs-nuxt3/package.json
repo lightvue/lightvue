@@ -1,0 +1,20 @@
+{
+  "name": "nuxt3x-docs",
+  "title": "LightVue | The Emerging UI Component library for Vue",
+  "description": "The Emerging UI Component library for Vue 2.x & Vue 3.x",
+  "author": "Pulkit <pulkit.cloud@gmail.com>",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.13.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  }
+}
