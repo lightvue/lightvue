@@ -1,9 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import path from 'path';
 import pkg from './package.json';
+import { createResolver } from '@nuxt/kit';
 
 export default defineNuxtConfig({
-  srcDir: 'src/',
+  // srcDir: 'src/',
   vite: {
     resolve: {
       alias: {
@@ -14,7 +15,7 @@ export default defineNuxtConfig({
         'lightvueDocs/example': path.join(__dirname, '/../examples'),
         'lightvue/mixins': path.join(__dirname, '/../core/mixins'),
         lightvue: path.join(__dirname, '/../core/components'),
-        splitpanes: path.join(__dirname, '/src/components/splitpanes'),
+        splitpanes: path.join(__dirname, '/app/components/splitpanes'),
         // '@@@': path.join(__dirname, '/..'), // this must never be used, resulting infinite loop.
       },
     },
@@ -27,20 +28,6 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: pkg.title,
-    },
-  },
-  hooks: {
-    'pages:extend'(pages) {
-      pages.push({
-        name: 'Home',
-        path: '/',
-        file: path.join(__dirname, '/../docs/src/pages/index.vue'),
-      });
-    },
-  },
-  router: {
-    options: {
-      scrollBehaviorType: 'smooth',
     },
   },
 });
