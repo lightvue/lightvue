@@ -7,22 +7,22 @@
     <section-lightweight />
     <section-lighticon />
     <!-- <section-pricing /> -->
-    <!-- <section-enterprise /> -->
+    <section-enterprise />
     <!-- <index-footer /> -->
   </div>
 </template>
 
 <script>
-import Hero from '../components/landing-page/Hero.vue';
-import HeroCover from '../components/landing-page/HeroCover.vue';
-import IndexFeatures from '../components/landing-page/SectionFeatures.vue';
-// import IndexFeatures from '../components/landing-page/IndexFeatures.vue';
-import SectionLightweight from '../components/landing-page/SectionLightweight.vue';
-import SectionVueMigrate from '../components/landing-page/SectionVueMigrate.vue';
-import SectionLighticon from '../components/landing-page/SectionLighticon.vue';
-import SectionPricing from '../components/landing-page/SectionPricing.vue';
-// import SectionEnterprise from '../components/landing-page/SectionEnterprise.vue';
-import IndexFooter from '../components/landing-page/IndexFooter.vue';
+import Hero from '@/components/landing-page/Hero.vue';
+import HeroCover from '@/components/landing-page/HeroCover.vue';
+import IndexFeatures from '@/components/landing-page/SectionFeatures.vue';
+// import IndexFeatures from '@/components/landing-page/IndexFeatures.vue';
+import SectionLightweight from '@/components/landing-page/SectionLightweight.vue';
+import SectionVueMigrate from '@/components/landing-page/SectionVueMigrate.vue';
+import SectionLighticon from '@/components/landing-page/SectionLighticon.vue';
+import SectionPricing from '@/components/landing-page/SectionPricing.vue';
+import SectionEnterprise from '@/components/landing-page/SectionEnterprise.vue';
+import IndexFooter from '@/components/landing-page/IndexFooter.vue';
 export default {
   head: {
     title: ' Emerging Collection of well Crafted UI Components | LightVue ',
@@ -57,7 +57,7 @@ export default {
     SectionVueMigrate,
     SectionLighticon,
     SectionPricing,
-    // SectionEnterprise,
+    SectionEnterprise,
   },
 };
 </script>
