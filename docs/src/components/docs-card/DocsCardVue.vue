@@ -25,26 +25,54 @@ export default {
       parts: {},
     };
   },
-  created() {
+  async created() {
     if (this.file) {
       // this.component = () => import('lightvueDocs/example/' + this.file + '.vue');
-      //
-      if (!this.component) {
-        import('lightvueDocs/example/' + this.file + '.vue').then(comp => {
-          this.component = comp.default;
+      // console.log(this.$lightvue);
+      // console.log(this.file, 'lightvueDocs/example/' + this.file + '.vue');
+
+      // const newFile = import.meta.glob('lightvueDocs/example/' + this.file + '.vue');
+      // console.log(this.file, newFile);
+
+      if (this.$lightvue && this.$lightvue.nuxt === 3) {
+        // new way
+
+        const fileName = this.file.split('/');
+        // const fileModuleOld = await import(`lightvueDocs/example/${fileName}.vue`);
+        Promise.all([
+          await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}.vue`).then(comp => {
+            console.log('component ', comp);
+            this.component = comp.default;
+          }),
+        ]);
+
+        // another way ---> throw error on old docs //meta.glob
+        // console.log('nuxt', this.$lightvue.nuxt);
+        // const exampleModulesPath = import.meta.glob('lightvueDocs/example/**');
+        // const currentModulesPath = `../examples/${this.file}.vue`;
+        // for (const path in exampleModulesPath) {
+        //   if (path === currentModulesPath) {
+        //     exampleModulesPath[path]().then(mod => {
+        //       this.component = mod.default;
+        //     });
+        //   }
+        // }
+      } else {
+        //  old way
+        console.log('inside else');
+        if (!this.component) {
+          import('lightvueDocs/example/' + this.file + '.vue').then(comp => {
+            this.component = comp.default;
+          });
+        }
+        Promise.all([
+          import('!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
+            this.parseComponent(comp.default);
+          }),
+        ]).then(() => {
+          // this.loading = false;
         });
       }
-
-      Promise.all([
-        // import('@/' + this.file + '.vue').then(comp => {
-        //   this.component = comp.default;
-        // }),
-        import('!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
-          this.parseComponent(comp.default);
-        }),
-      ]).then(() => {
-        // this.loading = false;
-      });
     }
   },
   // watch: {

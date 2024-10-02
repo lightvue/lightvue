@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import path from 'path';
 import pkg from './package.json';
-import { createResolver } from '@nuxt/kit';
 
 export default defineNuxtConfig({
   // srcDir: 'src/',
@@ -28,6 +27,11 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: pkg.title,
+    },
+  },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
     },
   },
 });
