@@ -27,36 +27,24 @@ export default {
   },
   async created() {
     if (this.file) {
-      // this.component = () => import('lightvueDocs/example/' + this.file + '.vue');
-      // console.log(this.$lightvue);
-      // console.log(this.file, 'lightvueDocs/example/' + this.file + '.vue');
-
-      // const newFile = import.meta.glob('lightvueDocs/example/' + this.file + '.vue');
-      // console.log(this.file, newFile);
-
       if (this.$lightvue && this.$lightvue.nuxt === 3) {
         // new way
-
         const fileName = this.file.split('/');
-        // const fileModuleOld = await import(`lightvueDocs/example/${fileName}.vue`);
-        Promise.all([
-          await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}.vue`).then(comp => {
-            console.log('component ', comp);
-            this.component = comp.default;
-          }),
-        ]);
-
-        // another way ---> throw error on old docs //meta.glob
-        // console.log('nuxt', this.$lightvue.nuxt);
-        // const exampleModulesPath = import.meta.glob('lightvueDocs/example/**');
-        // const currentModulesPath = `../examples/${this.file}.vue`;
-        // for (const path in exampleModulesPath) {
-        //   if (path === currentModulesPath) {
-        //     exampleModulesPath[path]().then(mod => {
-        //       this.component = mod.default;
-        //     });
-        //   }
-        // }
+        if (fileName.length <= 2) {
+          Promise.all([
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}.vue`).then(comp => {
+              this.component = comp.default;
+            }),
+          ]);
+        } else if (fileName.length <= 3) {
+          Promise.all([
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue`).then(comp => {
+              this.component = comp.default;
+            }),
+          ]);
+        } else {
+          console.log(this.file + 'not found!...');
+        }
       } else {
         //  old way
         console.log('inside else');
