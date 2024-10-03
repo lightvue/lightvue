@@ -3,6 +3,7 @@ import path from 'path';
 import pkg from './package.json';
 
 export default defineNuxtConfig({
+  ssr: true,
   // srcDir: 'src/',
   vite: {
     resolve: {
@@ -19,19 +20,49 @@ export default defineNuxtConfig({
       },
     },
   },
+  runtimeConfig: {
+    public: {
+      // siteUrl: 'https://lightvue.org/',
+      // siteName: 'LightVue | Emerging Collection of well Crafted UI Components',
+      // siteDescription: 'The Emerging UI Component library for Vue 2.x & Vue 3.x',
+      // language: 'en',
+      // titleSeparator: '|',
+      // titleTemplate: '%s %separator %siteName',
+    },
+    ogImage: {
+      host: 'https://rishikesh.app/',
+    },
+  },
+
   devServer: {
     port: 4001,
   },
+
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+
   app: {
     head: {
       title: pkg.title,
     },
   },
+
   router: {
     options: {
       scrollBehaviorType: 'smooth',
     },
+  },
+
+  modules: ['@nuxtjs/seo'],
+  site: {
+    url: 'https://lightvue.org/',
+    name: 'Emerging Collection of well Crafted UI Components | LightVue',
+    description: 'The Emerging UI Component library for Vue 2.x & Vue 3.x',
+    language: 'en',
+    titleSeparator: '|',
+    titleTemplate: '%s %separator %siteName',
+  },
+  seoExperiments: {
+    enabled: false,
   },
 });

@@ -13,6 +13,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/seo": "^2.0.0-rc.23",
     "light-icons": "^1.0.12",
     "nuxt": "^3.13.0",
     "prismjs": "^1.29.0",

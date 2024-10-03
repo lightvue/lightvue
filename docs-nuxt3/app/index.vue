@@ -14,6 +14,17 @@
 <script>
 import 'light-icons/dist/light-icon.css';
 import '@/assets/styles/lightvue.scss';
+export default {
+  setup() {
+    const route = useRoute();
+    useServerSeoMeta({
+      title: route?.meta?.title,
+      ogTitle: route?.meta?.title,
+      description: route?.meta?.desc,
+      ogDescription: route?.meta?.desc,
+    });
+  },
+};
 </script>
 
 <style lang="scss">
