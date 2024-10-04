@@ -22,6 +22,7 @@
         <div class="search-bar">
           <slot name="app-search"></slot>
         </div>
+        <AppSearchV2 />
       </div>
       <div class="social__row">
         <a href="https://github.com/lightvue/lightvue" target="_blank" class="social-links">
@@ -40,8 +41,9 @@
 
 <script>
 import AppDropdown from './AppDropdown.vue';
+import AppSearchV2 from './AppSearchV2.vue';
 export default {
-  components: { AppDropdown },
+  components: { AppDropdown, AppSearchV2 },
 };
 </script>
 
