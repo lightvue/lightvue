@@ -30,12 +30,12 @@ export default defineNuxtConfig({
       // titleTemplate: '%s %separator %siteName',
     },
     ogImage: {
-      host: 'https://rishikesh.app/',
+      host: 'https://lightvue.org/',
     },
   },
 
   devServer: {
-    port: 4001,
+    port: 4000,
   },
 
   compatibilityDate: '2024-04-03',
@@ -66,8 +66,8 @@ export default defineNuxtConfig({
     enabled: false,
   },
   algolia: {
-    apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
-    applicationId: process.env.ALGOLIA_APPLICATION_ID,
+    apiKey: process.env.ALGOLIA_API_KEY,
+    applicationId: process.env.ALGOLIA_PROJECT_ID,
     instantSearch: {
       theme: 'algolia',
     },

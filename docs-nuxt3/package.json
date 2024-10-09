@@ -21,5 +21,8 @@
     "vue": "latest",
     "vue-instantsearch": "^4.19.5",
     "vue-router": "latest"
+  },
+  "engines": {
+    "node": ">=18.19"
   }
 }

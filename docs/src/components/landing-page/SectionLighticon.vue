@@ -11,7 +11,7 @@
         <div class="section-lighticons__content-description">Your imagination has no boundaries and so does our handpicked collection of premium &amp; light-weighted icons. Explore and choose icons from the vast landscape of <strong>LIGHT ICONS</strong>.</div>
         <br />
         <br />
-        <nuxt-link :to="{ hash: 'contact' }" class="page-button --dark">Know More</nuxt-link>
+        <nuxt-link :to="{ hash: '#contact' }" class="page-button --dark">Know More</nuxt-link>
         <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
       </div>
     </div>

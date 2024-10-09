@@ -9,7 +9,7 @@
         <br />
         <div class="vue-migrate__content-description">Developing modern cutting-edge projects, just got simpler. With just <strong>one step upgradation</strong>, <strong>100% backward compatibility</strong> and <strong>identical APIs in both the environments</strong>. LightVue offers a hassle free migration from your Vue 2.x to Vue 3.x projects in just two ticks.</div>
         <br /><br />
-        <nuxt-link :to="{ hash: 'light-weight' }" class="page-button --dark">Know More</nuxt-link>
+        <nuxt-link :to="{ hash: '#light-weight' }" class="page-button --dark">Know More</nuxt-link>
         <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
       </div>
       <!-- <div class="vue-migrate__background"></div> -->
