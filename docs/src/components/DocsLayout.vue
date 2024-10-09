@@ -2,7 +2,7 @@
   <div>
     <app-header @toggle-drawer="toggleDrawer()">
       <template #app-search>
-        <app-search v-if="$lightvue && $lightvue.version !== 3" />
+        <!-- <app-search v-if="$lightvue && $lightvue.version !== 3" /> -->
         <AppSearchJs />
       </template>
     </app-header>
@@ -22,7 +22,7 @@
 <script>
 import 'light-icons/dist/light-icon.css';
 import AppHeader from '@/components/AppHeader.vue';
-import AppSearch from '@/components/AppSearch';
+// import AppSearch from '@/components/AppSearch';
 import AppSearchJs from '@/components/AppSearchJs';
 import AppNavigationDrawer from '@/components/AppNavigationDrawer.vue';
 import AppFooter from '@/components/AppFooter.vue';
@@ -33,7 +33,7 @@ export default {
     AppHeader,
     AppNavigationDrawer,
     AppFooter,
-    AppSearch,
+    // AppSearch,
     AppSearchJs,
   },
   data() {
