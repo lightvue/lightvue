@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-   <div class="enterprise-footer__text">©{{ currentYear }}, LightVue. All Rights Reserved.</div>
+      <div class="enterprise-footer__text">©{{ currentYear }}, LightVue. All Rights Reserved.</div>
     </section>
   </div>
 </template>

@@ -26,7 +26,7 @@
             <nuxt-link to="/getting-started/installation" class="hero-button lv-fluid">
               <LvButton label="Documentation " push type="button" size="xl" icon-right="light-icon-chevron-right" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
             </nuxt-link>
-            <nuxt-link :to="{ hash: 'features' }" class="hero-button lv-fluid">
+            <nuxt-link :to="{ hash: '#features' }" class="hero-button lv-fluid">
               <lv-button label="Know More" push type="button" size="xl" icon-right="light-icon-plane-departure" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.2)" />
             </nuxt-link>
           </div>
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import CopyButton from '@/components/docs-card/CopyButton';
+import CopyButton from '../docs-card/CopyButton.vue';
 
 export default {
   components: {

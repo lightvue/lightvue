@@ -3,7 +3,7 @@
   "vetur.validation.template": false,
   // "editor.wordWrap": "off",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.wordWrapColumn": 800,
   "typescript.tsdk": "node_modules/typescript/lib",
@@ -18,7 +18,7 @@
   },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  }
   // "prettier.proseWrap": "never",
   // "prettier.printWidth": 800
 }
