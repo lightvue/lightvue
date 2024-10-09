@@ -19,7 +19,24 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi';
 import ButtonAPI from 'lightvueDocs/example/button/ButtonAPI';
 
 const pageDescription = 'Button is an extension to standard button element with an option to add icons and your custom theming.';
-
+const pageMeta = {
+  title: ' Buttons Documentation | LightVue',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { property: 'og:title', content: 'LightVue' },
+    { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+    {
+      property: 'og:site_name',
+      content: ' Buttons Documentation | LightVue',
+    },
+    {
+      property: 'og:description',
+      content: pageDescription,
+    },
+  ],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+};
 export default {
   components: {
     DocsCardVue,
@@ -29,23 +46,9 @@ export default {
     DocsAllApi,
     ButtonBestDemo,
   },
-  head: {
-    title: ' Buttons Documentation | LightVue',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
-      {
-        property: 'og:site_name',
-        content: ' Buttons Documentation | LightVue',
-      },
-      {
-        property: 'og:description',
-        content: pageDescription,
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  head: pageMeta,
+  setup() {
+    useHead(pageMeta);
   },
   title: 'Button',
   description: pageDescription,

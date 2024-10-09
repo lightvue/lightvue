@@ -22,24 +22,28 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import DropdownAPI from 'lightvueDocs/example/dropdown/DropdownAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
+const pageMeta = {
+  title: ' Dropdown Documentation | LightVue ',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { property: 'og:title', content: 'LightVue' },
+    { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+    {
+      property: 'og:site_name',
+      content: ' Dropdown Documentation | LightVue ',
+    },
+    {
+      property: 'og:description',
+      content: 'Dropdown component allows user to choose an option from the provided options.',
+    },
+  ],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+};
 export default {
-  head: {
-    title: ' Dropdown Documentation | LightVue ',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
-      {
-        property: 'og:site_name',
-        content: ' Dropdown Documentation | LightVue ',
-      },
-      {
-        property: 'og:description',
-        content: 'Dropdown component allows user to choose an option from the provided options.',
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  head: pageMeta,
+  setup() {
+    useHead(pageMeta);
   },
   data() {
     return {

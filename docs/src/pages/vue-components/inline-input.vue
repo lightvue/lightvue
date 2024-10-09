@@ -21,24 +21,28 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi';
 // import InputAPI from 'lightvueDocs/example/input/InputAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
+const pageMeta = {
+  title: ' Inline-Input Documentation | LightVue ',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { property: 'og:title', content: 'LightVue' },
+    { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+    {
+      property: 'og:site_name',
+      content: ' Inline-Input Documentation | LightVue ',
+    },
+    {
+      property: 'og:description',
+      content: 'Lv-Inline-input provides with a variety of input fields with various available customizations which helps it to fulfil the need of almost every web application/project',
+    },
+  ],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+};
 export default {
-  head: {
-    title: ' Inline-Input Documentation | LightVue ',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
-      {
-        property: 'og:site_name',
-        content: ' Inline-Input Documentation | LightVue ',
-      },
-      {
-        property: 'og:description',
-        content: 'Lv-Inline-input provides with a variety of input fields with various available customizations which helps it to fulfil the need of almost every web application/project',
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  head: pageMeta,
+  setup() {
+    useHead(pageMeta);
   },
   data() {
     return {

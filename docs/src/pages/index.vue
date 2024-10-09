@@ -23,29 +23,34 @@ import SectionLighticon from '../components/landing-page/SectionLighticon.vue';
 import SectionPricing from '../components/landing-page/SectionPricing.vue';
 import SectionEnterprise from '../components/landing-page/SectionEnterprise.vue';
 import IndexFooter from '../components/landing-page/IndexFooter.vue';
+
+const pageMeta = {
+  title: ' Emerging Collection of well Crafted UI Components | LightVue ',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { property: 'og:title', content: 'LightVue' },
+    { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+    {
+      property: 'og:site_name',
+      content: ' The Ultimate Vue Component Library | LightVue ',
+    },
+    {
+      property: 'og:description',
+      content: 'The Ultimate Component Library for Vue 2 & Vue 3',
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Light Vue is the Ultimate Component Library for Vue 2 & Vue 3',
+    },
+  ],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+};
 export default {
-  head: {
-    title: ' Emerging Collection of well Crafted UI Components | LightVue ',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
-      {
-        property: 'og:site_name',
-        content: ' The Ultimate Vue Component Library | LightVue ',
-      },
-      {
-        property: 'og:description',
-        content: 'The Ultimate Component Library for Vue 2 & Vue 3',
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Light Vue is the Ultimate Component Library for Vue 2 & Vue 3',
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  head: pageMeta,
+  setup() {
+    useHead(pageMeta);
   },
   layout: 'landing',
   components: {
