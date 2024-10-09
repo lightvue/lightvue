@@ -52,7 +52,7 @@ export default defineNuxtConfig({
     url: 'https://lightvue.org/',
     name: 'Emerging Collection of well Crafted UI Components | LightVue',
     description: 'The Emerging UI Component library for Vue 2.x & Vue 3.x',
-    language: 'en',w
+    language: 'en',
     titleSeparator: '|',
     titleTemplate: '%s',
   },
