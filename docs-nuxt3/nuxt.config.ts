@@ -21,19 +21,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  runtimeConfig: {
-    public: {
-      // siteUrl: 'https://lightvue.org/',
-      // siteName: 'LightVue | Emerging Collection of well Crafted UI Components',
-      // siteDescription: 'The Emerging UI Component library for Vue 2.x & Vue 3.x',
-      // language: 'en',
-      // titleSeparator: '|',
-      // titleTemplate: '%s %separator %siteName',
-    },
-    ogImage: {
-      host: 'https://lightvue.org/',
-    },
-  },
 
   devServer: {
     port: 4000,
@@ -45,12 +32,6 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: pkg.title,
-    },
-  },
-
-  router: {
-    options: {
-      scrollBehaviorType: 'smooth',
     },
   },
 
