@@ -12,8 +12,8 @@
       <div style="position: relative">
         <!-- {{ result }} -->
         <div v-if="queryString.length && result && result.hits" id="app-searchui__results-wrapper" @click="clearSearchbox">
-          <template v-for="item in result.hits" :key="item">
-            <div class="app-search__results">
+          <template v-for="item in result.hits">
+            <div class="app-search__results" :key="item">
               <nuxt-link :to="`/vue-components/${item.docslink}`">
                 <div class="app-searchui__results__title">
                   <div>{{ item.name }}</div>

@@ -53,6 +53,16 @@ export default {
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "e3r36e72m1");`,
       },
+      {
+        src: 'https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js',
+        integrity: 'sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=',
+        crossorigin: 'anonymous',
+      },
+      {
+        src: 'https://cdn.jsdelivr.net/npm/instantsearch.js@4.74.2/dist/instantsearch.production.min.js',
+        integrity: 'sha256-LfyQz2E24221PkRbKoakchcpdlZOA4R1Ugi6NnhyGF0=',
+        crossorigin: 'anonymous',
+      },
     ],
     __dangerouslyDisableSanitizers: ['script', 'innerHTML'],
   },
