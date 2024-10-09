@@ -32,6 +32,18 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: pkg.title,
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js',
+          integrity: 'sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=',
+          crossorigin: 'anonymous',
+        },
+        {
+          src: 'https://cdn.jsdelivr.net/npm/instantsearch.js@4.74.2/dist/instantsearch.production.min.js',
+          integrity: 'sha256-LfyQz2E24221PkRbKoakchcpdlZOA4R1Ugi6NnhyGF0=',
+          crossorigin: 'anonymous',
+        },
+      ],
     },
   },
 
@@ -40,9 +52,9 @@ export default defineNuxtConfig({
     url: 'https://lightvue.org/',
     name: 'Emerging Collection of well Crafted UI Components | LightVue',
     description: 'The Emerging UI Component library for Vue 2.x & Vue 3.x',
-    language: 'en',
+    language: 'en',w
     titleSeparator: '|',
-    titleTemplate: '%s %separator %siteName',
+    titleTemplate: '%s',
   },
   seoExperiments: {
     enabled: false,
