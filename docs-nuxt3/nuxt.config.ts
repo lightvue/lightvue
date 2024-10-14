@@ -20,6 +20,15 @@ export default defineNuxtConfig({
         // '@@@': path.join(__dirname, '/..'), // this must never be used, resulting infinite loop.
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler', // or "modern", "legacy"
+          additionalData: '@import "@/assets/styles/lightvue.scss"; @import "@/assets/styles/docsGlobal.scss";',
+          // silenceDeprecations: ['legacy-js-api'],
+        },
+      },
+    },
   },
 
   devServer: {

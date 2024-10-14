@@ -18,6 +18,8 @@
     "light-icons": "^1.0.12",
     "nuxt": "^3.13.0",
     "prismjs": "^1.29.0",
+    "sass": "^1.79.5",
+    "sass-loader": "^16.0.2",
     "vue": "latest",
     "vue-instantsearch": "^4.19.5",
     "vue-router": "latest"

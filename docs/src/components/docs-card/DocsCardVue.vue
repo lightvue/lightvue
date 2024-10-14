@@ -54,13 +54,14 @@ export default {
       } else {
         //  old way
         console.log('inside else');
+        // If this is intended to be left as-is, you can use the /* @vite-ignore */ comment inside the import() call to suppress this warning.
         if (!this.component) {
-          import('lightvueDocs/example/' + this.file + '.vue').then(comp => {
+          import(/* @vite-ignore */ 'lightvueDocs/example/' + this.file + '.vue').then(comp => {
             this.component = comp.default;
           });
         }
         Promise.all([
-          import('!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
+          import(/* @vite-ignore */ '!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
             this.parseComponent(comp.default);
           }),
         ]).then(() => {
