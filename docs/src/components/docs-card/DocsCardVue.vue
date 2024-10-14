@@ -35,11 +35,17 @@ export default {
             await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}.vue`).then(comp => {
               this.component = comp.default;
             }),
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}.vue?raw`).then(comp => {
+              this.parseComponent(comp.default);
+            }),
           ]);
         } else if (fileName.length <= 3) {
           Promise.all([
             await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue`).then(comp => {
               this.component = comp.default;
+            }),
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue`).then(comp => {
+              this.parseComponent(comp.default);
             }),
           ]);
         } else {
