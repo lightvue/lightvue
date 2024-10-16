@@ -14,7 +14,7 @@
           <br />
           <div class="section-features__content-description">LightVue is one of the most emerging UI Component Library that hands out everything you need to create <strong>modern</strong>, <strong>engaging</strong> and <strong>responsive</strong> web applications. LightVue is specifically designed for both <strong>Vue3.x</strong> and <strong>Vue2.x</strong> and offers unlimited customizations natively.</div>
           <br /><br />
-          <nuxt-link :to="{ hash: 'vue-migrate' }" class="page-button --dark">Know More</nuxt-link>
+          <nuxt-link :to="{ hash: '#vue-migrate' }" class="page-button --dark">Know More</nuxt-link>
           <!-- <lv-button :push="true" :deep-shadow="true" label="Know More" type="button" size="xl" class="section-button__customise" style="--theme-color: #143a56; --theme-color-dark: #194a70" /> -->
         </div>
       </div>

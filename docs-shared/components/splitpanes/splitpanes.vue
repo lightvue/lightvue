@@ -1,5 +1,5 @@
 <template>
-  <div :class="['splitpanes', `splitpanes--${this.horizontal ? 'horizontal' : 'vertical'}`, { 'splitpanes--dragging': this.touch.dragging }]">
+  <div :class="['splitpanes', `splitpanes--${horizontal ? 'horizontal' : 'vertical'}`, { 'splitpanes--dragging': touch.dragging }]">
     <slot></slot>
   </div>
 </template>

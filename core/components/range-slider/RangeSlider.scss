@@ -35,7 +35,7 @@ $knob-shadow: 1px 1px rgba(0, 0, 0, 0.2) !default;
   top: 50%;
   left: 0;
   height: $rail-height;
-  border-radius: $rail-height / 2;
+  border-radius: calc($rail-height / 2);
   transform: translateY(-50%);
   transition: all 0.25s;
 }
