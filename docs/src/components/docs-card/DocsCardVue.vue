@@ -35,11 +35,17 @@ export default {
             await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}.vue`).then(comp => {
               this.component = comp.default;
             }),
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}.vue?raw`).then(comp => {
+              this.parseComponent(comp.default);
+            }),
           ]);
         } else if (fileName.length <= 3) {
           Promise.all([
             await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue`).then(comp => {
               this.component = comp.default;
+            }),
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue?raw`).then(comp => {
+              this.parseComponent(comp.default);
             }),
           ]);
         } else {
@@ -48,13 +54,14 @@ export default {
       } else {
         //  old way
         console.log('inside else');
+        // If this is intended to be left as-is, you can use the /* @vite-ignore */ comment inside the import() call to suppress this warning.
         if (!this.component) {
-          import('lightvueDocs/example/' + this.file + '.vue').then(comp => {
+          import(/* @vite-ignore */ 'lightvueDocs/example/' + this.file + '.vue').then(comp => {
             this.component = comp.default;
           });
         }
         Promise.all([
-          import('!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
+          import(/* @vite-ignore */ '!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
             this.parseComponent(comp.default);
           }),
         ]).then(() => {

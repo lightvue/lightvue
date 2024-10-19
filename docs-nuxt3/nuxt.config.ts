@@ -20,6 +20,18 @@ export default defineNuxtConfig({
         // '@@@': path.join(__dirname, '/..'), // this must never be used, resulting infinite loop.
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler', // or "modern", "legacy"
+          // additionalData: '@import "@/assets/styles/lightvue.scss";',
+          // silenceDeprecations: ['legacy-js-api'],
+        },
+      },
+    },
+    build: {
+      assetsDir: '_assets/',
+    },
   },
 
   devServer: {
@@ -47,7 +59,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxtjs/seo', '@nuxtjs/algolia'],
+  modules: ['@nuxtjs/seo'],
   site: {
     url: 'https://lightvue.org/',
     name: 'LightVue',
@@ -58,12 +70,5 @@ export default defineNuxtConfig({
   },
   seoExperiments: {
     enabled: false,
-  },
-  algolia: {
-    apiKey: process.env.ALGOLIA_API_KEY,
-    applicationId: process.env.ALGOLIA_PROJECT_ID,
-    instantSearch: {
-      theme: 'algolia',
-    },
   },
 });

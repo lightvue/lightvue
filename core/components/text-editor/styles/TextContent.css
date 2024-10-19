@@ -1,51 +1,51 @@
-.lv-text-editor__content >>> * {
+.lv-text-editor__content * {
   line-height: 1.4;
   /* font-size: 1.2rem; */
 }
 
-.lv-text-editor__content >>> p {
+.lv-text-editor__content p {
   margin: 0px;
 }
 
-.lv-text-editor__content >>> code {
+.lv-text-editor__content code {
   padding: 0.1rem;
   border-radius: 6px;
   background: rgb(240, 240, 240);
   display: inline-block;
 }
 
-.lv-text-editor__content >>> span {
+.lv-text-editor__content span {
   display: inline-block;
 }
 
-.lv-text-editor__content >>> .right {
+.lv-text-editor__content .right {
   text-align: right;
 }
 
-.lv-text-editor__content >>> .center {
+.lv-text-editor__content .center {
   text-align: center;
 }
 
-.lv-text-editor__content >>> .left {
+.lv-text-editor__content .left {
   text-align: left;
 }
 
-.lv-text-editor__content >>> .justify {
+.lv-text-editor__content .justify {
   text-align: justify;
 }
 
-.lv-text-editor__content >>> ul,
-.lv-text-editor__content >>> ol {
+.lv-text-editor__content ul,
+.lv-text-editor__content ol {
   padding: 0.1rem 0;
   list-style-position: inside;
   display: block;
 }
 
-.lv-text-editor__content >>> img {
+.lv-text-editor__content img {
   width: 100%;
   height: auto;
 }
 
-.lv-text-editor__content >>> a {
+.lv-text-editor__content a {
   text-decoration: underline;
 }
