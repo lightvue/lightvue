@@ -44,7 +44,7 @@ export default {
             await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue`).then(comp => {
               this.component = comp.default;
             }),
-            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue`).then(comp => {
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue?raw`).then(comp => {
               this.parseComponent(comp.default);
             }),
           ]);

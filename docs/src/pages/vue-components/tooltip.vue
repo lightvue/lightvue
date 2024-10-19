@@ -67,6 +67,6 @@ export default {
   componentName: 'LvTooltip',
   // status: 'Stable',
   apiData: TooltipAPI,
-  apiData: {},
+  // apiData: {},
 };
 </script>
