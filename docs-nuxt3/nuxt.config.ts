@@ -29,6 +29,9 @@ export default defineNuxtConfig({
         },
       },
     },
+    build: {
+      assetsDir: '_assets/',
+    },
   },
 
   devServer: {
