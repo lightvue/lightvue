@@ -25,26 +25,49 @@ export default {
       parts: {},
     };
   },
-  created() {
+  async created() {
     if (this.file) {
-      // this.component = () => import('lightvueDocs/example/' + this.file + '.vue');
-      //
-      if (!this.component) {
-        import('lightvueDocs/example/' + this.file + '.vue').then(comp => {
-          this.component = comp.default;
+      if (this.$lightvue && this.$lightvue.nuxt === 3) {
+        // new way
+        const fileName = this.file.split('/');
+        if (fileName.length <= 2) {
+          Promise.all([
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}.vue`).then(comp => {
+              this.component = comp.default;
+            }),
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}.vue?raw`).then(comp => {
+              this.parseComponent(comp.default);
+            }),
+          ]);
+        } else if (fileName.length <= 3) {
+          Promise.all([
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue`).then(comp => {
+              this.component = comp.default;
+            }),
+            await import(`lightvueDocs/example/${fileName[0]}/${fileName[1]}/${fileName[2]}.vue?raw`).then(comp => {
+              this.parseComponent(comp.default);
+            }),
+          ]);
+        } else {
+          console.log(this.file + 'not found!...');
+        }
+      } else {
+        //  old way
+        console.log('inside else');
+        // If this is intended to be left as-is, you can use the /* @vite-ignore */ comment inside the import() call to suppress this warning.
+        if (!this.component) {
+          import(/* @vite-ignore */ 'lightvueDocs/example/' + this.file + '.vue').then(comp => {
+            this.component = comp.default;
+          });
+        }
+        Promise.all([
+          import(/* @vite-ignore */ '!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
+            this.parseComponent(comp.default);
+          }),
+        ]).then(() => {
+          // this.loading = false;
         });
       }
-
-      Promise.all([
-        // import('@/' + this.file + '.vue').then(comp => {
-        //   this.component = comp.default;
-        // }),
-        import('!raw-loader!lightvueDocs/example/' + this.file + '.vue').then(comp => {
-          this.parseComponent(comp.default);
-        }),
-      ]).then(() => {
-        // this.loading = false;
-      });
     }
   },
   // watch: {

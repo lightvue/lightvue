@@ -433,6 +433,6 @@ export default {
 }
 </style>
 
-<style scoped>
+<style>
 @import './styles/TextContent.css';
 </style>
