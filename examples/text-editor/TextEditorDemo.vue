@@ -1,5 +1,5 @@
 <template>
-  <LvTextEditor />
+  <LvTextEditor bottomBar />
 </template>
 
 <script>

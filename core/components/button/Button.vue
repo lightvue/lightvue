@@ -86,7 +86,7 @@ export default {
   computed: {
     buttonClass() {
       return {
-        '--icon-only': this.icon && !this.label,
+        '--icon-only': this.icon && !(this.label || this.$slots['default']),
         '--rounded': this.rounded,
         '--size-sm': this.size === 'sm',
         '--size-md': this.size === 'md',

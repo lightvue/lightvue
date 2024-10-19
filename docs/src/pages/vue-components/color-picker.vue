@@ -21,24 +21,28 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import ColorpickerAPI from 'lightvueDocs/example/colorpicker/ColorpickerAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
+const pageMeta = {
+  title: ' ColorPicker Documentation | LightVue ',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { property: 'og:title', content: 'LightVue' },
+    { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+    {
+      property: 'og:site_name',
+      content: ' ColorPicker Documentation | LightVue ',
+    },
+    {
+      property: 'og:description',
+      content: 'Colorpicker can be used when a user needs to pick a color. Additionally, a customized color palette can also be passed as an array.',
+    },
+  ],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+};
 export default {
-  head: {
-    title: ' ColorPicker Documentation | LightVue ',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
-      {
-        property: 'og:site_name',
-        content: ' ColorPicker Documentation | LightVue ',
-      },
-      {
-        property: 'og:description',
-        content: 'Colorpicker can be used when a user needs to pick a color. Additionally, a customized color palette can also be passed as an array.',
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  head: pageMeta,
+  setup() {
+    useHead(pageMeta);
   },
   data() {
     return {
@@ -46,7 +50,7 @@ export default {
         {
           title: 'Basic Usage',
           file: 'colorpicker/ColorpickerDemo',
-          description: 'You can use the <span>LvColorPicker</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can set the label to colour picker through <span>label</span> prop.You can set the pallet colors by passing a array to <span>colors</span> prop. LightVue color-picker is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can use the <span>LvColorPicker</span> with some basic and complex use cases.You can use v-model for two way binding and updating value.You can set the label to colour picker through <span>label</span> prop.You can set the palette colors by passing a array to <span>colors</span> prop. LightVue color-picker is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'Without input',
@@ -54,9 +58,9 @@ export default {
           description: 'You can use <span>LvColorPicker</span> without the input. You have to set <span>withoutInput</span> prop true',
         },
         {
-          title: 'Without Pallet',
+          title: 'Without palette',
           file: 'colorpicker/ColorpickerDemo3',
-          description: 'You can use <span>LvColorPicker</span> without the colour pallet. You have to set <span>hidePalette</span> prop true',
+          description: 'You can use <span>LvColorPicker</span> without the colour palette. You have to set <span>hidePalette</span> prop true',
         },
       ],
     };

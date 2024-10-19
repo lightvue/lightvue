@@ -8,8 +8,7 @@
         <lv-toggle-switch v-model="allOptions.raised" label="Raised" /> <br />
         <lv-toggle-switch v-model="allOptions['deep-shadow']" label="Deep Shadow" /> <br />
         <lv-toggle-switch v-model="allOptions['deep-shadow-hover']" label="Deep Shadow Hover" /> <br />
-        <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br />
-
+        <lv-toggle-switch v-model="allOptions.rounded" label="Rounded" /> <br /><br />
         <br />
         <lv-input v-model="allOptions.label" label="Label" /> <br />
         <lv-input v-model="allOptions.type" label="Type" /> <br />

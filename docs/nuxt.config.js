@@ -44,6 +44,27 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     // link: [{ rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
     // link: [{ href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', rel: 'stylesheet' }],
+    script: [
+      {
+        type: 'text/javascript',
+        innerHTML: `(function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "e3r36e72m1");`,
+      },
+      {
+        src: 'https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js',
+        integrity: 'sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=',
+        crossorigin: 'anonymous',
+      },
+      {
+        src: 'https://cdn.jsdelivr.net/npm/instantsearch.js@4.74.2/dist/instantsearch.production.min.js',
+        integrity: 'sha256-LfyQz2E24221PkRbKoakchcpdlZOA4R1Ugi6NnhyGF0=',
+        crossorigin: 'anonymous',
+      },
+    ],
+    __dangerouslyDisableSanitizers: ['script', 'innerHTML'],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)

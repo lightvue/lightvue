@@ -27,7 +27,7 @@
 
 ## Raising an Issue
 
-- Make sure the issue hasn't been raised yet
+- Make sure the issue hasn't been raised yet.
 - The issue list of this repo is **exclusively** for Bug Reports and Feature Requests.
 - Bug reproductions should be as **concise** as possible.
 - **Search** for your issue, it _may_ have been answered.
@@ -37,7 +37,7 @@
 
 - Always work on a new branch. Making changes on your fork's `dev` or `master` branch can cause problems. (See [The beginner's guide to contributing to a GitHub project](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/))
 - The `master` branch is a snapshot of the latest release. **Submit your PR in the `dev` branch**
-- It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash it before merging
+- It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash it before merging.
 - Include **screenshots** or animated GIFs in your pull request whenever needed (if visual changes)
 - Bug fixes should be submitted to the `master` branch.
 - New features and breaking changes should be submitted to the `dev` branch.
@@ -45,7 +45,75 @@
 - For changes and feature requests, please include an example of what you are trying to solve and an example of the markup. It is preferred that you create an issue first however, as that will allow the team to review your proposal before you start.
 - Please reference the issue # that the PR resolves, something like `Fixes #1234` or `Resolves #6458` (See [closing issues using keywords](https://help.github.com/articles/closing-issues-using-keywords/))
 - If adding new feature:
-  - Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it
+  - Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
+
+## To start contributing, follow the below guidelines: 
+
+**1.**  **Star** and **Fork** [this](https://github.com/lightvue/lightvue) repository.
+
+**2.**  Clone your forked copy of the project.
+
+```
+git clone https://github.com/<your_user_name>/lightvue/lightvue.git
+```
+
+**3.** Navigate to the project directory :file_folder: .
+
+```
+cd lightvue/lightvue
+```
+
+**4.** Add a reference(remote) to the original repository.
+
+```
+git remote add upstream https://github.com/lightvue/lightvue.git 
+```
+
+**5.** Check the remotes for this repository.
+
+```
+git remote -v
+```
+
+**6.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository).
+
+```
+git pull upstream main
+```
+
+**7.** Create a new branch.
+
+```
+git checkout -b <your_branch_name>
+```
+
+**8.** Perfom your desired changes to the code base.
+
+**9.** Track your changes:heavy_check_mark: .
+
+```
+git add . 
+```
+
+**10.** Commit your changes .
+
+```
+git commit -m "Relevant message"
+```
+
+**11.** Push the committed changes in your feature branch to your remote repo.
+
+```
+git push -u origin <your_branch_name>
+```
+
+**12.** To create a pull request, click on `compare and pull requests`.
+
+**13.** Add appropriate title and description to your pull request explaining your changes and efforts done.
+
+**14.** Click on `Create Pull Request`.
+
+**15.** Woohoo! You have made a PR to the lightvue/lightvue :boom: . Wait for your submission to be accepted and your PR to be merged.
 
 ## Core Principles
 
@@ -53,7 +121,7 @@
 - UI needs to be compatible with Desktop & Mobile devices both.
 - It should support **Vue2** and **Vue3** with absolute no API change.
 - Performance directly affects the UX, keep it as lightweight as possible.
-- Avoid any other external dependency
+- Avoid any other external dependency.
 - Avoid HTML-only components, if it doesn't need JavaScript, then it doesn't need Vue (with a few exceptions).
 
 ## LightVue JavaScript Guidelines

@@ -50,7 +50,7 @@ Vue.component('LvButton', LvButton);
         <h1>Customization</h1>
         <p style="opacity: 0.8">
           In order to get started with light vue, you need to install LightVue and its dependency LightIcon (Only required if the icons are getting used). <br />
-          For Detailed Customisation <nuxt-link :to="{ path: '/', hash: 'contact' }" style="color: #38b2ac">Contact Us</nuxt-link>
+          For Detailed Customization <nuxt-link :to="{ path: '/', hash: '#contact' }" style="color: #38b2ac">Contact Us</nuxt-link>
         </p>
       </div>
       <br />
@@ -184,24 +184,28 @@ Vue.component('LvButton', LvButton);
 <script>
 import DocsCard from '@/components/docs-card/DocsCard';
 import CodeHighlight from '@/components/docs-card/CodeHighlight.vue';
+const pageMeta = {
+  title: ' Installation Docs | LightVue ',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { property: 'og:title', content: 'LightVue' },
+    { property: 'og:image', content: 'https://lightvue.com/icon.png' },
+    {
+      property: 'og:site_name',
+      content: 'Installation Docs | LightVue',
+    },
+    {
+      property: 'og:description',
+      content: ' ',
+    },
+  ],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+};
 export default {
-  head: {
-    title: ' Installation Docs | LightVue ',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/icon.png' },
-      {
-        property: 'og:site_name',
-        content: 'Installation Docs | LightVue',
-      },
-      {
-        property: 'og:description',
-        content: ' ',
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  head: { pageMeta },
+  setup() {
+    useHead(pageMeta);
   },
   components: {
     DocsCard,

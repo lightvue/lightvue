@@ -1,4 +1,4 @@
-# lightvue-nuxt
+# lightvue-nuxt2
 
 ## Build Setup
 

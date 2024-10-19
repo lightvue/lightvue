@@ -28,8 +28,7 @@
           </div>
         </div>
       </div>
-
-      <div class="enterprise-footer__text">Copyright {{ currentYear }} © LightVue. all rights reserved.</div>
+      <div class="enterprise-footer__text">©{{ currentYear }}, LightVue. All Rights Reserved.</div>
     </section>
   </div>
 </template>

@@ -21,24 +21,28 @@ import GettingStarted from '@/components/docs-card/GettingStarted.vue';
 import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import CheckboxAPI from 'lightvueDocs/example/checkbox/CheckboxAPI';
 
+const pageMeta = {
+  title: ' Radio Docs | LightVue ',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { property: 'og:title', content: 'LightVue' },
+    { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+    {
+      property: 'og:site_name',
+      content: ' Radio Docs | LightVue ',
+    },
+    {
+      property: 'og:description',
+      content: 'Radio component can be used in projects where a way is required for user to select or deselect an option.',
+    },
+  ],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+};
 export default {
-  head: {
-    title: ' Radio Docs | LightVue ',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
-      {
-        property: 'og:site_name',
-        content: ' Radio Docs | LightVue ',
-      },
-      {
-        property: 'og:description',
-        content: 'Radio component can be used in projects where a way is required for user to select or deselect an option.',
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  head: pageMeta,
+  setup() {
+    useHead(pageMeta);
   },
   data() {
     return {
@@ -46,7 +50,7 @@ export default {
         {
           title: 'Basic',
           file: 'checkbox/CheckboxDemo_Basic',
-          description: 'You can use the checkbox with various predefined colors by passing them in <span>color</span> prop, avaliable colors are <span>sucess</span>,<span>warning</span>,<span>primary</span>,<span>info</span>,<span>danger</span>. You can set the corners of checkbox to round by setting <span>rounded</span> prop to true.you can change the appearence of checkbox through <span>thick</span>,<span>filled</span>,<span>plain</span>,<span>smooth</span>. LightVue radio is Both compatible with Vue 2.x and Vue 3.x',
+          description: 'You can use the checkbox with various predefined colors by passing them in <span>color</span> prop, avaliable colors are <span>sucess</span>,<span>warning</span>,<span>primary</span>,<span>info</span>,<span>danger</span>. You can set the corners of checkbox to round by setting <span>rounded</span> prop to true.You can change the appearance of checkbox through <span>thick</span>,<span>filled</span>,<span>plain</span>,<span>smooth</span>. LightVue radio is Both compatible with Vue 2.x and Vue 3.x',
         },
         {
           title: 'With Animations',

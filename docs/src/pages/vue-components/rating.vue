@@ -22,24 +22,28 @@ import DocsAllApi from '@/components/docs-card/DocsAllApi.vue';
 import RatingAPI from 'lightvueDocs/example/rating/RatingAPI';
 import { COMPONENT_STATUS } from '@/static/data/constant.ts';
 
+const pageMeta = {
+  title: ' Rating Docs | LightVue ',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { property: 'og:title', content: 'LightVue' },
+    { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
+    {
+      property: 'og:site_name',
+      content: ' Rating Docs | LightVue ',
+    },
+    {
+      property: 'og:description',
+      content: 'Rating component can be used when user wants to provide an option to rate the products/services provided.',
+    },
+  ],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+};
 export default {
-  head: {
-    title: ' Rating Docs | LightVue ',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:title', content: 'LightVue' },
-      { property: 'og:image', content: 'https://lightvue.com/og-img.png' },
-      {
-        property: 'og:site_name',
-        content: ' Rating Docs | LightVue ',
-      },
-      {
-        property: 'og:description',
-        content: 'Rating component can be used when user wants to provide an option to rate the products/services provided.',
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  head: pageMeta,
+  setup() {
+    useHead(pageMeta);
   },
   components: {
     RatingBestDemo,
