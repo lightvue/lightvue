@@ -3,7 +3,7 @@
     <app-header @toggle-drawer="toggleDrawer()">
       <template #app-search>
         <!-- <app-search v-if="$lightvue && $lightvue.version !== 3" /> -->
-        <AppSearchJs />
+        <AppSearchAis />
       </template>
     </app-header>
     <div class="sidemenu__backdrop" v-if="showDrawer" @click="toggleDrawer()"></div>
@@ -23,7 +23,7 @@
 import 'light-icons/dist/light-icon.css';
 import AppHeader from '@/components/AppHeader.vue';
 // import AppSearch from '@/components/AppSearch';
-import AppSearchJs from '@/components/AppSearchJs';
+import AppSearchAis from '@/components/AppSearchAis';
 import AppNavigationDrawer from '@/components/AppNavigationDrawer.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
@@ -34,7 +34,7 @@ export default {
     AppNavigationDrawer,
     AppFooter,
     // AppSearch,
-    AppSearchJs,
+    AppSearchAis,
   },
   data() {
     return {

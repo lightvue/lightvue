@@ -77,7 +77,7 @@ export default {
 @keyframes aisFadein {
   0% {
     opacity: 0;
-    margin-top: -5px;
+    /* margin-top: -5px; */
   }
 }
 .ais-Hits-item {
@@ -119,7 +119,7 @@ export default {
 
 .ais-Hits-item {
   display: block;
-  animation: aisFadein 0.3s;
+  /* animation: aisFadein 0.3s; */
   border: none;
   border: none;
   width: 100%;
