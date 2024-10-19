@@ -44,5 +44,5 @@ export default {
 };
 </script>
 <style lang="sass">
-@import './card.scss'
+@import './card.scss';
 </style>
