@@ -17,10 +17,11 @@
 
 <script>
 import 'light-icons/dist/light-icon.css';
-// import '@/assets/styles/lightvue.scss';
+import '@/assets/styles/lightvue.scss';
 export default {};
 </script>
 
 <style lang="scss">
-// @import '@/assets/styles/docsGlobal.scss';
+@import '@/assets/styles/docsGlobal.scss';
+// @import '@/assets/styles/lightvue.scss';
 </style>

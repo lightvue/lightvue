@@ -24,7 +24,7 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           api: 'modern-compiler', // or "modern", "legacy"
-          additionalData: '@import "@/assets/styles/lightvue.scss"; @import "@/assets/styles/docsGlobal.scss";',
+          // additionalData: '@import "@/assets/styles/lightvue.scss";',
           // silenceDeprecations: ['legacy-js-api'],
         },
       },
