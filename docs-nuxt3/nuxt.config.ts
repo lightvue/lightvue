@@ -59,7 +59,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxtjs/seo', '@nuxtjs/algolia'],
+  modules: ['@nuxtjs/seo'],
   site: {
     url: 'https://lightvue.org/',
     name: 'Emerging Collection of well Crafted UI Components | LightVue',
@@ -70,12 +70,5 @@ export default defineNuxtConfig({
   },
   seoExperiments: {
     enabled: false,
-  },
-  algolia: {
-    apiKey: process.env.ALGOLIA_API_KEY,
-    applicationId: process.env.ALGOLIA_PROJECT_ID,
-    instantSearch: {
-      theme: 'algolia',
-    },
   },
 });
