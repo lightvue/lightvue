@@ -62,7 +62,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/seo'],
   site: {
     url: 'https://lightvue.org/',
-    name: 'Emerging Collection of well Crafted UI Components | LightVue',
+    name: 'LightVue',
     description: 'The Emerging UI Component library for Vue 2.x & Vue 3.x',
     language: 'en',
     titleSeparator: '|',
