@@ -93,10 +93,10 @@
 
 @keyframes pulse {
   0% {
-    box-shadow: 0px 0px 0px 0px transparent;
+    box-shadow: 0px 0px 0px 0px $light-checkbox--color-default;
   }
 
   100% {
-    box-shadow: 0px 0px 0px 1.5em $light-checkbox--color-default;
+    box-shadow: 0px 0px 0px 1.5em transparent;
   }
 }
