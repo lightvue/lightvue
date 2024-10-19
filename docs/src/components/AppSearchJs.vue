@@ -11,68 +11,70 @@
 export default {
   data() {
     return {
-      search: null,
+      searchClient: null,
       searchQuery: '',
     };
   },
   async mounted() {
-    const ALGOLIA_API_KEY = '96b5c074edda2e65f8548e6d61fb922d';
-    const ALGOLIA_APPLICATION_ID = 'CYDWBEXKQT';
-    const indexName = 'lightvueDemo';
-    this.search = instantsearch({
-      indexName: indexName,
-      searchClient: algoliasearch(ALGOLIA_APPLICATION_ID, ALGOLIA_API_KEY),
-    });
-
-    this.search.addWidgets([
-      instantsearch.widgets.hits({
-        container: '#app-searchui__results-wrapper',
-        templates: {
-          item(hit, { html, components }) {
-            return html`
-              <a href="/vue-components/${hit.docslink}">
-                <div class="app-searchui__results__title">
-                  ${components.Highlight({
-                    attribute: 'name',
-                    highlightedTagName: 'mark',
-                    hit,
-                  })}
-                </div>
-                <i class="app-searchui__results__icon light-icon-arrow-right-circle"></i>
-
-                <div class="app-searchui__results__category">
-                  ${components.Highlight({
-                    attribute: 'category',
-                    hit,
-                  })}
-                </div>
-                <br />
-                <div class="app-searchui__results__desc">
-                  ${components.Highlight({
-                    attribute: 'description',
-                    highlightedTagName: 'mark',
-                    hit,
-                  })}
-                </div>
-              </a>
-            `;
-          },
-        },
-      }),
-    ]);
-
-    this.search.start();
+    if (instantsearch) {
+      this.initSearch();
+    }
   },
   methods: {
+    initSearch() {
+      this.searchClient = instantsearch({
+        indexName: 'lightvueDemo',
+        searchClient: algoliasearch('CYDWBEXKQT', '96b5c074edda2e65f8548e6d61fb922d'),
+      });
+
+      this.searchClient.addWidgets([
+        instantsearch.widgets.hits({
+          container: '#app-searchui__results-wrapper',
+          templates: {
+            item(hit, { html, components }) {
+              return html`
+                <a href="/vue-components/${hit.docslink}">
+                  <div class="app-searchui__results__title">
+                    ${components.Highlight({
+                      attribute: 'name',
+                      highlightedTagName: 'mark',
+                      hit,
+                    })}
+                  </div>
+                  <i class="app-searchui__results__icon light-icon-arrow-right-circle"></i>
+
+                  <div class="app-searchui__results__category">
+                    ${components.Highlight({
+                      attribute: 'category',
+                      hit,
+                    })}
+                  </div>
+                  <br />
+                  <div class="app-searchui__results__desc">
+                    ${components.Highlight({
+                      attribute: 'description',
+                      highlightedTagName: 'mark',
+                      hit,
+                    })}
+                  </div>
+                </a>
+              `;
+            },
+          },
+        }),
+      ]);
+
+      this.searchClient.start();
+    },
     handleSearchInput() {
-      this.search.helper.setQuery(this.searchQuery).search();
+      this.searchClient.helper.setQuery(this.searchQuery).search();
     },
   },
 };
 </script>
 
 <style>
-@keyframes fadein {
+@keyframes aisFadein {
   0% {
     opacity: 0;
     margin-top: -5px;
@@ -93,6 +95,19 @@ export default {
   background-color: transparent;
 }
 
+/* .ais-SearchBox-input {
+  position: relative;
+  padding: 10px;
+  padding-left: 30px;
+  height: 40px;
+  transition: all 0.3s;
+}
+
+.ais-SearchBox-input:focus {
+  border-color: #607c8a;
+  outline: #607c8a;
+} */
+
 #app-searchui__results-wrapper {
   margin-top: 0px;
   height: max-content;
@@ -104,13 +119,12 @@ export default {
 
 .ais-Hits-item {
   display: block;
-  animation: fadein 0.3s;
+  animation: aisFadein 0.3s;
   border: none;
   border: none;
   width: 100%;
   border-bottom: solid 1px #00000020;
   background-color: white;
-  padding: 10px 20px;
   margin-top: 0px;
   height: max-content;
   transition: all 0.3s;
@@ -118,6 +132,11 @@ export default {
 
 .ais-Hits-item:hover {
   background-color: #f1f1f1;
+}
+
+.ais-Hits-item a {
+  padding: 10px 20px;
+  display: block;
 }
 
 .app-searchui__results__title .ais-Highlight {

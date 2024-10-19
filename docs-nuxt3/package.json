@@ -12,6 +12,9 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  },
   "dependencies": {
     "@nuxtjs/seo": "^2.0.0-rc.23",
     "light-icons": "^1.0.12",
