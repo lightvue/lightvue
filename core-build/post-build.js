@@ -3,7 +3,7 @@ const path = require('path');
 
 copyComponentPackageJson();
 copyCorePackageJson();
-fs.copySync(path.resolve(__dirname, '../README.md'), path.resolve(__dirname,'./dist/README.md'));
+fs.copySync(path.resolve(__dirname, '../README.md'), path.resolve(__dirname, './dist/README.md'));
 
 function copyComponentPackageJson() {
   fs.readdirSync('./dist/').forEach(folder => {
@@ -12,9 +12,8 @@ function copyComponentPackageJson() {
       console.log(`Updated: /core-build/dist/${folder}/package.json`);
     }
     if (folder === 'skeleton') {
-      fs.copySync(path.resolve(__dirname,'../core/components/skeleton/preset'), './dist/skeleton/preset');
+      fs.copySync(path.resolve(__dirname, '../core/components/skeleton/preset'), './dist/skeleton/preset');
     }
-
   });
 }
 
@@ -41,12 +40,12 @@ function copyCorePackageJson() {
     delete packageJson['scripts'];
     delete packageJson['devDependencies'];
     // Write the modified package.json back to file
-    fs.writeFile(path.resolve(__dirname,'./dist/package.json'), JSON.stringify(packageJson, null, 2), 'utf8', (err) => {
+    fs.writeFile(path.resolve(__dirname, './dist/package.json'), JSON.stringify(packageJson, null, 2), 'utf8', err => {
       if (err) {
         console.error('Error writing package.json:', err);
         return;
       }
-      console.log('Updated:  /core-build/dist/package.json');
+      console.log('Updated: /core-build/dist/package.json');
     });
   });
 }
