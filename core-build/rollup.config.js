@@ -1,5 +1,5 @@
 import vue from 'rollup-plugin-vue';
-// import postcss from 'rollup-plugin-postcss';
+import postcss from 'rollup-plugin-postcss';
 import scss from 'rollup-plugin-scss';
 import filesize from 'rollup-plugin-filesize';
 // import commonjs from 'rollup-plugin-commonjs';
@@ -44,10 +44,10 @@ let globalDependencies = {
 const baseConfig = {
   plugins: {
     preVue: [
-      scss({
-        output: 'dist/lightvue.css',
-        outputStyle: 'compressed',
-      }),
+      // scss({
+      //   output: 'dist/lightvue.css',
+      //   outputStyle: 'compressed',
+      // }),
       // postcss({
       //   extract: true,
       //   // Or with custom file name, it will generate file relative to bundle.js in v3
@@ -55,6 +55,7 @@ const baseConfig = {
       // }),
     ],
     postVue: [
+      postcss(),
       terser(),
       filesize({
         // This method will be helpful to generate size file.
