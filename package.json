@@ -1,6 +1,6 @@
 {
   "name": "lightvue",
-  "version": "0.5.1",
+  "version": "1.5.1",
   "title": "LightVue | The Emerging UI Component library for Vue",
   "description": "The Emerging UI Component library for Vue 2.x & Vue 3.x",
   "author": "Pulkit <pulkit.cloud@gmail.com>",
@@ -13,7 +13,7 @@
     "dev": "cd doc-nuxt3 && npm run dev",
     "build": "cd core-build && npm run build",
     "post-build": "cd core-build && npm run post-build",
-    "release": "release-it --no-git.requireCleanWorkingDir --npm.publishPath core-build/dist"
+    "release": "release-it --no-git.requireCleanWorkingDir --npm.publishPath core-build/dist --npm.tag next"
   },
   "devDependencies": {
     "prettier": "^2.2.1",
