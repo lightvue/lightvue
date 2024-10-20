@@ -78,8 +78,8 @@ const baseConfig = {
 };
 
 function addEntry(inFolder, inFile, outFolder, outFile) {
-  const inputFile = 'core/' + inFolder + '/' + inFile;
-  const outputFile = 'dist/' + outFolder + '/' + outFile;
+  const inputFile = '../core/' + inFolder + '/' + inFile;
+  const outputFile = './dist/' + outFolder + '/' + outFile;
   entries.push({
     external: externals,
     input: inputFile,
