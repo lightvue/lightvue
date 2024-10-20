@@ -53,7 +53,6 @@ export default {
         }
       } else {
         //  old way
-        console.log('inside else');
         // If this is intended to be left as-is, you can use the /* @vite-ignore */ comment inside the import() call to suppress this warning.
         if (!this.component) {
           import(/* @vite-ignore */ 'lightvueDocs/example/' + this.file + '.vue').then(comp => {
